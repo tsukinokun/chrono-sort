@@ -3,6 +3,7 @@
 //! @brief  ChronoSort のエントリポイント
 //----------------------------------------------------------------------------
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
+#include <ChronoSort/Scene/SoloGameScene.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -14,12 +15,13 @@
 #include <chrono>
 #include <cstdlib>
 #include <memory>
+#include <string>
 
 //----------------------------------------------------------------------------
 //! アプリケーションのエントリポイントです。
 //! @return 終了コード。
 //----------------------------------------------------------------------------
-int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
+int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In_ int) {
     SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
 
     // デバッガの外で起動したときも警告が見えるよう、ログをファイルにも出す
@@ -37,7 +39,13 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
     }
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
-    engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::TitleScene>());
+    // 「ChronoSort.exe solo」でタイトルを飛ばして対局画面から始める（描画確認用）
+    const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
+    if(argument.find("solo") != std::string::npos) {
+        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::SoloGameScene>());
+    } else {
+        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::TitleScene>());
+    }
 
     // deltaTime は実測値を使う（高リフレッシュレート環境で演出が速くならないように）
     auto lastTime = std::chrono::steady_clock::now();

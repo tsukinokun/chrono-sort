@@ -14,7 +14,7 @@
 namespace ChronoSort::Scene {
 
     //! タイトル画面です。
-    //! 現時点ではデッキの読み込みと日本語表示の確認を兼ねています。
+    //! Enter でソロモードへ進みます。見本カードの表示はデッキ読み込みの確認を兼ねています。
     class TitleScene : public Tsukino::EngineIntegration::GameSceneBase {
     public:
         TitleScene()           = default;

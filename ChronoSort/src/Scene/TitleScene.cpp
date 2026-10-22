@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/TitleScene.hpp>
 
+#include <ChronoSort/Scene/SoloGameScene.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -45,7 +46,7 @@ namespace ChronoSort::Scene {
 
         CreateText(L"ChronoSort", kScreenCenterX, 220.0f, 3.0f);
         CreateText(L"歴史の出来事を、年代順に並べよう", kScreenCenterX, 330.0f, 1.0f);
-        CreateText(L"Enter で次の見本カード", kScreenCenterX, 800.0f, 0.7f);
+        CreateText(L"Enter でソロモード開始　Space で次の見本カード", kScreenCenterX, 800.0f, 0.7f);
 
         // 日本史と世界史を混ぜた山札
         m_deck.LoadFromFile("ChronoSort/Assets/Data/Decks/japan.json");
@@ -61,9 +62,13 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     //! シーンを更新します。
     //----------------------------------------------------------------------------
-    void TitleScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI&, float deltaTime) {
+    void TitleScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
         if(context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Enter)) {
+            api.ChangeScene(std::make_unique<SoloGameScene>());
+            return;
+        }
+        if(context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Space)) {
             ShowNextSampleCard();
         }
 

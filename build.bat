@@ -1,11 +1,11 @@
 @echo off
 rem ---------------------------------------------------------------------------
-rem ChronoSort ã®ãƒ“ãƒ«ãƒ‰ã€‚
-rem   build.bat            â€¦ Debug ã‚’ãƒ“ãƒ«ãƒ‰
-rem   build.bat Release    â€¦ Release ã‚’ãƒ“ãƒ«ãƒ‰
+rem ChronoSort ‚Ìƒrƒ‹ƒhB
+rem   build.bat            c Debug ‚ğƒrƒ‹ƒh
+rem   build.bat Release    c Release ‚ğƒrƒ‹ƒh
 rem
-rem æˆåŠŸæ™‚ã®å‡ºåŠ›ã¯ 0 è¡Œã€å¤±æ•—æ™‚ã¯ã‚¨ãƒ©ãƒ¼è¡Œã ã‘ã«ãªã‚‹ã€‚
-rem MSBuild ã®æ¢ã—æ–¹ã¯ã‚¨ãƒ³ã‚¸ãƒ³ã® build.bat ã¨åŒã˜ï¼ˆç†ç”±ã¯ãã¡ã‚‰ã®ã‚³ãƒ¡ãƒ³ãƒˆå‚ç…§ï¼‰ã€‚
+rem ¬Œ÷‚Ìo—Í‚Í 0 sA¸”s‚ÍƒGƒ‰[s‚¾‚¯‚É‚È‚éB
+rem MSBuild ‚Ì’T‚µ•û‚ÍƒGƒ“ƒWƒ“‚Ì build.bat ‚Æ“¯‚¶i——R‚Í‚»‚¿‚ç‚ÌƒRƒƒ“ƒgQÆjB
 rem ---------------------------------------------------------------------------
 setlocal
 
@@ -27,17 +27,17 @@ if not exist "%MSBUILD%" (
     exit /b 1
 )
 
-rem ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ãŸã¨ãã‚‚å†ç”ŸæˆãŒè¦ã‚‹ãŸã‚ã€æ¯å› premake ã‚’é€šã™
-rem ï¼ˆä¸­èº«ãŒåŒã˜ãªã‚‰ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã¯æ›¸ãæ›ã‚ã‚‰ãšã€å†ãƒ“ãƒ«ãƒ‰ã‚‚èµ·ããªã„ï¼‰
-rem ã‚¨ãƒ³ã‚¸ãƒ³å´ premake5.lua ã®éæ¨å¥¨è­¦å‘ŠãŒæ¯å›å‡ºã‚‹ãŸã‚ã€æˆåŠŸæ™‚ã¯å‡ºåŠ›ã‚’æ¨ã¦ã‚‹
+rem ƒ\[ƒXƒtƒ@ƒCƒ‹‚ğ’Ç‰Á‚µ‚½‚Æ‚«‚àÄ¶¬‚ª—v‚é‚½‚ßA–ˆ‰ñ premake ‚ğ’Ê‚·
+rem i’†g‚ª“¯‚¶‚È‚çƒvƒƒWƒFƒNƒgƒtƒ@ƒCƒ‹‚Í‘‚«Š·‚í‚ç‚¸AÄƒrƒ‹ƒh‚à‹N‚«‚È‚¢j
+rem ƒGƒ“ƒWƒ“‘¤ premake5.lua ‚Ì”ñ„§Œx‚ª–ˆ‰ño‚é‚½‚ßA¬Œ÷‚Ío—Í‚ğÌ‚Ä‚é
 "%PREMAKE%" vs2022 >nul 2>&1
 if errorlevel 1 (
     echo build.bat: premake failed. Run open.bat to see the details.
     exit /b 1
 )
 
-rem NuGet ã®å¾©å…ƒã€‚premake ãŒåãã®ã¯æ—§å½¢å¼ã® packages.config ãªã®ã§
-rem -p:RestorePackagesConfig=true ãŒè¦ã‚‹
+rem NuGet ‚Ì•œŒ³Bpremake ‚ª“f‚­‚Ì‚Í‹ŒŒ`®‚Ì packages.config ‚È‚Ì‚Å
+rem -p:RestorePackagesConfig=true ‚ª—v‚é
 if not exist "%ROOT%.build\packages" if not exist "%ROOT%packages" (
     "%MSBUILD%" "%SLN%" -t:restore -p:RestorePackagesConfig=true -p:Configuration=%CONFIG% -p:Platform=x64 -nologo -v:q -clp:"ErrorsOnly;NoSummary"
     if errorlevel 1 exit /b 1

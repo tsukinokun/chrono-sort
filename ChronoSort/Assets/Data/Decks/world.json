@@ -8,7 +8,7 @@
             "yearLabel": "紀元前490年",
             "region": "WORLD",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/marathon.png"
+            "art": ""
         },
         {
             "id": "qin_unification",
@@ -17,7 +17,7 @@
             "yearLabel": "紀元前221年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/qin_unification.png"
+            "art": ""
         },
         {
             "id": "caesar_assassination",
@@ -26,7 +26,7 @@
             "yearLabel": "紀元前44年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/caesar_assassination.png"
+            "art": ""
         },
         {
             "id": "fall_of_western_rome",
@@ -35,7 +35,7 @@
             "yearLabel": "476年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/fall_of_western_rome.png"
+            "art": ""
         },
         {
             "id": "treaty_of_verdun",
@@ -44,7 +44,7 @@
             "yearLabel": "843年",
             "region": "WORLD",
             "category": "外交",
-            "image": "ChronoSort/Assets/Textures/Cards/treaty_of_verdun.png"
+            "art": ""
         },
         {
             "id": "magna_carta",
@@ -53,7 +53,7 @@
             "yearLabel": "1215年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/magna_carta.png"
+            "art": ""
         },
         {
             "id": "fall_of_constantinople",
@@ -62,7 +62,7 @@
             "yearLabel": "1453年",
             "region": "WORLD",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/fall_of_constantinople.png"
+            "art": ""
         },
         {
             "id": "columbus",
@@ -71,7 +71,7 @@
             "yearLabel": "1492年",
             "region": "WORLD",
             "category": "探検",
-            "image": "ChronoSort/Assets/Textures/Cards/columbus.png"
+            "art": ""
         },
         {
             "id": "ninety_five_theses",
@@ -80,7 +80,7 @@
             "yearLabel": "1517年",
             "region": "WORLD",
             "category": "宗教",
-            "image": "ChronoSort/Assets/Textures/Cards/ninety_five_theses.png"
+            "art": ""
         },
         {
             "id": "us_independence",
@@ -89,7 +89,7 @@
             "yearLabel": "1776年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/us_independence.png"
+            "art": ""
         },
         {
             "id": "bastille",
@@ -98,7 +98,7 @@
             "yearLabel": "1789年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/bastille.png"
+            "art": ""
         },
         {
             "id": "waterloo",
@@ -107,7 +107,7 @@
             "yearLabel": "1815年",
             "region": "WORLD",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/waterloo.png"
+            "art": ""
         },
         {
             "id": "ww1_outbreak",
@@ -116,7 +116,7 @@
             "yearLabel": "1914年",
             "region": "WORLD",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/ww1_outbreak.png"
+            "art": ""
         },
         {
             "id": "apollo11",
@@ -125,7 +125,7 @@
             "yearLabel": "1969年",
             "region": "WORLD",
             "category": "科学",
-            "image": "ChronoSort/Assets/Textures/Cards/apollo11.png"
+            "art": ""
         },
         {
             "id": "berlin_wall_fall",
@@ -134,7 +134,7 @@
             "yearLabel": "1989年",
             "region": "WORLD",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/berlin_wall_fall.png"
+            "art": ""
         }
     ]
 }

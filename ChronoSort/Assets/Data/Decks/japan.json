@@ -8,7 +8,7 @@
             "yearLabel": "604年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/jushichijo_kenpo.png"
+            "art": ""
         },
         {
             "id": "taika_no_kaishin",
@@ -17,7 +17,7 @@
             "yearLabel": "645年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/taika_no_kaishin.png"
+            "art": ""
         },
         {
             "id": "heijokyo_sento",
@@ -26,7 +26,7 @@
             "yearLabel": "710年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/heijokyo_sento.png"
+            "art": ""
         },
         {
             "id": "heiankyo_sento",
@@ -35,7 +35,7 @@
             "yearLabel": "794年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/heiankyo_sento.png"
+            "art": ""
         },
         {
             "id": "dannoura",
@@ -44,7 +44,7 @@
             "yearLabel": "1185年",
             "region": "JP",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/dannoura.png"
+            "art": ""
         },
         {
             "id": "bunei_no_eki",
@@ -53,7 +53,7 @@
             "yearLabel": "1274年",
             "region": "JP",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/bunei_no_eki.png"
+            "art": ""
         },
         {
             "id": "onin_no_ran",
@@ -62,7 +62,7 @@
             "yearLabel": "1467年",
             "region": "JP",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/onin_no_ran.png"
+            "art": ""
         },
         {
             "id": "teppo_denrai",
@@ -71,7 +71,7 @@
             "yearLabel": "1543年",
             "region": "JP",
             "category": "技術",
-            "image": "ChronoSort/Assets/Textures/Cards/teppo_denrai.png"
+            "art": ""
         },
         {
             "id": "sekigahara",
@@ -80,7 +80,7 @@
             "yearLabel": "1600年",
             "region": "JP",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/sekigahara.png"
+            "art": ""
         },
         {
             "id": "perry_raiko",
@@ -89,7 +89,7 @@
             "yearLabel": "1853年",
             "region": "JP",
             "category": "外交",
-            "image": "ChronoSort/Assets/Textures/Cards/perry_raiko.png"
+            "art": ""
         },
         {
             "id": "taisei_houkan",
@@ -98,7 +98,7 @@
             "yearLabel": "1867年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/taisei_houkan.png"
+            "art": ""
         },
         {
             "id": "teikoku_kenpo",
@@ -107,7 +107,7 @@
             "yearLabel": "1889年",
             "region": "JP",
             "category": "政治",
-            "image": "ChronoSort/Assets/Textures/Cards/teikoku_kenpo.png"
+            "art": ""
         },
         {
             "id": "nichiro_senso",
@@ -116,7 +116,7 @@
             "yearLabel": "1904年",
             "region": "JP",
             "category": "戦争",
-            "image": "ChronoSort/Assets/Textures/Cards/nichiro_senso.png"
+            "art": ""
         },
         {
             "id": "kanto_daishinsai",
@@ -125,7 +125,7 @@
             "yearLabel": "1923年",
             "region": "JP",
             "category": "災害",
-            "image": "ChronoSort/Assets/Textures/Cards/kanto_daishinsai.png"
+            "art": ""
         },
         {
             "id": "tokyo_olympic_1964",
@@ -134,7 +134,7 @@
             "yearLabel": "1964年",
             "region": "JP",
             "category": "文化",
-            "image": "ChronoSort/Assets/Textures/Cards/tokyo_olympic_1964.png"
+            "art": ""
         }
     ]
 }

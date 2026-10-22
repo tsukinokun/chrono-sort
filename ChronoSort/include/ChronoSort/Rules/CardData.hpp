@@ -20,7 +20,7 @@ namespace ChronoSort::Rules {
         std::string  yearLabel;    // 画面に出す年号表記（例：「紀元前221年」）
         std::string  region;       // 地域（"JP" / "WORLD"）
         std::string  category;     // 分類（政治・文化など）
-        std::string  image;        // カード絵のパス（ワークスペースルートからの相対）
+        std::string  art;          // カード絵の出典（URL など）。焼き込み後の面は id から決まる
 
         template <class Archive>
         void serialize(Archive& archive) {
@@ -30,7 +30,7 @@ namespace ChronoSort::Rules {
                     cereal::make_nvp("yearLabel", yearLabel),
                     cereal::make_nvp("region", region),
                     cereal::make_nvp("category", category),
-                    cereal::make_nvp("image", image));
+                    cereal::make_nvp("art", art));
         }
     };
 
