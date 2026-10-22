@@ -74,7 +74,20 @@ namespace ChronoSort::Board {
         //! @param  [in]  slot     スロット番号。
         //! @param  [out] position 位置。
         //! @param  [out] rotation 向き。
-        void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation) const;
+        //! @param  [out] scale    拡大率。
+        void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) const;
+
+        //! 場の列のカードの今の拡大率を返します（枚数が増えると縮む）。
+        //! @return 拡大率。
+        float RowScale() const { return m_rowScale; }
+
+        //! 場の列を横に流します（列が画面に収まらないときだけ動く）。
+        //! @param  [in] amount 流す量（正で右側の続きを見る）。
+        void ScrollBy(float amount);
+
+        //! 指定したスロットが画面の中ほどに来るよう、場の列を流します。
+        //! @param  [in] slot スロット番号。
+        void ScrollToSlot(size_t slot);
 
         //! ワールドの X 座標から、最も近いスロットを返します。
         //! @param  [in] worldX ワールドの X 座標。
@@ -124,10 +137,6 @@ namespace ChronoSort::Board {
         //! @return 場の列（年代順）。
         const std::vector<Tsukino::ECS::Entity>& Row() const { return m_row; }
 
-        //! 場の列の左端と右端の X 座標を返します（カメラの横移動の範囲に使う）。
-        //! @return 左端と右端。
-        hlslpp::float2 RowExtent() const;
-
         //! 手札のカードの、並びの中での姿勢を計算します（持ち上げ・ホバーを含む）。
         //! @param  [in]  player   プレイヤー番号。
         //! @param  [in]  index    手札の番号。
@@ -150,14 +159,25 @@ namespace ChronoSort::Board {
 
     private:
 
-        //! 場の列のカードの間隔を返します。枚数が増えるほど詰めます。
-        //! @return 間隔。
-        float RowSpacing() const;
+        //! 枚数から、場の列の拡大率と間隔の目標を求めます。
+        //! @param  [out] scale   拡大率。
+        //! @param  [out] spacing 間隔。
+        void RowFitTarget(float& scale, float& spacing) const;
 
-        //! 場の列の i 枚目の X 座標を返します（隙間を含む）。
+        //! 場の列を流せる量の上限を返します（列が収まっていれば 0）。
+        //! @return 上限。
+        float ScrollLimit() const;
+
+        //! 場の列の i 枚目の、流す前・端で畳む前の X 座標を返します（隙間を含む）。
         //! @param  [in] index 何枚目か。
         //! @return X 座標。
         float RowCardX(size_t index) const;
+
+        //! 流す前の X 座標を、流して端で畳んだあとの X 座標に変えます。
+        //! @param  [in]  x    流す前の X 座標。
+        //! @param  [out] fold 畳まれた深さ（0：畳まれていない 〜 1：いちばん奥）。
+        //! @return 画面上の X 座標。
+        float FoldX(float x, float& fold) const;
 
         CardFactory&                      m_factory;                    // カードの生成器
         std::vector<Tsukino::ECS::Entity> m_row;                        // 場の列（年代順）
@@ -169,6 +189,10 @@ namespace ChronoSort::Board {
         Tsukino::ECS::Entity              m_held   = entt::null;        // 並べ直しから外すカード
         std::optional<size_t>             m_gap;                        // 隙間を空けているスロット
         float                             m_gapWidth = 0.0f;            // 隙間の今の広さ（なめらかに開閉する）
+        float                             m_rowScale   = 1.4f;          // 場の列の今の拡大率（なめらかに変える）
+        float                             m_rowSpacing = 104.0f;        // 場の列の今の間隔（なめらかに変える）
+        float                             m_scroll       = 0.0f;        // 場の列を流している今の量
+        float                             m_scrollTarget = 0.0f;        // 場の列を流す量の目標
         float                             m_time     = 0.0f;            // 経過時間（揺れの演出用）
         int                               m_rowHovered = -1;            // 場の列でカーソルが重なっているカード
         std::mt19937                      m_rng;                        // 捨て札のずれ用の乱数

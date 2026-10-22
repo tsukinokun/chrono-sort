@@ -190,8 +190,10 @@ namespace ChronoSort::UI {
                 const float spread           = (players.size() == 2) ? 0.0f : 320.0f;
                 const float t                = (players.size() == 2) ? 0.0f : (static_cast<float>(i - 1) / static_cast<float>(players.size() - 2)) * 2.0f - 1.0f;
                 anchor.fixedWorldPosition    = hlslpp::float3(t * spread, 0.0f, 300.0f - std::abs(t) * 30.0f);
-                anchor.worldOffset           = hlslpp::float3(0.0f, 0.0f, -70.0f);
-                anchor.screenOffset          = hlslpp::float2(0.0f, 30.0f);
+                // 席の手前は起こした場の列と重なるので、席の内側（卓の中央寄り）の横に並べる
+                const float side             = (t > 0.0f) ? -1.0f : 1.0f;
+                anchor.worldOffset           = hlslpp::float3(side * 175.0f, 0.0f, 0.0f);
+                anchor.screenOffset          = hlslpp::float2(0.0f, -8.0f);
 
                 // 歴史家の肖像（取得できていなければ影絵）
                 static const char* const kPortraits[] = {"portrait_herodotus.png", "portrait_sima_qian.png", "portrait_gibbon.png"};
@@ -208,7 +210,8 @@ namespace ChronoSort::UI {
                 face.parent      = tag;
                 m_ui.Paper(face);
                 m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 41.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
-                m_handCounts.push_back(m_ui.Text(L"", hlslpp::float2(78.0f, 0.0f), 0.46f, kParchmentColor, kLayerAnchored + 2, tag, false));
+                // 手札の枚数は、席のカードと反対の側に出す
+                m_handCounts.push_back(m_ui.Text(L"", hlslpp::float2(side * 100.0f, 0.0f), 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true));
             }
             m_playerTags.push_back(tag);
         }

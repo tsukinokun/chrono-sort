@@ -55,8 +55,9 @@ namespace ChronoSort::Scene {
         constexpr float kClickThreshold = 8.0f;      // これ以上動いたらクリックではなくドラッグ
         constexpr float kRowBandNear    = 130.0f;    // 場の列の手前、この距離までなら「列に置こうとしている」
         constexpr float kRowBandFar     = 160.0f;    // 場の列の奥、この距離まで
-        constexpr float kEdgePanMargin  = 110.0f;    // 画面端のこの幅に入るとカメラが横へ動く
-        constexpr float kEdgePanSpeed   = 420.0f;    // 画面端での横移動の速さ
+        constexpr float kEdgePanMargin  = 0.08f;     // 画面端のこの割合の幅に入ると場の列が流れる
+        constexpr float kEdgePanSpeed   = 420.0f;    // 画面端で列を流す速さ
+        constexpr float kWheelScroll    = 60.0f;     // ホイール1段で列を流す量（ホイールの値は段数で来る）
 
         const hlslpp::float3 kGoldGlow(0.55f, 0.38f, 0.1f);
         const hlslpp::float3 kRedGlow(0.6f, 0.05f, 0.03f);
@@ -147,6 +148,9 @@ namespace ChronoSort::Scene {
                 break;
             }
         }
+
+        // ホイールで場の列を左右に見渡す（CPU の手番や公開の演出中も見られるよう、手番を問わず受け付ける）
+        m_board->ScrollBy(-context->inputSystem->GetWheelDelta() * kWheelScroll);
 
         m_board->SetDeckCount(m_match.DeckRemaining());
         m_board->UpdateLayout(deltaTime);
@@ -346,9 +350,6 @@ namespace ChronoSort::Scene {
         const hlslpp::float2 mouse(static_cast<float>(mouseX), static_cast<float>(mouseY));
         const auto           ray = MouseRay();
 
-        // ホイールで場の列を左右に見渡す
-        m_panTarget -= input.GetWheelDelta() * 0.6f;
-
         // カーソルが重なっている手札（ドラッグ中・選択中は更新しない）
         if(!m_dragging && m_selected < 0) {
             hlslpp::float2 uv;
@@ -433,12 +434,13 @@ namespace ChronoSort::Scene {
 
                     setPreview(previewFrom(hlslpp::float3(point.x, 0.0f, point.z)));
 
-                    // 画面端に寄せたら列を見渡せるよう横へ動く
-                    const float width = static_cast<float>(context->window->GetWidth());
-                    if(float(mouse.x) < kEdgePanMargin) {
-                        m_panTarget -= kEdgePanSpeed * deltaTime;
-                    } else if(float(mouse.x) > width - kEdgePanMargin) {
-                        m_panTarget += kEdgePanSpeed * deltaTime;
+                    // 画面端（列を畳んで重ねているあたり）に寄せたら、列を流して続きを見せる
+                    const float width  = static_cast<float>(context->window->GetWidth());
+                    const float margin = width * kEdgePanMargin;
+                    if(float(mouse.x) < margin) {
+                        m_board->ScrollBy(-kEdgePanSpeed * deltaTime);
+                    } else if(float(mouse.x) > width - margin) {
+                        m_board->ScrollBy(kEdgePanSpeed * deltaTime);
                     }
                 }
             }
@@ -570,8 +572,8 @@ namespace ChronoSort::Scene {
         m_board->SetGap(slot);
         m_board->SetMarker(false);
 
-        // 置いた場所が画面の外なら、そこへカメラを寄せる
-        m_panTarget = float(m_board->SlotPosition(slot).x);
+        // 置いた場所が端に畳まれているなら、そこまで列を流す
+        m_board->ScrollToSlot(slot);
 
         Game::FrameMonitor::Mark("place card");
         RunReveal(player, entity, *result);
@@ -595,7 +597,7 @@ namespace ChronoSort::Scene {
         m_sequencer.Schedule(0.42f, [this, entity, slot, up, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 9.0f, 7.0f);
-            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, FacingRevealed(), 1.1f);
+            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, FacingRevealed(), m_board->RowScale() * 1.1f);
             Game::Sounds(*context).Play("card_flip");
         });
 
@@ -606,8 +608,9 @@ namespace ChronoSort::Scene {
             // 着地先は列に並んだときと同じ起こした姿勢（寝てから起き直す二段の動きを出さない）
             hlslpp::float3     position;
             hlslpp::quaternion rotation;
-            m_board->SlotRestPose(slot, position, rotation);
-            ECS::CardMotion::SetTarget(reg, entity, position, rotation, 1.0f);
+            float              scale = 1.0f;
+            m_board->SlotRestPose(slot, position, rotation, scale);
+            ECS::CardMotion::SetTarget(reg, entity, position, rotation, scale);
         });
         m_sequencer.Schedule(1.10f, [this, entity, slot, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
@@ -653,9 +656,9 @@ namespace ChronoSort::Scene {
                 Tsukino::ECS::Registry& r = m_scene.GetRegistry();
                 m_board->SetGap(correctSlot);
                 m_board->SetMarker(true, true);
-                m_panTarget = float(m_board->SlotPosition(correctSlot).x);
+                m_board->ScrollToSlot(correctSlot);
                 ECS::CardMotion::SetSharpness(r, entity, 8.0f, 8.0f);
-                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, FacingRevealed(), 1.0f);
+                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, FacingRevealed(), m_board->RowScale());
                 Game::Sounds(*context).Play("card_slide", 0.5f);
             });
             m_sequencer.Schedule(1.9f, [this, entity, context] {
@@ -748,16 +751,10 @@ namespace ChronoSort::Scene {
     }
 
     //----------------------------------------------------------------------------
-    //! カメラの横移動と揺れを更新します。
+    //! カメラの揺れを更新します（列が長いときはカメラではなく列を流すので、横には動かさない）。
     //----------------------------------------------------------------------------
     void GameScene::UpdateCamera(float deltaTime) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-
-        // 列の端より外へは行かない（列が短ければ中央に留まる）
-        const hlslpp::float2 extent = m_board->RowExtent();
-        const float          limit  = std::max(0.0f, (float(extent.y) - float(extent.x)) * 0.5f - 300.0f);
-        m_panTarget                 = std::clamp(m_panTarget, -limit, limit);
-        m_pan += (m_panTarget - m_pan) * (1.0f - std::exp(-5.0f * deltaTime));
 
         // 揺れは減衰するランダムなずれ
         m_shake = std::max(0.0f, m_shake - deltaTime * 18.0f);
@@ -767,10 +764,9 @@ namespace ChronoSort::Scene {
 
         auto& transform    = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_camera);
         auto& camera       = registry.GetComponent<Tsukino::BuiltIn::ECS::CameraComponent>(m_camera);
-        const hlslpp::float3 pan(m_pan, 0.0f, 0.0f);
-        transform.position  = kCameraPosition + pan + jolt + drift;
+        transform.position  = kCameraPosition + jolt + drift;
         transform.dirty     = true;
-        camera.lookAtTarget = kCameraLookAt + pan + jolt * 0.5f;
+        camera.lookAtTarget = kCameraLookAt + jolt * 0.5f;
         camera.dirty        = true;
     }
 

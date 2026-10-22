@@ -101,7 +101,7 @@ namespace ChronoSort::Scene {
         //! 選択とドラッグの状態を解除し、手札へ戻します。
         void CancelSelection();
 
-        //! カメラの横移動と揺れを更新します。
+        //! カメラの揺れを更新します。
         //! @param  [in] deltaTime 経過時間（秒）。
         void UpdateCamera(float deltaTime);
 
@@ -135,8 +135,6 @@ namespace ChronoSort::Scene {
 
         // カメラ
         Tsukino::ECS::Entity m_camera      = entt::null;
-        float                m_pan         = 0.0f;    // 今の横移動
-        float                m_panTarget   = 0.0f;    // 横移動の目標
         float                m_shake       = 0.0f;    // 揺れの強さ
         float                m_time        = 0.0f;    // 経過時間
         bool                 m_wasTiebreak = false;   // 直前まで延長戦だったか
