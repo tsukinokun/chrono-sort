@@ -70,6 +70,10 @@ namespace ChronoSort::UI {
         //! 結果の羊皮紙を出します。
         void ShowResult();
 
+        //! 結果に「新記録」の印を添えるかを設定します（ShowResult の前に呼ぶ）。
+        //! @param  [in] newRecord 新記録なら true。
+        void SetNewRecord(bool newRecord) { m_newRecord = newRecord; }
+
         //! 結果画面で選ばれた行動を返します。
         //! @return 選ばれた行動。
         ResultChoice PollResultChoice();
@@ -118,6 +122,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity m_titleButton = entt::null;
         Tsukino::ECS::Entity m_resultScore = entt::null;    // 数え上げる得点の文字
         float                m_resultTime  = -1.0f;         // 結果を出してからの時間
+        bool                 m_newRecord   = false;         // 新記録か
     };
 
 }    // namespace ChronoSort::UI

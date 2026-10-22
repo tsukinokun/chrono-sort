@@ -130,6 +130,10 @@ namespace ChronoSort::Board {
         //! @return ワールド座標。
         hlslpp::float3 DeckTop() const;
 
+        //! 場の列でカーソルが重なっているカードを設定します（持ち上げて年号を読みやすくする）。
+        //! @param  [in] index 場の何枚目か。-1 で解除。
+        void SetRowHovered(int index) { m_rowHovered = index; }
+
         //! 並べ直しの対象から外すカード（ドラッグ中・公開中など）を設定します。
         //! @param  [in] entity 外すカード。entt::null で解除。
         void SetHeld(Tsukino::ECS::Entity entity) { m_held = entity; }
@@ -156,6 +160,7 @@ namespace ChronoSort::Board {
         std::optional<size_t>             m_gap;                        // 隙間を空けているスロット
         float                             m_gapWidth = 0.0f;            // 隙間の今の広さ（なめらかに開閉する）
         float                             m_time     = 0.0f;            // 経過時間（揺れの演出用）
+        int                               m_rowHovered = -1;            // 場の列でカーソルが重なっているカード
         std::mt19937                      m_rng;                        // 捨て札のずれ用の乱数
     };
 

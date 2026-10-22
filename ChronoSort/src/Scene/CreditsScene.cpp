@@ -1,0 +1,197 @@
+//----------------------------------------------------------------------------
+//! @file   CreditsScene.cpp
+//! @brief  出典・クレジット画面の実装
+//----------------------------------------------------------------------------
+#include <ChronoSort/Scene/CreditsScene.hpp>
+
+#include <ChronoSort/Game/Sounds.hpp>
+#include <ChronoSort/Scene/TitleScene.hpp>
+#include <ChronoSort/Util/TextUtil.hpp>
+
+#include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
+#include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
+#include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
+#include <Tsukino/Core/Input/InputSystem.hpp>
+#include <Tsukino/Core/Log.hpp>
+#include <Tsukino/EngineIntegration/EngineAPI.hpp>
+#include <Tsukino/EngineIntegration/EngineContext.hpp>
+
+#include <cereal/archives/json.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/vector.hpp>
+
+#include <algorithm>
+#include <fstream>
+
+namespace ChronoSort::Scene {
+
+    namespace {
+        namespace BuiltIn = Tsukino::BuiltIn::ECS;
+
+        constexpr int   kLinesPerPage = 15;
+        constexpr int   kLayerSheet   = 30;
+        constexpr float kLineHeight   = 37.0f;
+
+        //! Credits.json の1件分です。
+        struct CreditEntry {
+            std::string id;
+            std::string title;
+            std::string file;
+            std::string page;
+            std::string artist;
+            std::string license;
+            std::string licenseUrl;
+
+            template <class Archive>
+            void serialize(Archive& archive) {
+                archive(cereal::make_nvp("id", id), cereal::make_nvp("title", title), cereal::make_nvp("file", file), cereal::make_nvp("page", page),
+                        cereal::make_nvp("artist", artist), cereal::make_nvp("license", license), cereal::make_nvp("licenseUrl", licenseUrl));
+            }
+        };
+    }    // namespace
+
+    //----------------------------------------------------------------------------
+    //! シーンを初期化します。
+    //----------------------------------------------------------------------------
+    void CreditsScene::OnInitialize(Tsukino::EngineIntegration::EngineAPI&) {
+        auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
+        m_stage.Build(m_scene, 8);
+        m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
+        LoadLines();
+        m_pageCount = std::max(1, static_cast<int>((m_lines.size() + kLinesPerPage - 1) / kLinesPerPage));
+
+        UI::PaperSpec sheet;
+        sheet.texture      = "scrap_tall.png";
+        sheet.center       = hlslpp::float2(760.0f, 452.0f);
+        sheet.size         = hlslpp::float2(820.0f, 840.0f);
+        sheet.angleDegrees = -1.2f;
+        sheet.swayDegrees  = 0.25f;
+        sheet.sortOrder    = kLayerSheet;
+        m_sheet            = m_ui->Paper(sheet);
+        m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 900.0f), 0.1f, 0.6f);
+        m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -362.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
+        m_pageNo = m_ui->Text(L"", hlslpp::float2(0.0f, 380.0f), 0.5f, UI::kFadedInkColor, kLayerSheet + 1, m_sheet);
+
+        auto button = [&](const std::wstring& text, const hlslpp::float2& at, float angle) {
+            UI::PaperSpec spec;
+            spec.texture      = "scrap_note.png";
+            spec.center       = at;
+            spec.size         = hlslpp::float2(200.0f, 70.0f);
+            spec.angleDegrees = angle;
+            spec.sortOrder    = kLayerSheet + 10;
+            const auto paper  = m_ui->Paper(spec);
+            m_ui->Text(text, hlslpp::float2(6.0f, 2.0f), 0.72f, UI::kInkColor, kLayerSheet + 11, paper);
+            m_ui->MakeButton(paper);
+            m_ui->SlideIn(paper, hlslpp::float2(260.0f, 0.0f), 0.5f);
+            return paper;
+        };
+        m_next = button(L"次の頁", hlslpp::float2(1340.0f, 520.0f), 4.0f);
+        m_prev = button(L"前の頁", hlslpp::float2(1310.0f, 640.0f), -3.0f);
+        m_back = button(L"机に戻る", hlslpp::float2(1360.0f, 790.0f), 2.0f);
+        ShowPage(0, 0);
+    }
+
+    //----------------------------------------------------------------------------
+    //! Credits.json などから表示する行を作ります。
+    //----------------------------------------------------------------------------
+    void CreditsScene::LoadLines() {
+        std::vector<CreditEntry> images;
+        std::vector<CreditEntry> audio;
+        std::ifstream            is("ChronoSort/Assets/Data/Credits.json");
+        if(is) {
+            try {
+                cereal::JSONInputArchive archive(is);
+                archive(cereal::make_nvp("images", images), cereal::make_nvp("audio", audio));
+            } catch(const std::exception& e) {
+                Tsukino::Core::Log::Warn(std::string("Failed to read Credits.json: ") + e.what());
+            }
+        }
+
+        m_lines.push_back({L"制作", true});
+        m_lines.push_back({L"ゲームエンジン  TsukinoEngine"});
+        m_lines.push_back({L"ルール  ボードゲーム『Timeline』（Asmodee）に準拠"});
+        m_lines.push_back({L"文字  Noto Sans CJK JP / Noto Serif JP（SIL Open Font License 1.1）"});
+        m_lines.push_back({L"効果音  このゲームのためにコードで合成"});
+        m_lines.push_back({L"年号は一般的な教科書の表記に従っています", false, true});
+
+        if(!audio.empty()) {
+            m_lines.push_back({L"", false});
+            m_lines.push_back({L"音楽", true});
+            for(const CreditEntry& entry : audio) {
+                m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
+                m_lines.push_back({Util::Utf8ToWide("演奏 " + entry.artist + " / " + entry.file), false, true});
+            }
+        }
+
+        m_lines.push_back({L"", false});
+        m_lines.push_back({L"カードの絵（Wikimedia Commons）", true});
+        for(const CreditEntry& entry : images) {
+            m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
+            m_lines.push_back({Util::Utf8ToWide(entry.artist + " / " + entry.file), false, true});
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 指定した頁を表示します。
+    //----------------------------------------------------------------------------
+    void CreditsScene::ShowPage(int page, int direction) {
+        m_current = std::clamp(page, 0, m_pageCount - 1);
+
+        // 新しい頁は、めくる向きの反対側から滑り込ませる
+        if(m_page != entt::null) {
+            m_ui->Destroy(m_page);
+        }
+        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
+        m_page                           = m_scene.CreateEntity();
+        auto& transform                  = registry.AddComponent<BuiltIn::TransformComponent>(m_page);
+        transform.parent                 = m_sheet;
+
+        const size_t first = static_cast<size_t>(m_current) * kLinesPerPage;
+        for(size_t i = first; i < std::min(m_lines.size(), first + kLinesPerPage); ++i) {
+            const Line& line = m_lines[i];
+            const float y    = -300.0f + static_cast<float>(i - first) * kLineHeight;
+            const float size = line.heading ? 0.7f : (line.faded ? 0.42f : 0.52f);
+            const auto  color = line.heading ? UI::kSealRedColor : (line.faded ? UI::kFadedInkColor : UI::kInkColor);
+            const auto  text = m_ui->Text(line.text, hlslpp::float2(line.faded ? -322.0f : -340.0f, y), size, color, kLayerSheet + 2, m_page, false);
+            // 長い作者名やファイル名は、紙からはみ出さないよう縮める
+            registry.GetComponent<BuiltIn::FontComponent>(text).maxWidth = 680.0f;
+        }
+        if(direction != 0) {
+            m_ui->SlideIn(m_page, hlslpp::float2(220.0f * static_cast<float>(direction), 0.0f), 0.0f, 0.35f);
+        }
+        m_ui->SetText(m_pageNo, std::to_wstring(m_current + 1) + L" / " + std::to_wstring(m_pageCount));
+    }
+
+    //----------------------------------------------------------------------------
+    //! シーンを更新します。
+    //----------------------------------------------------------------------------
+    void CreditsScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
+        auto*            context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
+        Game::SoundBank& sounds  = Game::Sounds(*context);
+        auto&            input   = *context->inputSystem;
+        m_stage.Update(deltaTime);
+
+        const bool next = m_ui->Clicked(m_next) || input.IsKeyPressed(Tsukino::Input::KeyCode::Right) || input.GetWheelDelta() < 0.0f;
+        const bool prev = m_ui->Clicked(m_prev) || input.IsKeyPressed(Tsukino::Input::KeyCode::Left) || input.GetWheelDelta() > 0.0f;
+        if(next && m_current + 1 < m_pageCount) {
+            sounds.Play("page", 0.7f);
+            ShowPage(m_current + 1, 1);
+        } else if(prev && m_current > 0) {
+            sounds.Play("page", 0.7f);
+            ShowPage(m_current - 1, -1);
+        }
+        if(m_ui->Clicked(m_back) || input.IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
+            sounds.Play("button");
+            api.ChangeScene(std::make_unique<TitleScene>());
+            return;
+        }
+        m_scene.Update(deltaTime);
+    }
+
+    //----------------------------------------------------------------------------
+    //! シーンの終了処理を行います。
+    //----------------------------------------------------------------------------
+    void CreditsScene::OnExit() {
+    }
+
+}    // namespace ChronoSort::Scene

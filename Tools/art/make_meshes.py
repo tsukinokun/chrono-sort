@@ -21,8 +21,8 @@ CARD_WIDTH = 64.0       # カード幅（512px の面に対応）
 CARD_HEIGHT = 96.0      # カード高さ（768px の面に対応）
 CARD_THICKNESS = 0.6    # 表と裏の間隔
 
-TABLE_WIDTH = 1600.0
-TABLE_DEPTH = 1000.0
+TABLE_WIDTH = 3600.0
+TABLE_DEPTH = 2400.0
 
 
 def quad_up(y, half_w, half_d, flip_u=False):

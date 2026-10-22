@@ -29,8 +29,11 @@ BOARD_DIR = ROOT / "ChronoSort" / "Assets" / "Textures" / "Board"
 # .tmat に書くパスはワークスペースルートからの相対
 ASSET_PREFIX = "ChronoSort/Assets/Textures"
 FONT_PATH = ROOT / "External" / "TsukinoEngine" / "Tsukino.BuiltIn" / "Assets" / "Fonts" / "NotoSansCJKjp-Regular.otf"
+# 見出し（出来事名・年号）は明朝で。OS 同梱の Noto Serif JP（OFL）を画像に焼き込むだけなので配布物には含まれない
+SERIF_PATH = Path("C:/Windows/Fonts/NotoSerifJP-VF.ttf")
 
 W, H = 512, 768
+SAVE_SIZE = (384, 576)
 CORNER = 28
 ART_BOX = (32, 32, W - 32, 500)
 TITLE_BOX = (32, 512, W - 32, 640)
@@ -52,12 +55,24 @@ def font(size):
     return ImageFont.truetype(str(FONT_PATH), size)
 
 
-def fit_text(draw, text, box, max_size, min_size=20):
+def serif(size, weight="SemiBold"):
+    if not SERIF_PATH.exists():
+        return font(size)
+    f = ImageFont.truetype(str(SERIF_PATH), size)
+    try:
+        f.set_variation_by_name(weight)
+    except Exception:
+        pass
+    return f
+
+
+def fit_text(draw, text, box, max_size, min_size=20, face=None):
     """box に収まる最大の文字サイズを探し、必要なら2行に折り返す。"""
+    face = face or serif
     width = box[2] - box[0]
     height = box[3] - box[1]
     for size in range(max_size, min_size - 1, -2):
-        f = font(size)
+        f = face(size)
         if draw.textlength(text, font=f) <= width:
             return [text], f
         # 2行に分けて収まるか（文字数で半分に割る。日本語は単語区切りが無いため）
@@ -65,7 +80,7 @@ def fit_text(draw, text, box, max_size, min_size=20):
         lines = [text[:half], text[half:]]
         if max(draw.textlength(l, font=f) for l in lines) <= width and size * 2.3 <= height:
             return lines, f
-    return [text], font(min_size)
+    return [text], face(min_size)
 
 
 def draw_centered(draw, lines, f, box, fill):
@@ -99,10 +114,15 @@ def load_art(card, size):
     for ext in (".png", ".jpg", ".jpeg"):
         path = RAW_DIR / f"{card['id']}{ext}"
         if path.exists():
-            art = ImageOps.fit(Image.open(path).convert("RGB"), size, Image.LANCZOS)
+            art = ImageOps.fit(Image.open(path).convert("RGB"), size, Image.LANCZOS, centering=(0.5, 0.42))
             # 出どころの違う絵の色調を揃えるため、軽いセピアを掛ける
             sepia = ImageOps.colorize(ImageOps.grayscale(art), (40, 26, 16), (250, 236, 210))
-            return Image.blend(art, sepia, 0.45)
+            art = Image.blend(art, sepia, 0.38)
+            # 縁を少し暗くして、古い図版のように見せる
+            shade = Image.new("L", size, 0)
+            ImageDraw.Draw(shade).ellipse((-size[0] * 0.25, -size[1] * 0.25, size[0] * 1.25, size[1] * 1.25), fill=255)
+            shade = shade.filter(ImageFilter.GaussianBlur(40))
+            return Image.composite(art, Image.new("RGB", size, (40, 26, 18)), shade.point(lambda v: 90 + v * 165 // 255))
     return placeholder_art(card, size)
 
 
@@ -123,13 +143,19 @@ def bake_face(card, art, reveal):
     img.paste(art, ART_BOX[:2])
     draw.rectangle(ART_BOX, outline=FRAME, width=3)
 
+    # 地域の札（絵の左上）。日本史は朱、世界史は藍
+    tab_color = (168, 40, 36) if card["region"] == "JP" else (36, 70, 120)
+    tab_text = "日本" if card["region"] == "JP" else "世界"
+    draw.polygon([(ART_BOX[0] + 14, ART_BOX[1]), (ART_BOX[0] + 78, ART_BOX[1]), (ART_BOX[0] + 78, ART_BOX[1] + 70), (ART_BOX[0] + 46, ART_BOX[1] + 56), (ART_BOX[0] + 14, ART_BOX[1] + 70)], fill=tab_color)
+    draw.text((ART_BOX[0] + 46, ART_BOX[1] + 26), tab_text, font=serif(22, "Bold"), fill=(250, 236, 210), anchor="mm")
+
     lines, f = fit_text(draw, card["title"], TITLE_BOX, 56)
     draw_centered(draw, lines, f, TITLE_BOX, INK)
 
     # 年号の札。表では伏せ、裏で明かす
     draw.rounded_rectangle(YEAR_BOX, 14, fill=FRAME if reveal else (205, 190, 160), outline=GOLD, width=3)
     label = card["yearLabel"] if reveal else "？？？？"
-    lines, f = fit_text(draw, label, (YEAR_BOX[0] + 12, YEAR_BOX[1], YEAR_BOX[2] - 12, YEAR_BOX[3]), 50)
+    lines, f = fit_text(draw, label, (YEAR_BOX[0] + 12, YEAR_BOX[1], YEAR_BOX[2] - 12, YEAR_BOX[3]), 50, face=lambda n: serif(n, "Bold"))
     draw_centered(draw, lines, f, YEAR_BOX, (250, 226, 160) if reveal else FRAME)
 
     draw.text((W / 2, H - 20), card["category"], font=font(18), fill=GOLD, anchor="md")
@@ -223,7 +249,11 @@ def main():
             art = load_art(card, art_size)
             for face, reveal in (("front", False), ("back", True)):
                 name = f"{card['id']}_{face}"
-                bake_face(card, art, reveal).save(OUT_DIR / f"{name}.png")
+                # 描くのは 512x768 で、保存は 3/4 に縮めて 256 色に減色する。
+                # セピア寄りの絵は減色してもほぼ見分けがつかず、容量は 1/4 ほどになる（リポジトリが重くならないように）
+                face = bake_face(card, art, reveal).resize(SAVE_SIZE, Image.LANCZOS)
+                face = face.quantize(256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.FLOYDSTEINBERG)
+                face.save(OUT_DIR / f"{name}.png", optimize=True)
                 write_tmat(OUT_DIR / f"{name}.tmat", f"{ASSET_PREFIX}/Cards/{name}.png")
             count += 1
     bake_table()

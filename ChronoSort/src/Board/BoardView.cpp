@@ -119,6 +119,12 @@ namespace ChronoSort::Board {
             const float              yaw      = StableJitter(entity, 1) * 0.06f;
             const hlslpp::quaternion rotation = hlslpp::mul(hlslpp::quaternion::rotation_y(yaw), RevealedRotation());
             const float              z        = kRowZ + StableJitter(entity, 2) * 6.0f;
+            if(static_cast<int>(i) == m_rowHovered) {
+                // 指したカードは手前に起こして大きくし、年号を読みやすくする
+                const hlslpp::quaternion lift = hlslpp::mul(hlslpp::quaternion::rotation_x(-0.55f), RevealedRotation());
+                ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(RowCardX(i), 60.0f, z - 60.0f), lift, 1.6f);
+                continue;
+            }
             ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(RowCardX(i), kTableSurfaceY, z), rotation);
         }
 
@@ -280,17 +286,22 @@ namespace ChronoSort::Board {
     //! レイが当たる場のカードを探します。
     //----------------------------------------------------------------------------
     int BoardView::PickRowCard(const Tsukino::BuiltIn::ECS::CameraUtility::Ray& ray) const {
-        Tsukino::ECS::Registry& registry = m_factory.Registry();
+        Tsukino::ECS::Registry& registry     = m_factory.Registry();
+        int                     best         = -1;
+        float                   bestDistance = 1e30f;
         for(size_t i = 0; i < m_row.size(); ++i) {
             const auto&    transform = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_row[i]);
             float          distance  = 0.0f;
             hlslpp::float2 hit;
+            // 起こしたカードが隣に重なるので、いちばん手前を選ぶ
             if(Tsukino::BuiltIn::ECS::CameraUtility::IntersectRect(ray, transform.worldMatrix, hlslpp::float3(1.0f, 0.0f, 0.0f), hlslpp::float3(0.0f, 0.0f, 1.0f),
-                                                                   hlslpp::float2(kCardWidth, kCardHeight), distance, hit)) {
-                return static_cast<int>(i);
+                                                                   hlslpp::float2(kCardWidth, kCardHeight), distance, hit) &&
+               distance < bestDistance) {
+                bestDistance = distance;
+                best         = static_cast<int>(i);
             }
         }
-        return -1;
+        return best;
     }
 
     //----------------------------------------------------------------------------

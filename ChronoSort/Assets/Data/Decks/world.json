@@ -2,13 +2,64 @@
     "deck": "world",
     "cards": [
         {
+            "id": "first_olympiad",
+            "title": "第1回古代オリンピック",
+            "year": -776,
+            "yearLabel": "紀元前776年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Olympia stadium ancient"
+        },
+        {
             "id": "marathon",
             "title": "マラトンの戦い",
             "year": -490,
             "yearLabel": "紀元前490年",
             "region": "WORLD",
             "category": "戦争",
-            "art": ""
+            "art": "",
+            "artQuery": "Battle of Marathon painting"
+        },
+        {
+            "id": "thermopylae",
+            "title": "テルモピュライの戦い",
+            "year": -480,
+            "yearLabel": "紀元前480年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Leonidas at Thermopylae David"
+        },
+        {
+            "id": "salamis",
+            "title": "サラミスの海戦",
+            "year": -480,
+            "yearLabel": "紀元前480年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Salamis Kaulbach"
+        },
+        {
+            "id": "death_of_socrates",
+            "title": "ソクラテスの死",
+            "year": -399,
+            "yearLabel": "紀元前399年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "The Death of Socrates David"
+        },
+        {
+            "id": "alexander_east",
+            "title": "アレクサンドロスの東方遠征",
+            "year": -334,
+            "yearLabel": "紀元前334年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Alexander Mosaic"
         },
         {
             "id": "qin_unification",
@@ -17,7 +68,28 @@
             "yearLabel": "紀元前221年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Qin Shi Huang portrait"
+        },
+        {
+            "id": "cannae",
+            "title": "カンネーの戦い",
+            "year": -216,
+            "yearLabel": "紀元前216年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Hannibal Barca bust"
+        },
+        {
+            "id": "fall_of_carthage",
+            "title": "カルタゴの滅亡",
+            "year": -146,
+            "yearLabel": "紀元前146年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Scipio Aemilianus ruins of Carthage"
         },
         {
             "id": "caesar_assassination",
@@ -26,16 +98,108 @@
             "yearLabel": "紀元前44年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Death of Caesar Camuccini"
+        },
+        {
+            "id": "actium",
+            "title": "アクティウムの海戦",
+            "year": -31,
+            "yearLabel": "紀元前31年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Actium painting"
+        },
+        {
+            "id": "vesuvius",
+            "title": "ヴェスヴィオ火山の噴火",
+            "year": 79,
+            "yearLabel": "79年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Last Day of Pompeii Bryullov"
+        },
+        {
+            "id": "red_cliffs",
+            "title": "赤壁の戦い",
+            "year": 208,
+            "yearLabel": "208年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Red Cliff Qiao Zhongchang"
+        },
+        {
+            "id": "edict_of_milan",
+            "title": "ミラノ勅令",
+            "year": 313,
+            "yearLabel": "313年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Constantine the Great"
+        },
+        {
+            "id": "nicaea",
+            "title": "ニカイア公会議",
+            "year": 325,
+            "yearLabel": "325年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "First Council of Nicaea icon"
+        },
+        {
+            "id": "rome_division",
+            "title": "ローマ帝国の東西分裂",
+            "year": 395,
+            "yearLabel": "395年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Theodosius I"
         },
         {
             "id": "fall_of_western_rome",
-            "title": "西ローマ帝国滅亡",
+            "title": "西ローマ帝国の滅亡",
             "year": 476,
             "yearLabel": "476年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Romulus Augustulus"
+        },
+        {
+            "id": "hijra",
+            "title": "ヒジュラ（聖遷）",
+            "year": 622,
+            "yearLabel": "622年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Prophet's Mosque Medina 19th century"
+        },
+        {
+            "id": "tours",
+            "title": "トゥール・ポワティエ間の戦い",
+            "year": 732,
+            "yearLabel": "732年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Poitiers Steuben"
+        },
+        {
+            "id": "charlemagne",
+            "title": "カール大帝の戴冠",
+            "year": 800,
+            "yearLabel": "800年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Coronation of Charlemagne"
         },
         {
             "id": "treaty_of_verdun",
@@ -44,7 +208,48 @@
             "yearLabel": "843年",
             "region": "WORLD",
             "category": "外交",
-            "art": ""
+            "art": "",
+            "artQuery": "Treaty of Verdun map"
+        },
+        {
+            "id": "otto_coronation",
+            "title": "オットー1世の戴冠",
+            "year": 962,
+            "yearLabel": "962年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Otto I Holy Roman Emperor"
+        },
+        {
+            "id": "hastings",
+            "title": "ヘイスティングズの戦い",
+            "year": 1066,
+            "yearLabel": "1066年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Bayeux Tapestry"
+        },
+        {
+            "id": "first_crusade",
+            "title": "第1回十字軍",
+            "year": 1096,
+            "yearLabel": "1096年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "First Crusade Siege of Jerusalem"
+        },
+        {
+            "id": "genghis_khan",
+            "title": "チンギス・カンの即位",
+            "year": 1206,
+            "yearLabel": "1206年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Genghis Khan portrait"
         },
         {
             "id": "magna_carta",
@@ -53,16 +258,48 @@
             "yearLabel": "1215年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Magna Carta"
+        },
+        {
+            "id": "hundred_years_war",
+            "title": "百年戦争の開戦",
+            "year": 1337,
+            "yearLabel": "1337年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Crecy"
+        },
+        {
+            "id": "ming_founding",
+            "title": "明の建国",
+            "year": 1368,
+            "yearLabel": "1368年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hongwu Emperor portrait"
         },
         {
             "id": "fall_of_constantinople",
-            "title": "コンスタンティノープル陥落",
+            "title": "コンスタンティノープルの陥落",
             "year": 1453,
             "yearLabel": "1453年",
             "region": "WORLD",
             "category": "戦争",
-            "art": ""
+            "art": "",
+            "artQuery": "Fall of Constantinople painting"
+        },
+        {
+            "id": "granada",
+            "title": "グラナダの陥落",
+            "year": 1492,
+            "yearLabel": "1492年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Capitulation of Granada Pradilla"
         },
         {
             "id": "columbus",
@@ -71,7 +308,18 @@
             "yearLabel": "1492年",
             "region": "WORLD",
             "category": "探検",
-            "art": ""
+            "art": "",
+            "artQuery": "Landing of Columbus"
+        },
+        {
+            "id": "vasco_da_gama",
+            "title": "ヴァスコ・ダ・ガマのインド到達",
+            "year": 1498,
+            "yearLabel": "1498年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Vasco da Gama portrait"
         },
         {
             "id": "ninety_five_theses",
@@ -80,7 +328,98 @@
             "yearLabel": "1517年",
             "region": "WORLD",
             "category": "宗教",
-            "art": ""
+            "art": "",
+            "artQuery": "Luther 95 theses"
+        },
+        {
+            "id": "magellan",
+            "title": "マゼランの世界周航への出発",
+            "year": 1519,
+            "yearLabel": "1519年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Ferdinand Magellan"
+        },
+        {
+            "id": "aztec_fall",
+            "title": "アステカ帝国の滅亡",
+            "year": 1521,
+            "yearLabel": "1521年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Fall of Tenochtitlan"
+        },
+        {
+            "id": "armada",
+            "title": "アルマダの海戦",
+            "year": 1588,
+            "yearLabel": "1588年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Spanish Armada painting"
+        },
+        {
+            "id": "east_india_company",
+            "title": "イギリス東インド会社の設立",
+            "year": 1600,
+            "yearLabel": "1600年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "East India House"
+        },
+        {
+            "id": "thirty_years_war",
+            "title": "三十年戦争の開戦",
+            "year": 1618,
+            "yearLabel": "1618年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Defenestration of Prague"
+        },
+        {
+            "id": "mayflower",
+            "title": "メイフラワー号の航海",
+            "year": 1620,
+            "yearLabel": "1620年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Mayflower Plymouth Harbor"
+        },
+        {
+            "id": "westphalia",
+            "title": "ウェストファリア条約",
+            "year": 1648,
+            "yearLabel": "1648年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Ratification of the Treaty of Munster"
+        },
+        {
+            "id": "principia",
+            "title": "ニュートン『プリンキピア』",
+            "year": 1687,
+            "yearLabel": "1687年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Newton Principia title page"
+        },
+        {
+            "id": "glorious_revolution",
+            "title": "名誉革命",
+            "year": 1688,
+            "yearLabel": "1688年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "William III landing at Brixham"
         },
         {
             "id": "us_independence",
@@ -89,7 +428,8 @@
             "yearLabel": "1776年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Declaration of Independence Trumbull"
         },
         {
             "id": "bastille",
@@ -98,7 +438,38 @@
             "yearLabel": "1789年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Storming of the Bastille"
+        },
+        {
+            "id": "napoleon_emperor",
+            "title": "ナポレオンの皇帝即位",
+            "year": 1804,
+            "yearLabel": "1804年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Coronation of Napoleon David"
+        },
+        {
+            "id": "trafalgar",
+            "title": "トラファルガーの海戦",
+            "year": 1805,
+            "yearLabel": "1805年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Trafalgar Turner"
+        },
+        {
+            "id": "russian_campaign",
+            "title": "ナポレオンのロシア遠征",
+            "year": 1812,
+            "yearLabel": "1812年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Napoleon retreat from Moscow"
         },
         {
             "id": "waterloo",
@@ -107,7 +478,108 @@
             "yearLabel": "1815年",
             "region": "WORLD",
             "category": "戦争",
-            "art": ""
+            "art": "",
+            "artQuery": "Battle of Waterloo painting"
+        },
+        {
+            "id": "opium_war",
+            "title": "アヘン戦争の開戦",
+            "year": 1840,
+            "yearLabel": "1840年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "First Opium War Nemesis"
+        },
+        {
+            "id": "origin_of_species",
+            "title": "『種の起源』の出版",
+            "year": 1859,
+            "yearLabel": "1859年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "On the Origin of Species title page"
+        },
+        {
+            "id": "us_civil_war",
+            "title": "南北戦争の開戦",
+            "year": 1861,
+            "yearLabel": "1861年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Bombardment of Fort Sumter"
+        },
+        {
+            "id": "gettysburg_address",
+            "title": "ゲティスバーグ演説",
+            "year": 1863,
+            "yearLabel": "1863年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Abraham Lincoln 1863"
+        },
+        {
+            "id": "suez_canal",
+            "title": "スエズ運河の開通",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Suez Canal inauguration 1869"
+        },
+        {
+            "id": "german_empire",
+            "title": "ドイツ帝国の成立",
+            "year": 1871,
+            "yearLabel": "1871年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Proclamation of the German Empire Werner"
+        },
+        {
+            "id": "telephone",
+            "title": "ベルの電話の特許",
+            "year": 1876,
+            "yearLabel": "1876年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Alexander Graham Bell telephone"
+        },
+        {
+            "id": "eiffel_tower",
+            "title": "エッフェル塔の完成",
+            "year": 1889,
+            "yearLabel": "1889年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Eiffel Tower 1889"
+        },
+        {
+            "id": "wright_brothers",
+            "title": "ライト兄弟の初飛行",
+            "year": 1903,
+            "yearLabel": "1903年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Wright Flyer first flight 1903"
+        },
+        {
+            "id": "titanic",
+            "title": "タイタニック号の沈没",
+            "year": 1912,
+            "yearLabel": "1912年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "RMS Titanic"
         },
         {
             "id": "ww1_outbreak",
@@ -116,7 +588,88 @@
             "yearLabel": "1914年",
             "region": "WORLD",
             "category": "戦争",
-            "art": ""
+            "art": "",
+            "artQuery": "World War I trenches"
+        },
+        {
+            "id": "russian_revolution",
+            "title": "ロシア革命",
+            "year": 1917,
+            "yearLabel": "1917年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "October Revolution 1917"
+        },
+        {
+            "id": "penicillin",
+            "title": "ペニシリンの発見",
+            "year": 1928,
+            "yearLabel": "1928年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Alexander Fleming"
+        },
+        {
+            "id": "great_depression",
+            "title": "世界恐慌の始まり",
+            "year": 1929,
+            "yearLabel": "1929年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Wall Street crowd 1929 crash"
+        },
+        {
+            "id": "ww2_outbreak",
+            "title": "第二次世界大戦の開戦",
+            "year": 1939,
+            "yearLabel": "1939年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Schleswig-Holstein Westerplatte 1939"
+        },
+        {
+            "id": "united_nations",
+            "title": "国際連合の発足",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "United Nations Charter signing 1945"
+        },
+        {
+            "id": "prc_founding",
+            "title": "中華人民共和国の成立",
+            "year": 1949,
+            "yearLabel": "1949年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Founding ceremony of the People's Republic of China 1949"
+        },
+        {
+            "id": "sputnik",
+            "title": "スプートニク1号の打ち上げ",
+            "year": 1957,
+            "yearLabel": "1957年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Sputnik 1"
+        },
+        {
+            "id": "cuban_missile",
+            "title": "キューバ危機",
+            "year": 1962,
+            "yearLabel": "1962年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Cuban Missile Crisis"
         },
         {
             "id": "apollo11",
@@ -125,16 +678,78 @@
             "yearLabel": "1969年",
             "region": "WORLD",
             "category": "科学",
-            "art": ""
+            "art": "",
+            "artQuery": "Aldrin Apollo 11"
         },
         {
             "id": "berlin_wall_fall",
-            "title": "ベルリンの壁崩壊",
+            "title": "ベルリンの壁の崩壊",
             "year": 1989,
             "yearLabel": "1989年",
             "region": "WORLD",
             "category": "政治",
-            "art": ""
+            "art": "",
+            "artQuery": "Berlin Wall 1989"
+        },
+        {
+            "id": "ussr_dissolution",
+            "title": "ソビエト連邦の崩壊",
+            "year": 1991,
+            "yearLabel": "1991年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Belavezha Accords signing"
+        },
+        {
+            "id": "joan_orleans",
+            "title": "ジャンヌ・ダルクのオルレアン解放",
+            "year": 1429,
+            "yearLabel": "1429年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Joan of Arc at the Siege of Orleans Lenepveu"
+        },
+        {
+            "id": "copernicus",
+            "title": "コペルニクス『天球回転論』",
+            "year": 1543,
+            "yearLabel": "1543年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Copernicus heliocentric diagram De revolutionibus"
+        },
+        {
+            "id": "galileo_moons",
+            "title": "ガリレオが木星の衛星を発見",
+            "year": 1610,
+            "yearLabel": "1610年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Galileo Sidereus Nuncius"
+        },
+        {
+            "id": "versailles",
+            "title": "ヴェルサイユ条約",
+            "year": 1919,
+            "yearLabel": "1919年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Signing of Peace in the Hall of Mirrors Orpen"
+        },
+        {
+            "id": "german_reunification",
+            "title": "東西ドイツの統一",
+            "year": 1990,
+            "yearLabel": "1990年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Brandenburg Gate 3 October 1990"
         }
     ]
 }

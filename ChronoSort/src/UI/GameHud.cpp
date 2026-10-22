@@ -16,6 +16,9 @@
 
 #include <algorithm>
 #include <cmath>
+#include <filesystem>
+#include <iterator>
+#include <string>
 
 namespace ChronoSort::UI {
 
@@ -33,7 +36,7 @@ namespace ChronoSort::UI {
         constexpr int kLayerResult   = 80;
 
         // ライフのインク壺の置き方（わざと揃えない）
-        const hlslpp::float2 kInkPositions[] = {{78.0f, 252.0f}, {142.0f, 266.0f}, {200.0f, 246.0f}};
+        const hlslpp::float2 kInkPositions[] = {{262.0f, 150.0f}, {322.0f, 163.0f}, {378.0f, 146.0f}};
         const float          kInkAngles[]    = {-7.0f, 5.0f, -2.0f};
 
         //! 数字を全角にせず、そのままワイド文字列にします。
@@ -190,8 +193,13 @@ namespace ChronoSort::UI {
                 anchor.worldOffset           = hlslpp::float3(0.0f, 0.0f, -70.0f);
                 anchor.screenOffset          = hlslpp::float2(0.0f, 30.0f);
 
+                // 歴史家の肖像（取得できていなければ影絵）
+                static const char* const kPortraits[] = {"portrait_herodotus.png", "portrait_sima_qian.png", "portrait_gibbon.png"};
+                const std::string portrait = (i - 1 < std::size(kPortraits)) ? kPortraits[i - 1] : "";
+                const bool        hasFace  = !portrait.empty() && std::filesystem::exists("ChronoSort/Assets/Textures/UI/" + portrait);
+
                 PaperSpec face;
-                face.texture     = "silhouette.png";
+                face.texture     = hasFace ? portrait : "silhouette.png";
                 face.center      = hlslpp::float2(0.0f, -13.0f);
                 face.size        = hlslpp::float2(70.0f, 72.0f);
                 face.swayDegrees = 0.0f;
@@ -481,7 +489,7 @@ namespace ChronoSort::UI {
             if(m_streakTag == entt::null) {
                 PaperSpec spec;
                 spec.texture      = "scrap_note.png";
-                spec.center       = hlslpp::float2(258.0f, 168.0f);
+                spec.center       = hlslpp::float2(150.0f, 236.0f);
                 spec.size         = hlslpp::float2(160.0f, 54.0f);
                 spec.angleDegrees = -5.0f;
                 spec.sortOrder    = kLayerDesk + 4;
@@ -531,6 +539,18 @@ namespace ChronoSort::UI {
             m_ui.Text(Number(placed) + L" 枚", hlslpp::float2(-20.0f, -40.0f), 0.9f, kInkColor, layer, m_result, false);
             m_ui.Text(L"最長の連続", hlslpp::float2(-240.0f, 20.0f), 0.7f, kFadedInkColor, layer, m_result, false);
             m_ui.Text(Number(m_match.BestStreak()) + L" 連続", hlslpp::float2(-20.0f, 20.0f), 0.9f, kInkColor, layer, m_result, false);
+            if(m_newRecord) {
+                const auto badge = m_ui.Text(L"新記録", hlslpp::float2(-150.0f, -152.0f), 0.8f, kSealRedColor, layer + 1, m_result);
+                BuiltIn::UITween blink;
+                blink.property = BuiltIn::UITweenProperty::Scale;
+                blink.from     = 0.92f;
+                blink.to       = 1.12f;
+                blink.duration = 0.5f;
+                blink.ease     = EaseType::InOutSine;
+                blink.loop     = BuiltIn::UITweenLoop::PingPong;
+                blink.tag      = 52;
+                BuiltIn::UITweenUtility::Play(m_scene.GetRegistry(), badge, blink);
+            }
             if(m_match.Outcome() == Rules::MatchOutcome::SoloCleared || placed >= 30) {
                 rank = L"S";
             } else if(placed >= 20) {

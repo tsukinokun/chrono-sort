@@ -26,7 +26,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `Effects/` | `ParticleEmitter`（砂埃・金の火花・墨の飛沫などの撒き方） |
 | `Game/` | `Sequencer`（時間差の段取り）、`SoundBank` / `Sounds()`（効果音と BGM。ファイルが無ければ無音） |
 | `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙） |
-| `Scene/` | `TitleScene`、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え） |
+| `Scene/` | `TitleScene`（メニューと対戦の支度）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
+| `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存 |
 
 ### 対局画面の流れ
 
@@ -46,6 +47,8 @@ bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用�
 ```
 
 - 作業ディレクトリはワークスペースルート（Debug）。ログは `Logs/ChronoSort.log`。
+- Debug ビルドでは対局中に **F8** で人間の手番を CPU（やさしい）が代わりに打つ。最後まで通しで確かめるときに使う。
+- 自動操作でクリックを送るときは、押してから離すまで 200ms 以上空ける（Debug はフレームが遅く、短いクリックを取りこぼす）。
 - Debug 起動時に `Rules::RunSelfTest()` が走り、`[RulesSelfTest] All tests passed.` がログに出る。
   ルールを変えたら必ずここにテストを足す。
 - `build.bat` は毎回 premake を回すので、ソースを追加しても再生成は不要。
@@ -58,6 +61,21 @@ python Tools/art/bake_cards.py    デッキ JSON → カード面 PNG と .tmat�
 python Tools/art/make_ui.py       画面 UI の素材（紙片・封蝋・インク壺・朱印・リボンなど）
 python Tools/art/make_fx.py       粒子のテクスチャ
 ```
+
+カードを増やす・直すときは `Tools/art/card_list.py` を編集し、次の順に流す:
+
+```
+python Tools/art/card_list.py         デッキ JSON（年号・検索語）を書き出す
+python Tools/art/fetch_art.py         Commons から絵を取得し Credits.json に出典を記録（--only id1,id2 で取り直し）
+python Tools/art/contact_sheet.py X   取得した絵の一覧を X に出して目で確かめる。外れは card_list.py の file で差し替え
+python Tools/art/bake_cards.py        カード面を焼き直す
+python Tools/art/fetch_portraits.py   CPU の名札の肖像
+python Tools/audio/synth_sfx.py       効果音を合成
+python Tools/audio/fetch_bgm.py       BGM（PD/CC0 の演奏）を取得して mp3 に（ffmpeg が要る）
+```
+
+画像のライセンスは PD / CC0 / CC BY のみ（BY-SA・NC・ND は fetch_art.py が弾く）。Commons は連続で叩くと 429 を返すので、
+スクリプトは間隔を空けて Retry-After に従う。
 
 テクスチャを作り直したのに見た目が変わらないときは `Cache/ChronoSort/` を消す
 （キャッシュはソースの更新日時でしか作り直されない）。

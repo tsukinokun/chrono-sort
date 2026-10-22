@@ -8,6 +8,7 @@
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
+#include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
 #include <ChronoSort/Game/Sounds.hpp>
 #include <ChronoSort/Rules/CpuPlayer.hpp>
@@ -103,6 +104,16 @@ namespace ChronoSort::Scene {
 
         if(m_phase == Phase::HumanTurn) {
             UpdateHumanInput(deltaTime);
+#ifdef _DEBUG
+            // 確認用：F8 で人間の手番を CPU（やさしい）に代わりに打たせる
+            if(m_phase == Phase::HumanTurn && context->inputSystem->IsKeyPressed(KeyCode::F8)) {
+                CancelSelection();
+                Rules::Player stand = m_match.Players()[0];
+                stand.cpuLevel      = Rules::CpuLevel::Easy;
+                const Rules::CpuMove move = Rules::ChooseCpuMove(stand, m_match.GetTimeline(), m_rng);
+                CommitPlay(0, move.handIndex, move.slot);
+            }
+#endif
         }
 
         // 対局中に Esc でタイトルへ（選択中なら先に選択を外す）
@@ -339,6 +350,9 @@ namespace ChronoSort::Scene {
             hand.hoverTilt = hovered >= 0 ? hlslpp::float2((float(uv.x) - 0.5f) * 2.0f, (float(uv.y) - 0.5f) * 2.0f) : hlslpp::float2(0.0f, 0.0f);
         }
 
+        // 手札を持っていないときは、指した場のカードを起こして年号を読めるようにする
+        m_board->SetRowHovered((!m_dragging && m_selected < 0 && hand.hovered < 0) ? m_board->PickRowCard(ray) : -1);
+
         // 置き先の候補：卓の上のカーソル位置が場の列の近くならスロットを決める
         auto previewFrom = [&](const hlslpp::float3& point) -> std::optional<size_t> {
             if(float(point.z) < Board::kRowZ - kRowBandNear || float(point.z) > Board::kRowZ + kRowBandFar) {
@@ -539,6 +553,7 @@ namespace ChronoSort::Scene {
 
         m_phase   = Phase::Resolving;
         m_preview = std::nullopt;
+        m_board->SetRowHovered(-1);
         ECS::StopGlow(registry, entity);
         m_board->SetHeld(entity);
         m_board->SetGap(slot);
@@ -591,6 +606,7 @@ namespace ChronoSort::Scene {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 14.0f, 10.0f);
             m_hud->ShowStamp(entity, result.correct);
+            Game::Sounds(*context).Play("stamp", 0.8f);
             if(result.correct) {
                 ECS::Glow(reg, entity, kGoldGlow, 1.4f, 1.1f);
                 m_particles->GoldBurst(m_board->SlotPosition(result.slot) + up * 8.0f);
@@ -661,6 +677,7 @@ namespace ChronoSort::Scene {
             if(m_match.IsTiebreak() && !m_wasTiebreak) {
                 m_wasTiebreak = true;
                 m_hud->ShowBanner(L"延長戦！", true);
+                Game::Sounds(*m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>()).Play("page");
                 delay = SyncHands(0.8f) + 0.2f;
             }
             m_sequencer.Schedule(delay, [this] { StartTurn(); });
@@ -681,6 +698,18 @@ namespace ChronoSort::Scene {
         const bool                won     = outcome == Rules::MatchOutcome::SoloCleared ||
                                             (outcome == Rules::MatchOutcome::VersusWon && m_match.Winner() == 0);
         Game::Sounds(*context).Play(won ? "fanfare" : "lose");
+
+        // 記録を更新して保存する
+        Game::SaveData save = Game::LoadSaveData();
+        if(m_config.mode == Rules::MatchMode::Solo) {
+            m_hud->SetNewRecord(m_match.Score() > save.bestScore && m_match.Score() > 0);
+            save.bestScore  = std::max(save.bestScore, m_match.Score());
+            save.bestPlaced = std::max(save.bestPlaced, m_match.Players()[0].correctCount);
+            save.bestStreak = std::max(save.bestStreak, m_match.BestStreak());
+        } else if(won) {
+            ++save.versusWins;
+        }
+        Game::StoreSaveData(save);
         m_hud->ShowBanner(won ? L"見事！" : (outcome == Rules::MatchOutcome::SoloFailed ? L"インクが尽きた…" : L"惜しい…"), true);
         if(won) {
             // 場の列のカードを左から順に光らせる
@@ -693,7 +722,11 @@ namespace ChronoSort::Scene {
                 });
             }
         }
-        m_sequencer.Schedule(1.4f, [this] { m_hud->ShowResult(); });
+        m_sequencer.Schedule(1.4f, [this, context] {
+            m_hud->ShowResult();
+            Game::Sounds(*context).Play("page");
+            Game::Sounds(*context).PlayBgm("result");
+        });
     }
 
     //----------------------------------------------------------------------------
