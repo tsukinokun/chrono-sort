@@ -3,7 +3,7 @@
 //! @brief  ChronoSort のエントリポイント
 //----------------------------------------------------------------------------
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
-#include <ChronoSort/Scene/SoloGameScene.hpp>
+#include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -39,10 +39,15 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     }
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
-    // 「ChronoSort.exe solo」でタイトルを飛ばして対局画面から始める（描画確認用）
+    // 「ChronoSort.exe solo」「ChronoSort.exe versus」でタイトルを飛ばして対局画面から始める（確認用）
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
     if(argument.find("solo") != std::string::npos) {
-        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::SoloGameScene>());
+        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::GameScene>(ChronoSort::Rules::MatchConfig{}));
+    } else if(argument.find("versus") != std::string::npos) {
+        ChronoSort::Rules::MatchConfig config;
+        config.mode = ChronoSort::Rules::MatchMode::Versus;
+        config.cpus = {ChronoSort::Rules::CpuLevel::Easy, ChronoSort::Rules::CpuLevel::Normal};
+        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::GameScene>(config));
     } else {
         engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::TitleScene>());
     }

@@ -16,9 +16,26 @@
 namespace ChronoSort::Rules {
 
     //----------------------------------------------------------------------------
+    //! 同梱のデッキ（日本史・世界史）をすべて読み込みます。
+    //----------------------------------------------------------------------------
+    std::vector<CardData> LoadAllCards() {
+        std::vector<CardData> cards;
+        LoadCardsFromFile("ChronoSort/Assets/Data/Decks/japan.json", cards);
+        LoadCardsFromFile("ChronoSort/Assets/Data/Decks/world.json", cards);
+        return cards;
+    }
+
+    //----------------------------------------------------------------------------
     //! デッキ JSON を読み込み、山札に追加します。
     //----------------------------------------------------------------------------
     bool Deck::LoadFromFile(const std::string& path) {
+        return LoadCardsFromFile(path, m_cards);
+    }
+
+    //----------------------------------------------------------------------------
+    //! デッキ JSON を読み込み、カード一覧の末尾に追加します。
+    //----------------------------------------------------------------------------
+    bool LoadCardsFromFile(const std::string& path, std::vector<CardData>& out) {
         const Tsukino::Core::Path filePath(path);
 
         std::ifstream is(filePath.string());
@@ -38,7 +55,7 @@ namespace ChronoSort::Rules {
             return false;
         }
 
-        m_cards.insert(m_cards.end(), cards.begin(), cards.end());
+        out.insert(out.end(), cards.begin(), cards.end());
         Tsukino::Core::Log::Info("Loaded deck '" + deckName + "' (" + std::to_string(cards.size()) + " cards)");
         return true;
     }

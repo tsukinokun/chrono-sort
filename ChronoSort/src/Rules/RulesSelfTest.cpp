@@ -4,13 +4,18 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 
+#include <ChronoSort/Rules/CpuPlayer.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
+#include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/Rules/GameRules.hpp>
 #include <ChronoSort/Rules/Timeline.hpp>
 
 #include <Tsukino/Core/Log.hpp>
 
+#include <optional>
+#include <random>
 #include <string>
+#include <vector>
 
 namespace ChronoSort::Rules {
 
@@ -40,6 +45,158 @@ namespace ChronoSort::Rules {
                 Tsukino::Core::Log::Error(std::string("[RulesSelfTest] FAILED: ") + name);
                 allPassed = false;
             }
+        }
+
+        //----------------------------------------------------------------------------
+        //! 年が 100 年ずつ離れたテスト用のカード一覧を作ります。
+        //! @param  [in] count 枚数。
+        //! @return カード一覧。
+        //----------------------------------------------------------------------------
+        std::vector<CardData> MakeCards(int count) {
+            std::vector<CardData> cards;
+            for(int i = 0; i < count; ++i) {
+                cards.push_back(MakeCard("c", (i + 1) * 100));
+                cards.back().id = "c" + std::to_string(i);
+            }
+            return cards;
+        }
+
+        //----------------------------------------------------------------------------
+        //! 手番のプレイヤーの手札の先頭を、正しい（または間違った）位置に置きます。
+        //! @param  [in,out] match   対局。
+        //! @param  [in]     correct 正しい位置に置くなら true。
+        //! @return 置いた結果。
+        //----------------------------------------------------------------------------
+        std::optional<PlayResult> PlayFirst(Match& match, bool correct) {
+            const Player&   player = match.Players()[match.CurrentPlayerIndex()];
+            const CardData& card   = player.hand.front();
+            const auto      slots  = match.GetTimeline().FindCorrectSlots(card);
+            size_t          slot   = slots.front();
+            if(!correct) {
+                // 正解以外のスロットを探す（年が全部違うので必ずある）
+                for(size_t s = 0; s < match.GetTimeline().SlotCount(); ++s) {
+                    if(!match.GetTimeline().IsCorrectSlot(s, card)) {
+                        slot = s;
+                        break;
+                    }
+                }
+            }
+            return match.Play(0, slot);
+        }
+
+        //----------------------------------------------------------------------------
+        //! 対局の進行（ソロ・対戦・延長戦）を確かめます。
+        //! @param  [in,out] passed 全体の成否。
+        //----------------------------------------------------------------------------
+        void TestMatch(bool& passed) {
+            std::mt19937 rng(42);
+
+            // ソロ
+            {
+                Match       solo;
+                MatchConfig config;
+                solo.Start(config, MakeCards(10), rng);
+                Check(solo.Players().size() == 1 && solo.Players()[0].hand.size() == kSoloHandSize, "solo deals hand", passed);
+                Check(solo.GetTimeline().Cards().size() == 1 && solo.Lives() == kSoloLifeCount, "solo starts with one card and full lives", passed);
+
+                const auto ok = PlayFirst(solo, true);
+                Check(ok && ok->correct && ok->scoreGained > 0 && solo.Score() == ok->scoreGained, "solo correct play scores", passed);
+                Check(solo.Players()[0].hand.size() == kSoloHandSize, "solo refills hand after correct play", passed);
+
+                const auto ng = PlayFirst(solo, false);
+                Check(ng && !ng->correct && ng->lifeLost && solo.Lives() == kSoloLifeCount - 1, "solo wrong play loses a life", passed);
+                Check(solo.Discards().size() == 1 && solo.Streak() == 0, "solo wrong play discards and resets streak", passed);
+
+                PlayFirst(solo, false);
+                PlayFirst(solo, false);
+                Check(solo.Outcome() == MatchOutcome::SoloFailed, "solo fails when lives run out", passed);
+                Check(!solo.Play(0, 0).has_value(), "no play after match end", passed);
+            }
+
+            // ソロのクリア（全問正解）
+            {
+                Match       solo;
+                MatchConfig config;
+                solo.Start(config, MakeCards(6), rng);
+                int guard = 0;
+                while(solo.Outcome() == MatchOutcome::InProgress && guard++ < 20) {
+                    PlayFirst(solo, true);
+                }
+                Check(solo.Outcome() == MatchOutcome::SoloCleared && solo.BestStreak() == 5, "solo clears when all cards placed", passed);
+            }
+
+            // 対戦：2人とも全問正解すると同じラウンドで出し切り、延長戦になる
+            {
+                Match       versus;
+                MatchConfig config;
+                config.mode = MatchMode::Versus;
+                config.cpus = {CpuLevel::Normal};
+                versus.Start(config, MakeCards(30), rng);
+                Check(versus.Players().size() == 2 && versus.Players()[1].hand.size() == static_cast<size_t>(GetInitialHandSize(2)), "versus deals by player count", passed);
+
+                for(int turn = 0; turn < GetInitialHandSize(2) * 2; ++turn) {
+                    PlayFirst(versus, true);
+                    versus.AdvanceTurn();
+                }
+                Check(versus.IsTiebreak() && versus.Outcome() == MatchOutcome::InProgress, "simultaneous finish starts tiebreak", passed);
+                Check(versus.Players()[0].hand.size() == 1 && versus.Players()[1].hand.size() == 1, "tiebreak deals one card each", passed);
+
+                // 延長戦：人間は正解、CPU は不正解 → 人間の勝ち
+                PlayFirst(versus, true);
+                versus.AdvanceTurn();
+                const auto cpuMiss = PlayFirst(versus, false);
+                Check(cpuMiss && cpuMiss->drawnCard.has_value(), "versus wrong play draws a card", passed);
+                versus.AdvanceTurn();
+                Check(versus.Outcome() == MatchOutcome::VersusWon && versus.Winner() == 0, "tiebreak winner decided", passed);
+            }
+
+            // 対戦：脱落者は手番が飛ばされる
+            {
+                Match       versus;
+                MatchConfig config;
+                config.mode = MatchMode::Versus;
+                config.cpus = {CpuLevel::Easy, CpuLevel::Easy};
+                versus.Start(config, MakeCards(40), rng);
+                // 人間と CPU1 が出し切り、CPU2 は間違え続ける
+                for(int turn = 0; turn < GetInitialHandSize(3) * 3; ++turn) {
+                    PlayFirst(versus, versus.CurrentPlayerIndex() != 2);
+                    versus.AdvanceTurn();
+                }
+                Check(versus.IsTiebreak() && versus.Players()[2].eliminated, "non-finisher is eliminated in tiebreak", passed);
+                Check(versus.CurrentPlayerIndex() == 0, "turn returns to first active player", passed);
+                PlayFirst(versus, true);
+                versus.AdvanceTurn();
+                Check(versus.CurrentPlayerIndex() == 1, "eliminated player is skipped", passed);
+            }
+        }
+
+        //----------------------------------------------------------------------------
+        //! CPU の手の選び方を確かめます。
+        //! @param  [in,out] passed 全体の成否。
+        //----------------------------------------------------------------------------
+        void TestCpu(bool& passed) {
+            std::mt19937 rng(7);
+            Timeline     timeline;
+            timeline.Reset(MakeCard("a", 1000));
+            timeline.TryPlace(1, MakeCard("b", 1010));
+
+            const CardData closeCard = MakeCard("closeCard", 1005);
+            const CardData farCard   = MakeCard("farCard", 1800);
+            Check(CpuSuccessChance(CpuLevel::Hard, timeline, closeCard) > CpuSuccessChance(CpuLevel::Easy, timeline, closeCard), "hard cpu beats easy cpu", passed);
+            Check(CpuSuccessChance(CpuLevel::Normal, timeline, farCard) > CpuSuccessChance(CpuLevel::Normal, timeline, closeCard), "farCard years are easier", passed);
+
+            Player cpu;
+            cpu.isCpu    = true;
+            cpu.cpuLevel = CpuLevel::Easy;
+            cpu.hand     = {closeCard, farCard};
+            int correct  = 0;
+            for(int i = 0; i < 200; ++i) {
+                const CpuMove move = ChooseCpuMove(cpu, timeline, rng);
+                Check(move.handIndex < cpu.hand.size() && move.slot < timeline.SlotCount(), "cpu move in range", passed);
+                correct += timeline.IsCorrectSlot(move.slot, cpu.hand[move.handIndex]) ? 1 : 0;
+            }
+            // 弱い CPU でも当てずっぽうよりは当たり、全問正解はしない
+            Check(correct > 60 && correct < 200, "easy cpu is fallible but not random", passed);
         }
 
     }    // namespace
@@ -100,6 +257,9 @@ namespace ChronoSort::Rules {
         Deck world;
         Check(japan.LoadFromFile("ChronoSort/Assets/Data/Decks/japan.json") && japan.Remaining() > 0, "load japan deck", passed);
         Check(world.LoadFromFile("ChronoSort/Assets/Data/Decks/world.json") && world.Remaining() > 0, "load world deck", passed);
+
+        TestMatch(passed);
+        TestCpu(passed);
 
         Tsukino::Core::Log::Info(passed ? "[RulesSelfTest] All tests passed." : "[RulesSelfTest] Some tests FAILED.");
         return passed;

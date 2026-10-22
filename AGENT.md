@@ -20,10 +20,19 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 
 | 名前空間 / フォルダ | 役割 |
 |---|---|
-| `Rules/` | ECS に依存しないルール（`Timeline` / `Deck` / `GameRules` / `RulesSelfTest`）。判定はここだけで行う |
-| `Board/` | 3D の卓の都合（`CardFactory`、カメラのレイ等） |
-| `ECS/Component`, `ECS/System` | 見た目と入力。カードの移動は `CardMotionComponent` の目標を書き換え、`CardMotionSystem` が補間する |
-| `Scene/` | `TitleScene` / `SoloGameScene` など |
+| `Rules/` | ECS に依存しないルール。`Match`（対局の進行：ソロ/対戦/延長戦/得点）、`CpuPlayer`（CPU の手）、`Timeline` / `Deck` / `GameRules`、`RulesSelfTest` |
+| `Board/` | 3D の卓。`CardFactory`（カード・山札の裏・目印の生成）、`BoardView`（場の列・手札の扇・CPU の席・山札・捨て札の配置とピック） |
+| `ECS/` | `CardMotion`（目標姿勢・放物線・震え・弾み）、`CardGlowSystem`（emissive で発光）、`ParticleSystem` |
+| `Effects/` | `ParticleEmitter`（砂埃・金の火花・墨の飛沫などの撒き方） |
+| `Game/` | `Sequencer`（時間差の段取り）、`SoundBank` / `Sounds()`（効果音と BGM。ファイルが無ければ無音） |
+| `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙） |
+| `Scene/` | `TitleScene`、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え） |
+
+### 対局画面の流れ
+
+`GameScene` が `Rules::Match` を進め、結果に合わせて `BoardView` と `GameHud` で演出する。
+ルールの正否は必ず `Match::Play()` の戻り値で判断し、画面側で判定し直さない。
+演出の時間差は `Sequencer::Schedule` で書く（`RunReveal` が例：運ぶ → 裏返す → 叩きつける → 判定）。
 
 ## ビルドと実行
 
@@ -32,7 +41,8 @@ build.bat            Debug をビルド（成功時は出力 0 行）
 build.bat Release
 open.bat             premake を回して VS を開く
 bin\Debug\ChronoSort.exe          タイトルから
-bin\Debug\ChronoSort.exe solo     対局画面から直接（確認用）
+bin\Debug\ChronoSort.exe solo     ソロの対局画面から直接（確認用）
+bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用）
 ```
 
 - 作業ディレクトリはワークスペースルート（Debug）。ログは `Logs/ChronoSort.log`。
@@ -44,8 +54,13 @@ bin\Debug\ChronoSort.exe solo     対局画面から直接（確認用）
 
 ```
 python Tools/art/make_meshes.py   card.obj / table.obj
-python Tools/art/bake_cards.py    デッキ JSON → カード面 PNG と .tmat、卓の布
+python Tools/art/bake_cards.py    デッキ JSON → カード面 PNG と .tmat、卓の布、山札の裏、挿入位置の目印
+python Tools/art/make_ui.py       画面 UI の素材（紙片・封蝋・インク壺・朱印・リボンなど）
+python Tools/art/make_fx.py       粒子のテクスチャ
 ```
+
+テクスチャを作り直したのに見た目が変わらないときは `Cache/ChronoSort/` を消す
+（キャッシュはソースの更新日時でしか作り直されない）。
 
 - カード面は 512x768。表（`<id>_front`）は年号を伏せ、裏（`<id>_back`）に年号を焼き込む。
 - 絵の元画像は `Tools/art/raw/<id>.*`（gitignore）。無いカードは地域色の仮の絵柄になる。
@@ -71,3 +86,12 @@ python Tools/art/bake_cards.py    デッキ JSON → カード面 PNG と .tmat�
 - **カメラは逆 Z**（near が z=1）。レイを作るときに注意。
 - **hlslpp のクォータニオン合成は行列と逆順**: 「A のあと B」は `mul(B, A)`。
 - Entity の既定値は `entt::null`（`{}` は有効なエンティティ 0 番になる）。
+- **`far` / `near` は Windows.h のマクロ**。変数名に使うとコンパイルエラーになる。
+- **テクスチャの色空間**: エンジンの TextureImporter は色のテクスチャを sRGB、`_n` / `_normal` / `_mr` など
+  末尾の名前のものを線形として DDS キャッシュに書く（2026-10 にエンジン側で修正。それ以前のキャッシュは白っぽくなる）。
+- **画面 UI の座標**は UI カメラの基準解像度 1600x900。マウス座標（ウィンドウのピクセル）とは別物なので、
+  3D のピックには `CameraUtility::ScreenPointToRay` にウィンドウの大きさを渡す。
+- **UI の子の位置**: `TransformComponent::parent` を付けた子は親の回転・UITween の動きに一緒に乗る。
+  親のスケールも掛かるので、紙片は `UIRectComponent` で大きさを決め、scale は 1 のままにする。
+- **PowerShell 5.1 のスクリプト**に UTF-8 の日本語を書くと、BOM が無ければ CP932 として読まれて行が壊れる。
+  `.ps1` は ASCII で書く。

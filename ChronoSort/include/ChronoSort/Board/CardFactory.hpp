@@ -8,6 +8,7 @@
 #include <ChronoSort/Rules/CardData.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
+#include <Tsukino/Core/ECS/Registry/Registry.hpp>
 
 #include <hlsl++.h>
 
@@ -47,6 +48,29 @@ namespace ChronoSort::Board {
         //! 卓を作ります。
         //! @return 作成したエンティティ。
         Tsukino::ECS::Entity CreateTable();
+
+        //! 山札の厚みを見せる、両面とも裏模様のカードを作ります。
+        //! @param  [in] position 置く位置。
+        //! @param  [in] rotation 置く向き。
+        //! @return 作成したエンティティ。
+        Tsukino::ECS::Entity CreateCover(const hlslpp::float3& position, const hlslpp::quaternion& rotation);
+
+        //! 場の列の挿入位置を示す、枠だけのカードを作ります。
+        //! @return 作成したエンティティ。
+        Tsukino::ECS::Entity CreateMarker();
+
+        //! 赤い（警告の）目印用のマテリアルに切り替えます。
+        //! @param  [in] marker  目印のエンティティ。
+        //! @param  [in] warning 赤にするなら true。
+        void SetMarkerWarning(Tsukino::ECS::Entity marker, bool warning);
+
+        //! エンティティを破棄します。
+        //! @param  [in] entity 破棄するエンティティ。
+        void Destroy(Tsukino::ECS::Entity entity);
+
+        //! 生成先のシーンのレジストリを返します。
+        //! @return レジストリ。
+        Tsukino::ECS::Registry& Registry();
 
     private:
         Tsukino::ECS::Scene&          m_scene;           // 生成先のシーン

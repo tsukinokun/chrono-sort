@@ -13,6 +13,16 @@
 
 namespace ChronoSort::Rules {
 
+    //! デッキ JSON を読み込み、カード一覧の末尾に追加します。
+    //! @param  [in]     path  ワークスペースルートからの相対パス。
+    //! @param  [in,out] cards 追加先のカード一覧。
+    //! @return 読み込みに成功したら true。
+    bool LoadCardsFromFile(const std::string& path, std::vector<CardData>& cards);
+
+    //! 同梱のデッキ（日本史・世界史）をすべて読み込みます。
+    //! @return 全カード。
+    std::vector<CardData> LoadAllCards();
+
     //! 山札です。末尾を山の一番上として扱います。
     class Deck {
     public:

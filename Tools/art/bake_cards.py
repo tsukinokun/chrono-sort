@@ -14,6 +14,7 @@
 """
 
 import json
+import math
 import random
 from pathlib import Path
 
@@ -24,6 +25,7 @@ DECK_DIR = ROOT / "ChronoSort" / "Assets" / "Data" / "Decks"
 RAW_DIR = ROOT / "Tools" / "art" / "raw"
 OUT_DIR = ROOT / "ChronoSort" / "Assets" / "Textures" / "Cards"
 TABLE_DIR = ROOT / "ChronoSort" / "Assets" / "Textures" / "Table"
+BOARD_DIR = ROOT / "ChronoSort" / "Assets" / "Textures" / "Board"
 # .tmat に書くパスはワークスペースルートからの相対
 ASSET_PREFIX = "ChronoSort/Assets/Textures"
 FONT_PATH = ROOT / "External" / "TsukinoEngine" / "Tsukino.BuiltIn" / "Assets" / "Fonts" / "NotoSansCJKjp-Regular.otf"
@@ -173,8 +175,46 @@ def bake_table():
     write_tmat(TABLE_DIR / "table.tmat", f"{ASSET_PREFIX}/Table/table.png", roughness=0.9)
 
 
+def bake_board():
+    """山札の裏模様と、挿入位置の目印（枠だけのカード）。"""
+    BOARD_DIR.mkdir(parents=True, exist_ok=True)
+
+    # 裏模様：濃い革に金の枠と羅針盤
+    cover = Image.new("RGBA", (W, H), FRAME + (255,))
+    draw = ImageDraw.Draw(cover)
+    draw.rounded_rectangle((12, 12, W - 13, H - 13), CORNER - 8, fill=(58, 38, 30))
+    draw.rounded_rectangle((26, 26, W - 27, H - 27), CORNER - 14, outline=GOLD, width=4)
+    draw.rounded_rectangle((40, 40, W - 41, H - 41), CORNER - 18, outline=(150, 118, 64), width=2)
+    cx, cy = W / 2, H / 2
+    for r in (150, 120):
+        draw.ellipse((cx - r, cy - r, cx + r, cy + r), outline=GOLD, width=3)
+    for i in range(16):
+        a = i / 16 * math.tau
+        length = 170 if i % 4 == 0 else (120 if i % 2 == 0 else 95)
+        width = 22 if i % 4 == 0 else 12
+        tip = (cx + math.cos(a) * length, cy + math.sin(a) * length)
+        left = (cx + math.cos(a + math.pi / 2) * width / 2, cy + math.sin(a + math.pi / 2) * width / 2)
+        right = (cx + math.cos(a - math.pi / 2) * width / 2, cy + math.sin(a - math.pi / 2) * width / 2)
+        draw.polygon([left, tip, right], fill=GOLD if i % 2 == 0 else (150, 118, 64))
+    draw.ellipse((cx - 14, cy - 14, cx + 14, cy + 14), fill=(232, 200, 120))
+    draw.text((cx, H - 90), "ChronoSort", font=font(40), fill=GOLD, anchor="mm")
+    cover.putalpha(rounded_mask())
+    cover.save(BOARD_DIR / "cover.png")
+    write_tmat(BOARD_DIR / "cover.tmat", f"{ASSET_PREFIX}/Board/cover.png", roughness=0.45)
+
+    # 目印：角丸の枠線だけ（中は抜く）
+    for name, color in (("marker", (255, 214, 120)), ("marker_warning", (235, 70, 55))):
+        marker = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        mdraw = ImageDraw.Draw(marker)
+        mdraw.rounded_rectangle((6, 6, W - 7, H - 7), CORNER, outline=color + (255,), width=18)
+        mdraw.rounded_rectangle((44, 44, W - 45, H - 45), CORNER - 16, outline=color + (255,), width=6)
+        marker.save(BOARD_DIR / f"{name}.png")
+        write_tmat(BOARD_DIR / f"{name}.tmat", f"{ASSET_PREFIX}/Board/{name}.png", roughness=0.4)
+
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    bake_board()
     art_size = (ART_BOX[2] - ART_BOX[0], ART_BOX[3] - ART_BOX[1])
     count = 0
     for deck_path in sorted(DECK_DIR.glob("*.json")):
