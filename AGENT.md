@@ -29,6 +29,13 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `Scene/` | `TitleScene`（メニューと対戦の支度）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
 | `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存 |
 
+### 起動と読み込み
+
+`WinMain` → `LoadingScene` → `TitleScene`。`LoadingScene` はエンジンの `AssetLoadQueue`（裏スレッド）で
+`Game::CollectStartupAssets()` の一覧（カードの .tmat・メッシュ・UI/粒子のテクスチャ・効果音・BGM）を読み、
+読み終えたテクスチャを本体スレッドで 1 フレーム 4ms までずつ GPU へ送ってからタイトルへ進む。
+**新しいアセットを足したら `AssetManifest.cpp` の一覧に入るか確かめる**（入っていないと、初めて使う瞬間に同期で読んで止まる）。
+
 ### 対局画面の流れ
 
 `GameScene` が `Rules::Match` を進め、結果に合わせて `BoardView` と `GameHud` で演出する。
@@ -47,6 +54,8 @@ bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用�
 ```
 
 - 作業ディレクトリはワークスペースルート（Debug）。ログは `Logs/ChronoSort.log`。
+- `Logs/ChronoSort.log` の `[Hitch]` は 34ms を超えたフレームと、その直前の出来事（`FrameMonitor::Mark`）。
+  終了時に件数と最長の集計が出る。重さを調べるときはまずここを見る。
 - Debug ビルドでは対局中に **F8** で人間の手番を CPU（やさしい）が代わりに打つ。最後まで通しで確かめるときに使う。
 - 自動操作でクリックを送るときは、押してから離すまで 200ms 以上空ける（Debug はフレームが遅く、短いクリックを取りこぼす）。
 - Debug 起動時に `Rules::RunSelfTest()` が走り、`[RulesSelfTest] All tests passed.` がログに出る。
