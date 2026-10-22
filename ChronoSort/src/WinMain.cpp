@@ -2,8 +2,10 @@
 //! @file   WinMain.cpp
 //! @brief  ChronoSort のエントリポイント
 //----------------------------------------------------------------------------
+#include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
+#include <ChronoSort/Scene/LoadingScene.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -39,18 +41,22 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     }
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
-    // 「ChronoSort.exe solo」「ChronoSort.exe versus」でタイトルを飛ばして対局画面から始める（確認用）
+    // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。
+    // 「ChronoSort.exe solo」「ChronoSort.exe versus」なら、読み終えたあとタイトルを飛ばして対局画面へ（確認用）
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
-    if(argument.find("solo") != std::string::npos) {
-        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::GameScene>(ChronoSort::Rules::MatchConfig{}));
-    } else if(argument.find("versus") != std::string::npos) {
-        ChronoSort::Rules::MatchConfig config;
-        config.mode = ChronoSort::Rules::MatchMode::Versus;
-        config.cpus = {ChronoSort::Rules::CpuLevel::Easy, ChronoSort::Rules::CpuLevel::Normal};
-        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::GameScene>(config));
-    } else {
-        engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::TitleScene>());
-    }
+    auto next = [argument]() -> std::unique_ptr<Tsukino::EngineIntegration::GameSceneBase> {
+        if(argument.find("solo") != std::string::npos) {
+            return std::make_unique<ChronoSort::Scene::GameScene>(ChronoSort::Rules::MatchConfig{});
+        }
+        if(argument.find("versus") != std::string::npos) {
+            ChronoSort::Rules::MatchConfig config;
+            config.mode = ChronoSort::Rules::MatchMode::Versus;
+            config.cpus = {ChronoSort::Rules::CpuLevel::Easy, ChronoSort::Rules::CpuLevel::Normal};
+            return std::make_unique<ChronoSort::Scene::GameScene>(config);
+        }
+        return std::make_unique<ChronoSort::Scene::TitleScene>();
+    };
+    engineAPI.ChangeScene(std::make_unique<ChronoSort::Scene::LoadingScene>(next));
 
     // deltaTime は実測値を使う（高リフレッシュレート環境で演出が速くならないように）
     auto lastTime = std::chrono::steady_clock::now();
@@ -58,6 +64,8 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
         auto  currentTime = std::chrono::steady_clock::now();
         float deltaTime   = std::chrono::duration<float>(currentTime - lastTime).count();
         lastTime          = currentTime;
+        // 上限で丸める前の実測で、引っかかりを記録する
+        ChronoSort::Game::FrameMonitor::Tick(deltaTime);
         // ウィンドウドラッグ等で1フレームが極端に長くなったときの暴走防止
         deltaTime = std::min(deltaTime, 1.0f / 15.0f);
 
@@ -65,5 +73,6 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
         engineAPI.Render();
     }
 
+    ChronoSort::Game::FrameMonitor::Report();
     return 0;
 }

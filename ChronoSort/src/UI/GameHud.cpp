@@ -270,8 +270,14 @@ namespace ChronoSort::UI {
             if(m_handCounts[i] == entt::null) {
                 continue;
             }
-            const std::wstring text = players[i].eliminated ? L"脱落" : (L"手札 " + Number(static_cast<long long>(players[i].hand.size())));
-            m_ui.SetText(m_handCounts[i], text);
+            // 変わったときだけ書き換える（文字列を毎フレーム作り直さない）。脱落は -1 として扱う
+            const int count = players[i].eliminated ? -1 : static_cast<int>(players[i].hand.size());
+            if(i < m_shownHandCounts.size() && m_shownHandCounts[i] == count) {
+                continue;
+            }
+            m_shownHandCounts.resize(std::max(m_shownHandCounts.size(), i + 1), -2);
+            m_shownHandCounts[i] = count;
+            m_ui.SetText(m_handCounts[i], count < 0 ? L"脱落" : (L"手札 " + Number(count)));
         }
 
         // 結果画面の得点の数え上げ

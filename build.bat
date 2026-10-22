@@ -30,8 +30,12 @@ if not exist "%MSBUILD%" (
 rem ソースファイルを追加したときも再生成が要るため、毎回 premake を通す
 rem （中身が同じならプロジェクトファイルは書き換わらず、再ビルドも起きない）
 rem エンジン側 premake5.lua の非推奨警告が毎回出るため、成功時は出力を捨てる
+rem premake はカレントの premake5.lua を読むため、どこから呼ばれてもワークスペースのルートで回す
+pushd "%ROOT%"
 "%PREMAKE%" vs2022 >nul 2>&1
-if errorlevel 1 (
+set "PREMAKE_RESULT=%ERRORLEVEL%"
+popd
+if not "%PREMAKE_RESULT%"=="0" (
     echo build.bat: premake failed. Run open.bat to see the details.
     exit /b 1
 )

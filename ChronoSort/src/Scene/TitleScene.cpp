@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/TitleScene.hpp>
 
+#include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/Sounds.hpp>
 #include <ChronoSort/Scene/CreditsScene.hpp>
@@ -76,7 +77,7 @@ namespace ChronoSort::Scene {
             UI::PaperSpec memo;
             memo.texture      = "scrap_square.png";
             memo.center       = hlslpp::float2(1300.0f, 330.0f);
-            memo.size         = hlslpp::float2(230.0f, 200.0f);
+            memo.size         = hlslpp::float2(240.0f, 250.0f);
             memo.angleDegrees = 7.0f;
             memo.sortOrder    = kLayerMenu;
             const auto note   = m_ui->Paper(memo);
@@ -144,6 +145,7 @@ namespace ChronoSort::Scene {
             if(e != entt::null && m_ui->Hovered(e)) {
                 hovered.push_back(e);
                 if(std::find(m_hovered.begin(), m_hovered.end(), e) == m_hovered.end()) {
+                    Game::FrameMonitor::Mark("hover menu");
                     sounds.Play("card_slide", 0.3f);
                 }
             }

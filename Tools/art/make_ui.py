@@ -257,8 +257,26 @@ def make_title_logo():
     with_shadow(darken_edges(img, mask, 80), mask, offset=(8, 12), blur=12).save(OUT_DIR / "title_logo.png")
 
 
+def make_ink_line():
+    """読込画面の進み具合を示す、筆で引いた墨の線（横に伸ばして使う）。"""
+    w, h = 512, 28
+    rng = random.Random(51)
+    alpha = Image.new("L", (w, h), 0)
+    d = ImageDraw.Draw(alpha)
+    for x in range(w):
+        # 筆の入りと抜きで細くし、途中は少し太さを揺らす
+        t = x / (w - 1)
+        thick = (6 + 4 * math.sin(t * math.pi)) * (0.85 + 0.15 * rng.random())
+        d.line((x, h / 2 - thick, x, h / 2 + thick), fill=230)
+    alpha = alpha.filter(ImageFilter.GaussianBlur(1.2))
+    img = Image.new("RGBA", (w, h), INK + (0,))
+    img.putalpha(alpha)
+    img.save(OUT_DIR / "ink_line.png")
+
+
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    make_ink_line()
     make_scrap("scrap_wide", (520, 150), 1)
     make_scrap("scrap_note", (360, 120), 2, lines=True)
     make_scrap("scrap_square", (300, 260), 3)

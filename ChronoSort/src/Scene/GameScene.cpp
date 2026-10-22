@@ -8,6 +8,7 @@
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
+#include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
 #include <ChronoSort/Game/Sounds.hpp>
@@ -281,6 +282,7 @@ namespace ChronoSort::Scene {
                 if(view.cards.size() >= hand.size()) {
                     continue;
                 }
+                Game::FrameMonitor::Mark("deal");
                 Tsukino::ECS::Entity entity = m_board->SpawnAtDeck(hand[view.cards.size()]);
                 view.cards.push_back(entity);
                 // 配る先の姿勢を先に決めてから飛ばす
@@ -344,6 +346,7 @@ namespace ChronoSort::Scene {
             hlslpp::float2 uv;
             const int      hovered = m_board->PickHandCard(0, ray, uv);
             if(hovered != hand.hovered && hovered >= 0) {
+                Game::FrameMonitor::Mark("hover hand card");
                 Game::Sounds(*context).Play("card_slide", 0.25f);
             }
             hand.hovered   = hovered;
@@ -562,6 +565,7 @@ namespace ChronoSort::Scene {
         // 置いた場所が画面の外なら、そこへカメラを寄せる
         m_panTarget = float(m_board->SlotPosition(slot).x);
 
+        Game::FrameMonitor::Mark("place card");
         RunReveal(player, entity, *result);
     }
 
@@ -605,6 +609,7 @@ namespace ChronoSort::Scene {
         m_sequencer.Schedule(1.32f, [this, entity, result, player, up, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 14.0f, 10.0f);
+            Game::FrameMonitor::Mark(result.correct ? "judge correct" : "judge wrong");
             m_hud->ShowStamp(entity, result.correct);
             Game::Sounds(*context).Play("stamp", 0.8f);
             if(result.correct) {
@@ -723,6 +728,7 @@ namespace ChronoSort::Scene {
             }
         }
         m_sequencer.Schedule(1.4f, [this, context] {
+            Game::FrameMonitor::Mark("show result");
             m_hud->ShowResult();
             Game::Sounds(*context).Play("page");
             Game::Sounds(*context).PlayBgm("result");

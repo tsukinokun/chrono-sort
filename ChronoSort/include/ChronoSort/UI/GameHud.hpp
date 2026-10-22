@@ -113,6 +113,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity              m_ribbon     = entt::null;    // 手番のリボン
         std::vector<Tsukino::ECS::Entity> m_playerTags;                 // 各プレイヤーの名札
         std::vector<Tsukino::ECS::Entity> m_handCounts;                 // 各プレイヤーの手札枚数の文字
+        std::vector<int>                  m_shownHandCounts;            // 表示している手札枚数（脱落は -1）
         float                             m_displayScore = 0.0f;        // 数え上げ中の得点表示
         int                               m_shownRound   = 0;           // 表示しているラウンド
 
