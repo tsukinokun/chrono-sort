@@ -57,6 +57,20 @@ namespace ChronoSort::Board {
             h ^= h >> 15;
             return static_cast<float>(h % 10000u) / 10000.0f - 0.5f;
         }
+
+        //----------------------------------------------------------------------------
+        //! 場の列に置いたカードの姿勢を計算します（手前の辺を卓に付けたまま kRowTilt だけ起こす）。
+        //! @param  [in]  x        X 座標。
+        //! @param  [in]  z        寝かせたときの中心の Z 座標。
+        //! @param  [in]  yaw      卓の上でのわずかな向きのばらつき。
+        //! @param  [out] position 位置。
+        //! @param  [out] rotation 向き。
+        //----------------------------------------------------------------------------
+        void RowRestPose(float x, float z, float yaw, hlslpp::float3& position, hlslpp::quaternion& rotation) {
+            const float halfHeight = kCardHeight * 0.5f;
+            position = hlslpp::float3(x, kTableSurfaceY + halfHeight * std::sin(kRowTilt), z - halfHeight * (1.0f - std::cos(kRowTilt)));
+            rotation = hlslpp::mul(hlslpp::quaternion::rotation_x(-kRowTilt), hlslpp::mul(hlslpp::quaternion::rotation_y(yaw), RevealedRotation()));
+        }
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -116,16 +130,17 @@ namespace ChronoSort::Board {
             if(entity == m_held) {
                 continue;
             }
-            const float              yaw      = StableJitter(entity, 1) * 0.06f;
-            const hlslpp::quaternion rotation = hlslpp::mul(hlslpp::quaternion::rotation_y(yaw), RevealedRotation());
-            const float              z        = kRowZ + StableJitter(entity, 2) * 6.0f;
+            const float z = kRowZ + StableJitter(entity, 2) * 6.0f;
             if(static_cast<int>(i) == m_rowHovered) {
                 // 指したカードは手前に起こして大きくし、年号を読みやすくする
                 const hlslpp::quaternion lift = hlslpp::mul(hlslpp::quaternion::rotation_x(-0.55f), RevealedRotation());
                 ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(RowCardX(i), 60.0f, z - 60.0f), lift, 1.6f);
                 continue;
             }
-            ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(RowCardX(i), kTableSurfaceY, z), rotation);
+            hlslpp::float3     position;
+            hlslpp::quaternion rotation;
+            RowRestPose(RowCardX(i), z, StableJitter(entity, 1) * 0.06f, position, rotation);
+            ECS::CardMotion::SetTarget(registry, entity, position, rotation);
         }
 
         // 挿入位置の目印は隙間に沿って動く
@@ -240,6 +255,14 @@ namespace ChronoSort::Board {
         const float count = static_cast<float>(m_row.size());
         const float x     = (static_cast<float>(slot) - count * 0.5f) * RowSpacing();
         return hlslpp::float3(x, kTableSurfaceY, kRowZ);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 場の列のスロットに置いたカードの姿勢を返します。
+    //----------------------------------------------------------------------------
+    void BoardView::SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation) const {
+        const hlslpp::float3 center = SlotPosition(slot);
+        RowRestPose(center.x, kRowZ, 0.0f, position, rotation);
     }
 
     //----------------------------------------------------------------------------

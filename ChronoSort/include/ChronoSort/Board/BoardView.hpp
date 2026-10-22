@@ -23,6 +23,10 @@ namespace ChronoSort::Board {
     constexpr float kTableSurfaceY = 0.31f;     // 卓に寝かせたカードの高さ（板の厚みの半分 + 僅か）
     constexpr float kRowZ          = 70.0f;     // 場の列の奥行き
     constexpr float kDragHeight    = 45.0f;     // ドラッグ中のカードの高さ
+    // 場の列のカードを、手前の辺を卓に付けたままカメラへ起こす角度（約26°）。
+    // 寝かせたままだと約47°の見下ろしで縦が 0.73 倍に潰れ、題名と年号が読みにくい。
+    // 真正面（約0.75rad）まで起こすと卓に置いた感じが消えるので、その手前で止める
+    constexpr float kRowTilt       = 0.45f;
 
     //! 手札の見せ方です。
     enum class HandStyle {
@@ -65,6 +69,12 @@ namespace ChronoSort::Board {
         //! @param  [in] slot スロット番号。
         //! @return ワールド座標。
         hlslpp::float3 SlotPosition(size_t slot) const;
+
+        //! 場の列のスロットに置いたカードの姿勢（カメラへ起こした向き）を返します。置く演出の着地先に使います。
+        //! @param  [in]  slot     スロット番号。
+        //! @param  [out] position 位置。
+        //! @param  [out] rotation 向き。
+        void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation) const;
 
         //! ワールドの X 座標から、最も近いスロットを返します。
         //! @param  [in] worldX ワールドの X 座標。

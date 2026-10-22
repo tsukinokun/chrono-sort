@@ -41,6 +41,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 `GameScene` が `Rules::Match` を進め、結果に合わせて `BoardView` と `GameHud` で演出する。
 ルールの正否は必ず `Match::Play()` の戻り値で判断し、画面側で判定し直さない。
 演出の時間差は `Sequencer::Schedule` で書く（`RunReveal` が例：運ぶ → 裏返す → 叩きつける → 判定）。
+場の列のカードは寝かせず、手前の辺を卓に付けたまま `kRowTilt` だけカメラへ起こす（題名と年号を読ませるため）。
+列に着地させるときは `BoardView::SlotRestPose` を使う。`SlotPosition` は卓の上の点なので、粒子・目印・カメラのパン用。
 
 ## ビルドと実行
 

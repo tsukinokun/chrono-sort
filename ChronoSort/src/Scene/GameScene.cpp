@@ -61,6 +61,14 @@ namespace ChronoSort::Scene {
         const hlslpp::float3 kGoldGlow(0.55f, 0.38f, 0.1f);
         const hlslpp::float3 kRedGlow(0.6f, 0.05f, 0.03f);
         const hlslpp::float3 kSelectGlow(0.22f, 0.16f, 0.05f);
+
+        //----------------------------------------------------------------------------
+        //! 公開した面（年号の側）を、列と同じ角度だけカメラへ起こした向きを返します。
+        //! @return 向き。
+        //----------------------------------------------------------------------------
+        hlslpp::quaternion FacingRevealed() {
+            return hlslpp::mul(hlslpp::quaternion::rotation_x(-Board::kRowTilt), Board::RevealedRotation());
+        }
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -587,7 +595,7 @@ namespace ChronoSort::Scene {
         m_sequencer.Schedule(0.42f, [this, entity, slot, up, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 9.0f, 7.0f);
-            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, Board::RevealedRotation(), 1.1f);
+            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, FacingRevealed(), 1.1f);
             Game::Sounds(*context).Play("card_flip");
         });
 
@@ -595,7 +603,11 @@ namespace ChronoSort::Scene {
         m_sequencer.Schedule(0.98f, [this, entity, slot] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 34.0f, 16.0f);
-            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot), Board::RevealedRotation(), 1.0f);
+            // 着地先は列に並んだときと同じ起こした姿勢（寝てから起き直す二段の動きを出さない）
+            hlslpp::float3     position;
+            hlslpp::quaternion rotation;
+            m_board->SlotRestPose(slot, position, rotation);
+            ECS::CardMotion::SetTarget(reg, entity, position, rotation, 1.0f);
         });
         m_sequencer.Schedule(1.10f, [this, entity, slot, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
@@ -643,7 +655,7 @@ namespace ChronoSort::Scene {
                 m_board->SetMarker(true, true);
                 m_panTarget = float(m_board->SlotPosition(correctSlot).x);
                 ECS::CardMotion::SetSharpness(r, entity, 8.0f, 8.0f);
-                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, Board::RevealedRotation(), 1.0f);
+                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, FacingRevealed(), 1.0f);
                 Game::Sounds(*context).Play("card_slide", 0.5f);
             });
             m_sequencer.Schedule(1.9f, [this, entity, context] {
