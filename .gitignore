@@ -1,0 +1,13 @@
+# ビルド成果物
+bin/
+bin-int/
+.build/
+packages/
+.vs/
+
+# 実行時に生成されるもの
+Logs/
+**/Cache/
+
+# 画像加工の作業フォルダ
+Tools/art/raw/

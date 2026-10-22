@@ -1,0 +1,140 @@
+{
+    "deck": "world",
+    "cards": [
+        {
+            "id": "marathon",
+            "title": "マラトンの戦い",
+            "year": -490,
+            "yearLabel": "紀元前490年",
+            "region": "WORLD",
+            "category": "戦争",
+            "image": "ChronoSort/Assets/Textures/Cards/marathon.png"
+        },
+        {
+            "id": "qin_unification",
+            "title": "秦の中国統一",
+            "year": -221,
+            "yearLabel": "紀元前221年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/qin_unification.png"
+        },
+        {
+            "id": "caesar_assassination",
+            "title": "カエサル暗殺",
+            "year": -44,
+            "yearLabel": "紀元前44年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/caesar_assassination.png"
+        },
+        {
+            "id": "fall_of_western_rome",
+            "title": "西ローマ帝国滅亡",
+            "year": 476,
+            "yearLabel": "476年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/fall_of_western_rome.png"
+        },
+        {
+            "id": "treaty_of_verdun",
+            "title": "ヴェルダン条約",
+            "year": 843,
+            "yearLabel": "843年",
+            "region": "WORLD",
+            "category": "外交",
+            "image": "ChronoSort/Assets/Textures/Cards/treaty_of_verdun.png"
+        },
+        {
+            "id": "magna_carta",
+            "title": "マグナ・カルタ",
+            "year": 1215,
+            "yearLabel": "1215年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/magna_carta.png"
+        },
+        {
+            "id": "fall_of_constantinople",
+            "title": "コンスタンティノープル陥落",
+            "year": 1453,
+            "yearLabel": "1453年",
+            "region": "WORLD",
+            "category": "戦争",
+            "image": "ChronoSort/Assets/Textures/Cards/fall_of_constantinople.png"
+        },
+        {
+            "id": "columbus",
+            "title": "コロンブスのアメリカ到達",
+            "year": 1492,
+            "yearLabel": "1492年",
+            "region": "WORLD",
+            "category": "探検",
+            "image": "ChronoSort/Assets/Textures/Cards/columbus.png"
+        },
+        {
+            "id": "ninety_five_theses",
+            "title": "ルターの95か条の論題",
+            "year": 1517,
+            "yearLabel": "1517年",
+            "region": "WORLD",
+            "category": "宗教",
+            "image": "ChronoSort/Assets/Textures/Cards/ninety_five_theses.png"
+        },
+        {
+            "id": "us_independence",
+            "title": "アメリカ独立宣言",
+            "year": 1776,
+            "yearLabel": "1776年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/us_independence.png"
+        },
+        {
+            "id": "bastille",
+            "title": "バスティーユ襲撃",
+            "year": 1789,
+            "yearLabel": "1789年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/bastille.png"
+        },
+        {
+            "id": "waterloo",
+            "title": "ワーテルローの戦い",
+            "year": 1815,
+            "yearLabel": "1815年",
+            "region": "WORLD",
+            "category": "戦争",
+            "image": "ChronoSort/Assets/Textures/Cards/waterloo.png"
+        },
+        {
+            "id": "ww1_outbreak",
+            "title": "第一次世界大戦の開戦",
+            "year": 1914,
+            "yearLabel": "1914年",
+            "region": "WORLD",
+            "category": "戦争",
+            "image": "ChronoSort/Assets/Textures/Cards/ww1_outbreak.png"
+        },
+        {
+            "id": "apollo11",
+            "title": "アポロ11号の月面着陸",
+            "year": 1969,
+            "yearLabel": "1969年",
+            "region": "WORLD",
+            "category": "科学",
+            "image": "ChronoSort/Assets/Textures/Cards/apollo11.png"
+        },
+        {
+            "id": "berlin_wall_fall",
+            "title": "ベルリンの壁崩壊",
+            "year": 1989,
+            "yearLabel": "1989年",
+            "region": "WORLD",
+            "category": "政治",
+            "image": "ChronoSort/Assets/Textures/Cards/berlin_wall_fall.png"
+        }
+    ]
+}
