@@ -1,10 +1,24 @@
 # ChronoSort
 
+<p>
+  <img src="https://img.shields.io/badge/C%2B%2B-20-blue.svg" alt="C++20">
+  <img src="https://img.shields.io/badge/DirectX-11-107C10.svg" alt="DirectX 11">
+  <img src="https://img.shields.io/badge/platform-Windows-0078D6.svg" alt="Platform: Windows">
+  <a href="https://github.com/tsukinokun/TsukinoEngine"><img src="https://img.shields.io/badge/engine-TsukinoEngine-8A6FD1.svg" alt="Engine: TsukinoEngine"></a>
+  <img src="https://img.shields.io/badge/ECS-EnTT-9cf.svg" alt="ECS: EnTT">
+  <img src="https://img.shields.io/badge/physics-Jolt-E8833A.svg" alt="Physics: Jolt">
+  <img src="https://img.shields.io/badge/build-Premake5-orange.svg" alt="Build: Premake5">
+  <img src="https://img.shields.io/badge/status-%E5%88%B6%E4%BD%9C%E4%B8%AD-ff69b4.svg" alt="Status: 制作中">
+</p>
+<p>
+  <img src="https://img.shields.io/github/last-commit/tsukinokun/Fruits-Magic" alt="Last commit">
+  <img src="https://img.shields.io/github/languages/top/tsukinokun/Fruits-Magic" alt="Top language">
+  <a href="https://qiita.com/tsukino_"><img src="https://img.shields.io/badge/Qiita-tsukino__-55C500?logo=qiita&logoColor=white" alt="Qiita"></a>
+</p>
+
 歴史の出来事カードを、年表の正しい位置へ差し込んでいく 3D カードゲームです。
 
 ![プレイ画面](docs/gameplay.gif)
-
-> 🚧 現在開発中です。内容は今後変わる可能性があります。
 
 ## ゲーム概要
 
@@ -15,8 +29,6 @@
 手札を 1 枚選び、年代が合うと思う隙間へ置きます。
 カードが裏返って年号が明かされ、合っていれば朱印が押されて年表に加わります。
 外れたカードは捨て札になり、山札から新しく 1 枚引かされます。
-
-ボードゲーム「Timeline」のルールに沿っています。
 
 ## モード
 
@@ -45,6 +57,13 @@
 - 卓の上に実際にカードを置いて遊ぶ 3D の盤面
 - カードを運び、裏返し、叩きつけて判定する演出
 - 紙片・封蝋・インク壺・朱印など、机の上の小物を模した UI
+
+## 作者
+
+**山﨑 愛**
+
+- GitHub：[@tsukinokun](https://github.com/tsukinokun)
+- Qiita：[@tsukino_](https://qiita.com/tsukino_)
 
 ## クレジット
 
