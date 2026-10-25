@@ -1410,6 +1410,506 @@
             "category": "技術",
             "art": "",
             "artQuery": "Tokyo Skytree"
+        },
+        {
+            "id": "fujiwara_kyo",
+            "title": "藤原京遷都",
+            "year": 694,
+            "yearLabel": "694年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Fujiwara Palace site"
+        },
+        {
+            "id": "oshikatsu",
+            "title": "恵美押勝の乱",
+            "year": 764,
+            "yearLabel": "764年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Fujiwara no Nakamaro"
+        },
+        {
+            "id": "dokyo",
+            "title": "宇佐八幡宮神託事件",
+            "year": 769,
+            "yearLabel": "769年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Wake no Kiyomaro"
+        },
+        {
+            "id": "nagaokakyo",
+            "title": "長岡京遷都",
+            "year": 784,
+            "yearLabel": "784年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nagaoka Palace site"
+        },
+        {
+            "id": "tamuramaro",
+            "title": "坂上田村麻呂が征夷大将軍に",
+            "year": 797,
+            "yearLabel": "797年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Sakanoue no Tamuramaro"
+        },
+        {
+            "id": "kukai_saicho",
+            "title": "最澄・空海が唐に渡る",
+            "year": 804,
+            "yearLabel": "804年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Kukai portrait"
+        },
+        {
+            "id": "kanpaku_mototsune",
+            "title": "藤原基経が関白に",
+            "year": 887,
+            "yearLabel": "887年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Fujiwara no Mototsune"
+        },
+        {
+            "id": "michizane_sasen",
+            "title": "菅原道真の左遷",
+            "year": 901,
+            "yearLabel": "901年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kitano Tenjin Engi Emaki"
+        },
+        {
+            "id": "toi_nyuko",
+            "title": "刀伊の入寇",
+            "year": 1019,
+            "yearLabel": "1019年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Fujiwara no Takaie"
+        },
+        {
+            "id": "shinkokin",
+            "title": "新古今和歌集の成立",
+            "year": 1205,
+            "yearLabel": "1205年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Fujiwara no Teika"
+        },
+        {
+            "id": "hojoki",
+            "title": "『方丈記』の成立",
+            "year": 1212,
+            "yearLabel": "1212年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kamo no Chomei"
+        },
+        {
+            "id": "sanetomo",
+            "title": "源実朝の暗殺",
+            "year": 1219,
+            "yearLabel": "1219年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Minamoto no Sanetomo"
+        },
+        {
+            "id": "genko",
+            "title": "元弘の変",
+            "year": 1331,
+            "yearLabel": "1331年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Kusunoki Masashige"
+        },
+        {
+            "id": "hana_no_gosho",
+            "title": "花の御所の造営",
+            "year": 1378,
+            "yearLabel": "1378年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hana no Gosho Rakuchu rakugai"
+        },
+        {
+            "id": "oei_no_ran",
+            "title": "応永の乱",
+            "year": 1399,
+            "yearLabel": "1399年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ōuchi Yoshihiro"
+        },
+        {
+            "id": "edojo_chikujo",
+            "title": "太田道灌の江戸城築城",
+            "year": 1457,
+            "yearLabel": "1457年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Fujimi-yagura Edo Castle"
+        },
+        {
+            "id": "itsukushima",
+            "title": "厳島の戦い",
+            "year": 1555,
+            "yearLabel": "1555年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Mori Motonari"
+        },
+        {
+            "id": "kawanakajima",
+            "title": "第4次川中島の戦い",
+            "year": 1561,
+            "yearLabel": "1561年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Kawanakajima"
+        },
+        {
+            "id": "anegawa",
+            "title": "姉川の戦い",
+            "year": 1570,
+            "yearLabel": "1570年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Anegawa"
+        },
+        {
+            "id": "ishiyama",
+            "title": "石山合戦の終結",
+            "year": 1580,
+            "yearLabel": "1580年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ishiyama Hongan-ji"
+        },
+        {
+            "id": "shizugatake",
+            "title": "賤ヶ岳の戦い",
+            "year": 1583,
+            "yearLabel": "1583年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Shizugatake"
+        },
+        {
+            "id": "komaki",
+            "title": "小牧・長久手の戦い",
+            "year": 1584,
+            "yearLabel": "1584年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Komaki and Nagakute"
+        },
+        {
+            "id": "nijuroku_seijin",
+            "title": "26聖人の殉教",
+            "year": 1597,
+            "yearLabel": "1597年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Twenty-six Martyrs of Japan"
+        },
+        {
+            "id": "tsushinshi",
+            "title": "朝鮮通信使の初来日",
+            "year": 1607,
+            "yearLabel": "1607年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Joseon Tongsinsa procession"
+        },
+        {
+            "id": "keian",
+            "title": "慶安の変",
+            "year": 1651,
+            "yearLabel": "1651年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yui Shosetsu"
+        },
+        {
+            "id": "shakushain",
+            "title": "シャクシャインの戦い",
+            "year": 1669,
+            "yearLabel": "1669年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ainu chief 19th century"
+        },
+        {
+            "id": "okuno_hosomichi",
+            "title": "芭蕉の『おくのほそ道』の旅",
+            "year": 1689,
+            "yearLabel": "1689年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Matsuo Basho"
+        },
+        {
+            "id": "kojikiden",
+            "title": "本居宣長『古事記伝』の完成",
+            "year": 1798,
+            "yearLabel": "1798年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Motoori Norinaga"
+        },
+        {
+            "id": "enkai_yochi",
+            "title": "『大日本沿海輿地全図』の完成",
+            "year": 1821,
+            "yearLabel": "1821年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Dai Nihon Enkai Yochi Zenzu"
+        },
+        {
+            "id": "ansei_jishin",
+            "title": "安政の大地震",
+            "year": 1855,
+            "yearLabel": "1855年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Ansei Edo earthquake namazu-e"
+        },
+        {
+            "id": "ansei_taigoku",
+            "title": "安政の大獄",
+            "year": 1858,
+            "yearLabel": "1858年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yoshida Shoin"
+        },
+        {
+            "id": "kanrin_maru",
+            "title": "咸臨丸の太平洋横断",
+            "year": 1860,
+            "yearLabel": "1860年",
+            "region": "JP",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Kanrin Maru"
+        },
+        {
+            "id": "namamugi",
+            "title": "生麦事件",
+            "year": 1862,
+            "yearLabel": "1862年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Namamugi incident"
+        },
+        {
+            "id": "iwakura",
+            "title": "岩倉使節団の出発",
+            "year": 1871,
+            "yearLabel": "1871年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Iwakura Mission"
+        },
+        {
+            "id": "tomioka",
+            "title": "富岡製糸場の操業開始",
+            "year": 1872,
+            "yearLabel": "1872年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tomioka Silk Mill"
+        },
+        {
+            "id": "okinawa_ken",
+            "title": "沖縄県の設置",
+            "year": 1879,
+            "yearLabel": "1879年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Sho Tai"
+        },
+        {
+            "id": "rokumeikan",
+            "title": "鹿鳴館の開館",
+            "year": 1883,
+            "yearLabel": "1883年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Rokumeikan"
+        },
+        {
+            "id": "teikoku_gikai",
+            "title": "第1回帝国議会",
+            "year": 1890,
+            "yearLabel": "1890年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Imperial Diet 1890"
+        },
+        {
+            "id": "otsu",
+            "title": "大津事件",
+            "year": 1891,
+            "yearLabel": "1891年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Otsu incident"
+        },
+        {
+            "id": "nijuikkajo",
+            "title": "二十一か条の要求",
+            "year": 1915,
+            "yearLabel": "1915年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Twenty-One Demands"
+        },
+        {
+            "id": "renmei_kamei",
+            "title": "国際連盟への加盟",
+            "year": 1920,
+            "yearLabel": "1920年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Nitobe Inazo"
+        },
+        {
+            "id": "goichigo",
+            "title": "五・一五事件",
+            "year": 1932,
+            "yearLabel": "1932年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Inukai Tsuyoshi"
+        },
+        {
+            "id": "sangoku_domei",
+            "title": "日独伊三国同盟",
+            "year": 1940,
+            "yearLabel": "1940年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Tripartite Pact signing"
+        },
+        {
+            "id": "kenpo_kofu",
+            "title": "日本国憲法の公布",
+            "year": 1946,
+            "yearLabel": "1946年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Promulgation of the Constitution of Japan 1946"
+        },
+        {
+            "id": "terebi",
+            "title": "テレビ放送の開始",
+            "year": 1953,
+            "yearLabel": "1953年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "NHK television 1953"
+        },
+        {
+            "id": "anpo",
+            "title": "日米安保条約の改定",
+            "year": 1960,
+            "yearLabel": "1960年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "1960 Anpo protests"
+        },
+        {
+            "id": "kawabata",
+            "title": "川端康成のノーベル文学賞受賞",
+            "year": 1968,
+            "yearLabel": "1968年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Yasunari Kawabata"
+        },
+        {
+            "id": "narita",
+            "title": "成田空港の開港",
+            "year": 1978,
+            "yearLabel": "1978年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Narita Airport"
+        },
+        {
+            "id": "seikan",
+            "title": "青函トンネルの開業",
+            "year": 1988,
+            "yearLabel": "1988年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Seikan Tunnel"
+        },
+        {
+            "id": "aichi_banpaku",
+            "title": "愛知万博",
+            "year": 2005,
+            "yearLabel": "2005年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Linimo 100 series"
         }
     ]
 }

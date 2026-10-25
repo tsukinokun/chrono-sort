@@ -1400,6 +1400,506 @@
             "category": "科学",
             "art": "",
             "artQuery": "Yuri Gagarin"
+        },
+        {
+            "id": "cyrus_babylon",
+            "title": "キュロス2世のバビロン入城",
+            "year": -539,
+            "yearLabel": "紀元前539年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Cyrus the Great"
+        },
+        {
+            "id": "parthenon",
+            "title": "パルテノン神殿の着工",
+            "year": -447,
+            "yearLabel": "紀元前447年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Parthenon"
+        },
+        {
+            "id": "chaeronea",
+            "title": "カイロネイアの戦い",
+            "year": -338,
+            "yearLabel": "紀元前338年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Philip II of Macedon"
+        },
+        {
+            "id": "gaugamela",
+            "title": "ガウガメラの戦い",
+            "year": -331,
+            "yearLabel": "紀元前331年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Gaugamela"
+        },
+        {
+            "id": "liu_bang",
+            "title": "劉邦の皇帝即位（漢の成立）",
+            "year": -202,
+            "yearLabel": "紀元前202年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Gaozu of Han"
+        },
+        {
+            "id": "gracchi",
+            "title": "グラックス兄弟の改革の開始",
+            "year": -133,
+            "yearLabel": "紀元前133年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Gracchi brothers"
+        },
+        {
+            "id": "later_han",
+            "title": "後漢の建国",
+            "year": 25,
+            "yearLabel": "25年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Guangwu of Han"
+        },
+        {
+            "id": "han_fall",
+            "title": "後漢の滅亡",
+            "year": 220,
+            "yearLabel": "220年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Cao Pi"
+        },
+        {
+            "id": "sack_of_rome",
+            "title": "西ゴート族のローマ略奪",
+            "year": 410,
+            "yearLabel": "410年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Sack of Rome 410 Sylvestre"
+        },
+        {
+            "id": "justinian_code",
+            "title": "ユスティニアヌス法典の公布",
+            "year": 529,
+            "yearLabel": "529年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Justinian mosaic Ravenna"
+        },
+        {
+            "id": "umayyad",
+            "title": "ウマイヤ朝の成立",
+            "year": 661,
+            "yearLabel": "661年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Umayyad Mosque Damascus"
+        },
+        {
+            "id": "an_lushan",
+            "title": "安史の乱",
+            "year": 755,
+            "yearLabel": "755年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Emperor Xuanzong's journey into Shu"
+        },
+        {
+            "id": "vladimir_baptism",
+            "title": "キエフ大公ウラジーミルの洗礼",
+            "year": 988,
+            "yearLabel": "988年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Baptism of Vladimir Vasnetsov"
+        },
+        {
+            "id": "notre_dame",
+            "title": "ノートルダム大聖堂の着工",
+            "year": 1163,
+            "yearLabel": "1163年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Notre-Dame de Paris west facade"
+        },
+        {
+            "id": "legnica",
+            "title": "ワールシュタットの戦い",
+            "year": 1241,
+            "yearLabel": "1241年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Legnica"
+        },
+        {
+            "id": "ottoman",
+            "title": "オスマン帝国の成立",
+            "year": 1299,
+            "yearLabel": "1299年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Osman I"
+        },
+        {
+            "id": "ankara",
+            "title": "アンカラの戦い",
+            "year": 1402,
+            "yearLabel": "1402年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Timur Bayezid captivity"
+        },
+        {
+            "id": "grunwald",
+            "title": "タンネンベルク（グルンヴァルト）の戦い",
+            "year": 1410,
+            "yearLabel": "1410年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Grunwald Matejko"
+        },
+        {
+            "id": "jesuits",
+            "title": "イエズス会の創設",
+            "year": 1534,
+            "yearLabel": "1534年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Ignatius of Loyola portrait"
+        },
+        {
+            "id": "elizabeth",
+            "title": "エリザベス1世の即位",
+            "year": 1558,
+            "yearLabel": "1558年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Elizabeth I Armada portrait"
+        },
+        {
+            "id": "voc",
+            "title": "オランダ東インド会社の設立",
+            "year": 1602,
+            "yearLabel": "1602年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "VOC ship"
+        },
+        {
+            "id": "jamestown",
+            "title": "ジェームズタウンの建設",
+            "year": 1607,
+            "yearLabel": "1607年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Jamestown 1607"
+        },
+        {
+            "id": "later_jin",
+            "title": "ヌルハチの後金建国",
+            "year": 1616,
+            "yearLabel": "1616年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nurhaci"
+        },
+        {
+            "id": "taj_mahal",
+            "title": "タージ・マハルの着工",
+            "year": 1632,
+            "yearLabel": "1632年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Taj Mahal 19th century photograph"
+        },
+        {
+            "id": "london_fire",
+            "title": "ロンドン大火",
+            "year": 1666,
+            "yearLabel": "1666年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Great Fire of London"
+        },
+        {
+            "id": "seven_years",
+            "title": "七年戦争の開戦",
+            "year": 1756,
+            "yearLabel": "1756年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Frederick the Great"
+        },
+        {
+            "id": "cook",
+            "title": "クックのオーストラリア東岸到達",
+            "year": 1770,
+            "yearLabel": "1770年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "James Cook"
+        },
+        {
+            "id": "haiti",
+            "title": "ハイチ革命の始まり",
+            "year": 1791,
+            "yearLabel": "1791年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Toussaint Louverture"
+        },
+        {
+            "id": "rosetta",
+            "title": "ロゼッタ・ストーンの発見",
+            "year": 1799,
+            "yearLabel": "1799年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Rosetta Stone British Museum"
+        },
+        {
+            "id": "louisiana",
+            "title": "ルイジアナの購入",
+            "year": 1803,
+            "yearLabel": "1803年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Louisiana Purchase"
+        },
+        {
+            "id": "victoria",
+            "title": "ヴィクトリア女王の即位",
+            "year": 1837,
+            "yearLabel": "1837年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Queen Victoria coronation Hayter"
+        },
+        {
+            "id": "gold_rush",
+            "title": "カリフォルニアのゴールドラッシュ",
+            "year": 1848,
+            "yearLabel": "1848年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "California Gold Rush"
+        },
+        {
+            "id": "crimean",
+            "title": "クリミア戦争の開戦",
+            "year": 1853,
+            "yearLabel": "1853年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Crimean War"
+        },
+        {
+            "id": "statue_of_liberty",
+            "title": "自由の女神像の完成",
+            "year": 1886,
+            "yearLabel": "1886年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Statue of Liberty 1886"
+        },
+        {
+            "id": "spanish_american",
+            "title": "米西戦争",
+            "year": 1898,
+            "yearLabel": "1898年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "USS Maine wreck Havana"
+        },
+        {
+            "id": "boxer",
+            "title": "義和団事件",
+            "year": 1900,
+            "yearLabel": "1900年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Boxer Rebellion"
+        },
+        {
+            "id": "sf_earthquake",
+            "title": "サンフランシスコ地震",
+            "year": 1906,
+            "yearLabel": "1906年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "1906 San Francisco earthquake"
+        },
+        {
+            "id": "roc_founding",
+            "title": "中華民国の成立",
+            "year": 1912,
+            "yearLabel": "1912年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Sun Yat-sen 1912"
+        },
+        {
+            "id": "armistice",
+            "title": "第一次世界大戦の休戦",
+            "year": 1918,
+            "yearLabel": "1918年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Armistice of 11 November 1918"
+        },
+        {
+            "id": "tutankhamun",
+            "title": "ツタンカーメン王墓の発見",
+            "year": 1922,
+            "yearLabel": "1922年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Harry Burton Tutankhamun"
+        },
+        {
+            "id": "normandy",
+            "title": "ノルマンディー上陸作戦",
+            "year": 1944,
+            "yearLabel": "1944年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Normandy landings"
+        },
+        {
+            "id": "india_independence",
+            "title": "インドの独立",
+            "year": 1947,
+            "yearLabel": "1947年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Jawaharlal Nehru 1947"
+        },
+        {
+            "id": "udhr",
+            "title": "世界人権宣言",
+            "year": 1948,
+            "yearLabel": "1948年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Eleanor Roosevelt Universal Declaration of Human Rights"
+        },
+        {
+            "id": "korean_war",
+            "title": "朝鮮戦争の開戦",
+            "year": 1950,
+            "yearLabel": "1950年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Korean War 1950"
+        },
+        {
+            "id": "berlin_wall_built",
+            "title": "ベルリンの壁の建設",
+            "year": 1961,
+            "yearLabel": "1961年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Berlin Wall construction 1961"
+        },
+        {
+            "id": "i_have_a_dream",
+            "title": "キング牧師の「私には夢がある」演説",
+            "year": 1963,
+            "yearLabel": "1963年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Martin Luther King March on Washington"
+        },
+        {
+            "id": "oil_crisis",
+            "title": "第一次石油危機",
+            "year": 1973,
+            "yearLabel": "1973年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "1973 oil crisis"
+        },
+        {
+            "id": "vietnam_end",
+            "title": "ベトナム戦争の終結",
+            "year": 1975,
+            "yearLabel": "1975年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Saigon evacuation 1975"
+        },
+        {
+            "id": "chernobyl",
+            "title": "チェルノブイリ原発事故",
+            "year": 1986,
+            "yearLabel": "1986年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Chernobyl Nuclear Power Plant"
+        },
+        {
+            "id": "hong_kong",
+            "title": "香港の返還",
+            "year": 1997,
+            "yearLabel": "1997年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Hong Kong handover ceremony"
         }
     ]
 }
