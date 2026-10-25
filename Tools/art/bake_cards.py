@@ -2,7 +2,8 @@
 
 エンジンは 3D 空間に文字を描けないため、出来事名と年号を画像に焼き込んでおく。
 
-    python Tools/art/bake_cards.py
+    python Tools/art/bake_cards.py                全カードと卓・山札の素材を焼く
+    python Tools/art/bake_cards.py --only a,b     指定したカードの面だけ焼く
 
 入力:
     ChronoSort/Assets/Data/Decks/*.json
@@ -13,6 +14,7 @@
     table.png / table.tmat   … 卓の布
 """
 
+import argparse
 import json
 import math
 import random
@@ -239,13 +241,22 @@ def bake_board():
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--only", default="")
+    args = parser.parse_args()
+    # 指定したカードの面だけを焼く（卓・山札の素材と、他のカードの面には触れない）
+    only = {s for s in args.only.split(",") if s}
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    bake_board()
+    if not only:
+        bake_board()
     art_size = (ART_BOX[2] - ART_BOX[0], ART_BOX[3] - ART_BOX[1])
     count = 0
     for deck_path in sorted(DECK_DIR.glob("*.json")):
         deck = json.loads(deck_path.read_text(encoding="utf-8"))
         for card in deck["cards"]:
+            if only and card["id"] not in only:
+                continue
             art = load_art(card, art_size)
             for face, reveal in (("front", False), ("back", True)):
                 name = f"{card['id']}_{face}"
@@ -256,7 +267,8 @@ def main():
                 face.save(OUT_DIR / f"{name}.png", optimize=True)
                 write_tmat(OUT_DIR / f"{name}.tmat", f"{ASSET_PREFIX}/Cards/{name}.png")
             count += 1
-    bake_table()
+    if not only:
+        bake_table()
     print(f"baked {count} cards to {OUT_DIR}")
 
 

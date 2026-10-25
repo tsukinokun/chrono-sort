@@ -129,7 +129,7 @@
             "region": "WORLD",
             "category": "戦争",
             "art": "",
-            "artQuery": "Red Cliff Qiao Zhongchang"
+            "artQuery": "Battle of Red Cliffs"
         },
         {
             "id": "edict_of_milan",
@@ -179,7 +179,7 @@
             "region": "WORLD",
             "category": "宗教",
             "art": "",
-            "artQuery": "Prophet's Mosque Medina 19th century"
+            "artQuery": "Jabal Thawr"
         },
         {
             "id": "tours",
@@ -699,7 +699,7 @@
             "region": "WORLD",
             "category": "政治",
             "art": "",
-            "artQuery": "Belavezha Accords signing"
+            "artQuery": "Boris Yeltsin 1991"
         },
         {
             "id": "joan_orleans",
@@ -749,7 +749,657 @@
             "region": "WORLD",
             "category": "政治",
             "art": "",
-            "artQuery": "Brandenburg Gate 3 October 1990"
+            "artQuery": "Helmut Kohl 1990"
+        },
+        {
+            "id": "alexander_death",
+            "title": "アレクサンドロス大王の死",
+            "year": -323,
+            "yearLabel": "紀元前323年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Death of Alexander the Great"
+        },
+        {
+            "id": "zama",
+            "title": "ザマの戦い",
+            "year": -202,
+            "yearLabel": "紀元前202年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Zama"
+        },
+        {
+            "id": "augustus",
+            "title": "アウグストゥスの称号授与",
+            "year": -27,
+            "yearLabel": "紀元前27年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Augustus of Prima Porta"
+        },
+        {
+            "id": "cai_lun_paper",
+            "title": "蔡倫が紙を献上",
+            "year": 105,
+            "yearLabel": "105年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Cai Lun papermaking"
+        },
+        {
+            "id": "great_schism",
+            "title": "東西教会の分裂",
+            "year": 1054,
+            "yearLabel": "1054年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Michael I Cerularius"
+        },
+        {
+            "id": "marco_polo",
+            "title": "マルコ・ポーロの旅立ち",
+            "year": 1271,
+            "yearLabel": "1271年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Marco Polo leaving Venice"
+        },
+        {
+            "id": "augsburg",
+            "title": "アウクスブルクの和議",
+            "year": 1555,
+            "yearLabel": "1555年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Peace of Augsburg"
+        },
+        {
+            "id": "lepanto",
+            "title": "レパントの海戦",
+            "year": 1571,
+            "yearLabel": "1571年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Lepanto painting"
+        },
+        {
+            "id": "vienna_1683",
+            "title": "第二次ウィーン包囲",
+            "year": 1683,
+            "yearLabel": "1683年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Vienna 1683"
+        },
+        {
+            "id": "watt_engine",
+            "title": "ワットの蒸気機関の特許",
+            "year": 1769,
+            "yearLabel": "1769年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "James Watt steam engine"
+        },
+        {
+            "id": "communist_manifesto",
+            "title": "『共産党宣言』の出版",
+            "year": 1848,
+            "yearLabel": "1848年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Communist Manifesto first edition"
+        },
+        {
+            "id": "lincoln_assassination",
+            "title": "リンカーン暗殺",
+            "year": 1865,
+            "yearLabel": "1865年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Assassination of Abraham Lincoln"
+        },
+        {
+            "id": "athens_1896",
+            "title": "第1回近代オリンピック",
+            "year": 1896,
+            "yearLabel": "1896年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "1896 Summer Olympics Athens"
+        },
+        {
+            "id": "xinhai",
+            "title": "辛亥革命",
+            "year": 1911,
+            "yearLabel": "1911年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Xinhai Revolution Wuchang"
+        },
+        {
+            "id": "dna_helix",
+            "title": "DNA二重らせん構造の発表",
+            "year": 1953,
+            "yearLabel": "1953年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "DNA double helix Watson Crick model"
+        },
+        {
+            "id": "solon",
+            "title": "ソロンの改革",
+            "year": -594,
+            "yearLabel": "紀元前594年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Solon"
+        },
+        {
+            "id": "peloponnesian",
+            "title": "ペロポネソス戦争の開戦",
+            "year": -431,
+            "yearLabel": "紀元前431年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Pericles Funeral Oration Foltz"
+        },
+        {
+            "id": "punic_first",
+            "title": "第一次ポエニ戦争の開戦",
+            "year": -264,
+            "yearLabel": "紀元前264年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "First Punic War"
+        },
+        {
+            "id": "spartacus",
+            "title": "スパルタクスの反乱",
+            "year": -73,
+            "yearLabel": "紀元前73年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Spartacus statue"
+        },
+        {
+            "id": "rubicon",
+            "title": "カエサルのルビコン渡河",
+            "year": -49,
+            "yearLabel": "紀元前49年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Caesar crossing the Rubicon"
+        },
+        {
+            "id": "teutoburg",
+            "title": "トイトブルクの森の戦い",
+            "year": 9,
+            "yearLabel": "9年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Varusschlacht"
+        },
+        {
+            "id": "rome_fire",
+            "title": "ローマ大火",
+            "year": 64,
+            "yearLabel": "64年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Fire of Rome Hubert Robert"
+        },
+        {
+            "id": "colosseum",
+            "title": "コロッセオの完成",
+            "year": 80,
+            "yearLabel": "80年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Colosseum exterior Rome"
+        },
+        {
+            "id": "yellow_turban",
+            "title": "黄巾の乱",
+            "year": 184,
+            "yearLabel": "184年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Yellow Turban Rebellion"
+        },
+        {
+            "id": "constantinople_founded",
+            "title": "コンスタンティノープル遷都",
+            "year": 330,
+            "yearLabel": "330年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Constantine I Hagia Sophia southwestern entrance mosaic"
+        },
+        {
+            "id": "catalaunian",
+            "title": "カタラウヌムの戦い",
+            "year": 451,
+            "yearLabel": "451年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of the Catalaunian Plains"
+        },
+        {
+            "id": "hagia_sophia",
+            "title": "ハギア・ソフィア大聖堂の完成",
+            "year": 537,
+            "yearLabel": "537年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hagia Sophia"
+        },
+        {
+            "id": "sui_unification",
+            "title": "隋の中国統一",
+            "year": 589,
+            "yearLabel": "589年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Wen of Sui"
+        },
+        {
+            "id": "tang_founding",
+            "title": "唐の建国",
+            "year": 618,
+            "yearLabel": "618年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Gaozu of Tang"
+        },
+        {
+            "id": "baghdad",
+            "title": "バグダードの建設開始",
+            "year": 762,
+            "yearLabel": "762年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Round city of Baghdad"
+        },
+        {
+            "id": "song_founding",
+            "title": "宋の建国",
+            "year": 960,
+            "yearLabel": "960年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Taizu of Song"
+        },
+        {
+            "id": "canossa",
+            "title": "カノッサの屈辱",
+            "year": 1077,
+            "yearLabel": "1077年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Canossa Henry IV"
+        },
+        {
+            "id": "saladin",
+            "title": "サラディンのエルサレム奪回",
+            "year": 1187,
+            "yearLabel": "1187年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Saladin"
+        },
+        {
+            "id": "baghdad_fall",
+            "title": "モンゴル軍のバグダード攻略",
+            "year": 1258,
+            "yearLabel": "1258年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Siege of Baghdad 1258"
+        },
+        {
+            "id": "zheng_he",
+            "title": "鄭和の第1回航海",
+            "year": 1405,
+            "yearLabel": "1405年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Zheng He treasure ship"
+        },
+        {
+            "id": "agincourt",
+            "title": "アジャンクールの戦い",
+            "year": 1415,
+            "yearLabel": "1415年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Agincourt"
+        },
+        {
+            "id": "dias",
+            "title": "ディアスの喜望峰到達",
+            "year": 1488,
+            "yearLabel": "1488年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Bartolomeu Dias Cape of Good Hope"
+        },
+        {
+            "id": "tordesillas",
+            "title": "トルデシリャス条約",
+            "year": 1494,
+            "yearLabel": "1494年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Tordesillas"
+        },
+        {
+            "id": "balboa",
+            "title": "バルボアの太平洋到達",
+            "year": 1513,
+            "yearLabel": "1513年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Vasco Nunez de Balboa"
+        },
+        {
+            "id": "mughal",
+            "title": "ムガル帝国の成立",
+            "year": 1526,
+            "yearLabel": "1526年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Babur"
+        },
+        {
+            "id": "vienna_1529",
+            "title": "第一次ウィーン包囲",
+            "year": 1529,
+            "yearLabel": "1529年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Siege of Vienna 1529"
+        },
+        {
+            "id": "inca_fall",
+            "title": "インカ皇帝アタワルパの処刑",
+            "year": 1533,
+            "yearLabel": "1533年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Atahualpa"
+        },
+        {
+            "id": "trent",
+            "title": "トリエント公会議の開幕",
+            "year": 1545,
+            "yearLabel": "1545年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Council of Trent"
+        },
+        {
+            "id": "nantes",
+            "title": "ナントの勅令",
+            "year": 1598,
+            "yearLabel": "1598年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Henry IV of France"
+        },
+        {
+            "id": "charles_execution",
+            "title": "チャールズ1世の処刑",
+            "year": 1649,
+            "yearLabel": "1649年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Execution of Charles I"
+        },
+        {
+            "id": "louis_xiv",
+            "title": "ルイ14世の親政開始",
+            "year": 1661,
+            "yearLabel": "1661年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Louis XIV Rigaud"
+        },
+        {
+            "id": "nerchinsk",
+            "title": "ネルチンスク条約",
+            "year": 1689,
+            "yearLabel": "1689年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Nerchinsk"
+        },
+        {
+            "id": "st_petersburg",
+            "title": "サンクトペテルブルクの建設",
+            "year": 1703,
+            "yearLabel": "1703年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Peter the Great founding Saint Petersburg"
+        },
+        {
+            "id": "plassey",
+            "title": "プラッシーの戦い",
+            "year": 1757,
+            "yearLabel": "1757年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Plassey"
+        },
+        {
+            "id": "boston_tea",
+            "title": "ボストン茶会事件",
+            "year": 1773,
+            "yearLabel": "1773年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Boston Tea Party"
+        },
+        {
+            "id": "montgolfier",
+            "title": "モンゴルフィエ兄弟の有人気球",
+            "year": 1783,
+            "yearLabel": "1783年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Montgolfier balloon 1783"
+        },
+        {
+            "id": "louis_xvi",
+            "title": "ルイ16世の処刑",
+            "year": 1793,
+            "yearLabel": "1793年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Execution of Louis XVI"
+        },
+        {
+            "id": "jenner",
+            "title": "ジェンナーの種痘",
+            "year": 1796,
+            "yearLabel": "1796年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Edward Jenner vaccination"
+        },
+        {
+            "id": "congress_vienna",
+            "title": "ウィーン会議の開幕",
+            "year": 1814,
+            "yearLabel": "1814年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Congress of Vienna Isabey"
+        },
+        {
+            "id": "stockton",
+            "title": "ストックトン・ダーリントン鉄道の開業",
+            "year": 1825,
+            "yearLabel": "1825年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Locomotion No 1"
+        },
+        {
+            "id": "july_revolution",
+            "title": "七月革命",
+            "year": 1830,
+            "yearLabel": "1830年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Liberty Leading the People"
+        },
+        {
+            "id": "great_exhibition",
+            "title": "ロンドン万国博覧会",
+            "year": 1851,
+            "yearLabel": "1851年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Crystal Palace 1851"
+        },
+        {
+            "id": "alaska",
+            "title": "アラスカの購入",
+            "year": 1867,
+            "yearLabel": "1867年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Alaska purchase check"
+        },
+        {
+            "id": "transcontinental",
+            "title": "大陸横断鉄道の開通",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Golden spike 1869"
+        },
+        {
+            "id": "edison_bulb",
+            "title": "エジソンの白熱電球",
+            "year": 1879,
+            "yearLabel": "1879年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Edison light bulb"
+        },
+        {
+            "id": "xray",
+            "title": "レントゲンのX線発見",
+            "year": 1895,
+            "yearLabel": "1895年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Rontgen hand X-ray"
+        },
+        {
+            "id": "relativity",
+            "title": "アインシュタインの特殊相対性理論",
+            "year": 1905,
+            "yearLabel": "1905年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Albert Einstein 1905"
+        },
+        {
+            "id": "lindbergh",
+            "title": "リンドバーグの大西洋単独無着陸横断",
+            "year": 1927,
+            "yearLabel": "1927年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Spirit of St. Louis Lindbergh"
+        },
+        {
+            "id": "bandung",
+            "title": "アジア・アフリカ会議",
+            "year": 1955,
+            "yearLabel": "1955年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Bandung Conference 1955"
+        },
+        {
+            "id": "gagarin",
+            "title": "ガガーリンの有人宇宙飛行",
+            "year": 1961,
+            "yearLabel": "1961年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Yuri Gagarin"
         }
     ]
 }
