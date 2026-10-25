@@ -11,6 +11,7 @@
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
 
+#include <cstdint>
 #include <string>
 #include <utility>
 #include <vector>
@@ -44,6 +45,10 @@ namespace ChronoSort::UI {
         //! 手番のプレイヤーを示します（しおりのリボンを移す）。
         //! @param  [in] player プレイヤー番号。
         void SetTurn(size_t player);
+
+        //! 人間が操作していない時間を伝えます（しばらく放置されたら次の行動を促す）。
+        //! @param  [in] seconds 最後に操作してからの秒数（人間の手番でなければ 0）。
+        void SetIdleSeconds(float seconds);
 
         //! 通知の紙片を滑り込ませ、少し置いてから抜きます。
         //! @param  [in] text 文字列。
@@ -116,6 +121,10 @@ namespace ChronoSort::UI {
         std::vector<int>                  m_shownHandCounts;            // 表示している手札枚数（脱落は -1）
         float                             m_displayScore = 0.0f;        // 数え上げ中の得点表示
         int                               m_shownRound   = 0;           // 表示しているラウンド
+        size_t                            m_turnPlayer   = SIZE_MAX;    // 強調している手番のプレイヤー
+        bool                              m_lifeWarning  = false;       // 最後のインク壺を震わせているか
+        bool                              m_deckWarning  = false;       // 山札の札を弾ませているか
+        Tsukino::ECS::Entity              m_nudged       = entt::null;  // 放置の催促で震わせている UI
 
         // 結果画面
         Tsukino::ECS::Entity m_result      = entt::null;

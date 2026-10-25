@@ -152,6 +152,20 @@ namespace ChronoSort::Scene {
         // ホイールで場の列を左右に見渡す（CPU の手番や公開の演出中も見られるよう、手番を問わず受け付ける）
         m_board->ScrollBy(-context->inputSystem->GetWheelDelta() * kWheelScroll);
 
+        // 人間の手番で操作していない時間（マウスを動かす・押す・ホイール・カードを持つ、で数え直す）
+        {
+            Tsukino::Input::InputSystem& input  = *context->inputSystem;
+            int                          mouseX = 0;
+            int                          mouseY = 0;
+            input.GetMousePosition(&mouseX, &mouseY);
+            const hlslpp::float2 mouse(static_cast<float>(mouseX), static_cast<float>(mouseY));
+            const bool           active = float(hlslpp::length(mouse - m_lastMouse)) > 2.0f || input.IsKeyDown(KeyCode::LButton)
+                                || input.IsKeyDown(KeyCode::RButton) || input.GetWheelDelta() != 0.0f || m_grabbed >= 0 || m_selected >= 0;
+            m_lastMouse = mouse;
+            m_idleTime  = (m_phase == Phase::HumanTurn && !active) ? m_idleTime + deltaTime : 0.0f;
+            m_hud->SetIdleSeconds(m_idleTime);
+        }
+
         m_board->SetDeckCount(m_match.DeckRemaining());
         m_board->UpdateLayout(deltaTime);
         UpdateCamera(deltaTime);

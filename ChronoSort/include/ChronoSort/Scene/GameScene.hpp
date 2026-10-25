@@ -132,6 +132,8 @@ namespace ChronoSort::Scene {
         hlslpp::float3        m_dragPoint  = hlslpp::float3(0.0f, 0.0f, 0.0f);    // ドラッグ中のカードの位置
         hlslpp::float3        m_dragVelocity = hlslpp::float3(0.0f, 0.0f, 0.0f);  // ドラッグの速度（傾きに使う）
         std::optional<size_t> m_preview;                 // 置こうとしているスロット
+        float                 m_idleTime  = 0.0f;        // 人間の手番で操作していない時間（秒）
+        hlslpp::float2        m_lastMouse = hlslpp::float2(0.0f, 0.0f);    // 前フレームのマウス位置
 
         // カメラ
         Tsukino::ECS::Entity m_camera      = entt::null;

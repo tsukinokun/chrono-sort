@@ -104,6 +104,10 @@ namespace ChronoSort::UI {
         //! @param  [in] amount 弾む強さ。
         void Punch(Tsukino::ECS::Entity entity, float amount = 0.25f);
 
+        //! 揺れと上下の漂いを止めます（倒れた物など、もう動かさない紙片に）。
+        //! @param  [in] entity 紙片。
+        void StopIdle(Tsukino::ECS::Entity entity);
+
         //! 文字列を書き換えます。
         //! @param  [in] entity 文字のエンティティ。
         //! @param  [in] text   新しい文字列。

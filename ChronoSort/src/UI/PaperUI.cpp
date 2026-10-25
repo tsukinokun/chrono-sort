@@ -229,6 +229,15 @@ namespace ChronoSort::UI {
     }
 
     //----------------------------------------------------------------------------
+    //! 揺れと上下の漂いを止めます。
+    //----------------------------------------------------------------------------
+    void PaperUI::StopIdle(Tsukino::ECS::Entity entity) {
+        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
+        BuiltIn::UITweenUtility::Stop(registry, entity, kTagSway);
+        BuiltIn::UITweenUtility::Stop(registry, entity, kTagBob);
+    }
+
+    //----------------------------------------------------------------------------
     //! 文字列を書き換えます。
     //----------------------------------------------------------------------------
     void PaperUI::SetText(Tsukino::ECS::Entity entity, const std::wstring& text) {
