@@ -1910,6 +1910,506 @@
             "category": "文化",
             "art": "",
             "artQuery": "Linimo 100 series"
+        },
+        {
+            "id": "iwai",
+            "title": "磐井の乱",
+            "year": 527,
+            "yearLabel": "527年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Iwatoyama Kofun"
+        },
+        {
+            "id": "teibi",
+            "title": "丁未の乱",
+            "year": 587,
+            "yearLabel": "587年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Mononobe no Moriya"
+        },
+        {
+            "id": "asukadera",
+            "title": "飛鳥寺の造営開始",
+            "year": 588,
+            "yearLabel": "588年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Asuka-dera"
+        },
+        {
+            "id": "nagaya_no_o",
+            "title": "長屋王の変",
+            "year": 729,
+            "yearLabel": "729年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Prince Nagaya residence"
+        },
+        {
+            "id": "hirotsugu",
+            "title": "藤原広嗣の乱",
+            "year": 740,
+            "yearLabel": "740年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Fujiwara no Hirotsugu"
+        },
+        {
+            "id": "isawajo",
+            "title": "胆沢城の築城",
+            "year": 802,
+            "yearLabel": "802年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Isawa Castle"
+        },
+        {
+            "id": "kusuko",
+            "title": "薬子の変",
+            "year": 810,
+            "yearLabel": "810年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Saga"
+        },
+        {
+            "id": "heike_nokyo",
+            "title": "平家納経の奉納",
+            "year": 1164,
+            "yearLabel": "1164年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Heike Nokyo"
+        },
+        {
+            "id": "shishigatani",
+            "title": "鹿ケ谷の陰謀",
+            "year": 1177,
+            "yearLabel": "1177年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Shishigatani"
+        },
+        {
+            "id": "fukuhara",
+            "title": "福原京遷都",
+            "year": 1180,
+            "yearLabel": "1180年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Taira no Kiyomori statue"
+        },
+        {
+            "id": "kurikara",
+            "title": "倶利伽羅峠の戦い",
+            "year": 1183,
+            "yearLabel": "1183年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Minamoto no Yoshinaka"
+        },
+        {
+            "id": "ichinotani",
+            "title": "一ノ谷の戦い",
+            "year": 1184,
+            "yearLabel": "1184年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Ichi-no-Tani"
+        },
+        {
+            "id": "yashima",
+            "title": "屋島の戦い",
+            "year": 1185,
+            "yearLabel": "1185年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Nasu no Yoichi"
+        },
+        {
+            "id": "oshu_fujiwara",
+            "title": "奥州藤原氏の滅亡",
+            "year": 1189,
+            "yearLabel": "1189年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Fujiwara no Hidehira"
+        },
+        {
+            "id": "kamakura_daibutsu",
+            "title": "鎌倉大仏の鋳造開始",
+            "year": 1252,
+            "yearLabel": "1252年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kamakura Daibutsu"
+        },
+        {
+            "id": "shochu",
+            "title": "正中の変",
+            "year": 1324,
+            "yearLabel": "1324年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hino Suketomo"
+        },
+        {
+            "id": "minatogawa",
+            "title": "湊川の戦い",
+            "year": 1336,
+            "yearLabel": "1336年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Minatogawa"
+        },
+        {
+            "id": "shocho_ikki",
+            "title": "正長の土一揆",
+            "year": 1428,
+            "yearLabel": "1428年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Yagyu tokusei stone"
+        },
+        {
+            "id": "kakitsu",
+            "title": "嘉吉の乱",
+            "year": 1441,
+            "yearLabel": "1441年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ashikaga Yoshinori"
+        },
+        {
+            "id": "ginkaku",
+            "title": "銀閣の観音殿の上棟",
+            "year": 1489,
+            "yearLabel": "1489年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Ginkaku-ji Kannon-den"
+        },
+        {
+            "id": "gifu",
+            "title": "信長の稲葉山城攻略",
+            "year": 1567,
+            "yearLabel": "1567年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Saito Dosan"
+        },
+        {
+            "id": "rikyu",
+            "title": "千利休の切腹",
+            "year": 1591,
+            "yearLabel": "1591年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Sen no Rikyu"
+        },
+        {
+            "id": "liefde",
+            "title": "リーフデ号の漂着",
+            "year": 1600,
+            "yearLabel": "1600年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "William Adams"
+        },
+        {
+            "id": "osaka_fuyu",
+            "title": "大坂冬の陣",
+            "year": 1614,
+            "yearLabel": "1614年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Siege of Osaka winter campaign"
+        },
+        {
+            "id": "toshogu",
+            "title": "日光東照宮の造営",
+            "year": 1617,
+            "yearLabel": "1617年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Nikko Toshogu"
+        },
+        {
+            "id": "saikaku",
+            "title": "『好色一代男』の刊行",
+            "year": 1682,
+            "yearLabel": "1682年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Ihara Saikaku"
+        },
+        {
+            "id": "nishikie",
+            "title": "錦絵の誕生",
+            "year": 1765,
+            "yearLabel": "1765年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Suzuki Harunobu Heron Maiden"
+        },
+        {
+            "id": "hizakurige",
+            "title": "『東海道中膝栗毛』の刊行",
+            "year": 1802,
+            "yearLabel": "1802年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Jippensha Ikku"
+        },
+        {
+            "id": "hakkenden",
+            "title": "『南総里見八犬伝』の刊行開始",
+            "year": 1814,
+            "yearLabel": "1814年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kyokutei Bakin"
+        },
+        {
+            "id": "siebold_jiken",
+            "title": "シーボルト事件",
+            "year": 1828,
+            "yearLabel": "1828年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Siebold Japan map"
+        },
+        {
+            "id": "tekijuku",
+            "title": "適塾の開設",
+            "year": 1838,
+            "yearLabel": "1838年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Ogata Koan"
+        },
+        {
+            "id": "yokohama_kaiko",
+            "title": "横浜の開港",
+            "year": 1859,
+            "yearLabel": "1859年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Yokohama port 1860s"
+        },
+        {
+            "id": "shimonoseki_hogeki",
+            "title": "四国艦隊下関砲撃事件",
+            "year": 1864,
+            "yearLabel": "1864年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Bombardment of Shimonoseki"
+        },
+        {
+            "id": "edo_kaijo",
+            "title": "江戸城の無血開城",
+            "year": 1868,
+            "yearLabel": "1868年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Katsu Kaishu"
+        },
+        {
+            "id": "hakodate",
+            "title": "箱館戦争の終結",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Goryokaku"
+        },
+        {
+            "id": "choheirei",
+            "title": "徴兵令",
+            "year": 1873,
+            "yearLabel": "1873年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yamagata Aritomo"
+        },
+        {
+            "id": "todai",
+            "title": "東京大学の創立",
+            "year": 1877,
+            "yearLabel": "1877年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Akamon University of Tokyo"
+        },
+        {
+            "id": "nichigin",
+            "title": "日本銀行の設立",
+            "year": 1882,
+            "yearLabel": "1882年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Matsukata Masayoshi"
+        },
+        {
+            "id": "normanton",
+            "title": "ノルマントン号事件",
+            "year": 1886,
+            "yearLabel": "1886年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Normanton incident Bigot"
+        },
+        {
+            "id": "kyoiku_chokugo",
+            "title": "教育勅語の発布",
+            "year": 1890,
+            "yearLabel": "1890年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Imperial Rescript on Education"
+        },
+        {
+            "id": "nobi_jishin",
+            "title": "濃尾地震",
+            "year": 1891,
+            "yearLabel": "1891年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Mino-Owari earthquake 1891"
+        },
+        {
+            "id": "tokyo_eki",
+            "title": "東京駅の開業",
+            "year": 1914,
+            "yearLabel": "1914年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tokyo Station 1914"
+        },
+        {
+            "id": "suiheisha",
+            "title": "全国水平社の結成",
+            "year": 1922,
+            "yearLabel": "1922年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Suiheisha"
+        },
+        {
+            "id": "nisso",
+            "title": "日ソ共同宣言",
+            "year": 1956,
+            "yearLabel": "1956年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Ichiro Hatoyama"
+        },
+        {
+            "id": "isewan",
+            "title": "伊勢湾台風",
+            "year": 1959,
+            "yearLabel": "1959年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Isewan Typhoon"
+        },
+        {
+            "id": "ogasawara",
+            "title": "小笠原諸島の返還",
+            "year": 1968,
+            "yearLabel": "1968年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Ogasawara Islands Chichijima"
+        },
+        {
+            "id": "jnr",
+            "title": "国鉄の分割民営化",
+            "year": 1987,
+            "yearLabel": "1987年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Japanese National Railways"
+        },
+        {
+            "id": "sekai_isan",
+            "title": "法隆寺・姫路城の世界遺産登録",
+            "year": 1993,
+            "yearLabel": "1993年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Himeji Castle"
+        },
+        {
+            "id": "kyoto_giteisho",
+            "title": "京都議定書の採択",
+            "year": 1997,
+            "yearLabel": "1997年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Kyoto International Conference Center"
+        },
+        {
+            "id": "world_cup_2002",
+            "title": "日韓ワールドカップ",
+            "year": 2002,
+            "yearLabel": "2002年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "2002 FIFA World Cup"
         }
     ]
 }

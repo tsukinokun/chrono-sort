@@ -1,6 +1,15 @@
 {
   "images": [
     {
+      "id": "abbasid",
+      "title": "アッバース朝の成立",
+      "file": "File:Folio from a Koran (8th-9th century).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Folio_from_a_Koran_(8th-9th_century).jpg",
+      "artist": "Unknown in Abbasid dynasty",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "actium",
       "title": "アクティウムの海戦",
       "file": "File:The Battle of Actium, 2 September 31BC RMG BHC0251.tiff",
@@ -51,6 +60,15 @@
       "file": "File:Alexander the Great mosaic.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Alexander_the_Great_mosaic.jpg",
       "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "amundsen",
+      "title": "アムンセンの南極点到達",
+      "file": "File:Amundsen-in-ice.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amundsen-in-ice.jpg",
+      "artist": "Anders Beer Wilse",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -143,6 +161,15 @@
       "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "asukadera",
+      "title": "飛鳥寺の造営開始",
+      "file": "File:Asuka-dera Asuka Nara pref03n4050.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Asuka-dera_Asuka_Nara_pref03n4050.jpg",
+      "artist": "663highland",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
     },
     {
       "id": "athens_1896",
@@ -289,6 +316,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "bosworth",
+      "title": "ボズワースの戦い",
+      "file": "File:Battle of Bosworth by Philip James de Loutherbourg.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Bosworth_by_Philip_James_de_Loutherbourg.jpg",
+      "artist": "Philip James de Loutherbourg",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "boxer",
       "title": "義和団事件",
       "file": "File:Beijing Castle Boxer Rebellion 1900 FINAL.jpg",
@@ -296,6 +332,15 @@
       "artist": "Kasai Torajirō",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "britannia",
+      "title": "ローマのブリタンニア侵攻",
+      "file": "File:Claudius crop.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Claudius_crop.jpg",
+      "artist": "Unknown",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
     },
     {
       "id": "buke_shohatto",
@@ -388,6 +433,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "changping",
+      "title": "長平の戦い",
+      "file": "File:Bai Qi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bai_Qi.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "charlemagne",
       "title": "カール大帝の戴冠",
       "file": "File:Detail coronation Charles the Great (Francis 1st of France) by Pope Leo III (Leo X) Vatican 11.jpg",
@@ -420,6 +474,24 @@
       "file": "File:Chiken akita face.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Chiken_akita_face.jpg",
       "artist": "Issued by Akita Prefecture. Photo by Mbdnoob.",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "choheirei",
+      "title": "徴兵令",
+      "file": "File:Yamagata Aritomo.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Yamagata_Aritomo.jpg",
+      "artist": "Unknown photographer",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "cleopatra",
+      "title": "クレオパトラの死",
+      "file": "File:Roman Wall painting from the House of Giuseppe II, Pompeii, 1st century AD, death of Sophonisba, but more likely Cleopatra VII of Egypt consuming poison.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Roman_Wall_painting_from_the_House_of_Giuseppe_II,_Pompeii,_1st_century_AD,_death_of_Sophonisba,_but_more_likely_Cleopatra_VII_of_Egypt_consuming_poison.jpg",
+      "artist": "Ancient Roman painter(s)",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -505,6 +577,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "cuban_revolution",
+      "title": "キューバ革命",
+      "file": "File:Fidel Castro - MATS Terminal Washington 1959.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fidel_Castro_-_MATS_Terminal_Washington_1959.jpg",
+      "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "cyrus_babylon",
       "title": "キュロス2世のバビロン入城",
       "file": "File:Great Men and Famous Women Volume 1 - Cyrus the Great.png",
@@ -586,6 +667,24 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
+      "id": "domesday",
+      "title": "ドゥームズデイ・ブックの作成",
+      "file": "File:Domesday-book-1804x972.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Domesday-book-1804x972.jpg",
+      "artist": "Andrews, William",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "don_quixote",
+      "title": "『ドン・キホーテ』前編の出版",
+      "file": "File:Miguel de Cervantes (1605) El ingenioso hidalgo Don Quixote de la Mancha.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Miguel_de_Cervantes_(1605)_El_ingenioso_hidalgo_Don_Quixote_de_la_Mancha.png",
+      "artist": "Miguel de Cervantes",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "east_india_company",
       "title": "イギリス東インド会社の設立",
       "file": "File:East India House THS 1817 edited.jpg",
@@ -622,11 +721,29 @@
       "licenseUrl": ""
     },
     {
+      "id": "edo_kaijo",
+      "title": "江戸城の無血開城",
+      "file": "File:Kaishu Katsu 2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kaishu_Katsu_2.jpg",
+      "artist": "published by 東洋文化協會 (The Eastern Culture Association)",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "edojo_chikujo",
       "title": "太田道灌の江戸城築城",
       "file": "File:Edo Castle 1979.94.21P01B.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Edo_Castle_1979.94.21P01B.jpg",
       "artist": "Adolfo FARSARI",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "egypt_campaign",
+      "title": "ナポレオンのエジプト遠征",
+      "file": "File:Baron Antoine-Jean Gros-Battle Pyramids 1810.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Baron_Antoine-Jean_Gros-Battle_Pyramids_1810.jpg",
+      "artist": "Antoine-Jean Gros",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -658,6 +775,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "emancipation",
+      "title": "奴隷解放宣言",
+      "file": "File:Emancipation Proclamation, 01-01-1863 (Page 3 of 5) (3694535917).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Emancipation_Proclamation,_01-01-1863_(Page_3_of_5)_(3694535917).jpg",
+      "artist": "The U.S. National Archives",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "enkai_yochi",
       "title": "『大日本沿海輿地全図』の完成",
       "file": "File:Dai Nihon enkai yochi zenzu LOC 2001620020-8.jpg",
@@ -665,6 +791,15 @@
       "artist": "Inō, Tadataka",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "eu",
+      "title": "欧州連合の発足",
+      "file": "File:GER — BY — Regensburg - Donaumarkt 1 (Museum der Bayerischen Geschichte; Vertrag von Maastricht) (cropped).JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:GER_%E2%80%94_BY_%E2%80%94_Regensburg_-_Donaumarkt_1_(Museum_der_Bayerischen_Geschichte;_Vertrag_von_Maastricht)_(cropped).JPG",
+      "artist": "User:Mateus2019",
+      "license": "CC BY 2.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/de/deed.en"
     },
     {
       "id": "fall_of_carthage",
@@ -712,11 +847,38 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
     },
     {
+      "id": "fourth_crusade",
+      "title": "第4回十字軍のコンスタンティノープル占領",
+      "file": "File:Eugène Delacroix - Prise de Constantinople par les croisés (12 avril 1204).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Prise_de_Constantinople_par_les_crois%C3%A9s_(12_avril_1204).jpg",
+      "artist": "Eugène Delacroix",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "franco_prussian",
+      "title": "普仏戦争の開戦",
+      "file": "File:Franco-Prussian War- Illustrated London News, September 3, 1870.PNG",
+      "page": "https://commons.wikimedia.org/wiki/File:Franco-Prussian_War-_Illustrated_London_News,_September_3,_1870.PNG",
+      "artist": "Robert Landells",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "fujiwara_kyo",
       "title": "藤原京遷都",
       "file": "File:210401 One-thousandth scale model of Fujiwara-kyu.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:210401_One-thousandth_scale_model_of_Fujiwara-kyu.jpg",
       "artist": "名古屋太郎",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "fukuhara",
+      "title": "福原京遷都",
+      "file": "File:Taira no Kiyomori (14884324784).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Taira_no_Kiyomori_(14884324784).jpg",
+      "artist": "Mustang Joe",
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
@@ -802,6 +964,24 @@
       "licenseUrl": ""
     },
     {
+      "id": "gifu",
+      "title": "信長の稲葉山城攻略",
+      "file": "File:Saito Dosan1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Saito_Dosan1.jpg",
+      "artist": "Gameposo",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "ginkaku",
+      "title": "銀閣の観音殿の上棟",
+      "file": "File:Silver Pavilion, Ginkaku-ji, Kyoto, 20240820 1100 5007.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Silver_Pavilion,_Ginkaku-ji,_Kyoto,_20240820_1100_5007.jpg",
+      "artist": "Jakub Hałun",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
       "id": "glorious_revolution",
       "title": "名誉革命",
       "file": "File:Jan Wyck (1645-1700) - William III Landing at Brixham, Torbay, 5 November 1688 - BHC3095 - Royal Museums Greenwich.jpg",
@@ -836,6 +1016,15 @@
       "artist": "ArwinJ",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "goryeo",
+      "title": "高麗の建国",
+      "file": "File:Sunjong in Manwoldae.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sunjong_in_Manwoldae.jpg",
+      "artist": "村上",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
     {
       "id": "goseibai_shikimoku",
@@ -892,11 +1081,38 @@
       "licenseUrl": ""
     },
     {
+      "id": "greek_independence",
+      "title": "ギリシャ独立戦争の開始",
+      "file": "File:Eugène Delacroix - La Grèce sur les ruines de Missolonghi, 1826.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_La_Gr%C3%A8ce_sur_les_ruines_de_Missolonghi,_1826.jpg",
+      "artist": "Eugène Delacroix",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "gregorian",
+      "title": "グレゴリオ暦の制定",
+      "file": "File:Lavinia Fontana - Portrait of Pope Gregory XIII.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Lavinia_Fontana_-_Portrait_of_Pope_Gregory_XIII.jpg",
+      "artist": "Lavinia Fontana",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "grunwald",
       "title": "タンネンベルク（グルンヴァルト）の戦い",
       "file": "File:Jan Matejko, Bitwa pod Grunwaldem.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Jan_Matejko,_Bitwa_pod_Grunwaldem.jpg",
       "artist": "Jan Matejko",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hadrians_wall",
+      "title": "ハドリアヌスの長城の着工",
+      "file": "File:Hadrian's Wall west of Housesteads 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hadrian%27s_Wall_west_of_Housesteads_3.jpg",
+      "artist": "Steven Fruitsmaak",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -928,6 +1144,24 @@
       "licenseUrl": ""
     },
     {
+      "id": "hakkenden",
+      "title": "『南総里見八犬伝』の刊行開始",
+      "file": "File:Kyokutei Bakin.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kyokutei_Bakin.jpg",
+      "artist": "Hannah",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hakodate",
+      "title": "箱館戦争の終結",
+      "file": "File:Surrender of Goryokaku (by the Ezo rebels) by Hayakawa Shozan 1877.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Surrender_of_Goryokaku_(by_the_Ezo_rebels)_by_Hayakawa_Shozan_1877.png",
+      "artist": "Hayakawa Shōzan (1850-1892), (Signature: 松月保誠 Shōgetsu Yasusei)",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "hakusonko",
       "title": "白村江の戦い",
       "file": "File:Emperor Tenji.jpg",
@@ -951,6 +1185,24 @@
       "file": "File:Hana-no-Gosho-Flower-Palace-Kyoto.png",
       "page": "https://commons.wikimedia.org/wiki/File:Hana-no-Gosho-Flower-Palace-Kyoto.png",
       "artist": "日本語: 京都アスニー収蔵\n\nEnglish: Collection of Kyoto Asney archive",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hangul",
+      "title": "ハングルの公布",
+      "file": "File:Hunminjeongum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hunminjeongum.jpg",
+      "artist": "Sejong the Great of Joseon",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hannibal_alps",
+      "title": "ハンニバルのアルプス越え",
+      "file": "File:Joseph Mallord William Turner - Snow Storm, Hannibal and his Army Crossing the Alps - WGA23167.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Joseph_Mallord_William_Turner_-_Snow_Storm,_Hannibal_and_his_Army_Crossing_the_Alps_-_WGA23167.jpg",
+      "artist": "J. M. W. Turner",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1018,6 +1270,15 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
+      "id": "heike_nokyo",
+      "title": "平家納経の奉納",
+      "file": "File:Heike-Nokyo-Chapter-12-Lotus-Sutra.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Heike-Nokyo-Chapter-12-Lotus-Sutra.png",
+      "artist": "Unknown, made by aristocrats",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "hieizan",
       "title": "比叡山焼き討ち",
       "file": "File:Enryaku-ji building.jpg",
@@ -1041,6 +1302,24 @@
       "file": "File:Mount sour1.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Mount_sour1.jpg",
       "artist": "Yousefmadari at ml.wikipedia",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hirotsugu",
+      "title": "藤原広嗣の乱",
+      "file": "File:Fujiwara no Hirotsugu.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fujiwara_no_Hirotsugu.jpg",
+      "artist": "Hannah",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "hizakurige",
+      "title": "『東海道中膝栗毛』の刊行",
+      "file": "File:Jippensya Ikku.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Jippensya_Ikku.jpg",
+      "artist": "Hannah",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1108,6 +1387,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "ichinotani",
+      "title": "一ノ谷の戦い",
+      "file": "File:Battle of Ichi-no-Tani Folding Screen by Kano School.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Ichi-no-Tani_Folding_Screen_by_Kano_School.jpg",
+      "artist": "Kano School",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "inca_fall",
       "title": "インカ皇帝アタワルパの処刑",
       "file": "File:John Harris Valda - Huscar and Atahualpa fighting over the Inca Empire.jpg",
@@ -1144,6 +1432,33 @@
       "licenseUrl": ""
     },
     {
+      "id": "iran_revolution",
+      "title": "イラン革命",
+      "file": "File:Iranian Revolutionaries Shahreza Ave 1979.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Iranian_Revolutionaries_Shahreza_Ave_1979.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "isawajo",
+      "title": "胆沢城の築城",
+      "file": "File:Isawa Castle-2.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Isawa_Castle-2.JPG",
+      "artist": "Saigen Jiro",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "isewan",
+      "title": "伊勢湾台風",
+      "file": "File:Typhoon Vera analysis 23 Sep 1959.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Typhoon_Vera_analysis_23_Sep_1959.png",
+      "artist": "NOAA Central Library",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "ishiyama",
       "title": "石山合戦の終結",
       "file": "File:Utagawa Yoshifuji - The Battle of Ishiyama Hongan-ji.jpg",
@@ -1160,6 +1475,15 @@
       "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "iwai",
+      "title": "磐井の乱",
+      "file": "File:Iwatoyama-kofun enkei.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Iwatoyama-kofun_enkei.JPG",
+      "artist": "Saigen Jiro",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
     {
       "id": "iwakura",
@@ -1207,6 +1531,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "jnr",
+      "title": "国鉄の分割民営化",
+      "file": "File:Japanese-national-railways-D51-453-20110124.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Japanese-national-railways-D51-453-20110124.jpg",
+      "artist": "LERK",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    {
       "id": "joan_orleans",
       "title": "ジャンヌ・ダルクのオルレアン解放",
       "file": "File:Lenepveu, Jeanne d'Arc au siège d'Orléans.jpg",
@@ -1230,6 +1563,15 @@
       "file": "File:Emperor Go-Toba.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Emperor_Go-Toba.jpg",
       "artist": "Fujiwara no Nobuzane",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "joseon",
+      "title": "李氏朝鮮の建国",
+      "file": "File:King Taejo Yi 02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:King_Taejo_Yi_02.jpg",
+      "artist": "Jo Jung-muk(?-?), Pak Gijun(?-?), Baek Eunbae(1820-?), Yu Suk(1827-1873)",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1277,6 +1619,24 @@
       "artist": "Babi Hijau",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "kakitsu",
+      "title": "嘉吉の乱",
+      "file": "File:Ashikaga Yoshinori.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ashikaga_Yoshinori.jpg",
+      "artist": "ja: 不詳（瑞渓周鳳賛、足利義政花押）\nen: Unknown (inscription by Zuikei Shūhō, signature by Ashikaga Yoshimasa)",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "kamakura_daibutsu",
+      "title": "鎌倉大仏の鋳造開始",
+      "file": "File:Portrait in front of Kamakura Daibutsu, Kōtoku-in, Kamakura, Japan (1914 by Elstner Hilton).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Portrait_in_front_of_Kamakura_Daibutsu,_K%C5%8Dtoku-in,_Kamakura,_Japan_(1914_by_Elstner_Hilton).jpg",
+      "artist": "A.Davey from Portland, Oregon, EE UU",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
     },
     {
       "id": "kamakura_metsubo",
@@ -1621,6 +1981,24 @@
       "licenseUrl": ""
     },
     {
+      "id": "kurikara",
+      "title": "倶利伽羅峠の戦い",
+      "file": "File:Minamoto no Yoshinaka.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoshinaka.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "kusuko",
+      "title": "薬子の変",
+      "file": "File:Emperor Saga large.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Emperor_Saga_large.jpg",
+      "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "kyoho_kaikaku",
       "title": "享保の改革",
       "file": "File:Tokugawa Yoshimune.jpg",
@@ -1628,6 +2006,24 @@
       "artist": "Kanō Tadanobu",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "kyoiku_chokugo",
+      "title": "教育勅語の発布",
+      "file": "File:A copy of the Imperial Rescript on Education distributed to various schools in Japan by the Department of Education.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_copy_of_the_Imperial_Rescript_on_Education_distributed_to_various_schools_in_Japan_by_the_Department_of_Education.jpg",
+      "artist": "Calligraphy: unknownText: Emperor Meiji (明治天皇, 1852 – 1912)",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "kyoto_giteisho",
+      "title": "京都議定書の採択",
+      "file": "File:Kyoto International Conference Center 3.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kyoto_International_Conference_Center_3.jpg",
+      "artist": "Marie-Sophie Mejan",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
       "id": "later_han",
@@ -1657,6 +2053,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "league",
+      "title": "国際連盟の発足",
+      "file": "File:Librarians of the League of Nations.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:Librarians_of_the_League_of_Nations.tif",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "legnica",
       "title": "ワールシュタットの戦い",
       "file": "File:Bitwa pod Legnicą.jpg",
@@ -1666,11 +2071,38 @@
       "licenseUrl": ""
     },
     {
+      "id": "lehman",
+      "title": "リーマン・ショック",
+      "file": "File:Barclays (49576521642).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Barclays_(49576521642).jpg",
+      "artist": "Eden, Janine and Jim from New York City",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
       "id": "lepanto",
       "title": "レパントの海戦",
       "file": "File:(Venice) Allegoria della battaglia di Lepanto - Gallerie Accademia.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:(Venice)_Allegoria_della_battaglia_di_Lepanto_-_Gallerie_Accademia.jpg",
       "artist": "Didier Descouens",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "leuctra",
+      "title": "レウクトラの戦い",
+      "file": "File:Epaminondas - Temple of Ancient Virtue, Stowe - Buckinghamshire, England - DSC07376 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Epaminondas_-_Temple_of_Ancient_Virtue,_Stowe_-_Buckinghamshire,_England_-_DSC07376_(cropped).jpg",
+      "artist": "Daderot",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "liefde",
+      "title": "リーフデ号の漂着",
+      "file": "File:William-Adams-before-Shogun-Tokugawa-Ieyasu.png",
+      "page": "https://commons.wikimedia.org/wiki/File:William-Adams-before-Shogun-Tokugawa-Ieyasu.png",
+      "artist": "Editor = Dalton, W. / (Dalton, William).",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1689,6 +2121,24 @@
       "file": "File:Charles Lindbergh and airplane \"Spirit of St. Louis\" LCCN2016888581.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Charles_Lindbergh_and_airplane_%22Spirit_of_St._Louis%22_LCCN2016888581.jpg",
       "artist": "Harris & Ewing, photographer",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "lindisfarne",
+      "title": "ヴァイキングのリンディスファーン襲撃",
+      "file": "File:Holy Island Lindisfarne Castle.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Holy_Island_Lindisfarne_Castle.jpg",
+      "artist": "Michael D Beckwith",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "lisbon",
+      "title": "リスボン地震",
+      "file": "File:1755 Lisbon earthquake.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1755_Lisbon_earthquake.jpg",
+      "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1765,6 +2215,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "manzikert",
+      "title": "マンジケルトの戦い",
+      "file": "File:131 Bataille de Malazgirt.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:131_Bataille_de_Malazgirt.jpg",
+      "artist": "Rohan Master",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "marathon",
       "title": "マラトンの戦い",
       "file": "File:Les Héros de Marathon Georges Rochegrosse 1859.jpg",
@@ -1819,6 +2278,24 @@
       "licenseUrl": ""
     },
     {
+      "id": "minatogawa",
+      "title": "湊川の戦い",
+      "file": "File:Great-Battle-of-Minatogawa-by-Takeuchi-Tacho.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Great-Battle-of-Minatogawa-by-Takeuchi-Tacho.png",
+      "artist": "Takeuchi Tachô (aka Utagawa Yoshikane) (Japanese, 1832–1881)",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "ming_fall",
+      "title": "明の滅亡",
+      "file": "File:Beijing Jingshan Park Pavilion (10553761515).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beijing_Jingshan_Park_Pavilion_(10553761515).jpg",
+      "artist": "Gary Todd from Xinzheng, China",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
       "id": "ming_founding",
       "title": "明の建国",
       "file": "File:Hongwu Emperor from the collection of Temple of Confucius, Qufu.png",
@@ -1835,6 +2312,15 @@
       "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "model_t",
+      "title": "T型フォードの発売",
+      "file": "File:1928 Model A Ford.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1928_Model_A_Ford.jpg",
+      "artist": "Richard Smith",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
     },
     {
       "id": "montgolfier",
@@ -1891,6 +2377,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "nagaya_no_o",
+      "title": "長屋王の変",
+      "file": "File:Nagaya-ō Mokkan5100b.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Nagaya-%C5%8D_Mokkan5100b.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
       "id": "naikaku_seido",
       "title": "内閣制度の創設",
       "file": "File:ITŌ Hirobumi.jpg",
@@ -1914,6 +2409,15 @@
       "file": "File:Yoshimitsu Ashikaga cropped.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Yoshimitsu_Ashikaga_cropped.jpg",
       "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "nanjing",
+      "title": "南京条約",
+      "file": "File:The Signing of the Treaty of Nanking.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Signing_of_the_Treaty_of_Nanking.jpg",
+      "artist": "Painted by Captain John Platt, Bengal Volunteers. Engraved by John Burnet.",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -1943,6 +2447,15 @@
       "artist": "Syced",
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "nato",
+      "title": "北大西洋条約機構の発足",
+      "file": "File:Truman signing North Atlantic Treaty.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Truman_signing_North_Atlantic_Treaty.jpg",
+      "artist": "Abbie Rowe",
+      "license": "Public domain",
+      "licenseUrl": ""
     },
     {
       "id": "nerchinsk",
@@ -2017,6 +2530,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "nichigin",
+      "title": "日本銀行の設立",
+      "file": "File:Matsukata Masayoshi 1917.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Matsukata_Masayoshi_1917.jpg",
+      "artist": "公爵松方正義伝記発行所",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "nichiren",
       "title": "日蓮が日蓮宗を開く",
       "file": "File:Nichiren Daishonin Hakii Portrait.jpg",
@@ -2080,11 +2602,47 @@
       "licenseUrl": ""
     },
     {
+      "id": "nishikie",
+      "title": "錦絵の誕生",
+      "file": "File:Suzuki Harunobu - The Heron Maiden Standing Beneath a Willow Tree - 1985.310 - Cleveland Museum of Art.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:Suzuki_Harunobu_-_The_Heron_Maiden_Standing_Beneath_a_Willow_Tree_-_1985.310_-_Cleveland_Museum_of_Art.tif",
+      "artist": "Suzuki Harunobu",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
       "id": "nisshin_senso",
       "title": "日清戦争",
       "file": "File:Episode of the First Sino-Japanese War. Image from book of 1902.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Episode_of_the_First_Sino-Japanese_War._Image_from_book_of_1902.jpg",
       "artist": "Toshikata Mizuno",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "nisso",
+      "title": "日ソ共同宣言",
+      "file": "File:Hatoyama Ichirō.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hatoyama_Ichir%C5%8D.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "nobel",
+      "title": "第1回ノーベル賞",
+      "file": "File:AlfredNobel2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:AlfredNobel2.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "nobi_jishin",
+      "title": "濃尾地震",
+      "file": "File:1891 Mino-Owari earthquake.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:1891_Mino-Owari_earthquake.JPG",
+      "artist": "Imperial Household Ministry(present-day \"Imperial Household Agency\")",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2107,6 +2665,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "normanton",
+      "title": "ノルマントン号事件",
+      "file": "File:Normanton Incident(1886).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Normanton_Incident(1886).jpg",
+      "artist": "Georges Ferdinand Bigot（1860-1927）",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "notre_dame",
       "title": "ノートルダム大聖堂の着工",
       "file": "File:Notre Dame, Paris, France, ca. 1890-1900.jpg",
@@ -2121,6 +2688,15 @@
       "file": "File:Ebizō Ichikawa VIII as Ōuchi Yoshihiro in Hachi-jin Shugo no Honjō.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Ebiz%C5%8D_Ichikawa_VIII_as_%C5%8Cuchi_Yoshihiro_in_Hachi-jin_Shugo_no_Honj%C5%8D.jpg",
       "artist": "豐原國周 / Toyochika Toyohara",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "ogasawara",
+      "title": "小笠原諸島の返還",
+      "file": "File:Kanrin Maru arrives in Chichijima port.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Kanrin_Maru_arrives_in_Chichijima_port.jpg",
+      "artist": "Miyamoto Gendo, [宮本元道] [著] （みやもとげんどう 1824-？）",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2206,6 +2782,15 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
+      "id": "osaka_fuyu",
+      "title": "大坂冬の陣",
+      "file": "File:Siege of Osaka - Winter Campaign 1614.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Siege_of_Osaka_-_Winter_Campaign_1614.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "osaka_natsu",
       "title": "大坂夏の陣",
       "file": "File:The Siege of Osaka Castle.jpg",
@@ -2229,6 +2814,15 @@
       "file": "File:Oshio Heihachiro.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Oshio_Heihachiro.jpg",
       "artist": "Kikuchi Yōsai",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "oshu_fujiwara",
+      "title": "奥州藤原氏の滅亡",
+      "file": "File:Fujiwara no Hidehira.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Fujiwara_no_Hidehira.jpg",
+      "artist": "Unknown",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2269,6 +2863,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "panama",
+      "title": "パナマ運河の開通",
+      "file": "File:1914 Panama Canal and Canal Zone map.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:1914_Panama_Canal_and_Canal_Zone_map.jpg",
+      "artist": "Syndicate Publishing Company",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "parthenon",
       "title": "パルテノン神殿の着工",
       "file": "File:Parthenon from west.jpg",
@@ -2285,6 +2888,15 @@
       "artist": "Rijksmuseum, CC0, via Wikimedia Commons, Rijksmuseum",
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "peloponnesian_end",
+      "title": "ペロポネソス戦争の終結",
+      "file": "File:Meeting between Cyrus the Younger and Lysander, by Francesco Antonio Grue (1618-1673), maiolica with a dusting technique, Castelli manufacture, Abruzzo. Italy, 17th century.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Meeting_between_Cyrus_the_Younger_and_Lysander,_by_Francesco_Antonio_Grue_(1618-1673),_maiolica_with_a_dusting_technique,_Castelli_manufacture,_Abruzzo._Italy,_17th_century.jpg",
+      "artist": "Francesco Grue",
+      "license": "Public domain",
+      "licenseUrl": ""
     },
     {
       "id": "penicillin",
@@ -2357,6 +2969,15 @@
       "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "prague_spring",
+      "title": "プラハの春",
+      "file": "File:Soviet tanks - Hradcany Square Prague - via Swiss embassy 1968-08-21.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Soviet_tanks_-_Hradcany_Square_Prague_-_via_Swiss_embassy_1968-08-21.png",
+      "artist": "Published via Swiss embassy in Prague. No artist listed on archive website.",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
       "id": "prc_founding",
@@ -2445,6 +3066,15 @@
       "file": "File:The Russian envoy - KONB11-RUSSEN-REZANOV-NEHA.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:The_Russian_envoy_-_KONB11-RUSSEN-REZANOV-NEHA.jpg",
       "artist": "Unknown",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "rikyu",
+      "title": "千利休の切腹",
+      "file": "File:Sen no Rikyu JPN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sen_no_Rikyu_JPN.jpg",
+      "artist": "painted by 長谷川等伯, calligraphy by 春屋宗園",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2544,6 +3174,15 @@
       "file": "File:Sack of Rome by the Visigoths on 24 August 410 by JN Sylvestre 1890.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Sack_of_Rome_by_the_Visigoths_on_24_August_410_by_JN_Sylvestre_1890.jpg",
       "artist": "Joseph-Noël Sylvestre",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "saikaku",
+      "title": "『好色一代男』の刊行",
+      "file": "File:Ihara-Saikaku-Portrait.png",
+      "page": "https://commons.wikimedia.org/wiki/File:Ihara-Saikaku-Portrait.png",
+      "artist": "Template:Haga",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2665,11 +3304,38 @@
       "licenseUrl": ""
     },
     {
+      "id": "sekai_isan",
+      "title": "法隆寺・姫路城の世界遺産登録",
+      "file": "File:Himeji Castle 0804 1.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Himeji_Castle_0804_1.jpg",
+      "artist": "Gorgo",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "sekigahara",
       "title": "関ヶ原の戦い",
       "file": "File:Sekigahara Kassen Byōbu-zu (Gifu History Museum).jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Sekigahara_Kassen_By%C5%8Dbu-zu_(Gifu_History_Museum).jpg",
       "artist": "Collection of The City of Gifu Museum of History",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "sepoy",
+      "title": "インド大反乱",
+      "file": "File:Indian Rebellion of 1857.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Indian_Rebellion_of_1857.jpg",
+      "artist": "Unknown authorUnknown author Cambridge University Press; Stanford's Geogl. Estabt..",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "serf_emancipation",
+      "title": "ロシアの農奴解放令",
+      "file": "File:Emancipation of the serfs in 1861.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Emancipation_of_the_serfs_in_1861.jpg",
+      "artist": "AnonymousUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2701,6 +3367,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "shihuang_death",
+      "title": "始皇帝の死",
+      "file": "File:51714-Terracota-Army.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+      "artist": "xiquinhosilva",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
       "id": "shimabara",
       "title": "島原の乱",
       "file": "File:Shimabara-Battle-Map-c17th-century.png",
@@ -2717,6 +3392,15 @@
       "artist": "Battlesnake1",
       "license": "CC0",
       "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "id": "shimonoseki_hogeki",
+      "title": "四国艦隊下関砲撃事件",
+      "file": "File:Choshu-Battery-Capture-Shimonoseki-1864.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Choshu-Battery-Capture-Shimonoseki-1864.jpg",
+      "artist": "Felice Beato",
+      "license": "Public domain",
+      "licenseUrl": ""
     },
     {
       "id": "shinkansen",
@@ -2737,11 +3421,38 @@
       "licenseUrl": ""
     },
     {
+      "id": "shishigatani",
+      "title": "鹿ケ谷の陰謀",
+      "file": "File:Daimonji shunkan.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Daimonji_shunkan.jpg",
+      "artist": "HmanJp",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
       "id": "shizugatake",
       "title": "賤ヶ岳の戦い",
       "file": "File:Battle of Shizugatake.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Shizugatake.jpg",
       "artist": "Utagawa Toyonobu",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "shocho_ikki",
+      "title": "正長の土一揆",
+      "file": "File:Rubbing of Nara Yagyu Hoso Jizo Tokusei-Hibun.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Rubbing_of_Nara_Yagyu_Hoso_Jizo_Tokusei-Hibun.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "shochu",
+      "title": "正中の変",
+      "file": "File:Hino-Suketomo.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Hino-Suketomo.jpg",
+      "artist": "Unknown",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2762,6 +3473,33 @@
       "artist": "Edoardo Chiossone",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "siebold_jiken",
+      "title": "シーボルト事件",
+      "file": "File:Chiossone - Philipp Franz von Siebold.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Chiossone_-_Philipp_Franz_von_Siebold.jpg",
+      "artist": "Edoardo Chiossone",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "silla",
+      "title": "新羅の朝鮮半島統一",
+      "file": "File:Korea-Gyeongju-Cheomseongdae-02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Korea-Gyeongju-Cheomseongdae-02.jpg",
+      "artist": "Matt and Nayoung Wilson from Atlanta and surrounding, US",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "id": "sistine",
+      "title": "システィーナ礼拝堂天井画の着手",
+      "file": "File:'Sistine Chapel ceiling' by Michelangelo JBU21.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:%27Sistine_Chapel_ceiling%27_by_Michelangelo_JBU21.JPG",
+      "artist": "Jörg Bittner Unna",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
     },
     {
       "id": "skytree",
@@ -2836,6 +3574,15 @@
       "licenseUrl": "https://www.flickr.com/commons/usage/"
     },
     {
+      "id": "state_religion",
+      "title": "キリスト教の国教化",
+      "file": "File:Missorium of Theodosius I (detail).png",
+      "page": "https://commons.wikimedia.org/wiki/File:Missorium_of_Theodosius_I_(detail).png",
+      "artist": "Unknown Roman artist",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "statue_of_liberty",
       "title": "自由の女神像の完成",
       "file": "File:Statue of Liberty frontal 2.jpg",
@@ -2868,6 +3615,15 @@
       "file": "File:Sui Wendi Tang.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Sui_Wendi_Tang.jpg",
       "artist": "Yan Li-pen",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "suiheisha",
+      "title": "全国水平社の結成",
+      "file": "File:Former Suiheisha members of Osaka.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Former_Suiheisha_members_of_Osaka.JPG",
+      "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -2926,6 +3682,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "talas",
+      "title": "タラス河畔の戦い",
+      "file": "File:Talas River.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Talas_River.jpg",
+      "artist": "upyernoz",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
       "id": "tamuramaro",
       "title": "坂上田村麻呂が征夷大将軍に",
       "file": "File:Sakanoue Tamuramaro.jpg",
@@ -2953,6 +3718,15 @@
       "licenseUrl": ""
     },
     {
+      "id": "teibi",
+      "title": "丁未の乱",
+      "file": "File:Mononobe no Moriya.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mononobe_no_Moriya.jpg",
+      "artist": "Hannah",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "teikoku_gikai",
       "title": "第1回帝国議会",
       "file": "File:The festival of the sword-bearing at the Imperial Diet in Mainz in 1184.jpg",
@@ -2967,6 +3741,15 @@
       "file": "File:Promulgation of The New Japanese Constitution (1889).jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Promulgation_of_The_New_Japanese_Constitution_(1889).jpg",
       "artist": "Unknown authorUnknown author and signed",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "tekijuku",
+      "title": "適塾の開設",
+      "file": "File:Koan Ogata 1901.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Koan_Ogata_1901.jpg",
+      "artist": "Painted by Goseda Yoshimatsu",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -3070,11 +3853,29 @@
       "licenseUrl": ""
     },
     {
+      "id": "todai",
+      "title": "東京大学の創立",
+      "file": "File:Akamon University of Tokyo - historical - 2008 April 29 A.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Akamon_University_of_Tokyo_-_historical_-_2008_April_29_A.jpg",
+      "artist": "Nesnad",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
       "id": "toi_nyuko",
       "title": "刀伊の入寇",
       "file": "File:Fujiwara no Takaie1.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Fujiwara_no_Takaie1.jpg",
       "artist": "新潮社",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "tokyo_eki",
+      "title": "東京駅の開業",
+      "file": "File:Tokyo station Marunouchi building entrance hall 1914.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Tokyo_station_Marunouchi_building_entrance_hall_1914.jpg",
+      "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -3104,6 +3905,15 @@
       "artist": "Original: Biblioteca Nacional de Lisboa\nPhoto: User:Joserebelo",
       "license": "Public domain",
       "licenseUrl": ""
+    },
+    {
+      "id": "toshogu",
+      "title": "日光東照宮の造営",
+      "file": "File:The Three Wise Monkeys, Nikkō Tōshō-gū; April 2018.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Three_Wise_Monkeys,_Nikk%C5%8D_T%C5%8Dsh%C5%8D-g%C5%AB;_April_2018.jpg",
+      "artist": "Ray in Manila",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
     },
     {
       "id": "tours",
@@ -3147,6 +3957,15 @@
       "file": "File:Council of Trent (Chemnitz).jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Council_of_Trent_(Chemnitz).jpg",
       "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "triumvirate",
+      "title": "第1回三頭政治",
+      "file": "File:(Venice) Pompey the Great, Museo Archeologico Nazionale.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:(Venice)_Pompey_the_Great,_Museo_Archeologico_Nazionale.jpg",
+      "artist": "Didier Descouens",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -3201,6 +4020,15 @@
       "file": "File:Bombardment of Fort Sumter, 1861.png",
       "page": "https://commons.wikimedia.org/wiki/File:Bombardment_of_Fort_Sumter,_1861.png",
       "artist": "George Edward Perine",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "us_constitution",
+      "title": "アメリカ合衆国憲法の制定",
+      "file": "File:Scene at the Signing of the Constitution of the United States.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg",
+      "artist": "Howard Chandler Christy",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -3313,6 +4141,15 @@
       "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
     },
     {
+      "id": "wat_tyler",
+      "title": "ワット・タイラーの乱",
+      "file": "File:Thomas Milton - The Death of Wat Tyler - B2014.26.17 - Yale Center for British Art.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Thomas_Milton_-_The_Death_of_Wat_Tyler_-_B2014.26.17_-_Yale_Center_for_British_Art.jpg",
+      "artist": "Thomas Milton",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
       "id": "waterloo",
       "title": "ワーテルローの戦い",
       "file": "File:Battle of Waterloo 1815.PNG",
@@ -3340,11 +4177,29 @@
       "licenseUrl": ""
     },
     {
+      "id": "world_cup_2002",
+      "title": "日韓ワールドカップ",
+      "file": "File:Seoul Plaza 2002 FIFA World Cup.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Seoul_Plaza_2002_FIFA_World_Cup.jpg",
+      "artist": "ijs",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
       "id": "wright_brothers",
       "title": "ライト兄弟の初飛行",
       "file": "File:First flight3.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:First_flight3.jpg",
       "artist": "John T. Daniels",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "wu_zetian",
+      "title": "則天武后の即位",
+      "file": "File:則天大聖皇帝像圖.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%E5%89%87%E5%A4%A9%E5%A4%A7%E8%81%96%E7%9A%87%E5%B8%9D%E5%83%8F%E5%9C%96.jpg",
+      "artist": "Unknown authorUnknown author",
       "license": "Public domain",
       "licenseUrl": ""
     },
@@ -3394,6 +4249,42 @@
       "licenseUrl": ""
     },
     {
+      "id": "xuanzang",
+      "title": "玄奘のインドからの帰国",
+      "file": "File:Xuanzang w.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Xuanzang_w.jpg",
+      "artist": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "yalta",
+      "title": "ヤルタ会談",
+      "file": "File:Yalta Conference (Churchill, Roosevelt, Stalin) (B&W).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg",
+      "artist": "US government photographer",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "yamen",
+      "title": "南宋の滅亡",
+      "file": "File:陸秀夫.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:%E9%99%B8%E7%A7%80%E5%A4%AB.jpg",
+      "artist": "Qing Gu Yuanji",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "yashima",
+      "title": "屋島の戦い",
+      "file": "File:NasunoYoichi.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NasunoYoichi.jpg",
+      "artist": "Ministry of Foreign Affairs of Japan",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
       "id": "yawata",
       "title": "八幡製鉄所の操業開始",
       "file": "File:140721 Yawata Steel Works from RRH Kitakyushu Japan01s3.jpg",
@@ -3408,6 +4299,15 @@
       "file": "File:Three Brothers during the Yellow Turban Rebellion.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Three_Brothers_during_the_Yellow_Turban_Rebellion.jpg",
       "artist": "Qing Dynasty",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "id": "yokohama_kaiko",
+      "title": "横浜の開港",
+      "file": "File:Yokohama by Baron Stillfried.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Yokohama_by_Baron_Stillfried.jpg",
+      "artist": "Baron Raimund von Stillfried",
       "license": "Public domain",
       "licenseUrl": ""
     },

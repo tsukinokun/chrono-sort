@@ -1900,6 +1900,506 @@
             "category": "外交",
             "art": "",
             "artQuery": "Hong Kong handover ceremony"
+        },
+        {
+            "id": "peloponnesian_end",
+            "title": "ペロポネソス戦争の終結",
+            "year": -404,
+            "yearLabel": "紀元前404年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Aegospotami"
+        },
+        {
+            "id": "leuctra",
+            "title": "レウクトラの戦い",
+            "year": -371,
+            "yearLabel": "紀元前371年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Epaminondas"
+        },
+        {
+            "id": "changping",
+            "title": "長平の戦い",
+            "year": -260,
+            "yearLabel": "紀元前260年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Bai Qi"
+        },
+        {
+            "id": "hannibal_alps",
+            "title": "ハンニバルのアルプス越え",
+            "year": -218,
+            "yearLabel": "紀元前218年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Snow Storm Hannibal and his Army Crossing the Alps"
+        },
+        {
+            "id": "shihuang_death",
+            "title": "始皇帝の死",
+            "year": -210,
+            "yearLabel": "紀元前210年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Terracotta Army"
+        },
+        {
+            "id": "triumvirate",
+            "title": "第1回三頭政治",
+            "year": -60,
+            "yearLabel": "紀元前60年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Pompey the Great"
+        },
+        {
+            "id": "cleopatra",
+            "title": "クレオパトラの死",
+            "year": -30,
+            "yearLabel": "紀元前30年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Death of Cleopatra"
+        },
+        {
+            "id": "britannia",
+            "title": "ローマのブリタンニア侵攻",
+            "year": 43,
+            "yearLabel": "43年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Claudius bust"
+        },
+        {
+            "id": "hadrians_wall",
+            "title": "ハドリアヌスの長城の着工",
+            "year": 122,
+            "yearLabel": "122年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hadrian's Wall"
+        },
+        {
+            "id": "state_religion",
+            "title": "キリスト教の国教化",
+            "year": 380,
+            "yearLabel": "380年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Missorium of Theodosius"
+        },
+        {
+            "id": "xuanzang",
+            "title": "玄奘のインドからの帰国",
+            "year": 645,
+            "yearLabel": "645年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Xuanzang"
+        },
+        {
+            "id": "silla",
+            "title": "新羅の朝鮮半島統一",
+            "year": 676,
+            "yearLabel": "676年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Cheomseongdae"
+        },
+        {
+            "id": "wu_zetian",
+            "title": "則天武后の即位",
+            "year": 690,
+            "yearLabel": "690年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Empress Wu Zetian portrait"
+        },
+        {
+            "id": "abbasid",
+            "title": "アッバース朝の成立",
+            "year": 750,
+            "yearLabel": "750年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Abbasid Caliphate"
+        },
+        {
+            "id": "talas",
+            "title": "タラス河畔の戦い",
+            "year": 751,
+            "yearLabel": "751年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Talas"
+        },
+        {
+            "id": "lindisfarne",
+            "title": "ヴァイキングのリンディスファーン襲撃",
+            "year": 793,
+            "yearLabel": "793年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Lindisfarne"
+        },
+        {
+            "id": "goryeo",
+            "title": "高麗の建国",
+            "year": 918,
+            "yearLabel": "918年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Manwoldae"
+        },
+        {
+            "id": "manzikert",
+            "title": "マンジケルトの戦い",
+            "year": 1071,
+            "yearLabel": "1071年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Manzikert"
+        },
+        {
+            "id": "domesday",
+            "title": "ドゥームズデイ・ブックの作成",
+            "year": 1086,
+            "yearLabel": "1086年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Domesday Book"
+        },
+        {
+            "id": "fourth_crusade",
+            "title": "第4回十字軍のコンスタンティノープル占領",
+            "year": 1204,
+            "yearLabel": "1204年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Entry of the Crusaders into Constantinople Delacroix"
+        },
+        {
+            "id": "yamen",
+            "title": "南宋の滅亡",
+            "year": 1279,
+            "yearLabel": "1279年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Lu Xiufu"
+        },
+        {
+            "id": "wat_tyler",
+            "title": "ワット・タイラーの乱",
+            "year": 1381,
+            "yearLabel": "1381年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Death of Wat Tyler"
+        },
+        {
+            "id": "joseon",
+            "title": "李氏朝鮮の建国",
+            "year": 1392,
+            "yearLabel": "1392年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Taejo of Joseon"
+        },
+        {
+            "id": "hangul",
+            "title": "ハングルの公布",
+            "year": 1446,
+            "yearLabel": "1446年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hunminjeongeum"
+        },
+        {
+            "id": "bosworth",
+            "title": "ボズワースの戦い",
+            "year": 1485,
+            "yearLabel": "1485年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Bosworth Field"
+        },
+        {
+            "id": "sistine",
+            "title": "システィーナ礼拝堂天井画の着手",
+            "year": 1508,
+            "yearLabel": "1508年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Sistine Chapel ceiling"
+        },
+        {
+            "id": "gregorian",
+            "title": "グレゴリオ暦の制定",
+            "year": 1582,
+            "yearLabel": "1582年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Pope Gregory XIII"
+        },
+        {
+            "id": "don_quixote",
+            "title": "『ドン・キホーテ』前編の出版",
+            "year": 1605,
+            "yearLabel": "1605年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Don Quixote 1605 title page"
+        },
+        {
+            "id": "ming_fall",
+            "title": "明の滅亡",
+            "year": 1644,
+            "yearLabel": "1644年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Jingshan Park Beijing"
+        },
+        {
+            "id": "lisbon",
+            "title": "リスボン地震",
+            "year": 1755,
+            "yearLabel": "1755年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "1755 Lisbon earthquake"
+        },
+        {
+            "id": "us_constitution",
+            "title": "アメリカ合衆国憲法の制定",
+            "year": 1787,
+            "yearLabel": "1787年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Scene at the Signing of the Constitution"
+        },
+        {
+            "id": "egypt_campaign",
+            "title": "ナポレオンのエジプト遠征",
+            "year": 1798,
+            "yearLabel": "1798年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of the Pyramids"
+        },
+        {
+            "id": "greek_independence",
+            "title": "ギリシャ独立戦争の開始",
+            "year": 1821,
+            "yearLabel": "1821年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Greece on the Ruins of Missolonghi"
+        },
+        {
+            "id": "nanjing",
+            "title": "南京条約",
+            "year": 1842,
+            "yearLabel": "1842年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Nanking"
+        },
+        {
+            "id": "sepoy",
+            "title": "インド大反乱",
+            "year": 1857,
+            "yearLabel": "1857年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Indian Rebellion of 1857"
+        },
+        {
+            "id": "serf_emancipation",
+            "title": "ロシアの農奴解放令",
+            "year": 1861,
+            "yearLabel": "1861年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emancipation reform of 1861"
+        },
+        {
+            "id": "emancipation",
+            "title": "奴隷解放宣言",
+            "year": 1863,
+            "yearLabel": "1863年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emancipation Proclamation"
+        },
+        {
+            "id": "franco_prussian",
+            "title": "普仏戦争の開戦",
+            "year": 1870,
+            "yearLabel": "1870年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Franco-Prussian War"
+        },
+        {
+            "id": "nobel",
+            "title": "第1回ノーベル賞",
+            "year": 1901,
+            "yearLabel": "1901年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Alfred Nobel"
+        },
+        {
+            "id": "model_t",
+            "title": "T型フォードの発売",
+            "year": 1908,
+            "yearLabel": "1908年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Ford Model T"
+        },
+        {
+            "id": "amundsen",
+            "title": "アムンセンの南極点到達",
+            "year": 1911,
+            "yearLabel": "1911年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Roald Amundsen South Pole"
+        },
+        {
+            "id": "panama",
+            "title": "パナマ運河の開通",
+            "year": 1914,
+            "yearLabel": "1914年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Panama Canal 1914"
+        },
+        {
+            "id": "league",
+            "title": "国際連盟の発足",
+            "year": 1920,
+            "yearLabel": "1920年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "League of Nations"
+        },
+        {
+            "id": "yalta",
+            "title": "ヤルタ会談",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Yalta Conference"
+        },
+        {
+            "id": "nato",
+            "title": "北大西洋条約機構の発足",
+            "year": 1949,
+            "yearLabel": "1949年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "North Atlantic Treaty signing 1949"
+        },
+        {
+            "id": "cuban_revolution",
+            "title": "キューバ革命",
+            "year": 1959,
+            "yearLabel": "1959年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Fidel Castro 1959"
+        },
+        {
+            "id": "prague_spring",
+            "title": "プラハの春",
+            "year": 1968,
+            "yearLabel": "1968年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Prague Spring 1968"
+        },
+        {
+            "id": "iran_revolution",
+            "title": "イラン革命",
+            "year": 1979,
+            "yearLabel": "1979年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Iranian Revolution 1979 demonstration"
+        },
+        {
+            "id": "eu",
+            "title": "欧州連合の発足",
+            "year": 1993,
+            "yearLabel": "1993年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Maastricht Treaty"
+        },
+        {
+            "id": "lehman",
+            "title": "リーマン・ショック",
+            "year": 2008,
+            "yearLabel": "2008年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Lehman Brothers headquarters"
         }
     ]
 }
