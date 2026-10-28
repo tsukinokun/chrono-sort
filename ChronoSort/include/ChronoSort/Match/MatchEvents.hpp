@@ -12,7 +12,7 @@
 
 #include <hlsl++.h>
 
-namespace ChronoSort::Game {
+namespace ChronoSort::Match {
 
     //! 対局の始まりに、場の1枚目を山札から飛ばしました（空中で裏返って列に降りる）。
     struct OpeningCardDealtEvent {
@@ -88,4 +88,4 @@ namespace ChronoSort::Game {
     //! 結果の羊皮紙を出す時が来ました。
     struct ResultRequestedEvent {};
 
-}    // namespace ChronoSort::Game
+}    // namespace ChronoSort::Match

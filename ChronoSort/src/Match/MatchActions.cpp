@@ -2,35 +2,21 @@
 //! @file   MatchActions.cpp
 //! @brief  対局を進める操作の実装
 //----------------------------------------------------------------------------
-#include <ChronoSort/Game/MatchActions.hpp>
+#include <ChronoSort/Match/MatchActions.hpp>
 
 #include <ChronoSort/Board/BoardView.hpp>
 #include <ChronoSort/ECS/CardMotion.hpp>
 #include <ChronoSort/ECS/Component/RevealComponent.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
-#include <ChronoSort/Game/MatchEvents.hpp>
+#include <ChronoSort/Match/MatchEvents.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 
 #include <Tsukino/Core/ECS/Event/EventBus.hpp>
 
 #include <algorithm>
 
-namespace ChronoSort::Game {
-
-    //----------------------------------------------------------------------------
-    //! レジストリに置いた対局の状態を返します。
-    //----------------------------------------------------------------------------
-    MatchSession& Session(Tsukino::ECS::Registry& registry) {
-        return *registry.GetContext<MatchSession*>();
-    }
-
-    //----------------------------------------------------------------------------
-    //! レジストリが対局の状態を持っているかを返します。
-    //----------------------------------------------------------------------------
-    bool HasSession(Tsukino::ECS::Registry& registry) {
-        return registry.HasContext<MatchSession*>();
-    }
+namespace ChronoSort::Match {
 
     //----------------------------------------------------------------------------
     //! 場の1枚目と手札を、山札から順に配ります。
@@ -69,7 +55,7 @@ namespace ChronoSort::Game {
                 if(shown >= hand.size()) {
                     continue;
                 }
-                FrameMonitor::Mark("deal");
+                Game::FrameMonitor::Mark("deal");
                 const Tsukino::ECS::Entity entity = session.board->SpawnAtDeck(hand[shown]);
                 session.board->AddToHand(p, entity);
                 // 配る先の姿勢を先に決めてから飛ばす
@@ -134,7 +120,7 @@ namespace ChronoSort::Game {
         // 置いた場所が端に畳まれているなら、そこまで列を流す
         board.ScrollToSlot(slot);
 
-        FrameMonitor::Mark("place card");
+        Game::FrameMonitor::Mark("place card");
         auto& reveal  = registry.AddComponent<ECS::RevealComponent>(entity);
         reveal.player = player;
         reveal.result = *result;
@@ -190,10 +176,10 @@ namespace ChronoSort::Game {
                                             (outcome == Rules::MatchOutcome::VersusWon && session.match.Winner() == 0);
 
         // 記録を更新して保存する（ソロの記録は出題の範囲ごとに比べる）
-        SaveData save      = LoadSaveData();
+        Game::SaveData save      = Game::LoadSaveData();
         bool     newRecord = false;
         if(session.config.mode == Rules::MatchMode::Solo) {
-            SoloRecord& record = save.Record(session.config.range);
+            Game::SoloRecord& record = save.Record(session.config.range);
             newRecord          = session.match.Score() > record.bestScore && session.match.Score() > 0;
             record.bestScore   = std::max(record.bestScore, session.match.Score());
             record.bestPlaced  = std::max(record.bestPlaced, session.match.Players()[0].correctCount);
@@ -201,7 +187,7 @@ namespace ChronoSort::Game {
         } else if(won) {
             ++save.versusWins;
         }
-        StoreSaveData(save);
+        Game::StoreSaveData(save);
 
         session.events->Publish(MatchEndedEvent{outcome, won, newRecord});
         session.Schedule(MatchStep::ShowResult, 1.4f);
@@ -231,4 +217,4 @@ namespace ChronoSort::Game {
         board.SetMarker(false);
     }
 
-}    // namespace ChronoSort::Game
+}    // namespace ChronoSort::Match

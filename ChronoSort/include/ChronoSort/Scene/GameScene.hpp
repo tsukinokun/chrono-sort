@@ -12,7 +12,7 @@
 #include <ChronoSort/Board/BoardView.hpp>
 #include <ChronoSort/Board/CardFactory.hpp>
 #include <ChronoSort/Effects/ParticleEmitter.hpp>
-#include <ChronoSort/Game/MatchSession.hpp>
+#include <ChronoSort/Match/MatchSession.hpp>
 #include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/UI/GameHud.hpp>
 #include <ChronoSort/UI/OptionsSheet.hpp>
@@ -56,7 +56,7 @@ namespace ChronoSort::Scene {
         bool UpdateMenus(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime);
 
         Rules::MatchConfig                        m_config;      // 対局の設定（もう一度のときに使う）
-        std::unique_ptr<Game::MatchSession>       m_session;     // 対局の状態（レジストリにはこれを指すポインタを置く）
+        std::unique_ptr<Match::MatchSession>       m_session;     // 対局の状態（レジストリにはこれを指すポインタを置く）
         std::unique_ptr<Board::CardFactory>       m_factory;     // カードの生成
         std::unique_ptr<Board::BoardView>         m_board;       // 卓の置き場所の窓口
         std::unique_ptr<Effects::ParticleEmitter> m_particles;   // 粒子の演出

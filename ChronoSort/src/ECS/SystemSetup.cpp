@@ -7,7 +7,12 @@
 #include <ChronoSort/ECS/System/BoardLayoutSystem.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
-#include <ChronoSort/ECS/System/MatchSystems.hpp>
+#include <ChronoSort/ECS/System/CameraRigSystem.hpp>
+#include <ChronoSort/ECS/System/CpuTurnSystem.hpp>
+#include <ChronoSort/ECS/System/HumanInputSystem.hpp>
+#include <ChronoSort/ECS/System/MatchFeedbackSystem.hpp>
+#include <ChronoSort/ECS/System/MatchFlowSystem.hpp>
+#include <ChronoSort/ECS/System/RevealSystem.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
 
 #include <Tsukino/Engine/ECS/Scene.hpp>

@@ -6,21 +6,11 @@
 //!         音や粒子は直接鳴らしません（MatchFeedbackSystem が出来事を受けて鳴らす）。
 //----------------------------------------------------------------------------
 #pragma once
-#include <ChronoSort/Game/MatchSession.hpp>
+#include <ChronoSort/Match/MatchSession.hpp>
 
 #include <Tsukino/Core/ECS/Registry/Registry.hpp>
 
-namespace ChronoSort::Game {
-
-    //! レジストリに置いた対局の状態を返します。
-    //! @param  [in] registry 対局のシーンのレジストリ。
-    //! @return 対局の状態。
-    MatchSession& Session(Tsukino::ECS::Registry& registry);
-
-    //! レジストリが対局の状態を持っているかを返します（対局のシーンだけが持つ）。
-    //! @param  [in] registry レジストリ。
-    //! @return 持っていれば true。
-    bool HasSession(Tsukino::ECS::Registry& registry);
+namespace ChronoSort::Match {
 
     //! 場の1枚目と手札を、山札から順に配ります（対局の始まり）。
     //! @param  [in,out] registry レジストリ。
@@ -59,4 +49,4 @@ namespace ChronoSort::Game {
     //! @param  [in,out] registry レジストリ。
     void CancelSelection(Tsukino::ECS::Registry& registry);
 
-}    // namespace ChronoSort::Game
+}    // namespace ChronoSort::Match

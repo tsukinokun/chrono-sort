@@ -11,6 +11,7 @@
 #include <ChronoSort/Rules/Match.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
+#include <Tsukino/Core/ECS/Registry/Registry.hpp>
 #include <Tsukino/Core/Time/Sequencer.hpp>
 
 #include <hlsl++.h>
@@ -36,7 +37,7 @@ namespace ChronoSort::UI {
     class GameHud;
 }    // namespace ChronoSort::UI
 
-namespace ChronoSort::Game {
+namespace ChronoSort::Match {
 
     //! 対局の段階です。
     enum class MatchPhase {
@@ -111,4 +112,14 @@ namespace ChronoSort::Game {
         }
     };
 
-}    // namespace ChronoSort::Game
+    //! レジストリに置いた対局の状態を返します。
+    //! @param  [in] registry 対局のシーンのレジストリ。
+    //! @return 対局の状態。
+    MatchSession& Session(Tsukino::ECS::Registry& registry);
+
+    //! レジストリが対局の状態を持っているかを返します（対局のシーンだけが持つ）。
+    //! @param  [in] registry レジストリ。
+    //! @return 持っていれば true。
+    bool HasSession(Tsukino::ECS::Registry& registry);
+
+}    // namespace ChronoSort::Match

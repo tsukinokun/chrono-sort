@@ -6,7 +6,7 @@
 
 #include <ChronoSort/ECS/Component/CameraRigComponent.hpp>
 #include <ChronoSort/ECS/SystemSetup.hpp>
-#include <ChronoSort/Game/MatchActions.hpp>
+#include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
@@ -41,7 +41,7 @@ namespace ChronoSort::Scene {
         auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
 
         // 対局の状態（規則の進行は Rules::Match。画面 UI がこれを読むので先に始める）
-        m_session         = std::make_unique<Game::MatchSession>();
+        m_session         = std::make_unique<Match::MatchSession>();
         m_session->config = m_config;
         m_session->rng.seed(std::random_device{}());
         m_session->match.Start(m_config, Rules::LoadCards(m_config.range), m_session->rng);
@@ -62,11 +62,11 @@ namespace ChronoSort::Scene {
         m_session->hud       = m_hud.get();
         m_session->particles = m_particles.get();
         m_session->events    = &m_scene.GetEventBus();
-        registry.SetContext<Game::MatchSession*>(m_session.get());
+        registry.SetContext<Match::MatchSession*>(m_session.get());
         ECS::AddMatchSystems(m_scene);
 
         Game::Services().Sounds().PlayBgm("game");
-        Game::DealOpening(registry);
+        Match::DealOpening(registry);
     }
 
     //----------------------------------------------------------------------------
@@ -78,7 +78,7 @@ namespace ChronoSort::Scene {
         }
 
         // 結果画面からの切り替え
-        if(m_session->phase == Game::MatchPhase::Finished) {
+        if(m_session->phase == Match::MatchPhase::Finished) {
             switch(m_hud->PollResultChoice()) {
             case UI::ResultChoice::Retry:
                 api.ChangeScene(std::make_unique<GameScene>(m_config));
@@ -92,7 +92,7 @@ namespace ChronoSort::Scene {
         }
 
         // 「演出を速く」は自分で操作していない時間（配る・公開・判定・CPU の手番）だけを早回しする
-        const bool  watching  = m_session->phase != Game::MatchPhase::HumanTurn && m_session->phase != Game::MatchPhase::Finished;
+        const bool  watching  = m_session->phase != Match::MatchPhase::HumanTurn && m_session->phase != Match::MatchPhase::Finished;
         const float timeScale = (!m_session->paused && watching && Game::Services().Settings().fastEffects) ? kFastEffectsScale : 1.0f;
         deltaTime *= timeScale;
 
@@ -116,13 +116,13 @@ namespace ChronoSort::Scene {
 
         // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ）
         if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
-            const Game::HumanInput& input = m_session->input;
+            const Match::HumanInput& input = m_session->input;
             if(m_hud->IsPauseOpen()) {
                 sounds.Play("page", 0.7f);
                 m_hud->ClosePause();
             } else if(input.selected >= 0 || input.grabbed >= 0) {
-                Game::CancelSelection(registry);
-            } else if(m_session->phase == Game::MatchPhase::Finished) {
+                Match::CancelSelection(registry);
+            } else if(m_session->phase == Match::MatchPhase::Finished) {
                 api.ChangeScene(std::make_unique<TitleScene>());
                 return true;
             } else {
