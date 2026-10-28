@@ -7,6 +7,7 @@
 #include <ChronoSort/ECS/System/BoardLayoutSystem.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
+#include <ChronoSort/ECS/System/ChoiceTagSystem.hpp>
 #include <ChronoSort/ECS/System/CountUpTextSystem.hpp>
 #include <ChronoSort/ECS/System/CameraRigSystem.hpp>
 #include <ChronoSort/ECS/System/CpuTurnSystem.hpp>
@@ -27,6 +28,9 @@
 #include <Tsukino/EngineIntegration/ECS/System/SkyAtmosphereSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/SpriteRendererSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/TransformSystem.hpp>
+#include <Tsukino/EngineIntegration/ECS/System/UIButtonSoundSystem.hpp>
+#include <Tsukino/EngineIntegration/ECS/System/UISliderSystem.hpp>
+#include <Tsukino/EngineIntegration/ECS/System/UIToggleSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/UITweenSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/WorldAnchorSystem.hpp>
 
@@ -43,6 +47,11 @@ namespace ChronoSort::ECS {
     //----------------------------------------------------------------------------
     void AddTableSystems(Tsukino::ECS::Scene& scene) {
         scene.AddSystem(std::make_shared<BuiltIn::InteractionSystem>(), Order::kInput);
+        // ホバー・クリックを読む UI の部品（ボタンの音・選択肢・スライダー）。どれも InteractionSystem の後
+        scene.AddSystem(std::make_shared<BuiltIn::UIButtonSoundSystem>(), Order::kInput);
+        scene.AddSystem(std::make_shared<BuiltIn::UIToggleSystem>(), Order::kInput);
+        scene.AddSystem(std::make_shared<BuiltIn::UISliderSystem>(), Order::kInput);
+        scene.AddSystem(std::make_shared<ChoiceTagSystem>(), Order::kInput);
         scene.AddSystem(std::make_shared<BuiltIn::UITweenSystem>(), Order::kUIAnimation);
         scene.AddSystem(std::make_shared<BuiltIn::LifetimeSystem>(), Order::kUIAnimation);
         // 並べ方が目標を書き、CardMotionSystem がそこへ動かす（同じ順番の中では登録した順に更新される）

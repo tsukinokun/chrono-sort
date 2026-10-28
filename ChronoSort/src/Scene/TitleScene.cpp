@@ -4,12 +4,13 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/TitleScene.hpp>
 
-#include <ChronoSort/Game/FrameMonitor.hpp>
-#include <ChronoSort/Game/SaveData.hpp>
+#include <ChronoSort/ECS/Component/ChoiceTagComponent.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Scene/CreditsScene.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
+#include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -55,8 +56,7 @@ namespace ChronoSort::Scene {
         m_ui->SlideIn(title, hlslpp::float2(0.0f, -320.0f), 0.3f, 0.8f);
 
         // 出題の範囲（前回選んだものから始める）
-        m_save  = Game::LoadSaveData();
-        m_range = Rules::RangeFromKey(m_save.range);
+        m_range = Rules::RangeFromKey(Game::Services().Save().range);
         CreateRangeTabs(title);
 
         // メニュー（あえて高さも傾きも揃えない）
@@ -99,18 +99,14 @@ namespace ChronoSort::Scene {
             m_scene.GetRegistry().GetComponent<BuiltIn::FontComponent>(sub).maxWidth = 360.0f;
         }
 
-        // 留め具：ピンは左上、テープは右上に斜めに貼る
-        const bool    pin = std::string(fastener) == "pin.png";
-        UI::PaperSpec fix;
-        fix.texture      = fastener;
-        fix.center       = pin ? hlslpp::float2(-float(spec.size.x) * 0.5f + 26.0f, -float(spec.size.y) * 0.5f + 16.0f)
-                               : hlslpp::float2(float(spec.size.x) * 0.5f - 30.0f, -float(spec.size.y) * 0.5f + 4.0f);
-        fix.size         = pin ? hlslpp::float2(40.0f, 40.0f) : hlslpp::float2(110.0f, 34.0f);
-        fix.angleDegrees = pin ? 0.0f : 32.0f;
-        fix.swayDegrees  = 0.0f;
-        fix.bobPixels    = 0.0f;
-        fix.sortOrder    = kLayerMenu + 2;
-        fix.parent       = paper;
+        // 留め具：ピンは左上、テープは右上に斜めに貼る（Title.json の center は紙の角からのずれ）
+        const bool    pin    = std::string(fastener) == "pin.png";
+        UI::PaperSpec fix    = m_layout.Spec(pin ? "menuPin" : "menuTape");
+        const float   halfW  = float(spec.size.x) * 0.5f;
+        const float   halfH  = float(spec.size.y) * 0.5f;
+        fix.center           = hlslpp::float2(pin ? -halfW + float(fix.center.x) : halfW + float(fix.center.x), -halfH + float(fix.center.y));
+        fix.sortOrder        = kLayerMenu + 2;
+        fix.parent           = paper;
         m_ui->Paper(fix);
 
         m_ui->MakeButton(paper);
@@ -122,25 +118,11 @@ namespace ChronoSort::Scene {
     //! シーンを更新します。
     //----------------------------------------------------------------------------
     void TitleScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
-        auto*            context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        Game::SoundBank& sounds  = Game::Services().Sounds();
+        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
+        auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
+        Game::SoundBank&        sounds   = Game::Services().Sounds();
         m_stage.Update(deltaTime);
-        UpdateRangeTabs(deltaTime);
-
-        // カーソルが新しく紙に乗ったら、紙が擦れる小さな音
-        std::vector<Tsukino::ECS::Entity> hovered;
-        std::vector<Tsukino::ECS::Entity> candidates = {m_solo, m_versus, m_credits, m_quit, m_settings, m_start, m_cancel};
-        candidates.insert(candidates.end(), m_rangeTags.begin(), m_rangeTags.end());
-        for(Tsukino::ECS::Entity e : candidates) {
-            if(e != entt::null && m_ui->Hovered(e)) {
-                hovered.push_back(e);
-                if(std::find(m_hovered.begin(), m_hovered.end(), e) == m_hovered.end()) {
-                    Game::FrameMonitor::Mark("hover menu");
-                    sounds.Play("ui.hover");
-                }
-            }
-        }
-        m_hovered = hovered;
+        // ボタンに重なったときの音は、エンジンの UIButtonSoundSystem が鳴らす（PaperUI::MakeButton で付けた音）
 
         // 設定の紙が開いている間（閉じたフレームも含む）は、下のメニューを受け付けない
         // （閉じた Esc で、続けて「机を離れる」まで動かないように）
@@ -151,20 +133,9 @@ namespace ChronoSort::Scene {
         }
 
         if(m_sheet != entt::null) {
-            for(size_t i = 0; i < m_countTags.size(); ++i) {
-                if(m_ui->Clicked(m_countTags[i])) {
-                    m_cpuCount = static_cast<int>(i) + 1;
-                    sounds.Play("ui.choose");
-                    RefreshVersusChoices();
-                }
-            }
-            for(size_t i = 0; i < m_levelTags.size(); ++i) {
-                if(m_ui->Clicked(m_levelTags[i])) {
-                    m_cpuLevel = static_cast<Rules::CpuLevel>(i);
-                    sounds.Play("ui.choose");
-                    RefreshVersusChoices();
-                }
-            }
+            // 札の見た目と選んだ音は ChoiceTagSystem。ここでは選ばれた値を受け取るだけ
+            m_cpuCount = UI::SelectedChoice(registry, m_countGroup, m_cpuCount);
+            m_cpuLevel = static_cast<Rules::CpuLevel>(UI::SelectedChoice(registry, m_levelGroup, static_cast<int>(m_cpuLevel)));
             if(m_ui->Clicked(m_start) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Enter)) {
                 Rules::MatchConfig config;
                 config.mode = Rules::MatchMode::Versus;
@@ -179,11 +150,9 @@ namespace ChronoSort::Scene {
                 CloseVersusSheet();
             }
         } else {
-            for(size_t i = 0; i < m_rangeTags.size(); ++i) {
-                if(m_ui->Clicked(m_rangeTags[i]) && m_rangeOrder[i] != m_range) {
-                    sounds.Play("ui.choose");
-                    SelectRange(m_rangeOrder[i]);
-                }
+            if(UI::ChoiceChanged(registry, m_rangeGroup)) {
+                m_range = static_cast<Rules::CardRange>(UI::SelectedChoice(registry, m_rangeGroup, static_cast<int>(m_range)));
+                OnRangeSelected(true);
             }
             if(m_ui->Clicked(m_solo)) {
                 Rules::MatchConfig config;
@@ -229,14 +198,9 @@ namespace ChronoSort::Scene {
         if(m_sheet != entt::null) {
             return;
         }
-        UI::PaperSpec sheet;
-        sheet.texture      = "scrap_result.png";
-        sheet.center       = hlslpp::float2(840.0f, 470.0f);
-        sheet.size         = hlslpp::float2(560.0f, 470.0f);
-        sheet.angleDegrees = -2.0f;
-        sheet.swayDegrees  = 0.4f;
-        sheet.sortOrder    = kLayerSheet;
-        m_sheet            = m_ui->Paper(sheet);
+        UI::PaperSpec sheet = m_layout.Spec("versusSheet");
+        sheet.sortOrder     = kLayerSheet;
+        m_sheet             = m_ui->Paper(sheet);
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 600.0f), 0.0f, 0.5f);
 
         const int layer = kLayerSheet + 1;
@@ -246,77 +210,51 @@ namespace ChronoSort::Scene {
         m_ui->Text(L"相手の人数", hlslpp::float2(-200.0f, -105.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
         m_ui->Text(L"相手の強さ", hlslpp::float2(-200.0f, 10.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
 
-        // 札は少しずつ傾けて、手で置いたように並べる
-        auto tag = [&](const std::wstring& text, const hlslpp::float2& at, std::vector<Tsukino::ECS::Entity>& tags, std::vector<Tsukino::ECS::Entity>& texts) {
-            UI::PaperSpec spec;
-            spec.texture      = "scrap_note.png";
-            spec.center       = at;
-            spec.size         = hlslpp::float2(130.0f, 56.0f);
-            spec.angleDegrees = m_ui->Jitter() * 5.0f;
-            spec.swayDegrees  = 0.6f;
-            spec.sortOrder    = layer + 1;
-            spec.parent       = m_sheet;
-            const auto paper  = m_ui->Paper(spec);
-            texts.push_back(m_ui->Text(text, hlslpp::float2(4.0f, 2.0f), 0.6f, UI::kInkColor, layer + 2, paper));
-            m_ui->MakeButton(paper);
-            tags.push_back(paper);
+        // 札は少しずつ傾けて、手で置いたように並べる（開いたときは今の選択を弾ませて見せる）
+        auto tag = [&](Tsukino::ECS::Entity group, const std::wstring& text, float x, float y, int value, bool selected) {
+            UI::ChoiceSpec spec;
+            spec.paper              = m_layout.Spec("versusTag");
+            spec.paper.center       = hlslpp::float2(x, y + m_ui->Jitter() * 6.0f);
+            spec.paper.angleDegrees = m_ui->Jitter() * 5.0f;
+            spec.paper.sortOrder    = layer + 1;
+            spec.paper.parent       = m_sheet;
+            spec.label              = text;
+            spec.value              = value;
+            spec.punchOnCreate      = true;
+            UI::ChoiceTag(*m_ui, group, spec, selected);
         };
+        m_countGroup = UI::ChoiceGroup(*m_ui);
+        m_levelGroup = UI::ChoiceGroup(*m_ui);
         for(int i = 0; i < 3; ++i) {
-            tag(std::to_wstring(i + 1) + L" 人", hlslpp::float2(-150.0f + 150.0f * static_cast<float>(i), -55.0f + m_ui->Jitter() * 6.0f), m_countTags, m_countTexts);
+            tag(m_countGroup, std::to_wstring(i + 1) + L" 人", -150.0f + 150.0f * static_cast<float>(i), -55.0f, i + 1, i + 1 == m_cpuCount);
         }
         for(int i = 0; i < 3; ++i) {
-            tag(kLevelNames[i], hlslpp::float2(-150.0f + 150.0f * static_cast<float>(i), 60.0f + m_ui->Jitter() * 6.0f), m_levelTags, m_levelTexts);
+            tag(m_levelGroup, kLevelNames[i], -150.0f + 150.0f * static_cast<float>(i), 60.0f, i, i == static_cast<int>(m_cpuLevel));
         }
 
-        auto button = [&](const std::wstring& text, const hlslpp::float2& at, float angle) {
-            UI::PaperSpec spec;
-            spec.texture      = "scrap_note.png";
-            spec.center       = at;
-            spec.size         = hlslpp::float2(190.0f, 66.0f);
-            spec.angleDegrees = angle;
-            spec.sortOrder    = layer + 1;
-            spec.parent       = m_sheet;
-            const auto paper  = m_ui->Paper(spec);
-            m_ui->Text(text, hlslpp::float2(6.0f, 2.0f), 0.75f, UI::kInkColor, layer + 2, paper);
-            m_ui->MakeButton(paper);
-            return paper;
+        auto button = [&](const char* name, const std::wstring& text) {
+            UI::PaperSpec spec = m_layout.Spec(name);
+            spec.sortOrder     = layer + 1;
+            spec.parent        = m_sheet;
+            return UI::NoteButton(*m_ui, spec, text, 0.75f);
         };
-        m_start  = button(L"始める", hlslpp::float2(95.0f, 165.0f), 3.0f);
-        m_cancel = button(L"やめる", hlslpp::float2(-130.0f, 172.0f), -4.0f);
-        RefreshVersusChoices();
+        m_start  = button("versusStart", L"始める");
+        m_cancel = button("versusCancel", L"やめる");
     }
 
     //----------------------------------------------------------------------------
     //! CPU 対戦の設定の紙を閉じます。
     //----------------------------------------------------------------------------
     void TitleScene::CloseVersusSheet() {
+        // 札の組も一緒に片付ける（組は紙の子ではないので別に破棄する）
         m_ui->Destroy(m_sheet);
-        m_sheet  = entt::null;
-        m_start  = entt::null;
-        m_cancel = entt::null;
-        m_countTags.clear();
-        m_levelTags.clear();
-        m_countTexts.clear();
-        m_levelTexts.clear();
-    }
-
-    //----------------------------------------------------------------------------
-    //! 設定の紙の選択肢の見た目を、今の選択に合わせます。
-    //----------------------------------------------------------------------------
-    void TitleScene::RefreshVersusChoices() {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        auto mark = [&](std::vector<Tsukino::ECS::Entity>& texts, std::vector<Tsukino::ECS::Entity>& tags, int selected) {
-            for(size_t i = 0; i < texts.size(); ++i) {
-                const bool chosen = static_cast<int>(i) == selected;
-                // 選んだ札は朱で書き、少し弾ませる
-                registry.GetComponent<BuiltIn::FontComponent>(texts[i]).color = chosen ? UI::kSealRedColor : UI::kFadedInkColor;
-                if(chosen) {
-                    m_ui->Punch(tags[i], 0.2f);
-                }
-            }
-        };
-        mark(m_countTexts, m_countTags, m_cpuCount - 1);
-        mark(m_levelTexts, m_levelTags, static_cast<int>(m_cpuLevel));
+        m_ui->Destroy(m_countGroup);
+        m_ui->Destroy(m_levelGroup);
+        m_sheet      = entt::null;
+        m_start      = entt::null;
+        m_cancel     = entt::null;
+        m_countGroup = entt::null;
+        m_levelGroup = entt::null;
     }
 
     //----------------------------------------------------------------------------
@@ -334,87 +272,67 @@ namespace ChronoSort::Scene {
             {Rules::CardRange::World, "rangeWorld"},
             {Rules::CardRange::All, "rangeAll"},
         };
+        m_rangeGroup = UI::ChoiceGroup(*m_ui);
         for(size_t i = 0; i < std::size(tabs); ++i) {
             const Rules::CardRange range = tabs[i].first;
-            UI::PaperSpec          paper = m_layout.Spec(tabs[i].second);
-            const hlslpp::float2   base  = paper.center;
+            const bool             all   = range == Rules::CardRange::All;
 
             // 持ち上げは親を動かして行う（紙片の揺れ・ボタンの反応は紙片側に残す）。紙片は親の真ん中に置く
+            UI::ChoiceSpec spec;
+            spec.paper              = m_layout.Spec(tabs[i].second);
+            const hlslpp::float2 at = spec.paper.center;
             const Tsukino::ECS::Entity holder = m_scene.CreateEntity();
-            registry.AddComponent<BuiltIn::TransformComponent>(holder).position = hlslpp::float3(base, 0.0f);
-            paper.center     = hlslpp::float2(0.0f, 0.0f);
-            paper.parent     = holder;
-            const auto tag   = m_ui->Paper(paper);
-
-            const bool all = range == Rules::CardRange::All;
-            m_rangeTexts.push_back(m_ui->Text(Util::Utf8ToWide(Rules::RangeName(range)), hlslpp::float2(4.0f, all ? -9.0f : 2.0f), 0.78f, UI::kInkColor,
-                                              kLayerMenu + 1, tag));
+            registry.AddComponent<BuiltIn::TransformComponent>(holder).position = hlslpp::float3(at, 0.0f);
+            spec.paper.center = hlslpp::float2(0.0f, 0.0f);
+            spec.paper.parent = holder;
+            spec.label        = Util::Utf8ToWide(Rules::RangeName(range));
+            spec.labelScale   = 0.78f;
+            spec.labelOffset  = hlslpp::float2(4.0f, all ? -9.0f : 2.0f);
+            spec.value        = static_cast<int>(range);
+            spec.chosenColor  = UI::kInkColor;
+            spec.punch        = 0.18f;
+            const auto tag    = UI::ChoiceTag(*m_ui, m_rangeGroup, spec, range == m_range);
             if(all) {
                 m_ui->Text(L"日本と世界", hlslpp::float2(4.0f, 20.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
             }
-            m_ui->MakeButton(tag);
             m_ui->SlideIn(tag, hlslpp::float2(m_ui->Jitter() * 60.0f, -260.0f), 0.45f + 0.07f * static_cast<float>(i), 0.6f);
 
-            m_rangeOrder.push_back(range);
-            m_rangeHolders.push_back(holder);
-            m_rangeTags.push_back(tag);
-            m_rangeBases.push_back(base);
-            m_rangeLift.push_back(range == m_range ? 1.0f : 0.0f);
+            auto& lift = registry.AddComponent<ECS::ChoiceLiftComponent>(holder);
+            lift.tag   = tag;
+            lift.base  = at;
+            lift.lift  = range == m_range ? 1.0f : 0.0f;
         }
 
         // 選んでいるしおりに垂らす紐（紙片の後ろから下へ垂れる）
         m_rangeRibbon = m_ui->Paper(m_layout.Spec("rangeRibbon"));
-        SelectRange(m_range);
-    }
-
-    //----------------------------------------------------------------------------
-    //! しおりの持ち上がりを、選んでいる範囲へなめらかに寄せます。
-    //----------------------------------------------------------------------------
-    void TitleScene::UpdateRangeTabs(float deltaTime) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        const float             rate     = 1.0f - std::exp(-12.0f * deltaTime);
-        for(size_t i = 0; i < m_rangeHolders.size(); ++i) {
-            const float target = m_rangeOrder[i] == m_range ? 1.0f : 0.0f;
-            m_rangeLift[i] += (target - m_rangeLift[i]) * rate;
-
-            // 選んだ札は持ち上げて大きく、ほかは少し沈めて小さく
-            const float lift      = m_rangeLift[i];
-            auto&       transform = registry.GetComponent<BuiltIn::TransformComponent>(m_rangeHolders[i]);
-            transform.position    = hlslpp::float3(m_rangeBases[i] + hlslpp::float2(0.0f, 5.0f - 21.0f * lift), 0.0f);
-            const float scale     = 0.93f + 0.14f * lift;
-            transform.scale       = hlslpp::float3(scale, scale, 1.0f);
-            transform.dirty       = true;
-        }
+        OnRangeSelected(false);
     }
 
     //----------------------------------------------------------------------------
     //! 出題の範囲を選び直します。
     //----------------------------------------------------------------------------
-    void TitleScene::SelectRange(Rules::CardRange range) {
+    void TitleScene::OnRangeSelected(bool changed) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        const bool              changed  = range != m_range;
-        m_range                          = range;
 
-        for(size_t i = 0; i < m_rangeTags.size(); ++i) {
-            const bool chosen = m_rangeOrder[i] == range;
-            registry.GetComponent<BuiltIn::FontComponent>(m_rangeTexts[i]).color = chosen ? UI::kInkColor : UI::kFadedInkColor;
-            if(chosen && m_rangeRibbon != entt::null) {
-                // 紐を選んだしおりへ付け替え、上から垂らし直す
-                auto& ribbon    = registry.GetComponent<BuiltIn::TransformComponent>(m_rangeRibbon);
-                ribbon.parent   = m_rangeHolders[i];
-                ribbon.position = hlslpp::float3(56.0f, 46.0f, 0.0f);
-                ribbon.dirty    = true;
-                if(changed) {
-                    m_ui->SlideIn(m_rangeRibbon, hlslpp::float2(0.0f, -50.0f), 0.0f, 0.4f);
-                    m_ui->Punch(m_rangeTags[i], 0.18f);
-                }
+        // 紐を選んだしおり（の入れ物）へ付け替え、選び直したときは上から垂らし直す
+        registry.View<ECS::ChoiceLiftComponent>().each([&](Tsukino::ECS::Entity holder, const ECS::ChoiceLiftComponent& lift) {
+            const auto& choice = registry.GetComponent<ECS::ChoiceTagComponent>(lift.tag);
+            if(choice.value != static_cast<int>(m_range) || m_rangeRibbon == entt::null) {
+                return;
             }
-        }
+            auto& ribbon    = registry.GetComponent<BuiltIn::TransformComponent>(m_rangeRibbon);
+            ribbon.parent   = holder;
+            ribbon.position = hlslpp::float3(m_layout.Spec("rangeRibbon").center, 0.0f);
+            ribbon.dirty    = true;
+            if(changed) {
+                m_ui->SlideIn(m_rangeRibbon, hlslpp::float2(0.0f, -50.0f), 0.0f, 0.4f);
+            }
+        });
 
         if(changed) {
             // 次に起動したときも同じ範囲から始められるよう、すぐ覚えておく
-            m_save.range = Rules::RangeKey(range);
-            Game::StoreSaveData(m_save);
+            Game::Services().Save().range = Rules::RangeKey(m_range);
+            Game::Services().StoreSave();
             RefreshRecordMemo();
         }
     }
@@ -426,14 +344,15 @@ namespace ChronoSort::Scene {
         if(m_record == entt::null) {
             return;
         }
-        const Game::SoloRecord& record = m_save.Record(m_range);
-        const bool              show   = record.HasAny() || m_save.versusWins > 0;
+        const Game::SaveData&   save   = Game::Services().Save();
+        const Game::SoloRecord& record = save.Record(m_range);
+        const bool              show   = record.HasAny() || save.versusWins > 0;
 
         m_ui->SetText(m_recordTitle, Util::Utf8ToWide(Rules::RangeName(m_range)) + L"の記録");
         m_ui->SetText(m_recordLines[0], L"最高得点  " + std::to_wstring(record.bestScore));
         m_ui->SetText(m_recordLines[1], L"最多枚数  " + std::to_wstring(record.bestPlaced));
         m_ui->SetText(m_recordLines[2], L"最長連続  " + std::to_wstring(record.bestStreak));
-        m_ui->SetText(m_recordLines[3], L"対戦の勝利  " + std::to_wstring(m_save.versusWins));
+        m_ui->SetText(m_recordLines[3], L"対戦の勝利  " + std::to_wstring(save.versusWins));
 
         if(show && !m_recordShown) {
             m_ui->SlideIn(m_record, hlslpp::float2(320.0f, 0.0f), slideDelay);

@@ -7,6 +7,7 @@
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Rules/Match.hpp>
+#include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -45,6 +46,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Scene&                        m_scene;          // UI を作るシーン
         PaperUI                                     m_ui;             // 紙片の部品
         const Rules::Match&                         m_match;          // 表示する対局
+        PaperLayout                                 m_layout;         // 紙と札の置き方（Data/UI/GameHud.json）
         std::vector<Tsukino::ECS::ScopedConnection> m_connections;    // 出来事の購読
 
         Tsukino::ECS::Entity m_sheet       = entt::null;    // 羊皮紙

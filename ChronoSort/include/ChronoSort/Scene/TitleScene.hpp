@@ -56,20 +56,13 @@ namespace ChronoSort::Scene {
         //! CPU 対戦の設定の紙を閉じます。
         void CloseVersusSheet();
 
-        //! 設定の紙の選択肢の見た目を、今の選択に合わせます。
-        void RefreshVersusChoices();
-
         //! 出題の範囲のしおりを3枚作ります。
         //! @param  [in] title 題字の紙片（「出題」の見出しを貼る）。
         void CreateRangeTabs(Tsukino::ECS::Entity title);
 
-        //! しおりの持ち上がりを、選んでいる範囲へなめらかに寄せます。
-        //! @param  [in] deltaTime 経過時間（秒）。
-        void UpdateRangeTabs(float deltaTime);
-
-        //! 出題の範囲を選び直します（見た目・記録のメモ・保存を更新する）。
-        //! @param  [in] range 出題の範囲。
-        void SelectRange(Rules::CardRange range);
+        //! 出題の範囲を選び直したときに、紐を付け替え、記録のメモと保存を更新します。
+        //! @param  [in] changed 選び直したなら true（作った直後は false）。
+        void OnRangeSelected(bool changed);
 
         //! 記録のメモを、選んでいる範囲の記録に合わせます（記録が無ければ引っ込める）。
         //! @param  [in] slideDelay 出すときに滑り込み始めるまでの待ち（秒）。
@@ -78,17 +71,11 @@ namespace ChronoSort::Scene {
         std::unique_ptr<UI::PaperUI> m_ui;       // 紙片の部品
         UI::PaperLayout              m_layout;   // 紙片の置き方（Data/UI/Title.json）
         DeskStage                    m_stage;    // 背景の机
-        Game::SaveData               m_save;     // 記録（出題の範囲を選び直すたびに保存する）
 
         // 出題の範囲
-        Rules::CardRange                  m_range = Rules::CardRange::All;    // 選んでいる範囲
-        std::vector<Rules::CardRange>     m_rangeOrder;            // しおりの並び順の範囲
-        std::vector<Tsukino::ECS::Entity> m_rangeHolders;          // しおりを持ち上げるための親
-        std::vector<Tsukino::ECS::Entity> m_rangeTags;             // しおりの紙片
-        std::vector<Tsukino::ECS::Entity> m_rangeTexts;            // しおりの文字
-        std::vector<hlslpp::float2>       m_rangeBases;            // しおりの置き場所
-        std::vector<float>                m_rangeLift;             // しおりの今の持ち上がり（0〜1）
-        Tsukino::ECS::Entity              m_rangeRibbon = entt::null;    // 選んでいるしおりに垂らす紐
+        Rules::CardRange     m_range       = Rules::CardRange::All;    // 選んでいる範囲
+        Tsukino::ECS::Entity m_rangeGroup  = entt::null;               // しおりの組（選択肢）
+        Tsukino::ECS::Entity m_rangeRibbon = entt::null;               // 選んでいるしおりに垂らす紐
 
         // 記録のメモ
         Tsukino::ECS::Entity              m_record      = entt::null;    // メモの紙片
@@ -105,16 +92,13 @@ namespace ChronoSort::Scene {
         std::unique_ptr<UI::OptionsSheet> m_options;    // 設定の紙
 
         // CPU 対戦の設定
-        Tsukino::ECS::Entity              m_sheet = entt::null;    // 設定の紙
-        std::vector<Tsukino::ECS::Entity> m_countTags;             // 人数の札
-        std::vector<Tsukino::ECS::Entity> m_levelTags;             // 強さの札
-        std::vector<Tsukino::ECS::Entity> m_countTexts;            // 人数の札の文字
-        std::vector<Tsukino::ECS::Entity> m_levelTexts;            // 強さの札の文字
-        Tsukino::ECS::Entity              m_start  = entt::null;   // 始める
-        Tsukino::ECS::Entity              m_cancel = entt::null;   // やめる
-        int                               m_cpuCount = 2;          // 選んだ CPU の人数
-        Rules::CpuLevel                   m_cpuLevel = Rules::CpuLevel::Normal;    // 選んだ強さ
-        std::vector<Tsukino::ECS::Entity> m_hovered;               // 前のフレームでカーソルが重なっていた紙片
+        Tsukino::ECS::Entity m_sheet      = entt::null;    // 設定の紙
+        Tsukino::ECS::Entity m_countGroup = entt::null;    // 人数の札の組
+        Tsukino::ECS::Entity m_levelGroup = entt::null;    // 強さの札の組
+        Tsukino::ECS::Entity m_start      = entt::null;    // 始める
+        Tsukino::ECS::Entity m_cancel     = entt::null;    // やめる
+        int                  m_cpuCount   = 2;             // 選んだ CPU の人数
+        Rules::CpuLevel      m_cpuLevel   = Rules::CpuLevel::Normal;    // 選んだ強さ
     };
 
 }    // namespace ChronoSort::Scene

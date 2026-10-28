@@ -1,0 +1,13 @@
+{
+    "papers": [
+        { "key": "sheet",     "value": { "texture": "scrap_result.png", "center": { "x": 820.0, "y": 450.0 }, "size": { "x": 620.0, "y": 520.0 }, "angle": 1.5,  "sway": 0.3 } },
+        { "key": "close",     "value": { "texture": "scrap_note.png",   "center": { "x": 150.0, "y": 212.0 }, "size": { "x": 170.0, "y": 62.0 },  "angle": -3.0 } },
+        { "key": "toggleTag", "value": { "texture": "scrap_note.png",   "center": { "x": -10.0, "y": 0.0 },   "size": { "x": 130.0, "y": 54.0 },  "sway": 0.6 } },
+        { "key": "knob",      "value": { "texture": "wax_seal.png",                                            "size": { "x": 34.0,  "y": 34.0 },  "sway": 4.0, "bob": 0.0 } },
+        { "key": "rowMaster", "value": { "center": { "x": 0.0, "y": -118.0 } } },
+        { "key": "rowBgm",    "value": { "center": { "x": 0.0, "y": -58.0 } } },
+        { "key": "rowSfx",    "value": { "center": { "x": 0.0, "y": 2.0 } } },
+        { "key": "rowFast",   "value": { "center": { "x": 0.0, "y": 78.0 } } },
+        { "key": "rowShake",  "value": { "center": { "x": 0.0, "y": 140.0 } } }
+    ]
+}

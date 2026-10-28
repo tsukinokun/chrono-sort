@@ -8,6 +8,8 @@
 #include <ChronoSort/Game/AssetManifest.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
+#include <ChronoSort/UI/PaperLayout.hpp>
+#include <ChronoSort/UI/Widgets.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -35,7 +37,6 @@ namespace ChronoSort::Scene {
         constexpr float kUploadBudget   = 0.004f;   // 1フレームで GPU 転送に使ってよい時間（秒）
         constexpr float kLoadShare      = 0.85f;    // 進み具合のうち、裏読みが占める割合（残りが GPU 転送）
         constexpr float kLineWidth      = 420.0f;   // 進み具合の線の最大の長さ
-        constexpr int   kLayer          = 10;
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -59,29 +60,14 @@ namespace ChronoSort::Scene {
 
         // この画面で使う素材（紙片と墨の線）だけは同期で読む。小さいので待ちはほぼ無い
         m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
-        UI::PaperSpec note;
-        note.texture      = "scrap_wide.png";
-        note.center       = hlslpp::float2(UI::kReferenceWidth * 0.5f, UI::kReferenceHeight * 0.5f + 40.0f);
-        note.size         = hlslpp::float2(560.0f, 170.0f);
-        note.angleDegrees = -2.0f;
-        note.swayDegrees  = 0.7f;
-        note.sortOrder    = kLayer;
-        const auto paper  = m_ui->Paper(note);
-        m_ui->Text(L"史料を整理しています", hlslpp::float2(0.0f, -36.0f), 0.85f, UI::kInkColor, kLayer + 1, paper);
-        m_percent = m_ui->Text(L"0%", hlslpp::float2(222.0f, 30.0f), 0.5f, UI::kFadedInkColor, kLayer + 1, paper);
+        const UI::PaperSpec note  = UI::PaperLayout("ChronoSort/Assets/Data/UI/Loading.json").Spec("note");
+        const auto          paper = m_ui->Paper(note);
+        m_ui->Text(L"史料を整理しています", hlslpp::float2(0.0f, -36.0f), 0.85f, UI::kInkColor, note.sortOrder + 1, paper);
+        m_percent = m_ui->Text(L"0%", hlslpp::float2(222.0f, 30.0f), 0.5f, UI::kFadedInkColor, note.sortOrder + 1, paper);
 
-        // 墨の線は左端を基準に伸ばす
-        m_line                  = m_scene.CreateEntity();
-        auto& lineTransform     = registry.AddComponent<BuiltIn::TransformComponent>(m_line);
-        lineTransform.position  = hlslpp::float3(-kLineWidth * 0.5f - 20.0f, 30.0f, 0.0f);
-        lineTransform.parent    = paper;
-        auto& lineSprite        = registry.AddComponent<BuiltIn::SpriteComponent>(m_line);
-        lineSprite.textureHandle = m_ui->Texture("ink_line.png");
-        lineSprite.sortOrder     = kLayer + 1;
-        lineSprite.uvRect        = hlslpp::float4(0.0f, 0.0f, 0.0f, 1.0f);
-        auto& lineRect           = registry.AddComponent<BuiltIn::UIRectComponent>(m_line);
-        lineRect.size            = hlslpp::float2(0.0f, 22.0f);
-        lineRect.pivot           = hlslpp::float2(0.0f, 0.5f);
+        // 墨の線は左端を基準に伸ばす（スプライトの左右の塗り）
+        m_line = UI::InkLine(*m_ui, paper, "ink_line.png", hlslpp::float2(kLineWidth, 22.0f), note.sortOrder + 1, hlslpp::float4(1.0f, 1.0f, 1.0f, 1.0f), 0.0f);
+        registry.GetComponent<BuiltIn::TransformComponent>(m_line).position = hlslpp::float3(-kLineWidth * 0.5f - 20.0f, 30.0f, 0.0f);
         m_ui->SlideIn(paper, hlslpp::float2(0.0f, 60.0f), 0.0f, 0.4f);
 
         m_queue = std::make_unique<Tsukino::Asset::AssetLoadQueue>(*context->assetManager);
@@ -111,8 +97,7 @@ namespace ChronoSort::Scene {
         m_shown += (progress - m_shown) * std::min(1.0f, deltaTime * 10.0f);
 
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        registry.GetComponent<BuiltIn::UIRectComponent>(m_line).size.x  = kLineWidth * m_shown;
-        registry.GetComponent<BuiltIn::SpriteComponent>(m_line).uvRect.z = m_shown;
+        UI::SetInkLineFill(registry, m_line, m_shown);
         m_ui->SetText(m_percent, std::to_wstring(static_cast<int>(std::round(m_shown * 100.0f))) + L"%");
 
         const bool done = m_queue->IsFinished() && m_pendingUploads.empty();

@@ -8,6 +8,7 @@
 #include <ChronoSort/ECS/Component/CountUpTextComponent.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
+#include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -29,24 +30,11 @@ namespace ChronoSort::UI {
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
 
-        // 描画順（大きいほど手前）。常に出しておく紙片の描画順は Data/UI/GameHud.json に書き、文字はその上に重ねる
+        // 文字の描画順（大きいほど手前）。紙片の描画順は Data/UI/GameHud.json に書き、文字はその上に重ねる
         constexpr int kLayerDesk     = 10;
         constexpr int kLayerAnchored = 40;
-        constexpr int kLayerBanner   = 60;
-
-        // 机の紙片の常時の揺れ（止まって見えない程度に大きめ）
-        constexpr float kDeskSway = 1.4f;    // 揺れの幅（度）
-        constexpr float kDeskBob  = 3.0f;    // 上下の漂いの幅
 
         constexpr size_t kDeckWarnCount = 5;    // 山札がこの枚数以下で札を弾ませる
-
-        // トゥイーンの種類の目印（PaperUI の 1〜2 と重ならないように）
-        constexpr std::uint32_t kTagLifeWarn = 60;
-        constexpr std::uint32_t kTagDeckWarn = 61;
-        constexpr std::uint32_t kTagTurn     = 62;
-        constexpr std::uint32_t kTagNudge    = 63;
-        constexpr std::uint32_t kTagInkTip   = 20;
-        constexpr std::uint32_t kTagInkSlide = 21;
 
         //! 数字を全角にせず、そのままワイド文字列にします。
         std::wstring Number(long long value) {
@@ -234,10 +222,10 @@ namespace ChronoSort::UI {
         if(lifeWarning != m_lifeWarning) {
             m_lifeWarning = lifeWarning;
             if(lifeWarning) {
-                PlayRepeatingPunch(registry, m_inks.front(), BuiltIn::UITweenProperty::Rotation, 0.0f, 6.0f * kDegToRad, 0.4f, 1.6f, kTagLifeWarn);
+                PlayRepeatingPunch(registry, m_inks.front(), BuiltIn::UITweenProperty::Rotation, 0.0f, 6.0f * kDegToRad, 0.4f, 1.6f, Tag(TweenTag::LifeWarning));
             } else {
                 for(const auto ink : m_inks) {
-                    BuiltIn::UITweenUtility::Stop(registry, ink, kTagLifeWarn);
+                    BuiltIn::UITweenUtility::Stop(registry, ink, Tag(TweenTag::LifeWarning));
                 }
             }
         }
@@ -245,9 +233,9 @@ namespace ChronoSort::UI {
         if(deckWarning != m_deckWarning) {
             m_deckWarning = deckWarning;
             if(deckWarning) {
-                PlayRepeatingPunch(registry, m_deckTag, BuiltIn::UITweenProperty::Scale, 1.0f, 1.12f, 0.4f, 1.2f, kTagDeckWarn);
+                PlayRepeatingPunch(registry, m_deckTag, BuiltIn::UITweenProperty::Scale, 1.0f, 1.12f, 0.4f, 1.2f, Tag(TweenTag::DeckWarning));
             } else {
-                BuiltIn::UITweenUtility::Stop(registry, m_deckTag, kTagDeckWarn);
+                BuiltIn::UITweenUtility::Stop(registry, m_deckTag, Tag(TweenTag::DeckWarning));
             }
         }
 
@@ -282,7 +270,7 @@ namespace ChronoSort::UI {
             tip.duration  = 0.5f;
             tip.ease      = EaseType::OutBounce;
             tip.holdAtEnd = true;
-            tip.tag       = kTagInkTip;
+            tip.tag       = Tag(TweenTag::InkTip);
             BuiltIn::UITweenUtility::Play(registry, ink, tip);
 
             BuiltIn::UITween slide;
@@ -292,7 +280,7 @@ namespace ChronoSort::UI {
             slide.duration  = 0.5f;
             slide.ease      = EaseType::OutBounce;
             slide.holdAtEnd = true;
-            slide.tag       = kTagInkSlide;
+            slide.tag       = Tag(TweenTag::InkSlide);
             BuiltIn::UITweenUtility::Play(registry, ink, slide);
         }
         m_shownLives = lives;
@@ -316,7 +304,7 @@ namespace ChronoSort::UI {
         // 手番の名札だけを大きめに呼吸させる
         if(m_turnPlayer != player) {
             if(m_turnPlayer < m_playerTags.size()) {
-                BuiltIn::UITweenUtility::Stop(registry, m_playerTags[m_turnPlayer], kTagTurn);
+                BuiltIn::UITweenUtility::Stop(registry, m_playerTags[m_turnPlayer], Tag(TweenTag::TurnBreathe));
             }
             BuiltIn::UITween breathe;
             breathe.property = BuiltIn::UITweenProperty::Scale;
@@ -325,7 +313,7 @@ namespace ChronoSort::UI {
             breathe.duration = 0.9f;
             breathe.ease     = EaseType::InOutSine;
             breathe.loop     = BuiltIn::UITweenLoop::PingPong;
-            breathe.tag      = kTagTurn;
+            breathe.tag      = Tag(TweenTag::TurnBreathe);
             BuiltIn::UITweenUtility::Play(registry, m_playerTags[player], breathe);
             m_turnPlayer = player;
         }
@@ -337,7 +325,7 @@ namespace ChronoSort::UI {
     void DeskHud::SetNudge(bool active) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
         if(m_nudged != entt::null) {
-            BuiltIn::UITweenUtility::Stop(registry, m_nudged, kTagNudge);
+            BuiltIn::UITweenUtility::Stop(registry, m_nudged, Tag(TweenTag::IdleNudge));
             m_nudged = entt::null;
         }
         if(!active) {
@@ -348,7 +336,7 @@ namespace ChronoSort::UI {
         if(target == entt::null) {
             return;
         }
-        PlayRepeatingPunch(registry, target, BuiltIn::UITweenProperty::Rotation, 0.0f, 5.0f * kDegToRad, 0.5f, 2.5f, kTagNudge);
+        PlayRepeatingPunch(registry, target, BuiltIn::UITweenProperty::Rotation, 0.0f, 5.0f * kDegToRad, 0.5f, 2.5f, Tag(TweenTag::IdleNudge));
         m_nudged = target;
     }
 
@@ -356,15 +344,12 @@ namespace ChronoSort::UI {
     //! 通知の帯を滑り込ませ、少し置いてから抜きます。
     //----------------------------------------------------------------------------
     void DeskHud::ShowBanner(const std::wstring& text, bool big) {
-        PaperSpec spec;
-        spec.texture      = "scrap_wide.png";
-        spec.center       = hlslpp::float2(kReferenceWidth * 0.5f + m_ui.Jitter() * 30.0f, big ? 300.0f : 210.0f);
-        spec.size         = big ? hlslpp::float2(660.0f, 180.0f) : hlslpp::float2(470.0f, 128.0f);
+        // 帯は毎回少しずつ位置と傾きをずらす
+        PaperSpec spec    = m_layout.Spec(big ? "bannerBig" : "banner");
+        spec.center       = spec.center + hlslpp::float2(m_ui.Jitter() * 30.0f, 0.0f);
         spec.angleDegrees = m_ui.Jitter() * 4.0f;
-        spec.swayDegrees  = 1.2f;
-        spec.sortOrder    = kLayerBanner;
         const auto banner = m_ui.Paper(spec);
-        m_ui.Text(text, hlslpp::float2(0.0f, 0.0f), big ? 1.7f : 1.15f, kInkColor, kLayerBanner + 1, banner);
+        m_ui.Text(text, hlslpp::float2(0.0f, 0.0f), big ? 1.7f : 1.15f, kInkColor, spec.sortOrder + 1, banner);
 
         const float stay = big ? 2.0f : 1.1f;
         m_ui.SlideIn(banner, hlslpp::float2(-kReferenceWidth * 0.7f, 30.0f), 0.0f, 0.5f);
@@ -392,16 +377,9 @@ namespace ChronoSort::UI {
         // 連続正解の札（2連続から出し、途切れたら落とす）
         if(result.correct && result.streak >= 2) {
             if(m_streakTag == entt::null) {
-                PaperSpec spec;
-                spec.texture      = "scrap_note.png";
-                spec.center       = hlslpp::float2(150.0f, 236.0f);
-                spec.size         = hlslpp::float2(160.0f, 54.0f);
-                spec.angleDegrees = -5.0f;
-                spec.swayDegrees  = kDeskSway;
-                spec.bobPixels    = kDeskBob;
-                spec.sortOrder    = kLayerDesk + 4;
-                m_streakTag       = m_ui.Paper(spec);
-                m_streakText      = m_ui.Text(L"", hlslpp::float2(6.0f, 2.0f), 0.6f, kSealRedColor, kLayerDesk + 5, m_streakTag);
+                const PaperSpec spec = m_layout.Spec("streakTag");
+                m_streakTag          = m_ui.Paper(spec);
+                m_streakText         = m_ui.Text(L"", hlslpp::float2(6.0f, 2.0f), 0.6f, kSealRedColor, spec.sortOrder + 1, m_streakTag);
                 m_ui.SlideIn(m_streakTag, hlslpp::float2(-200.0f, 0.0f));
             }
             m_ui.SetText(m_streakText, Number(result.streak) + L" 連続");

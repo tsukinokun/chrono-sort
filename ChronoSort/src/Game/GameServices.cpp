@@ -22,7 +22,8 @@ namespace ChronoSort::Game {
         : m_context(context)
         , m_tunings()
         , m_sounds(*context.assetManager, *context.audioManager)
-        , m_options(LoadOptions()) {
+        , m_options(LoadOptions())
+        , m_save(LoadSaveData()) {
         assert(s_current == nullptr && "GameServices: only one instance may exist");
         s_current = this;
         // 最初の音が鳴る前に、前回の音量にしておく
@@ -50,6 +51,13 @@ namespace ChronoSort::Game {
     //----------------------------------------------------------------------------
     void GameServices::StoreOptions() const {
         Game::StoreOptions(m_options);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 記録を書き込みます。
+    //----------------------------------------------------------------------------
+    void GameServices::StoreSave() const {
+        StoreSaveData(m_save);
     }
 
     //----------------------------------------------------------------------------

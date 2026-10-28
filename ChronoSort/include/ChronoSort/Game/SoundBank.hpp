@@ -9,6 +9,7 @@
 #include <Tsukino/Audio/AudioManager.hpp>
 #include <Tsukino/Engine/Asset/AssetHandle.hpp>
 
+#include <optional>
 #include <string>
 #include <unordered_map>
 
@@ -41,6 +42,12 @@ namespace ChronoSort::Game {
         //! BGM を、合図の名前でループ再生します（Sounds.json の music）。既に流れている BGM は止めます。
         //! @param  [in] cue 合図の名前。
         void PlayBgm(const std::string& cue);
+
+        //! 効果音の合図を、読み込んだ音と音量にします（エンジンの UIButtonSoundComponent などに渡すとき用）。
+        //! @param  [in]  cue    合図の名前。
+        //! @param  [out] volume 合図の音量。
+        //! @return 音（合図が無い・ファイルが無いなら std::nullopt）。
+        std::optional<Tsukino::Asset::AssetHandle> ResolveCue(const std::string& cue, float& volume);
 
         //! BGM を止めます。
         void StopBgm();

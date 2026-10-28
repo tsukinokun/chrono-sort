@@ -9,6 +9,7 @@
 #include <ChronoSort/ECS/Component/RevealComponent.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
@@ -181,7 +182,7 @@ namespace ChronoSort::Match {
                                             (outcome == Rules::MatchOutcome::VersusWon && session.match.Winner() == 0);
 
         // 記録を更新して保存する（ソロの記録は出題の範囲ごとに比べる）
-        Game::SaveData save      = Game::LoadSaveData();
+        Game::SaveData& save     = Game::Services().Save();
         bool     newRecord = false;
         if(session.config.mode == Rules::MatchMode::Solo) {
             Game::SoloRecord& record = save.Record(session.config.range);
@@ -192,7 +193,7 @@ namespace ChronoSort::Match {
         } else if(won) {
             ++save.versusWins;
         }
-        Game::StoreSaveData(save);
+        Game::Services().StoreSave();
 
         Events(registry).Publish(MatchEndedEvent{outcome, won, newRecord});
         session.Schedule(MatchStep::ShowResult, Game::Tuning().Deal().showResultDelay);

@@ -1,0 +1,5 @@
+{
+    "papers": [
+        { "key": "note", "value": { "texture": "scrap_wide.png", "center": { "x": 800.0, "y": 490.0 }, "size": { "x": 560.0, "y": 170.0 }, "angle": -2.0, "sway": 0.7, "sortOrder": 10 } }
+    ]
+}

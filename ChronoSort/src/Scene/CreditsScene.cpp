@@ -7,6 +7,8 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
+#include <ChronoSort/UI/PaperLayout.hpp>
+#include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -61,34 +63,20 @@ namespace ChronoSort::Scene {
         LoadLines();
         m_pageCount = std::max(1, static_cast<int>((m_lines.size() + kLinesPerPage - 1) / kLinesPerPage));
 
-        UI::PaperSpec sheet;
-        sheet.texture      = "scrap_tall.png";
-        sheet.center       = hlslpp::float2(760.0f, 452.0f);
-        sheet.size         = hlslpp::float2(820.0f, 840.0f);
-        sheet.angleDegrees = -1.2f;
-        sheet.swayDegrees  = 0.25f;
-        sheet.sortOrder    = kLayerSheet;
-        m_sheet            = m_ui->Paper(sheet);
+        const UI::PaperLayout layout("ChronoSort/Assets/Data/UI/Credits.json");
+        m_sheet = m_ui->Paper(layout.Spec("sheet"));
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 900.0f), 0.1f, 0.6f);
         m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -362.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
         m_pageNo = m_ui->Text(L"", hlslpp::float2(0.0f, 380.0f), 0.5f, UI::kFadedInkColor, kLayerSheet + 1, m_sheet);
 
-        auto button = [&](const std::wstring& text, const hlslpp::float2& at, float angle) {
-            UI::PaperSpec spec;
-            spec.texture      = "scrap_note.png";
-            spec.center       = at;
-            spec.size         = hlslpp::float2(200.0f, 70.0f);
-            spec.angleDegrees = angle;
-            spec.sortOrder    = kLayerSheet + 10;
-            const auto paper  = m_ui->Paper(spec);
-            m_ui->Text(text, hlslpp::float2(6.0f, 2.0f), 0.72f, UI::kInkColor, kLayerSheet + 11, paper);
-            m_ui->MakeButton(paper);
+        auto button = [&](const char* name, const std::wstring& text) {
+            const auto paper = UI::NoteButton(*m_ui, layout.Spec(name), text, 0.72f);
             m_ui->SlideIn(paper, hlslpp::float2(260.0f, 0.0f), 0.5f);
             return paper;
         };
-        m_next = button(L"次の頁", hlslpp::float2(1340.0f, 520.0f), 4.0f);
-        m_prev = button(L"前の頁", hlslpp::float2(1310.0f, 640.0f), -3.0f);
-        m_back = button(L"机に戻る", hlslpp::float2(1360.0f, 790.0f), 2.0f);
+        m_next = button("next", L"次の頁");
+        m_prev = button("prev", L"前の頁");
+        m_back = button("back", L"机に戻る");
         ShowPage(0, 0);
     }
 

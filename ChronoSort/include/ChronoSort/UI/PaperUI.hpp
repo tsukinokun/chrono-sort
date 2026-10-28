@@ -2,7 +2,7 @@
 //! @file   PaperUI.hpp
 //! @brief  「机の上の紙片」でできた画面 UI の部品
 //! @detail UI は定規で揃えず、紙片ごとに少しずつ傾け、位相をずらしてゆっくり揺らします。
-//!         ホバーで持ち上がり、押すと沈み、クリックで弾むボタンもここで作ります。
+//!         ホバーで持ち上がり、押すと沈み、クリックで弾み、重なると紙の擦れる音がするボタンもここで作ります。
 //!         座標は基準解像度（kReferenceWidth × kReferenceHeight）の画面ピクセルです。
 //----------------------------------------------------------------------------
 #pragma once
@@ -73,7 +73,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity Text(const std::wstring& text, const hlslpp::float2& position, float scale, const hlslpp::float4& color, int sortOrder,
                                   Tsukino::ECS::Entity parent = entt::null, bool centered = true);
 
-        //! 紙片をボタンにします（ホバーで持ち上がり、押すと沈み、クリックで弾む）。
+        //! 紙片をボタンにします（ホバーで持ち上がり、押すと沈み、クリックで弾み、重なると "ui.hover" の音が鳴る）。
         //! @param  [in] entity 紙片。
         void MakeButton(Tsukino::ECS::Entity entity);
 
@@ -132,6 +132,10 @@ namespace ChronoSort::UI {
         //! -1〜1 の乱数を返します（紙片ごとの傾きのばらつきに使う）。
         //! @return 乱数。
         float Jitter();
+
+        //! UI を作るシーンを返します（部品の関数が、紙片にコンポーネントを足すときに使う）。
+        //! @return シーン。
+        Tsukino::ECS::Scene& Scene() { return m_scene; }
 
         //! テクスチャを読み込みます。
         //! @param  [in] texture ChronoSort/Assets/Textures/UI/ からのファイル名。

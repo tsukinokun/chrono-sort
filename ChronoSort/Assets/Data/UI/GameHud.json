@@ -14,6 +14,19 @@
         { "key": "playerTag", "value": { "texture": "scrap_note.png",     "center": { "x": 190.0,  "y": 690.0 }, "size": { "x": 190.0, "y": 60.0 },  "angle": 3.5,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
         { "key": "cpuFrame",  "value": { "texture": "portrait_frame.png", "center": { "x": 0.0,    "y": 0.0 },   "size": { "x": 96.0,  "y": 118.0 }, "sway": 1.4, "bob": 3.0, "sortOrder": 40 } },
         { "key": "cpuFace",   "value": {                                  "center": { "x": 0.0,    "y": -13.0 }, "size": { "x": 70.0,  "y": 72.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 41 } },
-        { "key": "ribbon",    "value": { "texture": "ribbon.png",                                                "size": { "x": 30.0,  "y": 100.0 }, "sway": 3.0, "swaySeconds": 2.2, "sortOrder": 39 } }
+        { "key": "ribbon",    "value": { "texture": "ribbon.png",                                                "size": { "x": 30.0,  "y": 100.0 }, "sway": 3.0, "swaySeconds": 2.2, "sortOrder": 39 } },
+        { "key": "banner",       "value": { "texture": "scrap_wide.png",   "center": { "x": 800.0,  "y": 210.0 }, "size": { "x": 470.0, "y": 128.0 }, "sway": 1.2, "sortOrder": 60 } },
+        { "key": "bannerBig",    "value": { "texture": "scrap_wide.png",   "center": { "x": 800.0,  "y": 300.0 }, "size": { "x": 660.0, "y": 180.0 }, "sway": 1.2, "sortOrder": 60 } },
+        { "key": "streakTag",    "value": { "texture": "scrap_note.png",   "center": { "x": 150.0,  "y": 236.0 }, "size": { "x": 160.0, "y": 54.0 },  "angle": -5.0, "sway": 1.4, "bob": 3.0, "sortOrder": 14 } },
+        { "key": "stamp",        "value": {                                                                       "size": { "x": 150.0, "y": 150.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": 45 } },
+        { "key": "resultSheet",  "value": { "texture": "scrap_result.png", "center": { "x": 800.0,  "y": 440.0 }, "size": { "x": 680.0, "y": 540.0 }, "angle": -1.5, "sway": 0.4, "sortOrder": 80 } },
+        { "key": "resultSeal",   "value": { "texture": "wax_seal.png",     "center": { "x": 200.0,  "y": -40.0 }, "size": { "x": 150.0, "y": 150.0 }, "angle": 12.0, "sway": 0.0, "sortOrder": 83 } },
+        { "key": "resultRetry",  "value": { "texture": "scrap_note.png",   "center": { "x": -140.0, "y": 170.0 }, "size": { "x": 220.0, "y": 74.0 },  "angle": -4.0, "sway": 1.0, "sortOrder": 85 } },
+        { "key": "resultTitle",  "value": { "texture": "scrap_note.png",   "center": { "x": 150.0,  "y": 182.0 }, "size": { "x": 220.0, "y": 74.0 },  "angle": 3.0,  "sway": 1.0, "sortOrder": 85 } },
+        { "key": "resultPin",    "value": { "texture": "pin.png",          "center": { "x": -88.0,  "y": -22.0 }, "size": { "x": 36.0,  "y": 36.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 87 } },
+        { "key": "pauseSheet",   "value": { "texture": "scrap_square.png", "center": { "x": 800.0,  "y": 440.0 }, "size": { "x": 360.0, "y": 380.0 }, "angle": -2.5, "sway": 0.4, "sortOrder": 85 } },
+        { "key": "pauseResume",  "value": { "texture": "scrap_note.png",   "center": { "x": -6.0,   "y": -38.0 }, "size": { "x": 210.0, "y": 64.0 },  "angle": 2.0,  "sortOrder": 87 } },
+        { "key": "pauseOptions", "value": { "texture": "scrap_note.png",   "center": { "x": 10.0,   "y": 40.0 },  "size": { "x": 210.0, "y": 64.0 },  "angle": -3.0, "sortOrder": 87 } },
+        { "key": "pauseTitle",   "value": { "texture": "scrap_note.png",   "center": { "x": -4.0,   "y": 118.0 }, "size": { "x": 210.0, "y": 64.0 },  "angle": 1.5,  "sortOrder": 87 } }
     ]
 }

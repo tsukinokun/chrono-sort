@@ -85,6 +85,24 @@ namespace ChronoSort::Game {
     }
 
     //----------------------------------------------------------------------------
+    //! 効果音の合図を、読み込んだ音と音量にします。
+    //----------------------------------------------------------------------------
+    std::optional<Tsukino::Asset::AssetHandle> SoundBank::ResolveCue(const std::string& cue, float& volume) {
+        const auto& cues = Tuning().Sounds().cues;
+        const auto  it   = cues.find(cue);
+        if(it == cues.end()) {
+            Tsukino::Core::Log::Warn("SoundBank: cue '" + cue + "' is not in Sounds.json");
+            return std::nullopt;
+        }
+        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Sfx/" + it->second.file + ".wav");
+        if(!handle.IsValid()) {
+            return std::nullopt;
+        }
+        volume = it->second.volume;
+        return handle;
+    }
+
+    //----------------------------------------------------------------------------
     //! BGM を止めます。
     //----------------------------------------------------------------------------
     void SoundBank::StopBgm() {

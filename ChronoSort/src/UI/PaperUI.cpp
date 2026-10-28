@@ -4,12 +4,16 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/PaperUI.hpp>
 
+#include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/UI/TweenTags.hpp>
+
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/LifetimeComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIButtonFeedbackComponent.hpp>
+#include <Tsukino/BuiltIn/ECS/Component/UIButtonSoundComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIRectComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Transform/TransformUtility.hpp>
 #include <Tsukino/BuiltIn/ECS/UI/UITweenUtility.hpp>
@@ -27,9 +31,6 @@ namespace ChronoSort::UI {
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
 
-        // トゥイーンの種類の目印（同じ目印を再生し直すと置き換わる）。滑り込み・弾みはエンジンの定型の目印を使う
-        constexpr std::uint32_t kTagSway = 1;
-        constexpr std::uint32_t kTagBob  = 2;
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -85,7 +86,7 @@ namespace ChronoSort::UI {
             sway.delay    = (Jitter() * 0.5f + 0.5f) * spec.swaySeconds * 0.5f;
             sway.ease     = EaseType::InOutSine;
             sway.loop     = BuiltIn::UITweenLoop::PingPong;
-            sway.tag      = kTagSway;
+            sway.tag      = Tag(TweenTag::Sway);
             BuiltIn::UITweenUtility::Play(registry, entity, sway);
         }
         if(spec.bobPixels > 0.0f) {
@@ -97,7 +98,7 @@ namespace ChronoSort::UI {
             bob.delay    = (Jitter() * 0.5f + 0.5f) * spec.swaySeconds * 0.4f;
             bob.ease     = EaseType::InOutSine;
             bob.loop     = BuiltIn::UITweenLoop::PingPong;
-            bob.tag      = kTagBob;
+            bob.tag      = Tag(TweenTag::Bob);
             BuiltIn::UITweenUtility::Play(registry, entity, bob);
         }
         return entity;
@@ -135,6 +136,16 @@ namespace ChronoSort::UI {
         feedback.hoverScale = 1.08f;
         feedback.pressScale = 0.93f;
         feedback.clickPunch = 0.14f;
+
+        // カーソルが新しく紙に乗ったら、紙が擦れる小さな音（押したときの音は、何が起きるかで画面ごとに鳴らし分ける）
+        Game::SoundBank& sounds = Game::Services().Sounds();
+        float            volume = 1.0f;
+        if(const auto hover = sounds.ResolveCue("ui.hover", volume)) {
+            auto& sound       = registry.AddComponent<BuiltIn::UIButtonSoundComponent>(entity);
+            sound.hoverSound  = *hover;
+            sound.hoverVolume = volume;
+            sound.bus         = Game::SoundBank::kEffectsBus;
+        }
     }
 
     //----------------------------------------------------------------------------
@@ -179,8 +190,8 @@ namespace ChronoSort::UI {
     //----------------------------------------------------------------------------
     void PaperUI::StopIdle(Tsukino::ECS::Entity entity) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        BuiltIn::UITweenUtility::Stop(registry, entity, kTagSway);
-        BuiltIn::UITweenUtility::Stop(registry, entity, kTagBob);
+        BuiltIn::UITweenUtility::Stop(registry, entity, Tag(TweenTag::Sway));
+        BuiltIn::UITweenUtility::Stop(registry, entity, Tag(TweenTag::Bob));
     }
 
     //----------------------------------------------------------------------------

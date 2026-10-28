@@ -4,6 +4,7 @@
 //! @detail 「続ける」「設定」「タイトルへ」の3枚の札を貼った紙です。選ばれた行動は Poll で受け取ります。
 //----------------------------------------------------------------------------
 #pragma once
+#include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -43,6 +44,7 @@ namespace ChronoSort::UI {
 
     private:
         PaperUI              m_ui;                      // 紙片の部品
+        PaperLayout          m_layout;                  // 紙と札の置き方（Data/UI/GameHud.json）
         Tsukino::ECS::Entity m_sheet   = entt::null;    // 一時停止の紙
         Tsukino::ECS::Entity m_resume  = entt::null;    // 続ける
         Tsukino::ECS::Entity m_options = entt::null;    // 設定

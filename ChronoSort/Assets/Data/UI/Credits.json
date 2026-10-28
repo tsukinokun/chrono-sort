@@ -1,0 +1,8 @@
+{
+    "papers": [
+        { "key": "sheet", "value": { "texture": "scrap_tall.png", "center": { "x": 760.0,  "y": 452.0 }, "size": { "x": 820.0, "y": 840.0 }, "angle": -1.2, "sway": 0.25, "sortOrder": 30 } },
+        { "key": "next",  "value": { "texture": "scrap_note.png", "center": { "x": 1340.0, "y": 520.0 }, "size": { "x": 200.0, "y": 70.0 },  "angle": 4.0,  "sortOrder": 40 } },
+        { "key": "prev",  "value": { "texture": "scrap_note.png", "center": { "x": 1310.0, "y": 640.0 }, "size": { "x": 200.0, "y": 70.0 },  "angle": -3.0, "sortOrder": 40 } },
+        { "key": "back",  "value": { "texture": "scrap_note.png", "center": { "x": 1360.0, "y": 790.0 }, "size": { "x": 200.0, "y": 70.0 },  "angle": 2.0,  "sortOrder": 40 } }
+    ]
+}
