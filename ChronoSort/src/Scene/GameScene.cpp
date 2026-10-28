@@ -112,6 +112,11 @@ namespace ChronoSort::Scene {
 
         m_sequencer.Update(deltaTime);
 
+        // 人間の手番でなければ、カーソルではなく隙間（CPU の迷い・公開中）を注目点にする
+        if(m_phase != Phase::HumanTurn) {
+            m_board->SetFocusX(std::nullopt);
+        }
+
         if(m_phase == Phase::HumanTurn) {
             UpdateHumanInput(deltaTime);
 #ifdef _DEBUG
@@ -379,6 +384,21 @@ namespace ChronoSort::Scene {
         // 手札を持っていないときは、指した場のカードを起こして年号を読めるようにする
         m_board->SetRowHovered((!m_dragging && m_selected < 0 && hand.hovered < 0) ? m_board->PickRowCard(ray) : -1);
 
+        // 列の上のカーソル（持っているカード）の位置を注目点にして、周りのカードを読める大きさに広げる
+        {
+            std::optional<float> focus;
+            hlslpp::float3       point    = m_dragPoint;
+            float                distance = 0.0f;
+            const bool           onTable  = m_dragging || CameraUtility::IntersectPlane(ray, hlslpp::float3(0.0f, 0.0f, 0.0f), hlslpp::float3(0.0f, 1.0f, 0.0f), distance);
+            if(!m_dragging && onTable) {
+                point = ray.GetPoint(distance);
+            }
+            if(onTable && float(point.z) >= Board::kRowZ - kRowBandNear && float(point.z) <= Board::kRowZ + kRowBandFar) {
+                focus = float(point.x);
+            }
+            m_board->SetFocusX(focus);
+        }
+
         // 置き先の候補：卓の上のカーソル位置が場の列の近くならスロットを決める
         auto previewFrom = [&](const hlslpp::float3& point) -> std::optional<size_t> {
             if(float(point.z) < Board::kRowZ - kRowBandNear || float(point.z) > Board::kRowZ + kRowBandFar) {
@@ -611,7 +631,7 @@ namespace ChronoSort::Scene {
         m_sequencer.Schedule(0.42f, [this, entity, slot, up, context] {
             Tsukino::ECS::Registry& reg = m_scene.GetRegistry();
             ECS::CardMotion::SetSharpness(reg, entity, 9.0f, 7.0f);
-            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, FacingRevealed(), m_board->RowScale() * 1.1f);
+            ECS::CardMotion::SetTarget(reg, entity, m_board->SlotPosition(slot) + up * 115.0f, FacingRevealed(), m_board->SlotScale(slot) * 1.1f);
             Game::Sounds(*context).Play("card_flip");
         });
 
@@ -672,7 +692,7 @@ namespace ChronoSort::Scene {
                 m_board->SetMarker(true, true);
                 m_board->ScrollToSlot(correctSlot);
                 ECS::CardMotion::SetSharpness(r, entity, 8.0f, 8.0f);
-                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, FacingRevealed(), m_board->RowScale());
+                ECS::CardMotion::SetTarget(r, entity, m_board->SlotPosition(correctSlot) + up * 40.0f, FacingRevealed(), m_board->SlotScale(correctSlot));
                 Game::Sounds(*context).Play("card_slide", 0.5f);
             });
             m_sequencer.Schedule(1.9f, [this, entity, context] {

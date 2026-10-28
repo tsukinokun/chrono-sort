@@ -39,11 +39,13 @@ namespace ChronoSort::Board {
         constexpr float      kCoverThickness = 1.4f;    // 山札の1枚分の見た目の厚み
         constexpr size_t     kMaxCovers      = 9;
 
-        // 場の列。少ないうちは大きく見せ、増えたら拡大率 → 間隔の順に詰め、それでも収まらなければ流す
-        constexpr float kRowScaleMax   = 1.4f;      // 通常の拡大率
-        constexpr float kRowScaleMin   = 1.0f;      // これより縮めると題名が読めない
+        // 場の列。少ないうちは全部を大きく並べ、増えたら注目点（カーソル・隙間）の周りだけ大きく広げて
+        // 遠いカードほど細く詰める。それでも収まらなければ流す
+        constexpr float kRowScaleMax   = 1.4f;      // 通常の拡大率（注目点の周りもこの大きさ）
+        constexpr float kRowScaleFar   = 0.9f;      // 注目点から遠いカードの拡大率の下限（位置関係が分かれば足りる）
         constexpr float kRowSpacingMax = 74.0f;     // 拡大率 1 のときの、重ならない間隔
-        constexpr float kRowSpacingMin = 50.0f;     // これより詰めるとカードが重なりすぎる
+        constexpr float kNarrowMin     = 14.0f;     // 遠いカードを詰める間隔の下限（縁が覗く程度）
+        constexpr float kFocusRadius   = 2.2f;      // 注目点の周りで広げる範囲（枚数）
         constexpr float kGapWidth      = 60.0f;     // 挿入位置の隙間の広さ（拡大率 1 のとき）
         constexpr float kRowHalfSpan   = 430.0f;   // カードの中心を置いてよい左右の範囲（画面の端で切れない幅）
         constexpr float kFoldDepth     = 26.0f;     // 範囲の外のカードを端に畳んで重ねる奥行き
@@ -126,19 +128,33 @@ namespace ChronoSort::Board {
         Tsukino::ECS::Registry& registry = m_factory.Registry();
         m_time += deltaTime;
 
-        // 枚数に合わせた大きさ・間隔と、流す量はなめらかに追う
+        // 注目点と拡大の強さ、流す量はなめらかに追う
         const float fitRate = 1.0f - std::exp(-kFitSharpness * deltaTime);
-        float       scaleTarget   = kRowScaleMax;
-        float       spacingTarget = kRowSpacingMax * kRowScaleMax;
-        RowFitTarget(scaleTarget, spacingTarget);
-        m_rowScale   += (scaleTarget - m_rowScale) * fitRate;
-        m_rowSpacing += (spacingTarget - m_rowSpacing) * fitRate;
-        m_scrollTarget = std::clamp(m_scrollTarget, -ScrollLimit(), ScrollLimit());
-        m_scroll      += (m_scrollTarget - m_scroll) * fitRate;
+
+        // 注目点は、カーソル（持っているカード）を優先し、無ければ隙間（CPU の迷い・公開中）にする。
+        // カーソルのときは、広げたあとの並びでカーソルの真下に注目点が来る位置を解く（広げるたびにずれていかないように）。
+        // どちらも無いときは最後に見ていた場所を広げたままにする（全体を均等に詰めると、どこも読めなくなるため）
+        float focusTarget = m_focus;
+        if(m_focusX) {
+            focusTarget = FocusUnderX(std::clamp(*m_focusX, -kRowHalfSpan, kRowHalfSpan) + m_scroll);
+        } else if(m_gap) {
+            focusTarget = static_cast<float>(*m_gap);
+        }
+        // 広げ始める前は、広げる場所へその場で移す（列の端から滑ってこないように）
+        if(m_focusStrength < 0.02f) {
+            m_focus = focusTarget;
+        } else {
+            m_focus += (focusTarget - m_focus) * fitRate;
+        }
+        m_focusStrength += (1.0f - m_focusStrength) * fitRate;
 
         // 隙間はなめらかに開閉する
-        const float gapTarget = m_gap ? kGapWidth * m_rowScale : 0.0f;
+        const float gapTarget = m_gap ? kGapWidth * SlotScale(*m_gap) : 0.0f;
         m_gapWidth += (gapTarget - m_gapWidth) * (1.0f - std::exp(-14.0f * deltaTime));
+
+        BuildLayout(m_focus, m_focusStrength, m_layout);
+        m_scrollTarget = std::clamp(m_scrollTarget, -ScrollLimit(), ScrollLimit());
+        m_scroll      += (m_scrollTarget - m_scroll) * fitRate;
 
         // 場の列。わずかに向きをばらして、定規で並べたような硬さを消す
         for(size_t i = 0; i < m_row.size(); ++i) {
@@ -146,17 +162,20 @@ namespace ChronoSort::Board {
             if(entity == m_held) {
                 continue;
             }
-            float       fold = 0.0f;
-            const float x    = FoldX(RowCardX(i), fold);
-            const float z    = kRowZ + StableJitter(entity, 2) * 6.0f;
+            const float weight    = m_layout.weight[i];
+            const float cardScale = m_layout.farScale + (kRowScaleMax - m_layout.farScale) * weight;
+            float       fold      = 0.0f;
+            const float x         = FoldX(BoundaryX(m_layout, static_cast<float>(i) + 0.5f), fold);
+            // 注目点に近いカードほど手前に出して、遠いカードの上に重ねる
+            const float z = kRowZ + StableJitter(entity, 2) * 6.0f - weight * 12.0f;
             if(static_cast<int>(i) == m_rowHovered) {
                 // 指したカードは手前に起こして大きくし、年号を読みやすくする
                 const hlslpp::quaternion lift = hlslpp::mul(hlslpp::quaternion::rotation_x(-0.55f), RevealedRotation());
-                ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(x, 60.0f, z - 60.0f), lift, m_rowScale * 1.25f);
+                ECS::CardMotion::SetTarget(registry, entity, hlslpp::float3(x, 60.0f, z - 60.0f), lift, cardScale * 1.25f);
                 continue;
             }
             // 端に畳んだカードは少し小さくして奥へ下げ、内側のカードの下に重ねる
-            const float        scale = m_rowScale * (1.0f - 0.15f * fold);
+            const float        scale = cardScale * (1.0f - 0.15f * fold);
             hlslpp::float3     position;
             hlslpp::quaternion rotation;
             RowRestPose(x, z + fold * 14.0f, StableJitter(entity, 1) * 0.06f, scale, position, rotation);
@@ -249,28 +268,106 @@ namespace ChronoSort::Board {
     }
 
     //----------------------------------------------------------------------------
-    //! 枚数から、場の列の拡大率と間隔の目標を求めます。
+    //! 注目点と拡大の強さから、場の列の並びを求めます。
     //----------------------------------------------------------------------------
-    void BoardView::RowFitTarget(float& scale, float& spacing) const {
-        // 隙間は置くたびに開くので、最初から勘定に入れておく（開くたびに大きさが揺れないように）
-        const float intervals = std::max(static_cast<float>(m_row.size()) - 1.0f, 0.0f);
-        const float span      = kRowHalfSpan * 2.0f;
-        // まずは重ならない間隔のまま拡大率を下げる
-        scale = std::clamp(span / (intervals * kRowSpacingMax + kGapWidth), kRowScaleMin, kRowScaleMax);
-        // 拡大率が下限に達したら、重ねて間隔を詰める（ここで収まらない分は流す）
-        spacing = kRowSpacingMax * scale;
-        if(intervals > 0.0f && scale <= kRowScaleMin) {
-            spacing = std::clamp((span - kGapWidth * scale) / intervals, kRowSpacingMin, kRowSpacingMax);
+    void BoardView::BuildLayout(float focus, float strength, RowLayout& layout) const {
+        const size_t count = m_row.size();
+        layout.width.assign(count, 0.0f);
+        layout.weight.assign(count, 0.0f);
+        layout.focus    = focus;
+        layout.strength = strength;
+
+        // 注目点に近いほど 1 に近い重み（釣り鐘形）
+        float weightSum = 0.0f;
+        for(size_t i = 0; i < count; ++i) {
+            const float d    = (static_cast<float>(i) + 0.5f - focus) / kFocusRadius;
+            layout.weight[i] = strength * std::exp(-d * d);
+            weightSum       += layout.weight[i];
         }
+
+        // 注目点の周りは重ならない広さにし、残りの幅を遠いカードで分ける。
+        // 全部を広く並べても収まる枚数なら、遠いカードも同じ広さになる（少ないうちは今まで通り全部が大きい）
+        const float span   = kRowHalfSpan * 2.0f;
+        const float wide   = kRowSpacingMax * kRowScaleMax;
+        const float rest   = std::max(static_cast<float>(count) - weightSum, 1.0e-3f);
+        const float narrow = std::clamp((span - m_gapWidth - wide * weightSum) / rest, kNarrowMin, wide);
+        layout.farScale    = std::clamp(narrow / kRowSpacingMax, kRowScaleFar, kRowScaleMax);
+
+        layout.total = m_gapWidth;
+        for(size_t i = 0; i < count; ++i) {
+            layout.width[i] = narrow + (wide - narrow) * layout.weight[i];
+            layout.total   += layout.width[i];
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 今の並びを返します。
+    //----------------------------------------------------------------------------
+    const BoardView::RowLayout& BoardView::Layout() const {
+        // 列に入れた直後など、まだ並べ直していないときはその場で求める
+        if(m_layout.width.size() != m_row.size()) {
+            BuildLayout(m_focus, m_focusStrength, m_layout);
+        }
+        return m_layout;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 並びの中の位置 t の、流す前の X 座標を返します。
+    //----------------------------------------------------------------------------
+    float BoardView::BoundaryX(const RowLayout& layout, float t) const {
+        const size_t count = layout.width.size();
+        t                  = std::clamp(t, 0.0f, static_cast<float>(count));
+        float        x     = -layout.total * 0.5f;
+        const size_t whole = static_cast<size_t>(t);
+        for(size_t i = 0; i < whole && i < count; ++i) {
+            x += layout.width[i];
+        }
+        if(whole < count) {
+            x += layout.width[whole] * (t - static_cast<float>(whole));
+        }
+        // 隙間は、そのスロットの境目では半分、越えたら全部を足す
+        if(m_gap) {
+            x += m_gapWidth * std::clamp(t - static_cast<float>(*m_gap) + 0.5f, 0.0f, 1.0f);
+        }
+        return x;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 流す前の X 座標が、注目点の真下に来るような注目点を求めます。
+    //----------------------------------------------------------------------------
+    float BoardView::FocusUnderX(float x) const {
+        // 注目点を右へ動かすほど、その注目点の位置も右へ動く（単調）ので、二分探索で解ける
+        const float count = static_cast<float>(m_row.size());
+        float       lo    = 0.0f;
+        float       hi    = count;
+        RowLayout   layout;
+        for(int i = 0; i < 20; ++i) {
+            const float mid = (lo + hi) * 0.5f;
+            BuildLayout(mid, 1.0f, layout);
+            if(BoundaryX(layout, mid) < x) {
+                lo = mid;
+            } else {
+                hi = mid;
+            }
+        }
+        return (lo + hi) * 0.5f;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 場の列のスロットに置くカードの拡大率を返します。
+    //----------------------------------------------------------------------------
+    float BoardView::SlotScale(size_t slot) const {
+        const RowLayout& layout = Layout();
+        const float      d      = (static_cast<float>(slot) - layout.focus) / kFocusRadius;
+        const float      weight = layout.strength * std::exp(-d * d);
+        return layout.farScale + (kRowScaleMax - layout.farScale) * weight;
     }
 
     //----------------------------------------------------------------------------
     //! 場の列を流せる量の上限を返します。
     //----------------------------------------------------------------------------
     float BoardView::ScrollLimit() const {
-        const float intervals = std::max(static_cast<float>(m_row.size()) - 1.0f, 0.0f);
-        const float half      = (intervals * m_rowSpacing + kGapWidth * m_rowScale) * 0.5f;
-        return std::max(0.0f, half - kRowHalfSpan);
+        return std::max(0.0f, Layout().total * 0.5f - kRowHalfSpan);
     }
 
     //----------------------------------------------------------------------------
@@ -284,24 +381,11 @@ namespace ChronoSort::Board {
     //! 指定したスロットが画面の中ほどに来るよう、場の列を流します。
     //----------------------------------------------------------------------------
     void BoardView::ScrollToSlot(size_t slot) {
-        const float count = static_cast<float>(m_row.size());
-        const float x     = (static_cast<float>(slot) - count * 0.5f) * m_rowSpacing;
+        const float x = BoundaryX(Layout(), static_cast<float>(slot));
         // 範囲内に見えているなら動かさない（収まっている列が無駄に揺れないように）
         if(std::abs(x - m_scrollTarget) > kRowHalfSpan * 0.6f) {
             m_scrollTarget = std::clamp(x, -ScrollLimit(), ScrollLimit());
         }
-    }
-
-    //----------------------------------------------------------------------------
-    //! 場の列の i 枚目の、流す前・端で畳む前の X 座標を返します。
-    //----------------------------------------------------------------------------
-    float BoardView::RowCardX(size_t index) const {
-        const float count = static_cast<float>(m_row.size());
-        float       x     = (static_cast<float>(index) - (count - 1.0f) * 0.5f) * m_rowSpacing;
-        if(m_gap) {
-            x += (index < *m_gap ? -0.5f : 0.5f) * m_gapWidth;
-        }
-        return x;
     }
 
     //----------------------------------------------------------------------------
@@ -324,9 +408,8 @@ namespace ChronoSort::Board {
     //! 場の列のスロットの中心を返します。
     //----------------------------------------------------------------------------
     hlslpp::float3 BoardView::SlotPosition(size_t slot) const {
-        const float count = static_cast<float>(m_row.size());
-        float       fold  = 0.0f;
-        const float x     = FoldX((static_cast<float>(slot) - count * 0.5f) * m_rowSpacing, fold);
+        float       fold = 0.0f;
+        const float x    = FoldX(BoundaryX(Layout(), static_cast<float>(slot)), fold);
         return hlslpp::float3(x, kTableSurfaceY, kRowZ);
     }
 
@@ -335,7 +418,7 @@ namespace ChronoSort::Board {
     //----------------------------------------------------------------------------
     void BoardView::SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) const {
         const hlslpp::float3 center = SlotPosition(slot);
-        scale                       = m_rowScale;
+        scale                       = SlotScale(slot);
         RowRestPose(center.x, kRowZ, 0.0f, scale, position, rotation);
     }
 
@@ -344,10 +427,19 @@ namespace ChronoSort::Board {
     //----------------------------------------------------------------------------
     size_t BoardView::SlotFromWorldX(float worldX) const {
         // 端に畳んだ部分を指したときは、見えている端のスロットにする（続きは流して見せる）
-        const float count = static_cast<float>(m_row.size());
-        const float x     = std::clamp(worldX, -kRowHalfSpan, kRowHalfSpan) + m_scroll;
-        const float slot  = std::round(x / m_rowSpacing + count * 0.5f);
-        return static_cast<size_t>(std::clamp(slot, 0.0f, count));
+        const float      x      = std::clamp(worldX, -kRowHalfSpan, kRowHalfSpan) + m_scroll;
+        const RowLayout& layout = Layout();
+        // 広げたあとの見た目の境目のうち、いちばん近いもの
+        size_t best         = 0;
+        float  bestDistance = 1e30f;
+        for(size_t slot = 0; slot <= m_row.size(); ++slot) {
+            const float distance = std::abs(BoundaryX(layout, static_cast<float>(slot)) - x);
+            if(distance < bestDistance) {
+                bestDistance = distance;
+                best         = slot;
+            }
+        }
+        return best;
     }
 
     //----------------------------------------------------------------------------

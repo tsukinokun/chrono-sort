@@ -77,9 +77,14 @@ namespace ChronoSort::Board {
         //! @param  [out] scale    拡大率。
         void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) const;
 
-        //! 場の列のカードの今の拡大率を返します（枚数が増えると縮む）。
+        //! 場の列のスロットに置くカードの拡大率を返します（注目点に近いほど大きい）。
+        //! @param  [in] slot スロット番号。
         //! @return 拡大率。
-        float RowScale() const { return m_rowScale; }
+        float SlotScale(size_t slot) const;
+
+        //! 場の列の注目点（カーソルや持っているカードの位置）を設定します。周りのカードを読める大きさに広げます。
+        //! @param  [in] worldX 卓の上の X 座標。std::nullopt なら隙間を注目点にし、隙間も無ければ最後の注目点のままにする。
+        void SetFocusX(std::optional<float> worldX) { m_focusX = worldX; }
 
         //! 場の列を横に流します（列が画面に収まらないときだけ動く）。
         //! @param  [in] amount 流す量（正で右側の続きを見る）。
@@ -159,19 +164,40 @@ namespace ChronoSort::Board {
 
     private:
 
-        //! 枚数から、場の列の拡大率と間隔の目標を求めます。
-        //! @param  [out] scale   拡大率。
-        //! @param  [out] spacing 間隔。
-        void RowFitTarget(float& scale, float& spacing) const;
+        //! 場の列の並び（流す前の座標）です。注目点の周りは広く、遠いほど狭く詰めます。
+        struct RowLayout {
+            std::vector<float> width;     // 各カードが占める幅
+            std::vector<float> weight;    // 注目点への近さ（0〜1。拡大の強さを含む）
+            float              focus    = 0.0f;    // 注目点（スロット k の境目が k）
+            float              strength = 0.0f;    // 拡大の強さ（0〜1）
+            float              farScale = 1.0f;    // 注目点から遠いカードの拡大率
+            float              total    = 0.0f;    // 隙間を含む列の全体の幅
+        };
+
+        //! 注目点と拡大の強さから、場の列の並びを求めます。
+        //! @param  [in]  focus    注目点。
+        //! @param  [in]  strength 拡大の強さ。
+        //! @param  [out] layout   並び。
+        void BuildLayout(float focus, float strength, RowLayout& layout) const;
+
+        //! 今の並びを返します（枚数が変わってまだ並べ直していなければ、その場で求め直す）。
+        //! @return 並び。
+        const RowLayout& Layout() const;
+
+        //! 並びの中の位置 t（スロット k の境目が k。小数で途中も表す）の、流す前の X 座標を返します。
+        //! @param  [in] layout 並び。
+        //! @param  [in] t      位置。
+        //! @return X 座標。
+        float BoundaryX(const RowLayout& layout, float t) const;
+
+        //! 流す前の X 座標が、注目点の真下に来るような注目点を求めます。
+        //! @param  [in] x 流す前の X 座標。
+        //! @return 注目点。
+        float FocusUnderX(float x) const;
 
         //! 場の列を流せる量の上限を返します（列が収まっていれば 0）。
         //! @return 上限。
         float ScrollLimit() const;
-
-        //! 場の列の i 枚目の、流す前・端で畳む前の X 座標を返します（隙間を含む）。
-        //! @param  [in] index 何枚目か。
-        //! @return X 座標。
-        float RowCardX(size_t index) const;
 
         //! 流す前の X 座標を、流して端で畳んだあとの X 座標に変えます。
         //! @param  [in]  x    流す前の X 座標。
@@ -189,8 +215,10 @@ namespace ChronoSort::Board {
         Tsukino::ECS::Entity              m_held   = entt::null;        // 並べ直しから外すカード
         std::optional<size_t>             m_gap;                        // 隙間を空けているスロット
         float                             m_gapWidth = 0.0f;            // 隙間の今の広さ（なめらかに開閉する）
-        float                             m_rowScale   = 1.4f;          // 場の列の今の拡大率（なめらかに変える）
-        float                             m_rowSpacing = 104.0f;        // 場の列の今の間隔（なめらかに変える）
+        std::optional<float>              m_focusX;                     // 外から渡された注目点（卓の上の X 座標）
+        float                             m_focus         = 0.0f;       // 今の注目点（なめらかに追う）
+        float                             m_focusStrength = 0.0f;       // 今の拡大の強さ（なめらかに追う）
+        mutable RowLayout                 m_layout;                     // 今の並び（UpdateLayout で毎フレーム求め直す）
         float                             m_scroll       = 0.0f;        // 場の列を流している今の量
         float                             m_scrollTarget = 0.0f;        // 場の列を流す量の目標
         float                             m_time     = 0.0f;            // 経過時間（揺れの演出用）
