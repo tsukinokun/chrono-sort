@@ -74,6 +74,7 @@ python Tools/art/make_meshes.py   card.obj / table.obj
 python Tools/art/bake_cards.py    デッキ JSON → カード面 PNG と .tmat、卓の布、山札の裏、挿入位置の目印
 python Tools/art/make_ui.py       画面 UI の素材（紙片・封蝋・インク壺・朱印・リボンなど）
 python Tools/art/make_fx.py       粒子のテクスチャ
+python Tools/art/make_icon.py     exe とウィンドウのアイコン（ChronoSort/Assets/Icon/App.ico）
 ```
 
 カードを増やす・直すときは `Tools/art/card_list.py` を編集し、次の順に流す:

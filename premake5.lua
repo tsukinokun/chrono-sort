@@ -48,6 +48,8 @@ project "ChronoSort"
 
     tsukino_link()
     tsukino_release_payload()
+    -- exe とウィンドウのアイコン（Tools/art/make_icon.py で描く）
+    tsukino_icon("ChronoSort/Assets/Icon/App.ico")
 
     -- Debug はワークスペースルートが作業ディレクトリなので、Assets はそのまま読める。
     -- Release は exe の隣が基準になるため、ゲーム自身の Assets をコピーする
