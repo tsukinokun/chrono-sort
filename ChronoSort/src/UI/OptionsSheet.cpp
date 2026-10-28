@@ -4,8 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/OptionsSheet.hpp>
 
-#include <ChronoSort/Game/Options.hpp>
-#include <ChronoSort/Game/Sounds.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
@@ -90,7 +89,7 @@ namespace ChronoSort::UI {
         const int layer = m_sortOrder + 1;
         m_ui.Text(L"設定", hlslpp::float2(0.0f, -200.0f), 1.15f, kInkColor, layer, m_sheet);
 
-        Game::Options& options = Game::CurrentOptions();
+        Game::Options& options = Game::Services().Settings();
         AddSlider(L"全体", -118.0f, &options.master);
         AddSlider(L"BGM", -58.0f, &options.bgm);
         AddSlider(L"効果音", 2.0f, &options.sfx);
@@ -188,7 +187,7 @@ namespace ChronoSort::UI {
     void OptionsSheet::RefreshToggle(Toggle& toggle, bool punch) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
         // 画面の揺れは true が1枚目（あり）なので、どちらの札を選んでいるかは値の向きで変わる
-        const bool inverted = toggle.value == &Game::CurrentOptions().cameraShake;
+        const bool inverted = toggle.value == &Game::Services().Settings().cameraShake;
         const int  selected = (*toggle.value != inverted) ? 1 : 0;
         for(size_t i = 0; i < toggle.texts.size(); ++i) {
             const bool chosen = static_cast<int>(i) == selected;
@@ -206,7 +205,7 @@ namespace ChronoSort::UI {
         if(m_sheet == entt::null) {
             return;
         }
-        Game::StoreOptions();
+        Game::Services().StoreOptions();
         // 滑り出し終わったら LifetimeSystem が子ごと片付ける。こちらは先に手を離し、すぐ次を開けるようにする
         m_ui.SlideOut(m_sheet, hlslpp::float2(0.0f, 620.0f), 0.0f, kCloseSeconds);
         m_ui.DestroyAfter(m_sheet, kCloseSeconds);
@@ -236,10 +235,10 @@ namespace ChronoSort::UI {
     //! スライダーの値を音量に反映し、試し鳴りします。
     //----------------------------------------------------------------------------
     void OptionsSheet::OnSliderChanged(size_t index) {
-        Game::ApplyOptions(m_context);
+        Game::Services().ApplyOptions();
         // BGM は流れている曲がそのまま試し鳴りになる。全体と効果音は小さな音で確かめさせる
         if(index != 1 && m_previewTimer <= 0.0f) {
-            Game::Sounds(m_context).Play("tick", 0.8f);
+            Game::Services().Sounds().Play("tick", 0.8f);
             m_previewTimer = kPreviewEvery;
         }
     }
@@ -293,7 +292,7 @@ namespace ChronoSort::UI {
 
         // 切り替えの札
         for(Toggle& toggle : m_toggles) {
-            const bool inverted = toggle.value == &Game::CurrentOptions().cameraShake;
+            const bool inverted = toggle.value == &Game::Services().Settings().cameraShake;
             for(size_t i = 0; i < toggle.tags.size(); ++i) {
                 if(!m_ui.Clicked(toggle.tags[i])) {
                     continue;
@@ -301,14 +300,14 @@ namespace ChronoSort::UI {
                 const bool next = (i == 1) != inverted;
                 if(next != *toggle.value) {
                     *toggle.value = next;
-                    Game::Sounds(m_context).Play("stamp", 0.6f);
+                    Game::Services().Sounds().Play("stamp", 0.6f);
                     RefreshToggle(toggle, true);
                 }
             }
         }
 
         if(m_ui.Clicked(m_close) || input.IsKeyPressed(KeyCode::Escape)) {
-            Game::Sounds(m_context).Play("page", 0.7f);
+            Game::Services().Sounds().Play("page", 0.7f);
             Close();
             return true;
         }

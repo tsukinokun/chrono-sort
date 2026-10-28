@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/CreditsScene.hpp>
 
-#include <ChronoSort/Game/Sounds.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
@@ -167,7 +167,7 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void CreditsScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         auto*            context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        Game::SoundBank& sounds  = Game::Sounds(*context);
+        Game::SoundBank& sounds  = Game::Services().Sounds();
         auto&            input   = *context->inputSystem;
         m_stage.Update(deltaTime);
 

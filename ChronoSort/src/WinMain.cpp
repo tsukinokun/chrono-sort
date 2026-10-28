@@ -3,7 +3,7 @@
 //! @brief  ChronoSort のエントリポイント
 //----------------------------------------------------------------------------
 #include <ChronoSort/Game/FrameMonitor.hpp>
-#include <ChronoSort/Game/Options.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
@@ -45,9 +45,9 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     // ゲームのコンポーネントを Prefab から作れるようにする（最初のシーンより前に）
     ChronoSort::Game::Prefabs::RegisterComponents(*engineIntegration.GetContext().prefabFactory);
 
-    // 前回の設定（音量など）を、最初の音が鳴る前に反映する
-    ChronoSort::Game::LoadOptions();
-    ChronoSort::Game::ApplyOptions(engineIntegration.GetContext());
+    // シーンをまたいで共有する音と設定。前回の設定（音量など）は、最初の音が鳴る前にここで反映される。
+    // エンジンより後に作るので、エンジンより先に壊れる（音の後片付けがエンジンの片付けより前に済む）
+    ChronoSort::Game::GameServices services(engineIntegration.GetContext());
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
     // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。

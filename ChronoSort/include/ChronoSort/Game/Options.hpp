@@ -3,14 +3,10 @@
 //! @brief  設定（音量・演出の速さ・画面の揺れ）
 //! @detail Saves/Options.json に保存します。記録（SaveData）とは別のファイルなので、
 //!         設定の項目を増やしても記録の読み込みに影響しません。
-//!         値は起動時に1回だけ読み、CurrentOptions() の1つを全シーンで共有します。
+//!         値は起動時に GameServices が1回だけ読み、Services().Settings() で全シーンが共有します。
 //----------------------------------------------------------------------------
 #pragma once
 #include <cereal/cereal.hpp>
-
-namespace Tsukino::EngineIntegration {
-    struct EngineContext;
-}    // namespace Tsukino::EngineIntegration
 
 namespace ChronoSort::Game {
 
@@ -32,18 +28,17 @@ namespace ChronoSort::Game {
         }
     };
 
-    //! 全シーンで共有する設定を返します。
+    //! Saves/Options.json から設定を読み込みます。無ければ・読めなければ初期値を返します。
     //! @return 設定。
-    Options& CurrentOptions();
-
-    //! Saves/Options.json から設定を読み込みます。無ければ・読めなければ初期値にします。
-    void LoadOptions();
+    Options LoadOptions();
 
     //! 設定を Saves/Options.json に書き込みます。
-    void StoreOptions();
+    //! @param  [in] options 設定。
+    void StoreOptions(const Options& options);
 
-    //! 音量の設定を、エンジンと SoundBank に反映します。
-    //! @param  [in] context エンジンのコンテキスト。
-    void ApplyOptions(Tsukino::EngineIntegration::EngineContext& context);
+    //! スライダーの位置を音量に変えます（2乗。耳の感じ方に近づける）。
+    //! @param  [in] position スライダーの位置（0〜1）。
+    //! @return 音量（0〜1）。
+    float VolumeGain(float position);
 
 }    // namespace ChronoSort::Game

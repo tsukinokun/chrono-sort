@@ -7,9 +7,8 @@
 #include <ChronoSort/ECS/Component/CameraRigComponent.hpp>
 #include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Game/MatchActions.hpp>
-#include <ChronoSort/Game/Options.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
-#include <ChronoSort/Game/Sounds.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
@@ -66,7 +65,7 @@ namespace ChronoSort::Scene {
         registry.SetContext<Game::MatchSession*>(m_session.get());
         ECS::AddMatchSystems(m_scene);
 
-        Game::Sounds(*context).PlayBgm("game");
+        Game::Services().Sounds().PlayBgm("game");
         Game::DealOpening(registry);
     }
 
@@ -94,7 +93,7 @@ namespace ChronoSort::Scene {
 
         // 「演出を速く」は自分で操作していない時間（配る・公開・判定・CPU の手番）だけを早回しする
         const bool  watching  = m_session->phase != Game::MatchPhase::HumanTurn && m_session->phase != Game::MatchPhase::Finished;
-        const float timeScale = (!m_session->paused && watching && Game::CurrentOptions().fastEffects) ? kFastEffectsScale : 1.0f;
+        const float timeScale = (!m_session->paused && watching && Game::Services().Settings().fastEffects) ? kFastEffectsScale : 1.0f;
         deltaTime *= timeScale;
 
         m_board->SetDeckCount(m_session->match.DeckRemaining());
@@ -110,7 +109,7 @@ namespace ChronoSort::Scene {
     bool GameScene::UpdateMenus(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
         auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        Game::SoundBank&        sounds   = Game::Sounds(*context);
+        Game::SoundBank&        sounds   = Game::Services().Sounds();
 
         // 設定の紙（一時停止から開く）。閉じたフレームの Esc で一時停止まで閉じないよう、先に受ける
         const bool optionsClosed = m_options->Update(deltaTime);

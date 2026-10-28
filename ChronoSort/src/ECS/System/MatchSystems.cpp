@@ -13,8 +13,7 @@
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/MatchActions.hpp>
 #include <ChronoSort/Game/MatchEvents.hpp>
-#include <ChronoSort/Game/Options.hpp>
-#include <ChronoSort/Game/Sounds.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/UI/GameHud.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Camera/CameraUtility.hpp>
@@ -102,7 +101,7 @@ namespace ChronoSort::ECS {
             Board::BoardView&            board   = *session.board;
             Board::HandState&            hand    = board.Hand(0);
             Game::HumanInput&            input   = session.input;
-            Game::SoundBank&             sounds  = Game::Sounds(context);
+            Game::SoundBank&             sounds  = Game::Services().Sounds();
 
             int mouseX = 0;
             int mouseY = 0;
@@ -564,7 +563,7 @@ namespace ChronoSort::ECS {
     //----------------------------------------------------------------------------
     void ShakeCamera(Tsukino::ECS::Registry& registry, float strength) {
         // 設定で揺れを切っていれば揺らさない（酔いやすい人向け）
-        if(!Game::CurrentOptions().cameraShake) {
+        if(!Game::Services().Settings().cameraShake) {
             return;
         }
         registry.View<CameraRigComponent>().each([strength](auto, CameraRigComponent& rig) { rig.shake = std::max(rig.shake, strength); });
@@ -575,7 +574,7 @@ namespace ChronoSort::ECS {
     //----------------------------------------------------------------------------
     MatchFeedbackSystem::MatchFeedbackSystem(Tsukino::ECS::Registry& registry, Tsukino::ECS::EventBus& events) {
         Tsukino::ECS::Registry* reg = &registry;
-        auto sounds = [reg]() -> Game::SoundBank& { return Game::Sounds(Engine(*reg)); };
+        auto sounds = []() -> Game::SoundBank& { return Game::Services().Sounds(); };
         auto session = [reg]() -> Game::MatchSession& { return Game::Session(*reg); };
 
         m_connections.push_back(events.Subscribe<Game::OpeningCardDealtEvent>([reg, sounds, session](const Game::OpeningCardDealtEvent& e) {

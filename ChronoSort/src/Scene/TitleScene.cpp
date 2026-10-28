@@ -6,7 +6,7 @@
 
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
-#include <ChronoSort/Game/Sounds.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Scene/CreditsScene.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
@@ -81,7 +81,7 @@ namespace ChronoSort::Scene {
             RefreshRecordMemo(1.2f);
         }
 
-        Game::Sounds(*context).PlayBgm("title");
+        Game::Services().Sounds().PlayBgm("title");
     }
 
     //----------------------------------------------------------------------------
@@ -122,7 +122,7 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void TitleScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         auto*            context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        Game::SoundBank& sounds  = Game::Sounds(*context);
+        Game::SoundBank& sounds  = Game::Services().Sounds();
         m_stage.Update(deltaTime);
         UpdateRangeTabs(deltaTime);
 
