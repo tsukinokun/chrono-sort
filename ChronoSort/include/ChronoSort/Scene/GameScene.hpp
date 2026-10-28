@@ -12,6 +12,7 @@
 #include <ChronoSort/Game/Sequencer.hpp>
 #include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/UI/GameHud.hpp>
+#include <ChronoSort/UI/OptionsSheet.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
 #include <Tsukino/EngineIntegration/Scene/GameSceneBase.hpp>
@@ -120,6 +121,7 @@ namespace ChronoSort::Scene {
         std::unique_ptr<Board::BoardView>        m_board;                          // 卓の並べ方
         std::unique_ptr<Effects::ParticleEmitter> m_particles;                     // 粒子の演出
         std::unique_ptr<UI::GameHud>             m_hud;                            // 画面 UI
+        std::unique_ptr<UI::OptionsSheet>        m_options;                        // 設定の紙（一時停止から開く）
         Game::Sequencer                          m_sequencer;                      // 演出の段取り
         Phase                                    m_phase = Phase::Dealing;         // 対局の段階
         Tsukino::EngineIntegration::EngineAPI*   m_api   = nullptr;                // シーン切り替え用

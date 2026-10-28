@@ -31,7 +31,7 @@ namespace ChronoSort::Game {
             return;
         }
         if(auto asset = std::dynamic_pointer_cast<Tsukino::Asset::AudioAsset>(m_assetManager.Get(handle))) {
-            m_audioManager.Play(*asset, false, volume);
+            m_audioManager.Play(*asset, false, volume * m_effectsVolume);
         }
     }
 
@@ -48,9 +48,30 @@ namespace ChronoSort::Game {
             return;
         }
         if(auto asset = std::dynamic_pointer_cast<Tsukino::Asset::AudioAsset>(m_assetManager.Get(handle))) {
-            m_audioManager.Play(*asset, true, volume);
-            m_bgm = handle;
+            m_audioManager.Play(*asset, true, volume * m_musicVolume);
+            m_bgm           = handle;
+            m_bgmBaseVolume = volume;
         }
+    }
+
+    //----------------------------------------------------------------------------
+    //! BGM の音量の倍率を設定します。
+    //----------------------------------------------------------------------------
+    void SoundBank::SetMusicVolume(float volume) {
+        m_musicVolume = volume;
+        if(!m_bgm.IsValid()) {
+            return;
+        }
+        if(auto asset = std::dynamic_pointer_cast<Tsukino::Asset::AudioAsset>(m_assetManager.Get(m_bgm))) {
+            m_audioManager.SetVolume(*asset, m_bgmBaseVolume * m_musicVolume);
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 効果音の音量の倍率を設定します。
+    //----------------------------------------------------------------------------
+    void SoundBank::SetEffectsVolume(float volume) {
+        m_effectsVolume = volume;
     }
 
     //----------------------------------------------------------------------------

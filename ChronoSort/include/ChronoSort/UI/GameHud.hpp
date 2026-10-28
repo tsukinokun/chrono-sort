@@ -25,6 +25,14 @@ namespace ChronoSort::UI {
         Title,    // タイトルへ
     };
 
+    //! 一時停止の紙で選ばれた行動です。
+    enum class PauseChoice {
+        None,       // まだ選ばれていない
+        Resume,     // 続ける
+        Options,    // 設定
+        Title,      // タイトルへ
+    };
+
     //! 対局画面の画面 UI です。
     class GameHud {
     public:
@@ -83,6 +91,20 @@ namespace ChronoSort::UI {
         //! @return 選ばれた行動。
         ResultChoice PollResultChoice();
 
+        //! 一時停止の紙を出します（出ていれば何もしません）。
+        void OpenPause();
+
+        //! 一時停止の紙を引っ込めます。
+        void ClosePause();
+
+        //! 一時停止の紙が出ているかを返します。
+        //! @return 出ていれば true。
+        bool IsPauseOpen() const { return m_pause != entt::null; }
+
+        //! 一時停止の紙で選ばれた行動を返します。
+        //! @return 選ばれた行動。
+        PauseChoice PollPauseChoice();
+
     private:
 
         //! 一定時間後に破棄する UI を登録します。
@@ -127,6 +149,12 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity              m_nudged       = entt::null;  // 放置の催促で震わせている UI
 
         // 結果画面
+        // 一時停止
+        Tsukino::ECS::Entity m_pause        = entt::null;    // 一時停止の紙
+        Tsukino::ECS::Entity m_pauseResume  = entt::null;    // 続ける
+        Tsukino::ECS::Entity m_pauseOptions = entt::null;    // 設定
+        Tsukino::ECS::Entity m_pauseTitle   = entt::null;    // タイトルへ
+
         Tsukino::ECS::Entity m_result      = entt::null;
         Tsukino::ECS::Entity m_retryButton = entt::null;
         Tsukino::ECS::Entity m_titleButton = entt::null;

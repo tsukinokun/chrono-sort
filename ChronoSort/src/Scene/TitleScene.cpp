@@ -80,6 +80,8 @@ namespace ChronoSort::Scene {
         m_versus  = CreateMenuNote(L"CPUと対戦", L"先に手札を出し切った者の勝ち", hlslpp::float2(860.0f, 548.0f), 3.5f, 0.85f, "tape.png");
         m_credits = CreateMenuNote(L"出典・クレジット", L"", hlslpp::float2(1205.0f, 690.0f), -2.0f, 1.0f, "pin.png");
         m_quit    = CreateMenuNote(L"机を離れる", L"", hlslpp::float2(318.0f, 742.0f), 6.0f, 1.1f, "tape.png");
+        m_settings = CreateMenuNote(L"設定", L"", hlslpp::float2(770.0f, 768.0f), -4.0f, 1.05f, "pin.png");
+        m_options  = std::make_unique<UI::OptionsSheet>(m_scene, *context, kLayerSheet + 20);
 
         // 最高記録のメモ（選んでいる範囲に記録があるときだけ出す）
         {
@@ -155,7 +157,7 @@ namespace ChronoSort::Scene {
 
         // カーソルが新しく紙に乗ったら、紙が擦れる小さな音
         std::vector<Tsukino::ECS::Entity> hovered;
-        std::vector<Tsukino::ECS::Entity> candidates = {m_solo, m_versus, m_credits, m_quit, m_start, m_cancel};
+        std::vector<Tsukino::ECS::Entity> candidates = {m_solo, m_versus, m_credits, m_quit, m_settings, m_start, m_cancel};
         candidates.insert(candidates.end(), m_rangeTags.begin(), m_rangeTags.end());
         for(Tsukino::ECS::Entity e : candidates) {
             if(e != entt::null && m_ui->Hovered(e)) {
@@ -167,6 +169,14 @@ namespace ChronoSort::Scene {
             }
         }
         m_hovered = hovered;
+
+        // 設定の紙が開いている間（閉じたフレームも含む）は、下のメニューを受け付けない
+        // （閉じた Esc で、続けて「机を離れる」まで動かないように）
+        const bool optionsWereOpen = m_options->IsOpen();
+        if(m_options->Update(deltaTime) || optionsWereOpen) {
+            m_scene.Update(deltaTime);
+            return;
+        }
 
         if(m_sheet != entt::null) {
             for(size_t i = 0; i < m_countTags.size(); ++i) {
@@ -217,6 +227,12 @@ namespace ChronoSort::Scene {
             if(m_ui->Clicked(m_credits)) {
                 sounds.Play("page", 0.8f);
                 api.ChangeScene(std::make_unique<CreditsScene>());
+                return;
+            }
+            if(m_ui->Clicked(m_settings)) {
+                sounds.Play("page", 0.8f);
+                m_options->Open();
+                m_scene.Update(deltaTime);
                 return;
             }
             if(m_ui->Clicked(m_quit) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {

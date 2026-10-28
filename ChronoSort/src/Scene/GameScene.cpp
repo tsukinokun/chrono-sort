@@ -9,6 +9,7 @@
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
+#include <ChronoSort/Game/Options.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
 #include <ChronoSort/Game/Sounds.hpp>
@@ -58,6 +59,7 @@ namespace ChronoSort::Scene {
         constexpr float kEdgePanMargin  = 0.08f;     // 画面端のこの割合の幅に入ると場の列が流れる
         constexpr float kEdgePanSpeed   = 420.0f;    // 画面端で列を流す速さ
         constexpr float kWheelScroll    = 60.0f;     // ホイール1段で列を流す量（ホイールの値は段数で来る）
+        constexpr float kFastEffectsScale = 1.7f;    // 「演出を速く」のときの、自分の手番以外の時間の倍率
 
         const hlslpp::float3 kGoldGlow(0.55f, 0.38f, 0.1f);
         const hlslpp::float3 kRedGlow(0.6f, 0.05f, 0.03f);
@@ -98,6 +100,7 @@ namespace ChronoSort::Scene {
         m_hud       = std::make_unique<UI::GameHud>(m_scene, *context->assetManager, m_match);
         m_board->Build(m_match.Players().size());
         m_hud->Build();
+        m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
 
         Game::Sounds(*context).PlayBgm("game");
         DealOpening();
@@ -108,16 +111,28 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void GameScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
+
+        // 設定の紙（一時停止から開く）。閉じたフレームの Esc で一時停止まで閉じないよう、ここで先に受ける
+        const bool optionsClosed = m_options->Update(deltaTime);
+        const bool paused        = m_hud->IsPauseOpen() || m_options->IsOpen();
+
+        // 「演出を速く」は自分で操作していない時間（配る・公開・判定・CPU の手番）だけを早回しする
+        const bool  watching = m_phase != Phase::HumanTurn && m_phase != Phase::Finished;
+        const float timeScale = (!paused && watching && Game::CurrentOptions().fastEffects) ? kFastEffectsScale : 1.0f;
+        deltaTime *= timeScale;
         m_time += deltaTime;
 
-        m_sequencer.Update(deltaTime);
+        // 一時停止中は段取りを進めない（カードの動きや紙の揺れは止めない）
+        if(!paused) {
+            m_sequencer.Update(deltaTime);
+        }
 
         // 人間の手番でなければ、カーソルではなく隙間（CPU の迷い・公開中）を注目点にする
         if(m_phase != Phase::HumanTurn) {
             m_board->SetFocusX(std::nullopt);
         }
 
-        if(m_phase == Phase::HumanTurn) {
+        if(m_phase == Phase::HumanTurn && !paused) {
             UpdateHumanInput(deltaTime);
 #ifdef _DEBUG
             // 確認用：F8 で人間の手番を CPU（やさしい）に代わりに打たせる
@@ -131,13 +146,37 @@ namespace ChronoSort::Scene {
 #endif
         }
 
-        // 対局中に Esc でタイトルへ（選択中なら先に選択を外す）
-        if(context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
-            if(m_selected >= 0 || m_grabbed >= 0) {
+        // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ）
+        if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
+            if(m_hud->IsPauseOpen()) {
+                Game::Sounds(*context).Play("page", 0.7f);
+                m_hud->ClosePause();
+            } else if(m_selected >= 0 || m_grabbed >= 0) {
                 CancelSelection();
-            } else {
+            } else if(m_phase == Phase::Finished) {
                 api.ChangeScene(std::make_unique<TitleScene>());
                 return;
+            } else {
+                Game::Sounds(*context).Play("page", 0.8f);
+                m_hud->OpenPause();
+            }
+        }
+        if(!m_options->IsOpen()) {
+            switch(m_hud->PollPauseChoice()) {
+            case UI::PauseChoice::Resume:
+                Game::Sounds(*context).Play("page", 0.7f);
+                m_hud->ClosePause();
+                break;
+            case UI::PauseChoice::Options:
+                Game::Sounds(*context).Play("page", 0.8f);
+                m_options->Open();
+                break;
+            case UI::PauseChoice::Title:
+                Game::Sounds(*context).Play("button");
+                api.ChangeScene(std::make_unique<TitleScene>());
+                return;
+            default:
+                break;
             }
         }
 
@@ -167,7 +206,7 @@ namespace ChronoSort::Scene {
             const bool           active = float(hlslpp::length(mouse - m_lastMouse)) > 2.0f || input.IsKeyDown(KeyCode::LButton)
                                 || input.IsKeyDown(KeyCode::RButton) || input.GetWheelDelta() != 0.0f || m_grabbed >= 0 || m_selected >= 0;
             m_lastMouse = mouse;
-            m_idleTime  = (m_phase == Phase::HumanTurn && !active) ? m_idleTime + deltaTime : 0.0f;
+            m_idleTime  = (m_phase == Phase::HumanTurn && !active && !paused) ? m_idleTime + deltaTime : 0.0f;
             m_hud->SetIdleSeconds(m_idleTime);
         }
 
@@ -810,6 +849,10 @@ namespace ChronoSort::Scene {
     //! カメラを揺らします。
     //----------------------------------------------------------------------------
     void GameScene::ShakeCamera(float strength) {
+        // 設定で揺れを切っていれば揺らさない（酔いやすい人向け）
+        if(!Game::CurrentOptions().cameraShake) {
+            return;
+        }
         m_shake = std::max(m_shake, strength);
     }
 

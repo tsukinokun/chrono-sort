@@ -42,6 +42,14 @@ namespace ChronoSort::Game {
         //! BGM を止めます。
         void StopBgm();
 
+        //! BGM の音量の倍率を設定します。流れている BGM にもすぐ反映します。
+        //! @param  [in] volume 倍率（0〜1）。
+        void SetMusicVolume(float volume);
+
+        //! 効果音の音量の倍率を設定します（次に鳴らす音から効く）。
+        //! @param  [in] volume 倍率（0〜1）。
+        void SetEffectsVolume(float volume);
+
     private:
 
         //! 音を読み込みます（読み込み済みならそれを返します）。
@@ -53,6 +61,9 @@ namespace ChronoSort::Game {
         Tsukino::Audio::AudioManager&                                m_audioManager;    // 再生先
         std::unordered_map<std::string, Tsukino::Asset::AssetHandle> m_cache;           // 読み込み済みの音
         Tsukino::Asset::AssetHandle                                  m_bgm;             // 再生中の BGM
+        float                                                        m_bgmBaseVolume = 1.0f;    // 再生中の BGM の曲ごとの音量
+        float                                                        m_musicVolume   = 1.0f;    // BGM の音量の倍率（設定）
+        float                                                        m_effectsVolume = 1.0f;    // 効果音の音量の倍率（設定）
     };
 
 }    // namespace ChronoSort::Game

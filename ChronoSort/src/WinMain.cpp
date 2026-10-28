@@ -3,6 +3,7 @@
 //! @brief  ChronoSort のエントリポイント
 //----------------------------------------------------------------------------
 #include <ChronoSort/Game/FrameMonitor.hpp>
+#include <ChronoSort/Game/Options.hpp>
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Scene/LoadingScene.hpp>
@@ -39,6 +40,10 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
         Tsukino::Core::Log::Error("Failed to initialize EngineIntegration.");
         return EXIT_FAILURE;
     }
+
+    // 前回の設定（音量など）を、最初の音が鳴る前に反映する
+    ChronoSort::Game::LoadOptions();
+    ChronoSort::Game::ApplyOptions(engineIntegration.GetContext());
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
     // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。

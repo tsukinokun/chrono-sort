@@ -820,4 +820,78 @@ namespace ChronoSort::UI {
         m_expiring.emplace_back(seconds, entity);
     }
 
+    //----------------------------------------------------------------------------
+    //! 一時停止の紙を出します。
+    //----------------------------------------------------------------------------
+    void GameHud::OpenPause() {
+        if(m_pause != entt::null) {
+            return;
+        }
+        PaperSpec sheet;
+        sheet.texture      = "scrap_square.png";
+        sheet.center       = hlslpp::float2(kReferenceWidth * 0.5f, kReferenceHeight * 0.5f - 10.0f);
+        sheet.size         = hlslpp::float2(360.0f, 380.0f);
+        sheet.angleDegrees = -2.5f;
+        sheet.swayDegrees  = 0.4f;
+        sheet.sortOrder    = kLayerResult + 5;
+        m_pause            = m_ui.Paper(sheet);
+        m_ui.SlideIn(m_pause, hlslpp::float2(0.0f, -560.0f), 0.0f, 0.45f);
+
+        const int layer = kLayerResult + 6;
+        m_ui.Text(L"一時停止", hlslpp::float2(0.0f, -118.0f), 0.95f, kInkColor, layer, m_pause);
+
+        // 札は高さも傾きも少しずつずらす
+        auto button = [&](const std::wstring& text, const hlslpp::float2& at, float angle) {
+            PaperSpec spec;
+            spec.texture      = "scrap_note.png";
+            spec.center       = at;
+            spec.size         = hlslpp::float2(210.0f, 64.0f);
+            spec.angleDegrees = angle;
+            spec.sortOrder    = layer + 1;
+            spec.parent       = m_pause;
+            const auto paper  = m_ui.Paper(spec);
+            m_ui.Text(text, hlslpp::float2(6.0f, 2.0f), 0.72f, kInkColor, layer + 2, paper);
+            m_ui.MakeButton(paper);
+            return paper;
+        };
+        m_pauseResume  = button(L"続ける", hlslpp::float2(-6.0f, -38.0f), 2.0f);
+        m_pauseOptions = button(L"設定", hlslpp::float2(10.0f, 40.0f), -3.0f);
+        m_pauseTitle   = button(L"タイトルへ", hlslpp::float2(-4.0f, 118.0f), 1.5f);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 一時停止の紙を引っ込めます。
+    //----------------------------------------------------------------------------
+    void GameHud::ClosePause() {
+        if(m_pause == entt::null) {
+            return;
+        }
+        // 滑り出してから片付ける（滑り出しの間に札を押されないよう、先に参照を外す）
+        m_ui.SlideOut(m_pause, hlslpp::float2(0.0f, -560.0f));
+        Expire(m_pause, 0.4f);
+        m_pause        = entt::null;
+        m_pauseResume  = entt::null;
+        m_pauseOptions = entt::null;
+        m_pauseTitle   = entt::null;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 一時停止の紙で選ばれた行動を返します。
+    //----------------------------------------------------------------------------
+    PauseChoice GameHud::PollPauseChoice() {
+        if(m_pause == entt::null) {
+            return PauseChoice::None;
+        }
+        if(m_ui.Clicked(m_pauseResume)) {
+            return PauseChoice::Resume;
+        }
+        if(m_ui.Clicked(m_pauseOptions)) {
+            return PauseChoice::Options;
+        }
+        if(m_ui.Clicked(m_pauseTitle)) {
+            return PauseChoice::Title;
+        }
+        return PauseChoice::None;
+    }
+
 }    // namespace ChronoSort::UI

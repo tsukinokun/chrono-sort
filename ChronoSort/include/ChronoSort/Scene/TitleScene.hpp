@@ -9,6 +9,7 @@
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/Scene/DeskStage.hpp>
+#include <ChronoSort/UI/OptionsSheet.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -99,6 +100,9 @@ namespace ChronoSort::Scene {
         Tsukino::ECS::Entity m_versus  = entt::null;
         Tsukino::ECS::Entity m_credits = entt::null;
         Tsukino::ECS::Entity m_quit    = entt::null;
+        Tsukino::ECS::Entity m_settings = entt::null;
+
+        std::unique_ptr<UI::OptionsSheet> m_options;    // 設定の紙
 
         // CPU 対戦の設定
         Tsukino::ECS::Entity              m_sheet = entt::null;    // 設定の紙

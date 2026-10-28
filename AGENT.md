@@ -27,6 +27,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `Game/` | `Sequencer`（時間差の段取り）、`SoundBank` / `Sounds()`（効果音と BGM。ファイルが無ければ無音） |
 | `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙） |
 | `Scene/` | `TitleScene`（メニュー・出題の範囲のしおり・対戦の支度。範囲は `MatchConfig::range` で渡し、山札は `Rules::LoadCards(range)` で絞る）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
+| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ）を `Saves/Options.json` に保存。起動時に読んで `ApplyOptions` で音へ反映する。スライダーの位置は2乗して音量にする |
+| `UI/OptionsSheet` | 設定の紙。タイトルの「設定」と、対局中の Esc → 一時停止の紙 →「設定」から開く。値は `CurrentOptions()` を直接書き換え、閉じたときに保存 |
 | `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存。ソロの記録は出題の範囲（通史・日本史・世界史）ごと。範囲を分ける前の形（version 1）も読めて、通史の記録として引き継ぐ |
 
 ### 起動と読み込み
@@ -40,6 +42,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 
 `GameScene` が `Rules::Match` を進め、結果に合わせて `BoardView` と `GameHud` で演出する。
 ルールの正否は必ず `Match::Play()` の戻り値で判断し、画面側で判定し直さない。
+対局中の Esc は一時停止の紙（続ける／設定／タイトルへ）。一時停止中は `Sequencer` と入力を止め、カードの動きと UI は回し続ける。
+「演出を速く」は、人間の手番以外のあいだだけ deltaTime に `kFastEffectsScale` を掛ける。
 演出の時間差は `Sequencer::Schedule` で書く（`RunReveal` が例：運ぶ → 裏返す → 叩きつける → 判定）。
 場の列のカードは寝かせず、手前の辺を卓に付けたまま `kRowTilt` だけカメラへ起こす（題名と年号を読ませるため）。
 列に着地させるときは `BoardView::SlotRestPose` を使う。`SlotPosition` は卓の上の点なので、粒子・目印用。
