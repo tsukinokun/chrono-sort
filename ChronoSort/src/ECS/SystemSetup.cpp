@@ -7,6 +7,7 @@
 #include <ChronoSort/ECS/System/BoardLayoutSystem.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
+#include <ChronoSort/ECS/System/MatchSystems.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
 
 #include <Tsukino/Engine/ECS/Scene.hpp>
@@ -50,6 +51,19 @@ namespace ChronoSort::ECS {
         scene.AddSystem(std::make_shared<BuiltIn::LightSystem>(), Order::kLights);
         scene.AddSystem(std::make_shared<BuiltIn::SkyAtmosphereSystem>(), Order::kSky);
         scene.AddSystem(std::make_shared<BuiltIn::BloomSystem>(), Order::kPostProcess);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 対局を進めるシステムを並べます。
+    //----------------------------------------------------------------------------
+    void AddMatchSystems(Tsukino::ECS::Scene& scene) {
+        // 段取り → CPU → 人間の入力 → 公開の演出 → カメラの順（出したカードを同じフレームのうちに運び始める）
+        scene.AddSystem(std::make_shared<MatchFlowSystem>(), Order::kMatch);
+        scene.AddSystem(std::make_shared<CpuTurnSystem>(), Order::kMatch);
+        scene.AddSystem(std::make_shared<HumanInputSystem>(), Order::kMatch);
+        scene.AddSystem(std::make_shared<RevealSystem>(), Order::kMatch);
+        scene.AddSystem(std::make_shared<CameraRigSystem>(), Order::kMatch);
+        scene.AddSystem(std::make_shared<MatchFeedbackSystem>(scene.GetRegistry(), scene.GetEventBus()), Order::kMatch);
     }
 
     //----------------------------------------------------------------------------

@@ -15,9 +15,10 @@ namespace ChronoSort::ECS {
 
     //! システムの更新の順番です（小さい順に更新する）。
     namespace Order {
-        constexpr int kInput       = -3;    // 画面 UI のマウス判定（その結果をこのフレームのうちに使う）
-        constexpr int kUIAnimation = -2;    // 画面 UI のトゥイーン（Transform の計算より前に動きを確定させる）
-        constexpr int kGameplay    = -1;    // ゲームの進行・カードの動き・粒子・発光（同じく Transform より前）
+        constexpr int kInput       = -4;    // 画面 UI のマウス判定（その結果をこのフレームのうちに使う）
+        constexpr int kUIAnimation = -3;    // 画面 UI のトゥイーン（Transform の計算より前に動きを確定させる）
+        constexpr int kMatch       = -2;    // 対局の進行（段取り・CPU・人間の入力・公開の演出・カメラ）。並べ方が読む状態を先に決める
+        constexpr int kGameplay    = -1;    // 卓の並べ方・カードの動き・粒子・発光（同じく Transform より前）
         constexpr int kTransform   = 0;     // 親子の Transform の計算
         constexpr int kCamera      = 5;     // カメラの行列
         constexpr int kAnchoredUI  = 6;     // 3D に貼り付く画面 UI（カメラの行列が決まってから）
@@ -32,6 +33,11 @@ namespace ChronoSort::ECS {
     //! カードの動き・粒子・発光も含みます。対局の進行のシステムは、これに加えて各シーンが足します。
     //! @param  [in,out] scene 並べる先のシーン。
     void AddTableSystems(Tsukino::ECS::Scene& scene);
+
+    //! 対局を進めるシステムを並べます（AddTableSystems に加えて、対局のシーンだけが呼ぶ）。
+    //! レジストリに MatchSession を置いてから呼びます。
+    //! @param  [in,out] scene 並べる先のシーン。
+    void AddMatchSystems(Tsukino::ECS::Scene& scene);
 
     //! 画面 UI だけの画面（読込画面）のシステムを並べます。マウスの判定は含みません。
     //! @param  [in,out] scene 並べる先のシーン。
