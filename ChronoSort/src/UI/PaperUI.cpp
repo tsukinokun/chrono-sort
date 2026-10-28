@@ -4,6 +4,9 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/PaperUI.hpp>
 
+#include <ChronoSort/ECS/Component/LifetimeComponent.hpp>
+#include <ChronoSort/ECS/System/LifetimeSystem.hpp>
+
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -259,23 +262,22 @@ namespace ChronoSort::UI {
     //! エンティティと、その子の UI をまとめて破棄します。
     //----------------------------------------------------------------------------
     void PaperUI::Destroy(Tsukino::ECS::Entity entity) {
+        ECS::DestroyTree(m_scene.GetRegistry(), entity);
+    }
+
+    //----------------------------------------------------------------------------
+    //! しばらく置いてから、子の UI ごと破棄させます。
+    //----------------------------------------------------------------------------
+    void PaperUI::DestroyAfter(Tsukino::ECS::Entity entity, float seconds) {
         if(entity == entt::null) {
             return;
         }
-        Tsukino::ECS::Registry&           registry = m_scene.GetRegistry();
-        std::vector<Tsukino::ECS::Entity> pending  = {entity};
-        // 子は親を指しているだけなので、親から辿れない。全体を見て子孫を集める
-        for(size_t i = 0; i < pending.size(); ++i) {
-            const Tsukino::ECS::Entity current = pending[i];
-            registry.View<BuiltIn::TransformComponent>().each([&](Tsukino::ECS::Entity child, const BuiltIn::TransformComponent& transform) {
-                if(static_cast<Tsukino::ECS::Entity>(transform.parent) == current) {
-                    pending.push_back(child);
-                }
-            });
+        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
+        auto*                   lifetime = registry.try_get<ECS::LifetimeComponent>(entity);
+        if(lifetime == nullptr) {
+            lifetime = &registry.AddComponent<ECS::LifetimeComponent>(entity);
         }
-        for(Tsukino::ECS::Entity e : pending) {
-            registry.QueueDestroy(e);
-        }
+        lifetime->remaining = seconds;
     }
 
 }    // namespace ChronoSort::UI

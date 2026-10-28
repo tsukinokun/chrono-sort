@@ -29,8 +29,7 @@ namespace ChronoSort::UI {
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
 
-        // 描画順（大きいほど手前）
-        constexpr int kLayerVignette = -50;
+        // 描画順（大きいほど手前）。常に出しておく紙片の描画順は Data/UI/GameHud.json に書き、文字はその上に重ねる
         constexpr int kLayerDesk     = 10;
         constexpr int kLayerAnchored = 40;
         constexpr int kLayerBanner   = 60;
@@ -48,10 +47,6 @@ namespace ChronoSort::UI {
         constexpr std::uint32_t kTagDeckWarn = 61;
         constexpr std::uint32_t kTagTurn     = 62;
         constexpr std::uint32_t kTagNudge    = 63;
-
-        // ライフのインク壺の置き方（わざと揃えない）
-        const hlslpp::float2 kInkPositions[] = {{262.0f, 150.0f}, {322.0f, 163.0f}, {378.0f, 146.0f}};
-        const float          kInkAngles[]    = {-7.0f, 5.0f, -2.0f};
 
         //! 数字を全角にせず、そのままワイド文字列にします。
         std::wstring Number(long long value) {
@@ -80,7 +75,8 @@ namespace ChronoSort::UI {
     GameHud::GameHud(Tsukino::ECS::Scene& scene, Tsukino::Asset::AssetManager& assetManager, const Rules::Match& match)
         : m_scene(scene)
         , m_ui(scene, assetManager)
-        , m_match(match) {
+        , m_match(match)
+        , m_layout("ChronoSort/Assets/Data/UI/GameHud.json") {
     }
 
     //----------------------------------------------------------------------------
@@ -91,55 +87,24 @@ namespace ChronoSort::UI {
 
         // 画面の四隅を暗くして、ランプに照らされた机に見せる
         {
-            PaperSpec spec;
-            spec.texture     = "vignette.png";
-            spec.center      = hlslpp::float2(kReferenceWidth * 0.5f, kReferenceHeight * 0.5f);
-            spec.size        = hlslpp::float2(kReferenceWidth, kReferenceHeight);
-            spec.swayDegrees = 0.0f;
-            spec.bobPixels   = 0.0f;
-            spec.sortOrder   = kLayerVignette;
-            const auto vignette = m_ui.Paper(spec);
+            const auto vignette = m_ui.Paper(m_layout.Spec("vignette"));
             m_scene.GetRegistry().GetComponent<BuiltIn::SpriteComponent>(vignette).raycastTarget = false;
         }
 
         // 封蝋（ソロは得点、対戦は巡目）と、その札
         {
-            PaperSpec label;
-            label.texture      = "scrap_note.png";
-            label.center       = hlslpp::float2(222.0f, 66.0f);
-            label.size         = hlslpp::float2(150.0f, 52.0f);
-            label.angleDegrees = 7.0f;
-            label.swayDegrees  = kDeskSway;
-            label.bobPixels    = kDeskBob;
-            label.sortOrder    = kLayerDesk;
-            const auto tag     = m_ui.Paper(label);
-            m_sealLabel        = m_ui.Text(solo ? L"得点" : L"巡目", hlslpp::float2(8.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, tag);
+            const auto tag = m_ui.Paper(m_layout.Spec("sealLabel"));
+            m_sealLabel    = m_ui.Text(solo ? L"得点" : L"巡目", hlslpp::float2(8.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, tag);
             m_ui.SlideIn(tag, hlslpp::float2(-260.0f, 0.0f), 0.2f);
 
-            PaperSpec seal;
-            seal.texture      = "wax_seal.png";
-            seal.center       = hlslpp::float2(112.0f, 118.0f);
-            seal.size         = hlslpp::float2(176.0f, 176.0f);
-            seal.angleDegrees = -9.0f;
-            seal.swayDegrees  = kDeskSway;
-            seal.bobPixels    = kDeskBob;
-            seal.sortOrder    = kLayerDesk + 2;
-            m_seal            = m_ui.Paper(seal);
-            m_sealText        = m_ui.Text(L"0", hlslpp::float2(0.0f, -2.0f), 1.15f, kParchmentColor, kLayerDesk + 3, m_seal);
+            m_seal     = m_ui.Paper(m_layout.Spec("seal"));
+            m_sealText = m_ui.Text(L"0", hlslpp::float2(0.0f, -2.0f), 1.15f, kParchmentColor, kLayerDesk + 3, m_seal);
             m_ui.SlideIn(m_seal, hlslpp::float2(-260.0f, -40.0f), 0.1f, 0.55f);
         }
 
         // 出題の範囲を絞っているときだけ、その名前の札を添える（通史なら今までどおり何も出さない）
         if(m_match.Config().range != Rules::CardRange::All) {
-            PaperSpec range;
-            range.texture      = "scrap_note.png";
-            range.center       = hlslpp::float2(338.0f, 50.0f);
-            range.size         = hlslpp::float2(112.0f, 44.0f);
-            range.angleDegrees = -4.0f;
-            range.swayDegrees  = kDeskSway;
-            range.bobPixels    = kDeskBob;
-            range.sortOrder    = kLayerDesk;
-            const auto tag     = m_ui.Paper(range);
+            const auto tag = m_ui.Paper(m_layout.Spec("rangeTag"));
             m_ui.Text(Util::Utf8ToWide(Rules::RangeName(m_match.Config().range)), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
             m_ui.SlideIn(tag, hlslpp::float2(-200.0f, -60.0f), 0.3f);
         }
@@ -147,15 +112,7 @@ namespace ChronoSort::UI {
         // ライフのインク壺（ソロ）
         if(solo) {
             for(int i = 0; i < Rules::kSoloLifeCount; ++i) {
-                PaperSpec ink;
-                ink.texture      = "ink_full.png";
-                ink.center       = kInkPositions[i];
-                ink.size         = hlslpp::float2(78.0f, 100.0f);
-                ink.angleDegrees = kInkAngles[i];
-                ink.swayDegrees  = kDeskSway;
-                ink.bobPixels    = kDeskBob;
-                ink.sortOrder    = kLayerDesk;
-                m_inks.push_back(m_ui.Paper(ink));
+                m_inks.push_back(m_ui.Paper(m_layout.Spec("ink" + std::to_string(i))));
                 m_ui.SlideIn(m_inks.back(), hlslpp::float2(-200.0f, 0.0f), 0.3f + 0.08f * static_cast<float>(i));
             }
             m_shownLives = Rules::kSoloLifeCount;
@@ -163,52 +120,23 @@ namespace ChronoSort::UI {
 
         // 山札の札（山札の 3D の近くにピンで留める）
         {
-            PaperSpec tag;
-            tag.texture      = "scrap_note.png";
-            tag.center       = hlslpp::float2(1455.0f, 655.0f);
-            tag.size         = hlslpp::float2(178.0f, 62.0f);
-            tag.angleDegrees = 6.0f;
-            tag.swayDegrees  = kDeskSway;
-            tag.bobPixels    = kDeskBob;
-            tag.sortOrder    = kLayerDesk;
-            m_deckTag        = m_ui.Paper(tag);
-            m_deckText       = m_ui.Text(L"山札 0", hlslpp::float2(10.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, m_deckTag);
+            m_deckTag  = m_ui.Paper(m_layout.Spec("deckTag"));
+            m_deckText = m_ui.Text(L"山札 0", hlslpp::float2(10.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, m_deckTag);
 
-            PaperSpec pin;
-            pin.texture     = "pin.png";
-            pin.center      = hlslpp::float2(-70.0f, -18.0f);
-            pin.size        = hlslpp::float2(40.0f, 40.0f);
-            pin.swayDegrees = 0.0f;
-            pin.bobPixels   = 0.0f;
-            pin.sortOrder   = kLayerDesk + 2;
-            pin.parent      = m_deckTag;
+            PaperSpec pin = m_layout.Spec("deckPin");
+            pin.parent    = m_deckTag;
             m_ui.Paper(pin);
             m_ui.SlideIn(m_deckTag, hlslpp::float2(300.0f, 0.0f), 0.4f);
         }
 
         // 操作説明（最初の1枚を置いたら片付ける）
         {
-            PaperSpec hint;
-            hint.texture      = "scrap_wide.png";
-            hint.center       = hlslpp::float2(262.0f, 812.0f);
-            hint.size         = hlslpp::float2(440.0f, 120.0f);
-            hint.angleDegrees = -3.0f;
-            hint.swayDegrees  = kDeskSway;
-            hint.bobPixels    = kDeskBob;
-            hint.sortOrder    = kLayerDesk;
-            m_hint            = m_ui.Paper(hint);
+            m_hint = m_ui.Paper(m_layout.Spec("hint"));
             m_ui.Text(L"カードを掴んで、年代の合う隙間へ", hlslpp::float2(0.0f, -14.0f), 0.62f, kInkColor, kLayerDesk + 1, m_hint);
             m_ui.Text(L"クリックで選んでから置くこともできます", hlslpp::float2(0.0f, 20.0f), 0.46f, kFadedInkColor, kLayerDesk + 1, m_hint);
 
-            PaperSpec tape;
-            tape.texture      = "tape.png";
-            tape.center       = hlslpp::float2(-170.0f, -50.0f);
-            tape.size         = hlslpp::float2(120.0f, 38.0f);
-            tape.angleDegrees = -24.0f;
-            tape.swayDegrees  = 0.0f;
-            tape.bobPixels    = 0.0f;
-            tape.sortOrder    = kLayerDesk + 2;
-            tape.parent       = m_hint;
+            PaperSpec tape = m_layout.Spec("hintTape");
+            tape.parent    = m_hint;
             m_ui.Paper(tape);
             m_ui.SlideIn(m_hint, hlslpp::float2(0.0f, 200.0f), 1.2f);
         }
@@ -216,25 +144,15 @@ namespace ChronoSort::UI {
         // 各プレイヤーの名札。人間は左下、CPU は卓の奥の席の上に浮かべる
         const auto& players = m_match.Players();
         for(size_t i = 0; i < players.size(); ++i) {
-            PaperSpec frame;
-            frame.swayDegrees = kDeskSway;
-            frame.bobPixels   = kDeskBob;
-            frame.sortOrder   = kLayerDesk;
             Tsukino::ECS::Entity tag;
             if(!players[i].isCpu) {
-                frame.texture      = "scrap_note.png";
-                frame.center       = hlslpp::float2(190.0f, 690.0f);
-                frame.size         = hlslpp::float2(190.0f, 60.0f);
-                frame.angleDegrees = 3.5f;
-                tag                = m_ui.Paper(frame);
+                tag = m_ui.Paper(m_layout.Spec("playerTag"));
                 m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(4.0f, 0.0f), 0.6f, kInkColor, kLayerDesk + 1, tag);
                 m_handCounts.push_back(entt::null);
             } else {
-                frame.texture      = "portrait_frame.png";
-                frame.size         = hlslpp::float2(96.0f, 118.0f);
-                frame.angleDegrees = m_ui.Jitter() * 6.0f;
-                frame.center       = hlslpp::float2(0.0f, 0.0f);
-                frame.sortOrder    = kLayerAnchored;
+                // 額の傾きは人ごとにばらす
+                PaperSpec frame    = m_layout.Spec("cpuFrame");
+                frame.angleDegrees += m_ui.Jitter() * 6.0f;
                 tag                = m_ui.Paper(frame);
 
                 // 卓の奥の席の上に貼り付ける（カメラが動いても席についてくる）
@@ -253,14 +171,9 @@ namespace ChronoSort::UI {
                 const std::string portrait = (i - 1 < std::size(kPortraits)) ? kPortraits[i - 1] : "";
                 const bool        hasFace  = !portrait.empty() && std::filesystem::exists("ChronoSort/Assets/Textures/UI/" + portrait);
 
-                PaperSpec face;
-                face.texture     = hasFace ? portrait : "silhouette.png";
-                face.center      = hlslpp::float2(0.0f, -13.0f);
-                face.size        = hlslpp::float2(70.0f, 72.0f);
-                face.swayDegrees = 0.0f;
-                face.bobPixels   = 0.0f;
-                face.sortOrder   = kLayerAnchored + 1;
-                face.parent      = tag;
+                PaperSpec face = m_layout.Spec("cpuFace");
+                face.texture   = hasFace ? portrait : "silhouette.png";
+                face.parent    = tag;
                 m_ui.Paper(face);
                 m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 41.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
                 // 手札の枚数は、席のカードと反対の側に出す
@@ -270,15 +183,7 @@ namespace ChronoSort::UI {
         }
 
         // 手番のリボン（名札にぶら下げる）
-        {
-            PaperSpec ribbon;
-            ribbon.texture     = "ribbon.png";
-            ribbon.size        = hlslpp::float2(30.0f, 100.0f);
-            ribbon.swayDegrees = 3.0f;
-            ribbon.swaySeconds = 2.2f;
-            ribbon.sortOrder   = kLayerAnchored - 1;
-            m_ribbon           = m_ui.Paper(ribbon);
-        }
+        m_ribbon = m_ui.Paper(m_layout.Spec("ribbon"));
     }
 
     //----------------------------------------------------------------------------
@@ -286,17 +191,6 @@ namespace ChronoSort::UI {
     //----------------------------------------------------------------------------
     void GameHud::Update(float deltaTime) {
         const bool solo = m_match.Config().mode == Rules::MatchMode::Solo;
-
-        // 時間切れの UI を片付ける
-        for(auto it = m_expiring.begin(); it != m_expiring.end();) {
-            it->first -= deltaTime;
-            if(it->first <= 0.0f) {
-                m_ui.Destroy(it->second);
-                it = m_expiring.erase(it);
-            } else {
-                ++it;
-            }
-        }
 
         // 封蝋：得点は数え上げる。対戦は巡目
         if(solo) {
@@ -478,7 +372,7 @@ namespace ChronoSort::UI {
         const float stay = big ? 2.0f : 1.1f;
         m_ui.SlideIn(banner, hlslpp::float2(-kReferenceWidth * 0.7f, 30.0f), 0.0f, 0.5f);
         m_ui.SlideOut(banner, hlslpp::float2(kReferenceWidth * 0.7f, -30.0f), 0.5f + stay, 0.4f);
-        Expire(banner, 1.0f + stay);
+        m_ui.DestroyAfter(banner, 1.0f + stay);
     }
 
     //----------------------------------------------------------------------------
@@ -575,7 +469,7 @@ namespace ChronoSort::UI {
         fade.tag       = 32;
         BuiltIn::UITweenUtility::Play(registry, anchor, fade);
 
-        Expire(anchor, 1.6f);
+        m_ui.DestroyAfter(anchor, 1.6f);
     }
 
     //----------------------------------------------------------------------------
@@ -628,7 +522,7 @@ namespace ChronoSort::UI {
         fade.tag       = 42;
         BuiltIn::UITweenUtility::Play(registry, anchor, fade);
 
-        Expire(anchor, 1.5f);
+        m_ui.DestroyAfter(anchor, 1.5f);
     }
 
     //----------------------------------------------------------------------------
@@ -638,7 +532,7 @@ namespace ChronoSort::UI {
         // 最初に人間が置いたら、操作説明は役目を終える
         if(player == 0 && m_hint != entt::null) {
             m_ui.SlideOut(m_hint, hlslpp::float2(-120.0f, 220.0f), 0.3f);
-            Expire(m_hint, 1.0f);
+            m_ui.DestroyAfter(m_hint, 1.0f);
             m_hint = entt::null;
         }
         if(result.correct && m_match.Config().mode == Rules::MatchMode::Solo) {
@@ -664,7 +558,7 @@ namespace ChronoSort::UI {
             m_ui.Punch(m_streakTag, 0.25f);
         } else if(!result.correct && m_streakTag != entt::null) {
             m_ui.SlideOut(m_streakTag, hlslpp::float2(0.0f, 160.0f), 0.2f, 0.5f);
-            Expire(m_streakTag, 0.8f);
+            m_ui.DestroyAfter(m_streakTag, 0.8f);
             m_streakTag  = entt::null;
             m_streakText = entt::null;
         }
@@ -814,13 +708,6 @@ namespace ChronoSort::UI {
     }
 
     //----------------------------------------------------------------------------
-    //! 一定時間後に破棄する UI を登録します。
-    //----------------------------------------------------------------------------
-    void GameHud::Expire(Tsukino::ECS::Entity entity, float seconds) {
-        m_expiring.emplace_back(seconds, entity);
-    }
-
-    //----------------------------------------------------------------------------
     //! 一時停止の紙を出します。
     //----------------------------------------------------------------------------
     void GameHud::OpenPause() {
@@ -868,7 +755,7 @@ namespace ChronoSort::UI {
         }
         // 滑り出してから片付ける（滑り出しの間に札を押されないよう、先に参照を外す）
         m_ui.SlideOut(m_pause, hlslpp::float2(0.0f, -560.0f));
-        Expire(m_pause, 0.4f);
+        m_ui.DestroyAfter(m_pause, 0.4f);
         m_pause        = entt::null;
         m_pauseResume  = entt::null;
         m_pauseOptions = entt::null;

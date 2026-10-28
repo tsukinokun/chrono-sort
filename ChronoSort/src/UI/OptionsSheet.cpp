@@ -109,7 +109,6 @@ namespace ChronoSort::UI {
         m_ui.Text(L"閉じる", hlslpp::float2(6.0f, 2.0f), 0.72f, kInkColor, layer + 2, m_close);
         m_ui.MakeButton(m_close);
 
-        m_closing  = false;
         m_dragging = -1;
     }
 
@@ -204,14 +203,18 @@ namespace ChronoSort::UI {
     //! 紙を閉じ、設定を保存します。
     //----------------------------------------------------------------------------
     void OptionsSheet::Close() {
-        if(m_sheet == entt::null || m_closing) {
+        if(m_sheet == entt::null) {
             return;
         }
         Game::StoreOptions();
+        // 滑り出し終わったら LifetimeSystem が子ごと片付ける。こちらは先に手を離し、すぐ次を開けるようにする
         m_ui.SlideOut(m_sheet, hlslpp::float2(0.0f, 620.0f), 0.0f, kCloseSeconds);
-        m_closing    = true;
-        m_closeTimer = kCloseSeconds;
-        m_dragging   = -1;
+        m_ui.DestroyAfter(m_sheet, kCloseSeconds);
+        m_sheet    = entt::null;
+        m_close    = entt::null;
+        m_dragging = -1;
+        m_sliders.clear();
+        m_toggles.clear();
     }
 
     //----------------------------------------------------------------------------
@@ -248,22 +251,7 @@ namespace ChronoSort::UI {
         if(m_sheet == entt::null) {
             return false;
         }
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-
-        // 滑り出し終わったら片付ける
-        if(m_closing) {
-            m_closeTimer -= deltaTime;
-            if(m_closeTimer <= 0.0f) {
-                m_ui.Destroy(m_sheet);
-                m_sheet = entt::null;
-                m_close = entt::null;
-                m_sliders.clear();
-                m_toggles.clear();
-                m_closing = false;
-            }
-            return false;
-        }
-
+        Tsukino::ECS::Registry&      registry = m_scene.GetRegistry();
         Tsukino::Input::InputSystem& input = *m_context.inputSystem;
         m_previewTimer -= deltaTime;
 

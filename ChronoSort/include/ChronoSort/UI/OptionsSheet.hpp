@@ -40,7 +40,7 @@ namespace ChronoSort::UI {
 
         //! 開いているかを返します。
         //! @return 開いていれば true。
-        bool IsOpen() const { return m_sheet != entt::null && !m_closing; }
+        bool IsOpen() const { return m_sheet != entt::null; }
 
         //! 毎フレームの入力と見た目の更新を行います。
         //! @param  [in] deltaTime 経過時間（秒）。
@@ -105,8 +105,6 @@ namespace ChronoSort::UI {
         std::vector<Toggle>                         m_toggles;        // 演出の速さ・画面の揺れ
         int                                         m_dragging = -1;  // ドラッグ中のスライダー
         float                                       m_previewTimer = 0.0f;    // 試し鳴りの間隔
-        bool                                        m_closing      = false;   // 滑り出している最中か
-        float                                       m_closeTimer   = 0.0f;    // 滑り出し終わるまでの時間
     };
 
 }    // namespace ChronoSort::UI

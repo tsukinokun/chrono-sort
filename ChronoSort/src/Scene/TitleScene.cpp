@@ -40,35 +40,18 @@ namespace ChronoSort::Scene {
     void TitleScene::OnInitialize(Tsukino::EngineIntegration::EngineAPI&) {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
         m_stage.Build(m_scene, 14);
-        m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
+        m_ui     = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
+        m_layout = UI::PaperLayout("ChronoSort/Assets/Data/UI/Title.json");
 
         // 四隅を暗くしてランプの明かりに見せる
         {
-            UI::PaperSpec spec;
-            spec.texture     = "vignette.png";
-            spec.center      = hlslpp::float2(UI::kReferenceWidth * 0.5f, UI::kReferenceHeight * 0.5f);
-            spec.size        = hlslpp::float2(UI::kReferenceWidth, UI::kReferenceHeight);
-            spec.swayDegrees = 0.0f;
-            spec.bobPixels   = 0.0f;
-            spec.sortOrder   = -50;
-            const auto vignette = m_ui->Paper(spec);
+            const auto vignette = m_ui->Paper(m_layout.Spec("vignette"));
             m_scene.GetRegistry().GetComponent<BuiltIn::SpriteComponent>(vignette).raycastTarget = false;
         }
 
         // 題字
-        Tsukino::ECS::Entity title = entt::null;
-        {
-            UI::PaperSpec logo;
-            logo.texture      = "title_logo.png";
-            logo.center       = hlslpp::float2(760.0f, 205.0f);
-            logo.size         = hlslpp::float2(720.0f, 208.0f);
-            logo.angleDegrees = -2.5f;
-            logo.swayDegrees  = 0.6f;
-            logo.swaySeconds  = 5.0f;
-            logo.sortOrder    = kLayerMenu;
-            title             = m_ui->Paper(logo);
-            m_ui->SlideIn(title, hlslpp::float2(0.0f, -320.0f), 0.3f, 0.8f);
-        }
+        const Tsukino::ECS::Entity title = m_ui->Paper(m_layout.Spec("logo"));
+        m_ui->SlideIn(title, hlslpp::float2(0.0f, -320.0f), 0.3f, 0.8f);
 
         // 出題の範囲（前回選んだものから始める）
         m_save  = Game::LoadSaveData();
@@ -76,22 +59,16 @@ namespace ChronoSort::Scene {
         CreateRangeTabs(title);
 
         // メニュー（あえて高さも傾きも揃えない）
-        m_solo    = CreateMenuNote(L"ひとりで挑む", L"インク三つで、何枚並べられるか", hlslpp::float2(470.0f, 500.0f), -5.0f, 0.7f, "pin.png");
-        m_versus  = CreateMenuNote(L"CPUと対戦", L"先に手札を出し切った者の勝ち", hlslpp::float2(860.0f, 548.0f), 3.5f, 0.85f, "tape.png");
-        m_credits = CreateMenuNote(L"出典・クレジット", L"", hlslpp::float2(1205.0f, 690.0f), -2.0f, 1.0f, "pin.png");
-        m_quit    = CreateMenuNote(L"机を離れる", L"", hlslpp::float2(318.0f, 742.0f), 6.0f, 1.1f, "tape.png");
-        m_settings = CreateMenuNote(L"設定", L"", hlslpp::float2(770.0f, 768.0f), -4.0f, 1.05f, "pin.png");
+        m_solo     = CreateMenuNote(L"ひとりで挑む", L"インク三つで、何枚並べられるか", "solo", 0.7f, "pin.png");
+        m_versus   = CreateMenuNote(L"CPUと対戦", L"先に手札を出し切った者の勝ち", "versus", 0.85f, "tape.png");
+        m_credits  = CreateMenuNote(L"出典・クレジット", L"", "credits", 1.0f, "pin.png");
+        m_quit     = CreateMenuNote(L"机を離れる", L"", "quit", 1.1f, "tape.png");
+        m_settings = CreateMenuNote(L"設定", L"", "settings", 1.05f, "pin.png");
         m_options  = std::make_unique<UI::OptionsSheet>(m_scene, *context, kLayerSheet + 20);
 
         // 最高記録のメモ（選んでいる範囲に記録があるときだけ出す）
         {
-            UI::PaperSpec memo;
-            memo.texture      = "scrap_square.png";
-            memo.center       = hlslpp::float2(1300.0f, 330.0f);
-            memo.size         = hlslpp::float2(240.0f, 250.0f);
-            memo.angleDegrees = 7.0f;
-            memo.sortOrder    = kLayerMenu;
-            m_record          = m_ui->Paper(memo);
+            m_record      = m_ui->Paper(m_layout.Spec("recordMemo"));
             m_recordTitle     = m_ui->Text(L"", hlslpp::float2(0.0f, -62.0f), 0.62f, UI::kSealRedColor, kLayerMenu + 1, m_record);
             const float rows[] = {-18.0f, 16.0f, 50.0f, 84.0f};
             for(size_t i = 0; i < std::size(rows); ++i) {
@@ -110,17 +87,11 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     //! メニューのメモ紙を1枚作ります。
     //----------------------------------------------------------------------------
-    Tsukino::ECS::Entity TitleScene::CreateMenuNote(const std::wstring& label, const std::wstring& note, const hlslpp::float2& center, float angle, float delay,
+    Tsukino::ECS::Entity TitleScene::CreateMenuNote(const std::wstring& label, const std::wstring& note, const std::string& layout, float delay,
                                                     const char* fastener) {
-        const bool    hasNote = !note.empty();
-        UI::PaperSpec spec;
-        spec.texture      = hasNote ? "scrap_wide.png" : "scrap_note.png";
-        spec.center       = center;
-        spec.size         = hasNote ? hlslpp::float2(400.0f, 118.0f) : hlslpp::float2(270.0f, 86.0f);
-        spec.angleDegrees = angle;
-        spec.swayDegrees  = 0.9f;
-        spec.sortOrder    = kLayerMenu;
-        const auto paper  = m_ui->Paper(spec);
+        const bool          hasNote = !note.empty();
+        const UI::PaperSpec spec    = m_layout.Spec(layout);
+        const auto          paper   = m_ui->Paper(spec);
         m_ui->Text(label, hlslpp::float2(0.0f, hasNote ? -16.0f : 2.0f), hasNote ? 1.0f : 0.8f, UI::kInkColor, kLayerMenu + 1, paper);
         if(hasNote) {
             const auto sub = m_ui->Text(note, hlslpp::float2(0.0f, 26.0f), 0.46f, UI::kFadedInkColor, kLayerMenu + 1, paper);
@@ -356,35 +327,26 @@ namespace ChronoSort::Scene {
         // 題字の左下に小さな見出し（題字と一緒に揺れる）
         m_ui->Text(L"出題", hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title);
 
-        // 高さも傾きもわざと揃えない
-        struct TabSpec {
-            Rules::CardRange range;
-            hlslpp::float2   center;
-            float            angle;
+        // 置き場所・傾きは Data/UI/Title.json（高さも傾きもわざと揃えない）
+        const std::pair<Rules::CardRange, const char*> tabs[] = {
+            {Rules::CardRange::Japan, "rangeJapan"},
+            {Rules::CardRange::World, "rangeWorld"},
+            {Rules::CardRange::All, "rangeAll"},
         };
-        const TabSpec specs[] = {
-            {Rules::CardRange::Japan, hlslpp::float2(510.0f, 360.0f), -3.0f},
-            {Rules::CardRange::World, hlslpp::float2(683.0f, 352.0f), 2.5f},
-            {Rules::CardRange::All, hlslpp::float2(856.0f, 364.0f), -1.5f},
-        };
-        for(size_t i = 0; i < std::size(specs); ++i) {
-            const TabSpec& spec = specs[i];
+        for(size_t i = 0; i < std::size(tabs); ++i) {
+            const Rules::CardRange range = tabs[i].first;
+            UI::PaperSpec          paper = m_layout.Spec(tabs[i].second);
+            const hlslpp::float2   base  = paper.center;
 
-            // 持ち上げは親を動かして行う（紙片の揺れ・ボタンの反応は紙片側に残す）
+            // 持ち上げは親を動かして行う（紙片の揺れ・ボタンの反応は紙片側に残す）。紙片は親の真ん中に置く
             const Tsukino::ECS::Entity holder = m_scene.CreateEntity();
-            registry.AddComponent<BuiltIn::TransformComponent>(holder).position = hlslpp::float3(spec.center, 0.0f);
+            registry.AddComponent<BuiltIn::TransformComponent>(holder).position = hlslpp::float3(base, 0.0f);
+            paper.center     = hlslpp::float2(0.0f, 0.0f);
+            paper.parent     = holder;
+            const auto tag   = m_ui->Paper(paper);
 
-            UI::PaperSpec paper;
-            paper.texture      = "scrap_note.png";
-            paper.size         = hlslpp::float2(164.0f, 70.0f);
-            paper.angleDegrees = spec.angle;
-            paper.swayDegrees  = 0.7f;
-            paper.sortOrder    = kLayerMenu;
-            paper.parent       = holder;
-            const auto tag     = m_ui->Paper(paper);
-
-            const bool all = spec.range == Rules::CardRange::All;
-            m_rangeTexts.push_back(m_ui->Text(Util::Utf8ToWide(Rules::RangeName(spec.range)), hlslpp::float2(4.0f, all ? -9.0f : 2.0f), 0.78f, UI::kInkColor,
+            const bool all = range == Rules::CardRange::All;
+            m_rangeTexts.push_back(m_ui->Text(Util::Utf8ToWide(Rules::RangeName(range)), hlslpp::float2(4.0f, all ? -9.0f : 2.0f), 0.78f, UI::kInkColor,
                                               kLayerMenu + 1, tag));
             if(all) {
                 m_ui->Text(L"日本と世界", hlslpp::float2(4.0f, 20.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
@@ -392,21 +354,15 @@ namespace ChronoSort::Scene {
             m_ui->MakeButton(tag);
             m_ui->SlideIn(tag, hlslpp::float2(m_ui->Jitter() * 60.0f, -260.0f), 0.45f + 0.07f * static_cast<float>(i), 0.6f);
 
-            m_rangeOrder.push_back(spec.range);
+            m_rangeOrder.push_back(range);
             m_rangeHolders.push_back(holder);
             m_rangeTags.push_back(tag);
-            m_rangeBases.push_back(spec.center);
-            m_rangeLift.push_back(spec.range == m_range ? 1.0f : 0.0f);
+            m_rangeBases.push_back(base);
+            m_rangeLift.push_back(range == m_range ? 1.0f : 0.0f);
         }
 
         // 選んでいるしおりに垂らす紐（紙片の後ろから下へ垂れる）
-        UI::PaperSpec ribbon;
-        ribbon.texture     = "ribbon.png";
-        ribbon.size        = hlslpp::float2(24.0f, 84.0f);
-        ribbon.swayDegrees = 3.0f;
-        ribbon.swaySeconds = 2.4f;
-        ribbon.sortOrder   = kLayerMenu - 1;
-        m_rangeRibbon      = m_ui->Paper(ribbon);
+        m_rangeRibbon = m_ui->Paper(m_layout.Spec("rangeRibbon"));
         SelectRange(m_range);
     }
 

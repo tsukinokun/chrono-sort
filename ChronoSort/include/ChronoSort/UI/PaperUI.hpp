@@ -124,6 +124,11 @@ namespace ChronoSort::UI {
         //! @param  [in] entity 破棄する UI。
         void Destroy(Tsukino::ECS::Entity entity);
 
+        //! しばらく置いてから、子の UI ごと破棄させます（LifetimeSystem が片付ける）。
+        //! @param  [in] entity  破棄する UI。
+        //! @param  [in] seconds 何秒後に破棄するか。
+        void DestroyAfter(Tsukino::ECS::Entity entity, float seconds);
+
         //! -1〜1 の乱数を返します（紙片ごとの傾きのばらつきに使う）。
         //! @return 乱数。
         float Jitter();

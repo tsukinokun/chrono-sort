@@ -4,9 +4,12 @@
 //! @detail 得点は封蝋、ライフはインク壺、山札の残りはピン留めの札、手番はしおりのリボン。
 //!         判定の朱印・得点の浮き上がり・通知の紙片・結果の羊皮紙もここで出します。
 //!         値は Rules::Match を毎フレーム読んで反映し、変わった瞬間に弾ませます。
+//!         常に出しておく紙片の置き方（位置・大きさ・傾き・揺れ）は Data/UI/GameHud.json に書き、ここでは文字と動きを付けます。
+//!         しばらく見せて消す紙片は PaperUI::DestroyAfter（LifetimeSystem）に片付けさせます。
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Rules/Match.hpp>
+#include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -107,11 +110,6 @@ namespace ChronoSort::UI {
 
     private:
 
-        //! 一定時間後に破棄する UI を登録します。
-        //! @param  [in] entity  UI。
-        //! @param  [in] seconds 何秒後に破棄するか。
-        void Expire(Tsukino::ECS::Entity entity, float seconds);
-
         //! 指定した座標に貼り付く（カード追従の）UI を作ります。
         //! @param  [in] card        追従するカード。
         //! @param  [in] worldOffset カードからのずれ（ワールド）。
@@ -124,7 +122,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Scene&                             m_scene;           // UI を作るシーン
         PaperUI                                          m_ui;              // 紙片の部品
         const Rules::Match&                              m_match;           // 表示する対局
-        std::vector<std::pair<float, Tsukino::ECS::Entity>> m_expiring;     // 破棄の予定（残り秒数, UI）
+        PaperLayout                                      m_layout;          // 常に出しておく紙片の置き方（Data/UI/GameHud.json）
 
         Tsukino::ECS::Entity              m_seal       = entt::null;    // 封蝋
         Tsukino::ECS::Entity              m_sealText   = entt::null;    // 封蝋の数字

@@ -1,0 +1,19 @@
+{
+    "papers": [
+        { "key": "vignette",  "value": { "texture": "vignette.png",       "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1600.0, "y": 900.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": -50 } },
+        { "key": "sealLabel", "value": { "texture": "scrap_note.png",     "center": { "x": 222.0,  "y": 66.0 },  "size": { "x": 150.0, "y": 52.0 },  "angle": 7.0,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "seal",      "value": { "texture": "wax_seal.png",       "center": { "x": 112.0,  "y": 118.0 }, "size": { "x": 176.0, "y": 176.0 }, "angle": -9.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 12 } },
+        { "key": "rangeTag",  "value": { "texture": "scrap_note.png",     "center": { "x": 338.0,  "y": 50.0 },  "size": { "x": 112.0, "y": 44.0 },  "angle": -4.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "ink0",      "value": { "texture": "ink_full.png",       "center": { "x": 262.0,  "y": 150.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": -7.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "ink1",      "value": { "texture": "ink_full.png",       "center": { "x": 322.0,  "y": 163.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": 5.0,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "ink2",      "value": { "texture": "ink_full.png",       "center": { "x": 378.0,  "y": 146.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": -2.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "deckTag",   "value": { "texture": "scrap_note.png",     "center": { "x": 1455.0, "y": 655.0 }, "size": { "x": 178.0, "y": 62.0 },  "angle": 6.0,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "deckPin",   "value": { "texture": "pin.png",            "center": { "x": -70.0,  "y": -18.0 }, "size": { "x": 40.0,  "y": 40.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 12 } },
+        { "key": "hint",      "value": { "texture": "scrap_wide.png",     "center": { "x": 262.0,  "y": 812.0 }, "size": { "x": 440.0, "y": 120.0 }, "angle": -3.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "hintTape",  "value": { "texture": "tape.png",           "center": { "x": -170.0, "y": -50.0 }, "size": { "x": 120.0, "y": 38.0 },  "angle": -24.0, "sway": 0.0, "bob": 0.0, "sortOrder": 12 } },
+        { "key": "playerTag", "value": { "texture": "scrap_note.png",     "center": { "x": 190.0,  "y": 690.0 }, "size": { "x": 190.0, "y": 60.0 },  "angle": 3.5,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "cpuFrame",  "value": { "texture": "portrait_frame.png", "center": { "x": 0.0,    "y": 0.0 },   "size": { "x": 96.0,  "y": 118.0 }, "sway": 1.4, "bob": 3.0, "sortOrder": 40 } },
+        { "key": "cpuFace",   "value": {                                  "center": { "x": 0.0,    "y": -13.0 }, "size": { "x": 70.0,  "y": 72.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 41 } },
+        { "key": "ribbon",    "value": { "texture": "ribbon.png",                                                "size": { "x": 30.0,  "y": 100.0 }, "sway": 3.0, "swaySeconds": 2.2, "sortOrder": 39 } }
+    ]
+}

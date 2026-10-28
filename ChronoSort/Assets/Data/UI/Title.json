@@ -1,0 +1,16 @@
+{
+    "papers": [
+        { "key": "vignette",    "value": { "texture": "vignette.png",     "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1600.0, "y": 900.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": -50 } },
+        { "key": "logo",        "value": { "texture": "title_logo.png",   "center": { "x": 760.0,  "y": 205.0 }, "size": { "x": 720.0, "y": 208.0 }, "angle": -2.5, "sway": 0.6, "swaySeconds": 5.0, "sortOrder": 20 } },
+        { "key": "solo",        "value": { "texture": "scrap_wide.png",   "center": { "x": 470.0,  "y": 500.0 }, "size": { "x": 400.0, "y": 118.0 }, "angle": -5.0, "sway": 0.9, "sortOrder": 20 } },
+        { "key": "versus",      "value": { "texture": "scrap_wide.png",   "center": { "x": 860.0,  "y": 548.0 }, "size": { "x": 400.0, "y": 118.0 }, "angle": 3.5,  "sway": 0.9, "sortOrder": 20 } },
+        { "key": "credits",     "value": { "texture": "scrap_note.png",   "center": { "x": 1205.0, "y": 690.0 }, "size": { "x": 270.0, "y": 86.0 },  "angle": -2.0, "sway": 0.9, "sortOrder": 20 } },
+        { "key": "quit",        "value": { "texture": "scrap_note.png",   "center": { "x": 318.0,  "y": 742.0 }, "size": { "x": 270.0, "y": 86.0 },  "angle": 6.0,  "sway": 0.9, "sortOrder": 20 } },
+        { "key": "settings",    "value": { "texture": "scrap_note.png",   "center": { "x": 770.0,  "y": 768.0 }, "size": { "x": 270.0, "y": 86.0 },  "angle": -4.0, "sway": 0.9, "sortOrder": 20 } },
+        { "key": "recordMemo",  "value": { "texture": "scrap_square.png", "center": { "x": 1300.0, "y": 330.0 }, "size": { "x": 240.0, "y": 250.0 }, "angle": 7.0,  "sortOrder": 20 } },
+        { "key": "rangeJapan",  "value": { "texture": "scrap_note.png",   "center": { "x": 510.0,  "y": 360.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": -3.0, "sway": 0.7, "sortOrder": 20 } },
+        { "key": "rangeWorld",  "value": { "texture": "scrap_note.png",   "center": { "x": 683.0,  "y": 352.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": 2.5,  "sway": 0.7, "sortOrder": 20 } },
+        { "key": "rangeAll",    "value": { "texture": "scrap_note.png",   "center": { "x": 856.0,  "y": 364.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": -1.5, "sway": 0.7, "sortOrder": 20 } },
+        { "key": "rangeRibbon", "value": { "texture": "ribbon.png",                                              "size": { "x": 24.0,  "y": 84.0 },  "sway": 3.0, "swaySeconds": 2.4, "sortOrder": 19 } }
+    ]
+}

@@ -10,6 +10,7 @@
 #include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/Scene/DeskStage.hpp>
 #include <ChronoSort/UI/OptionsSheet.hpp>
+#include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -43,13 +44,11 @@ namespace ChronoSort::Scene {
         //! メニューのメモ紙を1枚作ります。
         //! @param  [in] label    見出し。
         //! @param  [in] note     補足（空なら出さない）。
-        //! @param  [in] center   位置。
-        //! @param  [in] angle    傾き（度）。
+        //! @param  [in] layout   置き方の名前（Data/UI/Title.json）。
         //! @param  [in] delay    滑り込む遅れ（秒）。
         //! @param  [in] fastener 留め具（"pin.png" か "tape.png"）。
         //! @return 作成した紙片。
-        Tsukino::ECS::Entity CreateMenuNote(const std::wstring& label, const std::wstring& note, const hlslpp::float2& center, float angle, float delay,
-                                            const char* fastener);
+        Tsukino::ECS::Entity CreateMenuNote(const std::wstring& label, const std::wstring& note, const std::string& layout, float delay, const char* fastener);
 
         //! CPU 対戦の設定の紙を開きます。
         void OpenVersusSheet();
@@ -77,6 +76,7 @@ namespace ChronoSort::Scene {
         void RefreshRecordMemo(float slideDelay = 0.0f);
 
         std::unique_ptr<UI::PaperUI> m_ui;       // 紙片の部品
+        UI::PaperLayout              m_layout;   // 紙片の置き方（Data/UI/Title.json）
         DeskStage                    m_stage;    // 背景の机
         Game::SaveData               m_save;     // 記録（出題の範囲を選び直すたびに保存する）
 
