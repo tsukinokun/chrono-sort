@@ -193,8 +193,8 @@ namespace ChronoSort::Scene {
             m_hud->SetIdleSeconds(m_idleTime);
         }
 
+        // 卓の上の並べ直しは BoardLayoutSystem が m_scene.Update の中で行う
         m_board->SetDeckCount(m_match.DeckRemaining());
-        m_board->UpdateLayout(deltaTime);
         UpdateCamera(deltaTime);
         m_hud->Update(deltaTime);
 
@@ -241,7 +241,7 @@ namespace ChronoSort::Scene {
         const Rules::CardData& first = m_match.GetTimeline().Cards().front();
         Tsukino::ECS::Entity   card  = m_board->SpawnAtDeck(first);
         m_board->InsertIntoRow(0, card);
-        m_board->UpdateLayout(0.0f);
+        m_board->ApplyLayoutNow();
         ECS::CardMotion::Fly(registry, card, 0.7f, 120.0f, 0.2f);
         m_sequencer.Schedule(0.2f, [context] { Game::Sounds(*context).Play("whoosh", 0.6f); });
         m_sequencer.Schedule(0.9f, [this, card, context] {
@@ -269,19 +269,19 @@ namespace ChronoSort::Scene {
         while(dealt) {
             dealt = false;
             for(size_t p = 0; p < m_match.Players().size(); ++p) {
-                const auto&       hand = m_match.Players()[p].hand;
-                Board::HandView&  view = m_board->Hand(p);
-                if(view.cards.size() >= hand.size()) {
+                const auto&  hand  = m_match.Players()[p].hand;
+                const size_t shown = m_board->HandSize(p);
+                if(shown >= hand.size()) {
                     continue;
                 }
                 Game::FrameMonitor::Mark("deal");
-                Tsukino::ECS::Entity entity = m_board->SpawnAtDeck(hand[view.cards.size()]);
-                view.cards.push_back(entity);
+                Tsukino::ECS::Entity entity = m_board->SpawnAtDeck(hand[shown]);
+                m_board->AddToHand(p, entity);
                 // 配る先の姿勢を先に決めてから飛ばす
                 hlslpp::float3     position;
                 hlslpp::quaternion rotation;
                 float              scale = 1.0f;
-                m_board->HandPose(p, view.cards.size() - 1, position, rotation, scale);
+                m_board->HandPose(p, shown, position, rotation, scale);
                 ECS::CardMotion::SetTarget(registry, entity, position, rotation, scale);
                 ECS::CardMotion::Fly(registry, entity, 0.5f, 70.0f, stagger);
                 m_sequencer.Schedule(stagger, [context] { Game::Sounds(*context).Play("deal", 0.55f); });
@@ -322,7 +322,7 @@ namespace ChronoSort::Scene {
         Tsukino::ECS::Registry&       registry = m_scene.GetRegistry();
         auto*                         context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
         Tsukino::Input::InputSystem&  input    = *context->inputSystem;
-        Board::HandView&              hand     = m_board->Hand(0);
+        Board::HandState&             hand     = m_board->Hand(0);
 
         int mouseX = 0;
         int mouseY = 0;
@@ -405,7 +405,7 @@ namespace ChronoSort::Scene {
 
         // 押したまま動かした：ドラッグ開始・継続
         if(m_grabbed >= 0 && input.IsKeyDown(KeyCode::LButton)) {
-            const Tsukino::ECS::Entity entity = hand.cards[static_cast<size_t>(m_grabbed)];
+            const Tsukino::ECS::Entity entity = m_board->HandCard(0, static_cast<size_t>(m_grabbed));
             if(!m_dragging && float(hlslpp::length(mouse - m_pressPoint)) > kClickThreshold) {
                 m_dragging   = true;
                 hand.hovered = -1;
@@ -452,10 +452,10 @@ namespace ChronoSort::Scene {
                     return;
                 }
                 // 置けない所で離した：手札へ放物線で戻す
-                const Tsukino::ECS::Entity entity = hand.cards[static_cast<size_t>(index)];
+                const Tsukino::ECS::Entity entity = m_board->HandCard(0, static_cast<size_t>(index));
                 m_board->SetHeld(entt::null);
                 ECS::CardMotion::SetSharpness(registry, entity, 14.0f, 10.0f);
-                m_board->UpdateLayout(0.0f);
+                m_board->ApplyLayoutNow();
                 ECS::CardMotion::Fly(registry, entity, 0.35f, 30.0f);
                 Game::Sounds(*context).Play("card_slide", 0.4f);
             } else {
@@ -463,7 +463,7 @@ namespace ChronoSort::Scene {
                 m_selected  = index;
                 hand.lifted = index;
                 hand.hovered = -1;
-                ECS::PulseGlow(registry, hand.cards[static_cast<size_t>(index)], kSelectGlow, 1.0f, 5.0f);
+                ECS::PulseGlow(registry, m_board->HandCard(0, static_cast<size_t>(index)), kSelectGlow, 1.0f, 5.0f);
                 Game::Sounds(*context).Play("card_flip", 0.4f);
             }
         }
@@ -487,12 +487,13 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void GameScene::CancelSelection() {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Board::HandView&        hand     = m_board->Hand(0);
-        if(m_selected >= 0 && static_cast<size_t>(m_selected) < hand.cards.size()) {
-            ECS::StopGlow(registry, hand.cards[static_cast<size_t>(m_selected)]);
+        Board::HandState&       hand     = m_board->Hand(0);
+        const size_t            count    = m_board->HandSize(0);
+        if(m_selected >= 0 && static_cast<size_t>(m_selected) < count) {
+            ECS::StopGlow(registry, m_board->HandCard(0, static_cast<size_t>(m_selected)));
         }
-        if(m_grabbed >= 0 && static_cast<size_t>(m_grabbed) < hand.cards.size()) {
-            ECS::CardMotion::SetSharpness(registry, hand.cards[static_cast<size_t>(m_grabbed)], 14.0f, 10.0f);
+        if(m_grabbed >= 0 && static_cast<size_t>(m_grabbed) < count) {
+            ECS::CardMotion::SetSharpness(registry, m_board->HandCard(0, static_cast<size_t>(m_grabbed)), 14.0f, 10.0f);
         }
         m_selected  = -1;
         m_grabbed   = -1;
@@ -510,7 +511,7 @@ namespace ChronoSort::Scene {
     void GameScene::RunCpuTurn() {
         const size_t         player = m_match.CurrentPlayerIndex();
         const Rules::CpuMove move   = Rules::ChooseCpuMove(m_match.Players()[player], m_match.GetTimeline(), m_rng);
-        Board::HandView&     hand   = m_board->Hand(player);
+        Board::HandState&    hand   = m_board->Hand(player);
         auto*                context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
 
         // 自信が無いほど長く迷う
@@ -545,17 +546,16 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void GameScene::CommitPlay(size_t player, size_t handIndex, size_t slot) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Board::HandView&        hand     = m_board->Hand(player);
-        if(handIndex >= hand.cards.size()) {
+        Board::HandState&       hand     = m_board->Hand(player);
+        if(handIndex >= m_board->HandSize(player)) {
             return;
         }
 
-        const Tsukino::ECS::Entity entity = hand.cards[handIndex];
-        const auto                 result = m_match.Play(handIndex, slot);
+        const auto result = m_match.Play(handIndex, slot);
         if(!result) {
             return;
         }
-        hand.cards.erase(hand.cards.begin() + static_cast<std::ptrdiff_t>(handIndex));
+        const Tsukino::ECS::Entity entity = m_board->TakeFromHand(player, handIndex);
         hand.hovered = -1;
         hand.lifted  = -1;
 

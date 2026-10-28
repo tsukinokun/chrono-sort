@@ -1,11 +1,15 @@
 //----------------------------------------------------------------------------
 //! @file   BoardView.hpp
-//! @brief  卓の上のカードの並べ方
-//! @detail 場の列・各プレイヤーの手札・山札・捨て札のエンティティを持ち、
-//!         毎フレーム「どこにあるべきか」を CardMotion の目標として書き込みます。
-//!         ルール上の正否はここでは扱わず、Rules::Match の結果に合わせて並べ替えるだけです。
+//! @brief  卓の上のカードの置き場所を変える窓口と、並びへの問い合わせ
+//! @detail カードがどこに属しているかは CardPlacementComponent、卓全体の状態は BoardState
+//!         （レジストリのコンテキスト）が持ち、毎フレームの並べ直しは BoardLayoutSystem が行います。
+//!         ここは「列に入れる」「手札から出す」などの置き場所の変更（番号の詰め直しを含む）と、
+//!         入力や演出が使う問い合わせ（スロットの位置・拾い判定）をまとめた窓口です。状態は持ちません。
+//!         ルール上の正否はここでは扱わず、Rules::Match の結果に合わせて置き場所を変えるだけです。
 //----------------------------------------------------------------------------
 #pragma once
+#include <ChronoSort/Board/BoardLayout.hpp>
+#include <ChronoSort/Board/BoardState.hpp>
 #include <ChronoSort/Board/CardFactory.hpp>
 #include <ChronoSort/Rules/CardData.hpp>
 
@@ -20,31 +24,7 @@
 
 namespace ChronoSort::Board {
 
-    constexpr float kTableSurfaceY = 0.31f;     // 卓に寝かせたカードの高さ（板の厚みの半分 + 僅か）
-    constexpr float kRowZ          = 70.0f;     // 場の列の奥行き
-    constexpr float kDragHeight    = 45.0f;     // ドラッグ中のカードの高さ
-    // 場の列のカードを、手前の辺を卓に付けたままカメラへ起こす角度（約26°）。
-    // 寝かせたままだと約47°の見下ろしで縦が 0.73 倍に潰れ、題名と年号が読みにくい。
-    // 真正面（約0.75rad）まで起こすと卓に置いた感じが消えるので、その手前で止める
-    constexpr float kRowTilt       = 0.45f;
-
-    //! 手札の見せ方です。
-    enum class HandStyle {
-        Fan,       // 手前の扇（人間）
-        Seat,      // 卓の奥の席に並べる（CPU）
-    };
-
-    //! 1人分の手札の並び（カードと、そのうち特別扱いしているもの）です。
-    struct HandView {
-        std::vector<Tsukino::ECS::Entity> cards;                          // 手札（Rules::Player::hand と同じ順）
-        HandStyle                         style      = HandStyle::Fan;    // 並べ方
-        hlslpp::float3                    seat       = hlslpp::float3(0.0f, 0.0f, 0.0f);    // 席の中心（Seat のとき）
-        int                               hovered    = -1;    // カーソルが重なっている手札
-        int                               lifted     = -1;    // 持ち上げている手札（選択中・CPU の思考中）
-        hlslpp::float2                    hoverTilt  = hlslpp::float2(0.0f, 0.0f);    // カーソルの位置へ傾ける量
-    };
-
-    //! 卓の上のカードの並べ方です。
+    //! 卓の上のカードの置き場所を変える窓口です。
     class BoardView {
     public:
 
@@ -52,39 +32,38 @@ namespace ChronoSort::Board {
         //! @param  [in] factory カードの生成器。
         explicit BoardView(CardFactory& factory);
 
-        //! 卓・山札・挿入位置の目印を作ります。
+        //! 卓・挿入位置の目印を作り、卓の状態（BoardState）をレジストリに置きます。
         //! @param  [in] playerCount 参加人数（0 番が人間の手前、残りが奥の席）。
         void Build(size_t playerCount);
 
-        //! 山札の位置にカードを生成します（配る・引くときの出発点）。
+        //! 山札の位置にカードを生成します（配る・引くときの出発点。まだどこにも並べない）。
         //! @param  [in] card カードのデータ。
         //! @return 作成したエンティティ。
         Tsukino::ECS::Entity SpawnAtDeck(const Rules::CardData& card);
 
-        //! 毎フレームの並べ直しを行います。
-        //! @param  [in] deltaTime 経過時間（秒）。
-        void UpdateLayout(float deltaTime);
+        //! 今の置き場所どおりの目標を、すぐに書き込みます（置き場所を変えた直後に姿勢を求めたいとき）。
+        void ApplyLayoutNow();
 
         //! 場の列のスロットの中心（卓の上）を返します。今空けている隙間を考慮します。
         //! @param  [in] slot スロット番号。
         //! @return ワールド座標。
-        hlslpp::float3 SlotPosition(size_t slot) const;
+        hlslpp::float3 SlotPosition(size_t slot);
 
         //! 場の列のスロットに置いたカードの姿勢（カメラへ起こした向き）を返します。置く演出の着地先に使います。
         //! @param  [in]  slot     スロット番号。
         //! @param  [out] position 位置。
         //! @param  [out] rotation 向き。
         //! @param  [out] scale    拡大率。
-        void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) const;
+        void SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale);
 
         //! 場の列のスロットに置くカードの拡大率を返します（注目点に近いほど大きい）。
         //! @param  [in] slot スロット番号。
         //! @return 拡大率。
-        float SlotScale(size_t slot) const;
+        float SlotScale(size_t slot);
 
         //! 場の列の注目点（カーソルや持っているカードの位置）を設定します。周りのカードを読める大きさに広げます。
         //! @param  [in] worldX 卓の上の X 座標。std::nullopt なら隙間を注目点にし、隙間も無ければ最後の注目点のままにする。
-        void SetFocusX(std::optional<float> worldX) { m_focusX = worldX; }
+        void SetFocusX(std::optional<float> worldX) { State().focusX = worldX; }
 
         //! 場の列を横に流します（列が画面に収まらないときだけ動く）。
         //! @param  [in] amount 流す量（正で右側の続きを見る）。
@@ -97,23 +76,23 @@ namespace ChronoSort::Board {
         //! ワールドの X 座標から、最も近いスロットを返します。
         //! @param  [in] worldX ワールドの X 座標。
         //! @return スロット番号。
-        size_t SlotFromWorldX(float worldX) const;
+        size_t SlotFromWorldX(float worldX);
 
         //! レイが当たる手札のカードを探します（手前のカードを優先）。
         //! @param  [in]  player 手札の持ち主。
         //! @param  [in]  ray    マウスのレイ。
         //! @param  [out] uv     当たった位置のカード上の座標（0〜1）。
         //! @return 手札の番号。当たらなければ -1。
-        int PickHandCard(size_t player, const Tsukino::BuiltIn::ECS::CameraUtility::Ray& ray, hlslpp::float2& uv) const;
+        int PickHandCard(size_t player, const Tsukino::BuiltIn::ECS::CameraUtility::Ray& ray, hlslpp::float2& uv);
 
         //! レイが当たる場のカードを探します。
         //! @param  [in] ray マウスのレイ。
         //! @return 場の何枚目か。当たらなければ -1。
-        int PickRowCard(const Tsukino::BuiltIn::ECS::CameraUtility::Ray& ray) const;
+        int PickRowCard(const Tsukino::BuiltIn::ECS::CameraUtility::Ray& ray);
 
         //! 場の列に隙間を空けます（挿入位置の予告・公開中のカードの置き場）。
         //! @param  [in] slot 隙間を空けるスロット。std::nullopt で閉じる。
-        void SetGap(std::optional<size_t> slot) { m_gap = slot; }
+        void SetGap(std::optional<size_t> slot) { State().gap = slot; }
 
         //! 隙間に置く目印の表示を切り替えます。
         //! @param  [in] visible 表示するなら true。
@@ -125,6 +104,17 @@ namespace ChronoSort::Board {
         //! @param  [in] entity カード。
         void InsertIntoRow(size_t slot, Tsukino::ECS::Entity entity);
 
+        //! カードを手札の最後に加えます。
+        //! @param  [in] player 手札の持ち主。
+        //! @param  [in] entity カード。
+        void AddToHand(size_t player, Tsukino::ECS::Entity entity);
+
+        //! 手札からカードを取り出します（どこにも並べない状態にし、後ろのカードを詰める）。
+        //! @param  [in] player 手札の持ち主。
+        //! @param  [in] index  手札の番号。
+        //! @return 取り出したカード。
+        Tsukino::ECS::Entity TakeFromHand(size_t player, size_t index);
+
         //! カードを捨て札の山に送ります（目標を捨て札の位置にして放物線で飛ばす）。
         //! @param  [in] entity カード。
         void SendToDiscard(Tsukino::ECS::Entity entity);
@@ -133,14 +123,25 @@ namespace ChronoSort::Board {
         //! @param  [in] remaining 残り枚数。
         void SetDeckCount(size_t remaining);
 
-        //! 手札の並びを返します。
+        //! 手札の見せ方（ホバー・持ち上げなど）を返します。
         //! @param  [in] player プレイヤー番号。
-        //! @return 手札の並び。
-        HandView& Hand(size_t player) { return m_hands[player]; }
+        //! @return 手札の見せ方。
+        HandState& Hand(size_t player) { return State().hands[player]; }
+
+        //! 手札の枚数を返します。
+        //! @param  [in] player プレイヤー番号。
+        //! @return 枚数。
+        size_t HandSize(size_t player);
+
+        //! 手札の i 枚目のカードを返します。
+        //! @param  [in] player プレイヤー番号。
+        //! @param  [in] index  手札の番号。
+        //! @return カード。
+        Tsukino::ECS::Entity HandCard(size_t player, size_t index);
 
         //! 場の列のカードを返します。
         //! @return 場の列（年代順）。
-        const std::vector<Tsukino::ECS::Entity>& Row() const { return m_row; }
+        std::vector<Tsukino::ECS::Entity> Row();
 
         //! 手札のカードの、並びの中での姿勢を計算します（持ち上げ・ホバーを含む）。
         //! @param  [in]  player   プレイヤー番号。
@@ -148,82 +149,32 @@ namespace ChronoSort::Board {
         //! @param  [out] position 位置。
         //! @param  [out] rotation 向き。
         //! @param  [out] scale    拡大率。
-        void HandPose(size_t player, size_t index, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) const;
+        void HandPose(size_t player, size_t index, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale);
 
         //! 山札の一番上の位置を返します。
         //! @return ワールド座標。
-        hlslpp::float3 DeckTop() const;
+        hlslpp::float3 DeckTop();
 
         //! 場の列でカーソルが重なっているカードを設定します（持ち上げて年号を読みやすくする）。
         //! @param  [in] index 場の何枚目か。-1 で解除。
-        void SetRowHovered(int index) { m_rowHovered = index; }
+        void SetRowHovered(int index) { State().rowHovered = index; }
 
         //! 並べ直しの対象から外すカード（ドラッグ中・公開中など）を設定します。
         //! @param  [in] entity 外すカード。entt::null で解除。
-        void SetHeld(Tsukino::ECS::Entity entity) { m_held = entity; }
+        void SetHeld(Tsukino::ECS::Entity entity) { State().held = entity; }
 
     private:
 
-        //! 場の列の並び（流す前の座標）です。注目点の周りは広く、遠いほど狭く詰めます。
-        struct RowLayout {
-            std::vector<float> width;     // 各カードが占める幅
-            std::vector<float> weight;    // 注目点への近さ（0〜1。拡大の強さを含む）
-            float              focus    = 0.0f;    // 注目点（スロット k の境目が k）
-            float              strength = 0.0f;    // 拡大の強さ（0〜1）
-            float              farScale = 1.0f;    // 注目点から遠いカードの拡大率
-            float              total    = 0.0f;    // 隙間を含む列の全体の幅
-        };
+        //! 卓の状態を返します。
+        //! @return 卓の状態。
+        BoardState& State();
 
-        //! 注目点と拡大の強さから、場の列の並びを求めます。
-        //! @param  [in]  focus    注目点。
-        //! @param  [in]  strength 拡大の強さ。
-        //! @param  [out] layout   並び。
-        void BuildLayout(float focus, float strength, RowLayout& layout) const;
+        //! 場の列の枚数を返します。
+        //! @return 枚数。
+        size_t RowCount();
 
-        //! 今の並びを返します（枚数が変わってまだ並べ直していなければ、その場で求め直す）。
-        //! @return 並び。
-        const RowLayout& Layout() const;
-
-        //! 並びの中の位置 t（スロット k の境目が k。小数で途中も表す）の、流す前の X 座標を返します。
-        //! @param  [in] layout 並び。
-        //! @param  [in] t      位置。
-        //! @return X 座標。
-        float BoundaryX(const RowLayout& layout, float t) const;
-
-        //! 流す前の X 座標が、注目点の真下に来るような注目点を求めます。
-        //! @param  [in] x 流す前の X 座標。
-        //! @return 注目点。
-        float FocusUnderX(float x) const;
-
-        //! 場の列を流せる量の上限を返します（列が収まっていれば 0）。
-        //! @return 上限。
-        float ScrollLimit() const;
-
-        //! 流す前の X 座標を、流して端で畳んだあとの X 座標に変えます。
-        //! @param  [in]  x    流す前の X 座標。
-        //! @param  [out] fold 畳まれた深さ（0：畳まれていない 〜 1：いちばん奥）。
-        //! @return 画面上の X 座標。
-        float FoldX(float x, float& fold) const;
-
-        CardFactory&                      m_factory;                    // カードの生成器
-        std::vector<Tsukino::ECS::Entity> m_row;                        // 場の列（年代順）
-        std::vector<HandView>             m_hands;                      // 各プレイヤーの手札
-        std::vector<Tsukino::ECS::Entity> m_discards;                   // 捨て札の山
-        std::vector<hlslpp::float4>       m_discardJitter;              // 捨て札のずれ（x, z, 回転, 高さ）
-        std::vector<Tsukino::ECS::Entity> m_deckCovers;                 // 山札の厚みを見せる裏向きのカード
-        Tsukino::ECS::Entity              m_marker = entt::null;        // 挿入位置の目印
-        Tsukino::ECS::Entity              m_held   = entt::null;        // 並べ直しから外すカード
-        std::optional<size_t>             m_gap;                        // 隙間を空けているスロット
-        float                             m_gapWidth = 0.0f;            // 隙間の今の広さ（なめらかに開閉する）
-        std::optional<float>              m_focusX;                     // 外から渡された注目点（卓の上の X 座標）
-        float                             m_focus         = 0.0f;       // 今の注目点（なめらかに追う）
-        float                             m_focusStrength = 0.0f;       // 今の拡大の強さ（なめらかに追う）
-        mutable RowLayout                 m_layout;                     // 今の並び（UpdateLayout で毎フレーム求め直す）
-        float                             m_scroll       = 0.0f;        // 場の列を流している今の量
-        float                             m_scrollTarget = 0.0f;        // 場の列を流す量の目標
-        float                             m_time     = 0.0f;            // 経過時間（揺れの演出用）
-        int                               m_rowHovered = -1;            // 場の列でカーソルが重なっているカード
-        std::mt19937                      m_rng;                        // 捨て札のずれ用の乱数
+        CardFactory& m_factory;    // カードの生成器
+        std::mt19937 m_rng;        // 捨て札・山札のずれ用の乱数
     };
 
 }    // namespace ChronoSort::Board
