@@ -6,8 +6,7 @@
 
 #include <ChronoSort/ECS/CardMotion.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
-#include <ChronoSort/ECS/System/CardMotionSystem.hpp>
-#include <ChronoSort/ECS/System/ParticleSystem.hpp>
+#include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/Options.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
@@ -22,17 +21,6 @@
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/Core/Input/InputSystem.hpp>
 #include <Tsukino/Core/Window.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/BloomSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/CameraSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/FontRendererSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/InteractionSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/LightSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/ModelSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/SkyAtmosphereSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/SpriteRendererSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/TransformSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/UITweenSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/WorldAnchorSystem.hpp>
 #include <Tsukino/EngineIntegration/EngineAPI.hpp>
 #include <Tsukino/EngineIntegration/EngineContext.hpp>
 
@@ -224,23 +212,7 @@ namespace ChronoSort::Scene {
     //! 描画と演出に使うシステムを登録します。
     //----------------------------------------------------------------------------
     void GameScene::RegisterSystems() {
-        // 画面 UI のマウス判定とトゥイーンは Transform の前に行う
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::InteractionSystem>(), -3);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::UITweenSystem>(), -2);
-        // カードの動きと粒子も、Transform の計算より前に確定させる
-        m_scene.AddSystem(std::make_shared<ECS::CardMotionSystem>(), -1);
-        m_scene.AddSystem(std::make_shared<ECS::ParticleSystem>(), -1);
-        m_scene.AddSystem(std::make_shared<ECS::CardGlowSystem>(), -1);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::TransformSystem>(), 0);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::CameraSystem>(), 5);
-        // カードに貼り付ける画面 UI（判定の印など）はカメラ行列の確定後
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::WorldAnchorSystem>(), 6);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::FontRendererSystem>(), 9);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::SpriteRenderSystem>(), 10);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::ModelSystem>(), 10);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::LightSystem>(), 13);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::SkyAtmosphereSystem>(), 14);
-        m_scene.AddSystem(std::make_shared<Tsukino::BuiltIn::ECS::BloomSystem>(), 15);
+        ECS::AddTableSystems(m_scene);
     }
 
     //----------------------------------------------------------------------------

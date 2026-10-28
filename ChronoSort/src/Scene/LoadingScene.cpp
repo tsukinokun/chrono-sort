@@ -4,11 +4,11 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/LoadingScene.hpp>
 
+#include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Game/AssetManifest.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 
-#include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIRectComponent.hpp>
@@ -16,11 +16,6 @@
 #include <Tsukino/Engine/Asset/AssetManager.hpp>
 #include <Tsukino/Engine/Asset/Material/MaterialAsset.hpp>
 #include <Tsukino/Engine/Asset/Texture/TextureAsset.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/CameraSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/FontRendererSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/SpriteRendererSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/TransformSystem.hpp>
-#include <Tsukino/EngineIntegration/ECS/System/UITweenSystem.hpp>
 #include <Tsukino/EngineIntegration/EngineAPI.hpp>
 #include <Tsukino/EngineIntegration/EngineContext.hpp>
 #include <Tsukino/Renderer/RenderResources.hpp>
@@ -58,11 +53,7 @@ namespace ChronoSort::Scene {
         auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
         context->renderer->SetClearColor(0.12f, 0.08f, 0.06f, 1.0f);
 
-        m_scene.AddSystem(std::make_shared<BuiltIn::UITweenSystem>(), -2);
-        m_scene.AddSystem(std::make_shared<BuiltIn::TransformSystem>(), 0);
-        m_scene.AddSystem(std::make_shared<BuiltIn::CameraSystem>(), 5);
-        m_scene.AddSystem(std::make_shared<BuiltIn::FontRendererSystem>(), 9);
-        m_scene.AddSystem(std::make_shared<BuiltIn::SpriteRenderSystem>(), 10);
+        ECS::AddUIOnlySystems(m_scene);
         // 画面 UI のカメラだけのステージ
         Game::Prefabs::SpawnGroup(registry, Game::Prefabs::kUIOnlyStage);
 
