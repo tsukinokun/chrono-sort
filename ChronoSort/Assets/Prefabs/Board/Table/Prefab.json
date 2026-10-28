@@ -1,0 +1,12 @@
+{
+    "Components": [
+        {
+            "key": "ModelComponent",
+            "value": "ChronoSort/Assets/Prefabs/Board/Table/Model.json"
+        },
+        {
+            "key": "TransformComponent",
+            "value": "null"
+        }
+    ]
+}

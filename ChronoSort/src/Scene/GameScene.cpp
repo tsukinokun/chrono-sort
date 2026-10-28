@@ -10,6 +10,7 @@
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/Options.hpp>
+#include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
 #include <ChronoSort/Game/Sounds.hpp>
@@ -17,11 +18,7 @@
 #include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
-#include <Tsukino/BuiltIn/ECS/Component/BloomComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/DirectionalLightComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/PointLightComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/SkyAtmosphereComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/Core/Input/InputSystem.hpp>
 #include <Tsukino/Core/Window.hpp>
@@ -50,8 +47,6 @@ namespace ChronoSort::Scene {
         namespace CameraUtility = Tsukino::BuiltIn::ECS::CameraUtility;
         using Tsukino::Input::KeyCode;
 
-        const hlslpp::float3 kCameraPosition(0.0f, 500.0f, -520.0f);
-        const hlslpp::float3 kCameraLookAt(0.0f, 0.0f, -60.0f);
 
         constexpr float kClickThreshold = 8.0f;      // これ以上動いたらクリックではなくドラッグ
         constexpr float kRowBandNear    = 130.0f;    // 場の列の手前、この距離までなら「列に置こうとしている」
@@ -252,59 +247,14 @@ namespace ChronoSort::Scene {
     //! カメラ・ライト・後処理を配置します。
     //----------------------------------------------------------------------------
     void GameScene::CreateStage() {
+        // カメラ（卓を手前上から見下ろす）・画面 UI のカメラ・主光源・ランプ・空（環境光の元）・Bloom は Prefab にある
+        const Game::Prefabs::StageInstance stage = Game::Prefabs::SpawnGroup(m_scene.GetRegistry(), Game::Prefabs::kGameStage);
+        m_camera                                 = stage.at("Camera");
+
+        // 揺れと漂いは Prefab の姿勢を基準に足す
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-
-        // 卓を手前上から見下ろす透視カメラ
-        m_camera = m_scene.CreateEntity();
-        registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_camera).position = kCameraPosition;
-        {
-            auto& cam        = registry.AddComponent<Tsukino::BuiltIn::ECS::CameraComponent>(m_camera);
-            cam.fov          = 40.0f;
-            cam.nearZ        = 10.0f;
-            cam.farZ         = 5000.0f;
-            cam.useLookAt    = true;
-            cam.lookAtTarget = kCameraLookAt;
-            cam.isPrimary    = true;
-        }
-
-        // 画面 UI 用のカメラ。基準解像度を決めておくと、ウィンドウの大きさを変えても UI が崩れない
-        {
-            Tsukino::ECS::Entity ui = m_scene.CreateEntity();
-            registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(ui).position = hlslpp::float3(0.0f, 0.0f, -1.0f);
-            auto& cam               = registry.AddComponent<Tsukino::BuiltIn::ECS::CameraComponent>(ui);
-            cam.projectionType      = Tsukino::BuiltIn::ECS::CameraComponent::ProjectionType::Orthographic;
-            cam.referenceResolution = hlslpp::float2(UI::kReferenceWidth, UI::kReferenceHeight);
-            cam.isPrimary           = false;
-        }
-
-        // 斜め上からの主光源。卓にカードの影を落とす
-        {
-            auto& sun      = registry.AddComponent<Tsukino::BuiltIn::ECS::DirectionalLightComponent>(m_scene.CreateEntity());
-            sun.direction  = hlslpp::normalize(hlslpp::float3(0.35f, -1.0f, 0.45f));
-            sun.color      = hlslpp::float3(1.0f, 0.93f, 0.82f);
-            sun.intensity  = 2.3f;
-            sun.castShadow = true;
-        }
-
-        // 卓の中央を温かく照らす補助光（ランプの明かり）
-        {
-            Tsukino::ECS::Entity lamp = m_scene.CreateEntity();
-            registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(lamp).position = hlslpp::float3(0.0f, 220.0f, 0.0f);
-            auto& point     = registry.AddComponent<Tsukino::BuiltIn::ECS::PointLightComponent>(lamp);
-            point.color     = hlslpp::float3(1.0f, 0.75f, 0.45f);
-            point.intensity = 8.0f;
-            point.range     = 700.0f;
-        }
-
-        // 環境光（IBL）の元。空そのものは卓に隠れて見えない
-        registry.AddComponent<Tsukino::BuiltIn::ECS::SkyAtmosphereComponent>(m_scene.CreateEntity());
-
-        // 正解の金色や火花を滲ませる
-        {
-            auto& bloom     = registry.AddComponent<Tsukino::BuiltIn::ECS::BloomComponent>(m_scene.CreateEntity());
-            bloom.threshold = 1.0f;
-            bloom.intensity = 0.5f;
-        }
+        m_cameraBasePosition = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_camera).position;
+        m_cameraBaseLookAt   = registry.GetComponent<Tsukino::BuiltIn::ECS::CameraComponent>(m_camera).lookAtTarget;
     }
 
     //----------------------------------------------------------------------------
@@ -839,9 +789,9 @@ namespace ChronoSort::Scene {
 
         auto& transform    = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_camera);
         auto& camera       = registry.GetComponent<Tsukino::BuiltIn::ECS::CameraComponent>(m_camera);
-        transform.position  = kCameraPosition + jolt + drift;
+        transform.position  = m_cameraBasePosition + jolt + drift;
         transform.dirty     = true;
-        camera.lookAtTarget = kCameraLookAt + jolt * 0.5f;
+        camera.lookAtTarget = m_cameraBaseLookAt + jolt * 0.5f;
         camera.dirty        = true;
     }
 

@@ -1,0 +1,12 @@
+{
+    "PointLightComponent": {
+        "color": {
+            "x": 1.0,
+            "y": 0.75,
+            "z": 0.45
+        },
+        "intensity": 8.0,
+        "range": 700.0,
+        "enabled": true
+    }
+}

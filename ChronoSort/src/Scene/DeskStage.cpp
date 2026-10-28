@@ -9,14 +9,11 @@
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
+#include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
 
-#include <Tsukino/BuiltIn/ECS/Component/BloomComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/DirectionalLightComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/PointLightComponent.hpp>
-#include <Tsukino/BuiltIn/ECS/Component/SkyAtmosphereComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/BloomSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/CameraSystem.hpp>
@@ -65,41 +62,8 @@ namespace ChronoSort::Scene {
         scene.AddSystem(std::make_shared<BuiltIn::SkyAtmosphereSystem>(), 14);
         scene.AddSystem(std::make_shared<BuiltIn::BloomSystem>(), 15);
 
-        m_camera = scene.CreateEntity();
-        registry.AddComponent<BuiltIn::TransformComponent>(m_camera);
-        {
-            auto& cam     = registry.AddComponent<BuiltIn::CameraComponent>(m_camera);
-            cam.fov       = 38.0f;
-            cam.nearZ     = 10.0f;
-            cam.farZ      = 5000.0f;
-            cam.useLookAt = true;
-            cam.isPrimary = true;
-        }
-        {
-            Tsukino::ECS::Entity ui = scene.CreateEntity();
-            registry.AddComponent<BuiltIn::TransformComponent>(ui).position = hlslpp::float3(0.0f, 0.0f, -1.0f);
-            auto& cam               = registry.AddComponent<BuiltIn::CameraComponent>(ui);
-            cam.projectionType      = BuiltIn::CameraComponent::ProjectionType::Orthographic;
-            cam.referenceResolution = hlslpp::float2(UI::kReferenceWidth, UI::kReferenceHeight);
-            cam.isPrimary           = false;
-        }
-        {
-            auto& sun      = registry.AddComponent<BuiltIn::DirectionalLightComponent>(scene.CreateEntity());
-            sun.direction  = hlslpp::normalize(hlslpp::float3(-0.4f, -1.0f, 0.35f));
-            sun.color      = hlslpp::float3(1.0f, 0.9f, 0.78f);
-            sun.intensity  = 2.0f;
-            sun.castShadow = true;
-        }
-        {
-            Tsukino::ECS::Entity lamp = scene.CreateEntity();
-            registry.AddComponent<BuiltIn::TransformComponent>(lamp).position = hlslpp::float3(-120.0f, 240.0f, 60.0f);
-            auto& point     = registry.AddComponent<BuiltIn::PointLightComponent>(lamp);
-            point.color     = hlslpp::float3(1.0f, 0.72f, 0.42f);
-            point.intensity = 9.0f;
-            point.range     = 800.0f;
-        }
-        registry.AddComponent<BuiltIn::SkyAtmosphereComponent>(scene.CreateEntity());
-        registry.AddComponent<BuiltIn::BloomComponent>(scene.CreateEntity()).intensity = 0.45f;
+        // カメラ・画面 UI のカメラ・光・空・Bloom は Prefab にある（カメラの動きだけは Update で書く）
+        m_camera = Game::Prefabs::SpawnGroup(registry, Game::Prefabs::kDeskStage).at("Camera");
 
         // 卓と、研究の途中で散らかしたようなカード
         m_factory = std::make_unique<Board::CardFactory>(scene, *context->assetManager);

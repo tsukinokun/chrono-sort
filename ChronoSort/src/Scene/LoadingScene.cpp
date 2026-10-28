@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Game/AssetManifest.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
+#include <ChronoSort/Game/Prefabs.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -62,14 +63,8 @@ namespace ChronoSort::Scene {
         m_scene.AddSystem(std::make_shared<BuiltIn::CameraSystem>(), 5);
         m_scene.AddSystem(std::make_shared<BuiltIn::FontRendererSystem>(), 9);
         m_scene.AddSystem(std::make_shared<BuiltIn::SpriteRenderSystem>(), 10);
-        {
-            Tsukino::ECS::Entity ui = m_scene.CreateEntity();
-            registry.AddComponent<BuiltIn::TransformComponent>(ui).position = hlslpp::float3(0.0f, 0.0f, -1.0f);
-            auto& cam               = registry.AddComponent<BuiltIn::CameraComponent>(ui);
-            cam.projectionType      = BuiltIn::CameraComponent::ProjectionType::Orthographic;
-            cam.referenceResolution = hlslpp::float2(UI::kReferenceWidth, UI::kReferenceHeight);
-            cam.isPrimary           = false;
-        }
+        // 画面 UI のカメラだけのステージ
+        Game::Prefabs::SpawnGroup(registry, Game::Prefabs::kUIOnlyStage);
 
         // この画面で使う素材（紙片と墨の線）だけは同期で読む。小さいので待ちはほぼ無い
         m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);

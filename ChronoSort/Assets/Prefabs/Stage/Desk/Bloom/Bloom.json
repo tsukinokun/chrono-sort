@@ -1,0 +1,14 @@
+{
+    "BloomComponent": {
+        "enabled": true,
+        "threshold": 1.0,
+        "softKnee": 0.5,
+        "intensity": 0.45,
+        "radius": 1.0,
+        "tint": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "ModelComponent": {
+        "modelHandle": "ChronoSort/Assets/Meshes/table.obj",
+        "visible": true,
+        "opacity": 1.0,
+        "doubleSided": false,
+        "materials": [
+            "",
+            "ChronoSort/Assets/Textures/Table/table.tmat"
+        ]
+    }
+}

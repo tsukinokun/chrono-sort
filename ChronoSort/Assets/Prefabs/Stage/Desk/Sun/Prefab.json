@@ -1,0 +1,8 @@
+{
+    "Components": [
+        {
+            "key": "DirectionalLightComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Desk/Sun/DirectionalLight.json"
+        }
+    ]
+}

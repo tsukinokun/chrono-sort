@@ -1,0 +1,12 @@
+{
+    "Components": [
+        {
+            "key": "PointLightComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Desk/Lamp/PointLight.json"
+        },
+        {
+            "key": "TransformComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Desk/Lamp/Transform.json"
+        }
+    ]
+}

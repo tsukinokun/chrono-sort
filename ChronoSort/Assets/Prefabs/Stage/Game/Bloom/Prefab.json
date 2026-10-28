@@ -1,0 +1,8 @@
+{
+    "Components": [
+        {
+            "key": "BloomComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Game/Bloom/Bloom.json"
+        }
+    ]
+}

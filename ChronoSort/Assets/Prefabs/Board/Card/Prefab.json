@@ -1,0 +1,16 @@
+{
+    "Components": [
+        {
+            "key": "CardMotionComponent",
+            "value": "ChronoSort/Assets/Prefabs/Board/Card/CardMotion.json"
+        },
+        {
+            "key": "ModelComponent",
+            "value": "ChronoSort/Assets/Prefabs/Board/Card/Model.json"
+        },
+        {
+            "key": "TransformComponent",
+            "value": "null"
+        }
+    ]
+}

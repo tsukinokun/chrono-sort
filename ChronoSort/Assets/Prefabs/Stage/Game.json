@@ -1,0 +1,28 @@
+{
+    "Entities": [
+        {
+            "key": "Bloom",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Game/Bloom/Prefab.json"
+        },
+        {
+            "key": "Camera",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Game/Camera/Prefab.json"
+        },
+        {
+            "key": "Lamp",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Game/Lamp/Prefab.json"
+        },
+        {
+            "key": "Sky",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Sky/Prefab.json"
+        },
+        {
+            "key": "Sun",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Game/Sun/Prefab.json"
+        },
+        {
+            "key": "UICamera",
+            "value": "ChronoSort/Assets/Prefabs/Stage/UICamera/Prefab.json"
+        }
+    ]
+}

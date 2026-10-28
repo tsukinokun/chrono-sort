@@ -1,0 +1,12 @@
+{
+    "Components": [
+        {
+            "key": "CameraComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/Desk/Camera/Camera.json"
+        },
+        {
+            "key": "TransformComponent",
+            "value": "null"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "Components": [
+        {
+            "key": "CameraComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/UICamera/Camera.json"
+        },
+        {
+            "key": "TransformComponent",
+            "value": "ChronoSort/Assets/Prefabs/Stage/UICamera/Transform.json"
+        }
+    ]
+}

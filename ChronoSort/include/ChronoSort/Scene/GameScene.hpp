@@ -139,6 +139,8 @@ namespace ChronoSort::Scene {
 
         // カメラ
         Tsukino::ECS::Entity m_camera      = entt::null;
+        hlslpp::float3       m_cameraBasePosition = hlslpp::float3(0.0f, 0.0f, 0.0f);    // Prefab で決めたカメラの位置
+        hlslpp::float3       m_cameraBaseLookAt   = hlslpp::float3(0.0f, 0.0f, 0.0f);    // Prefab で決めた注視点
         float                m_shake       = 0.0f;    // 揺れの強さ
         float                m_time        = 0.0f;    // 経過時間
         bool                 m_wasTiebreak = false;   // 直前まで延長戦だったか

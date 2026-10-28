@@ -1,0 +1,16 @@
+{
+    "DirectionalLightComponent": {
+        "direction": {
+            "x": -0.353209,
+            "y": -0.883022,
+            "z": 0.309058
+        },
+        "color": {
+            "x": 1.0,
+            "y": 0.9,
+            "z": 0.78
+        },
+        "intensity": 2.0,
+        "castShadow": true
+    }
+}

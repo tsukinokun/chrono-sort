@@ -1,7 +1,8 @@
 //----------------------------------------------------------------------------
 //! @file   CardFactory.hpp
 //! @brief  卓とカードのエンティティ生成
-//! @detail カードは表裏で別マテリアルを持つ薄い板（card.obj）です。
+//! @detail 形は Prefab（ChronoSort/Assets/Prefabs/Board）から作り、ここではカードごとに違う所だけを決めます。
+//!         カードは表裏で別マテリアルを持つ薄い板（card.obj）です。
 //!         面の画像と .tmat は Tools/art/bake_cards.py で焼き込んだものを、カード ID から引きます。
 //----------------------------------------------------------------------------
 #pragma once
@@ -73,6 +74,13 @@ namespace ChronoSort::Board {
         Tsukino::ECS::Registry& Registry();
 
     private:
+
+        //! 生成したエンティティを、指定した姿勢に置きます。
+        //! @param  [in] entity   エンティティ。
+        //! @param  [in] position 位置。
+        //! @param  [in] rotation 向き。
+        void PlaceAt(Tsukino::ECS::Entity entity, const hlslpp::float3& position, const hlslpp::quaternion& rotation);
+
         Tsukino::ECS::Scene&          m_scene;           // 生成先のシーン
         Tsukino::Asset::AssetManager& m_assetManager;    // アセット管理
     };

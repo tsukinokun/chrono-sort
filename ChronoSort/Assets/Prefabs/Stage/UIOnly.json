@@ -1,0 +1,8 @@
+{
+    "Entities": [
+        {
+            "key": "UICamera",
+            "value": "ChronoSort/Assets/Prefabs/Stage/UICamera/Prefab.json"
+        }
+    ]
+}

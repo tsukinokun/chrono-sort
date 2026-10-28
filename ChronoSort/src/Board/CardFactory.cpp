@@ -5,6 +5,7 @@
 #include <ChronoSort/Board/CardFactory.hpp>
 
 #include <ChronoSort/ECS/Component/CardMotionComponent.hpp>
+#include <ChronoSort/Game/Prefabs.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/ModelComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -20,15 +21,11 @@ namespace ChronoSort::Board {
         constexpr float kPi = 3.14159265f;
 
         // assimp は .obj を読むとき、.mtl のマテリアルより前に DefaultMaterial を 0 番に入れる。
-        // そのため .mtl に書いた順（Front, Back / Table）は 1 番から始まる
+        // そのため .mtl に書いた順（Front, Back）は 1 番から始まる（Prefab の materials も同じ並び）
         constexpr size_t kFirstObjMaterialSlot = 1;
 
-        constexpr const char* kCardMeshPath   = "ChronoSort/Assets/Meshes/card.obj";
-        constexpr const char* kTableMeshPath  = "ChronoSort/Assets/Meshes/table.obj";
-        constexpr const char* kTableMaterial  = "ChronoSort/Assets/Textures/Table/table.tmat";
         constexpr const char* kCardTextureDir = "ChronoSort/Assets/Textures/Cards/";
 
-        constexpr const char* kCoverMaterial         = "ChronoSort/Assets/Textures/Board/cover.tmat";
         constexpr const char* kMarkerMaterial        = "ChronoSort/Assets/Textures/Board/marker.tmat";
         constexpr const char* kMarkerWarningMaterial = "ChronoSort/Assets/Textures/Board/marker_warning.tmat";
     }    // namespace
@@ -52,23 +49,18 @@ namespace ChronoSort::Board {
     //! カードを1枚作ります。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity CardFactory::CreateCard(const Rules::CardData& card, const hlslpp::float3& position, const hlslpp::quaternion& rotation) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Tsukino::ECS::Entity    entity   = m_scene.CreateEntity();
-
-        auto& transform    = registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(entity);
-        transform.position = position;
-        transform.rotation = rotation;
+        Tsukino::ECS::Registry&    registry = m_scene.GetRegistry();
+        const Tsukino::ECS::Entity entity   = Game::Prefabs::Spawn(registry, Game::Prefabs::kCard);
+        PlaceAt(entity, position, rotation);
 
         // カード固有の面を差し替える。AssetManager は同じパスを一度しか読まないので、毎回 Load してよい
         const std::string facePrefix = std::string(kCardTextureDir) + card.id;
-        auto&             model      = registry.AddComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
-        model.modelHandle            = m_assetManager.Load(Tsukino::Core::Path(kCardMeshPath));
-        model.materials.resize(kFirstObjMaterialSlot + 2);
+        auto&             model      = registry.GetComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
         model.materials[kFirstObjMaterialSlot]     = m_assetManager.Load(Tsukino::Core::Path(facePrefix + "_front.tmat"));
         model.materials[kFirstObjMaterialSlot + 1] = m_assetManager.Load(Tsukino::Core::Path(facePrefix + "_back.tmat"));
 
         // 生成した直後に Fly を呼べるよう、現在の姿勢もここで決めておく
-        auto& motion          = registry.AddComponent<ECS::CardMotionComponent>(entity);
+        auto& motion          = registry.GetComponent<ECS::CardMotionComponent>(entity);
         motion.targetPosition = position;
         motion.targetRotation = rotation;
         motion.position       = position;
@@ -81,19 +73,8 @@ namespace ChronoSort::Board {
     //! 山札の厚みを見せる、両面とも裏模様のカードを作ります。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity CardFactory::CreateCover(const hlslpp::float3& position, const hlslpp::quaternion& rotation) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Tsukino::ECS::Entity    entity   = m_scene.CreateEntity();
-
-        auto& transform    = registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(entity);
-        transform.position = position;
-        transform.rotation = rotation;
-
-        const Tsukino::Asset::AssetHandle cover = m_assetManager.Load(Tsukino::Core::Path(kCoverMaterial));
-        auto&                             model = registry.AddComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
-        model.modelHandle                       = m_assetManager.Load(Tsukino::Core::Path(kCardMeshPath));
-        model.materials.resize(kFirstObjMaterialSlot + 2);
-        model.materials[kFirstObjMaterialSlot]     = cover;
-        model.materials[kFirstObjMaterialSlot + 1] = cover;
+        const Tsukino::ECS::Entity entity = Game::Prefabs::Spawn(m_scene.GetRegistry(), Game::Prefabs::kCover);
+        PlaceAt(entity, position, rotation);
         return entity;
     }
 
@@ -101,19 +82,17 @@ namespace ChronoSort::Board {
     //! 場の列の挿入位置を示す、枠だけのカードを作ります。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity CardFactory::CreateMarker() {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Tsukino::ECS::Entity    entity   = m_scene.CreateEntity();
-        registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(entity);
+        return Game::Prefabs::Spawn(m_scene.GetRegistry(), Game::Prefabs::kMarker);
+    }
 
-        auto& model       = registry.AddComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
-        model.modelHandle = m_assetManager.Load(Tsukino::Core::Path(kCardMeshPath));
-        model.visible     = false;
-        model.materials.resize(kFirstObjMaterialSlot + 2);
-        SetMarkerWarning(entity, false);
-
-        auto& motion = registry.AddComponent<ECS::CardMotionComponent>(entity);
-        motion.positionSharpness = 18.0f;
-        return entity;
+    //----------------------------------------------------------------------------
+    //! 生成したエンティティを、指定した姿勢に置きます。
+    //----------------------------------------------------------------------------
+    void CardFactory::PlaceAt(Tsukino::ECS::Entity entity, const hlslpp::float3& position, const hlslpp::quaternion& rotation) {
+        auto& transform    = m_scene.GetRegistry().GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(entity);
+        transform.position = position;
+        transform.rotation = rotation;
+        transform.dirty    = true;
     }
 
     //----------------------------------------------------------------------------
@@ -144,16 +123,7 @@ namespace ChronoSort::Board {
     //! 卓を作ります。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity CardFactory::CreateTable() {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        Tsukino::ECS::Entity    entity   = m_scene.CreateEntity();
-
-        registry.AddComponent<Tsukino::BuiltIn::ECS::TransformComponent>(entity);
-
-        auto& model       = registry.AddComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
-        model.modelHandle = m_assetManager.Load(Tsukino::Core::Path(kTableMeshPath));
-        model.materials.resize(kFirstObjMaterialSlot + 1);
-        model.materials[kFirstObjMaterialSlot] = m_assetManager.Load(Tsukino::Core::Path(kTableMaterial));
-        return entity;
+        return Game::Prefabs::Spawn(m_scene.GetRegistry(), Game::Prefabs::kTable);
     }
 
 }    // namespace ChronoSort::Board

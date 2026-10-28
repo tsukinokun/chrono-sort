@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/Options.hpp>
+#include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Scene/LoadingScene.hpp>
@@ -40,6 +41,9 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
         Tsukino::Core::Log::Error("Failed to initialize EngineIntegration.");
         return EXIT_FAILURE;
     }
+
+    // ゲームのコンポーネントを Prefab から作れるようにする（最初のシーンより前に）
+    ChronoSort::Game::Prefabs::RegisterComponents(*engineIntegration.GetContext().prefabFactory);
 
     // 前回の設定（音量など）を、最初の音が鳴る前に反映する
     ChronoSort::Game::LoadOptions();

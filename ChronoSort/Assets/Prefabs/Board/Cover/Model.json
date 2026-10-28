@@ -1,0 +1,13 @@
+{
+    "ModelComponent": {
+        "modelHandle": "ChronoSort/Assets/Meshes/card.obj",
+        "visible": true,
+        "opacity": 1.0,
+        "doubleSided": false,
+        "materials": [
+            "",
+            "ChronoSort/Assets/Textures/Board/cover.tmat",
+            "ChronoSort/Assets/Textures/Board/cover.tmat"
+        ]
+    }
+}

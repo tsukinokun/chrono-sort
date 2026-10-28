@@ -1,0 +1,6 @@
+{
+    "CardMotionComponent": {
+        "positionSharpness": 18.0,
+        "rotationSharpness": 10.0
+    }
+}
