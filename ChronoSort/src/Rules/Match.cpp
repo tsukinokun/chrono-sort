@@ -120,7 +120,7 @@ namespace ChronoSort::Rules {
                 --m_lives;
                 result.lifeLost = true;
             } else {
-                // Timeline のルール：間違えたら1枚引く
+                // 対戦のルール：間違えたら1枚引く
                 result.drawnCard = DrawCard();
                 if(result.drawnCard) {
                     player.hand.push_back(*result.drawnCard);

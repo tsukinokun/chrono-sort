@@ -7,6 +7,7 @@
 //----------------------------------------------------------------------------
 #pragma once
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
+#include <Tsukino/Core/Math/Color.hpp>
 #include <Tsukino/Engine/Asset/AssetHandle.hpp>
 
 #include <hlsl++.h>
@@ -27,10 +28,11 @@ namespace ChronoSort::UI {
     constexpr float kReferenceWidth  = 1600.0f;    // UI の基準解像度（幅）
     constexpr float kReferenceHeight = 900.0f;     // UI の基準解像度（高さ）
 
-    const hlslpp::float4 kInkColor(0.18f, 0.12f, 0.08f, 1.0f);       // 墨の色
-    const hlslpp::float4 kFadedInkColor(0.42f, 0.30f, 0.20f, 1.0f);  // 薄墨（補足の文字）
-    const hlslpp::float4 kParchmentColor(0.97f, 0.91f, 0.78f, 1.0f); // 羊皮紙の色（暗い所の文字）
-    const hlslpp::float4 kSealRedColor(0.62f, 0.10f, 0.10f, 1.0f);   // 朱
+    // 文字の色。見た目の色（sRGB の 0〜255）で書き、エンジンが受け取る線形の色にして持つ
+    const hlslpp::float4 kInkColor       = Tsukino::Core::Math::Color::FromSrgb8(46, 31, 20);      // 墨の色
+    const hlslpp::float4 kFadedInkColor  = Tsukino::Core::Math::Color::FromSrgb8(107, 76, 51);     // 薄墨（補足の文字）
+    const hlslpp::float4 kParchmentColor = Tsukino::Core::Math::Color::FromSrgb8(247, 232, 199);   // 羊皮紙の色（暗い所の文字）
+    const hlslpp::float4 kSealRedColor   = Tsukino::Core::Math::Color::FromSrgb8(158, 26, 26);     // 朱
 
     //! 紙片1枚の作り方です。
     struct PaperSpec {
@@ -63,7 +65,7 @@ namespace ChronoSort::UI {
         //! @param  [in] text      文字列。
         //! @param  [in] position  位置（parent があればその中心からの相対）。
         //! @param  [in] scale     文字の大きさ（1 で 32px 相当）。
-        //! @param  [in] color     色。
+        //! @param  [in] color     色（linear。見た目の色は Color::FromSrgb8 などで変換して渡す）。
         //! @param  [in] sortOrder 描画順。
         //! @param  [in] parent    貼り付ける紙片。
         //! @param  [in] centered  中央揃えにするなら true（false は左揃え）。

@@ -109,7 +109,7 @@ namespace ChronoSort::Scene {
 
         m_lines.push_back({L"制作", true});
         m_lines.push_back({L"ゲームエンジン  TsukinoEngine"});
-        m_lines.push_back({L"ルール  ボードゲーム『Timeline』（Asmodee）に準拠"});
+        m_lines.push_back({L"ルール  出来事を年代順に並べる定番の遊び方をもとに構成"});
         m_lines.push_back({L"文字  Noto Sans CJK JP / Noto Serif JP（SIL Open Font License 1.1）"});
         m_lines.push_back({L"効果音  このゲームのためにコードで合成"});
         m_lines.push_back({L"年号は一般的な教科書の表記に従っています", false, true});

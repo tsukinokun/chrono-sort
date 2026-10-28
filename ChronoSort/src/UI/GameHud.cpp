@@ -24,6 +24,7 @@ namespace ChronoSort::UI {
 
     namespace {
         namespace BuiltIn = Tsukino::BuiltIn::ECS;
+        namespace Color   = Tsukino::Core::Math::Color;
         using Tsukino::Core::Math::Easing::EaseType;
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
@@ -571,15 +572,15 @@ namespace ChronoSort::UI {
 
         float line = 0.0f;
         if(score > 0) {
-            m_ui.Text(L"+" + Number(score), hlslpp::float2(70.0f, line), 1.1f, hlslpp::float4(1.0f, 0.86f, 0.45f, 1.0f), kLayerAnchored + 6, anchor);
+            m_ui.Text(L"+" + Number(score), hlslpp::float2(70.0f, line), 1.1f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.86f, 0.45f, 1.0f)), kLayerAnchored + 6, anchor);
             line += 36.0f;
         }
         if(closeCall) {
-            m_ui.Text(L"僅差！", hlslpp::float2(70.0f, line), 0.7f, hlslpp::float4(1.0f, 0.95f, 0.8f, 1.0f), kLayerAnchored + 6, anchor);
+            m_ui.Text(L"僅差！", hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.95f, 0.8f, 1.0f)), kLayerAnchored + 6, anchor);
             line += 28.0f;
         }
         if(streak >= 2) {
-            m_ui.Text(Number(streak) + L"連続", hlslpp::float2(70.0f, line), 0.7f, hlslpp::float4(1.0f, 0.7f, 0.5f, 1.0f), kLayerAnchored + 6, anchor);
+            m_ui.Text(Number(streak) + L"連続", hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.7f, 0.5f, 1.0f)), kLayerAnchored + 6, anchor);
         }
 
         BuiltIn::UITween rise;

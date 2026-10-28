@@ -67,7 +67,7 @@ namespace ChronoSort::Scene {
 
         // メニュー（あえて高さも傾きも揃えない）
         m_solo    = CreateMenuNote(L"ひとりで挑む", L"インク三つで、何枚並べられるか", hlslpp::float2(470.0f, 500.0f), -5.0f, 0.7f, "pin.png");
-        m_versus  = CreateMenuNote(L"CPUと対戦", L"Timeline のルールで、先に出し切った者の勝ち", hlslpp::float2(860.0f, 548.0f), 3.5f, 0.85f, "tape.png");
+        m_versus  = CreateMenuNote(L"CPUと対戦", L"先に手札を出し切った者の勝ち", hlslpp::float2(860.0f, 548.0f), 3.5f, 0.85f, "tape.png");
         m_credits = CreateMenuNote(L"出典・クレジット", L"", hlslpp::float2(1205.0f, 690.0f), -2.0f, 1.0f, "pin.png");
         m_quit    = CreateMenuNote(L"机を離れる", L"", hlslpp::float2(318.0f, 742.0f), 6.0f, 1.1f, "tape.png");
 
