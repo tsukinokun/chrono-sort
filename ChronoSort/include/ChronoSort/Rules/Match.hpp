@@ -49,6 +49,7 @@ namespace ChronoSort::Rules {
         MatchMode             mode = MatchMode::Solo;    // 対局の種類
         std::vector<CpuLevel> cpus;                      // 対戦の CPU（1〜3人）
         std::string           playerName = "あなた";     // 人間のプレイヤー名
+        CardRange             range = CardRange::All;    // 出題の範囲
     };
 
     //! カードを1枚置いた結果です。

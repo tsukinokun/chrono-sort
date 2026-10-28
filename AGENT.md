@@ -26,8 +26,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `Effects/` | `ParticleEmitter`（砂埃・金の火花・墨の飛沫などの撒き方） |
 | `Game/` | `Sequencer`（時間差の段取り）、`SoundBank` / `Sounds()`（効果音と BGM。ファイルが無ければ無音） |
 | `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙） |
-| `Scene/` | `TitleScene`（メニューと対戦の支度）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
-| `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存 |
+| `Scene/` | `TitleScene`（メニュー・出題の範囲のしおり・対戦の支度。範囲は `MatchConfig::range` で渡し、山札は `Rules::LoadCards(range)` で絞る）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
+| `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存。ソロの記録は出題の範囲（通史・日本史・世界史）ごと。範囲を分ける前の形（version 1）も読めて、通史の記録として引き継ぐ |
 
 ### 起動と読み込み
 
@@ -56,6 +56,7 @@ open.bat             premake を回して VS を開く
 bin\Debug\ChronoSort.exe          タイトルから
 bin\Debug\ChronoSort.exe solo     ソロの対局画面から直接（確認用）
 bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用）
+bin\Debug\ChronoSort.exe solo japan   出題を日本史に絞る（world で世界史。versus にも付けられる）
 ```
 
 - 作業ディレクトリはワークスペースルート（Debug）。ログは `Logs/ChronoSort.log`。

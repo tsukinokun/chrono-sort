@@ -90,7 +90,7 @@ namespace ChronoSort::Scene {
         RegisterSystems();
         CreateStage();
 
-        m_match.Start(m_config, Rules::LoadAllCards(), m_rng);
+        m_match.Start(m_config, Rules::LoadCards(m_config.range), m_rng);
 
         m_factory   = std::make_unique<Board::CardFactory>(m_scene, *context->assetManager);
         m_board     = std::make_unique<Board::BoardView>(*m_factory);
@@ -756,10 +756,12 @@ namespace ChronoSort::Scene {
         // 記録を更新して保存する
         Game::SaveData save = Game::LoadSaveData();
         if(m_config.mode == Rules::MatchMode::Solo) {
-            m_hud->SetNewRecord(m_match.Score() > save.bestScore && m_match.Score() > 0);
-            save.bestScore  = std::max(save.bestScore, m_match.Score());
-            save.bestPlaced = std::max(save.bestPlaced, m_match.Players()[0].correctCount);
-            save.bestStreak = std::max(save.bestStreak, m_match.BestStreak());
+            // 記録は出題の範囲ごとに比べる
+            Game::SoloRecord& record = save.Record(m_config.range);
+            m_hud->SetNewRecord(m_match.Score() > record.bestScore && m_match.Score() > 0);
+            record.bestScore  = std::max(record.bestScore, m_match.Score());
+            record.bestPlaced = std::max(record.bestPlaced, m_match.Players()[0].correctCount);
+            record.bestStreak = std::max(record.bestStreak, m_match.BestStreak());
         } else if(won) {
             ++save.versusWins;
         }

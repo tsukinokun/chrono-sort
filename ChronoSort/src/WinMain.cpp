@@ -43,13 +43,19 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
     // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。
     // 「ChronoSort.exe solo」「ChronoSort.exe versus」なら、読み終えたあとタイトルを飛ばして対局画面へ（確認用）
+    // 続けて japan / world を書くと、出題をその範囲に絞る（例：「ChronoSort.exe solo japan」）
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
     auto next = [argument]() -> std::unique_ptr<Tsukino::EngineIntegration::GameSceneBase> {
+        ChronoSort::Rules::MatchConfig config;
+        if(argument.find("japan") != std::string::npos) {
+            config.range = ChronoSort::Rules::CardRange::Japan;
+        } else if(argument.find("world") != std::string::npos) {
+            config.range = ChronoSort::Rules::CardRange::World;
+        }
         if(argument.find("solo") != std::string::npos) {
-            return std::make_unique<ChronoSort::Scene::GameScene>(ChronoSort::Rules::MatchConfig{});
+            return std::make_unique<ChronoSort::Scene::GameScene>(config);
         }
         if(argument.find("versus") != std::string::npos) {
-            ChronoSort::Rules::MatchConfig config;
             config.mode = ChronoSort::Rules::MatchMode::Versus;
             config.cpus = {ChronoSort::Rules::CpuLevel::Easy, ChronoSort::Rules::CpuLevel::Normal};
             return std::make_unique<ChronoSort::Scene::GameScene>(config);

@@ -23,6 +23,33 @@ namespace ChronoSort::Rules {
     //! @return 全カード。
     std::vector<CardData> LoadAllCards();
 
+    //! 出題の範囲です。
+    enum class CardRange {
+        All,      // 日本史と世界史（通史）
+        Japan,    // 日本史だけ
+        World,    // 世界史だけ
+    };
+
+    //! 範囲に入るカードだけを読み込みます。
+    //! @param  [in] range 出題の範囲。
+    //! @return 範囲に入るカード。
+    std::vector<CardData> LoadCards(CardRange range);
+
+    //! 範囲を保存用のキー（"all" / "japan" / "world"）に変えます。
+    //! @param  [in] range 出題の範囲。
+    //! @return キー。
+    const char* RangeKey(CardRange range);
+
+    //! 範囲の表示名（UTF-8。「日本史」「世界史」「通史」）を返します。
+    //! @param  [in] range 出題の範囲。
+    //! @return 表示名。
+    const char* RangeName(CardRange range);
+
+    //! 保存用のキーから範囲を返します。知らないキーは通史として扱います。
+    //! @param  [in] key キー。
+    //! @return 出題の範囲。
+    CardRange RangeFromKey(const std::string& key);
+
     //! 山札です。末尾を山の一番上として扱います。
     class Deck {
     public:

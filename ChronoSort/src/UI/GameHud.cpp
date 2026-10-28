@@ -129,6 +129,21 @@ namespace ChronoSort::UI {
             m_ui.SlideIn(m_seal, hlslpp::float2(-260.0f, -40.0f), 0.1f, 0.55f);
         }
 
+        // 出題の範囲を絞っているときだけ、その名前の札を添える（通史なら今までどおり何も出さない）
+        if(m_match.Config().range != Rules::CardRange::All) {
+            PaperSpec range;
+            range.texture      = "scrap_note.png";
+            range.center       = hlslpp::float2(338.0f, 50.0f);
+            range.size         = hlslpp::float2(112.0f, 44.0f);
+            range.angleDegrees = -4.0f;
+            range.swayDegrees  = kDeskSway;
+            range.bobPixels    = kDeskBob;
+            range.sortOrder    = kLayerDesk;
+            const auto tag     = m_ui.Paper(range);
+            m_ui.Text(Util::Utf8ToWide(Rules::RangeName(m_match.Config().range)), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
+            m_ui.SlideIn(tag, hlslpp::float2(-200.0f, -60.0f), 0.3f);
+        }
+
         // ライフのインク壺（ソロ）
         if(solo) {
             for(int i = 0; i < Rules::kSoloLifeCount; ++i) {

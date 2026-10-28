@@ -12,6 +12,7 @@
 
 #include <Tsukino/Core/Log.hpp>
 
+#include <algorithm>
 #include <optional>
 #include <random>
 #include <string>
@@ -257,6 +258,16 @@ namespace ChronoSort::Rules {
         Deck world;
         Check(japan.LoadFromFile("ChronoSort/Assets/Data/Decks/japan.json") && japan.Remaining() > 0, "load japan deck", passed);
         Check(world.LoadFromFile("ChronoSort/Assets/Data/Decks/world.json") && world.Remaining() > 0, "load world deck", passed);
+
+        // 出題の範囲で絞る
+        const auto japanCards = LoadCards(CardRange::Japan);
+        const auto worldCards = LoadCards(CardRange::World);
+        Check(!japanCards.empty() && std::all_of(japanCards.begin(), japanCards.end(), [](const CardData& c) { return c.region == "JP"; }),
+              "japan range has only JP cards", passed);
+        Check(!worldCards.empty() && std::all_of(worldCards.begin(), worldCards.end(), [](const CardData& c) { return c.region == "WORLD"; }),
+              "world range has only WORLD cards", passed);
+        Check(japanCards.size() + worldCards.size() == LoadCards(CardRange::All).size(), "ranges split all cards", passed);
+        Check(RangeFromKey(RangeKey(CardRange::World)) == CardRange::World && RangeFromKey("unknown") == CardRange::All, "range key round trip", passed);
 
         TestMatch(passed);
         TestCpu(passed);

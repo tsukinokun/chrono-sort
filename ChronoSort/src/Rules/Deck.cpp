@@ -26,6 +26,60 @@ namespace ChronoSort::Rules {
     }
 
     //----------------------------------------------------------------------------
+    //! 範囲に入るカードだけを読み込みます。
+    //----------------------------------------------------------------------------
+    std::vector<CardData> LoadCards(CardRange range) {
+        std::vector<CardData> cards = LoadAllCards();
+        if(range == CardRange::All) {
+            return cards;
+        }
+        const std::string region = (range == CardRange::Japan) ? "JP" : "WORLD";
+        std::erase_if(cards, [&](const CardData& card) { return card.region != region; });
+        return cards;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 範囲を保存用のキーに変えます。
+    //----------------------------------------------------------------------------
+    const char* RangeKey(CardRange range) {
+        switch(range) {
+        case CardRange::Japan:
+            return "japan";
+        case CardRange::World:
+            return "world";
+        default:
+            return "all";
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 範囲の表示名を返します。
+    //----------------------------------------------------------------------------
+    const char* RangeName(CardRange range) {
+        switch(range) {
+        case CardRange::Japan:
+            return "日本史";
+        case CardRange::World:
+            return "世界史";
+        default:
+            return "通史";
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 保存用のキーから範囲を返します。
+    //----------------------------------------------------------------------------
+    CardRange RangeFromKey(const std::string& key) {
+        if(key == "japan") {
+            return CardRange::Japan;
+        }
+        if(key == "world") {
+            return CardRange::World;
+        }
+        return CardRange::All;
+    }
+
+    //----------------------------------------------------------------------------
     //! デッキ JSON を読み込み、山札に追加します。
     //----------------------------------------------------------------------------
     bool Deck::LoadFromFile(const std::string& path) {
