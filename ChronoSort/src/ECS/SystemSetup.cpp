@@ -7,6 +7,7 @@
 #include <ChronoSort/ECS/System/BoardLayoutSystem.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
+#include <ChronoSort/ECS/System/CountUpTextSystem.hpp>
 #include <ChronoSort/ECS/System/CameraRigSystem.hpp>
 #include <ChronoSort/ECS/System/CpuTurnSystem.hpp>
 #include <ChronoSort/ECS/System/HumanInputSystem.hpp>
@@ -71,6 +72,8 @@ namespace ChronoSort::ECS {
         scene.AddSystem(std::make_shared<RevealSystem>(), Order::kMatch);
         scene.AddSystem(std::make_shared<CameraRigSystem>(), Order::kMatch);
         scene.AddSystem(std::make_shared<MatchFeedbackSystem>(scene.GetRegistry(), scene.GetEventBus()), Order::kMatch);
+        // 画面 UI の得点の数え上げ
+        scene.AddSystem(std::make_shared<CountUpTextSystem>(), Order::kUIAnimation);
     }
 
     //----------------------------------------------------------------------------

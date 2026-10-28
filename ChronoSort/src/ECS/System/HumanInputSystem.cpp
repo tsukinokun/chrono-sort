@@ -11,7 +11,7 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
-#include <ChronoSort/UI/GameHud.hpp>
+#include <ChronoSort/Match/MatchEvents.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Camera/CameraUtility.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
@@ -64,7 +64,7 @@ namespace ChronoSort::ECS {
         void UpdateHandInput(Tsukino::ECS::Registry& registry, Match::MatchSession& session, float deltaTime) {
             auto&                        context = Engine(registry);
             Tsukino::Input::InputSystem& keys    = *context.inputSystem;
-            Board::BoardView&            board   = *session.board;
+            Board::BoardView&            board   = Board::View(registry);
             Board::HandState&            hand    = board.Hand(0);
             Match::HumanInput&            input   = session.input;
             Game::SoundBank&             sounds  = Game::Services().Sounds();
@@ -242,7 +242,7 @@ namespace ChronoSort::ECS {
 
         // 人間の手番でなければ、カーソルではなく隙間（CPU の迷い・公開中）を注目点にする
         if(session.phase != Match::MatchPhase::HumanTurn) {
-            session.board->SetFocusX(std::nullopt);
+            Board::View(registry).SetFocusX(std::nullopt);
         }
 
         if(session.phase == Match::MatchPhase::HumanTurn && !session.paused) {
@@ -261,7 +261,7 @@ namespace ChronoSort::ECS {
 
         // ホイールで場の列を左右に見渡す（CPU の手番や公開の演出中も見られるよう、手番を問わず受け付ける）
         const Match::InputTuning& tuning = Game::Tuning().Input();
-        session.board->ScrollBy(-keys.GetWheelDelta() * tuning.wheelScroll);
+        Board::View(registry).ScrollBy(-keys.GetWheelDelta() * tuning.wheelScroll);
 
         // 人間の手番で操作していない時間（マウスを動かす・押す・ホイール・カードを持つ、で数え直す）
         Match::HumanInput& input  = session.input;
@@ -273,7 +273,13 @@ namespace ChronoSort::ECS {
                                       keys.IsKeyDown(KeyCode::RButton) || keys.GetWheelDelta() != 0.0f || input.grabbed >= 0 || input.selected >= 0;
         input.lastMouse = mouse;
         input.idleTime  = (session.phase == Match::MatchPhase::HumanTurn && !active && !session.paused) ? input.idleTime + deltaTime : 0.0f;
-        session.hud->SetIdleSeconds(input.idleTime);
+
+        // しばらく放置されたら次の行動を促し、操作が戻ったら止める（変わった瞬間だけ知らせる）
+        const bool nudge = input.idleTime >= tuning.idleNudgeSeconds;
+        if(nudge != input.nudging) {
+            input.nudging = nudge;
+            Match::Events(registry).Publish(Match::IdleNudgeEvent{nudge});
+        }
     }
 
 }    // namespace ChronoSort::ECS

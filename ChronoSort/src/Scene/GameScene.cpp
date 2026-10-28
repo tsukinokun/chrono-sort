@@ -4,7 +4,10 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/GameScene.hpp>
 
+#include <ChronoSort/Board/BoardView.hpp>
+#include <ChronoSort/Board/CardFactory.hpp>
 #include <ChronoSort/ECS/Component/CameraRigComponent.hpp>
+#include <ChronoSort/Effects/ParticleEmitter.hpp>
 #include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
@@ -44,28 +47,27 @@ namespace ChronoSort::Scene {
         auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
 
         // 対局の状態（規則の進行は Rules::Match。画面 UI がこれを読むので先に始める）
-        m_session         = std::make_unique<Match::MatchSession>();
-        m_session->config = m_config;
-        m_session->rng.seed(std::random_device{}());
-        m_session->match.Start(m_config, Rules::LoadCards(m_config.range), m_session->rng);
+        Match::MatchSession& session = registry.SetContext<Match::MatchSession>();
+        session.config               = m_config;
+        session.rng.seed(std::random_device{}());
+        session.match.Start(m_config, Rules::LoadCards(m_config.range), session.rng);
 
         ECS::AddTableSystems(m_scene);
         CreateStage();
 
-        m_factory   = std::make_unique<Board::CardFactory>(m_scene, *context->assetManager);
-        m_board     = std::make_unique<Board::BoardView>(*m_factory);
-        m_particles = std::make_unique<Effects::ParticleEmitter>(m_scene, *context->assetManager);
-        m_hud       = std::make_unique<UI::GameHud>(m_scene, *context->assetManager, m_session->match);
-        m_board->Build(m_session->match.Players().size());
-        m_hud->Build();
-        m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
+        // 卓と粒子の窓口はレジストリに置き、システムからは Board::View・Effects::Particles で受け取る
+        Board::CardFactory& factory = registry.SetContext<Board::CardFactory>(m_scene, *context->assetManager);
+        registry.SetContext<Board::BoardView>(factory).Build(session.match.Players().size());
+        registry.SetContext<Effects::ParticleEmitter>(m_scene, *context->assetManager);
 
-        // 対局を進めるシステムが使う窓口を渡し、システムを並べる
-        m_session->board     = m_board.get();
-        m_session->hud       = m_hud.get();
-        m_session->particles = m_particles.get();
-        m_session->events    = &m_scene.GetEventBus();
-        registry.SetContext<Match::MatchSession*>(m_session.get());
+        // 画面 UI は対局の出来事を受けて動く
+        m_desk    = std::make_unique<UI::DeskHud>(m_scene, *context->assetManager, session.match);
+        m_popups  = std::make_unique<UI::PlayPopups>(m_scene, *context->assetManager, session.match);
+        m_result  = std::make_unique<UI::ResultSheet>(m_scene, *context->assetManager, session.match);
+        m_pause   = std::make_unique<UI::PauseSheet>(m_scene, *context->assetManager);
+        m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
+        m_desk->Build();
+
         ECS::AddMatchSystems(m_scene);
 
         Game::Services().Sounds().PlayBgm("game");
@@ -80,9 +82,11 @@ namespace ChronoSort::Scene {
             return;
         }
 
+        Match::MatchSession& session = Match::Session(m_scene.GetRegistry());
+
         // 結果画面からの切り替え
-        if(m_session->phase == Match::MatchPhase::Finished) {
-            switch(m_hud->PollResultChoice()) {
+        if(session.phase == Match::MatchPhase::Finished) {
+            switch(m_result->Poll()) {
             case UI::ResultChoice::Retry:
                 api.ChangeScene(std::make_unique<GameScene>(m_config));
                 return;
@@ -95,14 +99,11 @@ namespace ChronoSort::Scene {
         }
 
         // 「演出を速く」は自分で操作していない時間（配る・公開・判定・CPU の手番）だけを早回しする
-        const bool  watching  = m_session->phase != Match::MatchPhase::HumanTurn && m_session->phase != Match::MatchPhase::Finished;
-        const float timeScale = (!m_session->paused && watching && Game::Services().Settings().fastEffects) ? kFastEffectsScale : 1.0f;
+        const bool  watching  = session.phase != Match::MatchPhase::HumanTurn && session.phase != Match::MatchPhase::Finished;
+        const float timeScale = (!session.paused && watching && Game::Services().Settings().fastEffects) ? kFastEffectsScale : 1.0f;
         deltaTime *= timeScale;
 
-        m_board->SetDeckCount(m_session->match.DeckRemaining());
-        m_hud->Update(deltaTime);
-
-        // 対局の進行・卓の並べ方・カードの動きは、すべてシステムが m_scene.Update の中で行う
+        // 対局の進行・卓の並べ方・カードの動き・画面 UI の書き換えは、すべてシステムと出来事が m_scene.Update の中で行う
         m_scene.Update(deltaTime);
     }
 
@@ -113,31 +114,32 @@ namespace ChronoSort::Scene {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
         auto*                   context  = registry.GetContext<Tsukino::EngineIntegration::EngineContext*>();
         Game::SoundBank&        sounds   = Game::Services().Sounds();
+        Match::MatchSession&    session  = Match::Session(registry);
 
         // 設定の紙（一時停止から開く）。閉じたフレームの Esc で一時停止まで閉じないよう、先に受ける
         const bool optionsClosed = m_options->Update(deltaTime);
 
         // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ）
         if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
-            const Match::HumanInput& input = m_session->input;
-            if(m_hud->IsPauseOpen()) {
+            const Match::HumanInput& input = session.input;
+            if(m_pause->IsOpen()) {
                 sounds.Play("ui.close");
-                m_hud->ClosePause();
+                m_pause->Close();
             } else if(input.selected >= 0 || input.grabbed >= 0) {
                 Match::CancelSelection(registry);
-            } else if(m_session->phase == Match::MatchPhase::Finished) {
+            } else if(session.phase == Match::MatchPhase::Finished) {
                 api.ChangeScene(std::make_unique<TitleScene>());
                 return true;
             } else {
                 sounds.Play("ui.open");
-                m_hud->OpenPause();
+                m_pause->Open();
             }
         }
         if(!m_options->IsOpen()) {
-            switch(m_hud->PollPauseChoice()) {
+            switch(m_pause->Poll()) {
             case UI::PauseChoice::Resume:
                 sounds.Play("ui.close");
-                m_hud->ClosePause();
+                m_pause->Close();
                 break;
             case UI::PauseChoice::Options:
                 sounds.Play("ui.open");
@@ -153,7 +155,7 @@ namespace ChronoSort::Scene {
         }
 
         // 一時停止中は、対局の進行のシステムが段取り・入力・演出を止める（カードの動きや紙の揺れは止めない）
-        m_session->paused = m_hud->IsPauseOpen() || m_options->IsOpen();
+        session.paused = m_pause->IsOpen() || m_options->IsOpen();
         return false;
     }
 
@@ -161,7 +163,8 @@ namespace ChronoSort::Scene {
     //! シーンの終了処理を行います。
     //----------------------------------------------------------------------------
     void GameScene::OnExit() {
-        m_session->sequencer.Clear();
+        // 予約した見た目の時間差は画面 UI やカードを指しているので、片付ける前に捨てる
+        Match::Session(m_scene.GetRegistry()).sequencer.Clear();
     }
 
     //----------------------------------------------------------------------------
@@ -170,13 +173,14 @@ namespace ChronoSort::Scene {
     void GameScene::CreateStage() {
         // カメラ（卓を手前上から見下ろす）・画面 UI のカメラ・主光源・ランプ・空（環境光の元）・Bloom は Prefab にある
         Tsukino::ECS::Registry&            registry = m_scene.GetRegistry();
-        const Game::Prefabs::StageInstance stage    = Game::Prefabs::SpawnGroup(registry, Game::Prefabs::kGameStage);
-        m_session->camera                           = stage.at("Camera");
+        const Game::Prefabs::StageInstance stage  = Game::Prefabs::SpawnGroup(registry, Game::Prefabs::kGameStage);
+        const Tsukino::ECS::Entity         camera = stage.at("Camera");
+        Match::Session(registry).camera           = camera;
 
         // 揺れと漂いは Prefab の姿勢を基準に足す
-        auto& rig        = registry.AddComponent<ECS::CameraRigComponent>(m_session->camera);
-        rig.basePosition = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(m_session->camera).position;
-        rig.baseLookAt   = registry.GetComponent<Tsukino::BuiltIn::ECS::CameraComponent>(m_session->camera).lookAtTarget;
+        auto& rig        = registry.AddComponent<ECS::CameraRigComponent>(camera);
+        rig.basePosition = registry.GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(camera).position;
+        rig.baseLookAt   = registry.GetComponent<Tsukino::BuiltIn::ECS::CameraComponent>(camera).lookAtTarget;
     }
 
 }    // namespace ChronoSort::Scene

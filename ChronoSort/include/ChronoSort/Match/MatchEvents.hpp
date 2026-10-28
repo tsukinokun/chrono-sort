@@ -88,4 +88,13 @@ namespace ChronoSort::Match {
     //! 結果の羊皮紙を出す時が来ました。
     struct ResultRequestedEvent {};
 
+    //! 規則の値（得点・ライフ・山札・手札・巡目）が変わりました（配った・置いた・手番が回った）。
+    //! 画面 UI と山札の厚みは、毎フレーム読む代わりにこれを受けて書き換えます。
+    struct MatchStateChangedEvent {};
+
+    //! 人間の手番で、しばらく操作していない（active）か、操作が戻った（!active）。
+    struct IdleNudgeEvent {
+        bool active = false;    // 放置されて促す必要があるなら true
+    };
+
 }    // namespace ChronoSort::Match

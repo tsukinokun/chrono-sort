@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
+#include <ChronoSort/Match/MatchSession.hpp>
 
 #include <Tsukino/Core/ECS/Event/EventBus.hpp>
 
@@ -42,7 +43,7 @@ namespace ChronoSort::ECS {
             Match::AdvanceTurn(registry);
             break;
         case Match::MatchStep::ShowResult:
-            session.events->Publish(Match::ResultRequestedEvent{});
+            Match::Events(registry).Publish(Match::ResultRequestedEvent{});
             break;
         default:
             break;

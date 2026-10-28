@@ -2,20 +2,19 @@
 //! @file   GameScene.hpp
 //! @brief  対局画面（ソロ・CPU 対戦）
 //! @detail ここは組み立てと画面の切り替えだけを行います。
-//!         - 組み立て：ステージの Prefab、卓（BoardView）・画面 UI（GameHud）・粒子を作り、対局の状態（MatchSession）を
-//!           レジストリに置いて、対局を進めるシステム（ECS/System/MatchSystems）を並べる
+//!         - 組み立て：ステージの Prefab と、対局の状態（MatchSession）・卓（BoardView）・粒子をレジストリのコンテキストに置き、
+//!           画面 UI（DeskHud・PlayPopups・ResultSheet・PauseSheet）を作って、対局を進めるシステムを並べる
 //!         - 毎フレーム：一時停止の紙・設定の紙と、演出の速さ（時間の倍率）を扱い、結果画面からの切り替えを行う
 //!         対局の進行（手番・CPU・人間の入力・公開と判定の演出）はシステムが、音や粒子は出来事を受けた
-//!         MatchFeedbackSystem が行います。
+//!         MatchFeedbackSystem が、画面 UI の書き換えは出来事を受けた各 UI が行います。
 //----------------------------------------------------------------------------
 #pragma once
-#include <ChronoSort/Board/BoardView.hpp>
-#include <ChronoSort/Board/CardFactory.hpp>
-#include <ChronoSort/Effects/ParticleEmitter.hpp>
-#include <ChronoSort/Match/MatchSession.hpp>
 #include <ChronoSort/Rules/Match.hpp>
-#include <ChronoSort/UI/GameHud.hpp>
+#include <ChronoSort/UI/DeskHud.hpp>
 #include <ChronoSort/UI/OptionsSheet.hpp>
+#include <ChronoSort/UI/PauseSheet.hpp>
+#include <ChronoSort/UI/PlayPopups.hpp>
+#include <ChronoSort/UI/ResultSheet.hpp>
 
 #include <Tsukino/EngineIntegration/Scene/GameSceneBase.hpp>
 
@@ -55,13 +54,14 @@ namespace ChronoSort::Scene {
         //! @return シーンを切り替えたら true。
         bool UpdateMenus(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime);
 
-        Rules::MatchConfig                        m_config;      // 対局の設定（もう一度のときに使う）
-        std::unique_ptr<Match::MatchSession>       m_session;     // 対局の状態（レジストリにはこれを指すポインタを置く）
-        std::unique_ptr<Board::CardFactory>       m_factory;     // カードの生成
-        std::unique_ptr<Board::BoardView>         m_board;       // 卓の置き場所の窓口
-        std::unique_ptr<Effects::ParticleEmitter> m_particles;   // 粒子の演出
-        std::unique_ptr<UI::GameHud>              m_hud;         // 画面 UI
-        std::unique_ptr<UI::OptionsSheet>         m_options;     // 設定の紙（一時停止から開く）
+        // 対局の状態・卓・粒子はレジストリのコンテキストが持つ（シーンと一緒に片付く）。
+        // 画面 UI は出来事を購読するので、シーン（EventBus）より先に壊れるここのメンバに持つ
+        Rules::MatchConfig                m_config;     // 対局の設定（もう一度のときに使う）
+        std::unique_ptr<UI::DeskHud>      m_desk;       // 机の上の紙片
+        std::unique_ptr<UI::PlayPopups>   m_popups;     // 判定の朱印と得点
+        std::unique_ptr<UI::ResultSheet>  m_result;     // 結果の羊皮紙
+        std::unique_ptr<UI::PauseSheet>   m_pause;      // 一時停止の紙
+        std::unique_ptr<UI::OptionsSheet> m_options;    // 設定の紙（一時停止から開く）
     };
 
 }    // namespace ChronoSort::Scene

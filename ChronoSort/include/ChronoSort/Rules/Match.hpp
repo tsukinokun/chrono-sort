@@ -174,4 +174,9 @@ namespace ChronoSort::Rules {
         int                   m_bestStreak = 0;                       // 最長の連続正解数
     };
 
+    //! ソロの結果のランクを返します（出し切ったか、並べた枚数が RulesTuning の段に届いたか）。
+    //! @param  [in] match 終わった対局。
+    //! @return "S"・"A"・"B"・"C" のどれか。
+    const char* SoloRank(const Match& match);
+
 }    // namespace ChronoSort::Rules

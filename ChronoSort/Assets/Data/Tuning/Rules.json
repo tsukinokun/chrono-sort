@@ -6,6 +6,9 @@
         "closeCallBonus": 50,
         "closeCallYears": 20,
         "streakCap": 10,
+        "rankS": 30,
+        "rankA": 20,
+        "rankB": 10,
         "comfortableGapYears": 150.0,
         "nearMissChance": 0.8,
         "handSizes": [

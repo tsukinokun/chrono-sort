@@ -49,6 +49,7 @@ namespace ChronoSort::Match {
         float edgePanSpeed       = 420.0f;    // 画面端で列を流す速さ
         float wheelScroll        = 60.0f;     // ホイール1段で列を流す量
         float idleMouseThreshold = 2.0f;      // これより動いたら「操作している」とみなす（ピクセル）
+        float idleNudgeSeconds   = 6.0f;      // 人間の手番でこの秒数だけ操作が無ければ、次の行動を促す
 
         Game::Sharpness dragSharpness       = {28.0f, 16.0f};
         float           dragScale           = 1.05f;      // 持っているカードの拡大率
@@ -148,6 +149,7 @@ namespace ChronoSort::Match {
         CHRONOSORT_LOAD(edgePanSpeed);
         CHRONOSORT_LOAD(wheelScroll);
         CHRONOSORT_LOAD(idleMouseThreshold);
+        CHRONOSORT_LOAD(idleNudgeSeconds);
         CHRONOSORT_LOAD(dragSharpness);
         CHRONOSORT_LOAD(dragScale);
         CHRONOSORT_LOAD(dragLeanPerSpeed);

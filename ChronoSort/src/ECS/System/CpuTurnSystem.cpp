@@ -49,22 +49,22 @@ namespace ChronoSort::ECS {
                 const size_t candidate = static_cast<size_t>(std::clamp(static_cast<int>(cpu.move.slot) + wander, 0, static_cast<int>(slotCount) - 1));
                 cpu.hops.emplace_back(at, candidate);
             }
-            session.board->Hand(cpu.player).lifted = static_cast<int>(cpu.move.handIndex);
-            session.events->Publish(Match::CpuThinkingStartedEvent{cpu.player});
+            Board::View(registry).Hand(cpu.player).lifted = static_cast<int>(cpu.move.handIndex);
+            Match::Events(registry).Publish(Match::CpuThinkingStartedEvent{cpu.player});
             return;
         }
 
         cpu.time += deltaTime;
         while(cpu.nextHop < cpu.hops.size() && cpu.hops[cpu.nextHop].first <= cpu.time) {
             const size_t slot = cpu.hops[cpu.nextHop].second;
-            session.board->SetGap(slot);
-            session.board->SetMarker(true);
-            session.events->Publish(Match::CpuHoveredSlotEvent{slot});
+            Board::View(registry).SetGap(slot);
+            Board::View(registry).SetMarker(true);
+            Match::Events(registry).Publish(Match::CpuHoveredSlotEvent{slot});
             ++cpu.nextHop;
         }
         if(cpu.time >= cpu.think) {
             cpu.active                             = false;
-            session.board->Hand(cpu.player).lifted = -1;
+            Board::View(registry).Hand(cpu.player).lifted = -1;
             Match::CommitPlay(registry, cpu.player, cpu.move.handIndex, cpu.move.slot);
         }
     }

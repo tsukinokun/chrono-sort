@@ -28,14 +28,15 @@ namespace ChronoSort::Match {
 
         // 場の1枚目：山札から飛んで、空中で裏返って年号を見せる
         const Rules::CardData&     first = session.match.GetTimeline().Cards().front();
-        const Tsukino::ECS::Entity card  = session.board->SpawnAtDeck(first);
-        session.board->InsertIntoRow(0, card);
-        session.board->ApplyLayoutNow();
+        const Tsukino::ECS::Entity card  = Board::View(registry).SpawnAtDeck(first);
+        Board::View(registry).InsertIntoRow(0, card);
+        Board::View(registry).ApplyLayoutNow();
         ECS::CardMotion::Fly(registry, card, Game::Tuning().Deal().openingFlight);
-        session.events->Publish(OpeningCardDealtEvent{card});
+        Events(registry).Publish(OpeningCardDealtEvent{card});
 
         const float lastArrival = DealToHands(registry, Game::Tuning().Deal().openingHandsDelay);
         session.Schedule(MatchStep::StartTurn, lastArrival + Game::Tuning().Deal().startTurnAfterDeal);
+        Events(registry).Publish(MatchStateChangedEvent{});
     }
 
     //----------------------------------------------------------------------------
@@ -52,22 +53,22 @@ namespace ChronoSort::Match {
             dealt = false;
             for(size_t p = 0; p < session.match.Players().size(); ++p) {
                 const auto&  hand  = session.match.Players()[p].hand;
-                const size_t shown = session.board->HandSize(p);
+                const size_t shown = Board::View(registry).HandSize(p);
                 if(shown >= hand.size()) {
                     continue;
                 }
                 Game::FrameMonitor::Mark("deal");
-                const Tsukino::ECS::Entity entity = session.board->SpawnAtDeck(hand[shown]);
-                session.board->AddToHand(p, entity);
+                const Tsukino::ECS::Entity entity = Board::View(registry).SpawnAtDeck(hand[shown]);
+                Board::View(registry).AddToHand(p, entity);
                 // 配る先の姿勢を先に決めてから飛ばす
                 hlslpp::float3     position;
                 hlslpp::quaternion rotation;
                 float              scale = 1.0f;
-                session.board->HandPose(p, shown, position, rotation, scale);
+                Board::View(registry).HandPose(p, shown, position, rotation, scale);
                 ECS::CardMotion::SetTarget(registry, entity, position, rotation, scale);
                 const Game::Flight& flight = Game::Tuning().Deal().cardFlight;
                 ECS::CardMotion::Fly(registry, entity, flight.seconds, flight.arc, stagger);
-                session.events->Publish(CardDealtEvent{stagger});
+                Events(registry).Publish(CardDealtEvent{stagger});
                 last = stagger + flight.seconds;
                 stagger += Game::Tuning().Deal().cardStagger;
                 dealt = true;
@@ -89,7 +90,7 @@ namespace ChronoSort::Match {
         const bool   human  = !session.match.Players()[player].isCpu;
         // 人間なら入力待ちへ、CPU なら CpuTurnSystem が考え始める
         session.phase = human ? MatchPhase::HumanTurn : MatchPhase::CpuTurn;
-        session.events->Publish(TurnStartedEvent{player, human});
+        Events(registry).Publish(TurnStartedEvent{player, human});
     }
 
     //----------------------------------------------------------------------------
@@ -97,7 +98,7 @@ namespace ChronoSort::Match {
     //----------------------------------------------------------------------------
     void CommitPlay(Tsukino::ECS::Registry& registry, size_t player, size_t handIndex, size_t slot) {
         MatchSession&      session = Session(registry);
-        Board::BoardView&  board   = *session.board;
+        Board::BoardView&  board   = Board::View(registry);
         Board::HandState&  hand    = board.Hand(player);
         if(handIndex >= board.HandSize(player)) {
             return;
@@ -126,7 +127,8 @@ namespace ChronoSort::Match {
         auto& reveal  = registry.AddComponent<ECS::RevealComponent>(entity);
         reveal.player = player;
         reveal.result = *result;
-        session.events->Publish(CardCommittedEvent{player, entity});
+        Events(registry).Publish(CardCommittedEvent{player, entity});
+        Events(registry).Publish(MatchStateChangedEvent{});
     }
 
     //----------------------------------------------------------------------------
@@ -148,6 +150,7 @@ namespace ChronoSort::Match {
             return;
         }
         session.match.AdvanceTurn();
+        Events(registry).Publish(MatchStateChangedEvent{});
         if(session.match.Outcome() != Rules::MatchOutcome::InProgress) {
             EndMatch(registry);
             return;
@@ -157,7 +160,7 @@ namespace ChronoSort::Match {
         float delay = 0.0f;
         if(session.match.IsTiebreak() && !session.wasTiebreak) {
             session.wasTiebreak = true;
-            session.events->Publish(TiebreakStartedEvent{});
+            Events(registry).Publish(TiebreakStartedEvent{});
             delay = DealToHands(registry, Game::Tuning().Deal().tiebreakDealDelay) + Game::Tuning().Deal().tiebreakAfterDeal;
         }
         session.Schedule(MatchStep::StartTurn, delay);
@@ -191,7 +194,7 @@ namespace ChronoSort::Match {
         }
         Game::StoreSaveData(save);
 
-        session.events->Publish(MatchEndedEvent{outcome, won, newRecord});
+        Events(registry).Publish(MatchEndedEvent{outcome, won, newRecord});
         session.Schedule(MatchStep::ShowResult, Game::Tuning().Deal().showResultDelay);
     }
 
@@ -200,7 +203,7 @@ namespace ChronoSort::Match {
     //----------------------------------------------------------------------------
     void CancelSelection(Tsukino::ECS::Registry& registry) {
         MatchSession&     session = Session(registry);
-        Board::BoardView& board   = *session.board;
+        Board::BoardView& board   = Board::View(registry);
         HumanInput&       input   = session.input;
         const size_t      count   = board.HandSize(0);
         if(input.selected >= 0 && static_cast<size_t>(input.selected) < count) {

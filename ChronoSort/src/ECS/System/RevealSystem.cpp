@@ -37,7 +37,7 @@ namespace ChronoSort::ECS {
         //! @return 次の段階の時刻が来ていれば、続けて進めてよいなら true。
         //----------------------------------------------------------------------------
         bool StepReveal(Tsukino::ECS::Registry& registry, Match::MatchSession& session, Tsukino::ECS::Entity entity, RevealComponent& reveal) {
-            Board::BoardView&        board  = *session.board;
+            Board::BoardView&        board  = Board::View(registry);
             const Rules::PlayResult& result = reveal.result;
             const size_t             slot   = result.slot;
             const size_t             correctSlot = result.correctSlots.empty() ? result.slot : result.correctSlots.front();
@@ -58,7 +58,7 @@ namespace ChronoSort::ECS {
                 }
                 CardMotion::SetSharpness(registry, entity, tuning.flipSharpness);
                 CardMotion::SetTarget(registry, entity, board.SlotPosition(slot) + kUp * tuning.flipHeight, FacingRevealed(), board.SlotScale(slot) * tuning.flipScale);
-                session.events->Publish(Match::CardFlippedEvent{entity});
+                Match::Events(registry).Publish(Match::CardFlippedEvent{entity});
                 reveal.stage = RevealStage::Slam;
                 return true;
 
@@ -82,7 +82,7 @@ namespace ChronoSort::ECS {
                     return false;
                 }
                 CardMotion::Punch(registry, entity, tuning.landBump);
-                session.events->Publish(Match::CardLandedEvent{entity, board.SlotPosition(slot)});
+                Match::Events(registry).Publish(Match::CardLandedEvent{entity, board.SlotPosition(slot)});
                 reveal.stage = RevealStage::Judge;
                 return true;
 
@@ -97,7 +97,7 @@ namespace ChronoSort::ECS {
                     board.InsertIntoRow(slot, entity);
                     board.SetHeld(entt::null);
                 }
-                session.events->Publish(Match::PlayJudgedEvent{reveal.player, entity, result, at});
+                Match::Events(registry).Publish(Match::PlayJudgedEvent{reveal.player, entity, result, at});
                 reveal.stage = result.correct ? RevealStage::Finish : RevealStage::ShowCorrect;
                 return true;
             }
@@ -111,7 +111,7 @@ namespace ChronoSort::ECS {
                 board.ScrollToSlot(correctSlot);
                 CardMotion::SetSharpness(registry, entity, tuning.showCorrectSharpness);
                 CardMotion::SetTarget(registry, entity, board.SlotPosition(correctSlot) + kUp * tuning.showCorrectHeight, FacingRevealed(), board.SlotScale(correctSlot));
-                session.events->Publish(Match::CorrectSlotShownEvent{entity});
+                Match::Events(registry).Publish(Match::CorrectSlotShownEvent{entity});
                 reveal.stage = RevealStage::Discard;
                 return true;
 
@@ -124,7 +124,7 @@ namespace ChronoSort::ECS {
                 board.SetHeld(entt::null);
                 CardMotion::SetSharpness(registry, entity, tuning.discardSharpness);
                 board.SendToDiscard(entity);
-                session.events->Publish(Match::CardDiscardedEvent{entity});
+                Match::Events(registry).Publish(Match::CardDiscardedEvent{entity});
                 reveal.stage = RevealStage::Finish;
                 return true;
 

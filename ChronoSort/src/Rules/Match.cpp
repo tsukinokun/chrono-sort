@@ -238,4 +238,22 @@ namespace ChronoSort::Rules {
         return from;
     }
 
+    //----------------------------------------------------------------------------
+    //! ソロの結果のランクを返します。
+    //----------------------------------------------------------------------------
+    const char* SoloRank(const Match& match) {
+        const RulesTuning& rules  = match.Config().rules;
+        const int          placed = match.Players().empty() ? 0 : match.Players()[0].correctCount;
+        if(match.Outcome() == MatchOutcome::SoloCleared || placed >= rules.rankS) {
+            return "S";
+        }
+        if(placed >= rules.rankA) {
+            return "A";
+        }
+        if(placed >= rules.rankB) {
+            return "B";
+        }
+        return "C";
+    }
+
 }    // namespace ChronoSort::Rules

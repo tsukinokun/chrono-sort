@@ -44,6 +44,9 @@ namespace ChronoSort::Rules {
         int closeCallBonus = 50;     // 隣と年代が近いときの加点
         int closeCallYears = 20;     // 「近い」とみなす年数
         int streakCap      = 10;     // 倍率（1割ずつ）が伸びる連続正解数の上限
+        int rankS          = 30;     // ソロの結果で S になる並べた枚数（出し切っても S）
+        int rankA          = 20;     // A になる並べた枚数
+        int rankB          = 10;     // B になる並べた枚数（届かなければ C）
 
         std::vector<HandSizeStep> handSizes = {{3, 6}, {5, 5}, {8, 4}};    // 対戦の人数ごとの初期手札
 
@@ -115,6 +118,9 @@ namespace ChronoSort::Rules {
         CHRONOSORT_LOAD(closeCallBonus);
         CHRONOSORT_LOAD(closeCallYears);
         CHRONOSORT_LOAD(streakCap);
+        CHRONOSORT_LOAD(rankS);
+        CHRONOSORT_LOAD(rankA);
+        CHRONOSORT_LOAD(rankB);
         CHRONOSORT_LOAD(handSizes);
         CHRONOSORT_LOAD(cpuLevels);
         CHRONOSORT_LOAD(comfortableGapYears);

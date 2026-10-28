@@ -3,8 +3,9 @@
 //! @brief  1回の対局の状態（対局のシーンのレジストリのコンテキストに置く）
 //! @detail 対局の進行のシステム（MatchFlow・CpuTurn・HumanInput・Reveal など）は、シーンではなく
 //!         ここを読み書きして連携します。規則そのものは Rules::Match が持ち、ここはその周りの
-//!         「今どの段階か」「次の段取りはいつか」「入力の途中の状態」と、卓・画面 UI・粒子の窓口を束ねます。
-//!         窓口（BoardView など）の持ち主は GameScene で、ここは借りているだけです。
+//!         「今どの段階か」「次の段取りはいつか」「入力の途中の状態」を持ちます。
+//!         レジストリが値として持つので、シーンと一緒に片付きます。卓（Board::View）・粒子（Effects::Particles）・
+//!         出来事の送り先（Events）も、同じくレジストリのコンテキストから受け取ります。
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Rules/CpuPlayer.hpp>
@@ -24,18 +25,6 @@
 namespace Tsukino::ECS {
     class EventBus;
 }    // namespace Tsukino::ECS
-
-namespace ChronoSort::Board {
-    class BoardView;
-}    // namespace ChronoSort::Board
-
-namespace ChronoSort::Effects {
-    class ParticleEmitter;
-}    // namespace ChronoSort::Effects
-
-namespace ChronoSort::UI {
-    class GameHud;
-}    // namespace ChronoSort::UI
 
 namespace ChronoSort::Match {
 
@@ -78,6 +67,7 @@ namespace ChronoSort::Match {
         std::optional<size_t> preview;                 // 置こうとしているスロット
         float                 idleTime  = 0.0f;        // 人間の手番で操作していない時間（秒）
         hlslpp::float2        lastMouse = hlslpp::float2(0.0f, 0.0f);    // 前フレームのマウス位置
+        bool                  nudging   = false;       // 放置の催促を出しているか
     };
 
     //! 1回の対局の状態です。
@@ -97,11 +87,7 @@ namespace ChronoSort::Match {
 
         Tsukino::Core::Sequencer sequencer;    // 見た目だけの時間差（音の鳴らし分けなど）。進行の状態はここに積まない
 
-        Tsukino::ECS::Entity       camera    = entt::null;    // 卓を見下ろすカメラ（マウスのレイに使う）
-        Board::BoardView*          board     = nullptr;       // 卓の置き場所の窓口
-        UI::GameHud*               hud       = nullptr;       // 画面 UI
-        Effects::ParticleEmitter*  particles = nullptr;       // 粒子
-        Tsukino::ECS::EventBus*    events    = nullptr;       // 対局の出来事を知らせる先
+        Tsukino::ECS::Entity camera = entt::null;    // 卓を見下ろすカメラ（マウスのレイに使う）
 
         //! 時間を置いて行う段取りを予約します（前の予約は上書きする）。
         //! @param  [in] next  段取り。
@@ -121,5 +107,10 @@ namespace ChronoSort::Match {
     //! @param  [in] registry レジストリ。
     //! @return 持っていれば true。
     bool HasSession(Tsukino::ECS::Registry& registry);
+
+    //! 対局の出来事を知らせる先（シーンの EventBus）を返します。
+    //! @param  [in] registry 対局のシーンのレジストリ。
+    //! @return EventBus。
+    Tsukino::ECS::EventBus& Events(Tsukino::ECS::Registry& registry);
 
 }    // namespace ChronoSort::Match

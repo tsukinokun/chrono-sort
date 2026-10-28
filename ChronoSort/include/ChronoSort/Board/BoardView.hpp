@@ -177,4 +177,11 @@ namespace ChronoSort::Board {
         std::mt19937 m_rng;        // 捨て札・山札のずれ用の乱数
     };
 
+    //! 対局のシーンのレジストリに置いた卓の窓口を返します（GameScene が置く）。
+    //! @param  [in] registry レジストリ。
+    //! @return 卓の窓口。
+    inline BoardView& View(Tsukino::ECS::Registry& registry) {
+        return registry.GetContext<BoardView>();
+    }
+
 }    // namespace ChronoSort::Board

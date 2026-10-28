@@ -5,6 +5,7 @@
 //!         粒子を作るのはエンジンの BurstEmitter、動かすのは BurstParticleSystem です。
 //----------------------------------------------------------------------------
 #pragma once
+#include <Tsukino/Core/ECS/Registry/Registry.hpp>
 #include <Tsukino/Engine/Asset/AssetHandle.hpp>
 
 #include <hlsl++.h>
@@ -49,5 +50,12 @@ namespace ChronoSort::Effects {
         std::mt19937                                                 m_rng;             // ばらつき用の乱数
         std::unordered_map<std::string, Tsukino::Asset::AssetHandle> m_textures;        // 読み込んだテクスチャ
     };
+
+    //! 対局のシーンのレジストリに置いた粒子の撒き手を返します（GameScene が置く）。
+    //! @param  [in] registry レジストリ。
+    //! @return 粒子の撒き手。
+    inline ParticleEmitter& Particles(Tsukino::ECS::Registry& registry) {
+        return registry.GetContext<ParticleEmitter>();
+    }
 
 }    // namespace ChronoSort::Effects

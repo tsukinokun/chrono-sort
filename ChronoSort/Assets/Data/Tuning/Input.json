@@ -7,6 +7,7 @@
         "edgePanSpeed": 420.0,
         "wheelScroll": 60.0,
         "idleMouseThreshold": 2.0,
+        "idleNudgeSeconds": 6.0,
         "dragSharpness": {
             "position": 28.0,
             "rotation": 16.0
