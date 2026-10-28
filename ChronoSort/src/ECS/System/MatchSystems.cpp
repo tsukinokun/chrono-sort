@@ -579,7 +579,7 @@ namespace ChronoSort::ECS {
 
         m_connections.push_back(events.Subscribe<Game::OpeningCardDealtEvent>([reg, sounds, session](const Game::OpeningCardDealtEvent& e) {
             // 山札から飛んで、降りたところで砂埃と金色の光
-            Game::Sequencer& sequencer = session().sequencer;
+            Tsukino::Core::Sequencer& sequencer = session().sequencer;
             sequencer.Schedule(0.2f, [sounds] { sounds().Play("whoosh", 0.6f); });
             sequencer.Schedule(0.9f, [reg, sounds, session, card = e.card] {
                 session().particles->Dust(reg->GetComponent<Tsukino::BuiltIn::ECS::TransformComponent>(card).position);

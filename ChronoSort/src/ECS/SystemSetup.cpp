@@ -7,7 +7,6 @@
 #include <ChronoSort/ECS/System/BoardLayoutSystem.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/ECS/System/CardMotionSystem.hpp>
-#include <ChronoSort/ECS/System/LifetimeSystem.hpp>
 #include <ChronoSort/ECS/System/MatchSystems.hpp>
 #include <ChronoSort/ECS/System/ParticleSystem.hpp>
 
@@ -16,6 +15,7 @@
 #include <Tsukino/EngineIntegration/ECS/System/CameraSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/FontRendererSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/InteractionSystem.hpp>
+#include <Tsukino/EngineIntegration/ECS/System/LifetimeSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/LightSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/ModelSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/SkyAtmosphereSystem.hpp>
@@ -38,7 +38,7 @@ namespace ChronoSort::ECS {
     void AddTableSystems(Tsukino::ECS::Scene& scene) {
         scene.AddSystem(std::make_shared<BuiltIn::InteractionSystem>(), Order::kInput);
         scene.AddSystem(std::make_shared<BuiltIn::UITweenSystem>(), Order::kUIAnimation);
-        scene.AddSystem(std::make_shared<LifetimeSystem>(), Order::kUIAnimation);
+        scene.AddSystem(std::make_shared<BuiltIn::LifetimeSystem>(), Order::kUIAnimation);
         // 並べ方が目標を書き、CardMotionSystem がそこへ動かす（同じ順番の中では登録した順に更新される）
         scene.AddSystem(std::make_shared<BoardLayoutSystem>(), Order::kGameplay);
         scene.AddSystem(std::make_shared<CardMotionSystem>(), Order::kGameplay);
@@ -73,7 +73,7 @@ namespace ChronoSort::ECS {
     //----------------------------------------------------------------------------
     void AddUIOnlySystems(Tsukino::ECS::Scene& scene) {
         scene.AddSystem(std::make_shared<BuiltIn::UITweenSystem>(), Order::kUIAnimation);
-        scene.AddSystem(std::make_shared<LifetimeSystem>(), Order::kUIAnimation);
+        scene.AddSystem(std::make_shared<BuiltIn::LifetimeSystem>(), Order::kUIAnimation);
         scene.AddSystem(std::make_shared<BuiltIn::TransformSystem>(), Order::kTransform);
         scene.AddSystem(std::make_shared<BuiltIn::CameraSystem>(), Order::kCamera);
         scene.AddSystem(std::make_shared<BuiltIn::FontRendererSystem>(), Order::kText);

@@ -4,48 +4,29 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/PaperLayout.hpp>
 
+#include <Tsukino/Core/IO/JsonFile.hpp>
 #include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Math/Serialization/HlslppSerialization.hpp>
 
-#include <cereal/archives/json.hpp>
 #include <cereal/types/map.hpp>
 #include <cereal/types/string.hpp>
 
-#include <fstream>
-
 namespace ChronoSort::UI {
-
-    namespace {
-
-        //----------------------------------------------------------------------------
-        //! 書かれていれば読み、無ければ既定値のままにします。
-        //! @param  [in,out] archive アーカイブ。
-        //! @param  [in]     name    項目名。
-        //! @param  [out]    value   読み込み先。
-        //----------------------------------------------------------------------------
-        template <class Archive, class T>
-        void Optional(Archive& archive, const char* name, T& value) {
-            try {
-                archive(cereal::make_nvp(name, value));
-            } catch(const cereal::Exception&) {
-            }
-        }
-
-    }    // namespace
 
     //----------------------------------------------------------------------------
     //! PaperSpec を JSON から読み込みます（書いていない項目は既定値のまま）。
     //----------------------------------------------------------------------------
     template <class Archive>
     void load(Archive& archive, PaperSpec& spec) {
-        Optional(archive, "texture", spec.texture);
-        Optional(archive, "center", spec.center);
-        Optional(archive, "size", spec.size);
-        Optional(archive, "angle", spec.angleDegrees);
-        Optional(archive, "sway", spec.swayDegrees);
-        Optional(archive, "swaySeconds", spec.swaySeconds);
-        Optional(archive, "bob", spec.bobPixels);
-        Optional(archive, "sortOrder", spec.sortOrder);
+        using Tsukino::IO::LoadOptional;
+        LoadOptional(archive, "texture", spec.texture);
+        LoadOptional(archive, "center", spec.center);
+        LoadOptional(archive, "size", spec.size);
+        LoadOptional(archive, "angle", spec.angleDegrees);
+        LoadOptional(archive, "sway", spec.swayDegrees);
+        LoadOptional(archive, "swaySeconds", spec.swaySeconds);
+        LoadOptional(archive, "bob", spec.bobPixels);
+        LoadOptional(archive, "sortOrder", spec.sortOrder);
     }
 
     //----------------------------------------------------------------------------
@@ -53,18 +34,8 @@ namespace ChronoSort::UI {
     //----------------------------------------------------------------------------
     PaperLayout::PaperLayout(const std::string& path)
         : m_path(path) {
-        std::ifstream is(path);
-        if(!is) {
-            Tsukino::Core::Log::Warn("PaperLayout: file not found: " + path);
-            return;
-        }
-        try {
-            cereal::JSONInputArchive archive(is);
-            archive(cereal::make_nvp("papers", m_papers));
-        } catch(const std::exception& e) {
-            Tsukino::Core::Log::Warn("PaperLayout: failed to read " + path + ": " + e.what());
-            m_papers.clear();
-        }
+        // 読めなければ警告を出して空のまま（Spec は既定値を返す）
+        Tsukino::IO::TryLoadJson(path, "papers", m_papers);
     }
 
     //----------------------------------------------------------------------------

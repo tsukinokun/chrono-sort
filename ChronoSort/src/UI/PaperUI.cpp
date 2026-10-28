@@ -4,15 +4,14 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/PaperUI.hpp>
 
-#include <ChronoSort/ECS/Component/LifetimeComponent.hpp>
-#include <ChronoSort/ECS/System/LifetimeSystem.hpp>
-
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
+#include <Tsukino/BuiltIn/ECS/Component/LifetimeComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIButtonFeedbackComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIRectComponent.hpp>
+#include <Tsukino/BuiltIn/ECS/Transform/TransformUtility.hpp>
 #include <Tsukino/BuiltIn/ECS/UI/UITweenUtility.hpp>
 #include <Tsukino/Core/Path.hpp>
 #include <Tsukino/Engine/Asset/AssetManager.hpp>
@@ -28,13 +27,9 @@ namespace ChronoSort::UI {
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
 
-        // トゥイーンの種類の目印（同じ目印を再生し直すと置き換わる）
-        constexpr std::uint32_t kTagSway    = 1;
-        constexpr std::uint32_t kTagBob     = 2;
-        constexpr std::uint32_t kTagSlideX  = 3;
-        constexpr std::uint32_t kTagSlideY  = 4;
-        constexpr std::uint32_t kTagFade    = 5;
-        constexpr std::uint32_t kTagPunch   = 6;
+        // トゥイーンの種類の目印（同じ目印を再生し直すと置き換わる）。滑り込み・弾みはエンジンの定型の目印を使う
+        constexpr std::uint32_t kTagSway = 1;
+        constexpr std::uint32_t kTagBob  = 2;
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -162,73 +157,21 @@ namespace ChronoSort::UI {
     //! 画面外から滑り込ませます。
     //----------------------------------------------------------------------------
     void PaperUI::SlideIn(Tsukino::ECS::Entity entity, const hlslpp::float2& from, float delay, float seconds) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        BuiltIn::UITween        tween;
-        tween.duration  = seconds;
-        tween.delay     = delay;
-        tween.ease      = EaseType::OutBack;
-        tween.holdAtEnd = true;
-
-        tween.property = BuiltIn::UITweenProperty::OffsetX;
-        tween.from     = from.x;
-        tween.to       = 0.0f;
-        tween.tag      = kTagSlideX;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
-
-        tween.property = BuiltIn::UITweenProperty::OffsetY;
-        tween.from     = from.y;
-        tween.tag      = kTagSlideY;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
-
-        tween.property = BuiltIn::UITweenProperty::Alpha;
-        tween.from     = 0.0f;
-        tween.to       = 1.0f;
-        tween.ease     = EaseType::OutCubic;
-        tween.tag      = kTagFade;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
+        BuiltIn::UITweenUtility::SlideIn(m_scene.GetRegistry(), entity, from, delay, seconds);
     }
 
     //----------------------------------------------------------------------------
     //! 画面外へ滑り出させ、透明にします。
     //----------------------------------------------------------------------------
     void PaperUI::SlideOut(Tsukino::ECS::Entity entity, const hlslpp::float2& to, float delay, float seconds) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        BuiltIn::UITween        tween;
-        tween.duration  = seconds;
-        tween.delay     = delay;
-        tween.ease      = EaseType::InCubic;
-        tween.holdAtEnd = true;
-
-        tween.property = BuiltIn::UITweenProperty::OffsetX;
-        tween.from     = 0.0f;
-        tween.to       = to.x;
-        tween.tag      = kTagSlideX;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
-
-        tween.property = BuiltIn::UITweenProperty::OffsetY;
-        tween.to       = to.y;
-        tween.tag      = kTagSlideY;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
-
-        tween.property = BuiltIn::UITweenProperty::Alpha;
-        tween.from     = 1.0f;
-        tween.to       = 0.0f;
-        tween.tag      = kTagFade;
-        BuiltIn::UITweenUtility::Play(registry, entity, tween);
+        BuiltIn::UITweenUtility::SlideOut(m_scene.GetRegistry(), entity, to, delay, seconds);
     }
 
     //----------------------------------------------------------------------------
     //! 弾ませます。
     //----------------------------------------------------------------------------
     void PaperUI::Punch(Tsukino::ECS::Entity entity, float amount) {
-        BuiltIn::UITween punch;
-        punch.property = BuiltIn::UITweenProperty::Scale;
-        punch.from     = 1.0f;
-        punch.to       = 1.0f + amount;
-        punch.duration = 0.45f;
-        punch.ease     = EaseType::Punch;
-        punch.tag      = kTagPunch;
-        BuiltIn::UITweenUtility::Play(m_scene.GetRegistry(), entity, punch);
+        BuiltIn::UITweenUtility::Punch(m_scene.GetRegistry(), entity, amount);
     }
 
     //----------------------------------------------------------------------------
@@ -262,7 +205,7 @@ namespace ChronoSort::UI {
     //! エンティティと、その子の UI をまとめて破棄します。
     //----------------------------------------------------------------------------
     void PaperUI::Destroy(Tsukino::ECS::Entity entity) {
-        ECS::DestroyTree(m_scene.GetRegistry(), entity);
+        BuiltIn::TransformUtility::DestroyHierarchy(m_scene.GetRegistry(), entity);
     }
 
     //----------------------------------------------------------------------------
@@ -273,9 +216,9 @@ namespace ChronoSort::UI {
             return;
         }
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-        auto*                   lifetime = registry.try_get<ECS::LifetimeComponent>(entity);
+        auto*                   lifetime = registry.try_get<BuiltIn::LifetimeComponent>(entity);
         if(lifetime == nullptr) {
-            lifetime = &registry.AddComponent<ECS::LifetimeComponent>(entity);
+            lifetime = &registry.AddComponent<BuiltIn::LifetimeComponent>(entity);
         }
         lifetime->remaining = seconds;
     }

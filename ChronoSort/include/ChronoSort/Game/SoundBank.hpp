@@ -5,6 +5,7 @@
 //!         音素材が揃う前でもゲームは動きます。
 //----------------------------------------------------------------------------
 #pragma once
+#include <Tsukino/Audio/AudioManager.hpp>
 #include <Tsukino/Engine/Asset/AssetHandle.hpp>
 
 #include <string>
@@ -14,15 +15,18 @@ namespace Tsukino::Asset {
     class AssetManager;
 }    // namespace Tsukino::Asset
 
-namespace Tsukino::Audio {
-    class AudioManager;
-}    // namespace Tsukino::Audio
-
 namespace ChronoSort::Game {
 
     //! 効果音と BGM の再生窓口です。
+    //! @note   BGM と効果音はエンジンの別のバスで鳴らし、設定の音量はバスの音量として掛ける。
     class SoundBank {
     public:
+
+        //! BGM を鳴らすバス
+        static constexpr Tsukino::Audio::AudioBus kMusicBus = 1;
+
+        //! 効果音を鳴らすバス
+        static constexpr Tsukino::Audio::AudioBus kEffectsBus = 2;
 
         //! アセット管理と再生先を受け取ります。
         //! @param  [in] assetManager アセット管理。
@@ -42,11 +46,11 @@ namespace ChronoSort::Game {
         //! BGM を止めます。
         void StopBgm();
 
-        //! BGM の音量の倍率を設定します。流れている BGM にもすぐ反映します。
+        //! BGM の音量の倍率を設定します（BGM のバスの音量）。流れている BGM にもすぐ反映します。
         //! @param  [in] volume 倍率（0〜1）。
         void SetMusicVolume(float volume);
 
-        //! 効果音の音量の倍率を設定します（次に鳴らす音から効く）。
+        //! 効果音の音量の倍率を設定します（効果音のバスの音量）。
         //! @param  [in] volume 倍率（0〜1）。
         void SetEffectsVolume(float volume);
 
@@ -61,9 +65,6 @@ namespace ChronoSort::Game {
         Tsukino::Audio::AudioManager&                                m_audioManager;    // 再生先
         std::unordered_map<std::string, Tsukino::Asset::AssetHandle> m_cache;           // 読み込み済みの音
         Tsukino::Asset::AssetHandle                                  m_bgm;             // 再生中の BGM
-        float                                                        m_bgmBaseVolume = 1.0f;    // 再生中の BGM の曲ごとの音量
-        float                                                        m_musicVolume   = 1.0f;    // BGM の音量の倍率（設定）
-        float                                                        m_effectsVolume = 1.0f;    // 効果音の音量の倍率（設定）
     };
 
 }    // namespace ChronoSort::Game

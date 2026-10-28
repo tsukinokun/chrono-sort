@@ -7,11 +7,11 @@
 //!         窓口（BoardView など）の持ち主は GameScene で、ここは借りているだけです。
 //----------------------------------------------------------------------------
 #pragma once
-#include <ChronoSort/Game/Sequencer.hpp>
 #include <ChronoSort/Rules/CpuPlayer.hpp>
 #include <ChronoSort/Rules/Match.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
+#include <Tsukino/Core/Time/Sequencer.hpp>
 
 #include <hlsl++.h>
 
@@ -94,7 +94,7 @@ namespace ChronoSort::Game {
         CpuThinking cpu;      // CPU の思考
         HumanInput  input;    // 人間の入力
 
-        Sequencer sequencer;    // 見た目だけの時間差（音の鳴らし分けなど）。進行の状態はここに積まない
+        Tsukino::Core::Sequencer sequencer;    // 見た目だけの時間差（音の鳴らし分けなど）。進行の状態はここに積まない
 
         Tsukino::ECS::Entity       camera    = entt::null;    // 卓を見下ろすカメラ（マウスのレイに使う）
         Board::BoardView*          board     = nullptr;       // 卓の置き場所の窓口
