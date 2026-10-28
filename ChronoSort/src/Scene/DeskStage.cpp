@@ -7,6 +7,7 @@
 #include <ChronoSort/Board/BoardView.hpp>
 #include <ChronoSort/ECS/CardMotion.hpp>
 #include <ChronoSort/ECS/SystemSetup.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/UI/PaperUI.hpp>
@@ -45,20 +46,22 @@ namespace ChronoSort::Scene {
         m_factory->CreateTable();
         std::vector<Rules::CardData> cards = Rules::LoadAllCards();
         std::shuffle(cards.begin(), cards.end(), m_rng);
+        const StageTuning&                    t = Game::Tuning().Stage();
         std::uniform_real_distribution<float> unit(0.0f, 1.0f);
         for(int i = 0; i < cardCount && i < static_cast<int>(cards.size()); ++i) {
-            const float          x        = (unit(m_rng) * 2.0f - 1.0f) * 520.0f;
-            const float          z        = -120.0f + unit(m_rng) * 460.0f;
-            const float          y        = Board::kTableSurfaceY + static_cast<float>(i) * 0.7f;
-            const bool           revealed = unit(m_rng) < 0.5f;
-            hlslpp::quaternion   rotation = hlslpp::quaternion::rotation_y((unit(m_rng) * 2.0f - 1.0f) * kPi * 0.35f);
+            const float          x        = (unit(m_rng) * 2.0f - 1.0f) * t.scatterHalfX;
+            const float          z        = t.scatterNearZ + unit(m_rng) * t.scatterDepth;
+            const float          y        = Board::kTableSurfaceY + static_cast<float>(i) * t.scatterStack;
+            const bool           revealed = unit(m_rng) < t.scatterFaceUp;
+            hlslpp::quaternion   rotation = hlslpp::quaternion::rotation_y((unit(m_rng) * 2.0f - 1.0f) * kPi * t.scatterYaw);
             if(revealed) {
                 rotation = hlslpp::mul(rotation, Board::RevealedRotation());
             }
             // 上から舞い落ちてくるように配置する
-            const Tsukino::ECS::Entity card = m_factory->CreateCard(cards[static_cast<size_t>(i)], hlslpp::float3(x * 0.6f, 420.0f + unit(m_rng) * 200.0f, z - 200.0f), rotation);
+            const hlslpp::float3       from(x * t.dropSpreadX, t.dropHeight + unit(m_rng) * t.dropHeightRange, z - t.dropBack);
+            const Tsukino::ECS::Entity card = m_factory->CreateCard(cards[static_cast<size_t>(i)], from, rotation);
             ECS::CardMotion::SetTarget(registry, card, hlslpp::float3(x, y, z), rotation);
-            ECS::CardMotion::Fly(registry, card, 0.9f + unit(m_rng) * 0.4f, 40.0f, 0.1f + static_cast<float>(i) * 0.07f);
+            ECS::CardMotion::Fly(registry, card, t.dropSeconds + unit(m_rng) * t.dropSecondsRange, t.dropArc, t.dropDelay + static_cast<float>(i) * t.dropStagger);
         }
         Update(0.0f);
     }
@@ -76,11 +79,12 @@ namespace ChronoSort::Scene {
         auto&                   camera    = registry.GetComponent<BuiltIn::CameraComponent>(m_camera);
 
         // 机の上をゆっくり見回す（ほとんど止まって見えるくらいの速さ）
-        const float angle   = std::sin(m_time * 0.07f) * 0.35f;
-        const float height  = 430.0f + std::sin(m_time * 0.11f) * 25.0f;
-        transform.position  = hlslpp::float3(std::sin(angle) * 520.0f, height, -std::cos(angle) * 520.0f + 80.0f);
+        const StageTuning& t = Game::Tuning().Stage();
+        const float        angle  = std::sin(m_time * t.orbitSpeed) * t.orbitAngle;
+        const float        height = t.orbitHeight + std::sin(m_time * t.orbitBobSpeed) * t.orbitBob;
+        transform.position  = hlslpp::float3(std::sin(angle) * t.orbitRadius, height, -std::cos(angle) * t.orbitRadius + t.orbitCenterZ);
         transform.dirty     = true;
-        camera.lookAtTarget = hlslpp::float3(std::sin(m_time * 0.05f) * 60.0f, 0.0f, 90.0f);
+        camera.lookAtTarget = hlslpp::float3(std::sin(m_time * t.lookAtSwaySpeed) * t.lookAtSway, 0.0f, t.lookAtZ);
         camera.dirty        = true;
     }
 

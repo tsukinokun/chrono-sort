@@ -5,6 +5,7 @@
 #include <ChronoSort/ECS/System/CpuTurnSystem.hpp>
 
 #include <ChronoSort/Board/BoardView.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
 
@@ -33,16 +34,18 @@ namespace ChronoSort::ECS {
             cpu        = Match::CpuThinking{};
             cpu.active = true;
             cpu.player = session.match.CurrentPlayerIndex();
-            cpu.move   = Rules::ChooseCpuMove(session.match.Players()[cpu.player], session.match.GetTimeline(), session.rng);
+            cpu.move   = Rules::ChooseCpuMove(session.match.Players()[cpu.player], session.match.GetTimeline(), session.rng, session.config.rules);
 
+            const Match::CpuTuning&               tuning = Game::Tuning().Cpu();
+            const float                           doubt  = 1.0f - cpu.move.confidence;
             std::uniform_real_distribution<float> unit(0.0f, 1.0f);
-            cpu.think = 0.9f + (1.0f - cpu.move.confidence) * 1.6f + unit(session.rng) * 0.5f;
+            cpu.think = tuning.thinkBase + doubt * tuning.thinkPerDoubt + unit(session.rng) * tuning.thinkRandom;
 
             const size_t slotCount = session.match.GetTimeline().SlotCount();
-            const int    hops      = 1 + static_cast<int>((1.0f - cpu.move.confidence) * 3.0f);
+            const int    hops      = std::max(1, tuning.hopsBase + static_cast<int>(doubt * tuning.hopsPerDoubt));
             for(int i = 0; i < hops; ++i) {
-                const float  at        = cpu.think * (0.35f + 0.5f * static_cast<float>(i) / static_cast<float>(hops));
-                const int    wander    = std::uniform_int_distribution<int>(-1, 1)(session.rng);
+                const float  at        = cpu.think * (tuning.hopStart + tuning.hopSpan * static_cast<float>(i) / static_cast<float>(hops));
+                const int    wander    = std::uniform_int_distribution<int>(-tuning.wander, tuning.wander)(session.rng);
                 const size_t candidate = static_cast<size_t>(std::clamp(static_cast<int>(cpu.move.slot) + wander, 0, static_cast<int>(slotCount) - 1));
                 cpu.hops.emplace_back(at, candidate);
             }

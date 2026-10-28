@@ -7,6 +7,7 @@
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Scene/CreditsScene.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
@@ -39,7 +40,7 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void TitleScene::OnInitialize(Tsukino::EngineIntegration::EngineAPI&) {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        m_stage.Build(m_scene, 14);
+        m_stage.Build(m_scene, Game::Tuning().Stage().titleCards);
         m_ui     = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
         m_layout = UI::PaperLayout("ChronoSort/Assets/Data/UI/Title.json");
 
@@ -135,7 +136,7 @@ namespace ChronoSort::Scene {
                 hovered.push_back(e);
                 if(std::find(m_hovered.begin(), m_hovered.end(), e) == m_hovered.end()) {
                     Game::FrameMonitor::Mark("hover menu");
-                    sounds.Play("card_slide", 0.3f);
+                    sounds.Play("ui.hover");
                 }
             }
         }
@@ -153,14 +154,14 @@ namespace ChronoSort::Scene {
             for(size_t i = 0; i < m_countTags.size(); ++i) {
                 if(m_ui->Clicked(m_countTags[i])) {
                     m_cpuCount = static_cast<int>(i) + 1;
-                    sounds.Play("stamp", 0.6f);
+                    sounds.Play("ui.choose");
                     RefreshVersusChoices();
                 }
             }
             for(size_t i = 0; i < m_levelTags.size(); ++i) {
                 if(m_ui->Clicked(m_levelTags[i])) {
                     m_cpuLevel = static_cast<Rules::CpuLevel>(i);
-                    sounds.Play("stamp", 0.6f);
+                    sounds.Play("ui.choose");
                     RefreshVersusChoices();
                 }
             }
@@ -169,39 +170,39 @@ namespace ChronoSort::Scene {
                 config.mode = Rules::MatchMode::Versus;
                 config.cpus.assign(static_cast<size_t>(m_cpuCount), m_cpuLevel);
                 config.range = m_range;
-                sounds.Play("button");
+                sounds.Play("ui.button");
                 api.ChangeScene(std::make_unique<GameScene>(config));
                 return;
             }
             if(m_ui->Clicked(m_cancel) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
-                sounds.Play("page", 0.7f);
+                sounds.Play("ui.close");
                 CloseVersusSheet();
             }
         } else {
             for(size_t i = 0; i < m_rangeTags.size(); ++i) {
                 if(m_ui->Clicked(m_rangeTags[i]) && m_rangeOrder[i] != m_range) {
-                    sounds.Play("stamp", 0.6f);
+                    sounds.Play("ui.choose");
                     SelectRange(m_rangeOrder[i]);
                 }
             }
             if(m_ui->Clicked(m_solo)) {
                 Rules::MatchConfig config;
                 config.range = m_range;
-                sounds.Play("button");
+                sounds.Play("ui.button");
                 api.ChangeScene(std::make_unique<GameScene>(config));
                 return;
             }
             if(m_ui->Clicked(m_versus)) {
-                sounds.Play("page", 0.8f);
+                sounds.Play("ui.open");
                 OpenVersusSheet();
             }
             if(m_ui->Clicked(m_credits)) {
-                sounds.Play("page", 0.8f);
+                sounds.Play("ui.open");
                 api.ChangeScene(std::make_unique<CreditsScene>());
                 return;
             }
             if(m_ui->Clicked(m_settings)) {
-                sounds.Play("page", 0.8f);
+                sounds.Play("ui.open");
                 m_options->Open();
                 m_scene.Update(deltaTime);
                 return;

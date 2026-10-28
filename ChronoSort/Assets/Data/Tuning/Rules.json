@@ -1,0 +1,57 @@
+{
+    "tuning": {
+        "soloHandSize": 3,
+        "soloLives": 3,
+        "soloBaseScore": 100,
+        "closeCallBonus": 50,
+        "closeCallYears": 20,
+        "streakCap": 10,
+        "comfortableGapYears": 150.0,
+        "nearMissChance": 0.8,
+        "handSizes": [
+            {
+                "maxPlayers": 3,
+                "handSize": 6
+            },
+            {
+                "maxPlayers": 5,
+                "handSize": 5
+            },
+            {
+                "maxPlayers": 8,
+                "handSize": 4
+            }
+        ],
+        "cpuLevels": [
+            {
+                "hardestChance": 0.35,
+                "easiestChance": 0.8,
+                "whim": 0.6
+            },
+            {
+                "hardestChance": 0.55,
+                "easiestChance": 0.92,
+                "whim": 0.25
+            },
+            {
+                "hardestChance": 0.72,
+                "easiestChance": 0.98,
+                "whim": 0.05
+            }
+        ],
+        "cpus": [
+            {
+                "name": "ヘロドトス",
+                "portrait": "portrait_herodotus.png"
+            },
+            {
+                "name": "司馬遷",
+                "portrait": "portrait_sima_qian.png"
+            },
+            {
+                "name": "ギボン",
+                "portrait": "portrait_gibbon.png"
+            }
+        ]
+    }
+}

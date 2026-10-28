@@ -238,7 +238,7 @@ namespace ChronoSort::UI {
         Game::Services().ApplyOptions();
         // BGM は流れている曲がそのまま試し鳴りになる。全体と効果音は小さな音で確かめさせる
         if(index != 1 && m_previewTimer <= 0.0f) {
-            Game::Services().Sounds().Play("tick", 0.8f);
+            Game::Services().Sounds().Play("ui.preview");
             m_previewTimer = kPreviewEvery;
         }
     }
@@ -300,14 +300,14 @@ namespace ChronoSort::UI {
                 const bool next = (i == 1) != inverted;
                 if(next != *toggle.value) {
                     *toggle.value = next;
-                    Game::Services().Sounds().Play("stamp", 0.6f);
+                    Game::Services().Sounds().Play("ui.choose");
                     RefreshToggle(toggle, true);
                 }
             }
         }
 
         if(m_ui.Clicked(m_close) || input.IsKeyPressed(KeyCode::Escape)) {
-            Game::Services().Sounds().Play("page", 0.7f);
+            Game::Services().Sounds().Play("ui.close");
             Close();
             return true;
         }

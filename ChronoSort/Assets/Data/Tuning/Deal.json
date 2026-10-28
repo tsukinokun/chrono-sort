@@ -1,0 +1,25 @@
+{
+    "tuning": {
+        "openingFlight": {
+            "seconds": 0.7,
+            "arc": 120.0,
+            "delay": 0.2
+        },
+        "openingHandsDelay": 1.1,
+        "cardFlight": {
+            "seconds": 0.5,
+            "arc": 70.0,
+            "delay": 0.0
+        },
+        "cardStagger": 0.09,
+        "startTurnAfterDeal": 0.3,
+        "advanceAfterDeal": 0.15,
+        "tiebreakDealDelay": 0.8,
+        "tiebreakAfterDeal": 0.2,
+        "showResultDelay": 1.4,
+        "cancelSharpness": {
+            "position": 14.0,
+            "rotation": 10.0
+        }
+    }
+}

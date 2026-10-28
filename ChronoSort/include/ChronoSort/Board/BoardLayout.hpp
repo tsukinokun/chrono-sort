@@ -8,6 +8,7 @@
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Board/BoardState.hpp>
+#include <ChronoSort/Board/BoardTuning.hpp>
 #include <ChronoSort/ECS/Component/CardPlacementComponent.hpp>
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
@@ -20,23 +21,18 @@
 
 namespace ChronoSort::Board {
 
-    constexpr float kTableSurfaceY = 0.31f;     // 卓に寝かせたカードの高さ（板の厚みの半分 + 僅か）
-    constexpr float kRowZ          = 70.0f;     // 場の列の奥行き
-    constexpr float kDragHeight    = 45.0f;     // ドラッグ中のカードの高さ
-    // 場の列のカードを、手前の辺を卓に付けたままカメラへ起こす角度（約26°）。
-    // 寝かせたままだと約47°の見下ろしで縦が 0.73 倍に潰れ、題名と年号が読みにくい。
-    // 真正面（約0.75rad）まで起こすと卓に置いた感じが消えるので、その手前で止める
-    constexpr float kRowTilt       = 0.45f;
-    constexpr float kRowHalfSpan   = 430.0f;    // 場の列のカードの中心を置いてよい左右の範囲（画面の端で切れない幅）
+    // 卓に寝かせたカードの高さ（卓のモデルの板の厚みの半分 + 僅か）。モデルに結びついた値なので調整値にしない
+    constexpr float kTableSurfaceY = 0.31f;
 
-    // CPU の席（卓の奥）
-    constexpr float kSeatZ = 300.0f;
+    //! 卓の上の並べ方の調整値を返します（Board.json。Game::Tuning().Board() と同じ）。
+    //! @return 調整値。
+    const BoardTuning& Tuning();
 
-    // 山札・捨て札。場の列の両端に置くと長くなった列とぶつかるため、列より手前の左右の角に置く
-    inline const hlslpp::float3 kDeckPosition(350.0f, 0.0f, -120.0f);
-    inline const hlslpp::float3 kDiscardPosition(-350.0f, 0.0f, -115.0f);
-    constexpr float             kCoverThickness = 1.4f;    // 山札の1枚分の見た目の厚み
-    constexpr size_t            kMaxCovers      = 9;
+    //! CPU の席の位置を返します（人数に応じて左右に振り分け、端ほど手前へ寄せる）。
+    //! @param  [in] seat     席の番号（0 から）。
+    //! @param  [in] cpuCount CPU の人数。
+    //! @return 席の中心（卓の上）。
+    hlslpp::float3 SeatPosition(size_t seat, size_t cpuCount);
 
     //! エンティティごとに決まった -0.5〜0.5 の値を返します（カードの僅かな傾きに使う）。
     //! @param  [in] entity エンティティ。
@@ -106,7 +102,7 @@ namespace ChronoSort::Board {
     //! @return ワールド座標。
     hlslpp::float3 SlotCenter(BoardState& state, size_t count, size_t slot);
 
-    //! 場の列に置いたカードの姿勢を計算します（手前の辺を卓に付けたまま kRowTilt だけ起こす）。
+    //! 場の列に置いたカードの姿勢を計算します（手前の辺を卓に付けたまま BoardTuning::rowTilt だけ起こす）。
     //! @param  [in]  x        X 座標。
     //! @param  [in]  z        寝かせたときの中心の Z 座標。
     //! @param  [in]  yaw      卓の上でのわずかな向きのばらつき。

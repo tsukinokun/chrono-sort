@@ -1,7 +1,8 @@
 //----------------------------------------------------------------------------
 //! @file   SoundBank.hpp
 //! @brief  効果音と BGM の再生窓口
-//! @detail 名前で音を鳴らします。ファイルが無い音は黙って無視するので、
+//! @detail 合図の名前（"play.flip" など）で音を鳴らします。どのファイルをどの音量で鳴らすかは
+//!         Sounds.json（SoundTuning）で決めます。ファイルが無い音は黙って無視するので、
 //!         音素材が揃う前でもゲームは動きます。
 //----------------------------------------------------------------------------
 #pragma once
@@ -33,15 +34,13 @@ namespace ChronoSort::Game {
         //! @param  [in] audioManager 再生先。
         SoundBank(Tsukino::Asset::AssetManager& assetManager, Tsukino::Audio::AudioManager& audioManager);
 
-        //! 効果音を鳴らします（ChronoSort/Assets/Audio/Sfx/<name>.wav）。
-        //! @param  [in] name   音の名前。
-        //! @param  [in] volume 音量（0〜1）。
-        void Play(const std::string& name, float volume = 1.0f);
+        //! 効果音を、合図の名前で鳴らします（Sounds.json の cues。無い名前なら警告を出して鳴らさない）。
+        //! @param  [in] cue 合図の名前。
+        void Play(const std::string& cue);
 
-        //! BGM をループ再生します（ChronoSort/Assets/Audio/Bgm/<name>.mp3）。既に流れている BGM は止めます。
-        //! @param  [in] name   曲の名前。
-        //! @param  [in] volume 音量（0〜1）。
-        void PlayBgm(const std::string& name, float volume = 0.45f);
+        //! BGM を、合図の名前でループ再生します（Sounds.json の music）。既に流れている BGM は止めます。
+        //! @param  [in] cue 合図の名前。
+        void PlayBgm(const std::string& cue);
 
         //! BGM を止めます。
         void StopBgm();

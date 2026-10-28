@@ -9,8 +9,9 @@
 #include <ChronoSort/ECS/Component/RevealComponent.hpp>
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
-#include <ChronoSort/Match/MatchEvents.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
+#include <ChronoSort/Match/MatchEvents.hpp>
 
 #include <Tsukino/Core/ECS/Event/EventBus.hpp>
 
@@ -30,11 +31,11 @@ namespace ChronoSort::Match {
         const Tsukino::ECS::Entity card  = session.board->SpawnAtDeck(first);
         session.board->InsertIntoRow(0, card);
         session.board->ApplyLayoutNow();
-        ECS::CardMotion::Fly(registry, card, 0.7f, 120.0f, 0.2f);
+        ECS::CardMotion::Fly(registry, card, Game::Tuning().Deal().openingFlight);
         session.events->Publish(OpeningCardDealtEvent{card});
 
-        const float lastArrival = DealToHands(registry, 1.1f);
-        session.Schedule(MatchStep::StartTurn, lastArrival + 0.3f);
+        const float lastArrival = DealToHands(registry, Game::Tuning().Deal().openingHandsDelay);
+        session.Schedule(MatchStep::StartTurn, lastArrival + Game::Tuning().Deal().startTurnAfterDeal);
     }
 
     //----------------------------------------------------------------------------
@@ -64,10 +65,11 @@ namespace ChronoSort::Match {
                 float              scale = 1.0f;
                 session.board->HandPose(p, shown, position, rotation, scale);
                 ECS::CardMotion::SetTarget(registry, entity, position, rotation, scale);
-                ECS::CardMotion::Fly(registry, entity, 0.5f, 70.0f, stagger);
+                const Game::Flight& flight = Game::Tuning().Deal().cardFlight;
+                ECS::CardMotion::Fly(registry, entity, flight.seconds, flight.arc, stagger);
                 session.events->Publish(CardDealtEvent{stagger});
-                last = stagger + 0.5f;
-                stagger += 0.09f;
+                last = stagger + flight.seconds;
+                stagger += Game::Tuning().Deal().cardStagger;
                 dealt = true;
             }
         }
@@ -133,7 +135,7 @@ namespace ChronoSort::Match {
     void FinishPlay(Tsukino::ECS::Registry& registry) {
         // 補充（ソロ）・ペナルティ（対戦）で引いたカードを配る
         const float wait = DealToHands(registry, 0.0f);
-        Session(registry).Schedule(MatchStep::AdvanceTurn, wait + 0.15f);
+        Session(registry).Schedule(MatchStep::AdvanceTurn, wait + Game::Tuning().Deal().advanceAfterDeal);
     }
 
     //----------------------------------------------------------------------------
@@ -156,7 +158,7 @@ namespace ChronoSort::Match {
         if(session.match.IsTiebreak() && !session.wasTiebreak) {
             session.wasTiebreak = true;
             session.events->Publish(TiebreakStartedEvent{});
-            delay = DealToHands(registry, 0.8f) + 0.2f;
+            delay = DealToHands(registry, Game::Tuning().Deal().tiebreakDealDelay) + Game::Tuning().Deal().tiebreakAfterDeal;
         }
         session.Schedule(MatchStep::StartTurn, delay);
     }
@@ -190,7 +192,7 @@ namespace ChronoSort::Match {
         Game::StoreSaveData(save);
 
         session.events->Publish(MatchEndedEvent{outcome, won, newRecord});
-        session.Schedule(MatchStep::ShowResult, 1.4f);
+        session.Schedule(MatchStep::ShowResult, Game::Tuning().Deal().showResultDelay);
     }
 
     //----------------------------------------------------------------------------
@@ -205,7 +207,7 @@ namespace ChronoSort::Match {
             ECS::StopGlow(registry, board.HandCard(0, static_cast<size_t>(input.selected)));
         }
         if(input.grabbed >= 0 && static_cast<size_t>(input.grabbed) < count) {
-            ECS::CardMotion::SetSharpness(registry, board.HandCard(0, static_cast<size_t>(input.grabbed)), 14.0f, 10.0f);
+            ECS::CardMotion::SetSharpness(registry, board.HandCard(0, static_cast<size_t>(input.grabbed)), Game::Tuning().Deal().cancelSharpness);
         }
         input.selected       = -1;
         input.grabbed        = -1;

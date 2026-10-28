@@ -1,0 +1,60 @@
+{
+    "tuning": {
+        "openingWhooshDelay": 0.2,
+        "openingLandDelay": 0.9,
+        "openingGlow": {
+            "color": {
+                "x": 0.55,
+                "y": 0.38,
+                "z": 0.1
+            },
+            "intensity": 1.6,
+            "rate": 1.4
+        },
+        "correctGlow": {
+            "color": {
+                "x": 0.55,
+                "y": 0.38,
+                "z": 0.1
+            },
+            "intensity": 1.4,
+            "rate": 1.1
+        },
+        "wrongGlow": {
+            "color": {
+                "x": 0.6,
+                "y": 0.05,
+                "z": 0.03
+            },
+            "intensity": 1.0,
+            "rate": 0.6
+        },
+        "winGlow": {
+            "color": {
+                "x": 0.55,
+                "y": 0.38,
+                "z": 0.1
+            },
+            "intensity": 1.5,
+            "rate": 1.2
+        },
+        "wrongTremor": {
+            "seconds": 0.5,
+            "amplitude": 7.0
+        },
+        "winBump": {
+            "seconds": 0.3,
+            "amount": 0.06
+        },
+        "winWaveStep": 0.05,
+        "correctBurstHeight": 8.0,
+        "wrongBurstHeight": 6.0,
+        "landShake": 4.0,
+        "wrongShake": 7.0,
+        "bannerYourTurn": "あなたの番",
+        "bannerTiebreak": "延長戦！",
+        "bannerWon": "見事！",
+        "bannerInkOut": "インクが尽きた…",
+        "bannerLost": "惜しい…"
+    }
+}

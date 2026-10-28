@@ -1,0 +1,37 @@
+{
+    "tuning": {
+        "clickThreshold": 8.0,
+        "rowBandNear": 130.0,
+        "rowBandFar": 160.0,
+        "edgePanMargin": 0.08,
+        "edgePanSpeed": 420.0,
+        "wheelScroll": 60.0,
+        "idleMouseThreshold": 2.0,
+        "dragSharpness": {
+            "position": 28.0,
+            "rotation": 16.0
+        },
+        "dragScale": 1.05,
+        "dragLeanPerSpeed": 0.0011,
+        "dragLeanMax": 0.4,
+        "dragVelocitySmoothing": 12.0,
+        "returnSharpness": {
+            "position": 14.0,
+            "rotation": 10.0
+        },
+        "returnFlight": {
+            "seconds": 0.35,
+            "arc": 30.0,
+            "delay": 0.0
+        },
+        "selectGlow": {
+            "color": {
+                "x": 0.22,
+                "y": 0.16,
+                "z": 0.05
+            },
+            "intensity": 1.0,
+            "rate": 5.0
+        }
+    }
+}

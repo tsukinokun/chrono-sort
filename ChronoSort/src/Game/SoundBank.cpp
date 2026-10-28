@@ -4,7 +4,10 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Game/SoundBank.hpp>
 
+#include <ChronoSort/Game/TuningSet.hpp>
+
 #include <Tsukino/Audio/AudioManager.hpp>
+#include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Path.hpp>
 #include <Tsukino/Engine/Asset/Audio/AudioAsset.hpp>
 #include <Tsukino/Engine/Asset/AssetManager.hpp>
@@ -25,8 +28,15 @@ namespace ChronoSort::Game {
     //----------------------------------------------------------------------------
     //! 効果音を鳴らします。
     //----------------------------------------------------------------------------
-    void SoundBank::Play(const std::string& name, float volume) {
-        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Sfx/" + name + ".wav");
+    void SoundBank::Play(const std::string& cue) {
+        const auto& cues = Tuning().Sounds().cues;
+        const auto  it   = cues.find(cue);
+        if(it == cues.end()) {
+            Tsukino::Core::Log::Warn("SoundBank: cue '" + cue + "' is not in Sounds.json");
+            return;
+        }
+        const float                       volume = it->second.volume;
+        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Sfx/" + it->second.file + ".wav");
         if(!handle.IsValid()) {
             return;
         }
@@ -38,8 +48,15 @@ namespace ChronoSort::Game {
     //----------------------------------------------------------------------------
     //! BGM をループ再生します。
     //----------------------------------------------------------------------------
-    void SoundBank::PlayBgm(const std::string& name, float volume) {
-        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Bgm/" + name + ".mp3");
+    void SoundBank::PlayBgm(const std::string& cue) {
+        const auto& music = Tuning().Sounds().music;
+        const auto  it    = music.find(cue);
+        if(it == music.end()) {
+            Tsukino::Core::Log::Warn("SoundBank: music '" + cue + "' is not in Sounds.json");
+            return;
+        }
+        const float                       volume = it->second.volume;
+        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Bgm/" + it->second.file + ".mp3");
         if(handle == m_bgm) {
             return;
         }

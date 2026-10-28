@@ -4,7 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/GameHud.hpp>
 
-#include <ChronoSort/Rules/GameRules.hpp>
+#include <ChronoSort/Board/BoardLayout.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -111,11 +111,11 @@ namespace ChronoSort::UI {
 
         // ライフのインク壺（ソロ）
         if(solo) {
-            for(int i = 0; i < Rules::kSoloLifeCount; ++i) {
+            for(int i = 0; i < m_match.Config().rules.soloLives; ++i) {
                 m_inks.push_back(m_ui.Paper(m_layout.Spec("ink" + std::to_string(i))));
                 m_ui.SlideIn(m_inks.back(), hlslpp::float2(-200.0f, 0.0f), 0.3f + 0.08f * static_cast<float>(i));
             }
-            m_shownLives = Rules::kSoloLifeCount;
+            m_shownLives = m_match.Config().rules.soloLives;
         }
 
         // 山札の札（山札の 3D の近くにピンで留める）
@@ -158,17 +158,15 @@ namespace ChronoSort::UI {
                 // 卓の奥の席の上に貼り付ける（カメラが動いても席についてくる）
                 auto& anchor                 = m_scene.GetRegistry().AddComponent<BuiltIn::WorldAnchorComponent>(tag);
                 anchor.useFixedWorldPosition = true;
-                const float spread           = (players.size() == 2) ? 0.0f : 320.0f;
-                const float t                = (players.size() == 2) ? 0.0f : (static_cast<float>(i - 1) / static_cast<float>(players.size() - 2)) * 2.0f - 1.0f;
-                anchor.fixedWorldPosition    = hlslpp::float3(t * spread, 0.0f, 300.0f - std::abs(t) * 30.0f);
+                anchor.fixedWorldPosition    = Board::SeatPosition(i - 1, players.size() - 1);
+                const float t                = float(anchor.fixedWorldPosition.x);
                 // 席の手前は起こした場の列と重なるので、席の内側（卓の中央寄り）の横に並べる
                 const float side             = (t > 0.0f) ? -1.0f : 1.0f;
                 anchor.worldOffset           = hlslpp::float3(side * 175.0f, 0.0f, 0.0f);
                 anchor.screenOffset          = hlslpp::float2(0.0f, -8.0f);
 
                 // 歴史家の肖像（取得できていなければ影絵）
-                static const char* const kPortraits[] = {"portrait_herodotus.png", "portrait_sima_qian.png", "portrait_gibbon.png"};
-                const std::string portrait = (i - 1 < std::size(kPortraits)) ? kPortraits[i - 1] : "";
+                const std::string& portrait = players[i].portrait;
                 const bool        hasFace  = !portrait.empty() && std::filesystem::exists("ChronoSort/Assets/Textures/UI/" + portrait);
 
                 PaperSpec face = m_layout.Spec("cpuFace");

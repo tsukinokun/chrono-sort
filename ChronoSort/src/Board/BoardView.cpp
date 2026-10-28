@@ -100,10 +100,8 @@ namespace ChronoSort::Board {
         // 奥の席は人数に応じて左右に振り分ける
         const size_t cpuCount = playerCount > 0 ? playerCount - 1 : 0;
         for(size_t i = 0; i < cpuCount; ++i) {
-            const float spread       = (cpuCount == 1) ? 0.0f : 320.0f;
-            const float t            = (cpuCount == 1) ? 0.0f : (static_cast<float>(i) / static_cast<float>(cpuCount - 1)) * 2.0f - 1.0f;
             state.hands[i + 1].style = HandStyle::Seat;
-            state.hands[i + 1].seat  = hlslpp::float3(t * spread, 0.0f, kSeatZ - std::abs(t) * 30.0f);
+            state.hands[i + 1].seat  = SeatPosition(i, cpuCount);
         }
     }
 
@@ -125,7 +123,9 @@ namespace ChronoSort::Board {
     //! 山札の一番上の位置を返します。
     //----------------------------------------------------------------------------
     hlslpp::float3 BoardView::DeckTop() {
-        return kDeckPosition + hlslpp::float3(0.0f, kTableSurfaceY + static_cast<float>(State().deckCovers.size()) * kCoverThickness + 1.0f, 0.0f);
+        const BoardTuning& tuning = Tuning();
+        return tuning.deckPosition +
+               hlslpp::float3(0.0f, kTableSurfaceY + static_cast<float>(State().deckCovers.size()) * tuning.coverThickness + tuning.deckTopLift, 0.0f);
     }
 
     //----------------------------------------------------------------------------
@@ -141,7 +141,7 @@ namespace ChronoSort::Board {
     void BoardView::SlotRestPose(size_t slot, hlslpp::float3& position, hlslpp::quaternion& rotation, float& scale) {
         const hlslpp::float3 center = SlotPosition(slot);
         scale                       = SlotScale(slot);
-        RowRestPose(center.x, kRowZ, 0.0f, scale, position, rotation);
+        RowRestPose(center.x, Tuning().rowZ, 0.0f, scale, position, rotation);
     }
 
     //----------------------------------------------------------------------------
@@ -168,7 +168,7 @@ namespace ChronoSort::Board {
         const size_t count = RowCount();
         const float  x     = BoundaryX(state, CurrentLayout(state, count), static_cast<float>(slot));
         // 範囲内に見えているなら動かさない（収まっている列が無駄に揺れないように）
-        if(std::abs(x - state.scrollTarget) > kRowHalfSpan * 0.6f) {
+        if(std::abs(x - state.scrollTarget) > Tuning().rowHalfSpan * Tuning().scrollToSlot) {
             const float limit  = ScrollLimit(state, count);
             state.scrollTarget = std::clamp(x, -limit, limit);
         }
@@ -181,7 +181,8 @@ namespace ChronoSort::Board {
         BoardState&      state  = State();
         const size_t     count  = RowCount();
         // 端に畳んだ部分を指したときは、見えている端のスロットにする（続きは流して見せる）
-        const float      x      = std::clamp(worldX, -kRowHalfSpan, kRowHalfSpan) + state.scroll;
+        const float      halfSpan = Tuning().rowHalfSpan;
+        const float      x      = std::clamp(worldX, -halfSpan, halfSpan) + state.scroll;
         const RowLayout& layout = CurrentLayout(state, count);
         // 広げたあとの見た目の境目のうち、いちばん近いもの
         size_t best         = 0;
@@ -228,7 +229,7 @@ namespace ChronoSort::Board {
         model.visible = visible;
         m_factory.SetMarkerWarning(state.marker, warning);
         if(visible) {
-            ECS::PulseGlow(registry, state.marker, warning ? hlslpp::float3(1.2f, 0.12f, 0.08f) : hlslpp::float3(0.9f, 0.65f, 0.22f), 1.0f, 6.0f);
+            ECS::PulseGlow(registry, state.marker, warning ? Tuning().markerWarningGlow : Tuning().markerGlow);
         } else {
             ECS::StopGlow(registry, state.marker);
         }
@@ -310,32 +311,35 @@ namespace ChronoSort::Board {
         Tsukino::ECS::Registry& registry = m_factory.Registry();
         const size_t            index    = CollectZone(registry, ECS::CardZone::Discard).size();
 
+        const BoardTuning&                    tuning = Tuning();
         std::uniform_real_distribution<float> unit(-1.0f, 1.0f);
         auto& placement  = Place(registry, entity, ECS::CardZone::Discard, 0, index);
-        placement.jitter = hlslpp::float4(unit(m_rng) * 14.0f, unit(m_rng) * 14.0f, unit(m_rng) * 0.35f, 0.0f);
+        placement.jitter = hlslpp::float4(unit(m_rng) * tuning.discardJitter, unit(m_rng) * tuning.discardJitter, unit(m_rng) * tuning.discardYawJitter, 0.0f);
 
         hlslpp::float3     position;
         hlslpp::quaternion rotation;
         DiscardPose(index, placement.jitter, position, rotation);
         ECS::CardMotion::SetTarget(registry, entity, position, rotation);
-        ECS::CardMotion::Fly(registry, entity, 0.55f, 90.0f);
+        ECS::CardMotion::Fly(registry, entity, tuning.discardFlight);
     }
 
     //----------------------------------------------------------------------------
     //! 山札の残り枚数に合わせて、山の厚みを変えます。
     //----------------------------------------------------------------------------
     void BoardView::SetDeckCount(size_t remaining) {
-        std::vector<Tsukino::ECS::Entity>& covers = State().deckCovers;
-        const size_t                       wanted = remaining == 0 ? 0 : std::min(kMaxCovers, (remaining + 4) / 5);
+        const BoardTuning&                 tuning   = Tuning();
+        std::vector<Tsukino::ECS::Entity>& covers   = State().deckCovers;
+        const size_t                       perCover = static_cast<size_t>(std::max(tuning.cardsPerCover, 1));
+        const size_t                       wanted   = remaining == 0 ? 0 : std::min(static_cast<size_t>(std::max(tuning.maxCovers, 0)), (remaining + perCover - 1) / perCover);
         while(covers.size() > wanted) {
             m_factory.Destroy(covers.back());
             covers.pop_back();
         }
         std::uniform_real_distribution<float> unit(-1.0f, 1.0f);
         while(covers.size() < wanted) {
-            const float          y        = kTableSurfaceY + static_cast<float>(covers.size()) * kCoverThickness;
-            const hlslpp::float3 position = kDeckPosition + hlslpp::float3(unit(m_rng) * 1.5f, y, unit(m_rng) * 1.5f);
-            covers.push_back(m_factory.CreateCover(position, hlslpp::quaternion::rotation_y(unit(m_rng) * 0.05f)));
+            const float          y        = kTableSurfaceY + static_cast<float>(covers.size()) * tuning.coverThickness;
+            const hlslpp::float3 position = tuning.deckPosition + hlslpp::float3(unit(m_rng) * tuning.coverJitter, y, unit(m_rng) * tuning.coverJitter);
+            covers.push_back(m_factory.CreateCover(position, hlslpp::quaternion::rotation_y(unit(m_rng) * tuning.coverYawJitter)));
         }
     }
 

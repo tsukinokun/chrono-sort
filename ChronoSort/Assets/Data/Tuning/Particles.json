@@ -1,0 +1,157 @@
+{
+    "tuning": {
+        "effects": [
+            {
+                "key": "dust",
+                "value": [
+                    {
+                        "texture": "soft.png",
+                        "params": {
+                            "count": 22,
+                            "speedMin": 60.0,
+                            "speedMax": 140.0,
+                            "upwardBias": 0.15,
+                            "spread": 1.0,
+                            "lifeMin": 0.5,
+                            "lifeMax": 0.9,
+                            "sizeMin": 10.0,
+                            "sizeMax": 22.0,
+                            "endSizeScale": 2.2,
+                            "gravity": -10.0,
+                            "drag": 4.0,
+                            "radius": 30.0,
+                            "delayMax": 0.0,
+                            "colorA": {
+                                "x": 0.55,
+                                "y": 0.45,
+                                "z": 0.33,
+                                "w": 0.45
+                            },
+                            "colorB": {
+                                "x": 0.75,
+                                "y": 0.65,
+                                "z": 0.5,
+                                "w": 0.35
+                            },
+                            "endAlpha": 0.0,
+                            "additive": false,
+                            "texturePixels": 64.0
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "gold",
+                "value": [
+                    {
+                        "texture": "spark.png",
+                        "params": {
+                            "count": 40,
+                            "speedMin": 120.0,
+                            "speedMax": 320.0,
+                            "upwardBias": 1.4,
+                            "spread": 1.0,
+                            "lifeMin": 0.5,
+                            "lifeMax": 1.1,
+                            "sizeMin": 6.0,
+                            "sizeMax": 14.0,
+                            "endSizeScale": 0.2,
+                            "gravity": 260.0,
+                            "drag": 1.5,
+                            "radius": 20.0,
+                            "delayMax": 0.0,
+                            "colorA": {
+                                "x": 4.0,
+                                "y": 2.8,
+                                "z": 0.9,
+                                "w": 1.0
+                            },
+                            "colorB": {
+                                "x": 3.0,
+                                "y": 3.0,
+                                "z": 2.2,
+                                "w": 1.0
+                            },
+                            "endAlpha": 0.0,
+                            "additive": true,
+                            "texturePixels": 64.0
+                        }
+                    },
+                    {
+                        "texture": "confetti.png",
+                        "params": {
+                            "count": 26,
+                            "speedMin": 90.0,
+                            "speedMax": 200.0,
+                            "upwardBias": 2.0,
+                            "spread": 1.0,
+                            "lifeMin": 1.0,
+                            "lifeMax": 1.8,
+                            "sizeMin": 6.0,
+                            "sizeMax": 10.0,
+                            "endSizeScale": 0.8,
+                            "gravity": 140.0,
+                            "drag": 2.5,
+                            "radius": 25.0,
+                            "delayMax": 0.12,
+                            "colorA": {
+                                "x": 0.95,
+                                "y": 0.85,
+                                "z": 0.55,
+                                "w": 1.0
+                            },
+                            "colorB": {
+                                "x": 0.8,
+                                "y": 0.3,
+                                "z": 0.22,
+                                "w": 1.0
+                            },
+                            "endAlpha": 0.2,
+                            "additive": false,
+                            "texturePixels": 64.0
+                        }
+                    }
+                ]
+            },
+            {
+                "key": "ink",
+                "value": [
+                    {
+                        "texture": "ink.png",
+                        "params": {
+                            "count": 18,
+                            "speedMin": 80.0,
+                            "speedMax": 220.0,
+                            "upwardBias": 0.9,
+                            "spread": 1.0,
+                            "lifeMin": 0.5,
+                            "lifeMax": 0.9,
+                            "sizeMin": 8.0,
+                            "sizeMax": 18.0,
+                            "endSizeScale": 0.5,
+                            "gravity": 420.0,
+                            "drag": 1.0,
+                            "radius": 15.0,
+                            "delayMax": 0.0,
+                            "colorA": {
+                                "x": 0.08,
+                                "y": 0.05,
+                                "z": 0.06,
+                                "w": 0.95
+                            },
+                            "colorB": {
+                                "x": 0.35,
+                                "y": 0.04,
+                                "z": 0.04,
+                                "w": 0.9
+                            },
+                            "endAlpha": 0.0,
+                            "additive": false,
+                            "texturePixels": 64.0
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

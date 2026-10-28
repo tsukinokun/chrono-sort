@@ -1,0 +1,12 @@
+{
+    "tuning": {
+        "thinkBase": 0.9,
+        "thinkPerDoubt": 1.6,
+        "thinkRandom": 0.5,
+        "hopsBase": 1,
+        "hopsPerDoubt": 3.0,
+        "hopStart": 0.35,
+        "hopSpan": 0.5,
+        "wander": 1
+    }
+}

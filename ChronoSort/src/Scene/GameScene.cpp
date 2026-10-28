@@ -7,6 +7,7 @@
 #include <ChronoSort/ECS/Component/CameraRigComponent.hpp>
 #include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
@@ -31,6 +32,8 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     GameScene::GameScene(const Rules::MatchConfig& config)
         : m_config(config) {
+        // ルールの調整値は対局を始めるときの Rules.json の値（対局の途中で読み直しても変えない）
+        m_config.rules = Game::Tuning().Rules();
     }
 
     //----------------------------------------------------------------------------
@@ -118,7 +121,7 @@ namespace ChronoSort::Scene {
         if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
             const Match::HumanInput& input = m_session->input;
             if(m_hud->IsPauseOpen()) {
-                sounds.Play("page", 0.7f);
+                sounds.Play("ui.close");
                 m_hud->ClosePause();
             } else if(input.selected >= 0 || input.grabbed >= 0) {
                 Match::CancelSelection(registry);
@@ -126,22 +129,22 @@ namespace ChronoSort::Scene {
                 api.ChangeScene(std::make_unique<TitleScene>());
                 return true;
             } else {
-                sounds.Play("page", 0.8f);
+                sounds.Play("ui.open");
                 m_hud->OpenPause();
             }
         }
         if(!m_options->IsOpen()) {
             switch(m_hud->PollPauseChoice()) {
             case UI::PauseChoice::Resume:
-                sounds.Play("page", 0.7f);
+                sounds.Play("ui.close");
                 m_hud->ClosePause();
                 break;
             case UI::PauseChoice::Options:
-                sounds.Play("page", 0.8f);
+                sounds.Play("ui.open");
                 m_options->Open();
                 break;
             case UI::PauseChoice::Title:
-                sounds.Play("button");
+                sounds.Play("ui.button");
                 api.ChangeScene(std::make_unique<TitleScene>());
                 return true;
             default:

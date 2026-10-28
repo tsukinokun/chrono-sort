@@ -4,7 +4,6 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Rules/Match.hpp>
 
-#include <ChronoSort/Rules/GameRules.hpp>
 
 #include <algorithm>
 #include <cstdint>
@@ -12,15 +11,6 @@
 #include <iterator>
 
 namespace ChronoSort::Rules {
-
-    namespace {
-        constexpr int kSoloBaseScore      = 100;    // 1枚正解の基本点
-        constexpr int kSoloCloseCallBonus = 50;     // 隣と年代が近いときの加点
-        constexpr int kCloseCallYears     = 20;     // 「近い」とみなす年数
-        constexpr int kStreakCap          = 10;     // 倍率が伸びる連続正解数の上限
-
-        const char* const kCpuNames[] = {"ヘロドトス", "司馬遷", "ギボン"};
-    }    // namespace
 
     //----------------------------------------------------------------------------
     //! 対局を始めます。
@@ -37,7 +27,7 @@ namespace ChronoSort::Rules {
         m_tiebreak   = false;
         m_round      = 1;
         m_score      = 0;
-        m_lives      = kSoloLifeCount;
+        m_lives      = config.rules.soloLives;
         m_streak     = 0;
         m_bestStreak = 0;
 
@@ -51,9 +41,10 @@ namespace ChronoSort::Rules {
         human.name = config.playerName;
         m_players.push_back(human);
         if(config.mode == MatchMode::Versus) {
-            for(size_t i = 0; i < config.cpus.size() && i < std::size(kCpuNames); ++i) {
+            for(size_t i = 0; i < config.cpus.size() && i < config.rules.cpus.size(); ++i) {
                 Player cpu;
-                cpu.name     = kCpuNames[i];
+                cpu.name     = config.rules.cpus[i].name;
+                cpu.portrait = config.rules.cpus[i].portrait;
                 cpu.isCpu    = true;
                 cpu.cpuLevel = config.cpus[i];
                 m_players.push_back(cpu);
@@ -64,7 +55,7 @@ namespace ChronoSort::Rules {
             m_timeline.Reset(*first);
         }
 
-        const int handSize = (config.mode == MatchMode::Solo) ? kSoloHandSize : GetInitialHandSize(static_cast<int>(m_players.size()));
+        const int handSize = (config.mode == MatchMode::Solo) ? config.rules.soloHandSize : config.rules.InitialHandSize(static_cast<int>(m_players.size()));
         for(int i = 0; i < handSize; ++i) {
             for(Player& player : m_players) {
                 if(const auto card = DrawCard()) {
@@ -107,7 +98,7 @@ namespace ChronoSort::Rules {
             if(slot + 1 < cards.size()) {
                 nearest = std::min(nearest, std::abs(cards[slot].year - cards[slot + 1].year));
             }
-            result.closeCall = nearest <= kCloseCallYears;
+            result.closeCall = nearest <= m_config.rules.closeCallYears;
 
             if(m_config.mode == MatchMode::Solo) {
                 result.scoreGained = CalculateSoloScore(result.closeCall);
@@ -134,7 +125,7 @@ namespace ChronoSort::Rules {
                 m_outcome = MatchOutcome::SoloFailed;
             } else {
                 // 手札を常に一定枚数に保つ
-                if(static_cast<int>(player.hand.size()) < kSoloHandSize) {
+                if(static_cast<int>(player.hand.size()) < m_config.rules.soloHandSize) {
                     result.drawnCard = m_deck.Draw();
                     if(result.drawnCard) {
                         player.hand.push_back(*result.drawnCard);
@@ -188,10 +179,11 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     int Match::CalculateSoloScore(bool closeCall) const {
         // 連続正解ごとに 1 割ずつ倍率が上がる（上限あり）
-        const int multiplierTenths = 10 + std::min(m_streak - 1, kStreakCap);
-        int       score            = kSoloBaseScore * multiplierTenths / 10;
+        const RulesTuning& rules            = m_config.rules;
+        const int          multiplierTenths = 10 + std::min(m_streak - 1, rules.streakCap);
+        int                score            = rules.soloBaseScore * multiplierTenths / 10;
         if(closeCall) {
-            score += kSoloCloseCallBonus;
+            score += rules.closeCallBonus;
         }
         return score;
     }

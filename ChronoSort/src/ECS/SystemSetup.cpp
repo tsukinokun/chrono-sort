@@ -13,10 +13,10 @@
 #include <ChronoSort/ECS/System/MatchFeedbackSystem.hpp>
 #include <ChronoSort/ECS/System/MatchFlowSystem.hpp>
 #include <ChronoSort/ECS/System/RevealSystem.hpp>
-#include <ChronoSort/ECS/System/ParticleSystem.hpp>
 
 #include <Tsukino/Engine/ECS/Scene.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/BloomSystem.hpp>
+#include <Tsukino/EngineIntegration/ECS/System/BurstParticleSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/CameraSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/FontRendererSystem.hpp>
 #include <Tsukino/EngineIntegration/ECS/System/InteractionSystem.hpp>
@@ -47,7 +47,7 @@ namespace ChronoSort::ECS {
         // 並べ方が目標を書き、CardMotionSystem がそこへ動かす（同じ順番の中では登録した順に更新される）
         scene.AddSystem(std::make_shared<BoardLayoutSystem>(), Order::kGameplay);
         scene.AddSystem(std::make_shared<CardMotionSystem>(), Order::kGameplay);
-        scene.AddSystem(std::make_shared<ParticleSystem>(), Order::kGameplay);
+        scene.AddSystem(std::make_shared<BuiltIn::BurstParticleSystem>(), Order::kGameplay);
         scene.AddSystem(std::make_shared<CardGlowSystem>(), Order::kGameplay);
         scene.AddSystem(std::make_shared<BuiltIn::TransformSystem>(), Order::kTransform);
         scene.AddSystem(std::make_shared<BuiltIn::CameraSystem>(), Order::kCamera);

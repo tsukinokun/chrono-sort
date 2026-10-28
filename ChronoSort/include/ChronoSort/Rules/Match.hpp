@@ -4,7 +4,7 @@
 //! @detail 山札・場・捨て札・各プレイヤーの手札と、手番の巡回や勝敗判定を持ちます。
 //!         ECS や描画には依存せず、画面側は Play() の結果を見て演出だけを行います。
 //!
-//!         ソロ   : 手札を常に kSoloHandSize 枚に保ち、間違えるとライフが減る。
+//!         ソロ   : 手札を常に RulesTuning::soloHandSize 枚に保ち、間違えるとライフが減る。
 //!                  ライフが尽きるとゲームオーバー、山札と手札を出し切るとクリア。
 //!         対戦   : 間違えたカードは捨て札にして1枚引く。
 //!                  ラウンドの終わりに手札を出し切った人がいれば勝ち。複数なら延長戦。
@@ -12,6 +12,7 @@
 #pragma once
 #include <ChronoSort/Rules/CardData.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
+#include <ChronoSort/Rules/RulesTuning.hpp>
 #include <ChronoSort/Rules/Timeline.hpp>
 
 #include <optional>
@@ -37,6 +38,7 @@ namespace ChronoSort::Rules {
     //! 対局の参加者です。
     struct Player {
         std::string           name;                         // 表示名（UTF-8）
+        std::string           portrait;                     // CPU の肖像の画像（ルールは使わず、画面に渡すだけ）
         bool                  isCpu      = false;           // CPU が操作するか
         CpuLevel              cpuLevel   = CpuLevel::Normal;    // CPU の強さ
         std::vector<CardData> hand;                         // 手札
@@ -50,6 +52,7 @@ namespace ChronoSort::Rules {
         std::vector<CpuLevel> cpus;                      // 対戦の CPU（1〜3人）
         std::string           playerName = "あなた";     // 人間のプレイヤー名
         CardRange             range = CardRange::All;    // 出題の範囲
+        RulesTuning           rules;                     // ルールの調整値（ゲームは Rules.json の値を入れる。自己テストは初期値）
     };
 
     //! カードを1枚置いた結果です。
@@ -72,8 +75,6 @@ namespace ChronoSort::Rules {
         SoloFailed,    // ソロでライフが尽きた
         VersusWon,     // 対戦で勝者が決まった
     };
-
-    constexpr int kSoloHandSize = 3;    // ソロで保つ手札の枚数
 
     //! 1回の対局の進行です。
     class Match {

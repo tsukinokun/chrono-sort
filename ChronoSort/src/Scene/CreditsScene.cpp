@@ -5,6 +5,7 @@
 #include <ChronoSort/Scene/CreditsScene.hpp>
 
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
@@ -55,7 +56,7 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void CreditsScene::OnInitialize(Tsukino::EngineIntegration::EngineAPI&) {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
-        m_stage.Build(m_scene, 8);
+        m_stage.Build(m_scene, Game::Tuning().Stage().creditsCards);
         m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
         LoadLines();
         m_pageCount = std::max(1, static_cast<int>((m_lines.size() + kLinesPerPage - 1) / kLinesPerPage));
@@ -174,14 +175,14 @@ namespace ChronoSort::Scene {
         const bool next = m_ui->Clicked(m_next) || input.IsKeyPressed(Tsukino::Input::KeyCode::Right) || input.GetWheelDelta() < 0.0f;
         const bool prev = m_ui->Clicked(m_prev) || input.IsKeyPressed(Tsukino::Input::KeyCode::Left) || input.GetWheelDelta() > 0.0f;
         if(next && m_current + 1 < m_pageCount) {
-            sounds.Play("page", 0.7f);
+            sounds.Play("ui.close");
             ShowPage(m_current + 1, 1);
         } else if(prev && m_current > 0) {
-            sounds.Play("page", 0.7f);
+            sounds.Play("ui.close");
             ShowPage(m_current - 1, -1);
         }
         if(m_ui->Clicked(m_back) || input.IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
-            sounds.Play("button");
+            sounds.Play("ui.button");
             api.ChangeScene(std::make_unique<TitleScene>());
             return;
         }

@@ -1,0 +1,225 @@
+{
+    "tuning": {
+        "cues": [
+            {
+                "key": "hand.hover",
+                "value": {
+                    "file": "card_slide",
+                    "volume": 0.25
+                }
+            },
+            {
+                "key": "hand.drag",
+                "value": {
+                    "file": "card_slide",
+                    "volume": 0.6
+                }
+            },
+            {
+                "key": "hand.return",
+                "value": {
+                    "file": "card_slide",
+                    "volume": 0.4
+                }
+            },
+            {
+                "key": "hand.select",
+                "value": {
+                    "file": "card_flip",
+                    "volume": 0.4
+                }
+            },
+            {
+                "key": "slot.preview",
+                "value": {
+                    "file": "tick",
+                    "volume": 0.35
+                }
+            },
+            {
+                "key": "deal.openingFly",
+                "value": {
+                    "file": "whoosh",
+                    "volume": 0.6
+                }
+            },
+            {
+                "key": "deal.openingLand",
+                "value": {
+                    "file": "card_place",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "deal.card",
+                "value": {
+                    "file": "deal",
+                    "volume": 0.55
+                }
+            },
+            {
+                "key": "match.tiebreak",
+                "value": {
+                    "file": "page",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "cpu.pick",
+                "value": {
+                    "file": "card_flip",
+                    "volume": 0.4
+                }
+            },
+            {
+                "key": "cpu.hover",
+                "value": {
+                    "file": "tick",
+                    "volume": 0.3
+                }
+            },
+            {
+                "key": "play.commit",
+                "value": {
+                    "file": "whoosh",
+                    "volume": 0.5
+                }
+            },
+            {
+                "key": "play.flip",
+                "value": {
+                    "file": "card_flip",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "play.land",
+                "value": {
+                    "file": "card_place",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "play.stamp",
+                "value": {
+                    "file": "stamp",
+                    "volume": 0.8
+                }
+            },
+            {
+                "key": "play.correct",
+                "value": {
+                    "file": "correct",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "play.wrong",
+                "value": {
+                    "file": "wrong",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "play.showCorrect",
+                "value": {
+                    "file": "card_slide",
+                    "volume": 0.5
+                }
+            },
+            {
+                "key": "play.discard",
+                "value": {
+                    "file": "whoosh",
+                    "volume": 0.6
+                }
+            },
+            {
+                "key": "match.won",
+                "value": {
+                    "file": "fanfare",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "match.lost",
+                "value": {
+                    "file": "lose",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "result.show",
+                "value": {
+                    "file": "page",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "ui.button",
+                "value": {
+                    "file": "button",
+                    "volume": 1.0
+                }
+            },
+            {
+                "key": "ui.hover",
+                "value": {
+                    "file": "card_slide",
+                    "volume": 0.3
+                }
+            },
+            {
+                "key": "ui.open",
+                "value": {
+                    "file": "page",
+                    "volume": 0.8
+                }
+            },
+            {
+                "key": "ui.close",
+                "value": {
+                    "file": "page",
+                    "volume": 0.7
+                }
+            },
+            {
+                "key": "ui.choose",
+                "value": {
+                    "file": "stamp",
+                    "volume": 0.6
+                }
+            },
+            {
+                "key": "ui.preview",
+                "value": {
+                    "file": "tick",
+                    "volume": 0.8
+                }
+            }
+        ],
+        "music": [
+            {
+                "key": "title",
+                "value": {
+                    "file": "title",
+                    "volume": 0.45
+                }
+            },
+            {
+                "key": "game",
+                "value": {
+                    "file": "game",
+                    "volume": 0.45
+                }
+            },
+            {
+                "key": "result",
+                "value": {
+                    "file": "result",
+                    "volume": 0.45
+                }
+            }
+        ]
+    }
+}

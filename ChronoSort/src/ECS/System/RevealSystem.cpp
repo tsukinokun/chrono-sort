@@ -7,6 +7,7 @@
 #include <ChronoSort/Board/BoardView.hpp>
 #include <ChronoSort/ECS/CardMotion.hpp>
 #include <ChronoSort/ECS/Component/RevealComponent.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
 
@@ -17,16 +18,6 @@
 namespace ChronoSort::ECS {
 
     namespace {
-        // 公開の演出の時刻（出してからの秒）。正解は判定から 0.8 秒、不正解は正しい位置を見せてから捨て札へ
-        constexpr float kFlipAt        = 0.42f;
-        constexpr float kSlamAt        = 0.98f;
-        constexpr float kLandAt        = 1.10f;
-        constexpr float kJudgeAt       = 1.32f;
-        constexpr float kCorrectDoneAt = kJudgeAt + 0.8f;
-        constexpr float kShowCorrectAt = kJudgeAt + 0.75f;
-        constexpr float kDiscardAt     = kJudgeAt + 1.9f;
-        constexpr float kWrongDoneAt   = kJudgeAt + 2.4f;
-
         const hlslpp::float3 kUp(0.0f, 1.0f, 0.0f);
 
         //----------------------------------------------------------------------------
@@ -34,7 +25,7 @@ namespace ChronoSort::ECS {
         //! @return 向き。
         //----------------------------------------------------------------------------
         hlslpp::quaternion FacingRevealed() {
-            return hlslpp::mul(hlslpp::quaternion::rotation_x(-Board::kRowTilt), Board::RevealedRotation());
+            return hlslpp::mul(hlslpp::quaternion::rotation_x(-Board::Tuning().rowTilt), Board::RevealedRotation());
         }
 
         //----------------------------------------------------------------------------
@@ -50,32 +41,33 @@ namespace ChronoSort::ECS {
             const Rules::PlayResult& result = reveal.result;
             const size_t             slot   = result.slot;
             const size_t             correctSlot = result.correctSlots.empty() ? result.slot : result.correctSlots.front();
+            const Match::RevealTuning& tuning      = Game::Tuning().Reveal();
 
             switch(reveal.stage) {
             case RevealStage::Carry:
                 // 1. 隙間の上まで運ぶ（表のまま）。出したその場で行い、時間は次のフレームから数える
-                CardMotion::SetTarget(registry, entity, board.SlotPosition(slot) + kUp * 60.0f, hlslpp::quaternion::identity(), 1.0f);
-                CardMotion::Fly(registry, entity, 0.38f, 35.0f);
+                CardMotion::SetTarget(registry, entity, board.SlotPosition(slot) + kUp * tuning.carryHeight, hlslpp::quaternion::identity(), 1.0f);
+                CardMotion::Fly(registry, entity, tuning.carryFlight);
                 reveal.stage = RevealStage::Flip;
                 return false;
 
             case RevealStage::Flip:
                 // 2. 持ち上げながら裏返す
-                if(reveal.time < kFlipAt) {
+                if(reveal.time < tuning.flipAt) {
                     return false;
                 }
-                CardMotion::SetSharpness(registry, entity, 9.0f, 7.0f);
-                CardMotion::SetTarget(registry, entity, board.SlotPosition(slot) + kUp * 115.0f, FacingRevealed(), board.SlotScale(slot) * 1.1f);
+                CardMotion::SetSharpness(registry, entity, tuning.flipSharpness);
+                CardMotion::SetTarget(registry, entity, board.SlotPosition(slot) + kUp * tuning.flipHeight, FacingRevealed(), board.SlotScale(slot) * tuning.flipScale);
                 session.events->Publish(Match::CardFlippedEvent{entity});
                 reveal.stage = RevealStage::Slam;
                 return true;
 
             case RevealStage::Slam: {
                 // 3. 卓へ叩きつける。着地先は列に並んだときと同じ起こした姿勢（寝てから起き直す二段の動きを出さない）
-                if(reveal.time < kSlamAt) {
+                if(reveal.time < tuning.slamAt) {
                     return false;
                 }
-                CardMotion::SetSharpness(registry, entity, 34.0f, 16.0f);
+                CardMotion::SetSharpness(registry, entity, tuning.slamSharpness);
                 hlslpp::float3     position;
                 hlslpp::quaternion rotation;
                 float              scale = 1.0f;
@@ -86,20 +78,20 @@ namespace ChronoSort::ECS {
             }
 
             case RevealStage::Land:
-                if(reveal.time < kLandAt) {
+                if(reveal.time < tuning.landAt) {
                     return false;
                 }
-                CardMotion::Punch(registry, entity, 0.3f, 0.07f);
+                CardMotion::Punch(registry, entity, tuning.landBump);
                 session.events->Publish(Match::CardLandedEvent{entity, board.SlotPosition(slot)});
                 reveal.stage = RevealStage::Judge;
                 return true;
 
             case RevealStage::Judge: {
                 // 4. 判定。正解なら列に入れ、不正解なら正しい位置を見せてから捨て札へ
-                if(reveal.time < kJudgeAt) {
+                if(reveal.time < tuning.judgeAt) {
                     return false;
                 }
-                CardMotion::SetSharpness(registry, entity, 14.0f, 10.0f);
+                CardMotion::SetSharpness(registry, entity, tuning.judgeSharpness);
                 const hlslpp::float3 at = board.SlotPosition(slot);
                 if(result.correct) {
                     board.InsertIntoRow(slot, entity);
@@ -111,33 +103,33 @@ namespace ChronoSort::ECS {
             }
 
             case RevealStage::ShowCorrect:
-                if(reveal.time < kShowCorrectAt) {
+                if(reveal.time < tuning.judgeAt + tuning.showCorrectAfter) {
                     return false;
                 }
                 board.SetGap(correctSlot);
                 board.SetMarker(true, true);
                 board.ScrollToSlot(correctSlot);
-                CardMotion::SetSharpness(registry, entity, 8.0f, 8.0f);
-                CardMotion::SetTarget(registry, entity, board.SlotPosition(correctSlot) + kUp * 40.0f, FacingRevealed(), board.SlotScale(correctSlot));
+                CardMotion::SetSharpness(registry, entity, tuning.showCorrectSharpness);
+                CardMotion::SetTarget(registry, entity, board.SlotPosition(correctSlot) + kUp * tuning.showCorrectHeight, FacingRevealed(), board.SlotScale(correctSlot));
                 session.events->Publish(Match::CorrectSlotShownEvent{entity});
                 reveal.stage = RevealStage::Discard;
                 return true;
 
             case RevealStage::Discard:
-                if(reveal.time < kDiscardAt) {
+                if(reveal.time < tuning.judgeAt + tuning.discardAfter) {
                     return false;
                 }
                 board.SetGap(std::nullopt);
                 board.SetMarker(false);
                 board.SetHeld(entt::null);
-                CardMotion::SetSharpness(registry, entity, 14.0f, 10.0f);
+                CardMotion::SetSharpness(registry, entity, tuning.discardSharpness);
                 board.SendToDiscard(entity);
                 session.events->Publish(Match::CardDiscardedEvent{entity});
                 reveal.stage = RevealStage::Finish;
                 return true;
 
             case RevealStage::Finish:
-                if(reveal.time < (result.correct ? kCorrectDoneAt : kWrongDoneAt)) {
+                if(reveal.time < tuning.judgeAt + (result.correct ? tuning.correctDoneAfter : tuning.wrongDoneAfter)) {
                     return false;
                 }
                 reveal.stage = RevealStage::Done;

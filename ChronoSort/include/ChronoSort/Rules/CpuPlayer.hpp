@@ -22,15 +22,17 @@ namespace ChronoSort::Rules {
     //! @param  [in]     player   手番の CPU。
     //! @param  [in]     timeline 場の列。
     //! @param  [in,out] rng      乱数生成器。
+    //! @param  [in]     rules    ルールの調整値（CPU の強さ）。
     //! @return 選んだ手。手札が空なら handIndex は 0 のまま。
-    CpuMove ChooseCpuMove(const Player& player, const Timeline& timeline, std::mt19937& rng);
+    CpuMove ChooseCpuMove(const Player& player, const Timeline& timeline, std::mt19937& rng, const RulesTuning& rules);
 
     //! カードを正しい位置に置ける確率を返します。
     //! 隣のカードとの年代差が小さいほど低くなります。
     //! @param  [in] level    CPU の強さ。
     //! @param  [in] timeline 場の列。
     //! @param  [in] card     置くカード。
+    //! @param  [in] rules    ルールの調整値（CPU の強さ）。
     //! @return 正解する確率（0〜1）。
-    float CpuSuccessChance(CpuLevel level, const Timeline& timeline, const CardData& card);
+    float CpuSuccessChance(CpuLevel level, const Timeline& timeline, const CardData& card, const RulesTuning& rules);
 
 }    // namespace ChronoSort::Rules

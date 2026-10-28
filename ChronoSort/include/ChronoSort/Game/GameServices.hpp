@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 //! @file   GameServices.hpp
-//! @brief  シーンをまたいで共有するもの（音と設定）
+//! @brief  シーンをまたいで共有するもの（調整値と音と設定）
 //! @detail BGM をシーンの切り替えで途切れさせないため、音（SoundBank）と設定（Options）はシーンより長く生かします。
 //!         WinMain がエンジンの初期化のあとに1つだけ作り、終わるときに（エンジンより先に）壊します。
 //!         作ってから壊すまでの間は、どこからでも Services() で受け取れます。
@@ -9,6 +9,7 @@
 #pragma once
 #include <ChronoSort/Game/Options.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 
 namespace Tsukino::EngineIntegration {
     struct EngineContext;
@@ -30,6 +31,10 @@ namespace ChronoSort::Game {
         GameServices(const GameServices&)            = delete;
         GameServices& operator=(const GameServices&) = delete;
 
+        //! 調整値を返します（Game::Tuning() と同じ）。
+        //! @return 調整値。
+        const TuningSet& Tunings() const { return m_tunings; }
+
         //! 効果音と BGM の再生窓口を返します。
         //! @return 再生窓口。
         SoundBank& Sounds() { return m_sounds; }
@@ -46,6 +51,7 @@ namespace ChronoSort::Game {
 
     private:
         Tsukino::EngineIntegration::EngineContext& m_context;    // エンジン（全体の音量を渡す先）
+        TuningSet                                  m_tunings;    // 調整値（音の合図も含むので、音より先に作る）
         SoundBank                                  m_sounds;     // 効果音と BGM
         Options                                    m_options;    // 設定
     };

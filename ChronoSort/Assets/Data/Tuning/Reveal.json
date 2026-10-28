@@ -1,0 +1,45 @@
+{
+    "tuning": {
+        "flipAt": 0.42,
+        "slamAt": 0.98,
+        "landAt": 1.1,
+        "judgeAt": 1.32,
+        "correctDoneAfter": 0.8,
+        "showCorrectAfter": 0.75,
+        "discardAfter": 1.9,
+        "wrongDoneAfter": 2.4,
+        "carryHeight": 60.0,
+        "carryFlight": {
+            "seconds": 0.38,
+            "arc": 35.0,
+            "delay": 0.0
+        },
+        "flipHeight": 115.0,
+        "flipScale": 1.1,
+        "flipSharpness": {
+            "position": 9.0,
+            "rotation": 7.0
+        },
+        "slamSharpness": {
+            "position": 34.0,
+            "rotation": 16.0
+        },
+        "landBump": {
+            "seconds": 0.3,
+            "amount": 0.07
+        },
+        "judgeSharpness": {
+            "position": 14.0,
+            "rotation": 10.0
+        },
+        "showCorrectHeight": 40.0,
+        "showCorrectSharpness": {
+            "position": 8.0,
+            "rotation": 8.0
+        },
+        "discardSharpness": {
+            "position": 14.0,
+            "rotation": 10.0
+        }
+    }
+}

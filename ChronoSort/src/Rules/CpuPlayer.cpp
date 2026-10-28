@@ -12,20 +12,6 @@ namespace ChronoSort::Rules {
 
     namespace {
 
-        //! 強さごとの正解率の幅（年代差が非常に近いとき / 十分離れているとき）
-        struct ChanceRange {
-            float hardest;
-            float easiest;
-        };
-
-        constexpr ChanceRange kChance[] = {
-            {0.35f, 0.80f},    // Easy
-            {0.55f, 0.92f},    // Normal
-            {0.72f, 0.98f},    // Hard
-        };
-
-        constexpr float kComfortableGapYears = 150.0f;    // これ以上離れていれば迷わない年数
-
         //----------------------------------------------------------------------------
         //! 正しいスロットのうち、隣のカードとの年代差の最小値を返します。
         //! @param  [in] timeline 場の列。
@@ -53,16 +39,16 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     //! カードを正しい位置に置ける確率を返します。
     //----------------------------------------------------------------------------
-    float CpuSuccessChance(CpuLevel level, const Timeline& timeline, const CardData& card) {
-        const ChanceRange range = kChance[static_cast<int>(level)];
-        const float       ease  = std::clamp(static_cast<float>(NearestNeighborGap(timeline, card)) / kComfortableGapYears, 0.0f, 1.0f);
-        return range.hardest + (range.easiest - range.hardest) * ease;
+    float CpuSuccessChance(CpuLevel level, const Timeline& timeline, const CardData& card, const RulesTuning& rules) {
+        const CpuLevelRules& range = rules.Level(static_cast<size_t>(level));
+        const float          ease  = std::clamp(static_cast<float>(NearestNeighborGap(timeline, card)) / rules.comfortableGapYears, 0.0f, 1.0f);
+        return range.hardestChance + (range.easiestChance - range.hardestChance) * ease;
     }
 
     //----------------------------------------------------------------------------
     //! 手札から1枚選び、置くスロットを決めます。
     //----------------------------------------------------------------------------
-    CpuMove ChooseCpuMove(const Player& player, const Timeline& timeline, std::mt19937& rng) {
+    CpuMove ChooseCpuMove(const Player& player, const Timeline& timeline, std::mt19937& rng, const RulesTuning& rules) {
         CpuMove move;
         if(player.hand.empty()) {
             return move;
@@ -70,13 +56,13 @@ namespace ChronoSort::Rules {
 
         // 強いほど自信のあるカードから出す。弱い CPU は気まぐれに選ぶ
         std::uniform_real_distribution<float> unit(0.0f, 1.0f);
-        const float                           whim = (player.cpuLevel == CpuLevel::Easy) ? 0.6f : (player.cpuLevel == CpuLevel::Normal ? 0.25f : 0.05f);
+        const float                           whim = rules.Level(static_cast<size_t>(player.cpuLevel)).whim;
         if(unit(rng) < whim) {
             move.handIndex = std::uniform_int_distribution<size_t>(0, player.hand.size() - 1)(rng);
         } else {
             float best = -1.0f;
             for(size_t i = 0; i < player.hand.size(); ++i) {
-                const float chance = CpuSuccessChance(player.cpuLevel, timeline, player.hand[i]);
+                const float chance = CpuSuccessChance(player.cpuLevel, timeline, player.hand[i], rules);
                 if(chance > best) {
                     best           = chance;
                     move.handIndex = i;
@@ -86,7 +72,7 @@ namespace ChronoSort::Rules {
 
         const CardData&           card     = player.hand[move.handIndex];
         const std::vector<size_t> correct  = timeline.FindCorrectSlots(card);
-        const float               chance   = CpuSuccessChance(player.cpuLevel, timeline, card);
+        const float               chance   = CpuSuccessChance(player.cpuLevel, timeline, card, rules);
         move.confidence                    = chance;
         const size_t              rightSlot = correct[std::uniform_int_distribution<size_t>(0, correct.size() - 1)(rng)];
 
@@ -108,7 +94,7 @@ namespace ChronoSort::Rules {
             }
             (std::abs(offset) == 1 ? nearSlots : farSlots).push_back(static_cast<size_t>(candidate));
         }
-        const bool useNear = !nearSlots.empty() && (farSlots.empty() || unit(rng) < 0.8f);
+        const bool useNear = !nearSlots.empty() && (farSlots.empty() || unit(rng) < rules.nearMissChance);
         const std::vector<size_t>& pool = useNear ? nearSlots : farSlots;
         if(pool.empty()) {
             move.slot = rightSlot;

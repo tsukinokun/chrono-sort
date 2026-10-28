@@ -9,6 +9,7 @@
 #include <ChronoSort/ECS/System/CardGlowSystem.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchActions.hpp>
 #include <ChronoSort/UI/GameHud.hpp>
 
@@ -27,15 +28,7 @@ namespace ChronoSort::ECS {
         namespace CameraUtility = Tsukino::BuiltIn::ECS::CameraUtility;
         using Tsukino::Input::KeyCode;
 
-        // 人間の入力
-        constexpr float kClickThreshold = 8.0f;      // これ以上動いたらクリックではなくドラッグ
-        constexpr float kRowBandNear    = 130.0f;    // 場の列の手前、この距離までなら「列に置こうとしている」
-        constexpr float kRowBandFar     = 160.0f;    // 場の列の奥、この距離まで
-        constexpr float kEdgePanMargin  = 0.08f;     // 画面端のこの割合の幅に入ると場の列が流れる
-        constexpr float kEdgePanSpeed   = 420.0f;    // 画面端で列を流す速さ
-        constexpr float kWheelScroll    = 60.0f;     // ホイール1段で列を流す量（ホイールの値は段数で来る）
 
-        const hlslpp::float3 kSelectGlow(0.22f, 0.16f, 0.05f);
 
         //----------------------------------------------------------------------------
         //! エンジンのコンテキストを返します。
@@ -75,6 +68,8 @@ namespace ChronoSort::ECS {
             Board::HandState&            hand    = board.Hand(0);
             Match::HumanInput&            input   = session.input;
             Game::SoundBank&             sounds  = Game::Services().Sounds();
+            const Match::InputTuning&    tuning  = Game::Tuning().Input();
+            const float                  rowZ    = Board::Tuning().rowZ;
 
             int mouseX = 0;
             int mouseY = 0;
@@ -88,7 +83,7 @@ namespace ChronoSort::ECS {
                 const int      hovered = board.PickHandCard(0, ray, uv);
                 if(hovered != hand.hovered && hovered >= 0) {
                     Game::FrameMonitor::Mark("hover hand card");
-                    sounds.Play("card_slide", 0.25f);
+                    sounds.Play("hand.hover");
                 }
                 hand.hovered   = hovered;
                 hand.hoverTilt = hovered >= 0 ? hlslpp::float2((float(uv.x) - 0.5f) * 2.0f, (float(uv.y) - 0.5f) * 2.0f) : hlslpp::float2(0.0f, 0.0f);
@@ -106,7 +101,7 @@ namespace ChronoSort::ECS {
                 if(!input.dragging && onTable) {
                     point = ray.GetPoint(distance);
                 }
-                if(onTable && float(point.z) >= Board::kRowZ - kRowBandNear && float(point.z) <= Board::kRowZ + kRowBandFar) {
+                if(onTable && float(point.z) >= rowZ - tuning.rowBandNear && float(point.z) <= rowZ + tuning.rowBandFar) {
                     focus = float(point.x);
                 }
                 board.SetFocusX(focus);
@@ -114,7 +109,7 @@ namespace ChronoSort::ECS {
 
             // 置き先の候補：卓の上のカーソル位置が場の列の近くならスロットを決める
             auto previewFrom = [&](const hlslpp::float3& point) -> std::optional<size_t> {
-                if(float(point.z) < Board::kRowZ - kRowBandNear || float(point.z) > Board::kRowZ + kRowBandFar) {
+                if(float(point.z) < rowZ - tuning.rowBandNear || float(point.z) > rowZ + tuning.rowBandFar) {
                     return std::nullopt;
                 }
                 return board.SlotFromWorldX(point.x);
@@ -122,7 +117,7 @@ namespace ChronoSort::ECS {
             auto setPreview = [&](std::optional<size_t> slot) {
                 if(slot != input.preview) {
                     if(slot) {
-                        sounds.Play("tick", 0.35f);
+                        sounds.Play("slot.preview");
                     }
                     input.preview = slot;
                     board.SetGap(slot);
@@ -158,36 +153,36 @@ namespace ChronoSort::ECS {
             // 押したまま動かした：ドラッグ開始・継続
             if(input.grabbed >= 0 && keys.IsKeyDown(KeyCode::LButton)) {
                 const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(input.grabbed));
-                if(!input.dragging && float(hlslpp::length(mouse - input.pressPoint)) > kClickThreshold) {
+                if(!input.dragging && float(hlslpp::length(mouse - input.pressPoint)) > tuning.clickThreshold) {
                     input.dragging = true;
                     hand.hovered   = -1;
                     board.SetHeld(entity);
-                    CardMotion::SetSharpness(registry, entity, 28.0f, 16.0f);
-                    sounds.Play("card_slide", 0.6f);
+                    CardMotion::SetSharpness(registry, entity, tuning.dragSharpness);
+                    sounds.Play("hand.drag");
                 }
                 if(input.dragging) {
                     float distance = 0.0f;
-                    if(CameraUtility::IntersectPlane(ray, hlslpp::float3(0.0f, Board::kDragHeight, 0.0f), hlslpp::float3(0.0f, 1.0f, 0.0f), distance)) {
+                    if(CameraUtility::IntersectPlane(ray, hlslpp::float3(0.0f, Board::Tuning().dragHeight, 0.0f), hlslpp::float3(0.0f, 1.0f, 0.0f), distance)) {
                         const hlslpp::float3 point = ray.GetPoint(distance);
                         // 速度は少しなまらせてから傾きに使う（手ぶれで暴れないように）
                         const hlslpp::float3 velocity = (point - input.dragPoint) / std::max(deltaTime, 0.001f);
-                        input.dragVelocity += (velocity - input.dragVelocity) * std::min(1.0f, deltaTime * 12.0f);
+                        input.dragVelocity += (velocity - input.dragVelocity) * std::min(1.0f, deltaTime * tuning.dragVelocitySmoothing);
                         input.dragPoint = point;
 
-                        const float              roll  = std::clamp(-float(input.dragVelocity.x) * 0.0011f, -0.4f, 0.4f);
-                        const float              pitch = std::clamp(float(input.dragVelocity.z) * 0.0011f, -0.4f, 0.4f);
+                        const float              roll  = std::clamp(-float(input.dragVelocity.x) * tuning.dragLeanPerSpeed, -tuning.dragLeanMax, tuning.dragLeanMax);
+                        const float              pitch = std::clamp(float(input.dragVelocity.z) * tuning.dragLeanPerSpeed, -tuning.dragLeanMax, tuning.dragLeanMax);
                         const hlslpp::quaternion lean  = hlslpp::mul(hlslpp::quaternion::rotation_x(pitch), hlslpp::quaternion::rotation_z(roll));
-                        CardMotion::SetTarget(registry, entity, point, lean, 1.05f);
+                        CardMotion::SetTarget(registry, entity, point, lean, tuning.dragScale);
 
                         setPreview(previewFrom(hlslpp::float3(point.x, 0.0f, point.z)));
 
                         // 画面端（列を畳んで重ねているあたり）に寄せたら、列を流して続きを見せる
                         const float width  = static_cast<float>(context.window->GetWidth());
-                        const float margin = width * kEdgePanMargin;
+                        const float margin = width * tuning.edgePanMargin;
                         if(float(mouse.x) < margin) {
-                            board.ScrollBy(-kEdgePanSpeed * deltaTime);
+                            board.ScrollBy(-tuning.edgePanSpeed * deltaTime);
                         } else if(float(mouse.x) > width - margin) {
-                            board.ScrollBy(kEdgePanSpeed * deltaTime);
+                            board.ScrollBy(tuning.edgePanSpeed * deltaTime);
                         }
                     }
                 }
@@ -206,17 +201,17 @@ namespace ChronoSort::ECS {
                     // 置けない所で離した：手札へ放物線で戻す
                     const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(index));
                     board.SetHeld(entt::null);
-                    CardMotion::SetSharpness(registry, entity, 14.0f, 10.0f);
+                    CardMotion::SetSharpness(registry, entity, tuning.returnSharpness);
                     board.ApplyLayoutNow();
-                    CardMotion::Fly(registry, entity, 0.35f, 30.0f);
-                    sounds.Play("card_slide", 0.4f);
+                    CardMotion::Fly(registry, entity, tuning.returnFlight);
+                    sounds.Play("hand.return");
                 } else {
                     // クリック：選択して掲げる（ドラッグが苦手でも置けるように）
                     input.selected = index;
                     hand.lifted    = index;
                     hand.hovered   = -1;
-                    PulseGlow(registry, board.HandCard(0, static_cast<size_t>(index)), kSelectGlow, 1.0f, 5.0f);
-                    sounds.Play("card_flip", 0.4f);
+                    PulseGlow(registry, board.HandCard(0, static_cast<size_t>(index)), tuning.selectGlow);
+                    sounds.Play("hand.select");
                 }
             }
 
@@ -258,14 +253,15 @@ namespace ChronoSort::ECS {
                 Match::CancelSelection(registry);
                 Rules::Player stand = session.match.Players()[0];
                 stand.cpuLevel      = Rules::CpuLevel::Easy;
-                const Rules::CpuMove move = Rules::ChooseCpuMove(stand, session.match.GetTimeline(), session.rng);
+                const Rules::CpuMove move = Rules::ChooseCpuMove(stand, session.match.GetTimeline(), session.rng, session.config.rules);
                 Match::CommitPlay(registry, 0, move.handIndex, move.slot);
             }
 #endif
         }
 
         // ホイールで場の列を左右に見渡す（CPU の手番や公開の演出中も見られるよう、手番を問わず受け付ける）
-        session.board->ScrollBy(-keys.GetWheelDelta() * kWheelScroll);
+        const Match::InputTuning& tuning = Game::Tuning().Input();
+        session.board->ScrollBy(-keys.GetWheelDelta() * tuning.wheelScroll);
 
         // 人間の手番で操作していない時間（マウスを動かす・押す・ホイール・カードを持つ、で数え直す）
         Match::HumanInput& input  = session.input;
@@ -273,7 +269,7 @@ namespace ChronoSort::ECS {
         int               mouseY = 0;
         keys.GetMousePosition(&mouseX, &mouseY);
         const hlslpp::float2 mouse(static_cast<float>(mouseX), static_cast<float>(mouseY));
-        const bool           active = float(hlslpp::length(mouse - input.lastMouse)) > 2.0f || keys.IsKeyDown(KeyCode::LButton) ||
+        const bool           active = float(hlslpp::length(mouse - input.lastMouse)) > tuning.idleMouseThreshold || keys.IsKeyDown(KeyCode::LButton) ||
                                       keys.IsKeyDown(KeyCode::RButton) || keys.GetWheelDelta() != 0.0f || input.grabbed >= 0 || input.selected >= 0;
         input.lastMouse = mouse;
         input.idleTime  = (session.phase == Match::MatchPhase::HumanTurn && !active && !session.paused) ? input.idleTime + deltaTime : 0.0f;

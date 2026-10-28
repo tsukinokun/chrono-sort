@@ -1,0 +1,112 @@
+{
+    "tuning": {
+        "rowZ": 70.0,
+        "dragHeight": 45.0,
+        "rowTilt": 0.45,
+        "rowHalfSpan": 430.0,
+        "rowScaleMax": 1.4,
+        "rowScaleFar": 0.9,
+        "rowSpacingMax": 74.0,
+        "narrowMin": 14.0,
+        "focusRadius": 2.2,
+        "gapWidth": 60.0,
+        "fitSharpness": 6.0,
+        "gapSharpness": 14.0,
+        "scrollToSlot": 0.6,
+        "foldDepth": 26.0,
+        "foldFalloff": 4.0,
+        "foldShrink": 0.15,
+        "foldSink": 14.0,
+        "rowDepthJitter": 6.0,
+        "rowFocusPull": 12.0,
+        "rowYawJitter": 0.06,
+        "rowHoverTilt": 0.55,
+        "rowHoverHeight": 60.0,
+        "rowHoverForward": 60.0,
+        "rowHoverScale": 1.25,
+        "markerSink": 0.15,
+        "handCenterZ": -230.0,
+        "handBaseY": 90.0,
+        "handMaxSpread": 330.0,
+        "handSpacing": 56.0,
+        "handTilt": -0.55,
+        "handFanAngle": 0.07,
+        "handArcDepth": 6.0,
+        "handStackStep": 1.5,
+        "hoverAvoid": 22.0,
+        "handHoverOffset": {
+            "x": 0.0,
+            "y": 30.0,
+            "z": -28.0
+        },
+        "handHoverLean": 0.35,
+        "handHoverTilt": -0.2,
+        "handHoverScale": 1.22,
+        "liftedSpread": 0.4,
+        "liftedHeight": 70.0,
+        "liftedForward": 70.0,
+        "liftedBobFrequency": 2.4,
+        "liftedBobAmplitude": 3.0,
+        "liftedTilt": -0.75,
+        "liftedScale": 1.15,
+        "seatZ": 300.0,
+        "seatSpread": 320.0,
+        "seatPullBack": 30.0,
+        "seatScale": 0.72,
+        "seatSpacing": 34.0,
+        "seatStackStep": 0.7,
+        "seatFanYaw": 0.06,
+        "seatYawJitter": 0.08,
+        "seatLiftedOffset": {
+            "x": 0.0,
+            "y": 55.0,
+            "z": -40.0
+        },
+        "seatSwayFrequency": 4.0,
+        "seatSwayAmplitude": 0.06,
+        "seatLiftedTilt": -0.6,
+        "seatLiftedScale": 0.95,
+        "deckPosition": {
+            "x": 350.0,
+            "y": 0.0,
+            "z": -120.0
+        },
+        "discardPosition": {
+            "x": -350.0,
+            "y": 0.0,
+            "z": -115.0
+        },
+        "coverThickness": 1.4,
+        "maxCovers": 9,
+        "cardsPerCover": 5,
+        "coverJitter": 1.5,
+        "coverYawJitter": 0.05,
+        "deckTopLift": 1.0,
+        "discardStackStep": 0.8,
+        "discardJitter": 14.0,
+        "discardYawJitter": 0.35,
+        "discardFlight": {
+            "seconds": 0.55,
+            "arc": 90.0,
+            "delay": 0.0
+        },
+        "markerGlow": {
+            "color": {
+                "x": 0.9,
+                "y": 0.65,
+                "z": 0.22
+            },
+            "intensity": 1.0,
+            "rate": 6.0
+        },
+        "markerWarningGlow": {
+            "color": {
+                "x": 1.2,
+                "y": 0.12,
+                "z": 0.08
+            },
+            "intensity": 1.0,
+            "rate": 6.0
+        }
+    }
+}

@@ -5,6 +5,7 @@
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/ECS/Component/CardMotionComponent.hpp>
+#include <ChronoSort/Game/TuningTypes.hpp>
 
 #include <Tsukino/Core/ECS/Registry/Registry.hpp>
 
@@ -48,6 +49,38 @@ namespace ChronoSort::ECS::CardMotion {
     //! @param  [in]     duration 長さ（秒）。
     //! @param  [in]     amount   拡大率に足す最大の量。
     void Punch(Tsukino::ECS::Registry& registry, Tsukino::ECS::Entity entity, float duration, float amount);
+
+    //! 追従の速さを、調整値の組で設定します。
+    //! @param  [in,out] registry  レジストリ。
+    //! @param  [in]     entity    カード。
+    //! @param  [in]     sharpness 追従の速さ。
+    inline void SetSharpness(Tsukino::ECS::Registry& registry, Tsukino::ECS::Entity entity, const Game::Sharpness& sharpness) {
+        SetSharpness(registry, entity, sharpness.position, sharpness.rotation);
+    }
+
+    //! 調整値の組で、放物線を描いて飛ばします。
+    //! @param  [in,out] registry レジストリ。
+    //! @param  [in]     entity   カード。
+    //! @param  [in]     flight   飛び方。
+    inline void Fly(Tsukino::ECS::Registry& registry, Tsukino::ECS::Entity entity, const Game::Flight& flight) {
+        Fly(registry, entity, flight.seconds, flight.arc, flight.delay);
+    }
+
+    //! 調整値の組で、左右に細かく震わせます。
+    //! @param  [in,out] registry レジストリ。
+    //! @param  [in]     entity   カード。
+    //! @param  [in]     tremor   震え方。
+    inline void Shake(Tsukino::ECS::Registry& registry, Tsukino::ECS::Entity entity, const Game::Tremor& tremor) {
+        Shake(registry, entity, tremor.seconds, tremor.amplitude);
+    }
+
+    //! 調整値の組で、一瞬大きくして弾ませます。
+    //! @param  [in,out] registry レジストリ。
+    //! @param  [in]     entity   カード。
+    //! @param  [in]     bump     弾み方。
+    inline void Punch(Tsukino::ECS::Registry& registry, Tsukino::ECS::Entity entity, const Game::Bump& bump) {
+        Punch(registry, entity, bump.seconds, bump.amount);
+    }
 
     //! 飛行中かを返します。
     //! @param  [in,out] registry レジストリ。

@@ -20,6 +20,7 @@ namespace ChronoSort::Game {
     //----------------------------------------------------------------------------
     GameServices::GameServices(Tsukino::EngineIntegration::EngineContext& context)
         : m_context(context)
+        , m_tunings()
         , m_sounds(*context.assetManager, *context.audioManager)
         , m_options(LoadOptions()) {
         assert(s_current == nullptr && "GameServices: only one instance may exist");

@@ -7,7 +7,7 @@
 #include <ChronoSort/Rules/CpuPlayer.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/Rules/Match.hpp>
-#include <ChronoSort/Rules/GameRules.hpp>
+#include <ChronoSort/Rules/RulesTuning.hpp>
 #include <ChronoSort/Rules/Timeline.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -97,15 +97,15 @@ namespace ChronoSort::Rules {
                 Match       solo;
                 MatchConfig config;
                 solo.Start(config, MakeCards(10), rng);
-                Check(solo.Players().size() == 1 && solo.Players()[0].hand.size() == kSoloHandSize, "solo deals hand", passed);
-                Check(solo.GetTimeline().Cards().size() == 1 && solo.Lives() == kSoloLifeCount, "solo starts with one card and full lives", passed);
+                Check(solo.Players().size() == 1 && solo.Players()[0].hand.size() == RulesTuning{}.soloHandSize, "solo deals hand", passed);
+                Check(solo.GetTimeline().Cards().size() == 1 && solo.Lives() == RulesTuning{}.soloLives, "solo starts with one card and full lives", passed);
 
                 const auto ok = PlayFirst(solo, true);
                 Check(ok && ok->correct && ok->scoreGained > 0 && solo.Score() == ok->scoreGained, "solo correct play scores", passed);
-                Check(solo.Players()[0].hand.size() == kSoloHandSize, "solo refills hand after correct play", passed);
+                Check(solo.Players()[0].hand.size() == RulesTuning{}.soloHandSize, "solo refills hand after correct play", passed);
 
                 const auto ng = PlayFirst(solo, false);
-                Check(ng && !ng->correct && ng->lifeLost && solo.Lives() == kSoloLifeCount - 1, "solo wrong play loses a life", passed);
+                Check(ng && !ng->correct && ng->lifeLost && solo.Lives() == RulesTuning{}.soloLives - 1, "solo wrong play loses a life", passed);
                 Check(solo.Discards().size() == 1 && solo.Streak() == 0, "solo wrong play discards and resets streak", passed);
 
                 PlayFirst(solo, false);
@@ -133,9 +133,9 @@ namespace ChronoSort::Rules {
                 config.mode = MatchMode::Versus;
                 config.cpus = {CpuLevel::Normal};
                 versus.Start(config, MakeCards(30), rng);
-                Check(versus.Players().size() == 2 && versus.Players()[1].hand.size() == static_cast<size_t>(GetInitialHandSize(2)), "versus deals by player count", passed);
+                Check(versus.Players().size() == 2 && versus.Players()[1].hand.size() == static_cast<size_t>(RulesTuning{}.InitialHandSize(2)), "versus deals by player count", passed);
 
-                for(int turn = 0; turn < GetInitialHandSize(2) * 2; ++turn) {
+                for(int turn = 0; turn < RulesTuning{}.InitialHandSize(2) * 2; ++turn) {
                     PlayFirst(versus, true);
                     versus.AdvanceTurn();
                 }
@@ -159,7 +159,7 @@ namespace ChronoSort::Rules {
                 config.cpus = {CpuLevel::Easy, CpuLevel::Easy};
                 versus.Start(config, MakeCards(40), rng);
                 // 人間と CPU1 が出し切り、CPU2 は間違え続ける
-                for(int turn = 0; turn < GetInitialHandSize(3) * 3; ++turn) {
+                for(int turn = 0; turn < RulesTuning{}.InitialHandSize(3) * 3; ++turn) {
                     PlayFirst(versus, versus.CurrentPlayerIndex() != 2);
                     versus.AdvanceTurn();
                 }
@@ -183,8 +183,8 @@ namespace ChronoSort::Rules {
 
             const CardData closeCard = MakeCard("closeCard", 1005);
             const CardData farCard   = MakeCard("farCard", 1800);
-            Check(CpuSuccessChance(CpuLevel::Hard, timeline, closeCard) > CpuSuccessChance(CpuLevel::Easy, timeline, closeCard), "hard cpu beats easy cpu", passed);
-            Check(CpuSuccessChance(CpuLevel::Normal, timeline, farCard) > CpuSuccessChance(CpuLevel::Normal, timeline, closeCard), "farCard years are easier", passed);
+            Check(CpuSuccessChance(CpuLevel::Hard, timeline, closeCard, RulesTuning{}) > CpuSuccessChance(CpuLevel::Easy, timeline, closeCard, RulesTuning{}), "hard cpu beats easy cpu", passed);
+            Check(CpuSuccessChance(CpuLevel::Normal, timeline, farCard, RulesTuning{}) > CpuSuccessChance(CpuLevel::Normal, timeline, closeCard, RulesTuning{}), "farCard years are easier", passed);
 
             Player cpu;
             cpu.isCpu    = true;
@@ -192,7 +192,7 @@ namespace ChronoSort::Rules {
             cpu.hand     = {closeCard, farCard};
             int correct  = 0;
             for(int i = 0; i < 200; ++i) {
-                const CpuMove move = ChooseCpuMove(cpu, timeline, rng);
+                const CpuMove move = ChooseCpuMove(cpu, timeline, rng, RulesTuning{});
                 Check(move.handIndex < cpu.hand.size() && move.slot < timeline.SlotCount(), "cpu move in range", passed);
                 correct += timeline.IsCorrectSlot(move.slot, cpu.hand[move.handIndex]) ? 1 : 0;
             }
@@ -241,9 +241,9 @@ namespace ChronoSort::Rules {
         Check(!timeline.IsCorrectSlot(timeline.SlotCount(), MakeCard("any", 2000)), "out of range slot is rejected", passed);
 
         // 人数ごとの手札枚数
-        Check(GetInitialHandSize(2) == 6 && GetInitialHandSize(3) == 6, "hand size for 2-3 players", passed);
-        Check(GetInitialHandSize(4) == 5 && GetInitialHandSize(5) == 5, "hand size for 4-5 players", passed);
-        Check(GetInitialHandSize(6) == 4 && GetInitialHandSize(8) == 4, "hand size for 6-8 players", passed);
+        Check(RulesTuning{}.InitialHandSize(2) == 6 && RulesTuning{}.InitialHandSize(3) == 6, "hand size for 2-3 players", passed);
+        Check(RulesTuning{}.InitialHandSize(4) == 5 && RulesTuning{}.InitialHandSize(5) == 5, "hand size for 4-5 players", passed);
+        Check(RulesTuning{}.InitialHandSize(6) == 4 && RulesTuning{}.InitialHandSize(8) == 4, "hand size for 6-8 players", passed);
 
         // 山札
         Deck deck;
