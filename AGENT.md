@@ -21,14 +21,16 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | 名前空間 / フォルダ | 役割 |
 |---|---|
 | `Rules/` | ECS に依存しないルール。`Match`（対局の進行：ソロ/対戦/延長戦/得点）、`CpuPlayer`（CPU の手）、`Timeline` / `Deck` / `GameRules`、`RulesSelfTest` |
-| `Board/` | 3D の卓。`CardFactory`（カード・山札の裏・目印の生成）、`BoardView`（場の列・手札の扇・CPU の席・山札・捨て札の配置とピック） |
-| `ECS/` | `CardMotion`（目標姿勢・放物線・震え・弾み）、`CardGlowSystem`（emissive で発光）、`ParticleSystem` |
+| `Board/` | 3D の卓。`CardFactory`（Prefab からカード・山札の裏・目印・卓を出し、カード固有の面だけ差し替える）、`BoardState`（卓全体の状態。レジストリのコンテキスト）、`BoardLayout`（並べ方の計算）、`BoardView`（置き場所を変える窓口と、スロットの位置・拾い判定の問い合わせ。状態は持たない） |
+| `ECS/Component` | `CardPlacement`（カードの置き場所：列・誰の手札・捨て札とその順番）、`CardMotion`、`CardGlow`、`Reveal`（公開と判定の演出の段階）、`CameraRig`（カメラの揺れと漂い）、`Lifetime`（時間が来たら子ごと片付ける）、`Particle` |
+| `ECS/System` | `MatchSystems`（`MatchFlow` 段取り・`CpuTurn`・`HumanInput`・`Reveal`・`CameraRig`・`MatchFeedback`）、`BoardLayout`、`CardMotion`、`CardGlow`、`Particle`、`Lifetime` |
+| `ECS/SystemSetup` | シーンに並べるシステムの組み合わせ（`AddTableSystems` / `AddMatchSystems` / `AddUIOnlySystems`）と、更新の順番の名前（`Order::kInput` 〜 `kPostProcess`）。**システムはシーンで手書きせず、ここに足す** |
 | `Effects/` | `ParticleEmitter`（砂埃・金の火花・墨の飛沫などの撒き方） |
-| `Game/` | `Sequencer`（時間差の段取り）、`SoundBank` / `Sounds()`（効果音と BGM。ファイルが無ければ無音） |
-| `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙） |
-| `Scene/` | `TitleScene`（メニュー・出題の範囲のしおり・対戦の支度。範囲は `MatchConfig::range` で渡し、山札は `Rules::LoadCards(range)` で絞る）、`GameScene`（ソロと CPU 対戦を `MatchConfig` で切り替え）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
-| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ）を `Saves/Options.json` に保存。起動時に読んで `ApplyOptions` で音へ反映する。スライダーの位置は2乗して音量にする |
-| `UI/OptionsSheet` | 設定の紙。タイトルの「設定」と、対局中の Esc → 一時停止の紙 →「設定」から開く。値は `CurrentOptions()` を直接書き換え、閉じたときに保存 |
+| `Game/` | `MatchSession`（1回の対局の状態。対局のシステムはこれを読み書きして連携する）、`MatchActions`（配る・手番を始める・カードを出す・終える）、`MatchEvents`（対局の出来事）、`Prefabs`（Prefab の一覧と生成・ゲームのコンポーネントの登録）、`GameServices`（シーンをまたぐ音と設定）、`Sequencer`（見た目だけの時間差） |
+| `UI/` | `PaperUI`（傾けて揺らす紙片の部品）、`PaperLayout`（常に出しておく紙片の置き方を `Data/UI/*.json` から読む）、`GameHud`（封蝋・インク壺・朱印・結果の羊皮紙・一時停止の紙） |
+| `Scene/` | `TitleScene`（メニュー・出題の範囲のしおり・対戦の支度。範囲は `MatchConfig::range` で渡し、山札は `Rules::LoadCards(range)` で絞る）、`GameScene`（組み立てと画面の切り替えだけ）、`CreditsScene`、`DeskStage`（メニュー画面の背景の机） |
+| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
+| `UI/OptionsSheet` | 設定の紙。タイトルの「設定」と、対局中の Esc → 一時停止の紙 →「設定」から開く。値は `Services().Settings()` を直接書き換え、閉じたときに保存 |
 | `Game/SaveData` | 記録（最高得点など）を `Saves/ChronoSort.json` に保存。ソロの記録は出題の範囲（通史・日本史・世界史）ごと。範囲を分ける前の形（version 1）も読めて、通史の記録として引き継ぐ |
 
 ### 起動と読み込み
@@ -38,16 +40,32 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 読み終えたテクスチャを本体スレッドで 1 フレーム 4ms までずつ GPU へ送ってからタイトルへ進む。
 **新しいアセットを足したら `AssetManifest.cpp` の一覧に入るか確かめる**（入っていないと、初めて使う瞬間に同期で読んで止まる）。
 
+### ECS の作り方（2026-10 のリファクタリングで決めたこと）
+
+- **シーンには進行のロジックを書かない**。シーンは組み立て（Prefab・窓口・コンテキスト・システム）と画面の切り替えだけ。
+  対局の進行は `ECS/System/MatchSystems` のシステムが、`MatchSession`（レジストリのコンテキストに置いたポインタ）を読み書きして行う。
+- **状態はコンポーネントかコンテキストに置く**。カード1枚ごとのことはコンポーネント（`CardPlacement` / `Reveal` …）、
+  卓や対局で1つのことはコンテキスト（`BoardState` / `MatchSession*`）。クラスのメンバに `std::vector<Entity>` を持たない。
+- **演出の段階は時間で進むコンポーネントにする**（`RevealComponent` を `RevealSystem` が進める）。
+  `Sequencer` は音の鳴らし分けなど「見た目だけの時間差」に限り、進行の状態を積まない。
+- **音・粒子・画面 UI・揺れは出来事（`Game/MatchEvents`）で受ける**。進行の側は `session.events->Publish(...)` するだけで、
+  `MatchFeedbackSystem` が受け取って鳴らす。受け取った側で同じ型の出来事を出し直さない（EventBus が assert する）。
+- **エンティティはコードで組み立てず Prefab から出す**（`Game/Prefabs`、`ChronoSort/Assets/Prefabs/`）。
+  ゲームのコンポーネントを Prefab に書くなら `Prefabs::RegisterComponents` に登録し、cereal の load/save を書く
+  （エンジンの組み込みコンポーネントの load は項目を順に読むものがあるので、Prefab の JSON には全項目を順に書く）。
+- **常に出しておく紙片の置き方は `ChronoSort/Assets/Data/UI/*.json`**（`PaperLayout`）。しばらく見せて消す紙片は `PaperUI::DestroyAfter`。
+- シーンをまたぐもの（音・設定）は `GameServices`。WinMain がエンジンの後に作り、エンジンより先に壊す。関数内 static で持たない。
+
 ### 対局画面の流れ
 
-`GameScene` が `Rules::Match` を進め、結果に合わせて `BoardView` と `GameHud` で演出する。
+`GameScene` が組み立て、`MatchFlow`（段取り）→ `CpuTurn` → `HumanInput` → `Reveal` の各システムが `Rules::Match` を進める。
 ルールの正否は必ず `Match::Play()` の戻り値で判断し、画面側で判定し直さない。
-対局中の Esc は一時停止の紙（続ける／設定／タイトルへ）。一時停止中は `Sequencer` と入力を止め、カードの動きと UI は回し続ける。
+対局中の Esc は一時停止の紙（続ける／設定／タイトルへ）。一時停止中は `MatchSession::paused` で段取り・入力・演出を止め、カードの動きと UI は回し続ける。
 「演出を速く」は、人間の手番以外のあいだだけ deltaTime に `kFastEffectsScale` を掛ける。
-演出の時間差は `Sequencer::Schedule` で書く（`RunReveal` が例：運ぶ → 裏返す → 叩きつける → 判定）。
+カードを出したあとの演出は `RevealComponent` の段階（運ぶ → 裏返す → 叩きつける → 着地 → 判定 → 列へ／正しい位置を見せて捨て札へ）。
 場の列のカードは寝かせず、手前の辺を卓に付けたまま `kRowTilt` だけカメラへ起こす（題名と年号を読ませるため）。
 列に着地させるときは `BoardView::SlotRestPose` を使う。`SlotPosition` は卓の上の点なので、粒子・目印用。
-場の列は少ないうちは 1.4 倍で並べ、増えたら拡大率（下限 1.0）→ 間隔（下限 50）の順に詰める（`RowFitTarget`）。
+場の列は注目点（カーソル・隙間）の周りを大きく広げ、遠いカードほど細く詰める（`BoardLayout` の `BuildLayout`）。
 それでも `kRowHalfSpan` に収まらなければ、カメラではなく列だけを流し（`ScrollBy` / `ScrollToSlot`）、範囲の外は端に畳んで重ねる（`FoldX`）。
 山札・捨て札は列より手前の左右の角にあり、列が長くなっても奥行きでぶつからない。CPU の肖像は席の内側の横に置く（席の手前は起こした列と重なる）。
 
