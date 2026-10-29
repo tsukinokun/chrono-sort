@@ -61,6 +61,12 @@ namespace ChronoSort::UI {
         //! @return 作成したエンティティ。
         Tsukino::ECS::Entity Paper(const PaperSpec& spec);
 
+        //! 画像を1枚置きます。Textures/UI/ の外の画像（カードの面など）を、紙片と同じように傾け・揺らして置きます。
+        //! @param  [in] path 画像のパス（ChronoSort/Assets/ から）。
+        //! @param  [in] spec 置き方（texture は使わない）。
+        //! @return 作成したエンティティ。
+        Tsukino::ECS::Entity Picture(const std::string& path, const PaperSpec& spec);
+
         //! 文字を置きます。parent を指定すると、その紙片の上に貼り付けたように一緒に傾き・揺れます。
         //! parent が紙片なら、文字を紙の内側（縁の破れを除いた四角）の幅に収めます（長ければ縮めて描く）。
         //! Debug では、高さや書き出しが内側から出るときに "[UI] text overflows paper" の警告を出します。

@@ -28,9 +28,9 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `ECS/SystemSetup` | シーンに並べるシステムの組み合わせ（`AddTableSystems` / `AddMatchSystems` / `AddUIOnlySystems`）と更新の順番の名前（`Order::kInput` 〜 `kPostProcess`）。**システムはシーンで手書きせず、ここに足す** |
 | `Effects/` | `ParticleEmitter`（`Emit("dust", 位置)`。撒き方は `Particles.json`、粒子そのものはエンジンの `BurstEmitter` / `BurstParticleSystem`。`Effects::Particles(registry)` で受け取る） |
 | `Game/` | `GameServices`（シーンをまたぐ調整値・音・設定・記録）、`TuningSet`（`Data/Tuning/*.json` を読み、Debug では保存し直すと読み直す。`Game::Tuning()`）、`TuningTypes`（追従・飛び方・弾み・光り方の組）、`SoundBank`（合図の名前で鳴らす。BGM と効果音はエンジンの別のバス）、`SoundTuning`、`Prefabs`、`Options`、`SaveData`、`AssetManifest`、`FrameMonitor` |
-| `UI/` | `PaperUI`（紙片の部品。ボタンには重なったときの音が付く）、`Widgets`（`NoteButton`・`ChoiceTag`・`InkLine`）、`TweenTags`（トゥイーンの目印の一覧）、`PaperLayout`（`Data/UI/*.json`）、`DeskHud`・`PlayPopups`・`ResultSheet`・`PauseSheet`（対局の画面 UI。出来事を受けて動く）、`OptionsSheet` |
+| `UI/` | `PaperUI`（紙片の部品。ボタンには重なったときの音が付く）、`Widgets`（`NoteButton`・`ChoiceTag`・`InkLine`）、`TweenTags`（トゥイーンの目印の一覧）、`PaperLayout`（`Data/UI/*.json`）、`DeskHud`・`PlayPopups`・`ResultSheet`・`PauseSheet`（対局の画面 UI。出来事を受けて動く）、`CardAlbum`（結果の紙から開く、出たカードの一覧と拡大）、`OptionsSheet` |
 | `Scene/` | `SceneRouter`（画面の切り替えはすべてここ。タイトルとクレジットはエンジンの名前付きシーン）、`TitleScene`、`GameScene`（組み立てと画面の切り替えだけ）、`CreditsScene`、`LoadingScene`、`DeskStage`、`StageTuning` |
-| `Util/` | `AssetPaths`（アセットのフォルダとパスはここだけで決める）、`TextUtil` |
+| `Util/` | `AssetPaths`（アセットのフォルダとパスはここだけで決める）、`TextUtil`、`Credits`（`Data/Credits.json` の出典。クレジット画面と `CardAlbum` が使う） |
 | `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
 | `Game/SaveData` | 記録を `Saves/ChronoSort.json` に保存。`GameServices::Save()` の1つをタイトルと対局の終わりが書き換え、`StoreSave()` で保存する（それぞれが読み書きしない） |
 
@@ -68,6 +68,7 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 
 `GameScene` が組み立て、`MatchFlow`（段取り）→ `CpuTurn` → `HumanInput` → `Reveal` の各システムが `Rules::Match` を進める。
 ルールの正否は必ず `Match::Play()` の戻り値で判断し、画面側で判定し直さない。
+対局で山札から出たカードは `Match::AppearedCards()` に1度ずつ残り、行方（場・外れ・手札）は `Match::FateOf()` で引く。
 対局中の Esc は一時停止の紙（続ける／設定／タイトルへ）。一時停止中は `MatchSession::paused` で段取り・入力・演出を止め、カードの動きと UI は回し続ける。
 「演出を速く」は、人間の手番以外のあいだだけ deltaTime に `kFastEffectsScale` を掛ける。
 画面 UI は `DeskHud`（机の紙片）・`PlayPopups`（朱印と得点）・`ResultSheet`・`PauseSheet` が、それぞれ出来事を購読して動く。

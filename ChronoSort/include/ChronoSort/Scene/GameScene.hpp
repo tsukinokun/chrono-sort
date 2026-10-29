@@ -10,6 +10,7 @@
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Rules/Match.hpp>
+#include <ChronoSort/UI/CardAlbum.hpp>
 #include <ChronoSort/UI/DeskHud.hpp>
 #include <ChronoSort/UI/OptionsSheet.hpp>
 #include <ChronoSort/UI/PauseSheet.hpp>
@@ -60,6 +61,7 @@ namespace ChronoSort::Scene {
         std::unique_ptr<UI::DeskHud>      m_desk;       // 机の上の紙片
         std::unique_ptr<UI::PlayPopups>   m_popups;     // 判定の朱印と得点
         std::unique_ptr<UI::ResultSheet>  m_result;     // 結果の羊皮紙
+        std::unique_ptr<UI::CardAlbum>    m_album;      // 出たカードを見る紙（結果の羊皮紙から開く）
         std::unique_ptr<UI::PauseSheet>   m_pause;      // 一時停止の紙
         std::unique_ptr<UI::OptionsSheet> m_options;    // 設定の紙（一時停止から開く）
     };

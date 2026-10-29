@@ -20,6 +20,7 @@ namespace ChronoSort::Rules {
         m_rng        = &rng;
         m_deck       = Deck();
         m_discards.clear();
+        m_appeared.clear();
         m_players.clear();
         m_current    = 0;
         m_winner     = 0;
@@ -126,7 +127,7 @@ namespace ChronoSort::Rules {
             } else {
                 // 手札を常に一定枚数に保つ
                 if(static_cast<int>(player.hand.size()) < m_config.rules.soloHandSize) {
-                    result.drawnCard = m_deck.Draw();
+                    result.drawnCard = DrawFromDeck();
                     if(result.drawnCard) {
                         player.hand.push_back(*result.drawnCard);
                     }
@@ -171,7 +172,37 @@ namespace ChronoSort::Rules {
             m_discards.clear();
             m_deck.Shuffle(*m_rng);
         }
-        return m_deck.Draw();
+        return DrawFromDeck();
+    }
+
+    //----------------------------------------------------------------------------
+    //! 山札から1枚引き、出たカードとして覚えます。
+    //----------------------------------------------------------------------------
+    std::optional<CardData> Match::DrawFromDeck() {
+        std::optional<CardData> card = m_deck.Draw();
+        // 混ぜ直した捨て札をもう一度引いたときは、2度目は数えない
+        if(card && std::none_of(m_appeared.begin(), m_appeared.end(), [&](const CardData& seen) { return seen.id == card->id; })) {
+            m_appeared.push_back(*card);
+        }
+        return card;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 出たカードの、今の行方を返します。
+    //----------------------------------------------------------------------------
+    CardFate Match::FateOf(const CardData& card) const {
+        auto same = [&](const CardData& other) { return other.id == card.id; };
+        const auto& placed = m_timeline.Cards();
+        if(std::any_of(placed.begin(), placed.end(), same)) {
+            return CardFate::Placed;
+        }
+        for(const Player& player : m_players) {
+            if(std::any_of(player.hand.begin(), player.hand.end(), same)) {
+                return CardFate::InHand;
+            }
+        }
+        // 捨て札にあるか、混ぜ直して山札に戻ったまま引かれなかった：どちらも一度外したカード
+        return CardFate::Missed;
     }
 
     //----------------------------------------------------------------------------

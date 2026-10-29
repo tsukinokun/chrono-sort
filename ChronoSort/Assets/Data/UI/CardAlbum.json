@@ -1,0 +1,11 @@
+{
+    "papers": [
+        { "key": "albumSheet",  "value": { "texture": "scrap_result.png", "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1440.0, "y": 850.0 }, "angle": -0.6, "sway": 0.15, "bob": 0.0, "sortOrder": 100 } },
+        { "key": "albumPrev",   "value": { "texture": "scrap_note.png",   "center": { "x": -330.0, "y": 330.0 }, "size": { "x": 180.0,  "y": 62.0 },  "angle": -3.0, "sway": 0.8, "sortOrder": 104 } },
+        { "key": "albumNext",   "value": { "texture": "scrap_note.png",   "center": { "x": 330.0,  "y": 326.0 }, "size": { "x": 180.0,  "y": 62.0 },  "angle": 3.5,  "sway": 0.8, "sortOrder": 104 } },
+        { "key": "albumClose",  "value": { "texture": "scrap_note.png",   "center": { "x": 560.0,  "y": -334.0 }, "size": { "x": 160.0, "y": 58.0 },  "angle": 4.0,  "sway": 0.8, "sortOrder": 104 } },
+        { "key": "zoomCatcher", "value": { "texture": "glow.png",         "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1600.0, "y": 900.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": 110 } },
+        { "key": "zoomSheet",   "value": { "texture": "scrap_result.png", "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1000.0, "y": 640.0 }, "angle": 1.0, "sway": 0.2, "bob": 0.0, "sortOrder": 111 } },
+        { "key": "zoomBack",    "value": { "texture": "scrap_note.png",   "center": { "x": 300.0,  "y": 238.0 }, "size": { "x": 200.0,  "y": 62.0 },  "angle": -2.5, "sway": 0.8, "sortOrder": 113 } }
+    ]
+}

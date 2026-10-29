@@ -148,6 +148,17 @@ namespace ChronoSort::UI {
     }
 
     //----------------------------------------------------------------------------
+    //! 画像を1枚置きます。
+    //----------------------------------------------------------------------------
+    Tsukino::ECS::Entity PaperUI::Picture(const std::string& path, const PaperSpec& spec) {
+        PaperSpec picture = spec;
+        picture.texture.clear();
+        const Tsukino::ECS::Entity entity = Paper(picture);
+        m_scene.GetRegistry().GetComponent<BuiltIn::SpriteComponent>(entity).textureHandle = m_assetManager.Load(Tsukino::Core::Path(path));
+        return entity;
+    }
+
+    //----------------------------------------------------------------------------
     //! 文字を置きます。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity PaperUI::Text(const std::wstring& text, const hlslpp::float2& position, float scale, const hlslpp::float4& color, int sortOrder,

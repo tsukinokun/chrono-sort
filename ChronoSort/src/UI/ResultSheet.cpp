@@ -141,6 +141,7 @@ namespace ChronoSort::UI {
             return button;
         };
         m_retryButton = makeButton("resultRetry", L"もう一度");
+        m_cardsButton = makeButton("resultCards", L"出たカード");
         m_titleButton = makeButton("resultTitle", L"タイトルへ");
 
         // 羊皮紙が落ちてくる途中の誤クリックは受け付けない（対局の時間で数えるので、一時停止中は進まない）
@@ -159,6 +160,9 @@ namespace ChronoSort::UI {
         }
         if(m_ui.Clicked(m_titleButton)) {
             return ResultChoice::Title;
+        }
+        if(m_ui.Clicked(m_cardsButton)) {
+            return ResultChoice::Cards;
         }
         return ResultChoice::None;
     }

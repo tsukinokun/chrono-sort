@@ -76,6 +76,13 @@ namespace ChronoSort::Rules {
         VersusWon,     // 対戦で勝者が決まった
     };
 
+    //! 対局に出たカードの行方です。
+    enum class CardFate {
+        Placed,    // 場の列に正しく置かれた（最初の1枚も含む）
+        Missed,    // 外して捨て札になった
+        InHand,    // 終わったときに手札に残っていた
+    };
+
     //! 1回の対局の進行です。
     class Match {
     public:
@@ -112,6 +119,15 @@ namespace ChronoSort::Rules {
         //! @return 捨て札（古い順）。
         const std::vector<CardData>& Discards() const { return m_discards; }
 
+        //! この対局で山札から引かれたカードを返します（場の1枚目・手札・外したカードのすべて。同じカードは1度だけ）。
+        //! @return 引かれた順のカード。
+        const std::vector<CardData>& AppearedCards() const { return m_appeared; }
+
+        //! 出たカードの、今の行方を返します。
+        //! @param  [in] card AppearedCards() のカード。
+        //! @return 場にあれば Placed、誰かの手札にあれば InHand、それ以外は Missed。
+        CardFate FateOf(const CardData& card) const;
+
         //! 山札の残り枚数を返します。
         //! @return 残り枚数。
         size_t DeckRemaining() const { return m_deck.Remaining(); }
@@ -144,6 +160,10 @@ namespace ChronoSort::Rules {
         //! @return 引いたカード。どこにも残っていなければ std::nullopt。
         std::optional<CardData> DrawCard();
 
+        //! 山札から1枚引き、出たカードとして覚えます（混ぜ直しはしない）。
+        //! @return 引いたカード。山札が空なら std::nullopt。
+        std::optional<CardData> DrawFromDeck();
+
         //! ソロの得点を計算します。
         //! @param  [in] closeCall 隣と年代が近かったか。
         //! @return 得点。
@@ -161,6 +181,7 @@ namespace ChronoSort::Rules {
         Deck                  m_deck;                                 // 山札
         Timeline              m_timeline;                             // 場の列
         std::vector<CardData> m_discards;                             // 捨て札
+        std::vector<CardData> m_appeared;                             // 山札から引かれたカード（同じ id は1度だけ）
         std::vector<Player>   m_players;                              // 参加者（0 番が人間）
         std::mt19937*         m_rng        = nullptr;                 // 捨て札を混ぜ直す乱数
         size_t                m_current    = 0;                       // 手番のプレイヤー

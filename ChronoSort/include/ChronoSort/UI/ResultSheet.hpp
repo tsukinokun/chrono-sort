@@ -21,6 +21,7 @@ namespace ChronoSort::UI {
     enum class ResultChoice {
         None,     // まだ選ばれていない
         Retry,    // もう一度
+        Cards,    // 出たカードを見る
         Title,    // タイトルへ
     };
 
@@ -52,6 +53,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity m_sheet       = entt::null;    // 羊皮紙
         Tsukino::ECS::Entity m_retryButton = entt::null;    // もう一度
         Tsukino::ECS::Entity m_titleButton = entt::null;    // タイトルへ
+        Tsukino::ECS::Entity m_cardsButton = entt::null;    // 出たカード
         bool                 m_newRecord   = false;         // 新記録か
         bool                 m_ready       = false;         // ボタンを受け付けるか
     };

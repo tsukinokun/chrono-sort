@@ -64,6 +64,7 @@ namespace ChronoSort::Scene {
         m_desk    = std::make_unique<UI::DeskHud>(m_scene, *context->assetManager, session.match);
         m_popups  = std::make_unique<UI::PlayPopups>(m_scene, *context->assetManager, session.match);
         m_result  = std::make_unique<UI::ResultSheet>(m_scene, *context->assetManager, session.match);
+        m_album   = std::make_unique<UI::CardAlbum>(m_scene, *context->assetManager, session.match);
         m_pause   = std::make_unique<UI::PauseSheet>(m_scene, *context->assetManager);
         m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
         m_desk->Build();
@@ -84,9 +85,16 @@ namespace ChronoSort::Scene {
 
         Match::MatchSession& session = Match::Session(m_scene.GetRegistry());
 
-        // 結果画面からの切り替え
-        if(session.phase == Match::MatchPhase::Finished) {
+        // 結果画面からの切り替え（出たカードの紙が出ている間は、そちらだけを受ける）
+        if(session.phase == Match::MatchPhase::Finished && m_album->IsOpen()) {
+            auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
+            m_album->Update(*context->inputSystem);
+        } else if(session.phase == Match::MatchPhase::Finished) {
             switch(m_result->Poll()) {
+            case UI::ResultChoice::Cards:
+                Game::Services().Sounds().Play("ui.open");
+                m_album->Open();
+                break;
             case UI::ResultChoice::Retry:
                 Router::ToMatch(api, m_config);
                 return;
@@ -119,12 +127,15 @@ namespace ChronoSort::Scene {
         // 設定の紙（一時停止から開く）。閉じたフレームの Esc で一時停止まで閉じないよう、先に受ける
         const bool optionsClosed = m_options->Update(deltaTime);
 
-        // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ）
+        // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ。出たカードの紙が出ていれば1段戻る）
         if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
             const Match::HumanInput& input = session.input;
             if(m_pause->IsOpen()) {
                 sounds.Play("ui.close");
                 m_pause->Close();
+            } else if(m_album->IsOpen()) {
+                sounds.Play("ui.close");
+                m_album->Back();
             } else if(input.selected >= 0 || input.grabbed >= 0) {
                 Match::CancelSelection(registry);
             } else if(session.phase == Match::MatchPhase::Finished) {

@@ -11,22 +11,17 @@
 #include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Credits.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/Core/Input/InputSystem.hpp>
-#include <Tsukino/Core/Log.hpp>
 #include <Tsukino/EngineIntegration/EngineAPI.hpp>
 #include <Tsukino/EngineIntegration/EngineContext.hpp>
 
-#include <cereal/archives/json.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/vector.hpp>
-
 #include <algorithm>
-#include <fstream>
 
 namespace ChronoSort::Scene {
 
@@ -38,23 +33,6 @@ namespace ChronoSort::Scene {
         constexpr float kLineHeight   = 37.0f;
         constexpr float kLineX        = -306.0f;    // 行の書き出し（紙の内側の左端の少し内）
         constexpr float kFirstLineY   = -282.0f;    // 1行目の高さ（見出しの下）
-
-        //! Credits.json の1件分です。
-        struct CreditEntry {
-            std::string id;
-            std::string title;
-            std::string file;
-            std::string page;
-            std::string artist;
-            std::string license;
-            std::string licenseUrl;
-
-            template <class Archive>
-            void serialize(Archive& archive) {
-                archive(cereal::make_nvp("id", id), cereal::make_nvp("title", title), cereal::make_nvp("file", file), cereal::make_nvp("page", page),
-                        cereal::make_nvp("artist", artist), cereal::make_nvp("license", license), cereal::make_nvp("licenseUrl", licenseUrl));
-            }
-        };
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -88,17 +66,7 @@ namespace ChronoSort::Scene {
     //! Credits.json などから表示する行を作ります。
     //----------------------------------------------------------------------------
     void CreditsScene::LoadLines() {
-        std::vector<CreditEntry> images;
-        std::vector<CreditEntry> audio;
-        std::ifstream            is(Util::AssetPaths::kCredits);
-        if(is) {
-            try {
-                cereal::JSONInputArchive archive(is);
-                archive(cereal::make_nvp("images", images), cereal::make_nvp("audio", audio));
-            } catch(const std::exception& e) {
-                Tsukino::Core::Log::Warn(std::string("Failed to read Credits.json: ") + e.what());
-            }
-        }
+        const Util::Credits credits = Util::LoadCredits();
 
         m_lines.push_back({L"制作", true});
         m_lines.push_back({L"ゲームエンジン  TsukinoEngine"});
@@ -107,10 +75,10 @@ namespace ChronoSort::Scene {
         m_lines.push_back({L"効果音  このゲームのためにコードで合成"});
         m_lines.push_back({L"年号は一般的な教科書の表記に従っています", false, true});
 
-        if(!audio.empty()) {
+        if(!credits.audio.empty()) {
             m_lines.push_back({L"", false});
             m_lines.push_back({L"音楽", true});
-            for(const CreditEntry& entry : audio) {
+            for(const Util::CreditEntry& entry : credits.audio) {
                 m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
                 m_lines.push_back({Util::Utf8ToWide("演奏 " + entry.artist + " / " + entry.file), false, true});
             }
@@ -118,7 +86,7 @@ namespace ChronoSort::Scene {
 
         m_lines.push_back({L"", false});
         m_lines.push_back({L"カードの絵（Wikimedia Commons）", true});
-        for(const CreditEntry& entry : images) {
+        for(const Util::CreditEntry& entry : credits.images) {
             m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
             m_lines.push_back({Util::Utf8ToWide(entry.artist + " / " + entry.file), false, true});
         }

@@ -43,6 +43,13 @@ namespace ChronoSort::Util::AssetPaths {
         return std::string(kFxTextureDir) + "/" + file;
     }
 
+    //! カードの年代が書かれた面（めくった後の面）の画像のパスを返します。
+    //! @param  [in] id カードの id。
+    //! @return パス。
+    inline std::string CardRevealedTexture(const std::string& id) {
+        return std::string(kCardTextureDir) + "/" + id + "_back.png";
+    }
+
     //! 効果音のパスを返します。
     //! @param  [in] name 拡張子を除いたファイル名。
     //! @return パス。

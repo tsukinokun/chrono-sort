@@ -108,6 +108,11 @@ namespace ChronoSort::Rules {
                 const auto ng = PlayFirst(solo, false);
                 Check(ng && !ng->correct && ng->lifeLost && solo.Lives() == RulesTuning{}.soloLives - 1, "solo wrong play loses a life", passed);
                 Check(solo.Discards().size() == 1 && solo.Streak() == 0, "solo wrong play discards and resets streak", passed);
+                // 出たカード：場の1枚目＋最初の手札＋2回置いた後の補充（ソロは外しても補充する）。行方は場・外れ・手札に分かれる
+                Check(solo.AppearedCards().size() == 1 + static_cast<size_t>(RulesTuning{}.soloHandSize) + 2, "appeared cards count draws", passed);
+                Check(solo.FateOf(ok->card) == CardFate::Placed && solo.FateOf(ng->card) == CardFate::Missed
+                          && solo.FateOf(solo.Players()[0].hand.front()) == CardFate::InHand,
+                      "card fate follows where the card is", passed);
 
                 PlayFirst(solo, false);
                 PlayFirst(solo, false);
@@ -169,6 +174,28 @@ namespace ChronoSort::Rules {
                 PlayFirst(versus, true);
                 versus.AdvanceTurn();
                 Check(versus.CurrentPlayerIndex() == 1, "eliminated player is skipped", passed);
+            }
+
+            // 対戦：山札が尽きて捨て札を混ぜ直しても、出たカードは同じカードを2度数えない
+            {
+                Match       versus;
+                MatchConfig config;
+                config.mode       = MatchMode::Versus;
+                config.cpus       = {CpuLevel::Normal};
+                const int  hand   = RulesTuning{}.InitialHandSize(2);
+                const auto cards  = MakeCards(1 + hand * 2 + 1);    // 配り終えると山札は1枚
+                versus.Start(config, cards, rng);
+                PlayFirst(versus, false);    // 外して最後の1枚を引く
+                versus.AdvanceTurn();
+                PlayFirst(versus, false);    // 山札が空なので、人間が外したカードを混ぜ直して引く
+                const auto& seen = versus.AppearedCards();
+                bool        unique = true;
+                for(size_t i = 0; i < seen.size(); ++i) {
+                    for(size_t j = i + 1; j < seen.size(); ++j) {
+                        unique = unique && seen[i].id != seen[j].id;
+                    }
+                }
+                Check(seen.size() == cards.size() && unique, "reshuffled discards are not counted twice", passed);
             }
         }
 
