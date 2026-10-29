@@ -9,6 +9,7 @@
 #include <ChronoSort/Rules/Match.hpp>
 #include <ChronoSort/Rules/RulesTuning.hpp>
 #include <ChronoSort/Rules/Timeline.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/Core/Log.hpp>
 
@@ -256,8 +257,8 @@ namespace ChronoSort::Rules {
         // 同梱デッキが読めること
         Deck japan;
         Deck world;
-        Check(japan.LoadFromFile("ChronoSort/Assets/Data/Decks/japan.json") && japan.Remaining() > 0, "load japan deck", passed);
-        Check(world.LoadFromFile("ChronoSort/Assets/Data/Decks/world.json") && world.Remaining() > 0, "load world deck", passed);
+        Check(japan.LoadFromFile(Util::AssetPaths::Deck("japan")) && japan.Remaining() > 0, "load japan deck", passed);
+        Check(world.LoadFromFile(Util::AssetPaths::Deck("world")) && world.Remaining() > 0, "load world deck", passed);
 
         // 出題の範囲で絞る
         const auto japanCards = LoadCards(CardRange::Japan);

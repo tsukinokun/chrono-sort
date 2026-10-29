@@ -5,6 +5,7 @@
 #include <ChronoSort/Game/TuningSet.hpp>
 
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/Core/IO/JsonFile.hpp>
 
@@ -23,17 +24,9 @@ namespace ChronoSort::Game {
             return [path](T& value) { return Tsukino::IO::TryLoadJson(path, "tuning", value); };
         }
 
-        //----------------------------------------------------------------------------
-        //! 調整値の JSON のパスを返します。
-        //! @param  [in] name ファイル名（拡張子なし）。
-        //! @return パス。
-        //----------------------------------------------------------------------------
-        std::string TuningPath(const char* name) {
-            return std::string("ChronoSort/Assets/Data/Tuning/") + name + ".json";
-        }
     }    // namespace
 
-#define CHRONOSORT_TUNING(member, type, name) member(TuningPath(name), Loader<type>(TuningPath(name)))
+#define CHRONOSORT_TUNING(member, type, name) member(Util::AssetPaths::Tuning(name), Loader<type>(Util::AssetPaths::Tuning(name)))
 
     //----------------------------------------------------------------------------
     //! すべての調整値の JSON を読みます。

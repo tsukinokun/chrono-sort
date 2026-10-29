@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -39,7 +40,7 @@ namespace ChronoSort::UI {
         : m_scene(scene)
         , m_context(context)
         , m_ui(scene, *context.assetManager)
-        , m_layout("ChronoSort/Assets/Data/UI/Options.json")
+        , m_layout(Util::AssetPaths::UILayout("Options"))
         , m_sortOrder(sortOrder) {
     }
 

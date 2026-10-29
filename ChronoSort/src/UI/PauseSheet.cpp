@@ -5,6 +5,7 @@
 #include <ChronoSort/UI/PauseSheet.hpp>
 
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <string>
 
@@ -15,7 +16,7 @@ namespace ChronoSort::UI {
     //----------------------------------------------------------------------------
     PauseSheet::PauseSheet(Tsukino::ECS::Scene& scene, Tsukino::Asset::AssetManager& assetManager)
         : m_ui(scene, assetManager)
-        , m_layout("ChronoSort/Assets/Data/UI/GameHud.json") {
+        , m_layout(Util::AssetPaths::UILayout("GameHud")) {
     }
 
     //----------------------------------------------------------------------------

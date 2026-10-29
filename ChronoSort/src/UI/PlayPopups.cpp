@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Match/MatchEvents.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/WorldAnchorComponent.hpp>
@@ -50,7 +51,7 @@ namespace ChronoSort::UI {
         : m_scene(scene)
         , m_ui(scene, assetManager)
         , m_match(match)
-        , m_layout("ChronoSort/Assets/Data/UI/GameHud.json") {
+        , m_layout(Util::AssetPaths::UILayout("GameHud")) {
         m_connections.push_back(scene.GetEventBus().Subscribe<Match::PlayJudgedEvent>([this](const Match::PlayJudgedEvent& e) {
             ShowStamp(e.card, e.result.correct);
             if(!e.result.correct) {

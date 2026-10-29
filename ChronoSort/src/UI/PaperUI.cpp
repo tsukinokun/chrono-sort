@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/LifetimeComponent.hpp>
@@ -46,7 +47,7 @@ namespace ChronoSort::UI {
     //! テクスチャを読み込みます。
     //----------------------------------------------------------------------------
     Tsukino::Asset::AssetHandle PaperUI::Texture(const std::string& texture) {
-        return m_assetManager.Load(Tsukino::Core::Path("ChronoSort/Assets/Textures/UI/" + texture));
+        return m_assetManager.Load(Tsukino::Core::Path(Util::AssetPaths::UITexture(texture)));
     }
 
     //----------------------------------------------------------------------------

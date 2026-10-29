@@ -9,6 +9,7 @@
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -64,7 +65,7 @@ namespace ChronoSort::UI {
         : m_scene(scene)
         , m_ui(scene, assetManager)
         , m_match(match)
-        , m_layout("ChronoSort/Assets/Data/UI/GameHud.json") {
+        , m_layout(Util::AssetPaths::UILayout("GameHud")) {
         Tsukino::ECS::EventBus& events = scene.GetEventBus();
         auto                    banner = [](const std::string& text) { return Util::Utf8ToWide(text); };
 
@@ -175,7 +176,7 @@ namespace ChronoSort::UI {
 
                 // 歴史家の肖像（取得できていなければ影絵）
                 const std::string& portrait = players[i].portrait;
-                const bool         hasFace  = !portrait.empty() && std::filesystem::exists("ChronoSort/Assets/Textures/UI/" + portrait);
+                const bool         hasFace  = !portrait.empty() && std::filesystem::exists(Util::AssetPaths::UITexture(portrait));
 
                 PaperSpec face = m_layout.Spec("cpuFace");
                 face.texture   = hasFace ? portrait : "silhouette.png";

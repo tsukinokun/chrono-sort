@@ -4,6 +4,8 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Rules/Deck.hpp>
 
+#include <ChronoSort/Util/AssetPaths.hpp>
+
 #include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Path.hpp>
 
@@ -20,8 +22,8 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     std::vector<CardData> LoadAllCards() {
         std::vector<CardData> cards;
-        LoadCardsFromFile("ChronoSort/Assets/Data/Decks/japan.json", cards);
-        LoadCardsFromFile("ChronoSort/Assets/Data/Decks/world.json", cards);
+        LoadCardsFromFile(Util::AssetPaths::Deck("japan"), cards);
+        LoadCardsFromFile(Util::AssetPaths::Deck("world"), cards);
         return cards;
     }
 

@@ -8,9 +8,9 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
-#include <ChronoSort/Scene/CreditsScene.hpp>
-#include <ChronoSort/Scene/GameScene.hpp>
+#include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -43,7 +43,7 @@ namespace ChronoSort::Scene {
         auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
         m_stage.Build(m_scene, Game::Tuning().Stage().titleCards);
         m_ui     = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
-        m_layout = UI::PaperLayout("ChronoSort/Assets/Data/UI/Title.json");
+        m_layout = UI::PaperLayout(Util::AssetPaths::UILayout("Title"));
 
         // 四隅を暗くしてランプの明かりに見せる
         {
@@ -137,12 +137,8 @@ namespace ChronoSort::Scene {
             m_cpuCount = UI::SelectedChoice(registry, m_countGroup, m_cpuCount);
             m_cpuLevel = static_cast<Rules::CpuLevel>(UI::SelectedChoice(registry, m_levelGroup, static_cast<int>(m_cpuLevel)));
             if(m_ui->Clicked(m_start) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Enter)) {
-                Rules::MatchConfig config;
-                config.mode = Rules::MatchMode::Versus;
-                config.cpus.assign(static_cast<size_t>(m_cpuCount), m_cpuLevel);
-                config.range = m_range;
                 sounds.Play("ui.button");
-                api.ChangeScene(std::make_unique<GameScene>(config));
+                Router::ToMatch(api, Router::Versus(m_range, std::vector<Rules::CpuLevel>(static_cast<size_t>(m_cpuCount), m_cpuLevel)));
                 return;
             }
             if(m_ui->Clicked(m_cancel) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
@@ -155,10 +151,8 @@ namespace ChronoSort::Scene {
                 OnRangeSelected(true);
             }
             if(m_ui->Clicked(m_solo)) {
-                Rules::MatchConfig config;
-                config.range = m_range;
                 sounds.Play("ui.button");
-                api.ChangeScene(std::make_unique<GameScene>(config));
+                Router::ToMatch(api, Router::Solo(m_range));
                 return;
             }
             if(m_ui->Clicked(m_versus)) {
@@ -167,7 +161,7 @@ namespace ChronoSort::Scene {
             }
             if(m_ui->Clicked(m_credits)) {
                 sounds.Play("ui.open");
-                api.ChangeScene(std::make_unique<CreditsScene>());
+                Router::ToCredits(api);
                 return;
             }
             if(m_ui->Clicked(m_settings)) {
@@ -177,8 +171,7 @@ namespace ChronoSort::Scene {
                 return;
             }
             if(m_ui->Clicked(m_quit) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
-                // メインループは WM_QUIT を受けると抜ける
-                PostQuitMessage(0);
+                Router::Quit();
             }
         }
 

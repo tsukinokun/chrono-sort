@@ -14,7 +14,7 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/Rules/Deck.hpp>
-#include <ChronoSort/Scene/TitleScene.hpp>
+#include <ChronoSort/Scene/SceneRouter.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/CameraComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -88,10 +88,10 @@ namespace ChronoSort::Scene {
         if(session.phase == Match::MatchPhase::Finished) {
             switch(m_result->Poll()) {
             case UI::ResultChoice::Retry:
-                api.ChangeScene(std::make_unique<GameScene>(m_config));
+                Router::ToMatch(api, m_config);
                 return;
             case UI::ResultChoice::Title:
-                api.ChangeScene(std::make_unique<TitleScene>());
+                Router::ToTitle(api);
                 return;
             default:
                 break;
@@ -128,7 +128,7 @@ namespace ChronoSort::Scene {
             } else if(input.selected >= 0 || input.grabbed >= 0) {
                 Match::CancelSelection(registry);
             } else if(session.phase == Match::MatchPhase::Finished) {
-                api.ChangeScene(std::make_unique<TitleScene>());
+                Router::ToTitle(api);
                 return true;
             } else {
                 sounds.Play("ui.open");
@@ -147,7 +147,7 @@ namespace ChronoSort::Scene {
                 break;
             case UI::PauseChoice::Title:
                 sounds.Play("ui.button");
-                api.ChangeScene(std::make_unique<TitleScene>());
+                Router::ToTitle(api);
                 return true;
             default:
                 break;

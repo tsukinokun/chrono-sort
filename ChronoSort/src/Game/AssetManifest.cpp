@@ -5,6 +5,7 @@
 #include <ChronoSort/Game/AssetManifest.hpp>
 
 #include <ChronoSort/Rules/Deck.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <filesystem>
 
@@ -34,23 +35,23 @@ namespace ChronoSort::Game {
     //----------------------------------------------------------------------------
     std::vector<std::string> CollectStartupAssets() {
         std::vector<std::string> paths = {
-            "ChronoSort/Assets/Meshes/card.obj",
-            "ChronoSort/Assets/Meshes/table.obj",
-            "ChronoSort/Assets/Textures/Table/table.tmat",
-            "ChronoSort/Assets/Textures/Board/cover.tmat",
-            "ChronoSort/Assets/Textures/Board/marker.tmat",
-            "ChronoSort/Assets/Textures/Board/marker_warning.tmat",
+            Util::AssetPaths::kCardMesh,
+            Util::AssetPaths::kTableMesh,
+            Util::AssetPaths::kTableMaterial,
+            Util::AssetPaths::kCoverMaterial,
+            Util::AssetPaths::kMarkerMaterial,
+            Util::AssetPaths::kMarkerWarnMaterial,
         };
 
         // 音は初回の取り込みで外部ツールを起動するので、操作中ではなくここで済ませる
-        AddFiles("ChronoSort/Assets/Audio/Sfx", ".wav", paths);
-        AddFiles("ChronoSort/Assets/Audio/Bgm", ".mp3", paths);
-        AddFiles("ChronoSort/Assets/Textures/UI", ".png", paths);
-        AddFiles("ChronoSort/Assets/Textures/Fx", ".png", paths);
+        AddFiles(Util::AssetPaths::kSfxDir, ".wav", paths);
+        AddFiles(Util::AssetPaths::kBgmDir, ".mp3", paths);
+        AddFiles(Util::AssetPaths::kUITextureDir, ".png", paths);
+        AddFiles(Util::AssetPaths::kFxTextureDir, ".png", paths);
 
         // カード面（.tmat を読むと、参照しているテクスチャも一緒に読まれる）
         for(const Rules::CardData& card : Rules::LoadAllCards()) {
-            const std::string prefix = "ChronoSort/Assets/Textures/Cards/" + card.id;
+            const std::string prefix = std::string(Util::AssetPaths::kCardTextureDir) + "/" + card.id;
             paths.push_back(prefix + "_front.tmat");
             paths.push_back(prefix + "_back.tmat");
         }

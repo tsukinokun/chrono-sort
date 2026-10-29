@@ -5,6 +5,7 @@
 #include <ChronoSort/Game/SoundBank.hpp>
 
 #include <ChronoSort/Game/TuningSet.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/Audio/AudioManager.hpp>
 #include <Tsukino/Core/Log.hpp>
@@ -36,7 +37,7 @@ namespace ChronoSort::Game {
             return;
         }
         const float                       volume = it->second.volume;
-        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Sfx/" + it->second.file + ".wav");
+        const Tsukino::Asset::AssetHandle handle = Load(Util::AssetPaths::Sfx(it->second.file));
         if(!handle.IsValid()) {
             return;
         }
@@ -56,7 +57,7 @@ namespace ChronoSort::Game {
             return;
         }
         const float                       volume = it->second.volume;
-        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Bgm/" + it->second.file + ".mp3");
+        const Tsukino::Asset::AssetHandle handle = Load(Util::AssetPaths::Bgm(it->second.file));
         if(handle == m_bgm) {
             return;
         }
@@ -94,7 +95,7 @@ namespace ChronoSort::Game {
             Tsukino::Core::Log::Warn("SoundBank: cue '" + cue + "' is not in Sounds.json");
             return std::nullopt;
         }
-        const Tsukino::Asset::AssetHandle handle = Load("ChronoSort/Assets/Audio/Sfx/" + it->second.file + ".wav");
+        const Tsukino::Asset::AssetHandle handle = Load(Util::AssetPaths::Sfx(it->second.file));
         if(!handle.IsValid()) {
             return std::nullopt;
         }

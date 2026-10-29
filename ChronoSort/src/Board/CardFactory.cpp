@@ -6,6 +6,7 @@
 
 #include <ChronoSort/ECS/Component/CardMotionComponent.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/ModelComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -24,10 +25,10 @@ namespace ChronoSort::Board {
         // そのため .mtl に書いた順（Front, Back）は 1 番から始まる（Prefab の materials も同じ並び）
         constexpr size_t kFirstObjMaterialSlot = 1;
 
-        constexpr const char* kCardTextureDir = "ChronoSort/Assets/Textures/Cards/";
+        const std::string kCardTextureDir = std::string(Util::AssetPaths::kCardTextureDir) + "/";
 
-        constexpr const char* kMarkerMaterial        = "ChronoSort/Assets/Textures/Board/marker.tmat";
-        constexpr const char* kMarkerWarningMaterial = "ChronoSort/Assets/Textures/Board/marker_warning.tmat";
+        constexpr const char* kMarkerMaterial        = Util::AssetPaths::kMarkerMaterial;
+        constexpr const char* kMarkerWarningMaterial = Util::AssetPaths::kMarkerWarnMaterial;
     }    // namespace
 
     //----------------------------------------------------------------------------

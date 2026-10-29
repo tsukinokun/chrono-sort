@@ -5,6 +5,7 @@
 #include <ChronoSort/Effects/ParticleEmitter.hpp>
 
 #include <ChronoSort/Game/TuningSet.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Particle/BurstEmitter.hpp>
 #include <Tsukino/Core/Log.hpp>
@@ -51,7 +52,7 @@ namespace ChronoSort::Effects {
         if(const auto it = m_textures.find(file); it != m_textures.end()) {
             return it->second;
         }
-        const Tsukino::Asset::AssetHandle handle = m_assetManager.Load(Tsukino::Core::Path("ChronoSort/Assets/Textures/Fx/" + file));
+        const Tsukino::Asset::AssetHandle handle = m_assetManager.Load(Tsukino::Core::Path(Util::AssetPaths::FxTexture(file)));
         m_textures.emplace(file, handle);
         return handle;
     }

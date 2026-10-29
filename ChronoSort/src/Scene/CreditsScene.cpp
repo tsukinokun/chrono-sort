@@ -6,9 +6,10 @@
 
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
-#include <ChronoSort/Scene/TitleScene.hpp>
+#include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -63,7 +64,7 @@ namespace ChronoSort::Scene {
         LoadLines();
         m_pageCount = std::max(1, static_cast<int>((m_lines.size() + kLinesPerPage - 1) / kLinesPerPage));
 
-        const UI::PaperLayout layout("ChronoSort/Assets/Data/UI/Credits.json");
+        const UI::PaperLayout layout(Util::AssetPaths::UILayout("Credits"));
         m_sheet = m_ui->Paper(layout.Spec("sheet"));
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 900.0f), 0.1f, 0.6f);
         m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -362.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
@@ -86,7 +87,7 @@ namespace ChronoSort::Scene {
     void CreditsScene::LoadLines() {
         std::vector<CreditEntry> images;
         std::vector<CreditEntry> audio;
-        std::ifstream            is("ChronoSort/Assets/Data/Credits.json");
+        std::ifstream            is(Util::AssetPaths::kCredits);
         if(is) {
             try {
                 cereal::JSONInputArchive archive(is);
@@ -171,7 +172,7 @@ namespace ChronoSort::Scene {
         }
         if(m_ui->Clicked(m_back) || input.IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
             sounds.Play("ui.button");
-            api.ChangeScene(std::make_unique<TitleScene>());
+            Router::ToTitle(api);
             return;
         }
         m_scene.Update(deltaTime);

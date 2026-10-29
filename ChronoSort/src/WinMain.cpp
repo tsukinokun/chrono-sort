@@ -8,6 +8,7 @@
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Scene/LoadingScene.hpp>
+#include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -50,24 +51,26 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     ChronoSort::Game::GameServices services(engineIntegration.GetContext());
 
     Tsukino::EngineIntegration::EngineAPI engineAPI(engineIntegration.GetContext());
+    ChronoSort::Scene::Router::RegisterScenes(engineAPI);
     // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。
     // 「ChronoSort.exe solo」「ChronoSort.exe versus」なら、読み終えたあとタイトルを飛ばして対局画面へ（確認用）
     // 続けて japan / world を書くと、出題をその範囲に絞る（例：「ChronoSort.exe solo japan」）
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
     auto next = [argument]() -> std::unique_ptr<Tsukino::EngineIntegration::GameSceneBase> {
-        ChronoSort::Rules::MatchConfig config;
+        namespace Router = ChronoSort::Scene::Router;
+        using ChronoSort::Rules::CardRange;
+        using ChronoSort::Rules::CpuLevel;
+        CardRange range = CardRange::All;
         if(argument.find("japan") != std::string::npos) {
-            config.range = ChronoSort::Rules::CardRange::Japan;
+            range = CardRange::Japan;
         } else if(argument.find("world") != std::string::npos) {
-            config.range = ChronoSort::Rules::CardRange::World;
+            range = CardRange::World;
         }
         if(argument.find("solo") != std::string::npos) {
-            return std::make_unique<ChronoSort::Scene::GameScene>(config);
+            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Solo(range));
         }
         if(argument.find("versus") != std::string::npos) {
-            config.mode = ChronoSort::Rules::MatchMode::Versus;
-            config.cpus = {ChronoSort::Rules::CpuLevel::Easy, ChronoSort::Rules::CpuLevel::Normal};
-            return std::make_unique<ChronoSort::Scene::GameScene>(config);
+            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Versus(range, {CpuLevel::Easy, CpuLevel::Normal}));
         }
         return std::make_unique<ChronoSort::Scene::TitleScene>();
     };

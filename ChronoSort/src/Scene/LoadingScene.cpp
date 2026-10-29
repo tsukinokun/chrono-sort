@@ -10,6 +10,7 @@
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -60,7 +61,7 @@ namespace ChronoSort::Scene {
 
         // この画面で使う素材（紙片と墨の線）だけは同期で読む。小さいので待ちはほぼ無い
         m_ui = std::make_unique<UI::PaperUI>(m_scene, *context->assetManager);
-        const UI::PaperSpec note  = UI::PaperLayout("ChronoSort/Assets/Data/UI/Loading.json").Spec("note");
+        const UI::PaperSpec note  = UI::PaperLayout(Util::AssetPaths::UILayout("Loading")).Spec("note");
         const auto          paper = m_ui->Paper(note);
         m_ui->Text(L"史料を整理しています", hlslpp::float2(0.0f, -36.0f), 0.85f, UI::kInkColor, note.sortOrder + 1, paper);
         m_percent = m_ui->Text(L"0%", hlslpp::float2(222.0f, 30.0f), 0.5f, UI::kFadedInkColor, note.sortOrder + 1, paper);

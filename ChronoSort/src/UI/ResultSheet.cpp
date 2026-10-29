@@ -9,6 +9,7 @@
 #include <ChronoSort/Match/MatchSession.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/UI/UITweenUtility.hpp>
@@ -36,7 +37,7 @@ namespace ChronoSort::UI {
         : m_scene(scene)
         , m_ui(scene, assetManager)
         , m_match(match)
-        , m_layout("ChronoSort/Assets/Data/UI/GameHud.json") {
+        , m_layout(Util::AssetPaths::UILayout("GameHud")) {
         Tsukino::ECS::EventBus& events = scene.GetEventBus();
         m_connections.push_back(events.Subscribe<Match::MatchEndedEvent>([this](const Match::MatchEndedEvent& e) {
             m_newRecord = m_match.Config().mode == Rules::MatchMode::Solo && e.newRecord;
