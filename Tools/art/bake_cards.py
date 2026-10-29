@@ -4,6 +4,9 @@
 
     python Tools/art/bake_cards.py                全カードと卓・山札の素材を焼く
     python Tools/art/bake_cards.py --only a,b     指定したカードの面だけ焼く
+    python Tools/art/bake_cards.py --retitle [--only a,b]
+                                                  焼いた面の出来事名の欄だけを描き直す
+                                                  （raw/ の絵が手元に無くても、今の絵を残したまま題名を直せる）
 
 入力:
     ChronoSort/Assets/Data/Decks/*.json
@@ -15,6 +18,7 @@
 """
 
 import argparse
+import functools
 import json
 import math
 import random
@@ -33,6 +37,8 @@ ASSET_PREFIX = "ChronoSort/Assets/Textures"
 FONT_PATH = ROOT / "External" / "TsukinoEngine" / "Tsukino.BuiltIn" / "Assets" / "Fonts" / "NotoSansCJKjp-Regular.otf"
 # 見出し（出来事名・年号）は明朝で。OS 同梱の Noto Serif JP（OFL）を画像に焼き込むだけなので配布物には含まれない
 SERIF_PATH = Path("C:/Windows/Fonts/NotoSerifJP-VF.ttf")
+# Noto Serif JP に字形の無い字（「岸」など）だけを描く、OS 同梱の明朝
+FALLBACK_SERIF_PATH = Path("C:/Windows/Fonts/yumindb.ttf")
 
 W, H = 512, 768
 SAVE_SIZE = (384, 576)
@@ -53,10 +59,60 @@ REGION_COLORS = {
 }
 
 
+LINE_HEIGHT = 1.2      # 行の高さ（文字の大きさの倍率）
+TWO_LINE_MARGIN = 12   # 2行に折り返したとき、欄の上下に残す余白の合計（絵と年号の札に詰まって見えないように）
+
+
+@functools.lru_cache(maxsize=None)
 def font(size):
     return ImageFont.truetype(str(FONT_PATH), size)
 
 
+@functools.lru_cache(maxsize=None)
+def fallback(size):
+    if FALLBACK_SERIF_PATH.exists():
+        return ImageFont.truetype(str(FALLBACK_SERIF_PATH), size)
+    return font(size)
+
+
+@functools.lru_cache(maxsize=None)
+def notdef_mask(f):
+    # 字形の無い字は .notdef（豆腐）で描かれる。私用面の字で、その形を覚えておく
+    return bytes(f.getmask("\U000F0000"))
+
+
+@functools.lru_cache(maxsize=None)
+def has_glyph(f, c):
+    return c.isspace() or bytes(f.getmask(c)) != notdef_mask(f)
+
+
+def runs(text, f):
+    """字形の有無で text を区切り、(文字列, フォント) の並びにする。無い字は代わりの明朝で描く。"""
+    out = []
+    for c in text:
+        face = f if has_glyph(f, c) else fallback(f.size)
+        if out and out[-1][1] is face:
+            out[-1] = (out[-1][0] + c, face)
+        else:
+            out.append((c, face))
+    return out
+
+
+def text_width(draw, text, f):
+    return sum(draw.textlength(part, font=face) for part, face in runs(text, f))
+
+
+def draw_line(draw, center, text, f, fill):
+    """1行を center（中心）に描く。代わりのフォントの字も、元のフォントのベースラインに揃える。"""
+    ascent, descent = f.getmetrics()
+    x = center[0] - text_width(draw, text, f) / 2
+    baseline = center[1] + (ascent - descent) / 2
+    for part, face in runs(text, f):
+        draw.text((x, baseline), part, font=face, fill=fill, anchor="ls")
+        x += draw.textlength(part, font=face)
+
+
+@functools.lru_cache(maxsize=None)
 def serif(size, weight="SemiBold"):
     if not SERIF_PATH.exists():
         return font(size)
@@ -68,29 +124,104 @@ def serif(size, weight="SemiBold"):
     return f
 
 
+def char_kind(c):
+    """折り返しの位置を選ぶための、字の種類。"""
+    if "゠" <= c <= "ヿ" or c == "ー":
+        return "katakana"
+    if "぀" <= c <= "ゟ":
+        return "hiragana"
+    if "一" <= c <= "鿿" or c in "々〆":
+        return "kanji"
+    if c.isascii() and c.isalnum():
+        return "latin"
+    return "other"
+
+
+def break_score(text, i):
+    """text を i 文字目の前で折り返したときの良さ。日本語は単語区切りが無いので、字の並びから見る。"""
+    before, after = text[i - 1], text[i]
+    kb, ka = char_kind(before), char_kind(after)
+    score = 0.0
+    if before in "のがをにへとで、』」）" or after in "『「（":
+        score += 2.0    # 助詞や区切りの記号の後は、切れ目として読みやすい
+    if after in "のがをにへとで":
+        score -= 4.0    # 助詞を行頭に残さない
+    if after in "・ー、』」）" or before in "『「（":
+        score -= 6.0    # 記号や長音を行頭に、括弧の始まりを行末に残さない
+    if after == "号" or (after == "世" and before.isdigit()) or (after.isdigit() and kb == "katakana"):
+        score -= 6.0    # 「メイフラワー号」「チャールズ1世」のように、名前に付く番号や「号」「世」を離さない
+    if text[:i].count("『") > text[:i].count("』") or text[:i].count("「") > text[:i].count("」"):
+        score -= 6.0    # 書名や台詞の括弧の中では切らない
+    if kb != ka:
+        score += 2.0    # 字の種類が変わる所（カタカナの名前と漢字の間など）
+    elif kb in ("katakana", "latin"):
+        score -= 6.0    # カタカナ語・英数の途中では切らない
+    elif kb == "kanji":
+        score -= 1.0    # 熟語の途中もなるべく避ける
+    # 2行の長さが揃うほど良い
+    score -= abs(len(text) - 2 * i) * 0.5
+    return score
+
+
+def split_two_lines(draw, text, f, width):
+    """2行に折り返して width に収まる分け方のうち、いちばん良いものを返す（無ければ None）。"""
+    best = None
+    for i in range(1, len(text)):
+        lines = [text[:i], text[i:]]
+        if max(text_width(draw, l, f) for l in lines) > width:
+            continue
+        score = break_score(text, i)
+        if best is None or score > best[0]:
+            best = (score, lines)
+    return best
+
+
+# 字の並びだけでは語の切れ目が分からない題名の、折り返す位置（"|" の所で切る）
+TITLE_BREAKS = {
+    "shimonoseki_hogeki": "四国艦隊|下関砲撃事件",
+    "east_india_company": "イギリス|東インド会社の設立",
+    "voc": "オランダ|東インド会社の設立",
+    "dna_helix": "DNA二重らせん|構造の発表",
+    "enkai_yochi": "『大日本沿海輿地全図』の|完成",
+}
+
+# 折り返しの良さの基準と、その基準で探す文字の大きさの下限。
+# 良い切れ目が少し小さい文字で見つかるなら、大きい文字で語の途中を切るよりそちらを選ぶ
+FIT_PASSES = ((0.0, 36), (-4.0, 0), (float("-inf"), 0))
+
+
 def fit_text(draw, text, box, max_size, min_size=20, face=None):
-    """box に収まる最大の文字サイズを探し、必要なら2行に折り返す。"""
+    """box に収まる最大の文字サイズを探し、必要なら2行に折り返す。
+    text に "|" があればそこで折り返す。無ければ切れ目の良い所を選び、語の途中で切るのは他に収まる手が無いときだけにする。"""
     face = face or serif
     width = box[2] - box[0]
     height = box[3] - box[1]
-    for size in range(max_size, min_size - 1, -2):
-        f = face(size)
-        if draw.textlength(text, font=f) <= width:
-            return [text], f
-        # 2行に分けて収まるか（文字数で半分に割る。日本語は単語区切りが無いため）
-        half = (len(text) + 1) // 2
-        lines = [text[:half], text[half:]]
-        if max(draw.textlength(l, font=f) for l in lines) <= width and size * 2.3 <= height:
-            return lines, f
+    if "|" in text:
+        lines = text.split("|", 1)
+        for size in range(max_size, min_size - 1, -2):
+            f = face(size)
+            if max(text_width(draw, l, f) for l in lines) <= width and size * LINE_HEIGHT * 2 <= height - TWO_LINE_MARGIN:
+                return lines, f
+        text = text.replace("|", "")
+    for threshold, smallest in FIT_PASSES:
+        for size in range(max_size, max(min_size, smallest) - 1, -2):
+            f = face(size)
+            if text_width(draw, text, f) <= width:
+                return [text], f
+            if size * LINE_HEIGHT * 2 > height - TWO_LINE_MARGIN:
+                continue
+            best = split_two_lines(draw, text, f, width)
+            if best is not None and best[0] >= threshold:
+                return best[1], f
     return [text], face(min_size)
 
 
 def draw_centered(draw, lines, f, box, fill):
-    line_h = f.size * 1.2
+    line_h = f.size * LINE_HEIGHT
     total = line_h * len(lines)
     y = (box[1] + box[3]) / 2 - total / 2
     for line in lines:
-        draw.text(((box[0] + box[2]) / 2, y + line_h / 2), line, font=f, fill=fill, anchor="mm")
+        draw_line(draw, ((box[0] + box[2]) / 2, y + line_h / 2), line, f, fill)
         y += line_h
 
 
@@ -151,8 +282,7 @@ def bake_face(card, art, reveal):
     draw.polygon([(ART_BOX[0] + 14, ART_BOX[1]), (ART_BOX[0] + 78, ART_BOX[1]), (ART_BOX[0] + 78, ART_BOX[1] + 70), (ART_BOX[0] + 46, ART_BOX[1] + 56), (ART_BOX[0] + 14, ART_BOX[1] + 70)], fill=tab_color)
     draw.text((ART_BOX[0] + 46, ART_BOX[1] + 26), tab_text, font=serif(22, "Bold"), fill=(250, 236, 210), anchor="mm")
 
-    lines, f = fit_text(draw, card["title"], TITLE_BOX, 56)
-    draw_centered(draw, lines, f, TITLE_BOX, INK)
+    draw_title(draw, card)
 
     # 年号の札。表では伏せ、裏で明かす
     draw.rounded_rectangle(YEAR_BOX, 14, fill=FRAME if reveal else (205, 190, 160), outline=GOLD, width=3)
@@ -164,6 +294,31 @@ def bake_face(card, art, reveal):
 
     img.putalpha(rounded_mask())
     return img
+
+
+def draw_title(draw, card):
+    lines, f = fit_text(draw, TITLE_BREAKS.get(card["id"], card["title"]), TITLE_BOX, 56)
+    draw_centered(draw, lines, f, TITLE_BOX, INK)
+
+
+def save_face(face, path):
+    # 描くのは 512x768 で、保存は 3/4 に縮めて 256 色に減色する。
+    # セピア寄りの絵は減色してもほぼ見分けがつかず、容量は 1/4 ほどになる（リポジトリが重くならないように）
+    face = face.quantize(256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.FLOYDSTEINBERG)
+    face.save(path, optimize=True)
+
+
+def retitle_face(card, path):
+    """焼いた面の、出来事名の欄だけを描き直す（絵・年号・枠は今の画像のまま）。"""
+    scale = SAVE_SIZE[0] / W
+    # 欄は羊皮紙の無地なので、原寸で描いてから欄の分だけ縮めて貼る（欄の位置と大きさは 3/4 で割り切れる）
+    patch = Image.new("RGBA", (W, H), PARCHMENT + (255,))
+    draw_title(ImageDraw.Draw(patch), card)
+    box = TITLE_BOX
+    region = patch.crop(box).resize((round((box[2] - box[0]) * scale), round((box[3] - box[1]) * scale)), Image.LANCZOS)
+    face = Image.open(path).convert("RGBA")
+    face.paste(region, (round(box[0] * scale), round(box[1] * scale)))
+    save_face(face, path)
 
 
 def write_tmat(path, texture, roughness=0.6):
@@ -243,9 +398,23 @@ def bake_board():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", default="")
+    parser.add_argument("--retitle", action="store_true")
     args = parser.parse_args()
     # 指定したカードの面だけを焼く（卓・山札の素材と、他のカードの面には触れない）
     only = {s for s in args.only.split(",") if s}
+
+    if args.retitle:
+        count = 0
+        for deck_path in sorted(DECK_DIR.glob("*.json")):
+            deck = json.loads(deck_path.read_text(encoding="utf-8"))
+            for card in deck["cards"]:
+                if only and card["id"] not in only:
+                    continue
+                for face in ("front", "back"):
+                    retitle_face(card, OUT_DIR / f"{card['id']}_{face}.png")
+                count += 1
+        print(f"retitled {count} cards in {OUT_DIR}")
+        return
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     if not only:
@@ -260,11 +429,7 @@ def main():
             art = load_art(card, art_size)
             for face, reveal in (("front", False), ("back", True)):
                 name = f"{card['id']}_{face}"
-                # 描くのは 512x768 で、保存は 3/4 に縮めて 256 色に減色する。
-                # セピア寄りの絵は減色してもほぼ見分けがつかず、容量は 1/4 ほどになる（リポジトリが重くならないように）
-                face = bake_face(card, art, reveal).resize(SAVE_SIZE, Image.LANCZOS)
-                face = face.quantize(256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.FLOYDSTEINBERG)
-                face.save(OUT_DIR / f"{name}.png", optimize=True)
+                save_face(bake_face(card, art, reveal).resize(SAVE_SIZE, Image.LANCZOS), OUT_DIR / f"{name}.png")
                 write_tmat(OUT_DIR / f"{name}.tmat", f"{ASSET_PREFIX}/Cards/{name}.png")
             count += 1
     if not only:
