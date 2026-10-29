@@ -62,6 +62,8 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity Paper(const PaperSpec& spec);
 
         //! 文字を置きます。parent を指定すると、その紙片の上に貼り付けたように一緒に傾き・揺れます。
+        //! parent が紙片なら、文字を紙の内側（縁の破れを除いた四角）の幅に収めます（長ければ縮めて描く）。
+        //! Debug では、高さや書き出しが内側から出るときに "[UI] text overflows paper" の警告を出します。
         //! @param  [in] text      文字列。
         //! @param  [in] position  位置（parent があればその中心からの相対）。
         //! @param  [in] scale     文字の大きさ（1 で 32px 相当）。
@@ -69,9 +71,10 @@ namespace ChronoSort::UI {
         //! @param  [in] sortOrder 描画順。
         //! @param  [in] parent    貼り付ける紙片。
         //! @param  [in] centered  中央揃えにするなら true（false は左揃え）。
+        //! @param  [in] fitToPaper 紙の内側に収めるなら true。紙の外に添える文字（見出しの札・席の横の枚数など）は false。
         //! @return 作成したエンティティ。
         Tsukino::ECS::Entity Text(const std::wstring& text, const hlslpp::float2& position, float scale, const hlslpp::float4& color, int sortOrder,
-                                  Tsukino::ECS::Entity parent = entt::null, bool centered = true);
+                                  Tsukino::ECS::Entity parent = entt::null, bool centered = true, bool fitToPaper = true);
 
         //! 紙片をボタンにします（ホバーで持ち上がり、押すと沈み、クリックで弾み、重なると "ui.hover" の音が鳴る）。
         //! @param  [in] entity 紙片。

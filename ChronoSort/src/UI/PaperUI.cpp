@@ -4,7 +4,9 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/UI/PaperUI.hpp>
 
+#include <ChronoSort/ECS/Component/PaperComponent.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
+#include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
 
@@ -18,10 +20,14 @@
 #include <Tsukino/BuiltIn/ECS/Component/UIRectComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Transform/TransformUtility.hpp>
 #include <Tsukino/BuiltIn/ECS/UI/UITweenUtility.hpp>
+#include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Path.hpp>
 #include <Tsukino/Engine/Asset/AssetManager.hpp>
 #include <Tsukino/Engine/ECS/Scene.hpp>
 
+#include <algorithm>
+#include <cmath>
+#include <string>
 #include <vector>
 
 namespace ChronoSort::UI {
@@ -31,6 +37,32 @@ namespace ChronoSort::UI {
         using Tsukino::Core::Math::Easing::EaseType;
 
         constexpr float kDegToRad = 3.14159265f / 180.0f;
+
+        // 文字の高さの半分（scale 1 あたり。1 で 32px 相当の文字の、見える字面の高さの半分）。はみ出しの警告に使う
+        constexpr float kHalfGlyphHeight = 13.0f;
+
+        //----------------------------------------------------------------------------
+        //! 警告に出すため、ワイド文字列を UTF-8 にします。
+        //! @param  [in] text ワイド文字列。
+        //! @return UTF-8 の文字列。
+        //----------------------------------------------------------------------------
+        std::string ToUtf8(const std::wstring& text) {
+            std::string out;
+            for(const wchar_t c : text) {
+                const auto u = static_cast<std::uint32_t>(c);
+                if(u < 0x80) {
+                    out += static_cast<char>(u);
+                } else if(u < 0x800) {
+                    out += static_cast<char>(0xC0 | (u >> 6));
+                    out += static_cast<char>(0x80 | (u & 0x3F));
+                } else {
+                    out += static_cast<char>(0xE0 | (u >> 12));
+                    out += static_cast<char>(0x80 | ((u >> 6) & 0x3F));
+                    out += static_cast<char>(0x80 | (u & 0x3F));
+                }
+            }
+            return out;
+        }
 
     }    // namespace
 
@@ -75,6 +107,16 @@ namespace ChronoSort::UI {
         if(float(spec.size.x) > 0.0f) {
             auto& rect = registry.AddComponent<BuiltIn::UIRectComponent>(entity);
             rect.size  = spec.size;
+
+            // 文字を書いてよい内側の四角（縁の破れと、少しの余白を除く）
+            const UI::PaperInsetTuning& insets = Game::Tuning().PaperInsets();
+            const auto                  it     = insets.insets.find(spec.texture);
+            const hlslpp::float4        inset  = (it != insets.insets.end()) ? it->second : hlslpp::float4(0.0f, 0.0f, 0.0f, 0.0f);
+            const hlslpp::float2        half   = spec.size * 0.5f;
+            auto&                       paper  = registry.AddComponent<ECS::PaperComponent>(entity);
+            paper.safeMin = -half + spec.size * inset.xy + hlslpp::float2(insets.padding, insets.padding);
+            paper.safeMax = half - spec.size * inset.zw - hlslpp::float2(insets.padding, insets.padding);
+            paper.texture = spec.texture;
         }
 
         // 紙片ごとに周期と位相をずらして揺らす（全部が揃って動くと機械的に見える）
@@ -109,7 +151,7 @@ namespace ChronoSort::UI {
     //! 文字を置きます。
     //----------------------------------------------------------------------------
     Tsukino::ECS::Entity PaperUI::Text(const std::wstring& text, const hlslpp::float2& position, float scale, const hlslpp::float4& color, int sortOrder,
-                                       Tsukino::ECS::Entity parent, bool centered) {
+                                       Tsukino::ECS::Entity parent, bool centered, bool fitToPaper) {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
         Tsukino::ECS::Entity    entity   = m_scene.CreateEntity();
 
@@ -124,6 +166,23 @@ namespace ChronoSort::UI {
         font.sortOrder       = sortOrder;
         font.horizontalAlign = centered ? BuiltIn::HorizontalAlign::Center : BuiltIn::HorizontalAlign::Left;
         font.verticalAlign   = BuiltIn::VerticalAlign::Middle;
+
+        // 紙の上の文字は、紙の内側の幅に収める（長い文字列や、あとで長くなった文字列は縮めて描く）
+        const auto* paper = (fitToPaper && parent != entt::null) ? registry.try_get<ECS::PaperComponent>(parent) : nullptr;
+        if(paper != nullptr) {
+            const float x     = float(position.x);
+            const float width = centered ? 2.0f * std::min(x - float(paper->safeMin.x), float(paper->safeMax.x) - x) : float(paper->safeMax.x) - x;
+            font.maxWidth     = std::max(width, 1.0f);
+#ifdef _DEBUG
+            // 縮めても直らない置き方（高さが内側から出る・書き出しが外にある）は、置き方を直すよう知らせる
+            const float y    = float(position.y);
+            const float half = kHalfGlyphHeight * scale;
+            if(width <= 0.0f || y - half < float(paper->safeMin.y) || y + half > float(paper->safeMax.y) || (!centered && x < float(paper->safeMin.x))) {
+                Tsukino::Core::Log::Warn("[UI] text overflows paper: \"" + ToUtf8(text) + "\" on " + paper->texture + " at (" + std::to_string(x) + ", " +
+                                         std::to_string(y) + ") scale " + std::to_string(scale));
+            }
+#endif
+        }
         return entity;
     }
 

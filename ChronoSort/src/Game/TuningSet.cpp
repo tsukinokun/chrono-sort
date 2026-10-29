@@ -41,7 +41,8 @@ namespace ChronoSort::Game {
         , CHRONOSORT_TUNING(m_feedback, Match::FeedbackTuning, "Feedback")
         , CHRONOSORT_TUNING(m_stage, Scene::StageTuning, "Stage")
         , CHRONOSORT_TUNING(m_particles, Effects::ParticleTuning, "Particles")
-        , CHRONOSORT_TUNING(m_sounds, SoundTuning, "Sounds") {
+        , CHRONOSORT_TUNING(m_sounds, SoundTuning, "Sounds")
+        , CHRONOSORT_TUNING(m_paperInsets, UI::PaperInsetTuning, "PaperInsets") {
     }
 
 #undef CHRONOSORT_TUNING

@@ -95,8 +95,7 @@ namespace ChronoSort::Scene {
         const auto          paper   = m_ui->Paper(spec);
         m_ui->Text(label, hlslpp::float2(0.0f, hasNote ? -16.0f : 2.0f), hasNote ? 1.0f : 0.8f, UI::kInkColor, kLayerMenu + 1, paper);
         if(hasNote) {
-            const auto sub = m_ui->Text(note, hlslpp::float2(0.0f, 26.0f), 0.46f, UI::kFadedInkColor, kLayerMenu + 1, paper);
-            m_scene.GetRegistry().GetComponent<BuiltIn::FontComponent>(sub).maxWidth = 360.0f;
+            m_ui->Text(note, hlslpp::float2(0.0f, 26.0f), 0.46f, UI::kFadedInkColor, kLayerMenu + 1, paper);
         }
 
         // 留め具：ピンは左上、テープは右上に斜めに貼る（Title.json の center は紙の角からのずれ）
@@ -257,7 +256,7 @@ namespace ChronoSort::Scene {
         Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
 
         // 題字の左下に小さな見出し（題字と一緒に揺れる）
-        m_ui->Text(L"出題", hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title);
+        m_ui->Text(L"出題", hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
 
         // 置き場所・傾きは Data/UI/Title.json（高さも傾きもわざと揃えない）
         const std::pair<Rules::CardRange, const char*> tabs[] = {
@@ -286,7 +285,7 @@ namespace ChronoSort::Scene {
             spec.punch        = 0.18f;
             const auto tag    = UI::ChoiceTag(*m_ui, m_rangeGroup, spec, range == m_range);
             if(all) {
-                m_ui->Text(L"日本と世界", hlslpp::float2(4.0f, 20.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
+                m_ui->Text(L"日本と世界", hlslpp::float2(4.0f, 13.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
             }
             m_ui->SlideIn(tag, hlslpp::float2(m_ui->Jitter() * 60.0f, -260.0f), 0.45f + 0.07f * static_cast<float>(i), 0.6f);
 

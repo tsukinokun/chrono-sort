@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------
 #include <ChronoSort/Scene/CreditsScene.hpp>
 
+#include <ChronoSort/ECS/Component/PaperComponent.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Scene/SceneRouter.hpp>
@@ -35,6 +36,8 @@ namespace ChronoSort::Scene {
         constexpr int   kLinesPerPage = 15;
         constexpr int   kLayerSheet   = 30;
         constexpr float kLineHeight   = 37.0f;
+        constexpr float kLineX        = -306.0f;    // 行の書き出し（紙の内側の左端の少し内）
+        constexpr float kFirstLineY   = -282.0f;    // 1行目の高さ（見出しの下）
 
         //! Credits.json の1件分です。
         struct CreditEntry {
@@ -67,8 +70,8 @@ namespace ChronoSort::Scene {
         const UI::PaperLayout layout(Util::AssetPaths::UILayout("Credits"));
         m_sheet = m_ui->Paper(layout.Spec("sheet"));
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 900.0f), 0.1f, 0.6f);
-        m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -362.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
-        m_pageNo = m_ui->Text(L"", hlslpp::float2(0.0f, 380.0f), 0.5f, UI::kFadedInkColor, kLayerSheet + 1, m_sheet);
+        m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -325.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
+        m_pageNo = m_ui->Text(L"", hlslpp::float2(0.0f, 335.0f), 0.5f, UI::kFadedInkColor, kLayerSheet + 1, m_sheet);
 
         auto button = [&](const char* name, const std::wstring& text) {
             const auto paper = UI::NoteButton(*m_ui, layout.Spec(name), text, 0.72f);
@@ -135,16 +138,17 @@ namespace ChronoSort::Scene {
         m_page                           = m_scene.CreateEntity();
         auto& transform                  = registry.AddComponent<BuiltIn::TransformComponent>(m_page);
         transform.parent                 = m_sheet;
+        // 頁は紙と同じ位置に重ねる入れ物なので、紙の内側の四角を写し、行を紙の内側に収める
+        registry.AddComponent<ECS::PaperComponent>(m_page, registry.GetComponent<ECS::PaperComponent>(m_sheet));
 
         const size_t first = static_cast<size_t>(m_current) * kLinesPerPage;
         for(size_t i = first; i < std::min(m_lines.size(), first + kLinesPerPage); ++i) {
             const Line& line = m_lines[i];
-            const float y    = -300.0f + static_cast<float>(i - first) * kLineHeight;
+            const float y    = kFirstLineY + static_cast<float>(i - first) * kLineHeight;
             const float size = line.heading ? 0.7f : (line.faded ? 0.42f : 0.52f);
             const auto  color = line.heading ? UI::kSealRedColor : (line.faded ? UI::kFadedInkColor : UI::kInkColor);
-            const auto  text = m_ui->Text(line.text, hlslpp::float2(line.faded ? -322.0f : -340.0f, y), size, color, kLayerSheet + 2, m_page, false);
-            // 長い作者名やファイル名は、紙からはみ出さないよう縮める
-            registry.GetComponent<BuiltIn::FontComponent>(text).maxWidth = 680.0f;
+            // 長い作者名やファイル名は、PaperUI::Text が紙の内側の幅まで縮める
+            m_ui->Text(line.text, hlslpp::float2(line.faded ? kLineX + 18.0f : kLineX, y), size, color, kLayerSheet + 2, m_page, false);
         }
         if(direction != 0) {
             m_ui->SlideIn(m_page, hlslpp::float2(220.0f * static_cast<float>(direction), 0.0f), 0.0f, 0.35f);

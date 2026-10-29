@@ -13,6 +13,7 @@
 #include <ChronoSort/Match/MatchTuning.hpp>
 #include <ChronoSort/Rules/RulesTuning.hpp>
 #include <ChronoSort/Scene/StageTuning.hpp>
+#include <ChronoSort/UI/PaperInsetTuning.hpp>
 
 #include <Tsukino/Core/IO/HotReloadable.hpp>
 
@@ -57,6 +58,9 @@ namespace ChronoSort::Game {
         //! @return 音の合図（Sounds.json）。
         const SoundTuning& Sounds() const { return m_sounds.Get(); }
 
+        //! @return 紙片の画像の縁の欠け（PaperInsets.json）。
+        const UI::PaperInsetTuning& PaperInsets() const { return m_paperInsets.Get(); }
+
     private:
         Tsukino::IO::HotReloadable<Rules::RulesTuning>      m_rules;
         Tsukino::IO::HotReloadable<Board::BoardTuning>      m_board;
@@ -68,6 +72,7 @@ namespace ChronoSort::Game {
         Tsukino::IO::HotReloadable<Scene::StageTuning>      m_stage;
         Tsukino::IO::HotReloadable<Effects::ParticleTuning> m_particles;
         Tsukino::IO::HotReloadable<SoundTuning>             m_sounds;
+        Tsukino::IO::HotReloadable<UI::PaperInsetTuning>    m_paperInsets;
     };
 
     //! 今の調整値を返します（GameServices を作ってから壊すまでの間だけ呼べる）。

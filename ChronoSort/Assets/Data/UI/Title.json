@@ -10,7 +10,7 @@
         { "key": "recordMemo",  "value": { "texture": "scrap_square.png", "center": { "x": 1300.0, "y": 330.0 }, "size": { "x": 240.0, "y": 250.0 }, "angle": 7.0,  "sortOrder": 20 } },
         { "key": "rangeJapan",  "value": { "texture": "scrap_note.png",   "center": { "x": 510.0,  "y": 360.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": -3.0, "sway": 0.7, "sortOrder": 20 } },
         { "key": "rangeWorld",  "value": { "texture": "scrap_note.png",   "center": { "x": 683.0,  "y": 352.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": 2.5,  "sway": 0.7, "sortOrder": 20 } },
-        { "key": "rangeAll",    "value": { "texture": "scrap_note.png",   "center": { "x": 856.0,  "y": 364.0 }, "size": { "x": 164.0, "y": 70.0 },  "angle": -1.5, "sway": 0.7, "sortOrder": 20 } },
+        { "key": "rangeAll",    "value": { "texture": "scrap_note.png",   "center": { "x": 856.0,  "y": 364.0 }, "size": { "x": 164.0, "y": 90.0 },  "angle": -1.5, "sway": 0.7, "sortOrder": 20 } },
         { "key": "rangeRibbon", "value": { "texture": "ribbon.png",       "center": { "x": 56.0,   "y": 46.0 },  "size": { "x": 24.0,  "y": 84.0 },  "sway": 3.0, "swaySeconds": 2.4, "sortOrder": 19 } },
         { "key": "menuPin",     "value": { "texture": "pin.png",          "center": { "x": 26.0,   "y": 16.0 },  "size": { "x": 40.0,  "y": 40.0 },  "sway": 0.0, "bob": 0.0 } },
         { "key": "menuTape",    "value": { "texture": "tape.png",         "center": { "x": -30.0,  "y": 4.0 },   "size": { "x": 110.0, "y": 34.0 },  "angle": 32.0, "sway": 0.0, "bob": 0.0 } },

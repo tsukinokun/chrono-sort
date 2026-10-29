@@ -182,9 +182,9 @@ namespace ChronoSort::UI {
                 face.texture   = hasFace ? portrait : "silhouette.png";
                 face.parent    = tag;
                 m_ui.Paper(face);
-                m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 41.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
+                m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 33.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
                 // 手札の枚数は、席のカードと反対の側に出す
-                m_handCounts.push_back(m_ui.Text(L"", hlslpp::float2(side * 100.0f, 0.0f), 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true));
+                m_handCounts.push_back(m_ui.Text(L"", hlslpp::float2(side * 100.0f, 0.0f), 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true, false));
             }
             m_playerTags.push_back(tag);
         }
