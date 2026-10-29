@@ -150,6 +150,7 @@ namespace ChronoSort::Match {
             EndMatch(registry);
             return;
         }
+        const int round = session.match.Round();
         session.match.AdvanceTurn();
         Events(registry).Publish(MatchStateChangedEvent{});
         if(session.match.Outcome() != Rules::MatchOutcome::InProgress) {
@@ -157,11 +158,14 @@ namespace ChronoSort::Match {
             return;
         }
 
-        // 延長戦が始まったら知らせて、追加の1枚を配る
+        // 延長戦の巡が終わるたびに、規則が足した1枚を配る（また複数人が出し切れば、次の巡も配る）。
+        // 「延長戦！」の帯は、延長戦に入った最初の1回だけ出す
         float delay = 0.0f;
-        if(session.match.IsTiebreak() && !session.wasTiebreak) {
-            session.wasTiebreak = true;
-            Events(registry).Publish(TiebreakStartedEvent{});
+        if(session.match.IsTiebreak() && session.match.Round() != round) {
+            if(!session.wasTiebreak) {
+                session.wasTiebreak = true;
+                Events(registry).Publish(TiebreakStartedEvent{});
+            }
             delay = DealToHands(registry, Game::Tuning().Deal().tiebreakDealDelay) + Game::Tuning().Deal().tiebreakAfterDeal;
         }
         session.Schedule(MatchStep::StartTurn, delay);
