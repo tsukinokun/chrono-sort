@@ -53,6 +53,10 @@ namespace ChronoSort::UI {
         //! @param  [in] active 促すなら true、操作が戻ったら false。
         void SetNudge(bool active);
 
+        //! 左下の操作説明を滑り込ませます（最初の1枚を置くまで残す）。
+        //! @param  [in] delay 滑り込み始めるまでの待ち（秒）。
+        void ShowHint(float delay);
+
         //! 通知の帯を滑り込ませ、少し置いてから抜きます。
         //! @param  [in] text 文字列。
         //! @param  [in] big  大きく出すなら true。

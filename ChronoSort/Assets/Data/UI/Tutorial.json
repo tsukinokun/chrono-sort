@@ -1,0 +1,11 @@
+{
+    "papers": [
+        { "key": "dim",           "value": { "texture": "blank.png",        "center": { "x": 800.0, "y": 450.0 }, "size": { "x": 1600.0, "y": 900.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": 95 } },
+        { "key": "sheet",         "value": { "texture": "scrap_result.png", "center": { "x": 800.0, "y": 430.0 }, "size": { "x": 940.0, "y": 580.0 }, "angle": -1.0, "sway": 0.3, "sortOrder": 96 } },
+        { "key": "ok",            "value": { "texture": "scrap_note.png",   "center": { "x": 0.0,   "y": 206.0 }, "size": { "x": 240.0, "y": 76.0 },  "angle": 2.0, "sway": 1.0, "sortOrder": 98 } },
+        { "key": "okPin",         "value": { "texture": "pin.png",          "center": { "x": -96.0, "y": -22.0 }, "size": { "x": 36.0,  "y": 36.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 100 } },
+        { "key": "ghostCard",     "value": {                                                                       "size": { "x": 120.0, "y": 180.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": 30 } },
+        { "key": "ghostPointer",  "value": { "texture": "glow.png",                                                "size": { "x": 72.0,  "y": 72.0 },  "sway": 0.0, "bob": 0.0, "sortOrder": 31 } },
+        { "key": "ghostLabel",    "value": { "texture": "scrap_note.png",                                          "size": { "x": 230.0, "y": 52.0 },  "angle": -3.0, "sway": 0.0, "bob": 0.0, "sortOrder": 32 } }
+    ]
+}

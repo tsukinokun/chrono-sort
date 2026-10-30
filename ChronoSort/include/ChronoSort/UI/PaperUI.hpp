@@ -129,6 +129,11 @@ namespace ChronoSort::UI {
         //! @param  [in] texture ChronoSort/Assets/Textures/UI/ からのファイル名。
         void SetTexture(Tsukino::ECS::Entity entity, const std::string& texture);
 
+        //! スプライトの画像を、Textures/UI/ の外の画像に差し替えます（Picture で置いたものなど）。
+        //! @param  [in] entity 紙片。
+        //! @param  [in] path   画像のパス（ChronoSort/Assets/ から）。
+        void SetPicture(Tsukino::ECS::Entity entity, const std::string& path);
+
         //! エンティティと、その子の UI をまとめて破棄します。
         //! @param  [in] entity 破棄する UI。
         void Destroy(Tsukino::ECS::Entity entity);

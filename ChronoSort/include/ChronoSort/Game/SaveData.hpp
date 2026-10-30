@@ -8,6 +8,8 @@
 #pragma once
 #include <ChronoSort/Rules/Deck.hpp>
 
+#include <Tsukino/Core/IO/CerealOptional.hpp>
+
 #include <cereal/cereal.hpp>
 #include <cereal/types/string.hpp>
 
@@ -41,6 +43,7 @@ namespace ChronoSort::Game {
         SoloRecord  world;                 // 世界史だけのソロの記録
         int         versusWins = 0;        // CPU 対戦の勝ち数（範囲で分けない）
         std::string range      = "all";    // 最後に選んだ出題の範囲（Rules::RangeKey の値）
+        int         tutorialMatches = 0;   // 遊び方の説明つきで、カードを1枚以上正しく置けた対局の数
 
         //! 範囲のソロの記録を返します。
         //! @param  [in] range 出題の範囲。
@@ -57,13 +60,26 @@ namespace ChronoSort::Game {
         }
 
         template <class Archive>
-        void serialize(Archive& archive) {
+        void save(Archive& archive) const {
+            archive(cereal::make_nvp("version", version),
+                    cereal::make_nvp("all", all),
+                    cereal::make_nvp("japan", japan),
+                    cereal::make_nvp("world", world),
+                    cereal::make_nvp("versusWins", versusWins),
+                    cereal::make_nvp("range", range),
+                    cereal::make_nvp("tutorialMatches", tutorialMatches));
+        }
+
+        //! 読み込みは、あとから足した項目（tutorialMatches）が無い記録も読めるようにする（無ければ初期値のまま）。
+        template <class Archive>
+        void load(Archive& archive) {
             archive(cereal::make_nvp("version", version),
                     cereal::make_nvp("all", all),
                     cereal::make_nvp("japan", japan),
                     cereal::make_nvp("world", world),
                     cereal::make_nvp("versusWins", versusWins),
                     cereal::make_nvp("range", range));
+            Tsukino::IO::LoadOptional(archive, "tutorialMatches", tutorialMatches);
         }
     };
 

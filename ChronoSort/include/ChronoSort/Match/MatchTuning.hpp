@@ -50,6 +50,11 @@ namespace ChronoSort::Match {
         float wheelScroll        = 60.0f;     // ホイール1段で列を流す量
         float idleMouseThreshold = 2.0f;      // これより動いたら「操作している」とみなす（ピクセル）
         float idleNudgeSeconds   = 6.0f;      // 人間の手番でこの秒数だけ操作が無ければ、次の行動を促す
+        int   tutorialMatches    = 3;         // カードを正しく置けた対局がこの数になるまで、遊び方の説明と手本を出す
+        float demoMoveSeconds    = 1.1f;      // 手本：手札から隙間まで運ぶ時間
+        float demoHoldSeconds    = 0.5f;      // 手本：隙間の上で止まる時間
+        float demoRestSeconds    = 0.7f;      // 手本：次の手本までの間
+        float demoArc            = 90.0f;     // 手本：運ぶときの弧の高さ（UI の座標）
 
         Game::Sharpness dragSharpness       = {28.0f, 16.0f};
         float           dragScale           = 1.05f;      // 持っているカードの拡大率
@@ -150,6 +155,11 @@ namespace ChronoSort::Match {
         CHRONOSORT_LOAD(wheelScroll);
         CHRONOSORT_LOAD(idleMouseThreshold);
         CHRONOSORT_LOAD(idleNudgeSeconds);
+        CHRONOSORT_LOAD(tutorialMatches);
+        CHRONOSORT_LOAD(demoMoveSeconds);
+        CHRONOSORT_LOAD(demoHoldSeconds);
+        CHRONOSORT_LOAD(demoRestSeconds);
+        CHRONOSORT_LOAD(demoArc);
         CHRONOSORT_LOAD(dragSharpness);
         CHRONOSORT_LOAD(dragScale);
         CHRONOSORT_LOAD(dragLeanPerSpeed);

@@ -78,6 +78,7 @@ namespace ChronoSort::Match {
         MatchPhase         phase = MatchPhase::Dealing;    // 今の段階
         bool               paused      = false;           // 一時停止中か（段取りと入力を止める）
         bool               wasTiebreak = false;           // 延長戦の帯をもう出したか（延長戦に入った最初の1回だけ出す）
+        bool               tutorial    = false;           // 遊び方の説明と手本を出す対局か（慣れるまでの数回）
 
         MatchStep step      = MatchStep::None;    // 時間を置いて行う段取り
         float     stepTimer = 0.0f;               // 段取りまでの残り時間

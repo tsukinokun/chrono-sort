@@ -31,6 +31,7 @@ namespace ChronoSort::UI {
         DeckWarning,             // 山札の札の弾み
         TurnBreathe,             // 手番の名札の呼吸
         IdleNudge,               // 放置の催促
+        TutorialShrink = 70,     // 遊び方の説明が縮んで左下へ飛ぶ
     };
 
     //! 目印をエンジンのトゥイーンの tag にします。

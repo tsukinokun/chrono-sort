@@ -16,6 +16,7 @@
 #include <ChronoSort/UI/PauseSheet.hpp>
 #include <ChronoSort/UI/PlayPopups.hpp>
 #include <ChronoSort/UI/ResultSheet.hpp>
+#include <ChronoSort/UI/TutorialGuide.hpp>
 
 #include <Tsukino/EngineIntegration/Scene/GameSceneBase.hpp>
 
@@ -64,6 +65,7 @@ namespace ChronoSort::Scene {
         std::unique_ptr<UI::CardAlbum>    m_album;      // 出たカードを見る紙（結果の羊皮紙から開く）
         std::unique_ptr<UI::PauseSheet>   m_pause;      // 一時停止の紙
         std::unique_ptr<UI::OptionsSheet> m_options;    // 設定の紙（一時停止から開く）
+        std::unique_ptr<UI::TutorialGuide> m_tutorial;  // 慣れるまでの対局で出す、遊び方の説明と手本
     };
 
 }    // namespace ChronoSort::Scene

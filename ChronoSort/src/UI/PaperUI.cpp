@@ -154,8 +154,17 @@ namespace ChronoSort::UI {
         PaperSpec picture = spec;
         picture.texture.clear();
         const Tsukino::ECS::Entity entity = Paper(picture);
-        m_scene.GetRegistry().GetComponent<BuiltIn::SpriteComponent>(entity).textureHandle = m_assetManager.Load(Tsukino::Core::Path(path));
+        SetPicture(entity, path);
         return entity;
+    }
+
+    //----------------------------------------------------------------------------
+    //! スプライトの画像を、Textures/UI/ の外の画像に差し替えます。
+    //----------------------------------------------------------------------------
+    void PaperUI::SetPicture(Tsukino::ECS::Entity entity, const std::string& path) {
+        if(auto* sprite = m_scene.GetRegistry().try_get<BuiltIn::SpriteComponent>(entity)) {
+            sprite->textureHandle = m_assetManager.Load(Tsukino::Core::Path(path));
+        }
     }
 
     //----------------------------------------------------------------------------

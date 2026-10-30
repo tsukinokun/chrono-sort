@@ -8,6 +8,7 @@
 #include <ChronoSort/ECS/Component/CountUpTextComponent.hpp>
 #include <ChronoSort/Game/TuningSet.hpp>
 #include <ChronoSort/Match/MatchEvents.hpp>
+#include <ChronoSort/Match/MatchSession.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
@@ -84,6 +85,8 @@ namespace ChronoSort::UI {
             ShowBanner(banner(e.won ? t.bannerWon : (e.outcome == Rules::MatchOutcome::SoloFailed ? t.bannerInkOut : t.bannerLost)), true);
         }));
         m_connections.push_back(events.Subscribe<Match::IdleNudgeEvent>([this](const Match::IdleNudgeEvent& e) { SetNudge(e.active); }));
+        // 遊び方の大きな説明が左下へ飛んでいったら、そこに小さな説明を残す
+        m_connections.push_back(events.Subscribe<Match::TutorialDismissedEvent>([this](const Match::TutorialDismissedEvent&) { ShowHint(0.25f); }));
     }
 
     //----------------------------------------------------------------------------
@@ -139,16 +142,9 @@ namespace ChronoSort::UI {
             m_ui.SlideIn(m_deckTag, hlslpp::float2(300.0f, 0.0f), 0.4f);
         }
 
-        // 操作説明（最初の1枚を置いたら片付ける）
-        {
-            m_hint = m_ui.Paper(m_layout.Spec("hint"));
-            m_ui.Text(L"カードを掴んで、年代の合う隙間へ", hlslpp::float2(0.0f, -14.0f), 0.62f, kInkColor, kLayerDesk + 1, m_hint);
-            m_ui.Text(L"クリックで選んでから置くこともできます", hlslpp::float2(0.0f, 20.0f), 0.46f, kFadedInkColor, kLayerDesk + 1, m_hint);
-
-            PaperSpec tape = m_layout.Spec("hintTape");
-            tape.parent    = m_hint;
-            m_ui.Paper(tape);
-            m_ui.SlideIn(m_hint, hlslpp::float2(0.0f, 200.0f), 1.2f);
+        // 操作説明（最初の1枚を置いたら片付ける）。遊び方の大きな説明を出す対局では、それを閉じてから出す
+        if(!Match::Session(m_scene.GetRegistry()).tutorial) {
+            ShowHint(1.2f);
         }
 
         // 各プレイヤーの名札。人間は左下、CPU は卓の奥の席の上に浮かべる
@@ -339,6 +335,23 @@ namespace ChronoSort::UI {
         }
         PlayRepeatingPunch(registry, target, BuiltIn::UITweenProperty::Rotation, 0.0f, 5.0f * kDegToRad, 0.5f, 2.5f, Tag(TweenTag::IdleNudge));
         m_nudged = target;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 左下の操作説明を滑り込ませます。
+    //----------------------------------------------------------------------------
+    void DeskHud::ShowHint(float delay) {
+        if(m_hint != entt::null) {
+            return;
+        }
+        m_hint = m_ui.Paper(m_layout.Spec("hint"));
+        m_ui.Text(L"カードを掴んで、年代の合う隙間へ", hlslpp::float2(0.0f, -14.0f), 0.62f, kInkColor, kLayerDesk + 1, m_hint);
+        m_ui.Text(L"クリックで選んでから置くこともできます", hlslpp::float2(0.0f, 20.0f), 0.46f, kFadedInkColor, kLayerDesk + 1, m_hint);
+
+        PaperSpec tape = m_layout.Spec("hintTape");
+        tape.parent    = m_hint;
+        m_ui.Paper(tape);
+        m_ui.SlideIn(m_hint, hlslpp::float2(0.0f, 200.0f), delay);
     }
 
     //----------------------------------------------------------------------------

@@ -97,4 +97,7 @@ namespace ChronoSort::Match {
         bool active = false;    // 放置されて促す必要があるなら true
     };
 
+    //! 最初の手番に出した、遊び方の大きな説明が閉じられました（ここから左下の小さな説明に引き継ぐ）。
+    struct TutorialDismissedEvent {};
+
 }    // namespace ChronoSort::Match

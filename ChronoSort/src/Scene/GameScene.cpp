@@ -50,6 +50,8 @@ namespace ChronoSort::Scene {
         Match::MatchSession& session = registry.SetContext<Match::MatchSession>();
         session.config               = m_config;
         session.rng.seed(std::random_device{}());
+        // 遊び方の説明と手本は、カードを正しく置けた対局が何回かになるまで出す
+        session.tutorial = Game::Services().Save().tutorialMatches < Game::Tuning().Input().tutorialMatches;
         session.match.Start(m_config, Rules::LoadCards(m_config.range), session.rng);
 
         ECS::AddTableSystems(m_scene);
@@ -67,6 +69,7 @@ namespace ChronoSort::Scene {
         m_album   = std::make_unique<UI::CardAlbum>(m_scene, *context->assetManager, session.match);
         m_pause   = std::make_unique<UI::PauseSheet>(m_scene, *context->assetManager);
         m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
+        m_tutorial = std::make_unique<UI::TutorialGuide>(m_scene, *context->assetManager);
         m_desk->Build();
 
         ECS::AddMatchSystems(m_scene);
@@ -81,6 +84,10 @@ namespace ChronoSort::Scene {
     void GameScene::OnUpdate(Tsukino::EngineIntegration::EngineAPI& api, float deltaTime) {
         if(UpdateMenus(api, deltaTime)) {
             return;
+        }
+        {
+            auto* context = m_scene.GetRegistry().GetContext<Tsukino::EngineIntegration::EngineContext*>();
+            m_tutorial->Update(*context->inputSystem, deltaTime);
         }
 
         Match::MatchSession& session = Match::Session(m_scene.GetRegistry());
@@ -127,10 +134,12 @@ namespace ChronoSort::Scene {
         // 設定の紙（一時停止から開く）。閉じたフレームの Esc で一時停止まで閉じないよう、先に受ける
         const bool optionsClosed = m_options->Update(deltaTime);
 
-        // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ。出たカードの紙が出ていれば1段戻る）
+        // Esc：選択中なら選択を外し、そうでなければ一時停止の紙を出し入れする（結果画面ではタイトルへ。出たカードの紙が出ていれば1段戻る。遊び方の紙が出ていれば閉じる）
         if(!optionsClosed && !m_options->IsOpen() && context->inputSystem->IsKeyPressed(KeyCode::Escape)) {
             const Match::HumanInput& input = session.input;
-            if(m_pause->IsOpen()) {
+            if(m_tutorial->IsOpen()) {
+                m_tutorial->Dismiss();
+            } else if(m_pause->IsOpen()) {
                 sounds.Play("ui.close");
                 m_pause->Close();
             } else if(m_album->IsOpen()) {
@@ -166,7 +175,7 @@ namespace ChronoSort::Scene {
         }
 
         // 一時停止中は、対局の進行のシステムが段取り・入力・演出を止める（カードの動きや紙の揺れは止めない）
-        session.paused = m_pause->IsOpen() || m_options->IsOpen();
+        session.paused = m_pause->IsOpen() || m_options->IsOpen() || m_tutorial->IsOpen();
         return false;
     }
 

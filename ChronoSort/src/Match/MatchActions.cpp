@@ -197,6 +197,10 @@ namespace ChronoSort::Match {
         } else if(won) {
             ++save.versusWins;
         }
+        // 遊び方の説明は、カードを正しく置けた対局が何回かになるまで出す
+        if(session.tutorial && session.match.Players()[0].correctCount > 0) {
+            ++save.tutorialMatches;
+        }
         Game::Services().StoreSave();
 
         Events(registry).Publish(MatchEndedEvent{outcome, won, newRecord});
