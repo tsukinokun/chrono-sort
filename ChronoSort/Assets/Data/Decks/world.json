@@ -2419,7 +2419,8 @@
             "region": "WORLD",
             "category": "外交",
             "art": "",
-            "artQuery": "Delos"
+            "artQuery": "Delos",
+            "artFile": "Athenian Tribute List 25 (23369484092).jpg"
         },
         {
             "id": "pericles_death",
@@ -2459,7 +2460,8 @@
             "region": "WORLD",
             "category": "戦争",
             "art": "",
-            "artQuery": "Diadochi coin"
+            "artQuery": "Diadochi coin",
+            "artFile": "Seleukos I Nikator Bronze Roman 100BCE-100CE Museo Archeologico Nazionale Naples AN 5590 1.jpg"
         },
         {
             "id": "punic2",
@@ -2520,7 +2522,8 @@
             "region": "WORLD",
             "category": "戦争",
             "art": "",
-            "artQuery": "Battle of Pharsalus"
+            "artQuery": "Battle of Pharsalus",
+            "artFile": "(Venice) Pompey the Great, Museo Archeologico Nazionale.jpg"
         },
         {
             "id": "julian_calendar",
@@ -2702,7 +2705,8 @@
             "region": "WORLD",
             "category": "宗教",
             "art": "",
-            "artQuery": "Kaaba Mecca"
+            "artQuery": "Kaaba Mecca",
+            "artFile": "Kaaba (1910)-2.jpg"
         },
         {
             "id": "muhammad_death",
@@ -2862,7 +2866,8 @@
             "region": "WORLD",
             "category": "戦争",
             "art": "",
-            "artQuery": "Capture of Jerusalem 1099"
+            "artQuery": "Capture of Jerusalem 1099",
+            "artFile": "Siege of Jerusalem 1099 (2).jpg"
         },
         {
             "id": "worms_concordat",
@@ -2912,7 +2917,8 @@
             "region": "WORLD",
             "category": "政治",
             "art": "",
-            "artQuery": "Qutb Minar"
+            "artQuery": "Qutb Minar",
+            "artFile": "Qutub Minar img.jpg"
         },
         {
             "id": "albigensian",
@@ -3205,7 +3211,8 @@
             "region": "WORLD",
             "category": "文化",
             "art": "",
-            "artQuery": "David Michelangelo"
+            "artQuery": "David Michelangelo",
+            "artFile": "Michelangelo David crop.jpg"
         },
         {
             "id": "st_peters",
@@ -3387,7 +3394,8 @@
             "region": "WORLD",
             "category": "探検",
             "art": "",
-            "artQuery": "Abel Tasman"
+            "artQuery": "Abel Tasman",
+            "artFile": "Tasman, Abel Janszoon.jpg"
         },
         {
             "id": "navigation_act",
@@ -3730,7 +3738,8 @@
             "region": "WORLD",
             "category": "政治",
             "art": "",
-            "artQuery": "Flight to Varennes"
+            "artQuery": "Flight to Varennes",
+            "artFile": "Retour Varennes 1791.jpg"
         },
         {
             "id": "first_republic",
@@ -4121,7 +4130,8 @@
             "region": "WORLD",
             "category": "技術",
             "art": "",
-            "artQuery": "Guglielmo Marconi"
+            "artQuery": "Guglielmo Marconi",
+            "artFile": "Guglielmo Marconi.jpg"
         },
         {
             "id": "bloody_sunday",
@@ -4423,7 +4433,8 @@
             "region": "WORLD",
             "category": "経済",
             "art": "",
-            "artQuery": "Bretton Woods Conference"
+            "artQuery": "Bretton Woods Conference",
+            "artFile": "Image-Mount Washington Hotel.jpg"
         },
         {
             "id": "potsdam",
@@ -4907,7 +4918,8 @@
             "region": "WORLD",
             "category": "災害",
             "art": "",
-            "artQuery": "COVID-19 pandemic"
+            "artQuery": "COVID-19 pandemic",
+            "artFile": "SARS-CoV-2 without background.png"
         },
         {
             "id": "granicus",
@@ -5239,7 +5251,8 @@
             "region": "WORLD",
             "category": "探検",
             "art": "",
-            "artQuery": "HMS Beagle"
+            "artQuery": "HMS Beagle",
+            "artFile": "HMS Beagle by Conrad Martens.jpg"
         },
         {
             "id": "mexican_war",
@@ -5331,7 +5344,8 @@
             "region": "WORLD",
             "category": "政治",
             "art": "",
-            "artQuery": "Nuremberg trials"
+            "artQuery": "Nuremberg trials",
+            "artFile": "Defendants in the dock at nuremberg trials.jpg"
         },
         {
             "id": "hubble",

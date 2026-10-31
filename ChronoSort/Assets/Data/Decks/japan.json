@@ -2460,7 +2460,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Omi Otsu-kyo site"
+            "artQuery": "Omi Otsu-kyo site",
+            "artFile": "Ōmi Ōtsu Palace Nishigori Site.jpg"
         },
         {
             "id": "kogo_nenjaku",
@@ -2490,7 +2491,8 @@
             "region": "JP",
             "category": "文化",
             "art": "",
-            "artQuery": "Izumo Fudoki"
+            "artQuery": "Izumo Fudoki",
+            "artFile": "Empress Gemmei.jpg"
         },
         {
             "id": "yoro_ritsuryo",
@@ -2500,7 +2502,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Fujiwara no Fuhito"
+            "artQuery": "Fujiwara no Fuhito",
+            "artFile": "Fujiwara no Fuhito (Nara National Museum) detail.jpg"
         },
         {
             "id": "kaifuso",
@@ -2510,7 +2513,8 @@
             "region": "JP",
             "category": "文化",
             "art": "",
-            "artQuery": "Nara period poetry manuscript"
+            "artQuery": "Nara period poetry manuscript",
+            "artFile": "Prince Otsu.jpg"
         },
         {
             "id": "ganjin",
@@ -2580,7 +2584,8 @@
             "region": "JP",
             "category": "宗教",
             "art": "",
-            "artQuery": "Mount Koya Danjo Garan"
+            "artQuery": "Mount Koya Danjo Garan",
+            "artFile": "Konpon Daito, Koyasan (3811155264).jpg"
         },
         {
             "id": "jowa_no_hen",
@@ -2650,7 +2655,8 @@
             "region": "JP",
             "category": "戦争",
             "art": "",
-            "artQuery": "Zenkunen kassen emaki"
+            "artQuery": "Zenkunen kassen emaki",
+            "artFile": "源頼義像.jpg"
         },
         {
             "id": "enkyu_shoen",
@@ -3113,7 +3119,8 @@
             "region": "JP",
             "category": "外交",
             "art": "",
-            "artQuery": "Spanish galleon 17th century"
+            "artQuery": "Spanish galleon 17th century",
+            "artFile": "Scale model of a Spanish galleon.jpg"
         },
         {
             "id": "tokai_kinshi",
@@ -3133,7 +3140,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "Kan'ei Tsuho coin"
+            "artQuery": "Kan'ei Tsuho coin",
+            "artFile": "Kaneitsuho.jpg"
         },
         {
             "id": "ietsuna_shogun",
@@ -3223,7 +3231,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "Arai Hakuseki"
+            "artQuery": "Arai Hakuseki",
+            "artFile": "Arai Hakuseki - Japanischer Gelehrter.jpg"
         },
         {
             "id": "meyasubako",
@@ -3343,7 +3352,8 @@
             "region": "JP",
             "category": "外交",
             "art": "",
-            "artQuery": "Western ship Edo period scroll"
+            "artQuery": "Western ship Edo period scroll",
+            "artFile": "Map of Coastal Defense WDL9934.png"
         },
         {
             "id": "morrison_go",
@@ -3353,7 +3363,8 @@
             "region": "JP",
             "category": "外交",
             "art": "",
-            "artQuery": "Morrison incident ship"
+            "artQuery": "Morrison incident ship",
+            "artFile": "MorrisonShip.jpg"
         },
         {
             "id": "shinsui_kyuyo",
@@ -3413,7 +3424,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Tokugawa Yoshinobu"
+            "artQuery": "Tokugawa Yoshinobu",
+            "artFile": "Matsudaira Yoshinaga.jpg"
         },
         {
             "id": "hachigatsu_seihen",
@@ -3555,7 +3567,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "First National Bank Tokyo Meiji"
+            "artQuery": "First National Bank Tokyo Meiji",
+            "artFile": "Dai-ichi Kokuritsu Ginko.JPG"
         },
         {
             "id": "gasutou",
@@ -3565,7 +3578,8 @@
             "region": "JP",
             "category": "技術",
             "art": "",
-            "artQuery": "Gas lamp Yokohama Meiji"
+            "artQuery": "Gas lamp Yokohama Meiji",
+            "artFile": "Kaemon Takashima.png"
         },
         {
             "id": "meiji6_seihen",
@@ -3685,7 +3699,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Kataoka Kenkichi"
+            "artQuery": "Kataoka Kenkichi",
+            "artFile": "Kataoka Kenkichi 1902.jpg"
         },
         {
             "id": "jiyuto",
@@ -3745,7 +3760,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "NYK Line Meiji ship"
+            "artQuery": "NYK Line Meiji ship",
+            "artFile": "Nippon Yusen Kaisha = Japan Mail Steamship Co. (Three ukiyo-e women) (rbm-coll3020-01-07).jpg"
         },
         {
             "id": "hoan_jorei",
@@ -3976,7 +3992,8 @@
             "region": "JP",
             "category": "技術",
             "art": "",
-            "artQuery": "Tokugawa Yoshitoshi aviator"
+            "artQuery": "Tokugawa Yoshitoshi aviator",
+            "artFile": "Tokugawa Yoshitoshi.jpg"
         },
         {
             "id": "seito",
@@ -4046,7 +4063,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Hara Takashi"
+            "artQuery": "Hara Takashi",
+            "artFile": "Takashi Hara formal.jpg"
         },
         {
             "id": "kyosanto",
@@ -4117,7 +4135,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Showa police 1928"
+            "artQuery": "Showa police 1928",
+            "artFile": "Giichi Tanaka Cabinet 19270420.jpg"
         },
         {
             "id": "chosakurin",
@@ -4137,7 +4156,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "Inoue Junnosuke"
+            "artQuery": "Inoue Junnosuke",
+            "artFile": "Junnosuke Inoue 3.jpg"
         },
         {
             "id": "london_gunshuku",
@@ -4167,7 +4187,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Kyoto University Showa"
+            "artQuery": "Kyoto University Showa",
+            "artFile": "M. Ichiro Hatoyama, ministre de l'Instruction Publique du Japon, visitant la première école de jeunes filles à Tokyo au cours de sa tournée d'inspection - btv1b9050436p.jpg"
         },
         {
             "id": "tenno_kikan",
@@ -4599,7 +4620,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "Japanese consumption tax 1989"
+            "artQuery": "Japanese consumption tax 1989",
+            "artFile": "Noboru Takeshita full.jpg"
         },
         {
             "id": "unzen",
@@ -4619,7 +4641,8 @@
             "region": "JP",
             "category": "政治",
             "art": "",
-            "artQuery": "Japan peacekeeping Cambodia"
+            "artQuery": "Japan peacekeeping Cambodia",
+            "artFile": "Kiichi Miyazawa.jpg"
         },
         {
             "id": "kix",
@@ -4699,7 +4722,8 @@
             "region": "JP",
             "category": "技術",
             "art": "",
-            "artQuery": "Akashi Kaikyo Bridge"
+            "artQuery": "Akashi Kaikyo Bridge",
+            "artFile": "Akashi Bridge.JPG"
         },
         {
             "id": "chuetsu",
@@ -4719,7 +4743,8 @@
             "region": "JP",
             "category": "経済",
             "art": "",
-            "artQuery": "Japan Post"
+            "artQuery": "Japan Post",
+            "artFile": "Japan Post box in Kamakura City, Tokyo area, Japan.jpg"
         },
         {
             "id": "seiken_kotai",
