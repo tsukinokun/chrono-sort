@@ -703,7 +703,7 @@
         },
         {
             "id": "tokyo_olympic_1964",
-            "title": "東京オリンピック",
+            "title": "東京オリンピック（アジア初）",
             "year": 1964,
             "yearLabel": "1964年",
             "region": "JP",
@@ -713,7 +713,7 @@
         },
         {
             "id": "osaka_banpaku",
-            "title": "大阪万博",
+            "title": "大阪万博（アジア初の万博）",
             "year": 1970,
             "yearLabel": "1970年",
             "region": "JP",
@@ -1033,7 +1033,7 @@
         },
         {
             "id": "hieizan",
-            "title": "比叡山焼き討ち",
+            "title": "織田信長の比叡山焼き討ち",
             "year": 1571,
             "yearLabel": "1571年",
             "region": "JP",
@@ -1323,7 +1323,7 @@
         },
         {
             "id": "kome_sodo",
-            "title": "米騒動",
+            "title": "全国に広がった米騒動",
             "year": 1918,
             "yearLabel": "1918年",
             "region": "JP",
@@ -1703,7 +1703,7 @@
         },
         {
             "id": "ansei_jishin",
-            "title": "安政の大地震",
+            "title": "安政江戸地震",
             "year": 1855,
             "yearLabel": "1855年",
             "region": "JP",
@@ -3744,7 +3744,7 @@
         },
         {
             "id": "tenshin_joyaku",
-            "title": "天津条約",
+            "title": "日清間の天津条約",
             "year": 1885,
             "yearLabel": "1885年",
             "region": "JP",
@@ -4109,7 +4109,7 @@
         },
         {
             "id": "kinyu_kyoko",
-            "title": "金融恐慌",
+            "title": "昭和金融恐慌",
             "year": 1927,
             "yearLabel": "1927年",
             "region": "JP",
@@ -4799,7 +4799,7 @@
         },
         {
             "id": "ontake",
-            "title": "御嶽山の噴火",
+            "title": "登山者を襲った御嶽山の噴火",
             "year": 2014,
             "yearLabel": "2014年",
             "region": "JP",
@@ -4859,7 +4859,7 @@
         },
         {
             "id": "noto_jishin",
-            "title": "能登半島地震",
+            "title": "元日の能登半島地震",
             "year": 2024,
             "yearLabel": "2024年",
             "region": "JP",

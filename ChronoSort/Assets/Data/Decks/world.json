@@ -113,7 +113,7 @@
         },
         {
             "id": "vesuvius",
-            "title": "ヴェスヴィオ火山の噴火",
+            "title": "ヴェスヴィオ噴火とポンペイ埋没",
             "year": 79,
             "yearLabel": "79年",
             "region": "WORLD",
@@ -143,7 +143,7 @@
         },
         {
             "id": "nicaea",
-            "title": "ニカイア公会議",
+            "title": "第1回ニカイア公会議",
             "year": 325,
             "yearLabel": "325年",
             "region": "WORLD",
@@ -593,7 +593,7 @@
         },
         {
             "id": "russian_revolution",
-            "title": "ロシア革命",
+            "title": "ロマノフ朝を倒したロシア革命",
             "year": 1917,
             "yearLabel": "1917年",
             "region": "WORLD",
@@ -963,7 +963,7 @@
         },
         {
             "id": "rome_fire",
-            "title": "ローマ大火",
+            "title": "ネロ治世のローマ大火",
             "year": 64,
             "yearLabel": "64年",
             "region": "WORLD",
@@ -1313,7 +1313,7 @@
         },
         {
             "id": "great_exhibition",
-            "title": "ロンドン万国博覧会",
+            "title": "初の万国博覧会（ロンドン）",
             "year": 1851,
             "yearLabel": "1851年",
             "region": "WORLD",
@@ -1333,7 +1333,7 @@
         },
         {
             "id": "transcontinental",
-            "title": "大陸横断鉄道の開通",
+            "title": "アメリカ大陸横断鉄道の開通",
             "year": 1869,
             "yearLabel": "1869年",
             "region": "WORLD",
@@ -1533,7 +1533,7 @@
         },
         {
             "id": "notre_dame",
-            "title": "ノートルダム大聖堂の着工",
+            "title": "パリのノートルダム大聖堂の着工",
             "year": 1163,
             "yearLabel": "1163年",
             "region": "WORLD",
@@ -1763,7 +1763,7 @@
         },
         {
             "id": "sf_earthquake",
-            "title": "サンフランシスコ地震",
+            "title": "サンフランシスコ大地震と大火",
             "year": 1906,
             "yearLabel": "1906年",
             "region": "WORLD",
@@ -1973,7 +1973,7 @@
         },
         {
             "id": "britannia",
-            "title": "ローマのブリタンニア侵攻",
+            "title": "クラウディウスのブリタンニア征服",
             "year": 43,
             "yearLabel": "43年",
             "region": "WORLD",
@@ -3286,7 +3286,7 @@
         },
         {
             "id": "sack_rome",
-            "title": "ローマの劫掠",
+            "title": "カール5世軍のローマ劫掠",
             "year": 1527,
             "yearLabel": "1527年",
             "region": "WORLD",
@@ -3601,7 +3601,7 @@
         },
         {
             "id": "quebec",
-            "title": "ケベックの戦い",
+            "title": "アブラハム平原の戦い（ケベック）",
             "year": 1759,
             "yearLabel": "1759年",
             "region": "WORLD",
@@ -4135,7 +4135,7 @@
         },
         {
             "id": "bloody_sunday",
-            "title": "血の日曜日事件",
+            "title": "ロシアの血の日曜日事件",
             "year": 1905,
             "yearLabel": "1905年",
             "region": "WORLD",
@@ -4588,7 +4588,7 @@
         },
         {
             "id": "civil_rights_act",
-            "title": "公民権法の成立",
+            "title": "アメリカの公民権法の成立",
             "year": 1964,
             "yearLabel": "1964年",
             "region": "WORLD",
@@ -4749,7 +4749,7 @@
         },
         {
             "id": "tiananmen",
-            "title": "天安門事件",
+            "title": "第2次天安門事件",
             "year": 1989,
             "yearLabel": "1989年",
             "region": "WORLD",
@@ -4871,7 +4871,7 @@
         },
         {
             "id": "sumatra_tsunami",
-            "title": "スマトラ島沖地震",
+            "title": "スマトラ島沖地震とインド洋大津波",
             "year": 2004,
             "yearLabel": "2004年",
             "region": "WORLD",
