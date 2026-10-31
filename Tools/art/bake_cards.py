@@ -146,10 +146,10 @@ def break_score(text, i):
         score += 2.0    # 助詞や区切りの記号の後は、切れ目として読みやすい
     if after in "のがをにへとで":
         score -= 4.0    # 助詞を行頭に残さない
-    if after in "・ー、』」）" or before in "『「（":
-        score -= 6.0    # 記号や長音を行頭に、括弧の始まりを行末に残さない
-    if after == "号" or (after == "世" and before.isdigit()) or (after.isdigit() and kb == "katakana"):
-        score -= 6.0    # 「メイフラワー号」「チャールズ1世」のように、名前に付く番号や「号」「世」を離さない
+    if after in "・ー、』」）＝" or before in "『「（＝":
+        score -= 6.0    # 記号・長音・「＝」を行頭に、括弧の始まりや「＝」を行末に残さない
+    if after == "号" or (before.isdigit() and ka == "kanji") or (after.isdigit() and kb == "katakana"):
+        score -= 6.0    # 「メイフラワー号」「チャールズ1世」「18日」のように、名前や数に付く番号・「号」・助数詞を離さない
     if text[:i].count("『") > text[:i].count("』") or text[:i].count("「") > text[:i].count("」"):
         score -= 6.0    # 書名や台詞の括弧の中では切らない
     if kb != ka:
@@ -183,6 +183,10 @@ TITLE_BREAKS = {
     "voc": "オランダ|東インド会社の設立",
     "dna_helix": "DNA二重らせん|構造の発表",
     "enkai_yochi": "『大日本沿海輿地全図』の|完成",
+    "safavid": "サファヴィー朝の|成立",
+    "milvian_bridge": "ミルウィウス橋の|戦い",
+    "paris_1783": "パリ条約|（アメリカ独立の承認）",
+    "lockheed": "ロッキード事件の|発覚",
 }
 
 # 折り返しの良さの基準と、その基準で探す文字の大きさの下限。

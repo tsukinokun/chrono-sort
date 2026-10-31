@@ -2400,6 +2400,2968 @@
             "category": "経済",
             "art": "",
             "artQuery": "Lehman Brothers headquarters"
+        },
+        {
+            "id": "assyria_fall",
+            "title": "ニネヴェの陥落",
+            "year": -612,
+            "yearLabel": "紀元前612年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Nineveh relief"
+        },
+        {
+            "id": "delian_league",
+            "title": "デロス同盟の結成",
+            "year": -478,
+            "yearLabel": "紀元前478年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Delos"
+        },
+        {
+            "id": "pericles_death",
+            "title": "ペリクレスの死",
+            "year": -429,
+            "yearLabel": "紀元前429年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Pericles bust"
+        },
+        {
+            "id": "philip2_death",
+            "title": "フィリッポス2世の暗殺",
+            "year": -336,
+            "yearLabel": "紀元前336年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Philip II of Macedon"
+        },
+        {
+            "id": "issus",
+            "title": "イッソスの戦い",
+            "year": -333,
+            "yearLabel": "紀元前333年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Alexander Mosaic"
+        },
+        {
+            "id": "ipsus",
+            "title": "イプソスの戦い",
+            "year": -301,
+            "yearLabel": "紀元前301年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Diadochi coin"
+        },
+        {
+            "id": "punic2",
+            "title": "第二次ポエニ戦争の開戦",
+            "year": -218,
+            "yearLabel": "紀元前218年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Hannibal bust"
+        },
+        {
+            "id": "pydna",
+            "title": "ピュドナの戦い",
+            "year": -168,
+            "yearLabel": "紀元前168年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Pydna"
+        },
+        {
+            "id": "corinth_destruction",
+            "title": "コリントスの破壊",
+            "year": -146,
+            "yearLabel": "紀元前146年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ancient Corinth ruins"
+        },
+        {
+            "id": "sulla_dictator",
+            "title": "スラの独裁官就任",
+            "year": -82,
+            "yearLabel": "紀元前82年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Sulla bust",
+            "artFile": "Sulla Glyptothek Munich 309.jpg"
+        },
+        {
+            "id": "alesia",
+            "title": "アレシアの戦い",
+            "year": -52,
+            "yearLabel": "紀元前52年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Vercingetorix throws down his arms"
+        },
+        {
+            "id": "pharsalus",
+            "title": "ファルサロスの戦い",
+            "year": -48,
+            "yearLabel": "紀元前48年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Pharsalus"
+        },
+        {
+            "id": "julian_calendar",
+            "title": "ユリウス暦の施行",
+            "year": -45,
+            "yearLabel": "紀元前45年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Julius Caesar bust"
+        },
+        {
+            "id": "philippi",
+            "title": "フィリッピの戦い",
+            "year": -42,
+            "yearLabel": "紀元前42年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Philippi"
+        },
+        {
+            "id": "wang_mang",
+            "title": "王莽の新の建国",
+            "year": 8,
+            "yearLabel": "8年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Wang Mang"
+        },
+        {
+            "id": "augustus_death",
+            "title": "アウグストゥスの死",
+            "year": 14,
+            "yearLabel": "14年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Augustus of Prima Porta"
+        },
+        {
+            "id": "jerusalem_70",
+            "title": "ローマ軍のエルサレム破壊",
+            "year": 70,
+            "yearLabel": "70年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Siege of Jerusalem 70 painting"
+        },
+        {
+            "id": "kan_ei",
+            "title": "甘英の大秦への派遣",
+            "year": 97,
+            "yearLabel": "97年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Han dynasty envoy",
+            "artFile": "汉班超立像.png"
+        },
+        {
+            "id": "trajan_max",
+            "title": "トラヤヌスのダキア征服",
+            "year": 106,
+            "yearLabel": "106年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Trajan's Column"
+        },
+        {
+            "id": "marcus_aurelius",
+            "title": "マルクス・アウレリウスの即位",
+            "year": 161,
+            "yearLabel": "161年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Marcus Aurelius equestrian statue"
+        },
+        {
+            "id": "antonine_edict",
+            "title": "アントニヌス勅令",
+            "year": 212,
+            "yearLabel": "212年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Caracalla bust"
+        },
+        {
+            "id": "diocletian",
+            "title": "ディオクレティアヌスの即位",
+            "year": 284,
+            "yearLabel": "284年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Diocletian"
+        },
+        {
+            "id": "milvian_bridge",
+            "title": "ミルウィウス橋の戦い",
+            "year": 312,
+            "yearLabel": "312年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of the Milvian Bridge Raphael"
+        },
+        {
+            "id": "adrianople",
+            "title": "アドリアノープルの戦い",
+            "year": 378,
+            "yearLabel": "378年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Valens emperor"
+        },
+        {
+            "id": "hun_attila",
+            "title": "アッティラの死",
+            "year": 453,
+            "yearLabel": "453年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Attila the Hun"
+        },
+        {
+            "id": "benedict",
+            "title": "モンテ・カッシーノ修道院の創建",
+            "year": 529,
+            "yearLabel": "529年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Monte Cassino Abbey"
+        },
+        {
+            "id": "gregory_great",
+            "title": "グレゴリウス1世の教皇即位",
+            "year": 590,
+            "yearLabel": "590年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Pope Gregory I"
+        },
+        {
+            "id": "grand_canal",
+            "title": "隋の大運河の開通",
+            "year": 610,
+            "yearLabel": "610年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Grand Canal China",
+            "artFile": "Entering Suzhou and the Grand Canal8.jpg"
+        },
+        {
+            "id": "tang_taizong",
+            "title": "唐の太宗の即位",
+            "year": 626,
+            "yearLabel": "626年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Taizong of Tang"
+        },
+        {
+            "id": "mecca_conquest",
+            "title": "ムハンマドのメッカ征服",
+            "year": 630,
+            "yearLabel": "630年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Kaaba Mecca"
+        },
+        {
+            "id": "muhammad_death",
+            "title": "ムハンマドの死",
+            "year": 632,
+            "yearLabel": "632年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Medina Prophet's Mosque"
+        },
+        {
+            "id": "nahavand",
+            "title": "ニハーヴァンドの戦い",
+            "year": 642,
+            "yearLabel": "642年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Sassanid Persia"
+        },
+        {
+            "id": "tibet_wencheng",
+            "title": "文成公主の吐蕃への降嫁",
+            "year": 641,
+            "yearLabel": "641年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Princess Wencheng"
+        },
+        {
+            "id": "karbala",
+            "title": "カルバラーの戦い",
+            "year": 680,
+            "yearLabel": "680年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Battle of Karbala painting"
+        },
+        {
+            "id": "islam_spain",
+            "title": "イスラーム勢力のイベリア上陸",
+            "year": 711,
+            "yearLabel": "711年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Tariq ibn Ziyad"
+        },
+        {
+            "id": "pepin_king",
+            "title": "ピピンの戴冠",
+            "year": 751,
+            "yearLabel": "751年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Pepin the Short"
+        },
+        {
+            "id": "pepin_donation",
+            "title": "ピピンの寄進",
+            "year": 756,
+            "yearLabel": "756年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Donation of Pepin"
+        },
+        {
+            "id": "cordoba_mosque",
+            "title": "コルドバのメスキータの着工",
+            "year": 785,
+            "yearLabel": "785年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Mezquita Cordoba"
+        },
+        {
+            "id": "alfred_great",
+            "title": "アルフレッド大王の即位",
+            "year": 871,
+            "yearLabel": "871年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Alfred the Great statue"
+        },
+        {
+            "id": "tang_fall",
+            "title": "唐の滅亡",
+            "year": 907,
+            "yearLabel": "907年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tang dynasty"
+        },
+        {
+            "id": "cluny",
+            "title": "クリュニー修道院の創建",
+            "year": 910,
+            "yearLabel": "910年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Cluny Abbey"
+        },
+        {
+            "id": "lechfeld",
+            "title": "レヒフェルトの戦い",
+            "year": 955,
+            "yearLabel": "955年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Lechfeld"
+        },
+        {
+            "id": "hugh_capet",
+            "title": "カペー朝の成立",
+            "year": 987,
+            "yearLabel": "987年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hugh Capet"
+        },
+        {
+            "id": "seljuk_baghdad",
+            "title": "セルジューク朝のバグダード入城",
+            "year": 1055,
+            "yearLabel": "1055年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tughril Beg"
+        },
+        {
+            "id": "wang_anshi",
+            "title": "王安石の新法の開始",
+            "year": 1069,
+            "yearLabel": "1069年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Wang Anshi"
+        },
+        {
+            "id": "jerusalem_1099",
+            "title": "十字軍のエルサレム占領",
+            "year": 1099,
+            "yearLabel": "1099年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Capture of Jerusalem 1099"
+        },
+        {
+            "id": "worms_concordat",
+            "title": "ヴォルムス協約",
+            "year": 1122,
+            "yearLabel": "1122年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Concordat of Worms"
+        },
+        {
+            "id": "second_crusade",
+            "title": "第2回十字軍",
+            "year": 1147,
+            "yearLabel": "1147年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Second Crusade"
+        },
+        {
+            "id": "hattin",
+            "title": "ヒッティーンの戦い",
+            "year": 1187,
+            "yearLabel": "1187年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Hattin"
+        },
+        {
+            "id": "third_crusade",
+            "title": "第3回十字軍",
+            "year": 1189,
+            "yearLabel": "1189年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Richard the Lionheart"
+        },
+        {
+            "id": "delhi_sultanate",
+            "title": "奴隷王朝の成立",
+            "year": 1206,
+            "yearLabel": "1206年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Qutb Minar"
+        },
+        {
+            "id": "albigensian",
+            "title": "アルビジョワ十字軍",
+            "year": 1209,
+            "yearLabel": "1209年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Albigensian Crusade"
+        },
+        {
+            "id": "bouvines",
+            "title": "ブーヴィーヌの戦い",
+            "year": 1214,
+            "yearLabel": "1214年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Bouvines"
+        },
+        {
+            "id": "khwarazm",
+            "title": "モンゴルのホラズム遠征",
+            "year": 1219,
+            "yearLabel": "1219年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Genghis Khan"
+        },
+        {
+            "id": "jin_fall",
+            "title": "金の滅亡",
+            "year": 1234,
+            "yearLabel": "1234年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Jin dynasty"
+        },
+        {
+            "id": "batu_kiev",
+            "title": "モンゴル軍のキエフ攻略",
+            "year": 1240,
+            "yearLabel": "1240年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Siege of Kiev 1240"
+        },
+        {
+            "id": "ain_jalut",
+            "title": "アイン・ジャールートの戦い",
+            "year": 1260,
+            "yearLabel": "1260年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Mamluk"
+        },
+        {
+            "id": "yuan_name",
+            "title": "元の国号の制定",
+            "year": 1271,
+            "yearLabel": "1271年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yuan dynasty",
+            "artFile": "Liu-Kuan-Tao-Jagd.JPG"
+        },
+        {
+            "id": "model_parliament",
+            "title": "模範議会の召集",
+            "year": 1295,
+            "yearLabel": "1295年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Edward I of England"
+        },
+        {
+            "id": "estates_general",
+            "title": "フランス三部会の初召集",
+            "year": 1302,
+            "yearLabel": "1302年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Philip IV of France",
+            "artFile": "Philip iv and family.jpg"
+        },
+        {
+            "id": "avignon",
+            "title": "教皇のアヴィニョン移転",
+            "year": 1309,
+            "yearLabel": "1309年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Palais des Papes Avignon"
+        },
+        {
+            "id": "bannockburn",
+            "title": "バノックバーンの戦い",
+            "year": 1314,
+            "yearLabel": "1314年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Bannockburn"
+        },
+        {
+            "id": "crecy",
+            "title": "クレシーの戦い",
+            "year": 1346,
+            "yearLabel": "1346年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Crecy"
+        },
+        {
+            "id": "black_death",
+            "title": "黒死病のヨーロッパ流入",
+            "year": 1347,
+            "yearLabel": "1347年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Triumph of Death Bruegel"
+        },
+        {
+            "id": "jacquerie",
+            "title": "ジャックリーの乱",
+            "year": 1358,
+            "yearLabel": "1358年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Jacquerie"
+        },
+        {
+            "id": "golden_bull",
+            "title": "金印勅書",
+            "year": 1356,
+            "yearLabel": "1356年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Golden Bull of 1356"
+        },
+        {
+            "id": "schism_1378",
+            "title": "教会大分裂の始まり",
+            "year": 1378,
+            "yearLabel": "1378年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Western Schism"
+        },
+        {
+            "id": "kalmar_union",
+            "title": "カルマル同盟",
+            "year": 1397,
+            "yearLabel": "1397年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Margaret I of Denmark"
+        },
+        {
+            "id": "yongle_beijing",
+            "title": "明の北京遷都",
+            "year": 1421,
+            "yearLabel": "1421年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Forbidden City",
+            "artFile": "Portrait of Emperor Yongle (9863884305).jpg"
+        },
+        {
+            "id": "constance",
+            "title": "コンスタンツ公会議の開幕",
+            "year": 1414,
+            "yearLabel": "1414年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Council of Constance"
+        },
+        {
+            "id": "hus_death",
+            "title": "フスの火刑",
+            "year": 1415,
+            "yearLabel": "1415年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Jan Hus"
+        },
+        {
+            "id": "joan_death",
+            "title": "ジャンヌ・ダルクの火刑",
+            "year": 1431,
+            "yearLabel": "1431年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Joan of Arc death at the stake"
+        },
+        {
+            "id": "tumu",
+            "title": "土木の変",
+            "year": 1449,
+            "yearLabel": "1449年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Zhengtong Emperor"
+        },
+        {
+            "id": "hundred_end",
+            "title": "百年戦争の終結",
+            "year": 1453,
+            "yearLabel": "1453年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Castillon"
+        },
+        {
+            "id": "roses",
+            "title": "ばら戦争の開戦",
+            "year": 1455,
+            "yearLabel": "1455年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Wars of the Roses"
+        },
+        {
+            "id": "ivan3",
+            "title": "イヴァン3世のモンゴル支配脱却",
+            "year": 1480,
+            "yearLabel": "1480年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ivan III"
+        },
+        {
+            "id": "cabot",
+            "title": "カボットの北米到達",
+            "year": 1497,
+            "yearLabel": "1497年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "John Cabot"
+        },
+        {
+            "id": "cabral",
+            "title": "カブラルのブラジル到達",
+            "year": 1500,
+            "yearLabel": "1500年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Pedro Alvares Cabral"
+        },
+        {
+            "id": "safavid",
+            "title": "サファヴィー朝の成立",
+            "year": 1501,
+            "yearLabel": "1501年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ismail I"
+        },
+        {
+            "id": "david_statue",
+            "title": "ミケランジェロのダヴィデ像完成",
+            "year": 1504,
+            "yearLabel": "1504年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "David Michelangelo"
+        },
+        {
+            "id": "st_peters",
+            "title": "サン・ピエトロ大聖堂の改築着工",
+            "year": 1506,
+            "yearLabel": "1506年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "St. Peter's Basilica"
+        },
+        {
+            "id": "utopia",
+            "title": "トマス・モア『ユートピア』",
+            "year": 1516,
+            "yearLabel": "1516年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Thomas More Utopia"
+        },
+        {
+            "id": "charles5",
+            "title": "カール5世の皇帝選出",
+            "year": 1519,
+            "yearLabel": "1519年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Charles V Titian"
+        },
+        {
+            "id": "worms_diet",
+            "title": "ヴォルムス帝国議会",
+            "year": 1521,
+            "yearLabel": "1521年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Diet of Worms"
+        },
+        {
+            "id": "magellan_return",
+            "title": "マゼラン艦隊の帰還",
+            "year": 1522,
+            "yearLabel": "1522年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Victoria ship Magellan"
+        },
+        {
+            "id": "panipat1",
+            "title": "第1次パーニーパットの戦い",
+            "year": 1526,
+            "yearLabel": "1526年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Babur"
+        },
+        {
+            "id": "mohacs",
+            "title": "モハーチの戦い",
+            "year": 1526,
+            "yearLabel": "1526年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Mohacs"
+        },
+        {
+            "id": "sack_rome",
+            "title": "ローマの劫掠",
+            "year": 1527,
+            "yearLabel": "1527年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Sack of Rome 1527"
+        },
+        {
+            "id": "supremacy",
+            "title": "イギリス国教会の成立",
+            "year": 1534,
+            "yearLabel": "1534年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Henry VIII Holbein"
+        },
+        {
+            "id": "calvin",
+            "title": "カルヴァン『キリスト教綱要』",
+            "year": 1536,
+            "yearLabel": "1536年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "John Calvin"
+        },
+        {
+            "id": "akbar",
+            "title": "アクバルの即位",
+            "year": 1556,
+            "yearLabel": "1556年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Akbar"
+        },
+        {
+            "id": "st_bartholomew",
+            "title": "サン・バルテルミの虐殺",
+            "year": 1572,
+            "yearLabel": "1572年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "St. Bartholomew's Day massacre"
+        },
+        {
+            "id": "utrecht_union",
+            "title": "ユトレヒト同盟",
+            "year": 1579,
+            "yearLabel": "1579年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Union of Utrecht"
+        },
+        {
+            "id": "dutch_independence",
+            "title": "ネーデルラントの独立宣言",
+            "year": 1581,
+            "yearLabel": "1581年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "William the Silent"
+        },
+        {
+            "id": "hamlet_globe",
+            "title": "グローブ座の開場",
+            "year": 1599,
+            "yearLabel": "1599年",
+            "region": "WORLD",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Globe Theatre"
+        },
+        {
+            "id": "qing_name",
+            "title": "清の国号の制定",
+            "year": 1636,
+            "yearLabel": "1636年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hong Taiji",
+            "artFile": "Hong Taiji (closeup).jpg"
+        },
+        {
+            "id": "english_civil",
+            "title": "イギリス内戦の始まり",
+            "year": 1642,
+            "yearLabel": "1642年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "English Civil War",
+            "artFile": "Prince Rupert at Edgehill.jpg"
+        },
+        {
+            "id": "tasman",
+            "title": "タスマンのニュージーランド到達",
+            "year": 1642,
+            "yearLabel": "1642年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Abel Tasman"
+        },
+        {
+            "id": "navigation_act",
+            "title": "航海法の制定",
+            "year": 1651,
+            "yearLabel": "1651年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Oliver Cromwell"
+        },
+        {
+            "id": "cape_colony",
+            "title": "ケープ植民地の建設",
+            "year": 1652,
+            "yearLabel": "1652年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Jan van Riebeeck"
+        },
+        {
+            "id": "restoration",
+            "title": "イギリスの王政復古",
+            "year": 1660,
+            "yearLabel": "1660年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Charles II of England"
+        },
+        {
+            "id": "new_amsterdam",
+            "title": "ニューアムステルダムの英領化",
+            "year": 1664,
+            "yearLabel": "1664年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "New Amsterdam",
+            "artFile": "The Dutch Surrender New Amsterdam (Peter Stuyvesant) 1664 by Ogden.jpg"
+        },
+        {
+            "id": "kangxi_sanfan",
+            "title": "三藩の乱",
+            "year": 1673,
+            "yearLabel": "1673年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Kangxi Emperor"
+        },
+        {
+            "id": "taiwan_qing",
+            "title": "清の台湾領有",
+            "year": 1683,
+            "yearLabel": "1683年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Zheng Keshuang"
+        },
+        {
+            "id": "nantes_revocation",
+            "title": "ナントの勅令の廃止",
+            "year": 1685,
+            "yearLabel": "1685年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Louis XIV"
+        },
+        {
+            "id": "bill_of_rights",
+            "title": "権利の章典",
+            "year": 1689,
+            "yearLabel": "1689年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Bill of Rights 1689"
+        },
+        {
+            "id": "bank_england",
+            "title": "イングランド銀行の設立",
+            "year": 1694,
+            "yearLabel": "1694年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Bank of England"
+        },
+        {
+            "id": "prussia_kingdom",
+            "title": "プロイセン王国の成立",
+            "year": 1701,
+            "yearLabel": "1701年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Frederick I of Prussia",
+            "artFile": "Frederick I of Prussia (cropped).jpg"
+        },
+        {
+            "id": "spanish_succession",
+            "title": "スペイン継承戦争の開戦",
+            "year": 1701,
+            "yearLabel": "1701年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "War of the Spanish Succession"
+        },
+        {
+            "id": "great_britain",
+            "title": "グレートブリテン王国の成立",
+            "year": 1707,
+            "yearLabel": "1707年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Acts of Union 1707"
+        },
+        {
+            "id": "poltava",
+            "title": "ポルタヴァの戦い",
+            "year": 1709,
+            "yearLabel": "1709年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Poltava"
+        },
+        {
+            "id": "utrecht_treaty",
+            "title": "ユトレヒト条約",
+            "year": 1713,
+            "yearLabel": "1713年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Peace of Utrecht"
+        },
+        {
+            "id": "south_sea",
+            "title": "南海泡沫事件",
+            "year": 1720,
+            "yearLabel": "1720年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "South Sea Bubble"
+        },
+        {
+            "id": "kyakhta",
+            "title": "キャフタ条約",
+            "year": 1727,
+            "yearLabel": "1727年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Kyakhta"
+        },
+        {
+            "id": "austrian_succession",
+            "title": "オーストリア継承戦争の開戦",
+            "year": 1740,
+            "yearLabel": "1740年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Maria Theresa"
+        },
+        {
+            "id": "encyclopedie",
+            "title": "『百科全書』の刊行開始",
+            "year": 1751,
+            "yearLabel": "1751年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Encyclopedie Diderot"
+        },
+        {
+            "id": "diplomatic_revolution",
+            "title": "外交革命",
+            "year": 1756,
+            "yearLabel": "1756年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Kaunitz"
+        },
+        {
+            "id": "canton_system",
+            "title": "清の貿易港を広州に限定",
+            "year": 1757,
+            "yearLabel": "1757年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Canton thirteen factories"
+        },
+        {
+            "id": "quebec",
+            "title": "ケベックの戦い",
+            "year": 1759,
+            "yearLabel": "1759年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Death of General Wolfe"
+        },
+        {
+            "id": "paris_1763",
+            "title": "パリ条約（七年戦争の講和）",
+            "year": 1763,
+            "yearLabel": "1763年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Paris 1763"
+        },
+        {
+            "id": "social_contract",
+            "title": "ルソー『社会契約論』",
+            "year": 1762,
+            "yearLabel": "1762年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Jean-Jacques Rousseau"
+        },
+        {
+            "id": "catherine2",
+            "title": "エカチェリーナ2世の即位",
+            "year": 1762,
+            "yearLabel": "1762年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Catherine the Great"
+        },
+        {
+            "id": "stamp_act",
+            "title": "印紙法",
+            "year": 1765,
+            "yearLabel": "1765年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Stamp Act 1765"
+        },
+        {
+            "id": "poland_partition1",
+            "title": "第1回ポーランド分割",
+            "year": 1772,
+            "yearLabel": "1772年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "First Partition of Poland"
+        },
+        {
+            "id": "pugachev",
+            "title": "プガチョフの乱",
+            "year": 1773,
+            "yearLabel": "1773年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Yemelyan Pugachev"
+        },
+        {
+            "id": "lexington",
+            "title": "レキシントン・コンコードの戦い",
+            "year": 1775,
+            "yearLabel": "1775年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battles of Lexington and Concord"
+        },
+        {
+            "id": "wealth_nations",
+            "title": "アダム・スミス『国富論』",
+            "year": 1776,
+            "yearLabel": "1776年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Adam Smith",
+            "artFile": "Smith - Inquiry into the nature and causes of the wealth of nations, 1922 - 5231847.tif"
+        },
+        {
+            "id": "yorktown",
+            "title": "ヨークタウンの戦い",
+            "year": 1781,
+            "yearLabel": "1781年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Surrender of Lord Cornwallis"
+        },
+        {
+            "id": "paris_1783",
+            "title": "パリ条約（アメリカ独立の承認）",
+            "year": 1783,
+            "yearLabel": "1783年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Paris 1783"
+        },
+        {
+            "id": "washington_president",
+            "title": "ワシントンの大統領就任",
+            "year": 1789,
+            "yearLabel": "1789年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "George Washington Gilbert Stuart"
+        },
+        {
+            "id": "rights_of_man",
+            "title": "フランス人権宣言",
+            "year": 1789,
+            "yearLabel": "1789年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Declaration of the Rights of Man"
+        },
+        {
+            "id": "varennes",
+            "title": "ヴァレンヌ逃亡事件",
+            "year": 1791,
+            "yearLabel": "1791年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Flight to Varennes"
+        },
+        {
+            "id": "first_republic",
+            "title": "フランス第一共和政の成立",
+            "year": 1792,
+            "yearLabel": "1792年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Valmy"
+        },
+        {
+            "id": "thermidor",
+            "title": "テルミドールの反動",
+            "year": 1794,
+            "yearLabel": "1794年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Robespierre"
+        },
+        {
+            "id": "brumaire",
+            "title": "ブリュメール18日のクーデタ",
+            "year": 1799,
+            "yearLabel": "1799年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Coup of 18 Brumaire"
+        },
+        {
+            "id": "napoleonic_code",
+            "title": "ナポレオン法典の公布",
+            "year": 1804,
+            "yearLabel": "1804年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Napoleonic Code"
+        },
+        {
+            "id": "haiti_independence",
+            "title": "ハイチの独立",
+            "year": 1804,
+            "yearLabel": "1804年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Jean-Jacques Dessalines"
+        },
+        {
+            "id": "austerlitz",
+            "title": "アウステルリッツの戦い",
+            "year": 1805,
+            "yearLabel": "1805年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Austerlitz"
+        },
+        {
+            "id": "rhine_confederation",
+            "title": "ライン同盟の結成",
+            "year": 1806,
+            "yearLabel": "1806年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Confederation of the Rhine"
+        },
+        {
+            "id": "continental_blockade",
+            "title": "大陸封鎖令",
+            "year": 1806,
+            "yearLabel": "1806年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Napoleon Berlin 1806"
+        },
+        {
+            "id": "slave_trade_abolition",
+            "title": "イギリスの奴隷貿易廃止",
+            "year": 1807,
+            "yearLabel": "1807年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "William Wilberforce"
+        },
+        {
+            "id": "fulton",
+            "title": "フルトンの蒸気船の運航",
+            "year": 1807,
+            "yearLabel": "1807年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Clermont steamboat"
+        },
+        {
+            "id": "leipzig",
+            "title": "ライプツィヒの戦い",
+            "year": 1813,
+            "yearLabel": "1813年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Leipzig"
+        },
+        {
+            "id": "monroe",
+            "title": "モンロー宣言",
+            "year": 1823,
+            "yearLabel": "1823年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "James Monroe"
+        },
+        {
+            "id": "decembrist",
+            "title": "デカブリストの乱",
+            "year": 1825,
+            "yearLabel": "1825年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Decembrist revolt"
+        },
+        {
+            "id": "belgium",
+            "title": "ベルギーの独立",
+            "year": 1830,
+            "yearLabel": "1830年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Belgian Revolution"
+        },
+        {
+            "id": "reform_act",
+            "title": "第1回選挙法改正",
+            "year": 1832,
+            "yearLabel": "1832年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Reform Act 1832"
+        },
+        {
+            "id": "zollverein",
+            "title": "ドイツ関税同盟の発足",
+            "year": 1834,
+            "yearLabel": "1834年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Zollverein",
+            "artFile": "Zoll-auch Eizenbahn. Karte der deutschen Zollvereins. Staaten... - von Joh. Val. Kutscheit - btv1b8469035q.jpg"
+        },
+        {
+            "id": "morse",
+            "title": "モールス信号の実用化",
+            "year": 1844,
+            "yearLabel": "1844年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Samuel Morse telegraph"
+        },
+        {
+            "id": "irish_famine",
+            "title": "アイルランドのジャガイモ飢饉",
+            "year": 1845,
+            "yearLabel": "1845年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Great Famine Ireland"
+        },
+        {
+            "id": "feb_revolution",
+            "title": "フランス二月革命",
+            "year": 1848,
+            "yearLabel": "1848年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "February Revolution 1848"
+        },
+        {
+            "id": "taiping",
+            "title": "太平天国の乱",
+            "year": 1851,
+            "yearLabel": "1851年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Taiping Rebellion"
+        },
+        {
+            "id": "arrow_war",
+            "title": "アロー戦争の開戦",
+            "year": 1856,
+            "yearLabel": "1856年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Second Opium War"
+        },
+        {
+            "id": "italy_kingdom",
+            "title": "イタリア王国の成立",
+            "year": 1861,
+            "yearLabel": "1861年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Victor Emmanuel II"
+        },
+        {
+            "id": "red_cross",
+            "title": "赤十字国際委員会の創設",
+            "year": 1863,
+            "yearLabel": "1863年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Henry Dunant"
+        },
+        {
+            "id": "london_underground",
+            "title": "ロンドン地下鉄の開業",
+            "year": 1863,
+            "yearLabel": "1863年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Metropolitan Railway 1863"
+        },
+        {
+            "id": "das_kapital",
+            "title": "マルクス『資本論』第1巻",
+            "year": 1867,
+            "yearLabel": "1867年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Karl Marx"
+        },
+        {
+            "id": "mendeleev",
+            "title": "メンデレーエフの周期表",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Dmitri Mendeleev"
+        },
+        {
+            "id": "paris_commune",
+            "title": "パリ・コミューン",
+            "year": 1871,
+            "yearLabel": "1871年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Paris Commune"
+        },
+        {
+            "id": "berlin_congress",
+            "title": "ベルリン会議",
+            "year": 1878,
+            "yearLabel": "1878年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Congress of Berlin"
+        },
+        {
+            "id": "koch_tb",
+            "title": "コッホの結核菌の発見",
+            "year": 1882,
+            "yearLabel": "1882年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Robert Koch"
+        },
+        {
+            "id": "krakatoa",
+            "title": "クラカタウ火山の大噴火",
+            "year": 1883,
+            "yearLabel": "1883年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Krakatoa 1883"
+        },
+        {
+            "id": "berlin_conference",
+            "title": "ベルリン＝コンゴ会議",
+            "year": 1884,
+            "yearLabel": "1884年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Berlin Conference 1884"
+        },
+        {
+            "id": "benz",
+            "title": "ベンツの自動車の特許",
+            "year": 1886,
+            "yearLabel": "1886年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Benz Patent-Motorwagen"
+        },
+        {
+            "id": "dreyfus",
+            "title": "ドレフュス事件",
+            "year": 1894,
+            "yearLabel": "1894年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Alfred Dreyfus"
+        },
+        {
+            "id": "lumiere",
+            "title": "リュミエール兄弟の映画上映",
+            "year": 1895,
+            "yearLabel": "1895年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Lumiere brothers"
+        },
+        {
+            "id": "curie_radium",
+            "title": "キュリー夫妻のラジウム発見",
+            "year": 1898,
+            "yearLabel": "1898年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Marie Curie"
+        },
+        {
+            "id": "hague_peace",
+            "title": "第1回ハーグ平和会議",
+            "year": 1899,
+            "yearLabel": "1899年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Hague Peace Conference 1899"
+        },
+        {
+            "id": "boer_war",
+            "title": "南アフリカ戦争の開戦",
+            "year": 1899,
+            "yearLabel": "1899年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Second Boer War"
+        },
+        {
+            "id": "victoria_death",
+            "title": "ヴィクトリア女王の死",
+            "year": 1901,
+            "yearLabel": "1901年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Queen Victoria"
+        },
+        {
+            "id": "marconi",
+            "title": "マルコーニの大西洋横断無線通信",
+            "year": 1901,
+            "yearLabel": "1901年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Guglielmo Marconi"
+        },
+        {
+            "id": "bloody_sunday",
+            "title": "血の日曜日事件",
+            "year": 1905,
+            "yearLabel": "1905年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Bloody Sunday 1905"
+        },
+        {
+            "id": "triple_entente",
+            "title": "英露協商（三国協商の成立）",
+            "year": 1907,
+            "yearLabel": "1907年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Triple Entente"
+        },
+        {
+            "id": "sarajevo",
+            "title": "サライェヴォ事件",
+            "year": 1914,
+            "yearLabel": "1914年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Archduke Franz Ferdinand"
+        },
+        {
+            "id": "lusitania",
+            "title": "ルシタニア号の撃沈",
+            "year": 1915,
+            "yearLabel": "1915年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "RMS Lusitania"
+        },
+        {
+            "id": "verdun",
+            "title": "ヴェルダンの戦い",
+            "year": 1916,
+            "yearLabel": "1916年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Verdun"
+        },
+        {
+            "id": "somme",
+            "title": "ソンムの戦い",
+            "year": 1916,
+            "yearLabel": "1916年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of the Somme"
+        },
+        {
+            "id": "us_ww1",
+            "title": "アメリカの第一次世界大戦参戦",
+            "year": 1917,
+            "yearLabel": "1917年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Woodrow Wilson 1917"
+        },
+        {
+            "id": "spanish_flu",
+            "title": "スペインかぜの大流行",
+            "year": 1918,
+            "yearLabel": "1918年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "1918 influenza pandemic"
+        },
+        {
+            "id": "march_first",
+            "title": "三・一独立運動",
+            "year": 1919,
+            "yearLabel": "1919年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "March 1st Movement"
+        },
+        {
+            "id": "may_fourth",
+            "title": "五・四運動",
+            "year": 1919,
+            "yearLabel": "1919年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "May Fourth Movement"
+        },
+        {
+            "id": "weimar",
+            "title": "ヴァイマル憲法の制定",
+            "year": 1919,
+            "yearLabel": "1919年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Weimar Constitution"
+        },
+        {
+            "id": "washington_conf",
+            "title": "ワシントン会議の開幕",
+            "year": 1921,
+            "yearLabel": "1921年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Washington Naval Conference"
+        },
+        {
+            "id": "ussr_founding",
+            "title": "ソビエト連邦の成立",
+            "year": 1922,
+            "yearLabel": "1922年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Soviet Union 1922"
+        },
+        {
+            "id": "march_on_rome",
+            "title": "ムッソリーニのローマ進軍",
+            "year": 1922,
+            "yearLabel": "1922年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "March on Rome"
+        },
+        {
+            "id": "turkey_republic",
+            "title": "トルコ共和国の成立",
+            "year": 1923,
+            "yearLabel": "1923年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Mustafa Kemal Ataturk"
+        },
+        {
+            "id": "kellogg_briand",
+            "title": "不戦条約",
+            "year": 1928,
+            "yearLabel": "1928年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Kellogg-Briand Pact"
+        },
+        {
+            "id": "salt_march",
+            "title": "ガンディーの塩の行進",
+            "year": 1930,
+            "yearLabel": "1930年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Salt March Gandhi"
+        },
+        {
+            "id": "empire_state",
+            "title": "エンパイア・ステート・ビルの完成",
+            "year": 1931,
+            "yearLabel": "1931年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Empire State Building 1931"
+        },
+        {
+            "id": "hitler_chancellor",
+            "title": "ヒトラーの首相就任",
+            "year": 1933,
+            "yearLabel": "1933年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Reichstag 1933",
+            "artFile": "3 1 0 17 11954 5 1 32785 Opening of the Reichstag Session Eröffnung der Reichstagssitzung Berlin 1932-08-30 Assembly hall. In the Presidium, senior member of parliament Klara Zetkin (x) is opening the session. NAC, Poland PD.jpg"
+        },
+        {
+            "id": "new_deal",
+            "title": "ニューディール政策の開始",
+            "year": 1933,
+            "yearLabel": "1933年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Franklin D. Roosevelt"
+        },
+        {
+            "id": "long_march",
+            "title": "長征の開始",
+            "year": 1934,
+            "yearLabel": "1934年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Long March"
+        },
+        {
+            "id": "spanish_civil",
+            "title": "スペイン内戦の開戦",
+            "year": 1936,
+            "yearLabel": "1936年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Spanish Civil War",
+            "artFile": "Spanish Civil War Blank August 1936.png"
+        },
+        {
+            "id": "guernica",
+            "title": "ゲルニカ爆撃",
+            "year": 1937,
+            "yearLabel": "1937年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Guernica bombing"
+        },
+        {
+            "id": "munich",
+            "title": "ミュンヘン会談",
+            "year": 1938,
+            "yearLabel": "1938年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Munich Agreement"
+        },
+        {
+            "id": "molotov_ribbentrop",
+            "title": "独ソ不可侵条約",
+            "year": 1939,
+            "yearLabel": "1939年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Molotov-Ribbentrop Pact"
+        },
+        {
+            "id": "dunkirk",
+            "title": "ダンケルクの撤退",
+            "year": 1940,
+            "yearLabel": "1940年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Dunkirk evacuation"
+        },
+        {
+            "id": "barbarossa",
+            "title": "独ソ戦の開戦",
+            "year": 1941,
+            "yearLabel": "1941年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Operation Barbarossa"
+        },
+        {
+            "id": "atlantic_charter",
+            "title": "大西洋憲章",
+            "year": 1941,
+            "yearLabel": "1941年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Atlantic Charter"
+        },
+        {
+            "id": "stalingrad",
+            "title": "スターリングラードの戦いの終結",
+            "year": 1943,
+            "yearLabel": "1943年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Stalingrad"
+        },
+        {
+            "id": "bretton_woods",
+            "title": "ブレトン・ウッズ会議",
+            "year": 1944,
+            "yearLabel": "1944年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Bretton Woods Conference"
+        },
+        {
+            "id": "potsdam",
+            "title": "ポツダム会談",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Potsdam Conference"
+        },
+        {
+            "id": "truman_doctrine",
+            "title": "トルーマン・ドクトリン",
+            "year": 1947,
+            "yearLabel": "1947年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Harry S. Truman"
+        },
+        {
+            "id": "marshall_plan",
+            "title": "マーシャル・プランの発表",
+            "year": 1947,
+            "yearLabel": "1947年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "George C. Marshall"
+        },
+        {
+            "id": "israel",
+            "title": "イスラエルの建国",
+            "year": 1948,
+            "yearLabel": "1948年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "David Ben-Gurion 1948"
+        },
+        {
+            "id": "berlin_blockade",
+            "title": "ベルリン封鎖",
+            "year": 1948,
+            "yearLabel": "1948年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Berlin Airlift"
+        },
+        {
+            "id": "gandhi_death",
+            "title": "ガンディーの暗殺",
+            "year": 1948,
+            "yearLabel": "1948年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Mahatma Gandhi"
+        },
+        {
+            "id": "everest",
+            "title": "エベレスト初登頂",
+            "year": 1953,
+            "yearLabel": "1953年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Tenzing Norgay Everest"
+        },
+        {
+            "id": "korean_armistice",
+            "title": "朝鮮戦争の休戦協定",
+            "year": 1953,
+            "yearLabel": "1953年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Korean Armistice Agreement"
+        },
+        {
+            "id": "dien_bien_phu",
+            "title": "ディエンビエンフーの戦い",
+            "year": 1954,
+            "yearLabel": "1954年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Dien Bien Phu"
+        },
+        {
+            "id": "warsaw_pact",
+            "title": "ワルシャワ条約機構の結成",
+            "year": 1955,
+            "yearLabel": "1955年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Warsaw Pact"
+        },
+        {
+            "id": "suez_crisis",
+            "title": "スエズ戦争",
+            "year": 1956,
+            "yearLabel": "1956年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Suez Crisis"
+        },
+        {
+            "id": "hungary_1956",
+            "title": "ハンガリー動乱",
+            "year": 1956,
+            "yearLabel": "1956年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hungarian Revolution of 1956"
+        },
+        {
+            "id": "eec",
+            "title": "ローマ条約の調印",
+            "year": 1957,
+            "yearLabel": "1957年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Treaty of Rome 1957"
+        },
+        {
+            "id": "africa_year",
+            "title": "アフリカの年",
+            "year": 1960,
+            "yearLabel": "1960年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Africa 1960 independence"
+        },
+        {
+            "id": "jfk_assassination",
+            "title": "ケネディ大統領の暗殺",
+            "year": 1963,
+            "yearLabel": "1963年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "John F. Kennedy"
+        },
+        {
+            "id": "civil_rights_act",
+            "title": "公民権法の成立",
+            "year": 1964,
+            "yearLabel": "1964年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Civil Rights Act of 1964"
+        },
+        {
+            "id": "cultural_revolution",
+            "title": "文化大革命の開始",
+            "year": 1966,
+            "yearLabel": "1966年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Cultural Revolution"
+        },
+        {
+            "id": "asean",
+            "title": "東南アジア諸国連合の結成",
+            "year": 1967,
+            "yearLabel": "1967年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "ASEAN"
+        },
+        {
+            "id": "six_day",
+            "title": "第三次中東戦争",
+            "year": 1967,
+            "yearLabel": "1967年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Six-Day War"
+        },
+        {
+            "id": "king_assassination",
+            "title": "キング牧師の暗殺",
+            "year": 1968,
+            "yearLabel": "1968年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Martin Luther King Jr."
+        },
+        {
+            "id": "nixon_shock",
+            "title": "ニクソン・ショック",
+            "year": 1971,
+            "yearLabel": "1971年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Richard Nixon 1971"
+        },
+        {
+            "id": "nixon_china",
+            "title": "ニクソンの中国訪問",
+            "year": 1972,
+            "yearLabel": "1972年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Nixon Mao 1972"
+        },
+        {
+            "id": "watergate",
+            "title": "ニクソン大統領の辞任",
+            "year": 1974,
+            "yearLabel": "1974年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nixon resignation"
+        },
+        {
+            "id": "summit",
+            "title": "第1回先進国首脳会議",
+            "year": 1975,
+            "yearLabel": "1975年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Rambouillet 1975"
+        },
+        {
+            "id": "deng_reform",
+            "title": "改革開放政策の開始",
+            "year": 1978,
+            "yearLabel": "1978年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Deng Xiaoping"
+        },
+        {
+            "id": "afghan_1979",
+            "title": "ソ連のアフガニスタン侵攻",
+            "year": 1979,
+            "yearLabel": "1979年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Soviet-Afghan War"
+        },
+        {
+            "id": "iran_iraq",
+            "title": "イラン・イラク戦争の開戦",
+            "year": 1980,
+            "yearLabel": "1980年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Iran-Iraq War"
+        },
+        {
+            "id": "solidarnosc",
+            "title": "「連帯」の結成",
+            "year": 1980,
+            "yearLabel": "1980年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Solidarity Lech Walesa"
+        },
+        {
+            "id": "falklands",
+            "title": "フォークランド紛争",
+            "year": 1982,
+            "yearLabel": "1982年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Falklands War"
+        },
+        {
+            "id": "perestroika",
+            "title": "ゴルバチョフの書記長就任",
+            "year": 1985,
+            "yearLabel": "1985年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Mikhail Gorbachev",
+            "artFile": "Mikhail Gorbachev in 1987 (cropped).jpg"
+        },
+        {
+            "id": "inf_treaty",
+            "title": "中距離核戦力全廃条約",
+            "year": 1987,
+            "yearLabel": "1987年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "INF Treaty Reagan Gorbachev"
+        },
+        {
+            "id": "tiananmen",
+            "title": "天安門事件",
+            "year": 1989,
+            "yearLabel": "1989年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tiananmen Square",
+            "artFile": "Goddess of Democracy HK 20100604.jpg"
+        },
+        {
+            "id": "malta",
+            "title": "マルタ会談",
+            "year": 1989,
+            "yearLabel": "1989年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Malta Summit"
+        },
+        {
+            "id": "gulf_war",
+            "title": "湾岸戦争",
+            "year": 1991,
+            "yearLabel": "1991年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Gulf War"
+        },
+        {
+            "id": "www",
+            "title": "WWWの一般公開",
+            "year": 1991,
+            "yearLabel": "1991年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tim Berners-Lee"
+        },
+        {
+            "id": "apartheid_end",
+            "title": "マンデラの大統領就任",
+            "year": 1994,
+            "yearLabel": "1994年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nelson Mandela"
+        },
+        {
+            "id": "wto",
+            "title": "世界貿易機関の発足",
+            "year": 1995,
+            "yearLabel": "1995年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "World Trade Organization"
+        },
+        {
+            "id": "dolly",
+            "title": "クローン羊ドリーの誕生",
+            "year": 1996,
+            "yearLabel": "1996年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Dolly the sheep"
+        },
+        {
+            "id": "euro",
+            "title": "ユーロの導入",
+            "year": 1999,
+            "yearLabel": "1999年",
+            "region": "WORLD",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Euro coins",
+            "artFile": "Euro coins (07).jpg"
+        },
+        {
+            "id": "macau",
+            "title": "マカオの返還",
+            "year": 1999,
+            "yearLabel": "1999年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Macau"
+        },
+        {
+            "id": "sept11",
+            "title": "アメリカ同時多発テロ",
+            "year": 2001,
+            "yearLabel": "2001年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "World Trade Center"
+        },
+        {
+            "id": "iraq_war",
+            "title": "イラク戦争",
+            "year": 2003,
+            "yearLabel": "2003年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Iraq War 2003"
+        },
+        {
+            "id": "human_genome",
+            "title": "ヒトゲノムの解読完了",
+            "year": 2003,
+            "yearLabel": "2003年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Human Genome Project"
+        },
+        {
+            "id": "sumatra_tsunami",
+            "title": "スマトラ島沖地震",
+            "year": 2004,
+            "yearLabel": "2004年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "2004 Indian Ocean tsunami"
+        },
+        {
+            "id": "obama",
+            "title": "オバマの大統領就任",
+            "year": 2009,
+            "yearLabel": "2009年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Barack Obama"
+        },
+        {
+            "id": "paris_agreement",
+            "title": "パリ協定の採択",
+            "year": 2015,
+            "yearLabel": "2015年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Paris Agreement"
+        },
+        {
+            "id": "brexit",
+            "title": "イギリスのEU離脱",
+            "year": 2020,
+            "yearLabel": "2020年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Brexit",
+            "artFile": "BREXIT (46797366864).jpg"
+        },
+        {
+            "id": "covid_who",
+            "title": "新型コロナのパンデミック宣言",
+            "year": 2020,
+            "yearLabel": "2020年",
+            "region": "WORLD",
+            "category": "災害",
+            "art": "",
+            "artQuery": "COVID-19 pandemic"
+        },
+        {
+            "id": "granicus",
+            "title": "グラニコス川の戦い",
+            "year": -334,
+            "yearLabel": "紀元前334年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of the Granicus"
+        },
+        {
+            "id": "caesar_gaul",
+            "title": "カエサルのガリア遠征の開始",
+            "year": -58,
+            "yearLabel": "紀元前58年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Julius Caesar Gallic Wars"
+        },
+        {
+            "id": "carrhae",
+            "title": "カルラエの戦い",
+            "year": -53,
+            "yearLabel": "紀元前53年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Marcus Licinius Crassus"
+        },
+        {
+            "id": "nero_death",
+            "title": "ネロの死",
+            "year": 68,
+            "yearLabel": "68年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nero bust"
+        },
+        {
+            "id": "constantine_death",
+            "title": "コンスタンティヌス帝の死",
+            "year": 337,
+            "yearLabel": "337年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Constantine the Great colossus"
+        },
+        {
+            "id": "chalcedon",
+            "title": "カルケドン公会議",
+            "year": 451,
+            "yearLabel": "451年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Council of Chalcedon"
+        },
+        {
+            "id": "justinian",
+            "title": "ユスティニアヌス1世の即位",
+            "year": 527,
+            "yearLabel": "527年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Justinian mosaic Ravenna"
+        },
+        {
+            "id": "nika",
+            "title": "ニカの乱",
+            "year": 532,
+            "yearLabel": "532年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hippodrome of Constantinople"
+        },
+        {
+            "id": "xuanzong",
+            "title": "玄宗の即位",
+            "year": 712,
+            "yearLabel": "712年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Xuanzong of Tang"
+        },
+        {
+            "id": "harun",
+            "title": "ハールーン・アッラシードの即位",
+            "year": 786,
+            "yearLabel": "786年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Harun al-Rashid"
+        },
+        {
+            "id": "mersen",
+            "title": "メルセン条約",
+            "year": 870,
+            "yearLabel": "870年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Meerssen"
+        },
+        {
+            "id": "toledo",
+            "title": "キリスト教勢力のトレド奪回",
+            "year": 1085,
+            "yearLabel": "1085年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Alfonso VI of Castile"
+        },
+        {
+            "id": "ayyubid",
+            "title": "アイユーブ朝の成立",
+            "year": 1169,
+            "yearLabel": "1169年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Saladin"
+        },
+        {
+            "id": "seventh_crusade",
+            "title": "第7回十字軍",
+            "year": 1248,
+            "yearLabel": "1248年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Louis IX crusade"
+        },
+        {
+            "id": "mamluk",
+            "title": "マムルーク朝の成立",
+            "year": 1250,
+            "yearLabel": "1250年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Mamluk Cairo"
+        },
+        {
+            "id": "kosovo",
+            "title": "コソヴォの戦い",
+            "year": 1389,
+            "yearLabel": "1389年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Kosovo"
+        },
+        {
+            "id": "nicopolis",
+            "title": "ニコポリスの戦い",
+            "year": 1396,
+            "yearLabel": "1396年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Nicopolis"
+        },
+        {
+            "id": "timur_delhi",
+            "title": "ティムールのデリー攻略",
+            "year": 1398,
+            "yearLabel": "1398年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Timur"
+        },
+        {
+            "id": "inquisition",
+            "title": "スペイン異端審問の設置",
+            "year": 1478,
+            "yearLabel": "1478年",
+            "region": "WORLD",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Spanish Inquisition"
+        },
+        {
+            "id": "spain_union",
+            "title": "カスティリャとアラゴンの統合",
+            "year": 1479,
+            "yearLabel": "1479年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ferdinand and Isabella"
+        },
+        {
+            "id": "petition_right",
+            "title": "権利の請願",
+            "year": 1628,
+            "yearLabel": "1628年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Petition of Right"
+        },
+        {
+            "id": "harvey",
+            "title": "ハーヴェーの血液循環論",
+            "year": 1628,
+            "yearLabel": "1628年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "William Harvey",
+            "artFile": "Portrait of William Harvey, M.D (4672896).jpg"
+        },
+        {
+            "id": "galileo_trial",
+            "title": "ガリレオの宗教裁判",
+            "year": 1633,
+            "yearLabel": "1633年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Galileo before the Holy Office"
+        },
+        {
+            "id": "descartes",
+            "title": "デカルト『方法序説』",
+            "year": 1637,
+            "yearLabel": "1637年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Rene Descartes"
+        },
+        {
+            "id": "leviathan",
+            "title": "ホッブズ『リヴァイアサン』",
+            "year": 1651,
+            "yearLabel": "1651年",
+            "region": "WORLD",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Leviathan frontispiece"
+        },
+        {
+            "id": "peter_embassy",
+            "title": "ピョートル1世の西欧大使節団",
+            "year": 1697,
+            "yearLabel": "1697年",
+            "region": "WORLD",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Peter the Great",
+            "artFile": "Peter I in 1697-98.jpg"
+        },
+        {
+            "id": "frederick2",
+            "title": "フリードリヒ2世の即位",
+            "year": 1740,
+            "yearLabel": "1740年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Frederick the Great"
+        },
+        {
+            "id": "boston_massacre",
+            "title": "ボストン虐殺事件",
+            "year": 1770,
+            "yearLabel": "1770年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Boston Massacre Revere"
+        },
+        {
+            "id": "lewis_clark",
+            "title": "ルイス・クラーク探検隊の出発",
+            "year": 1804,
+            "yearLabel": "1804年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Lewis and Clark Expedition"
+        },
+        {
+            "id": "mexico_hidalgo",
+            "title": "イダルゴの蜂起",
+            "year": 1810,
+            "yearLabel": "1810年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Miguel Hidalgo"
+        },
+        {
+            "id": "brazil_independence",
+            "title": "ブラジルの独立",
+            "year": 1822,
+            "yearLabel": "1822年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Independence of Brazil painting"
+        },
+        {
+            "id": "faraday",
+            "title": "ファラデーの電磁誘導の発見",
+            "year": 1831,
+            "yearLabel": "1831年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Michael Faraday"
+        },
+        {
+            "id": "beagle",
+            "title": "ビーグル号の出航",
+            "year": 1831,
+            "yearLabel": "1831年",
+            "region": "WORLD",
+            "category": "探検",
+            "art": "",
+            "artQuery": "HMS Beagle"
+        },
+        {
+            "id": "mexican_war",
+            "title": "アメリカ・メキシコ戦争",
+            "year": 1846,
+            "yearLabel": "1846年",
+            "region": "WORLD",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Mexican-American War"
+        },
+        {
+            "id": "indian_empire",
+            "title": "インド帝国の成立",
+            "year": 1877,
+            "yearLabel": "1877年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Empress of India Victoria",
+            "artFile": "The Imperial Assemblage at Delhi, 1877.jpg"
+        },
+        {
+            "id": "phonograph",
+            "title": "エジソンの蓄音機の発明",
+            "year": 1877,
+            "yearLabel": "1877年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Edison phonograph"
+        },
+        {
+            "id": "pasteur_rabies",
+            "title": "パスツールの狂犬病ワクチン",
+            "year": 1885,
+            "yearLabel": "1885年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Louis Pasteur"
+        },
+        {
+            "id": "easter_rising",
+            "title": "イースター蜂起",
+            "year": 1916,
+            "yearLabel": "1916年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Easter Rising"
+        },
+        {
+            "id": "insulin",
+            "title": "インスリンの発見",
+            "year": 1921,
+            "yearLabel": "1921年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Frederick Banting Charles Best"
+        },
+        {
+            "id": "baird_tv",
+            "title": "ベアードのテレビの公開実験",
+            "year": 1926,
+            "yearLabel": "1926年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "John Logie Baird"
+        },
+        {
+            "id": "anschluss",
+            "title": "オーストリア併合",
+            "year": 1938,
+            "yearLabel": "1938年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Anschluss 1938",
+            "artFile": "Stimmzettel Anschluss 1938 (Bundesheer).jpg"
+        },
+        {
+            "id": "nuremberg",
+            "title": "ニュルンベルク裁判の開廷",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "WORLD",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nuremberg trials"
+        },
+        {
+            "id": "hubble",
+            "title": "ハッブル宇宙望遠鏡の打ち上げ",
+            "year": 1990,
+            "yearLabel": "1990年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Hubble Space Telescope"
+        },
+        {
+            "id": "channel_tunnel",
+            "title": "英仏海峡トンネルの開通",
+            "year": 1994,
+            "yearLabel": "1994年",
+            "region": "WORLD",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Channel Tunnel"
+        },
+        {
+            "id": "iss",
+            "title": "国際宇宙ステーションの建設開始",
+            "year": 1998,
+            "yearLabel": "1998年",
+            "region": "WORLD",
+            "category": "科学",
+            "art": "",
+            "artQuery": "International Space Station"
         }
     ]
 }

@@ -15,6 +15,7 @@
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/UIRectComponent.hpp>
+#include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Path.hpp>
 #include <Tsukino/Engine/Asset/AssetManager.hpp>
 #include <Tsukino/Engine/Asset/Material/MaterialAsset.hpp>
@@ -104,6 +105,8 @@ namespace ChronoSort::Scene {
         const bool done = m_queue->IsFinished() && m_pendingUploads.empty();
         if(done && !m_leaving && m_elapsed >= kMinimumSeconds && m_shown > 0.98f) {
             m_leaving = true;
+            // カードを増やしたときに読み込みの重さを比べられるよう、かかった時間を残す
+            Tsukino::Core::Log::Info("[Loading] finished in " + std::to_string(m_elapsed) + "s");
             Game::FrameMonitor::Mark("loading done");
             api.ChangeScene(m_next());
             return;

@@ -2410,6 +2410,2447 @@
             "category": "文化",
             "art": "",
             "artQuery": "2002 FIFA World Cup"
+        },
+        {
+            "id": "himiko_gi",
+            "title": "卑弥呼が魏に使いを送る",
+            "year": 239,
+            "yearLabel": "239年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Himiko",
+            "artFile": "Yoshinogari-iseki zenkei.JPG"
+        },
+        {
+            "id": "wao_bu",
+            "title": "倭王武が宋に上表",
+            "year": 478,
+            "yearLabel": "478年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Daisen Kofun"
+        },
+        {
+            "id": "kani_junikai",
+            "title": "冠位十二階の制定",
+            "year": 603,
+            "yearLabel": "603年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Prince Shotoku"
+        },
+        {
+            "id": "horyuji_soken",
+            "title": "法隆寺の創建",
+            "year": 607,
+            "yearLabel": "607年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Horyu-ji pagoda"
+        },
+        {
+            "id": "omi_sento",
+            "title": "近江大津宮への遷都",
+            "year": 667,
+            "yearLabel": "667年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Omi Otsu-kyo site"
+        },
+        {
+            "id": "kogo_nenjaku",
+            "title": "庚午年籍の作成",
+            "year": 670,
+            "yearLabel": "670年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Tenji"
+        },
+        {
+            "id": "tenmu_sokui",
+            "title": "天武天皇の即位",
+            "year": 673,
+            "yearLabel": "673年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Tenmu"
+        },
+        {
+            "id": "fudoki",
+            "title": "風土記の編纂の命令",
+            "year": 713,
+            "yearLabel": "713年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Izumo Fudoki"
+        },
+        {
+            "id": "yoro_ritsuryo",
+            "title": "養老律令の制定",
+            "year": 718,
+            "yearLabel": "718年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Fujiwara no Fuhito"
+        },
+        {
+            "id": "kaifuso",
+            "title": "『懐風藻』の成立",
+            "year": 751,
+            "yearLabel": "751年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Nara period poetry manuscript"
+        },
+        {
+            "id": "ganjin",
+            "title": "鑑真の来日",
+            "year": 753,
+            "yearLabel": "753年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Ganjin statue Toshodai-ji"
+        },
+        {
+            "id": "naramaro",
+            "title": "橘奈良麻呂の乱",
+            "year": 757,
+            "yearLabel": "757年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Nara Heijo palace"
+        },
+        {
+            "id": "toshodaiji",
+            "title": "唐招提寺の創建",
+            "year": 759,
+            "yearLabel": "759年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Toshodai-ji Kondo"
+        },
+        {
+            "id": "kanmu_sokui",
+            "title": "桓武天皇の即位",
+            "year": 781,
+            "yearLabel": "781年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Kanmu"
+        },
+        {
+            "id": "aterui",
+            "title": "アテルイの降伏",
+            "year": 802,
+            "yearLabel": "802年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Sakanoue no Tamuramaro"
+        },
+        {
+            "id": "tendaishu",
+            "title": "最澄が天台宗を開く",
+            "year": 806,
+            "yearLabel": "806年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Saicho portrait"
+        },
+        {
+            "id": "koyasan",
+            "title": "空海が高野山を開く",
+            "year": 816,
+            "yearLabel": "816年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Mount Koya Danjo Garan"
+        },
+        {
+            "id": "jowa_no_hen",
+            "title": "承和の変",
+            "year": 842,
+            "yearLabel": "842年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Ninmyo"
+        },
+        {
+            "id": "seiryoden",
+            "title": "清涼殿落雷事件",
+            "year": 930,
+            "yearLabel": "930年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Kitano Tenjin Engi Emaki"
+        },
+        {
+            "id": "masakado",
+            "title": "平将門が新皇を名乗る",
+            "year": 939,
+            "yearLabel": "939年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Taira no Masakado"
+        },
+        {
+            "id": "anna_no_hen",
+            "title": "安和の変",
+            "year": 969,
+            "yearLabel": "969年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Fujiwara clan Heian court"
+        },
+        {
+            "id": "ojoyoshu",
+            "title": "『往生要集』の完成",
+            "year": 985,
+            "yearLabel": "985年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Genshin monk"
+        },
+        {
+            "id": "tadatsune",
+            "title": "平忠常の乱",
+            "year": 1028,
+            "yearLabel": "1028年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Heian period samurai"
+        },
+        {
+            "id": "zenkunen",
+            "title": "前九年合戦の始まり",
+            "year": 1051,
+            "yearLabel": "1051年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Zenkunen kassen emaki"
+        },
+        {
+            "id": "enkyu_shoen",
+            "title": "延久の荘園整理令",
+            "year": 1069,
+            "yearLabel": "1069年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Go-Sanjo"
+        },
+        {
+            "id": "gosannen",
+            "title": "後三年合戦の始まり",
+            "year": 1083,
+            "yearLabel": "1083年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Gosannen kassen emaki"
+        },
+        {
+            "id": "sanjusangendo",
+            "title": "三十三間堂の創建",
+            "year": 1164,
+            "yearLabel": "1164年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Sanjusangen-do"
+        },
+        {
+            "id": "samuraidokoro",
+            "title": "侍所の設置",
+            "year": 1180,
+            "yearLabel": "1180年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kamakura period samurai"
+        },
+        {
+            "id": "kumonjo",
+            "title": "公文所の設置",
+            "year": 1184,
+            "yearLabel": "1184年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Oe no Hiromoto"
+        },
+        {
+            "id": "shugo_jito",
+            "title": "守護・地頭の設置",
+            "year": 1185,
+            "yearLabel": "1185年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Minamoto no Yoritomo"
+        },
+        {
+            "id": "eisai",
+            "title": "栄西が臨済宗を伝える",
+            "year": 1191,
+            "yearLabel": "1191年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Eisai portrait"
+        },
+        {
+            "id": "tokimasa_shikken",
+            "title": "北条時政が執権に",
+            "year": 1203,
+            "yearLabel": "1203年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hojo Tokimasa"
+        },
+        {
+            "id": "rokuhara",
+            "title": "六波羅探題の設置",
+            "year": 1221,
+            "yearLabel": "1221年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hojo Yoshitoki"
+        },
+        {
+            "id": "hyojoshu",
+            "title": "評定衆の設置",
+            "year": 1225,
+            "yearLabel": "1225年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hojo Yasutoki"
+        },
+        {
+            "id": "hikitsuke",
+            "title": "引付の設置",
+            "year": 1249,
+            "yearLabel": "1249年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hojo Tokiyori"
+        },
+        {
+            "id": "mongol_kokusho",
+            "title": "モンゴルの国書の到来",
+            "year": 1268,
+            "yearLabel": "1268年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Kublai Khan portrait"
+        },
+        {
+            "id": "genko_borui",
+            "title": "元寇防塁の築造",
+            "year": 1276,
+            "yearLabel": "1276年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Genko Borui Fukuoka"
+        },
+        {
+            "id": "yoshimitsu_shogun",
+            "title": "足利義満が将軍に",
+            "year": 1368,
+            "yearLabel": "1368年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ashikaga Yoshimitsu"
+        },
+        {
+            "id": "meitoku_no_ran",
+            "title": "明徳の乱",
+            "year": 1391,
+            "yearLabel": "1391年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Yamana clan"
+        },
+        {
+            "id": "yoshimitsu_daijo",
+            "title": "足利義満が太政大臣に",
+            "year": 1394,
+            "yearLabel": "1394年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kinkaku-ji Yoshimitsu"
+        },
+        {
+            "id": "zenshu_no_ran",
+            "title": "上杉禅秀の乱",
+            "year": 1416,
+            "yearLabel": "1416年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Kamakura kubo"
+        },
+        {
+            "id": "eikyo_no_ran",
+            "title": "永享の乱",
+            "year": 1438,
+            "yearLabel": "1438年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ashikaga Mochiuji"
+        },
+        {
+            "id": "kakitsu_ikki",
+            "title": "嘉吉の土一揆",
+            "year": 1441,
+            "yearLabel": "1441年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Muromachi period peasants",
+            "artFile": "Ashikaga Yoshinori.jpg"
+        },
+        {
+            "id": "yamashiro_ikki",
+            "title": "山城の国一揆",
+            "year": 1485,
+            "yearLabel": "1485年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Byodo-in Uji"
+        },
+        {
+            "id": "sanpo_no_ran",
+            "title": "三浦の乱",
+            "year": 1510,
+            "yearLabel": "1510年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Joseon Busan"
+        },
+        {
+            "id": "ningbo",
+            "title": "寧波の乱",
+            "year": 1523,
+            "yearLabel": "1523年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Ningbo",
+            "artFile": "Ōuchi Yoshioki.jpg"
+        },
+        {
+            "id": "tenbun_hokke",
+            "title": "天文法華の乱",
+            "year": 1536,
+            "yearLabel": "1536年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Nichiren Buddhism temple Kyoto",
+            "artFile": "Enryakuji Konponchudo04n4272.jpg"
+        },
+        {
+            "id": "kawagoe",
+            "title": "河越夜戦",
+            "year": 1546,
+            "yearLabel": "1546年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Kawagoe Castle"
+        },
+        {
+            "id": "mikatagahara",
+            "title": "三方ヶ原の戦い",
+            "year": 1572,
+            "yearLabel": "1572年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Mikatagahara"
+        },
+        {
+            "id": "rakuichi_azuchi",
+            "title": "安土山下町に楽市令",
+            "year": 1577,
+            "yearLabel": "1577年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Azuchi Castle"
+        },
+        {
+            "id": "takeda_metsubo",
+            "title": "武田氏の滅亡",
+            "year": 1582,
+            "yearLabel": "1582年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Takeda Katsuyori"
+        },
+        {
+            "id": "yamazaki",
+            "title": "山崎の戦い",
+            "year": 1582,
+            "yearLabel": "1582年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Yamazaki"
+        },
+        {
+            "id": "osakajo",
+            "title": "大坂城の築城開始",
+            "year": 1583,
+            "yearLabel": "1583年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Osaka Castle folding screen"
+        },
+        {
+            "id": "hideyoshi_kampaku",
+            "title": "豊臣秀吉が関白に",
+            "year": 1585,
+            "yearLabel": "1585年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Toyotomi Hideyoshi"
+        },
+        {
+            "id": "kitano_ochanoyu",
+            "title": "北野大茶湯",
+            "year": 1587,
+            "yearLabel": "1587年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kitano Tenmangu"
+        },
+        {
+            "id": "jurakudai",
+            "title": "聚楽第の完成",
+            "year": 1587,
+            "yearLabel": "1587年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Jurakudai screen"
+        },
+        {
+            "id": "kyushu_heitei",
+            "title": "豊臣秀吉の九州平定",
+            "year": 1587,
+            "yearLabel": "1587年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Shimazu Yoshihisa"
+        },
+        {
+            "id": "san_felipe",
+            "title": "サン＝フェリペ号事件",
+            "year": 1596,
+            "yearLabel": "1596年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Spanish galleon"
+        },
+        {
+            "id": "hideyoshi_shi",
+            "title": "豊臣秀吉の死",
+            "year": 1598,
+            "yearLabel": "1598年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hokoku Shrine Kyoto"
+        },
+        {
+            "id": "tokaido_shukueki",
+            "title": "東海道の宿駅制度",
+            "year": 1601,
+            "yearLabel": "1601年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokaido post station ukiyo-e"
+        },
+        {
+            "id": "hidetada_shogun",
+            "title": "徳川秀忠が将軍に",
+            "year": 1605,
+            "yearLabel": "1605年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Hidetada"
+        },
+        {
+            "id": "hirado_dutch",
+            "title": "平戸オランダ商館の設置",
+            "year": 1609,
+            "yearLabel": "1609年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Hirado Dutch trading post"
+        },
+        {
+            "id": "nagoyajo",
+            "title": "名古屋城の築城開始",
+            "year": 1610,
+            "yearLabel": "1610年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Nagoya Castle"
+        },
+        {
+            "id": "kinkyo_chokkatsu",
+            "title": "幕府直轄領に禁教令",
+            "year": 1612,
+            "yearLabel": "1612年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Christianity in Japan fumie"
+        },
+        {
+            "id": "hirado_english",
+            "title": "平戸イギリス商館の設置",
+            "year": 1613,
+            "yearLabel": "1613年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "William Adams"
+        },
+        {
+            "id": "ikkoku_ichijo",
+            "title": "一国一城令",
+            "year": 1615,
+            "yearLabel": "1615年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japanese castle Edo period"
+        },
+        {
+            "id": "kinchu_kuge",
+            "title": "禁中並公家諸法度",
+            "year": 1615,
+            "yearLabel": "1615年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kyoto Imperial Palace"
+        },
+        {
+            "id": "genna_junkyo",
+            "title": "元和の大殉教",
+            "year": 1622,
+            "yearLabel": "1622年",
+            "region": "JP",
+            "category": "宗教",
+            "art": "",
+            "artQuery": "Great Genna Martyrdom"
+        },
+        {
+            "id": "iemitsu_shogun",
+            "title": "徳川家光が将軍に",
+            "year": 1623,
+            "yearLabel": "1623年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Iemitsu"
+        },
+        {
+            "id": "spain_kinshi",
+            "title": "スペイン船の来航禁止",
+            "year": 1624,
+            "yearLabel": "1624年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Spanish galleon 17th century"
+        },
+        {
+            "id": "tokai_kinshi",
+            "title": "日本人の海外渡航禁止",
+            "year": 1635,
+            "yearLabel": "1635年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Red seal ship"
+        },
+        {
+            "id": "kanei_tsuho",
+            "title": "寛永通宝の鋳造",
+            "year": 1636,
+            "yearLabel": "1636年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Kan'ei Tsuho coin"
+        },
+        {
+            "id": "ietsuna_shogun",
+            "title": "徳川家綱が将軍に",
+            "year": 1651,
+            "yearLabel": "1651年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Ietsuna"
+        },
+        {
+            "id": "nishimawari",
+            "title": "西廻り航路の整備",
+            "year": 1672,
+            "yearLabel": "1672年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Kitamaebune"
+        },
+        {
+            "id": "echigoya",
+            "title": "三井越後屋の開業",
+            "year": 1673,
+            "yearLabel": "1673年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Mitsui Echigoya ukiyo-e"
+        },
+        {
+            "id": "tsunayoshi_shogun",
+            "title": "徳川綱吉が将軍に",
+            "year": 1680,
+            "yearLabel": "1680年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Tsunayoshi"
+        },
+        {
+            "id": "yushima_seido",
+            "title": "湯島聖堂の完成",
+            "year": 1690,
+            "yearLabel": "1690年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Yushima Seido"
+        },
+        {
+            "id": "genroku_kaichu",
+            "title": "元禄の貨幣改鋳",
+            "year": 1695,
+            "yearLabel": "1695年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Genroku koban"
+        },
+        {
+            "id": "ako_roshi",
+            "title": "赤穂浪士の討ち入り",
+            "year": 1702,
+            "yearLabel": "1702年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Forty-seven ronin ukiyo-e"
+        },
+        {
+            "id": "kokusenya",
+            "title": "『国性爺合戦』の初演",
+            "year": 1715,
+            "yearLabel": "1715年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kokusenya Kassen"
+        },
+        {
+            "id": "kaihaku_goshi",
+            "title": "海舶互市新例",
+            "year": 1715,
+            "yearLabel": "1715年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Arai Hakuseki"
+        },
+        {
+            "id": "meyasubako",
+            "title": "目安箱の設置",
+            "year": 1721,
+            "yearLabel": "1721年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Yoshimune"
+        },
+        {
+            "id": "agemai",
+            "title": "上げ米の制",
+            "year": 1722,
+            "yearLabel": "1722年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Edo period rice"
+        },
+        {
+            "id": "koishikawa",
+            "title": "小石川養生所の設置",
+            "year": 1722,
+            "yearLabel": "1722年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Koishikawa Botanical Garden"
+        },
+        {
+            "id": "kyoho_kikin",
+            "title": "享保の大飢饉",
+            "year": 1732,
+            "yearLabel": "1732年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Edo period famine"
+        },
+        {
+            "id": "kujikata",
+            "title": "公事方御定書の制定",
+            "year": 1742,
+            "yearLabel": "1742年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ooka Tadasuke"
+        },
+        {
+            "id": "chushingura",
+            "title": "『仮名手本忠臣蔵』の初演",
+            "year": 1748,
+            "yearLabel": "1748年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kanadehon Chushingura ukiyo-e"
+        },
+        {
+            "id": "kansei_igaku",
+            "title": "寛政異学の禁",
+            "year": 1790,
+            "yearLabel": "1790年",
+            "region": "JP",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Matsudaira Sadanobu"
+        },
+        {
+            "id": "ezochi_chokkatsu",
+            "title": "東蝦夷地の直轄",
+            "year": 1799,
+            "yearLabel": "1799年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ezo Ainu Edo period"
+        },
+        {
+            "id": "mamiya",
+            "title": "間宮林蔵の樺太探検",
+            "year": 1808,
+            "yearLabel": "1808年",
+            "region": "JP",
+            "category": "探検",
+            "art": "",
+            "artQuery": "Mamiya Rinzo"
+        },
+        {
+            "id": "golovnin",
+            "title": "ゴローウニン事件",
+            "year": 1811,
+            "yearLabel": "1811年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Vasily Golovnin"
+        },
+        {
+            "id": "rangaku_kotohajime",
+            "title": "『蘭学事始』の完成",
+            "year": 1815,
+            "yearLabel": "1815年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Sugita Genpaku"
+        },
+        {
+            "id": "uchiharai",
+            "title": "異国船打払令",
+            "year": 1825,
+            "yearLabel": "1825年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Western ship Edo period scroll"
+        },
+        {
+            "id": "morrison_go",
+            "title": "モリソン号事件",
+            "year": 1837,
+            "yearLabel": "1837年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Morrison incident ship"
+        },
+        {
+            "id": "shinsui_kyuyo",
+            "title": "天保の薪水給与令",
+            "year": 1842,
+            "yearLabel": "1842年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Mizuno Tadakuni"
+        },
+        {
+            "id": "biddle",
+            "title": "ビッドルの浦賀来航",
+            "year": 1846,
+            "yearLabel": "1846年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "James Biddle"
+        },
+        {
+            "id": "putyatin",
+            "title": "プチャーチンの長崎来航",
+            "year": 1853,
+            "yearLabel": "1853年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Yevfimy Putyatin"
+        },
+        {
+            "id": "nichiro_washin",
+            "title": "日露和親条約",
+            "year": 1854,
+            "yearLabel": "1854年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty of Shimoda"
+        },
+        {
+            "id": "bansho_shirabesho",
+            "title": "蕃書調所の設置",
+            "year": 1856,
+            "yearLabel": "1856年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Bansho Shirabesho"
+        },
+        {
+            "id": "bunkyu_kaikaku",
+            "title": "文久の改革",
+            "year": 1862,
+            "yearLabel": "1862年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokugawa Yoshinobu"
+        },
+        {
+            "id": "hachigatsu_seihen",
+            "title": "八月十八日の政変",
+            "year": 1863,
+            "yearLabel": "1863年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kyoto Imperial Palace bakumatsu"
+        },
+        {
+            "id": "ikedaya",
+            "title": "池田屋事件",
+            "year": 1864,
+            "yearLabel": "1864年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Ikedaya incident"
+        },
+        {
+            "id": "choshu_seito1",
+            "title": "第1次長州征討",
+            "year": 1864,
+            "yearLabel": "1864年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Choshu domain samurai"
+        },
+        {
+            "id": "choshu_seito2",
+            "title": "第2次長州征討",
+            "year": 1866,
+            "yearLabel": "1866年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Second Choshu expedition"
+        },
+        {
+            "id": "osei_fukko",
+            "title": "王政復古の大号令",
+            "year": 1867,
+            "yearLabel": "1867年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Emperor Meiji young"
+        },
+        {
+            "id": "tokyo_kaisho",
+            "title": "江戸を東京と改称",
+            "year": 1868,
+            "yearLabel": "1868年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tokyo Meiji era map"
+        },
+        {
+            "id": "kaitakushi",
+            "title": "開拓使の設置",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kaitakushi Sapporo",
+            "artFile": "KaitakushiSapporoHonchosha1873-restoration.jpg"
+        },
+        {
+            "id": "denshin",
+            "title": "東京・横浜間の電信開通",
+            "year": 1869,
+            "yearLabel": "1869年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Meiji telegraph"
+        },
+        {
+            "id": "nikkan_shinbun",
+            "title": "『横浜毎日新聞』の創刊",
+            "year": 1870,
+            "yearLabel": "1870年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Yokohama Mainichi Shimbun",
+            "artFile": "Yokohama Kaigan-dōri no zu.jpg"
+        },
+        {
+            "id": "yubin",
+            "title": "郵便制度の開始",
+            "year": 1871,
+            "yearLabel": "1871年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Maejima Hisoka"
+        },
+        {
+            "id": "shinka_jorei",
+            "title": "新貨条例",
+            "year": 1871,
+            "yearLabel": "1871年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Meiji yen coin"
+        },
+        {
+            "id": "gakusei",
+            "title": "学制の公布",
+            "year": 1872,
+            "yearLabel": "1872年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Meiji school"
+        },
+        {
+            "id": "gakumon_susume",
+            "title": "『学問のすゝめ』初編の刊行",
+            "year": 1872,
+            "yearLabel": "1872年",
+            "region": "JP",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Fukuzawa Yukichi"
+        },
+        {
+            "id": "kokuritsu_ginko",
+            "title": "国立銀行条例",
+            "year": 1872,
+            "yearLabel": "1872年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "First National Bank Tokyo Meiji"
+        },
+        {
+            "id": "gasutou",
+            "title": "横浜にガス灯がともる",
+            "year": 1872,
+            "yearLabel": "1872年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Gas lamp Yokohama Meiji"
+        },
+        {
+            "id": "meiji6_seihen",
+            "title": "明治六年の政変",
+            "year": 1873,
+            "yearLabel": "1873年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Saigo Takamori"
+        },
+        {
+            "id": "meirokusha",
+            "title": "明六社の結成",
+            "year": 1873,
+            "yearLabel": "1873年",
+            "region": "JP",
+            "category": "思想",
+            "art": "",
+            "artQuery": "Mori Arinori"
+        },
+        {
+            "id": "daiichi_ginko",
+            "title": "第一国立銀行の開業",
+            "year": 1873,
+            "yearLabel": "1873年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Shibusawa Eiichi"
+        },
+        {
+            "id": "taiwan_shuppei",
+            "title": "台湾出兵",
+            "year": 1874,
+            "yearLabel": "1874年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Taiwan expedition 1874"
+        },
+        {
+            "id": "tondenhei",
+            "title": "屯田兵の設置",
+            "year": 1874,
+            "yearLabel": "1874年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tondenhei Hokkaido"
+        },
+        {
+            "id": "chishima_karafuto",
+            "title": "樺太・千島交換条約",
+            "year": 1875,
+            "yearLabel": "1875年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Enomoto Takeaki"
+        },
+        {
+            "id": "kokato",
+            "title": "江華島事件",
+            "year": 1875,
+            "yearLabel": "1875年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Ganghwa Island incident"
+        },
+        {
+            "id": "doshisha",
+            "title": "同志社英学校の創立",
+            "year": 1875,
+            "yearLabel": "1875年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Niijima Jo"
+        },
+        {
+            "id": "haitorei",
+            "title": "廃刀令",
+            "year": 1876,
+            "yearLabel": "1876年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Meiji era samurai"
+        },
+        {
+            "id": "sapporo_nogakko",
+            "title": "札幌農学校の開校",
+            "year": 1876,
+            "yearLabel": "1876年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "William S. Clark"
+        },
+        {
+            "id": "tokyo_kabu",
+            "title": "東京株式取引所の開設",
+            "year": 1878,
+            "yearLabel": "1878年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Tokyo Stock Exchange Meiji"
+        },
+        {
+            "id": "kokkai_kisei",
+            "title": "国会期成同盟の結成",
+            "year": 1880,
+            "yearLabel": "1880年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kataoka Kenkichi"
+        },
+        {
+            "id": "jiyuto",
+            "title": "自由党の結成",
+            "year": 1881,
+            "yearLabel": "1881年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Itagaki Taisuke"
+        },
+        {
+            "id": "kaishinto",
+            "title": "立憲改進党の結成",
+            "year": 1882,
+            "yearLabel": "1882年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Okuma Shigenobu"
+        },
+        {
+            "id": "tokyo_senmon",
+            "title": "東京専門学校の創立",
+            "year": 1882,
+            "yearLabel": "1882年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Waseda University old"
+        },
+        {
+            "id": "chichibu",
+            "title": "秩父事件",
+            "year": 1884,
+            "yearLabel": "1884年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Chichibu incident"
+        },
+        {
+            "id": "tenshin_joyaku",
+            "title": "天津条約",
+            "year": 1885,
+            "yearLabel": "1885年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Li Hongzhang Ito Hirobumi"
+        },
+        {
+            "id": "nippon_yusen",
+            "title": "日本郵船の設立",
+            "year": 1885,
+            "yearLabel": "1885年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "NYK Line Meiji ship"
+        },
+        {
+            "id": "hoan_jorei",
+            "title": "保安条例",
+            "year": 1887,
+            "yearLabel": "1887年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Meiji police"
+        },
+        {
+            "id": "shisei_chosonsei",
+            "title": "市制・町村制の公布",
+            "year": 1888,
+            "yearLabel": "1888年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yamagata Aritomo"
+        },
+        {
+            "id": "tokaidosen",
+            "title": "東海道線の全線開通",
+            "year": 1889,
+            "yearLabel": "1889年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Meiji steam locomotive Japan"
+        },
+        {
+            "id": "kitasato_hashofu",
+            "title": "北里柴三郎の破傷風菌の純粋培養",
+            "year": 1889,
+            "yearLabel": "1889年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Kitasato Shibasaburo"
+        },
+        {
+            "id": "nichiei_tsusho",
+            "title": "日英通商航海条約",
+            "year": 1894,
+            "yearLabel": "1894年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Mutsu Munemitsu"
+        },
+        {
+            "id": "sangoku_kansho",
+            "title": "三国干渉",
+            "year": 1895,
+            "yearLabel": "1895年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Triple Intervention",
+            "artFile": "Mutsu Munemitsu.jpg"
+        },
+        {
+            "id": "taiwan_sotokufu",
+            "title": "台湾総督府の設置",
+            "year": 1895,
+            "yearLabel": "1895年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Taiwan Governor-General office"
+        },
+        {
+            "id": "meiji_sanriku",
+            "title": "明治三陸地震",
+            "year": 1896,
+            "yearLabel": "1896年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "1896 Sanriku tsunami"
+        },
+        {
+            "id": "kaheiho",
+            "title": "貨幣法の制定（金本位制）",
+            "year": 1897,
+            "yearLabel": "1897年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Meiji gold coin"
+        },
+        {
+            "id": "shiga_sekiri",
+            "title": "志賀潔の赤痢菌の発見",
+            "year": 1897,
+            "yearLabel": "1897年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Kiyoshi Shiga"
+        },
+        {
+            "id": "seiyukai",
+            "title": "立憲政友会の結成",
+            "year": 1900,
+            "yearLabel": "1900年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ito Hirobumi"
+        },
+        {
+            "id": "chian_keisatsu",
+            "title": "治安警察法",
+            "year": 1900,
+            "yearLabel": "1900年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Meiji government 1900"
+        },
+        {
+            "id": "joshi_eigaku",
+            "title": "女子英学塾の創立",
+            "year": 1900,
+            "yearLabel": "1900年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Tsuda Umeko"
+        },
+        {
+            "id": "tanaka_jikiso",
+            "title": "田中正造の直訴",
+            "year": 1901,
+            "yearLabel": "1901年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tanaka Shozo"
+        },
+        {
+            "id": "midaregami",
+            "title": "『みだれ髪』の刊行",
+            "year": 1901,
+            "yearLabel": "1901年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Yosano Akiko"
+        },
+        {
+            "id": "hibiya",
+            "title": "日比谷焼打ち事件",
+            "year": 1905,
+            "yearLabel": "1905年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hibiya incendiary incident"
+        },
+        {
+            "id": "mantetsu",
+            "title": "南満州鉄道の設立",
+            "year": 1906,
+            "yearLabel": "1906年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "South Manchuria Railway"
+        },
+        {
+            "id": "botchan",
+            "title": "夏目漱石『坊っちゃん』の発表",
+            "year": 1906,
+            "yearLabel": "1906年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Natsume Soseki"
+        },
+        {
+            "id": "umami",
+            "title": "池田菊苗のうま味の発見",
+            "year": 1908,
+            "yearLabel": "1908年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Kikunae Ikeda"
+        },
+        {
+            "id": "kankoku_heigo",
+            "title": "韓国併合",
+            "year": 1910,
+            "yearLabel": "1910年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japan Korea annexation 1910"
+        },
+        {
+            "id": "taigyaku",
+            "title": "大逆事件",
+            "year": 1910,
+            "yearLabel": "1910年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kotoku Shusui"
+        },
+        {
+            "id": "oryzanin",
+            "title": "鈴木梅太郎のオリザニンの発見",
+            "year": 1910,
+            "yearLabel": "1910年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Umetaro Suzuki"
+        },
+        {
+            "id": "hikoki_japan",
+            "title": "日本初の動力飛行",
+            "year": 1910,
+            "yearLabel": "1910年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tokugawa Yoshitoshi aviator"
+        },
+        {
+            "id": "seito",
+            "title": "『青鞜』の創刊",
+            "year": 1911,
+            "yearLabel": "1911年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hiratsuka Raicho"
+        },
+        {
+            "id": "taisho_seihen",
+            "title": "大正政変",
+            "year": 1913,
+            "yearLabel": "1913年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Katsura Taro"
+        },
+        {
+            "id": "takarazuka",
+            "title": "宝塚少女歌劇の初公演",
+            "year": 1914,
+            "yearLabel": "1914年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Takarazuka Revue"
+        },
+        {
+            "id": "koshien_taikai",
+            "title": "全国中等学校野球大会の開始",
+            "year": 1915,
+            "yearLabel": "1915年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Japanese high school baseball"
+        },
+        {
+            "id": "siberia",
+            "title": "シベリア出兵",
+            "year": 1918,
+            "yearLabel": "1918年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Japanese Siberian intervention"
+        },
+        {
+            "id": "shin_fujin",
+            "title": "新婦人協会の結成",
+            "year": 1920,
+            "yearLabel": "1920年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Ichikawa Fusae"
+        },
+        {
+            "id": "hara_ansatsu",
+            "title": "原敬の暗殺",
+            "year": 1921,
+            "yearLabel": "1921年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hara Takashi"
+        },
+        {
+            "id": "kyosanto",
+            "title": "日本共産党の結成",
+            "year": 1922,
+            "yearLabel": "1922年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Taisho period Tokyo",
+            "artFile": "SAKAI TOSHIHIKO PORTRAIT.jpg"
+        },
+        {
+            "id": "koshien_kyujo",
+            "title": "甲子園球場の完成",
+            "year": 1924,
+            "yearLabel": "1924年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Koshien Stadium"
+        },
+        {
+            "id": "toyoda_g",
+            "title": "豊田G型自動織機の完成",
+            "year": 1924,
+            "yearLabel": "1924年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Toyoda automatic loom"
+        },
+        {
+            "id": "chian_iji",
+            "title": "治安維持法の成立",
+            "year": 1925,
+            "yearLabel": "1925年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kato Takaaki"
+        },
+        {
+            "id": "kinyu_kyoko",
+            "title": "金融恐慌",
+            "year": 1927,
+            "yearLabel": "1927年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Showa financial crisis"
+        },
+        {
+            "id": "chikatetsu",
+            "title": "日本初の地下鉄の開業",
+            "year": 1927,
+            "yearLabel": "1927年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tokyo Metro Ginza Line 1927"
+        },
+        {
+            "id": "sanichigo",
+            "title": "三・一五事件",
+            "year": 1928,
+            "yearLabel": "1928年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Showa police 1928"
+        },
+        {
+            "id": "chosakurin",
+            "title": "張作霖爆殺事件",
+            "year": 1928,
+            "yearLabel": "1928年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Zhang Zuolin"
+        },
+        {
+            "id": "kinkaikin",
+            "title": "金解禁",
+            "year": 1930,
+            "yearLabel": "1930年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Inoue Junnosuke"
+        },
+        {
+            "id": "london_gunshuku",
+            "title": "ロンドン海軍軍縮条約",
+            "year": 1930,
+            "yearLabel": "1930年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "London Naval Treaty 1930"
+        },
+        {
+            "id": "manshukoku",
+            "title": "満州国の建国",
+            "year": 1932,
+            "yearLabel": "1932年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Manchukuo"
+        },
+        {
+            "id": "takigawa",
+            "title": "滝川事件",
+            "year": 1933,
+            "yearLabel": "1933年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Kyoto University Showa"
+        },
+        {
+            "id": "tenno_kikan",
+            "title": "天皇機関説事件",
+            "year": 1935,
+            "yearLabel": "1935年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Minobe Tatsukichi"
+        },
+        {
+            "id": "nichidoku_bokyo",
+            "title": "日独防共協定",
+            "year": 1936,
+            "yearLabel": "1936年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Anti-Comintern Pact"
+        },
+        {
+            "id": "sodoinho",
+            "title": "国家総動員法",
+            "year": 1938,
+            "yearLabel": "1938年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Konoe Fumimaro"
+        },
+        {
+            "id": "nomonhan",
+            "title": "ノモンハン事件",
+            "year": 1939,
+            "yearLabel": "1939年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battles of Khalkhin Gol"
+        },
+        {
+            "id": "yokusankai",
+            "title": "大政翼賛会の発足",
+            "year": 1940,
+            "yearLabel": "1940年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Imperial Rule Assistance Association"
+        },
+        {
+            "id": "nisso_churitsu",
+            "title": "日ソ中立条約",
+            "year": 1941,
+            "yearLabel": "1941年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Soviet-Japanese Neutrality Pact"
+        },
+        {
+            "id": "yamato",
+            "title": "戦艦大和の竣工",
+            "year": 1941,
+            "yearLabel": "1941年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Japanese battleship Yamato"
+        },
+        {
+            "id": "midway",
+            "title": "ミッドウェー海戦",
+            "year": 1942,
+            "yearLabel": "1942年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Battle of Midway"
+        },
+        {
+            "id": "gakuto_shutsujin",
+            "title": "学徒出陣",
+            "year": 1943,
+            "yearLabel": "1943年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Gakuto shutsujin 1943"
+        },
+        {
+            "id": "tokyo_daikushu",
+            "title": "東京大空襲",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Bombing of Tokyo 1945"
+        },
+        {
+            "id": "hiroshima",
+            "title": "広島への原爆投下",
+            "year": 1945,
+            "yearLabel": "1945年",
+            "region": "JP",
+            "category": "戦争",
+            "art": "",
+            "artQuery": "Hiroshima Peace Memorial"
+        },
+        {
+            "id": "tokyo_saiban",
+            "title": "極東国際軍事裁判の開廷",
+            "year": 1946,
+            "yearLabel": "1946年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "International Military Tribunal for the Far East"
+        },
+        {
+            "id": "kyoiku_kihon",
+            "title": "教育基本法の制定",
+            "year": 1947,
+            "yearLabel": "1947年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japanese school 1947"
+        },
+        {
+            "id": "dodge_line",
+            "title": "ドッジ・ライン",
+            "year": 1949,
+            "yearLabel": "1949年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Joseph Dodge"
+        },
+        {
+            "id": "keisatsu_yobitai",
+            "title": "警察予備隊の創設",
+            "year": 1950,
+            "yearLabel": "1950年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "National Police Reserve Japan"
+        },
+        {
+            "id": "jieitai",
+            "title": "自衛隊の発足",
+            "year": 1954,
+            "yearLabel": "1954年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japan Self-Defense Forces 1954",
+            "artFile": "Flags of JGSDF and JMSDF with Tokutaro Kimura Defense Agency 1954.png"
+        },
+        {
+            "id": "godzilla",
+            "title": "映画『ゴジラ』の公開",
+            "year": 1954,
+            "yearLabel": "1954年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Godzilla 1954 poster"
+        },
+        {
+            "id": "gojugonen",
+            "title": "55年体制の成立",
+            "year": 1955,
+            "yearLabel": "1955年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Hatoyama Ichiro"
+        },
+        {
+            "id": "minamata",
+            "title": "水俣病の公式確認",
+            "year": 1956,
+            "yearLabel": "1956年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Minamata"
+        },
+        {
+            "id": "tokyo_tower",
+            "title": "東京タワーの完成",
+            "year": 1958,
+            "yearLabel": "1958年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tokyo Tower 1958"
+        },
+        {
+            "id": "instant_ramen",
+            "title": "インスタントラーメンの発売",
+            "year": 1958,
+            "yearLabel": "1958年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Chicken Ramen"
+        },
+        {
+            "id": "shotoku_baizo",
+            "title": "所得倍増計画",
+            "year": 1960,
+            "yearLabel": "1960年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Ikeda Hayato"
+        },
+        {
+            "id": "tetsuwan_atom",
+            "title": "『鉄腕アトム』の放送開始",
+            "year": 1963,
+            "yearLabel": "1963年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Osamu Tezuka"
+        },
+        {
+            "id": "nikkan_kihon",
+            "title": "日韓基本条約",
+            "year": 1965,
+            "yearLabel": "1965年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Treaty on Basic Relations Japan Korea"
+        },
+        {
+            "id": "tomonaga",
+            "title": "朝永振一郎のノーベル賞受賞",
+            "year": 1965,
+            "yearLabel": "1965年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Sin-Itiro Tomonaga"
+        },
+        {
+            "id": "kogai_kihon",
+            "title": "公害対策基本法",
+            "year": 1967,
+            "yearLabel": "1967年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yokkaichi pollution"
+        },
+        {
+            "id": "osumi",
+            "title": "人工衛星「おおすみ」の打ち上げ",
+            "year": 1970,
+            "yearLabel": "1970年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Ohsumi satellite"
+        },
+        {
+            "id": "kankyocho",
+            "title": "環境庁の発足",
+            "year": 1971,
+            "yearLabel": "1971年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japan environment 1971"
+        },
+        {
+            "id": "sapporo_olympic",
+            "title": "札幌オリンピック",
+            "year": 1972,
+            "yearLabel": "1972年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "1972 Winter Olympics Sapporo"
+        },
+        {
+            "id": "asama_sanso",
+            "title": "あさま山荘事件",
+            "year": 1972,
+            "yearLabel": "1972年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Asama-Sanso incident"
+        },
+        {
+            "id": "sanyo_shinkansen",
+            "title": "山陽新幹線の全線開業",
+            "year": 1975,
+            "yearLabel": "1975年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Shinkansen 0 series"
+        },
+        {
+            "id": "kaiyohaku",
+            "title": "沖縄国際海洋博覧会",
+            "year": 1975,
+            "yearLabel": "1975年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Okinawa Expo 1975"
+        },
+        {
+            "id": "lockheed",
+            "title": "ロッキード事件の発覚",
+            "year": 1976,
+            "yearLabel": "1976年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Tanaka Kakuei"
+        },
+        {
+            "id": "nicchu_heiwa",
+            "title": "日中平和友好条約",
+            "year": 1978,
+            "yearLabel": "1978年",
+            "region": "JP",
+            "category": "外交",
+            "art": "",
+            "artQuery": "Deng Xiaoping Japan 1978"
+        },
+        {
+            "id": "walkman",
+            "title": "ウォークマンの発売",
+            "year": 1979,
+            "yearLabel": "1979年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Sony Walkman TPS-L2"
+        },
+        {
+            "id": "tohoku_shinkansen",
+            "title": "東北新幹線の開業",
+            "year": 1982,
+            "yearLabel": "1982年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Tohoku Shinkansen 200 series"
+        },
+        {
+            "id": "famicom",
+            "title": "ファミリーコンピュータの発売",
+            "year": 1983,
+            "yearLabel": "1983年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Nintendo Famicom"
+        },
+        {
+            "id": "tdl",
+            "title": "東京ディズニーランドの開園",
+            "year": 1983,
+            "yearLabel": "1983年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Tokyo Disneyland",
+            "artFile": "Tokyo Disneyland Opening Year.jpg"
+        },
+        {
+            "id": "plaza_accord",
+            "title": "プラザ合意",
+            "year": 1985,
+            "yearLabel": "1985年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Plaza Accord"
+        },
+        {
+            "id": "jal123",
+            "title": "日航機墜落事故",
+            "year": 1985,
+            "yearLabel": "1985年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Japan Airlines Flight 123"
+        },
+        {
+            "id": "seto_ohashi",
+            "title": "瀬戸大橋の開通",
+            "year": 1988,
+            "yearLabel": "1988年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Great Seto Bridge"
+        },
+        {
+            "id": "heisei",
+            "title": "平成への改元",
+            "year": 1989,
+            "yearLabel": "1989年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Heisei announcement"
+        },
+        {
+            "id": "shohizei",
+            "title": "消費税の導入",
+            "year": 1989,
+            "yearLabel": "1989年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Japanese consumption tax 1989"
+        },
+        {
+            "id": "unzen",
+            "title": "雲仙普賢岳の火砕流",
+            "year": 1991,
+            "yearLabel": "1991年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Mount Unzen pyroclastic flow"
+        },
+        {
+            "id": "pko_ho",
+            "title": "PKO協力法の成立",
+            "year": 1992,
+            "yearLabel": "1992年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Japan peacekeeping Cambodia"
+        },
+        {
+            "id": "kix",
+            "title": "関西国際空港の開港",
+            "year": 1994,
+            "yearLabel": "1994年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Kansai International Airport"
+        },
+        {
+            "id": "oe_kenzaburo",
+            "title": "大江健三郎のノーベル賞受賞",
+            "year": 1994,
+            "yearLabel": "1994年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Kenzaburo Oe"
+        },
+        {
+            "id": "sarin",
+            "title": "地下鉄サリン事件",
+            "year": 1995,
+            "yearLabel": "1995年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Tokyo subway 1995"
+        },
+        {
+            "id": "shirakawago",
+            "title": "白川郷・五箇山の世界遺産登録",
+            "year": 1995,
+            "yearLabel": "1995年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Shirakawa-go"
+        },
+        {
+            "id": "genbaku_dome",
+            "title": "原爆ドームの世界遺産登録",
+            "year": 1996,
+            "yearLabel": "1996年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Hiroshima Peace Memorial Genbaku Dome"
+        },
+        {
+            "id": "itsukushima_whs",
+            "title": "厳島神社の世界遺産登録",
+            "year": 1996,
+            "yearLabel": "1996年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Itsukushima Shrine torii"
+        },
+        {
+            "id": "yamaichi",
+            "title": "山一證券の自主廃業",
+            "year": 1997,
+            "yearLabel": "1997年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Yamaichi Securities"
+        },
+        {
+            "id": "akashi_ohashi",
+            "title": "明石海峡大橋の開通",
+            "year": 1998,
+            "yearLabel": "1998年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Akashi Kaikyo Bridge"
+        },
+        {
+            "id": "chuetsu",
+            "title": "新潟県中越地震",
+            "year": 2004,
+            "yearLabel": "2004年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "2004 Chuetsu earthquake"
+        },
+        {
+            "id": "yusei_mineika",
+            "title": "郵政民営化の実施",
+            "year": 2007,
+            "yearLabel": "2007年",
+            "region": "JP",
+            "category": "経済",
+            "art": "",
+            "artQuery": "Japan Post"
+        },
+        {
+            "id": "seiken_kotai",
+            "title": "民主党への政権交代",
+            "year": 2009,
+            "yearLabel": "2009年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Yukio Hatoyama"
+        },
+        {
+            "id": "hayabusa",
+            "title": "はやぶさの地球帰還",
+            "year": 2010,
+            "yearLabel": "2010年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Hayabusa spacecraft"
+        },
+        {
+            "id": "kyushu_shinkansen",
+            "title": "九州新幹線の全線開業",
+            "year": 2011,
+            "yearLabel": "2011年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Kyushu Shinkansen 800 series"
+        },
+        {
+            "id": "yamanaka",
+            "title": "山中伸弥のノーベル賞受賞",
+            "year": 2012,
+            "yearLabel": "2012年",
+            "region": "JP",
+            "category": "科学",
+            "art": "",
+            "artQuery": "Shinya Yamanaka"
+        },
+        {
+            "id": "fuji_whs",
+            "title": "富士山の世界文化遺産登録",
+            "year": 2013,
+            "yearLabel": "2013年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Mount Fuji",
+            "artFile": "Lake Kawaguchiko Sakura Mount Fuji 4.JPG"
+        },
+        {
+            "id": "ontake",
+            "title": "御嶽山の噴火",
+            "year": 2014,
+            "yearLabel": "2014年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Mount Ontake"
+        },
+        {
+            "id": "hokkaido_shinkansen",
+            "title": "北海道新幹線の開業",
+            "year": 2016,
+            "yearLabel": "2016年",
+            "region": "JP",
+            "category": "技術",
+            "art": "",
+            "artQuery": "Hokkaido Shinkansen H5"
+        },
+        {
+            "id": "kumamoto_jishin",
+            "title": "熊本地震",
+            "year": 2016,
+            "yearLabel": "2016年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "Kumamoto Castle 2016 earthquake"
+        },
+        {
+            "id": "reiwa",
+            "title": "令和への改元",
+            "year": 2019,
+            "yearLabel": "2019年",
+            "region": "JP",
+            "category": "政治",
+            "art": "",
+            "artQuery": "Reiwa"
+        },
+        {
+            "id": "kinkyu_jitai",
+            "title": "新型コロナの緊急事態宣言",
+            "year": 2020,
+            "yearLabel": "2020年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "COVID-19 Tokyo 2020"
+        },
+        {
+            "id": "tokyo2020",
+            "title": "東京2020大会の開催",
+            "year": 2021,
+            "yearLabel": "2021年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Japan National Stadium"
+        },
+        {
+            "id": "noto_jishin",
+            "title": "能登半島地震",
+            "year": 2024,
+            "yearLabel": "2024年",
+            "region": "JP",
+            "category": "災害",
+            "art": "",
+            "artQuery": "2024 Noto earthquake"
+        },
+        {
+            "id": "osaka_expo2025",
+            "title": "大阪・関西万博の開幕",
+            "year": 2025,
+            "yearLabel": "2025年",
+            "region": "JP",
+            "category": "文化",
+            "art": "",
+            "artQuery": "Expo 2025 Osaka"
         }
     ]
 }
