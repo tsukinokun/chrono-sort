@@ -52,7 +52,7 @@ namespace ChronoSort::Scene {
         session.rng.seed(std::random_device{}());
         // 遊び方の説明と手本は、カードを正しく置けた対局が何回かになるまで出す
         session.tutorial = Game::Services().Save().tutorialMatches < Game::Tuning().Input().tutorialMatches;
-        session.match.Start(m_config, Rules::LoadCards(m_config.range), session.rng);
+        session.match.Start(m_config, Rules::LoadCards(m_config.range, m_config.difficulty), session.rng);
 
         ECS::AddTableSystems(m_scene);
         CreateStage();

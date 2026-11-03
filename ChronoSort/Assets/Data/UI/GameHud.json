@@ -3,7 +3,7 @@
         { "key": "vignette",  "value": { "texture": "vignette.png",       "center": { "x": 800.0,  "y": 450.0 }, "size": { "x": 1600.0, "y": 900.0 }, "sway": 0.0, "bob": 0.0, "sortOrder": -50 } },
         { "key": "sealLabel", "value": { "texture": "scrap_note.png",     "center": { "x": 222.0,  "y": 66.0 },  "size": { "x": 150.0, "y": 52.0 },  "angle": 7.0,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
         { "key": "seal",      "value": { "texture": "wax_seal.png",       "center": { "x": 112.0,  "y": 118.0 }, "size": { "x": 176.0, "y": 176.0 }, "angle": -9.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 12 } },
-        { "key": "rangeTag",  "value": { "texture": "scrap_note.png",     "center": { "x": 338.0,  "y": 50.0 },  "size": { "x": 112.0, "y": 44.0 },  "angle": -4.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
+        { "key": "rangeTag",  "value": { "texture": "scrap_note.png",     "center": { "x": 366.0,  "y": 50.0 },  "size": { "x": 168.0, "y": 46.0 },  "angle": -4.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
         { "key": "ink0",      "value": { "texture": "ink_full.png",       "center": { "x": 262.0,  "y": 150.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": -7.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
         { "key": "ink1",      "value": { "texture": "ink_full.png",       "center": { "x": 322.0,  "y": 163.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": 5.0,   "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },
         { "key": "ink2",      "value": { "texture": "ink_full.png",       "center": { "x": 378.0,  "y": 146.0 }, "size": { "x": 78.0,  "y": 100.0 }, "angle": -2.0,  "sway": 1.4, "bob": 3.0, "sortOrder": 10 } },

@@ -55,9 +55,10 @@ namespace ChronoSort::Scene {
         const Tsukino::ECS::Entity title = m_ui->Paper(m_layout.Spec("logo"));
         m_ui->SlideIn(title, hlslpp::float2(0.0f, -320.0f), 0.3f, 0.8f);
 
-        // 出題の範囲（前回選んだものから始める）
-        m_range = Rules::RangeFromKey(Game::Services().Save().range);
-        CreateRangeTabs(title);
+        // 出題の範囲と難易度（前回選んだものから始める）
+        m_range      = Rules::RangeFromKey(Game::Services().Save().range);
+        m_difficulty = Rules::DifficultyFromKey(Game::Services().Save().difficulty);
+        CreateProblemTabs(title);
 
         // メニュー（あえて高さも傾きも揃えない）
         m_solo     = CreateMenuNote(L"ひとりで挑む", L"インク三つで、何枚並べられるか", "solo", 0.7f, "pin.png");
@@ -137,7 +138,7 @@ namespace ChronoSort::Scene {
             m_cpuLevel = static_cast<Rules::CpuLevel>(UI::SelectedChoice(registry, m_levelGroup, static_cast<int>(m_cpuLevel)));
             if(m_ui->Clicked(m_start) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Enter)) {
                 sounds.Play("ui.button");
-                Router::ToMatch(api, Router::Versus(m_range, std::vector<Rules::CpuLevel>(static_cast<size_t>(m_cpuCount), m_cpuLevel)));
+                Router::ToMatch(api, Router::Versus(m_range, m_difficulty, std::vector<Rules::CpuLevel>(static_cast<size_t>(m_cpuCount), m_cpuLevel)));
                 return;
             }
             if(m_ui->Clicked(m_cancel) || context->inputSystem->IsKeyPressed(Tsukino::Input::KeyCode::Escape)) {
@@ -145,13 +146,19 @@ namespace ChronoSort::Scene {
                 CloseVersusSheet();
             }
         } else {
-            if(UI::ChoiceChanged(registry, m_rangeGroup)) {
-                m_range = static_cast<Rules::CardRange>(UI::SelectedChoice(registry, m_rangeGroup, static_cast<int>(m_range)));
-                OnRangeSelected(true);
+            if(UI::ChoiceChanged(registry, m_rangeRow.group)) {
+                m_range = static_cast<Rules::CardRange>(UI::SelectedChoice(registry, m_rangeRow.group, static_cast<int>(m_range)));
+                HangRibbon(m_rangeRow, static_cast<int>(m_range), true);
+                OnProblemSetChanged();
+            }
+            if(UI::ChoiceChanged(registry, m_difficultyRow.group)) {
+                m_difficulty = static_cast<Rules::CardDifficulty>(UI::SelectedChoice(registry, m_difficultyRow.group, static_cast<int>(m_difficulty)));
+                HangRibbon(m_difficultyRow, static_cast<int>(m_difficulty), true);
+                OnProblemSetChanged();
             }
             if(m_ui->Clicked(m_solo)) {
                 sounds.Play("ui.button");
-                Router::ToMatch(api, Router::Solo(m_range));
+                Router::ToMatch(api, Router::Solo(m_range, m_difficulty));
                 return;
             }
             if(m_ui->Clicked(m_versus)) {
@@ -198,7 +205,7 @@ namespace ChronoSort::Scene {
         const int layer = kLayerSheet + 1;
         m_ui->Text(L"対戦の支度", hlslpp::float2(0.0f, -175.0f), 1.15f, UI::kInkColor, layer, m_sheet);
         // 何で遊ぶかを始める前に確かめられるよう、選んでいる範囲を添える
-        m_ui->Text(L"出題：" + Util::Utf8ToWide(Rules::RangeName(m_range)), hlslpp::float2(0.0f, -136.0f), 0.5f, UI::kFadedInkColor, layer, m_sheet);
+        m_ui->Text(L"出題：" + Util::Utf8ToWide(Rules::ProblemSetName(m_range, m_difficulty)),hlslpp::float2(0.0f, -136.0f), 0.5f, UI::kFadedInkColor, layer, m_sheet);
         m_ui->Text(L"相手の人数", hlslpp::float2(-200.0f, -105.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
         m_ui->Text(L"相手の強さ", hlslpp::float2(-200.0f, 10.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
 
@@ -250,83 +257,100 @@ namespace ChronoSort::Scene {
     }
 
     //----------------------------------------------------------------------------
-    //! 出題の範囲のしおりを3枚作ります。
+    //! 出題の範囲と難易度のしおりを作ります。
     //----------------------------------------------------------------------------
-    void TitleScene::CreateRangeTabs(Tsukino::ECS::Entity title) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-
+    void TitleScene::CreateProblemTabs(Tsukino::ECS::Entity title) {
         // 題字の左下に小さな見出し（題字と一緒に揺れる）
         m_ui->Text(L"出題", hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
+        m_ui->Text(L"難易度", hlslpp::float2(-400.0f, 266.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
 
         // 置き場所・傾きは Data/UI/Title.json（高さも傾きもわざと揃えない）
-        const std::pair<Rules::CardRange, const char*> tabs[] = {
-            {Rules::CardRange::Japan, "rangeJapan"},
-            {Rules::CardRange::World, "rangeWorld"},
-            {Rules::CardRange::All, "rangeAll"},
+        using Rules::CardDifficulty;
+        using Rules::CardRange;
+        auto range = [](CardRange r, const char* layout, const wchar_t* note) {
+            return TabSpec{static_cast<int>(r), layout, Util::Utf8ToWide(Rules::RangeName(r)), note};
         };
-        m_rangeGroup = UI::ChoiceGroup(*m_ui);
-        for(size_t i = 0; i < std::size(tabs); ++i) {
-            const Rules::CardRange range = tabs[i].first;
-            const bool             all   = range == Rules::CardRange::All;
+        auto difficulty = [](CardDifficulty d, const char* layout) {
+            return TabSpec{static_cast<int>(d), layout, Util::Utf8ToWide(Rules::DifficultyName(d)), L""};
+        };
+        CreateTabRow(m_rangeRow, {range(CardRange::Japan, "rangeJapan", L""), range(CardRange::World, "rangeWorld", L""), range(CardRange::All, "rangeAll", L"日本と世界")},
+                     static_cast<int>(m_range), 0.78f, "rangeRibbon", 0.45f);
+        CreateTabRow(m_difficultyRow,
+                     {difficulty(CardDifficulty::Easy, "difficultyEasy"), difficulty(CardDifficulty::Normal, "difficultyNormal"),
+                      difficulty(CardDifficulty::Hard, "difficultyHard")},
+                     static_cast<int>(m_difficulty), 0.62f, "difficultyRibbon", 0.6f);
+    }
+
+    //----------------------------------------------------------------------------
+    //! しおりの段を作ります。
+    //----------------------------------------------------------------------------
+    void TitleScene::CreateTabRow(TabRow& row, const std::vector<TabSpec>& tabs, int selected, float labelScale, const char* ribbonLayout, float delay) {
+        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
+        row.group        = UI::ChoiceGroup(*m_ui);
+        row.ribbonLayout = ribbonLayout;
+        for(size_t i = 0; i < tabs.size(); ++i) {
+            const TabSpec& tab     = tabs[i];
+            const bool     hasNote = !tab.note.empty();
 
             // 持ち上げは親を動かして行う（紙片の揺れ・ボタンの反応は紙片側に残す）。紙片は親の真ん中に置く
             UI::ChoiceSpec spec;
-            spec.paper              = m_layout.Spec(tabs[i].second);
+            spec.paper              = m_layout.Spec(tab.layout);
             const hlslpp::float2 at = spec.paper.center;
             const Tsukino::ECS::Entity holder = m_scene.CreateEntity();
             registry.AddComponent<BuiltIn::TransformComponent>(holder).position = hlslpp::float3(at, 0.0f);
             spec.paper.center = hlslpp::float2(0.0f, 0.0f);
             spec.paper.parent = holder;
-            spec.label        = Util::Utf8ToWide(Rules::RangeName(range));
-            spec.labelScale   = 0.78f;
-            spec.labelOffset  = hlslpp::float2(4.0f, all ? -9.0f : 2.0f);
-            spec.value        = static_cast<int>(range);
+            spec.label        = tab.label;
+            spec.labelScale   = labelScale;
+            spec.labelOffset  = hlslpp::float2(4.0f, hasNote ? -9.0f : 2.0f);
+            spec.value        = tab.value;
             spec.chosenColor  = UI::kInkColor;
             spec.punch        = 0.18f;
-            const auto tag    = UI::ChoiceTag(*m_ui, m_rangeGroup, spec, range == m_range);
-            if(all) {
-                m_ui->Text(L"日本と世界", hlslpp::float2(4.0f, 13.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
+            const auto tag    = UI::ChoiceTag(*m_ui, row.group, spec, tab.value == selected);
+            if(hasNote) {
+                m_ui->Text(tab.note, hlslpp::float2(4.0f, 13.0f), 0.42f, UI::kFadedInkColor, kLayerMenu + 1, tag);
             }
-            m_ui->SlideIn(tag, hlslpp::float2(m_ui->Jitter() * 60.0f, -260.0f), 0.45f + 0.07f * static_cast<float>(i), 0.6f);
+            m_ui->SlideIn(tag, hlslpp::float2(m_ui->Jitter() * 60.0f, -260.0f), delay + 0.07f * static_cast<float>(i), 0.6f);
 
             auto& lift = registry.AddComponent<ECS::ChoiceLiftComponent>(holder);
             lift.tag   = tag;
             lift.base  = at;
-            lift.lift  = range == m_range ? 1.0f : 0.0f;
+            lift.lift  = tab.value == selected ? 1.0f : 0.0f;
+            row.holders.emplace_back(tab.value, holder);
         }
 
         // 選んでいるしおりに垂らす紐（紙片の後ろから下へ垂れる）
-        m_rangeRibbon = m_ui->Paper(m_layout.Spec("rangeRibbon"));
-        OnRangeSelected(false);
+        row.ribbon = m_ui->Paper(m_layout.Spec(ribbonLayout));
+        HangRibbon(row, selected, false);
     }
 
     //----------------------------------------------------------------------------
-    //! 出題の範囲を選び直します。
+    //! 段の紐を、選んでいるしおりへ付け替えます。
     //----------------------------------------------------------------------------
-    void TitleScene::OnRangeSelected(bool changed) {
-        Tsukino::ECS::Registry& registry = m_scene.GetRegistry();
-
-        // 紐を選んだしおり（の入れ物）へ付け替え、選び直したときは上から垂らし直す
-        registry.View<ECS::ChoiceLiftComponent>().each([&](Tsukino::ECS::Entity holder, const ECS::ChoiceLiftComponent& lift) {
-            const auto& choice = registry.GetComponent<ECS::ChoiceTagComponent>(lift.tag);
-            if(choice.value != static_cast<int>(m_range) || m_rangeRibbon == entt::null) {
-                return;
+    void TitleScene::HangRibbon(TabRow& row, int value, bool changed) {
+        for(const auto& [tabValue, holder] : row.holders) {
+            if(tabValue != value || row.ribbon == entt::null) {
+                continue;
             }
-            auto& ribbon    = registry.GetComponent<BuiltIn::TransformComponent>(m_rangeRibbon);
+            auto& ribbon    = m_scene.GetRegistry().GetComponent<BuiltIn::TransformComponent>(row.ribbon);
             ribbon.parent   = holder;
-            ribbon.position = hlslpp::float3(m_layout.Spec("rangeRibbon").center, 0.0f);
+            ribbon.position = hlslpp::float3(m_layout.Spec(row.ribbonLayout).center, 0.0f);
             ribbon.dirty    = true;
             if(changed) {
-                m_ui->SlideIn(m_rangeRibbon, hlslpp::float2(0.0f, -50.0f), 0.0f, 0.4f);
+                m_ui->SlideIn(row.ribbon, hlslpp::float2(0.0f, -50.0f), 0.0f, 0.4f);
             }
-        });
-
-        if(changed) {
-            // 次に起動したときも同じ範囲から始められるよう、すぐ覚えておく
-            Game::Services().Save().range = Rules::RangeKey(m_range);
-            Game::Services().StoreSave();
-            RefreshRecordMemo();
         }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 出題の範囲か難易度を選び直したときに、記録のメモと保存を更新します。
+    //----------------------------------------------------------------------------
+    void TitleScene::OnProblemSetChanged() {
+        // 次に起動したときも同じ出題から始められるよう、すぐ覚えておく
+        Game::Services().Save().range      = Rules::RangeKey(m_range);
+        Game::Services().Save().difficulty = Rules::DifficultyKey(m_difficulty);
+        Game::Services().StoreSave();
+        RefreshRecordMemo();
     }
 
     //----------------------------------------------------------------------------
@@ -337,10 +361,10 @@ namespace ChronoSort::Scene {
             return;
         }
         const Game::SaveData&   save   = Game::Services().Save();
-        const Game::SoloRecord& record = save.Record(m_range);
+        const Game::SoloRecord& record = save.Record(m_range, m_difficulty);
         const bool              show   = record.HasAny() || save.versusWins > 0;
 
-        m_ui->SetText(m_recordTitle, Util::Utf8ToWide(Rules::RangeName(m_range)) + L"の記録");
+        m_ui->SetText(m_recordTitle, Util::Utf8ToWide(Rules::ProblemSetName(m_range, m_difficulty)) + L"の記録");
         m_ui->SetText(m_recordLines[0], L"最高得点  " + std::to_wstring(record.bestScore));
         m_ui->SetText(m_recordLines[1], L"最多枚数  " + std::to_wstring(record.bestPlaced));
         m_ui->SetText(m_recordLines[2], L"最長連続  " + std::to_wstring(record.bestStreak));

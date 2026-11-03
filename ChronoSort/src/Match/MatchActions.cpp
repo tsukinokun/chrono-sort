@@ -185,11 +185,11 @@ namespace ChronoSort::Match {
         const bool                won     = outcome == Rules::MatchOutcome::SoloCleared ||
                                             (outcome == Rules::MatchOutcome::VersusWon && session.match.Winner() == 0);
 
-        // 記録を更新して保存する（ソロの記録は出題の範囲ごとに比べる）
+        // 記録を更新して保存する（ソロの記録は出題の範囲・難易度ごとに比べる）
         Game::SaveData& save     = Game::Services().Save();
         bool     newRecord = false;
         if(session.config.mode == Rules::MatchMode::Solo) {
-            Game::SoloRecord& record = save.Record(session.config.range);
+            Game::SoloRecord& record = save.Record(session.config.range, session.config.difficulty);
             newRecord          = session.match.Score() > record.bestScore && session.match.Score() > 0;
             record.bestScore   = std::max(record.bestScore, session.match.Score());
             record.bestPlaced  = std::max(record.bestPlaced, session.match.Players()[0].correctCount);

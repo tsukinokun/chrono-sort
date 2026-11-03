@@ -28,10 +28,12 @@ namespace ChronoSort::Rules {
     }
 
     //----------------------------------------------------------------------------
-    //! 範囲に入るカードだけを読み込みます。
+    //! 範囲と難易度に入るカードだけを読み込みます。
     //----------------------------------------------------------------------------
-    std::vector<CardData> LoadCards(CardRange range) {
+    std::vector<CardData> LoadCards(CardRange range, CardDifficulty difficulty) {
         std::vector<CardData> cards = LoadAllCards();
+        const int             limit = static_cast<int>(difficulty);
+        std::erase_if(cards, [limit](const CardData& card) { return card.difficulty > limit; });
         if(range == CardRange::All) {
             return cards;
         }
@@ -79,6 +81,58 @@ namespace ChronoSort::Rules {
             return CardRange::World;
         }
         return CardRange::All;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 難易度を保存用のキーに変えます。
+    //----------------------------------------------------------------------------
+    const char* DifficultyKey(CardDifficulty difficulty) {
+        switch(difficulty) {
+        case CardDifficulty::Easy:
+            return "easy";
+        case CardDifficulty::Normal:
+            return "normal";
+        default:
+            return "hard";
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 難易度の表示名を返します。
+    //----------------------------------------------------------------------------
+    const char* DifficultyName(CardDifficulty difficulty) {
+        switch(difficulty) {
+        case CardDifficulty::Easy:
+            return "やさしい";
+        case CardDifficulty::Normal:
+            return "ふつう";
+        default:
+            return "むずかしい";
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 保存用のキーから難易度を返します。
+    //----------------------------------------------------------------------------
+    CardDifficulty DifficultyFromKey(const std::string& key) {
+        if(key == "easy") {
+            return CardDifficulty::Easy;
+        }
+        if(key == "normal") {
+            return CardDifficulty::Normal;
+        }
+        return CardDifficulty::Hard;
+    }
+
+    //----------------------------------------------------------------------------
+    //! 出題の範囲と難易度の表示名を返します。
+    //----------------------------------------------------------------------------
+    std::string ProblemSetName(CardRange range, CardDifficulty difficulty) {
+        // むずかしいは全部のカードなので、難易度を分ける前と同じく範囲の名前だけにする
+        if(difficulty == CardDifficulty::Hard) {
+            return RangeName(range);
+        }
+        return std::string(RangeName(range)) + "・" + DifficultyName(difficulty);
     }
 
     //----------------------------------------------------------------------------

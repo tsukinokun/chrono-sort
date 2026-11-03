@@ -63,6 +63,8 @@ namespace ChronoSort::Game {
             return data;
         }
         if(TryRead(data)) {
+            // 難易度を分ける前（version 2）の記録は、無い項目が初期値のまま読める。次の保存で今の版になる
+            data.version = SaveData{}.version;
             return data;
         }
 

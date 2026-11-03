@@ -52,6 +52,7 @@ namespace ChronoSort::Rules {
         std::vector<CpuLevel> cpus;                      // 対戦の CPU（1〜3人）
         std::string           playerName = "あなた";     // 人間のプレイヤー名
         CardRange             range = CardRange::All;    // 出題の範囲
+        CardDifficulty        difficulty = CardDifficulty::Hard;    // 出題の難易度
         RulesTuning           rules;                     // ルールの調整値（ゲームは Rules.json の値を入れる。自己テストは初期値）
     };
 

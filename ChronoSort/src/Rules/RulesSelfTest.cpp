@@ -297,6 +297,20 @@ namespace ChronoSort::Rules {
         Check(japanCards.size() + worldCards.size() == LoadCards(CardRange::All).size(), "ranges split all cards", passed);
         Check(RangeFromKey(RangeKey(CardRange::World)) == CardRange::World && RangeFromKey("unknown") == CardRange::All, "range key round trip", passed);
 
+        // 出題の難易度で絞る（やさしい ⊂ ふつう ⊂ むずかしい。やさしいでも対局が回る枚数がある）
+        const auto allCards = LoadCards(CardRange::All);
+        Check(std::all_of(allCards.begin(), allCards.end(), [](const CardData& c) { return c.difficulty >= 1 && c.difficulty <= 3; }), "every card has a difficulty", passed);
+        for(CardRange range : {CardRange::Japan, CardRange::World, CardRange::All}) {
+            const size_t easy   = LoadCards(range, CardDifficulty::Easy).size();
+            const size_t normal = LoadCards(range, CardDifficulty::Normal).size();
+            const size_t hard   = LoadCards(range, CardDifficulty::Hard).size();
+            Tsukino::Core::Log::Info(std::string("[RulesSelfTest] ") + RangeKey(range) + " cards: easy " + std::to_string(easy) + ", normal " + std::to_string(normal) +
+                                     ", hard " + std::to_string(hard));
+            Check(100 <= easy && easy < normal && normal < hard, "difficulty widens the deck", passed);
+        }
+        Check(DifficultyFromKey(DifficultyKey(CardDifficulty::Easy)) == CardDifficulty::Easy && DifficultyFromKey("unknown") == CardDifficulty::Hard,
+              "difficulty key round trip", passed);
+
         TestMatch(passed);
         TestCpu(passed);
 

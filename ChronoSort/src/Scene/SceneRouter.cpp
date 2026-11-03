@@ -52,21 +52,23 @@ namespace ChronoSort::Scene::Router {
     //----------------------------------------------------------------------------
     //! ソロの対局の設定を作ります。
     //----------------------------------------------------------------------------
-    Rules::MatchConfig Solo(Rules::CardRange range) {
+    Rules::MatchConfig Solo(Rules::CardRange range, Rules::CardDifficulty difficulty) {
         Rules::MatchConfig config;
-        config.mode  = Rules::MatchMode::Solo;
-        config.range = range;
+        config.mode       = Rules::MatchMode::Solo;
+        config.range      = range;
+        config.difficulty = difficulty;
         return config;
     }
 
     //----------------------------------------------------------------------------
     //! CPU 対戦の設定を作ります。
     //----------------------------------------------------------------------------
-    Rules::MatchConfig Versus(Rules::CardRange range, const std::vector<Rules::CpuLevel>& cpus) {
+    Rules::MatchConfig Versus(Rules::CardRange range, Rules::CardDifficulty difficulty, const std::vector<Rules::CpuLevel>& cpus) {
         Rules::MatchConfig config;
-        config.mode  = Rules::MatchMode::Versus;
-        config.cpus  = cpus;
-        config.range = range;
+        config.mode       = Rules::MatchMode::Versus;
+        config.cpus       = cpus;
+        config.range      = range;
+        config.difficulty = difficulty;
         return config;
     }
 

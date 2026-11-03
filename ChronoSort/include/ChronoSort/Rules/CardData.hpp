@@ -4,6 +4,8 @@
 //! @detail デッキ JSON から読み込む値そのものです。表示や ECS には依存しません。
 //----------------------------------------------------------------------------
 #pragma once
+#include <Tsukino/Core/IO/CerealOptional.hpp>
+
 #include <cereal/cereal.hpp>
 #include <cereal/types/string.hpp>
 
@@ -21,9 +23,23 @@ namespace ChronoSort::Rules {
         std::string  region;       // 地域（"JP" / "WORLD"）
         std::string  category;     // 分類（政治・文化など）
         std::string  art;          // カード絵の出典（URL など）。焼き込み後の面は id から決まる
+        int          difficulty = 3;    // 難易度（1: やさしい, 2: ふつう, 3: むずかしい）。出題の難易度以下のカードだけが出る
 
         template <class Archive>
-        void serialize(Archive& archive) {
+        void save(Archive& archive) const {
+            archive(cereal::make_nvp("id", id),
+                    cereal::make_nvp("title", title),
+                    cereal::make_nvp("year", year),
+                    cereal::make_nvp("yearLabel", yearLabel),
+                    cereal::make_nvp("region", region),
+                    cereal::make_nvp("category", category),
+                    cereal::make_nvp("art", art),
+                    cereal::make_nvp("difficulty", difficulty));
+        }
+
+        //! 読み込みは、難易度の無いデッキも読めるようにする（無ければむずかしい扱い）。
+        template <class Archive>
+        void load(Archive& archive) {
             archive(cereal::make_nvp("id", id),
                     cereal::make_nvp("title", title),
                     cereal::make_nvp("year", year),
@@ -31,6 +47,7 @@ namespace ChronoSort::Rules {
                     cereal::make_nvp("region", region),
                     cereal::make_nvp("category", category),
                     cereal::make_nvp("art", art));
+            Tsukino::IO::LoadOptional(archive, "difficulty", difficulty);
         }
     };
 

@@ -34,15 +34,17 @@ namespace ChronoSort::Scene::Router {
     void ToMatch(Tsukino::EngineIntegration::EngineAPI& api, const Rules::MatchConfig& config);
 
     //! ソロの対局の設定を作ります。
-    //! @param  [in] range 出題の範囲。
+    //! @param  [in] range      出題の範囲。
+    //! @param  [in] difficulty 出題の難易度。
     //! @return 設定。
-    Rules::MatchConfig Solo(Rules::CardRange range);
+    Rules::MatchConfig Solo(Rules::CardRange range, Rules::CardDifficulty difficulty);
 
     //! CPU 対戦の設定を作ります。
-    //! @param  [in] range 出題の範囲。
-    //! @param  [in] cpus  相手の CPU の強さ（席の順。人数はこの数）。
+    //! @param  [in] range      出題の範囲。
+    //! @param  [in] difficulty 出題の難易度。
+    //! @param  [in] cpus       相手の CPU の強さ（席の順。人数はこの数）。
     //! @return 設定。
-    Rules::MatchConfig Versus(Rules::CardRange range, const std::vector<Rules::CpuLevel>& cpus);
+    Rules::MatchConfig Versus(Rules::CardRange range, Rules::CardDifficulty difficulty, const std::vector<Rules::CpuLevel>& cpus);
 
     //! ゲームを終えます（メインループが抜ける）。
     void Quit();

@@ -115,10 +115,11 @@ namespace ChronoSort::UI {
             m_ui.SlideIn(m_seal, hlslpp::float2(-260.0f, -40.0f), 0.1f, 0.55f);
         }
 
-        // 出題の範囲を絞っているときだけ、その名前の札を添える（通史なら今までどおり何も出さない）
-        if(m_match.Config().range != Rules::CardRange::All) {
+        // 出題を範囲か難易度で絞っているときだけ、その名前の札を添える（通史・むずかしいなら今までどおり何も出さない）
+        const Rules::MatchConfig& config = m_match.Config();
+        if(config.range != Rules::CardRange::All || config.difficulty != Rules::CardDifficulty::Hard) {
             const auto tag = m_ui.Paper(m_layout.Spec("rangeTag"));
-            m_ui.Text(Util::Utf8ToWide(Rules::RangeName(m_match.Config().range)), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
+            m_ui.Text(Util::Utf8ToWide(Rules::ProblemSetName(config.range, config.difficulty)), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
             m_ui.SlideIn(tag, hlslpp::float2(-200.0f, -60.0f), 0.3f);
         }
 

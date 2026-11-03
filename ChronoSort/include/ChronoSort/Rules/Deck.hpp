@@ -30,10 +30,18 @@ namespace ChronoSort::Rules {
         World,    // 世界史だけ
     };
 
-    //! 範囲に入るカードだけを読み込みます。
-    //! @param  [in] range 出題の範囲。
-    //! @return 範囲に入るカード。
-    std::vector<CardData> LoadCards(CardRange range);
+    //! 出題の難易度です。値は CardData::difficulty と同じで、その値以下のカードが出ます。
+    enum class CardDifficulty {
+        Easy   = 1,    // やさしいカードだけ
+        Normal = 2,    // やさしい・ふつう
+        Hard   = 3,    // 全部
+    };
+
+    //! 範囲と難易度に入るカードだけを読み込みます。
+    //! @param  [in] range      出題の範囲。
+    //! @param  [in] difficulty 出題の難易度（これ以下のカードが入る）。
+    //! @return 範囲と難易度に入るカード。
+    std::vector<CardData> LoadCards(CardRange range, CardDifficulty difficulty = CardDifficulty::Hard);
 
     //! 範囲を保存用のキー（"all" / "japan" / "world"）に変えます。
     //! @param  [in] range 出題の範囲。
@@ -49,6 +57,27 @@ namespace ChronoSort::Rules {
     //! @param  [in] key キー。
     //! @return 出題の範囲。
     CardRange RangeFromKey(const std::string& key);
+
+    //! 難易度を保存用のキー（"easy" / "normal" / "hard"）に変えます。
+    //! @param  [in] difficulty 出題の難易度。
+    //! @return キー。
+    const char* DifficultyKey(CardDifficulty difficulty);
+
+    //! 難易度の表示名（UTF-8。「やさしい」「ふつう」「むずかしい」）を返します。
+    //! @param  [in] difficulty 出題の難易度。
+    //! @return 表示名。
+    const char* DifficultyName(CardDifficulty difficulty);
+
+    //! 保存用のキーから難易度を返します。知らないキーはむずかしい（全部）として扱います。
+    //! @param  [in] key キー。
+    //! @return 出題の難易度。
+    CardDifficulty DifficultyFromKey(const std::string& key);
+
+    //! 出題の範囲と難易度の表示名を返します（「日本史・やさしい」。むずかしいは範囲の名前だけ）。
+    //! @param  [in] range      出題の範囲。
+    //! @param  [in] difficulty 出題の難易度。
+    //! @return 表示名（UTF-8）。
+    std::string ProblemSetName(CardRange range, CardDifficulty difficulty);
 
     //! 山札です。末尾を山の一番上として扱います。
     class Deck {

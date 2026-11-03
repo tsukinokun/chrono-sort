@@ -4,6 +4,7 @@
 //! @detail ワークスペースルート（配布時は exe の隣）の Saves/ChronoSort.json に保存します。
 //!         ソロの記録は出題の範囲ごとに分けて持ちます。範囲を分ける前の形（version 1）の
 //!         ファイルも読めて、その記録は通史の記録として引き継ぎます。
+//!         version 3 からは出題の難易度ごとにも分けます（version 2 までの記録は、むずかしいの記録になる）。
 //----------------------------------------------------------------------------
 #pragma once
 #include <ChronoSort/Rules/Deck.hpp>
@@ -36,27 +37,46 @@ namespace ChronoSort::Game {
     };
 
     //! 保存する記録です。
+    //! @note   難易度を分ける前（version 2 まで）の all・japan・world は全部のカードで遊んだ記録なので、
+    //!         そのまま「むずかしい」の記録として使う。やさしい・ふつうの記録は別の項目に持つ
     struct SaveData {
-        int         version    = 2;        // 保存の形の版
-        SoloRecord  all;                   // 通史のソロの記録
-        SoloRecord  japan;                 // 日本史だけのソロの記録
-        SoloRecord  world;                 // 世界史だけのソロの記録
-        int         versusWins = 0;        // CPU 対戦の勝ち数（範囲で分けない）
-        std::string range      = "all";    // 最後に選んだ出題の範囲（Rules::RangeKey の値）
-        int         tutorialMatches = 0;   // 遊び方の説明つきで、カードを1枚以上正しく置けた対局の数
+        int         version    = 3;         // 保存の形の版
+        SoloRecord  all;                    // 通史・むずかしいのソロの記録
+        SoloRecord  japan;                  // 日本史・むずかしいのソロの記録
+        SoloRecord  world;                  // 世界史・むずかしいのソロの記録
+        SoloRecord  allEasy;                // 通史・やさしい
+        SoloRecord  japanEasy;              // 日本史・やさしい
+        SoloRecord  worldEasy;              // 世界史・やさしい
+        SoloRecord  allNormal;              // 通史・ふつう
+        SoloRecord  japanNormal;            // 日本史・ふつう
+        SoloRecord  worldNormal;            // 世界史・ふつう
+        int         versusWins = 0;         // CPU 対戦の勝ち数（範囲で分けない）
+        std::string range      = "all";     // 最後に選んだ出題の範囲（Rules::RangeKey の値）
+        std::string difficulty = "hard";    // 最後に選んだ出題の難易度（Rules::DifficultyKey の値）
+        int         tutorialMatches = 0;    // 遊び方の説明つきで、カードを1枚以上正しく置けた対局の数
 
-        //! 範囲のソロの記録を返します。
-        //! @param  [in] range 出題の範囲。
+        //! 範囲と難易度のソロの記録を返します。
+        //! @param  [in] range      出題の範囲。
+        //! @param  [in] difficulty 出題の難易度。
         //! @return 記録。
-        SoloRecord& Record(Rules::CardRange range) {
-            return range == Rules::CardRange::Japan ? japan : (range == Rules::CardRange::World ? world : all);
+        SoloRecord& Record(Rules::CardRange range, Rules::CardDifficulty difficulty) {
+            return const_cast<SoloRecord&>(static_cast<const SaveData&>(*this).Record(range, difficulty));
         }
 
-        //! 範囲のソロの記録を返します。
-        //! @param  [in] range 出題の範囲。
+        //! 範囲と難易度のソロの記録を返します。
+        //! @param  [in] range      出題の範囲。
+        //! @param  [in] difficulty 出題の難易度。
         //! @return 記録。
-        const SoloRecord& Record(Rules::CardRange range) const {
-            return range == Rules::CardRange::Japan ? japan : (range == Rules::CardRange::World ? world : all);
+        const SoloRecord& Record(Rules::CardRange range, Rules::CardDifficulty difficulty) const {
+            using Rules::CardDifficulty;
+            using Rules::CardRange;
+            if(difficulty == CardDifficulty::Easy) {
+                return range == CardRange::Japan ? japanEasy : (range == CardRange::World ? worldEasy : allEasy);
+            }
+            if(difficulty == CardDifficulty::Normal) {
+                return range == CardRange::Japan ? japanNormal : (range == CardRange::World ? worldNormal : allNormal);
+            }
+            return range == CardRange::Japan ? japan : (range == CardRange::World ? world : all);
         }
 
         template <class Archive>
@@ -65,12 +85,19 @@ namespace ChronoSort::Game {
                     cereal::make_nvp("all", all),
                     cereal::make_nvp("japan", japan),
                     cereal::make_nvp("world", world),
+                    cereal::make_nvp("allEasy", allEasy),
+                    cereal::make_nvp("japanEasy", japanEasy),
+                    cereal::make_nvp("worldEasy", worldEasy),
+                    cereal::make_nvp("allNormal", allNormal),
+                    cereal::make_nvp("japanNormal", japanNormal),
+                    cereal::make_nvp("worldNormal", worldNormal),
                     cereal::make_nvp("versusWins", versusWins),
                     cereal::make_nvp("range", range),
+                    cereal::make_nvp("difficulty", difficulty),
                     cereal::make_nvp("tutorialMatches", tutorialMatches));
         }
 
-        //! 読み込みは、あとから足した項目（tutorialMatches）が無い記録も読めるようにする（無ければ初期値のまま）。
+        //! 読み込みは、あとから足した項目（難易度ごとの記録・difficulty・tutorialMatches）が無い記録も読めるようにする（無ければ初期値のまま）。
         template <class Archive>
         void load(Archive& archive) {
             archive(cereal::make_nvp("version", version),
@@ -79,6 +106,13 @@ namespace ChronoSort::Game {
                     cereal::make_nvp("world", world),
                     cereal::make_nvp("versusWins", versusWins),
                     cereal::make_nvp("range", range));
+            Tsukino::IO::LoadOptional(archive, "allEasy", allEasy);
+            Tsukino::IO::LoadOptional(archive, "japanEasy", japanEasy);
+            Tsukino::IO::LoadOptional(archive, "worldEasy", worldEasy);
+            Tsukino::IO::LoadOptional(archive, "allNormal", allNormal);
+            Tsukino::IO::LoadOptional(archive, "japanNormal", japanNormal);
+            Tsukino::IO::LoadOptional(archive, "worldNormal", worldNormal);
+            Tsukino::IO::LoadOptional(archive, "difficulty", difficulty);
             Tsukino::IO::LoadOptional(archive, "tutorialMatches", tutorialMatches);
         }
     };

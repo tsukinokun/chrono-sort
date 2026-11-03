@@ -17,6 +17,8 @@
 #include <Tsukino/EngineIntegration/Scene/GameSceneBase.hpp>
 
 #include <memory>
+#include <string>
+#include <utility>
 #include <vector>
 
 namespace ChronoSort::Scene {
@@ -56,13 +58,43 @@ namespace ChronoSort::Scene {
         //! CPU 対戦の設定の紙を閉じます。
         void CloseVersusSheet();
 
-        //! 出題の範囲のしおりを3枚作ります。
-        //! @param  [in] title 題字の紙片（「出題」の見出しを貼る）。
-        void CreateRangeTabs(Tsukino::ECS::Entity title);
+        //! しおりの段（出題の範囲・難易度）です。
+        struct TabRow {
+            Tsukino::ECS::Entity                              group  = entt::null;    // しおりの組（選択肢）
+            Tsukino::ECS::Entity                              ribbon = entt::null;    // 選んでいるしおりに垂らす紐
+            std::string                                       ribbonLayout;           // 紐の置き方（Title.json の名前）
+            std::vector<std::pair<int, Tsukino::ECS::Entity>> holders;                // しおりの値と、持ち上げる入れ物
+        };
 
-        //! 出題の範囲を選び直したときに、紐を付け替え、記録のメモと保存を更新します。
-        //! @param  [in] changed 選び直したなら true（作った直後は false）。
-        void OnRangeSelected(bool changed);
+        //! しおり1枚の作り方です。
+        struct TabSpec {
+            int          value = 0;    // 選んだときの値
+            const char*  layout;       // 置き方（Title.json の名前）
+            std::wstring label;        // 表の文字
+            std::wstring note;         // 下に添える小さな文字（無ければ空）
+        };
+
+        //! しおりの段を作ります。
+        //! @param  [out] row          作った段。
+        //! @param  [in]  tabs         しおり（左から）。
+        //! @param  [in]  selected     選んでいる値。
+        //! @param  [in]  labelScale   表の文字の大きさ。
+        //! @param  [in]  ribbonLayout 紐の置き方（Title.json の名前）。
+        //! @param  [in]  delay        最初のしおりが滑り込み始めるまでの待ち（秒）。
+        void CreateTabRow(TabRow& row, const std::vector<TabSpec>& tabs, int selected, float labelScale, const char* ribbonLayout, float delay);
+
+        //! 段の紐を、選んでいるしおりへ付け替えます。
+        //! @param  [in,out] row     段。
+        //! @param  [in]     value   選んでいる値。
+        //! @param  [in]     changed 選び直したなら true（上から垂らし直す）。
+        void HangRibbon(TabRow& row, int value, bool changed);
+
+        //! 出題の範囲と難易度のしおりを作ります。
+        //! @param  [in] title 題字の紙片（「出題」「難易度」の見出しを貼る）。
+        void CreateProblemTabs(Tsukino::ECS::Entity title);
+
+        //! 出題の範囲か難易度を選び直したときに、記録のメモと保存を更新します。
+        void OnProblemSetChanged();
 
         //! 記録のメモを、選んでいる範囲の記録に合わせます（記録が無ければ引っ込める）。
         //! @param  [in] slideDelay 出すときに滑り込み始めるまでの待ち（秒）。
@@ -72,10 +104,11 @@ namespace ChronoSort::Scene {
         UI::PaperLayout              m_layout;   // 紙片の置き方（Data/UI/Title.json）
         DeskStage                    m_stage;    // 背景の机
 
-        // 出題の範囲
-        Rules::CardRange     m_range       = Rules::CardRange::All;    // 選んでいる範囲
-        Tsukino::ECS::Entity m_rangeGroup  = entt::null;               // しおりの組（選択肢）
-        Tsukino::ECS::Entity m_rangeRibbon = entt::null;               // 選んでいるしおりに垂らす紐
+        // 出題の範囲と難易度
+        Rules::CardRange      m_range      = Rules::CardRange::All;         // 選んでいる範囲
+        Rules::CardDifficulty m_difficulty = Rules::CardDifficulty::Hard;   // 選んでいる難易度
+        TabRow                m_rangeRow;                                   // 範囲のしおり
+        TabRow                m_difficultyRow;                              // 難易度のしおり
 
         // 記録のメモ
         Tsukino::ECS::Entity              m_record      = entt::null;    // メモの紙片

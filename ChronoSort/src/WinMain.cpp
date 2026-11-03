@@ -67,10 +67,12 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     ChronoSort::Scene::Router::RegisterScenes(engineAPI);
     // 最初に読込画面でアセットをまとめて読み、その後の画面切替や操作で止まらないようにする。
     // 「ChronoSort.exe solo」「ChronoSort.exe versus」なら、読み終えたあとタイトルを飛ばして対局画面へ（確認用）
-    // 続けて japan / world を書くと、出題をその範囲に絞る（例：「ChronoSort.exe solo japan」）
+    // 続けて japan / world を書くと、出題をその範囲に絞る（例：「ChronoSort.exe solo japan」）。
+    // easy / normal を書くと、出題をその難易度に絞る（例：「ChronoSort.exe solo easy japan」）
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
     auto next = [argument]() -> std::unique_ptr<Tsukino::EngineIntegration::GameSceneBase> {
         namespace Router = ChronoSort::Scene::Router;
+        using ChronoSort::Rules::CardDifficulty;
         using ChronoSort::Rules::CardRange;
         using ChronoSort::Rules::CpuLevel;
         CardRange range = CardRange::All;
@@ -79,11 +81,17 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
         } else if(argument.find("world") != std::string::npos) {
             range = CardRange::World;
         }
+        CardDifficulty difficulty = CardDifficulty::Hard;
+        if(argument.find("easy") != std::string::npos) {
+            difficulty = CardDifficulty::Easy;
+        } else if(argument.find("normal") != std::string::npos) {
+            difficulty = CardDifficulty::Normal;
+        }
         if(argument.find("solo") != std::string::npos) {
-            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Solo(range));
+            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Solo(range, difficulty));
         }
         if(argument.find("versus") != std::string::npos) {
-            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Versus(range, {CpuLevel::Easy, CpuLevel::Normal}));
+            return std::make_unique<ChronoSort::Scene::GameScene>(Router::Versus(range, difficulty, {CpuLevel::Easy, CpuLevel::Normal}));
         }
         return std::make_unique<ChronoSort::Scene::TitleScene>();
     };
