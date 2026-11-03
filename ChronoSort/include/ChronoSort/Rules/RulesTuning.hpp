@@ -25,9 +25,9 @@ namespace ChronoSort::Rules {
 
     //! CPU の強さ1段ぶんです。
     struct CpuLevelRules {
-        float hardestChance = 0.55f;    // 隣との年代差がとても近いときの正解率
-        float easiestChance = 0.92f;    // 隣との年代差が十分離れているときの正解率
-        float whim          = 0.25f;    // 自信のあるカードではなく気まぐれに選ぶ割合
+        float hardestChance = 0.45f;    // 隣との年代差がとても近いときの正解率
+        float easiestChance = 0.86f;    // 隣との年代差が十分離れているときの正解率
+        float whim          = 0.4f;     // 自信のあるカードではなく気まぐれに選ぶ割合
     };
 
     //! 対戦の CPU 1人の人物です。
@@ -50,8 +50,10 @@ namespace ChronoSort::Rules {
 
         std::vector<HandSizeStep> handSizes = {{3, 6}, {5, 5}, {8, 4}};    // 対戦の人数ごとの初期手札
 
-        //! CPU の強さ（CpuLevel の Easy・Normal・Hard の順）
-        std::vector<CpuLevelRules> cpuLevels = {{0.35f, 0.80f, 0.6f}, {0.55f, 0.92f, 0.25f}, {0.72f, 0.98f, 0.05f}};
+        //! CPU の強さ（CpuLevel の Easy・Normal・Hard の順）。
+        //! 「ChronoSort.exe cpubalance」（Debug）で、正解率 0.65 の人の代わりに対して
+        //! Easy はほぼ負け（約9割）、Normal は五分になるよう合わせてある
+        std::vector<CpuLevelRules> cpuLevels = {{0.22f, 0.60f, 0.85f}, {0.45f, 0.86f, 0.4f}, {0.72f, 0.98f, 0.05f}};
         float comfortableGapYears = 150.0f;    // これ以上離れていれば CPU は迷わない年数
         float nearMissChance      = 0.8f;      // CPU が外すとき、正解のすぐ隣を選ぶ割合（残りは2つ隣）
 

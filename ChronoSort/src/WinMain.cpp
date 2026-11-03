@@ -5,12 +5,16 @@
 #include <ChronoSort/Game/FrameMonitor.hpp>
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
+#include <ChronoSort/Rules/CpuBalance.hpp>
+#include <ChronoSort/Rules/Deck.hpp>
 #include <ChronoSort/Rules/RulesSelfTest.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
 #include <ChronoSort/Scene/LoadingScene.hpp>
 #include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
+#include <ChronoSort/Util/AssetPaths.hpp>
 
+#include <Tsukino/Core/IO/JsonFile.hpp>
 #include <Tsukino/Core/Log.hpp>
 #include <Tsukino/EngineIntegration/EngineAPI.hpp>
 #include <Tsukino/EngineIntegration/EngineIntegration.hpp>
@@ -35,6 +39,15 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
 #ifdef _DEBUG
     // ルール判定の境界ケースを起動のたびに確かめる（結果はログへ）
     ChronoSort::Rules::RunSelfTest();
+
+    // 「ChronoSort.exe cpubalance」なら、対戦 CPU の強さを測ってログへ出し、そのまま終わる（調整用）。
+    // 時間がかかるので、窓を作る前に回す（窓が応答なしとして閉じられないように）
+    if(lpCmdLine != nullptr && std::string(lpCmdLine).find("cpubalance") != std::string::npos) {
+        ChronoSort::Rules::RulesTuning rules;
+        Tsukino::IO::TryLoadJson(ChronoSort::Util::AssetPaths::Tuning("Rules"), "tuning", rules);
+        ChronoSort::Rules::MeasureCpuBalance(rules, ChronoSort::Rules::LoadAllCards());
+        return 0;
+    }
 #endif
 
     Tsukino::EngineIntegration::EngineIntegration engineIntegration;

@@ -27,14 +27,14 @@
         ],
         "cpuLevels": [
             {
-                "hardestChance": 0.35,
-                "easiestChance": 0.8,
-                "whim": 0.6
+                "hardestChance": 0.22,
+                "easiestChance": 0.6,
+                "whim": 0.85
             },
             {
-                "hardestChance": 0.55,
-                "easiestChance": 0.92,
-                "whim": 0.25
+                "hardestChance": 0.45,
+                "easiestChance": 0.86,
+                "whim": 0.4
             },
             {
                 "hardestChance": 0.72,
