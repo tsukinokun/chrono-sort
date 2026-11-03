@@ -162,13 +162,16 @@ namespace ChronoSort::UI {
                 tag                = m_ui.Paper(frame);
 
                 // 卓の奥の席の上に貼り付ける（カメラが動いても席についてくる）
-                auto& anchor                 = m_scene.GetRegistry().AddComponent<BuiltIn::WorldAnchorComponent>(tag);
-                anchor.useFixedWorldPosition = true;
-                anchor.fixedWorldPosition    = Board::SeatPosition(i - 1, players.size() - 1);
-                // 席の手前は起こした場の列と重なるので、席の内側（卓の中央寄り）の横に並べる
-                const float side             = (float(anchor.fixedWorldPosition.x) > 0.0f) ? -1.0f : 1.0f;
-                anchor.worldOffset           = hlslpp::float3(side * 175.0f, 0.0f, 0.0f);
-                anchor.screenOffset          = hlslpp::float2(0.0f, -8.0f);
+                const Board::BoardTuning& seat      = Game::Tuning().Board();
+                const size_t              cpuCount  = players.size() - 1;
+                const bool                crowded   = static_cast<int>(cpuCount) >= seat.seatCrowdedFrom;
+                auto&                     anchor    = m_scene.GetRegistry().AddComponent<BuiltIn::WorldAnchorComponent>(tag);
+                anchor.useFixedWorldPosition        = true;
+                anchor.fixedWorldPosition           = Board::SeatPosition(i - 1, cpuCount);
+                // 2人までは席の内側（卓の中央寄り）の横に並べる。3人だと真ん中の席の内側が両隣と取り合いになるので、どの席も右に置く
+                const float side                    = (!crowded && float(anchor.fixedWorldPosition.x) > 0.0f) ? -1.0f : 1.0f;
+                anchor.worldOffset                  = hlslpp::float3(side * seat.seatTagSide, 0.0f, 0.0f);
+                anchor.screenOffset                 = hlslpp::float2(0.0f, seat.seatTagLift);
 
                 // 歴史家の肖像（取得できていなければ影絵）
                 const std::string& portrait = players[i].portrait;
@@ -179,8 +182,9 @@ namespace ChronoSort::UI {
                 face.parent    = tag;
                 m_ui.Paper(face);
                 m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 33.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
-                // 手札の枚数は、席のカードと反対の側に出す
-                m_handCounts.push_back(m_ui.Text(L"", hlslpp::float2(side * 100.0f, 0.0f), 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true, false));
+                // 手札の枚数は、席のカードと反対の側に出す（3人のときは、横に出すと隣の席にかかるので額の上）
+                const hlslpp::float2 countAt = crowded ? hlslpp::float2(0.0f, seat.seatCountAbove) : hlslpp::float2(side * seat.seatCountSide, 0.0f);
+                m_handCounts.push_back(m_ui.Text(L"", countAt, 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true, false));
             }
             m_playerTags.push_back(tag);
         }

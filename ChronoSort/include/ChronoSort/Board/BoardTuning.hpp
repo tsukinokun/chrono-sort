@@ -99,6 +99,13 @@ namespace ChronoSort::Board {
         float          seatLiftedTilt      = -0.6f;
         float          seatLiftedScale     = 0.95f;
 
+        // 席の名札（肖像の額・名前・手札の枚数）。席の手前は起こした場の列と重なるので、席の横に置く
+        float seatTagSide     = 175.0f;    // 額を席から横へずらす量（世界座標）
+        float seatTagLift     = -8.0f;     // 額を画面の上へずらす量（px。負で上）
+        float seatCountSide   = 100.0f;    // 手札の枚数を、額から席と反対の側へ離す量（px）
+        int   seatCrowdedFrom = 3;         // CPU がこの人数以上だと、真ん中の席には内側が無いので、額をすべて席の右に置く
+        float seatCountAbove  = -74.0f;    // そのときは手札の枚数を、隣の席にかからないよう額の上に出す（px。負で上）
+
         //----------------------------------------------------------------------------
         // 山札・捨て札。場の列の両端に置くと長くなった列とぶつかるため、列より手前の左右の角に置く
         //----------------------------------------------------------------------------
@@ -183,6 +190,11 @@ namespace ChronoSort::Board {
         CHRONOSORT_LOAD(seatSwayAmplitude);
         CHRONOSORT_LOAD(seatLiftedTilt);
         CHRONOSORT_LOAD(seatLiftedScale);
+        CHRONOSORT_LOAD(seatTagSide);
+        CHRONOSORT_LOAD(seatTagLift);
+        CHRONOSORT_LOAD(seatCountSide);
+        CHRONOSORT_LOAD(seatCrowdedFrom);
+        CHRONOSORT_LOAD(seatCountAbove);
         CHRONOSORT_LOAD(deckPosition);
         CHRONOSORT_LOAD(discardPosition);
         CHRONOSORT_LOAD(coverThickness);

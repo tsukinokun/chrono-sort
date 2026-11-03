@@ -66,6 +66,11 @@
         "seatSwayAmplitude": 0.06,
         "seatLiftedTilt": -0.6,
         "seatLiftedScale": 0.95,
+        "seatTagSide": 175.0,
+        "seatTagLift": -8.0,
+        "seatCountSide": 100.0,
+        "seatCrowdedFrom": 3,
+        "seatCountAbove": -74.0,
         "deckPosition": {
             "x": 350.0,
             "y": 0.0,
