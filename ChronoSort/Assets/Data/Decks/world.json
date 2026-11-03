@@ -8,6 +8,7 @@
             "yearLabel": "紀元前776年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Olympia stadium ancient"
         },
@@ -18,6 +19,7 @@
             "yearLabel": "紀元前490年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Marathon painting"
         },
@@ -28,6 +30,7 @@
             "yearLabel": "紀元前480年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Leonidas at Thermopylae David"
         },
@@ -38,6 +41,7 @@
             "yearLabel": "紀元前480年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Salamis Kaulbach"
         },
@@ -48,6 +52,7 @@
             "yearLabel": "紀元前399年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 1,
             "art": "",
             "artQuery": "The Death of Socrates David"
         },
@@ -58,6 +63,7 @@
             "yearLabel": "紀元前334年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Alexander Mosaic"
         },
@@ -68,6 +74,7 @@
             "yearLabel": "紀元前221年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Qin Shi Huang portrait"
         },
@@ -78,6 +85,7 @@
             "yearLabel": "紀元前216年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hannibal Barca bust"
         },
@@ -88,6 +96,7 @@
             "yearLabel": "紀元前146年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Scipio Aemilianus ruins of Carthage"
         },
@@ -98,6 +107,7 @@
             "yearLabel": "紀元前44年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Death of Caesar Camuccini"
         },
@@ -108,6 +118,7 @@
             "yearLabel": "紀元前31年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Actium painting"
         },
@@ -118,6 +129,7 @@
             "yearLabel": "79年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Last Day of Pompeii Bryullov"
         },
@@ -128,6 +140,7 @@
             "yearLabel": "208年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Red Cliffs"
         },
@@ -138,6 +151,7 @@
             "yearLabel": "313年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Constantine the Great"
         },
@@ -148,6 +162,7 @@
             "yearLabel": "325年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "First Council of Nicaea icon"
         },
@@ -158,6 +173,7 @@
             "yearLabel": "395年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Theodosius I"
         },
@@ -168,6 +184,7 @@
             "yearLabel": "476年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Romulus Augustulus"
         },
@@ -178,6 +195,7 @@
             "yearLabel": "622年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Jabal Thawr"
         },
@@ -188,6 +206,7 @@
             "yearLabel": "732年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Poitiers Steuben"
         },
@@ -198,6 +217,7 @@
             "yearLabel": "800年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Coronation of Charlemagne"
         },
@@ -208,6 +228,7 @@
             "yearLabel": "843年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Verdun map"
         },
@@ -218,6 +239,7 @@
             "yearLabel": "962年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Otto I Holy Roman Emperor"
         },
@@ -228,6 +250,7 @@
             "yearLabel": "1066年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bayeux Tapestry"
         },
@@ -238,6 +261,7 @@
             "yearLabel": "1096年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "First Crusade Siege of Jerusalem"
         },
@@ -248,6 +272,7 @@
             "yearLabel": "1206年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Genghis Khan portrait"
         },
@@ -258,6 +283,7 @@
             "yearLabel": "1215年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Magna Carta"
         },
@@ -268,6 +294,7 @@
             "yearLabel": "1337年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Crecy"
         },
@@ -278,6 +305,7 @@
             "yearLabel": "1368年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hongwu Emperor portrait"
         },
@@ -288,6 +316,7 @@
             "yearLabel": "1453年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Fall of Constantinople painting"
         },
@@ -298,6 +327,7 @@
             "yearLabel": "1492年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Capitulation of Granada Pradilla"
         },
@@ -308,6 +338,7 @@
             "yearLabel": "1492年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Landing of Columbus"
         },
@@ -318,6 +349,7 @@
             "yearLabel": "1498年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Vasco da Gama portrait"
         },
@@ -328,6 +360,7 @@
             "yearLabel": "1517年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Luther 95 theses"
         },
@@ -338,6 +371,7 @@
             "yearLabel": "1519年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ferdinand Magellan"
         },
@@ -348,6 +382,7 @@
             "yearLabel": "1521年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fall of Tenochtitlan"
         },
@@ -358,6 +393,7 @@
             "yearLabel": "1588年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Spanish Armada painting"
         },
@@ -368,6 +404,7 @@
             "yearLabel": "1600年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "East India House"
         },
@@ -378,6 +415,7 @@
             "yearLabel": "1618年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Defenestration of Prague"
         },
@@ -388,6 +426,7 @@
             "yearLabel": "1620年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Mayflower Plymouth Harbor"
         },
@@ -398,6 +437,7 @@
             "yearLabel": "1648年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ratification of the Treaty of Munster"
         },
@@ -408,6 +448,7 @@
             "yearLabel": "1687年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Newton Principia title page"
         },
@@ -418,6 +459,7 @@
             "yearLabel": "1688年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "William III landing at Brixham"
         },
@@ -428,6 +470,7 @@
             "yearLabel": "1776年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Declaration of Independence Trumbull"
         },
@@ -438,6 +481,7 @@
             "yearLabel": "1789年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Storming of the Bastille"
         },
@@ -448,6 +492,7 @@
             "yearLabel": "1804年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Coronation of Napoleon David"
         },
@@ -458,6 +503,7 @@
             "yearLabel": "1805年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Trafalgar Turner"
         },
@@ -468,6 +514,7 @@
             "yearLabel": "1812年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Napoleon retreat from Moscow"
         },
@@ -478,6 +525,7 @@
             "yearLabel": "1815年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Waterloo painting"
         },
@@ -488,6 +536,7 @@
             "yearLabel": "1840年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "First Opium War Nemesis"
         },
@@ -498,6 +547,7 @@
             "yearLabel": "1859年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "On the Origin of Species title page"
         },
@@ -508,6 +558,7 @@
             "yearLabel": "1861年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Bombardment of Fort Sumter"
         },
@@ -518,6 +569,7 @@
             "yearLabel": "1863年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Abraham Lincoln 1863"
         },
@@ -528,6 +580,7 @@
             "yearLabel": "1869年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Suez Canal inauguration 1869"
         },
@@ -538,6 +591,7 @@
             "yearLabel": "1871年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Proclamation of the German Empire Werner"
         },
@@ -548,6 +602,7 @@
             "yearLabel": "1876年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Alexander Graham Bell telephone"
         },
@@ -558,6 +613,7 @@
             "yearLabel": "1889年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Eiffel Tower 1889"
         },
@@ -568,6 +624,7 @@
             "yearLabel": "1903年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Wright Flyer first flight 1903"
         },
@@ -578,6 +635,7 @@
             "yearLabel": "1912年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "RMS Titanic"
         },
@@ -588,6 +646,7 @@
             "yearLabel": "1914年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "World War I trenches"
         },
@@ -598,6 +657,7 @@
             "yearLabel": "1917年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "October Revolution 1917"
         },
@@ -608,6 +668,7 @@
             "yearLabel": "1928年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Alexander Fleming"
         },
@@ -618,6 +679,7 @@
             "yearLabel": "1929年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Wall Street crowd 1929 crash"
         },
@@ -628,6 +690,7 @@
             "yearLabel": "1939年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Schleswig-Holstein Westerplatte 1939"
         },
@@ -638,6 +701,7 @@
             "yearLabel": "1945年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "United Nations Charter signing 1945"
         },
@@ -648,6 +712,7 @@
             "yearLabel": "1949年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Founding ceremony of the People's Republic of China 1949"
         },
@@ -658,6 +723,7 @@
             "yearLabel": "1957年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Sputnik 1"
         },
@@ -668,6 +734,7 @@
             "yearLabel": "1962年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Cuban Missile Crisis"
         },
@@ -678,6 +745,7 @@
             "yearLabel": "1969年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Aldrin Apollo 11"
         },
@@ -688,6 +756,7 @@
             "yearLabel": "1989年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Berlin Wall 1989"
         },
@@ -698,6 +767,7 @@
             "yearLabel": "1991年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Boris Yeltsin 1991"
         },
@@ -708,6 +778,7 @@
             "yearLabel": "1429年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Joan of Arc at the Siege of Orleans Lenepveu"
         },
@@ -718,6 +789,7 @@
             "yearLabel": "1543年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Copernicus heliocentric diagram De revolutionibus"
         },
@@ -728,6 +800,7 @@
             "yearLabel": "1610年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Galileo Sidereus Nuncius"
         },
@@ -738,6 +811,7 @@
             "yearLabel": "1919年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Signing of Peace in the Hall of Mirrors Orpen"
         },
@@ -748,6 +822,7 @@
             "yearLabel": "1990年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Helmut Kohl 1990"
         },
@@ -758,6 +833,7 @@
             "yearLabel": "紀元前323年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Death of Alexander the Great"
         },
@@ -768,6 +844,7 @@
             "yearLabel": "紀元前202年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Zama"
         },
@@ -778,6 +855,7 @@
             "yearLabel": "紀元前27年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Augustus of Prima Porta"
         },
@@ -788,6 +866,7 @@
             "yearLabel": "105年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Cai Lun papermaking"
         },
@@ -798,6 +877,7 @@
             "yearLabel": "1054年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Michael I Cerularius"
         },
@@ -808,6 +888,7 @@
             "yearLabel": "1271年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Marco Polo leaving Venice"
         },
@@ -818,6 +899,7 @@
             "yearLabel": "1555年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Peace of Augsburg"
         },
@@ -828,6 +910,7 @@
             "yearLabel": "1571年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Lepanto painting"
         },
@@ -838,6 +921,7 @@
             "yearLabel": "1683年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Vienna 1683"
         },
@@ -848,6 +932,7 @@
             "yearLabel": "1769年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "James Watt steam engine"
         },
@@ -858,6 +943,7 @@
             "yearLabel": "1848年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Communist Manifesto first edition"
         },
@@ -868,6 +954,7 @@
             "yearLabel": "1865年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Assassination of Abraham Lincoln"
         },
@@ -878,6 +965,7 @@
             "yearLabel": "1896年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "1896 Summer Olympics Athens"
         },
@@ -888,6 +976,7 @@
             "yearLabel": "1911年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Xinhai Revolution Wuchang"
         },
@@ -898,6 +987,7 @@
             "yearLabel": "1953年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "DNA double helix Watson Crick model"
         },
@@ -908,6 +998,7 @@
             "yearLabel": "紀元前594年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Solon"
         },
@@ -918,6 +1009,7 @@
             "yearLabel": "紀元前431年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Pericles Funeral Oration Foltz"
         },
@@ -928,6 +1020,7 @@
             "yearLabel": "紀元前264年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "First Punic War"
         },
@@ -938,6 +1031,7 @@
             "yearLabel": "紀元前73年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Spartacus statue"
         },
@@ -948,6 +1042,7 @@
             "yearLabel": "紀元前49年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Caesar crossing the Rubicon"
         },
@@ -958,6 +1053,7 @@
             "yearLabel": "9年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Varusschlacht"
         },
@@ -968,6 +1064,7 @@
             "yearLabel": "64年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fire of Rome Hubert Robert"
         },
@@ -978,6 +1075,7 @@
             "yearLabel": "80年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Colosseum exterior Rome"
         },
@@ -988,6 +1086,7 @@
             "yearLabel": "184年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yellow Turban Rebellion"
         },
@@ -998,6 +1097,7 @@
             "yearLabel": "330年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Constantine I Hagia Sophia southwestern entrance mosaic"
         },
@@ -1008,6 +1108,7 @@
             "yearLabel": "451年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of the Catalaunian Plains"
         },
@@ -1018,6 +1119,7 @@
             "yearLabel": "537年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hagia Sophia"
         },
@@ -1028,6 +1130,7 @@
             "yearLabel": "589年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Wen of Sui"
         },
@@ -1038,6 +1141,7 @@
             "yearLabel": "618年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Gaozu of Tang"
         },
@@ -1048,6 +1152,7 @@
             "yearLabel": "762年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Round city of Baghdad"
         },
@@ -1058,6 +1163,7 @@
             "yearLabel": "960年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Taizu of Song"
         },
@@ -1068,6 +1174,7 @@
             "yearLabel": "1077年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Canossa Henry IV"
         },
@@ -1078,6 +1185,7 @@
             "yearLabel": "1187年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Saladin"
         },
@@ -1088,6 +1196,7 @@
             "yearLabel": "1258年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Siege of Baghdad 1258"
         },
@@ -1098,6 +1207,7 @@
             "yearLabel": "1405年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Zheng He treasure ship"
         },
@@ -1108,6 +1218,7 @@
             "yearLabel": "1415年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Agincourt"
         },
@@ -1118,6 +1229,7 @@
             "yearLabel": "1488年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bartolomeu Dias Cape of Good Hope"
         },
@@ -1128,6 +1240,7 @@
             "yearLabel": "1494年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Tordesillas"
         },
@@ -1138,6 +1251,7 @@
             "yearLabel": "1513年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Vasco Nunez de Balboa"
         },
@@ -1148,6 +1262,7 @@
             "yearLabel": "1526年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Babur"
         },
@@ -1158,6 +1273,7 @@
             "yearLabel": "1529年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Siege of Vienna 1529"
         },
@@ -1168,6 +1284,7 @@
             "yearLabel": "1533年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Atahualpa"
         },
@@ -1178,6 +1295,7 @@
             "yearLabel": "1545年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Council of Trent"
         },
@@ -1188,6 +1306,7 @@
             "yearLabel": "1598年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Henry IV of France"
         },
@@ -1198,6 +1317,7 @@
             "yearLabel": "1649年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Execution of Charles I"
         },
@@ -1208,6 +1328,7 @@
             "yearLabel": "1661年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Louis XIV Rigaud"
         },
@@ -1218,6 +1339,7 @@
             "yearLabel": "1689年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Nerchinsk"
         },
@@ -1228,6 +1350,7 @@
             "yearLabel": "1703年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Peter the Great founding Saint Petersburg"
         },
@@ -1238,6 +1361,7 @@
             "yearLabel": "1757年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Plassey"
         },
@@ -1248,6 +1372,7 @@
             "yearLabel": "1773年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Boston Tea Party"
         },
@@ -1258,6 +1383,7 @@
             "yearLabel": "1783年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Montgolfier balloon 1783"
         },
@@ -1268,6 +1394,7 @@
             "yearLabel": "1793年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Execution of Louis XVI"
         },
@@ -1278,6 +1405,7 @@
             "yearLabel": "1796年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Edward Jenner vaccination"
         },
@@ -1288,6 +1416,7 @@
             "yearLabel": "1814年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Congress of Vienna Isabey"
         },
@@ -1298,6 +1427,7 @@
             "yearLabel": "1825年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Locomotion No 1"
         },
@@ -1308,6 +1438,7 @@
             "yearLabel": "1830年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Liberty Leading the People"
         },
@@ -1318,6 +1449,7 @@
             "yearLabel": "1851年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Crystal Palace 1851"
         },
@@ -1328,6 +1460,7 @@
             "yearLabel": "1867年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Alaska purchase check"
         },
@@ -1338,6 +1471,7 @@
             "yearLabel": "1869年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Golden spike 1869"
         },
@@ -1348,6 +1482,7 @@
             "yearLabel": "1879年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Edison light bulb"
         },
@@ -1358,6 +1493,7 @@
             "yearLabel": "1895年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Rontgen hand X-ray"
         },
@@ -1368,6 +1504,7 @@
             "yearLabel": "1905年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Albert Einstein 1905"
         },
@@ -1378,6 +1515,7 @@
             "yearLabel": "1927年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Spirit of St. Louis Lindbergh"
         },
@@ -1388,6 +1526,7 @@
             "yearLabel": "1955年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Bandung Conference 1955"
         },
@@ -1398,6 +1537,7 @@
             "yearLabel": "1961年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Yuri Gagarin"
         },
@@ -1408,6 +1548,7 @@
             "yearLabel": "紀元前539年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Cyrus the Great"
         },
@@ -1418,6 +1559,7 @@
             "yearLabel": "紀元前447年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Parthenon"
         },
@@ -1428,6 +1570,7 @@
             "yearLabel": "紀元前338年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Philip II of Macedon"
         },
@@ -1438,6 +1581,7 @@
             "yearLabel": "紀元前331年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Gaugamela"
         },
@@ -1448,6 +1592,7 @@
             "yearLabel": "紀元前202年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Gaozu of Han"
         },
@@ -1458,6 +1603,7 @@
             "yearLabel": "紀元前133年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Gracchi brothers"
         },
@@ -1468,6 +1614,7 @@
             "yearLabel": "25年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Guangwu of Han"
         },
@@ -1478,6 +1625,7 @@
             "yearLabel": "220年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Cao Pi"
         },
@@ -1488,6 +1636,7 @@
             "yearLabel": "410年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sack of Rome 410 Sylvestre"
         },
@@ -1498,6 +1647,7 @@
             "yearLabel": "529年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Justinian mosaic Ravenna"
         },
@@ -1508,6 +1658,7 @@
             "yearLabel": "661年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Umayyad Mosque Damascus"
         },
@@ -1518,6 +1669,7 @@
             "yearLabel": "755年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Xuanzong's journey into Shu"
         },
@@ -1528,6 +1680,7 @@
             "yearLabel": "988年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Baptism of Vladimir Vasnetsov"
         },
@@ -1538,6 +1691,7 @@
             "yearLabel": "1163年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Notre-Dame de Paris west facade"
         },
@@ -1548,6 +1702,7 @@
             "yearLabel": "1241年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Legnica"
         },
@@ -1558,6 +1713,7 @@
             "yearLabel": "1299年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Osman I"
         },
@@ -1568,6 +1724,7 @@
             "yearLabel": "1402年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Timur Bayezid captivity"
         },
@@ -1578,6 +1735,7 @@
             "yearLabel": "1410年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Grunwald Matejko"
         },
@@ -1588,6 +1746,7 @@
             "yearLabel": "1534年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ignatius of Loyola portrait"
         },
@@ -1598,6 +1757,7 @@
             "yearLabel": "1558年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Elizabeth I Armada portrait"
         },
@@ -1608,6 +1768,7 @@
             "yearLabel": "1602年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "VOC ship"
         },
@@ -1618,6 +1779,7 @@
             "yearLabel": "1607年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jamestown 1607"
         },
@@ -1628,6 +1790,7 @@
             "yearLabel": "1616年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nurhaci"
         },
@@ -1638,6 +1801,7 @@
             "yearLabel": "1632年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Taj Mahal 19th century photograph"
         },
@@ -1648,6 +1812,7 @@
             "yearLabel": "1666年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Great Fire of London"
         },
@@ -1658,6 +1823,7 @@
             "yearLabel": "1756年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Frederick the Great"
         },
@@ -1668,6 +1834,7 @@
             "yearLabel": "1770年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "James Cook"
         },
@@ -1678,6 +1845,7 @@
             "yearLabel": "1791年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Toussaint Louverture"
         },
@@ -1688,6 +1856,7 @@
             "yearLabel": "1799年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Rosetta Stone British Museum"
         },
@@ -1698,6 +1867,7 @@
             "yearLabel": "1803年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Louisiana Purchase"
         },
@@ -1708,6 +1878,7 @@
             "yearLabel": "1837年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Queen Victoria coronation Hayter"
         },
@@ -1718,6 +1889,7 @@
             "yearLabel": "1848年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "California Gold Rush"
         },
@@ -1728,6 +1900,7 @@
             "yearLabel": "1853年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Crimean War"
         },
@@ -1738,6 +1911,7 @@
             "yearLabel": "1886年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Statue of Liberty 1886"
         },
@@ -1748,6 +1922,7 @@
             "yearLabel": "1898年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "USS Maine wreck Havana"
         },
@@ -1758,6 +1933,7 @@
             "yearLabel": "1900年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Boxer Rebellion"
         },
@@ -1768,6 +1944,7 @@
             "yearLabel": "1906年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "1906 San Francisco earthquake"
         },
@@ -1778,6 +1955,7 @@
             "yearLabel": "1912年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sun Yat-sen 1912"
         },
@@ -1788,6 +1966,7 @@
             "yearLabel": "1918年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Armistice of 11 November 1918"
         },
@@ -1798,6 +1977,7 @@
             "yearLabel": "1922年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Harry Burton Tutankhamun"
         },
@@ -1808,6 +1988,7 @@
             "yearLabel": "1944年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Normandy landings"
         },
@@ -1818,6 +1999,7 @@
             "yearLabel": "1947年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Jawaharlal Nehru 1947"
         },
@@ -1828,6 +2010,7 @@
             "yearLabel": "1948年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Eleanor Roosevelt Universal Declaration of Human Rights"
         },
@@ -1838,6 +2021,7 @@
             "yearLabel": "1950年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Korean War 1950"
         },
@@ -1848,6 +2032,7 @@
             "yearLabel": "1961年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Berlin Wall construction 1961"
         },
@@ -1858,6 +2043,7 @@
             "yearLabel": "1963年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Martin Luther King March on Washington"
         },
@@ -1868,6 +2054,7 @@
             "yearLabel": "1973年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "1973 oil crisis"
         },
@@ -1878,6 +2065,7 @@
             "yearLabel": "1975年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Saigon evacuation 1975"
         },
@@ -1888,6 +2076,7 @@
             "yearLabel": "1986年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Chernobyl Nuclear Power Plant"
         },
@@ -1898,6 +2087,7 @@
             "yearLabel": "1997年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hong Kong handover ceremony"
         },
@@ -1908,6 +2098,7 @@
             "yearLabel": "紀元前404年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Aegospotami"
         },
@@ -1918,6 +2109,7 @@
             "yearLabel": "紀元前371年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Epaminondas"
         },
@@ -1928,6 +2120,7 @@
             "yearLabel": "紀元前260年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Bai Qi"
         },
@@ -1938,6 +2131,7 @@
             "yearLabel": "紀元前218年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Snow Storm Hannibal and his Army Crossing the Alps"
         },
@@ -1948,6 +2142,7 @@
             "yearLabel": "紀元前210年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Terracotta Army"
         },
@@ -1958,6 +2153,7 @@
             "yearLabel": "紀元前60年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Pompey the Great"
         },
@@ -1968,6 +2164,7 @@
             "yearLabel": "紀元前30年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Death of Cleopatra"
         },
@@ -1978,6 +2175,7 @@
             "yearLabel": "43年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Claudius bust"
         },
@@ -1988,6 +2186,7 @@
             "yearLabel": "122年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hadrian's Wall"
         },
@@ -1998,6 +2197,7 @@
             "yearLabel": "380年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Missorium of Theodosius"
         },
@@ -2008,6 +2208,7 @@
             "yearLabel": "645年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Xuanzang"
         },
@@ -2018,6 +2219,7 @@
             "yearLabel": "676年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Cheomseongdae"
         },
@@ -2028,6 +2230,7 @@
             "yearLabel": "690年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Empress Wu Zetian portrait"
         },
@@ -2038,6 +2241,7 @@
             "yearLabel": "750年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Abbasid Caliphate"
         },
@@ -2048,6 +2252,7 @@
             "yearLabel": "751年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Talas"
         },
@@ -2058,6 +2263,7 @@
             "yearLabel": "793年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Lindisfarne"
         },
@@ -2068,6 +2274,7 @@
             "yearLabel": "918年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Manwoldae"
         },
@@ -2078,6 +2285,7 @@
             "yearLabel": "1071年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Manzikert"
         },
@@ -2088,6 +2296,7 @@
             "yearLabel": "1086年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Domesday Book"
         },
@@ -2098,6 +2307,7 @@
             "yearLabel": "1204年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Entry of the Crusaders into Constantinople Delacroix"
         },
@@ -2108,6 +2318,7 @@
             "yearLabel": "1279年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Lu Xiufu"
         },
@@ -2118,6 +2329,7 @@
             "yearLabel": "1381年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Death of Wat Tyler"
         },
@@ -2128,6 +2340,7 @@
             "yearLabel": "1392年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Taejo of Joseon"
         },
@@ -2138,6 +2351,7 @@
             "yearLabel": "1446年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hunminjeongeum"
         },
@@ -2148,6 +2362,7 @@
             "yearLabel": "1485年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Bosworth Field"
         },
@@ -2158,6 +2373,7 @@
             "yearLabel": "1508年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sistine Chapel ceiling"
         },
@@ -2168,6 +2384,7 @@
             "yearLabel": "1582年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Pope Gregory XIII"
         },
@@ -2178,6 +2395,7 @@
             "yearLabel": "1605年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Don Quixote 1605 title page"
         },
@@ -2188,6 +2406,7 @@
             "yearLabel": "1644年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Jingshan Park Beijing"
         },
@@ -2198,6 +2417,7 @@
             "yearLabel": "1755年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "1755 Lisbon earthquake"
         },
@@ -2208,6 +2428,7 @@
             "yearLabel": "1787年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Scene at the Signing of the Constitution"
         },
@@ -2218,6 +2439,7 @@
             "yearLabel": "1798年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of the Pyramids"
         },
@@ -2228,6 +2450,7 @@
             "yearLabel": "1821年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Greece on the Ruins of Missolonghi"
         },
@@ -2238,6 +2461,7 @@
             "yearLabel": "1842年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Nanking"
         },
@@ -2248,6 +2472,7 @@
             "yearLabel": "1857年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Indian Rebellion of 1857"
         },
@@ -2258,6 +2483,7 @@
             "yearLabel": "1861年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emancipation reform of 1861"
         },
@@ -2268,6 +2494,7 @@
             "yearLabel": "1863年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emancipation Proclamation"
         },
@@ -2278,6 +2505,7 @@
             "yearLabel": "1870年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Franco-Prussian War"
         },
@@ -2288,6 +2516,7 @@
             "yearLabel": "1901年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Alfred Nobel"
         },
@@ -2298,6 +2527,7 @@
             "yearLabel": "1908年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ford Model T"
         },
@@ -2308,6 +2538,7 @@
             "yearLabel": "1911年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Roald Amundsen South Pole"
         },
@@ -2318,6 +2549,7 @@
             "yearLabel": "1914年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Panama Canal 1914"
         },
@@ -2328,6 +2560,7 @@
             "yearLabel": "1920年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "League of Nations"
         },
@@ -2338,6 +2571,7 @@
             "yearLabel": "1945年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Yalta Conference"
         },
@@ -2348,6 +2582,7 @@
             "yearLabel": "1949年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "North Atlantic Treaty signing 1949"
         },
@@ -2358,6 +2593,7 @@
             "yearLabel": "1959年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fidel Castro 1959"
         },
@@ -2368,6 +2604,7 @@
             "yearLabel": "1968年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Prague Spring 1968"
         },
@@ -2378,6 +2615,7 @@
             "yearLabel": "1979年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Iranian Revolution 1979 demonstration"
         },
@@ -2388,6 +2626,7 @@
             "yearLabel": "1993年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Maastricht Treaty"
         },
@@ -2398,6 +2637,7 @@
             "yearLabel": "2008年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Lehman Brothers headquarters"
         },
@@ -2408,6 +2648,7 @@
             "yearLabel": "紀元前612年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nineveh relief"
         },
@@ -2418,6 +2659,7 @@
             "yearLabel": "紀元前478年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Delos",
             "artFile": "Athenian Tribute List 25 (23369484092).jpg"
@@ -2429,6 +2671,7 @@
             "yearLabel": "紀元前429年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Pericles bust"
         },
@@ -2439,6 +2682,7 @@
             "yearLabel": "紀元前336年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Philip II of Macedon"
         },
@@ -2449,6 +2693,7 @@
             "yearLabel": "紀元前333年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Alexander Mosaic"
         },
@@ -2459,6 +2704,7 @@
             "yearLabel": "紀元前301年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Diadochi coin",
             "artFile": "Seleukos I Nikator Bronze Roman 100BCE-100CE Museo Archeologico Nazionale Naples AN 5590 1.jpg"
@@ -2470,6 +2716,7 @@
             "yearLabel": "紀元前218年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hannibal bust"
         },
@@ -2480,6 +2727,7 @@
             "yearLabel": "紀元前168年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Pydna"
         },
@@ -2490,6 +2738,7 @@
             "yearLabel": "紀元前146年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ancient Corinth ruins"
         },
@@ -2500,6 +2749,7 @@
             "yearLabel": "紀元前82年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sulla bust",
             "artFile": "Sulla Glyptothek Munich 309.jpg"
@@ -2511,6 +2761,7 @@
             "yearLabel": "紀元前52年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Vercingetorix throws down his arms"
         },
@@ -2521,6 +2772,7 @@
             "yearLabel": "紀元前48年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Pharsalus",
             "artFile": "(Venice) Pompey the Great, Museo Archeologico Nazionale.jpg"
@@ -2532,6 +2784,7 @@
             "yearLabel": "紀元前45年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Julius Caesar bust"
         },
@@ -2542,6 +2795,7 @@
             "yearLabel": "紀元前42年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Philippi"
         },
@@ -2552,6 +2806,7 @@
             "yearLabel": "8年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Wang Mang"
         },
@@ -2562,6 +2817,7 @@
             "yearLabel": "14年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Augustus of Prima Porta"
         },
@@ -2572,6 +2828,7 @@
             "yearLabel": "70年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Siege of Jerusalem 70 painting"
         },
@@ -2582,6 +2839,7 @@
             "yearLabel": "97年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Han dynasty envoy",
             "artFile": "汉班超立像.png"
@@ -2593,6 +2851,7 @@
             "yearLabel": "106年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Trajan's Column"
         },
@@ -2603,6 +2862,7 @@
             "yearLabel": "161年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Marcus Aurelius equestrian statue"
         },
@@ -2613,6 +2873,7 @@
             "yearLabel": "212年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Caracalla bust"
         },
@@ -2623,6 +2884,7 @@
             "yearLabel": "284年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Diocletian"
         },
@@ -2633,6 +2895,7 @@
             "yearLabel": "312年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of the Milvian Bridge Raphael"
         },
@@ -2643,6 +2906,7 @@
             "yearLabel": "378年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Valens emperor"
         },
@@ -2653,6 +2917,7 @@
             "yearLabel": "453年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Attila the Hun"
         },
@@ -2663,6 +2928,7 @@
             "yearLabel": "529年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Monte Cassino Abbey"
         },
@@ -2673,6 +2939,7 @@
             "yearLabel": "590年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Pope Gregory I"
         },
@@ -2683,6 +2950,7 @@
             "yearLabel": "610年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Grand Canal China",
             "artFile": "Entering Suzhou and the Grand Canal8.jpg"
@@ -2694,6 +2962,7 @@
             "yearLabel": "626年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Taizong of Tang"
         },
@@ -2704,6 +2973,7 @@
             "yearLabel": "630年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kaaba Mecca",
             "artFile": "Kaaba (1910)-2.jpg"
@@ -2715,6 +2985,7 @@
             "yearLabel": "632年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Medina Prophet's Mosque"
         },
@@ -2725,6 +2996,7 @@
             "yearLabel": "642年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sassanid Persia"
         },
@@ -2735,6 +3007,7 @@
             "yearLabel": "641年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Princess Wencheng"
         },
@@ -2745,6 +3018,7 @@
             "yearLabel": "680年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Karbala painting"
         },
@@ -2755,6 +3029,7 @@
             "yearLabel": "711年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tariq ibn Ziyad"
         },
@@ -2765,6 +3040,7 @@
             "yearLabel": "751年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Pepin the Short"
         },
@@ -2775,6 +3051,7 @@
             "yearLabel": "756年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Donation of Pepin"
         },
@@ -2785,6 +3062,7 @@
             "yearLabel": "785年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mezquita Cordoba"
         },
@@ -2795,6 +3073,7 @@
             "yearLabel": "871年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Alfred the Great statue"
         },
@@ -2805,6 +3084,7 @@
             "yearLabel": "907年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tang dynasty"
         },
@@ -2815,6 +3095,7 @@
             "yearLabel": "910年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Cluny Abbey"
         },
@@ -2825,6 +3106,7 @@
             "yearLabel": "955年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Lechfeld"
         },
@@ -2835,6 +3117,7 @@
             "yearLabel": "987年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hugh Capet"
         },
@@ -2845,6 +3128,7 @@
             "yearLabel": "1055年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tughril Beg"
         },
@@ -2855,6 +3139,7 @@
             "yearLabel": "1069年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Wang Anshi"
         },
@@ -2865,6 +3150,7 @@
             "yearLabel": "1099年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Capture of Jerusalem 1099",
             "artFile": "Siege of Jerusalem 1099 (2).jpg"
@@ -2876,6 +3162,7 @@
             "yearLabel": "1122年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Concordat of Worms"
         },
@@ -2886,6 +3173,7 @@
             "yearLabel": "1147年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Second Crusade"
         },
@@ -2896,6 +3184,7 @@
             "yearLabel": "1187年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Hattin"
         },
@@ -2906,6 +3195,7 @@
             "yearLabel": "1189年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Richard the Lionheart"
         },
@@ -2916,6 +3206,7 @@
             "yearLabel": "1206年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Qutb Minar",
             "artFile": "Qutub Minar img.jpg"
@@ -2927,6 +3218,7 @@
             "yearLabel": "1209年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Albigensian Crusade"
         },
@@ -2937,6 +3229,7 @@
             "yearLabel": "1214年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Bouvines"
         },
@@ -2947,6 +3240,7 @@
             "yearLabel": "1219年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Genghis Khan"
         },
@@ -2957,6 +3251,7 @@
             "yearLabel": "1234年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jin dynasty"
         },
@@ -2967,6 +3262,7 @@
             "yearLabel": "1240年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Siege of Kiev 1240"
         },
@@ -2977,6 +3273,7 @@
             "yearLabel": "1260年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mamluk"
         },
@@ -2987,6 +3284,7 @@
             "yearLabel": "1271年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yuan dynasty",
             "artFile": "Liu-Kuan-Tao-Jagd.JPG"
@@ -2998,6 +3296,7 @@
             "yearLabel": "1295年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Edward I of England"
         },
@@ -3008,6 +3307,7 @@
             "yearLabel": "1302年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Philip IV of France",
             "artFile": "Philip iv and family.jpg"
@@ -3019,6 +3319,7 @@
             "yearLabel": "1309年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Palais des Papes Avignon"
         },
@@ -3029,6 +3330,7 @@
             "yearLabel": "1314年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Bannockburn"
         },
@@ -3039,6 +3341,7 @@
             "yearLabel": "1346年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Crecy"
         },
@@ -3049,6 +3352,7 @@
             "yearLabel": "1347年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Triumph of Death Bruegel"
         },
@@ -3059,6 +3363,7 @@
             "yearLabel": "1358年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jacquerie"
         },
@@ -3069,6 +3374,7 @@
             "yearLabel": "1356年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Golden Bull of 1356"
         },
@@ -3079,6 +3385,7 @@
             "yearLabel": "1378年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Western Schism"
         },
@@ -3089,6 +3396,7 @@
             "yearLabel": "1397年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Margaret I of Denmark"
         },
@@ -3099,6 +3407,7 @@
             "yearLabel": "1421年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Forbidden City",
             "artFile": "Portrait of Emperor Yongle (9863884305).jpg"
@@ -3110,6 +3419,7 @@
             "yearLabel": "1414年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Council of Constance"
         },
@@ -3120,6 +3430,7 @@
             "yearLabel": "1415年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jan Hus"
         },
@@ -3130,6 +3441,7 @@
             "yearLabel": "1431年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Joan of Arc death at the stake"
         },
@@ -3140,6 +3452,7 @@
             "yearLabel": "1449年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Zhengtong Emperor"
         },
@@ -3150,6 +3463,7 @@
             "yearLabel": "1453年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Castillon"
         },
@@ -3160,6 +3474,7 @@
             "yearLabel": "1455年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Wars of the Roses"
         },
@@ -3170,6 +3485,7 @@
             "yearLabel": "1480年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ivan III"
         },
@@ -3180,6 +3496,7 @@
             "yearLabel": "1497年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "John Cabot"
         },
@@ -3190,6 +3507,7 @@
             "yearLabel": "1500年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Pedro Alvares Cabral"
         },
@@ -3200,6 +3518,7 @@
             "yearLabel": "1501年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ismail I"
         },
@@ -3210,6 +3529,7 @@
             "yearLabel": "1504年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "David Michelangelo",
             "artFile": "Michelangelo David crop.jpg"
@@ -3221,6 +3541,7 @@
             "yearLabel": "1506年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "St. Peter's Basilica"
         },
@@ -3231,6 +3552,7 @@
             "yearLabel": "1516年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Thomas More Utopia"
         },
@@ -3241,6 +3563,7 @@
             "yearLabel": "1519年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Charles V Titian"
         },
@@ -3251,6 +3574,7 @@
             "yearLabel": "1521年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Diet of Worms"
         },
@@ -3261,6 +3585,7 @@
             "yearLabel": "1522年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Victoria ship Magellan"
         },
@@ -3271,6 +3596,7 @@
             "yearLabel": "1526年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Babur"
         },
@@ -3281,6 +3607,7 @@
             "yearLabel": "1526年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Mohacs"
         },
@@ -3291,6 +3618,7 @@
             "yearLabel": "1527年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sack of Rome 1527"
         },
@@ -3301,6 +3629,7 @@
             "yearLabel": "1534年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Henry VIII Holbein"
         },
@@ -3311,6 +3640,7 @@
             "yearLabel": "1536年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "John Calvin"
         },
@@ -3321,6 +3651,7 @@
             "yearLabel": "1556年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Akbar"
         },
@@ -3331,6 +3662,7 @@
             "yearLabel": "1572年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "St. Bartholomew's Day massacre"
         },
@@ -3341,6 +3673,7 @@
             "yearLabel": "1579年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Union of Utrecht"
         },
@@ -3351,6 +3684,7 @@
             "yearLabel": "1581年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "William the Silent"
         },
@@ -3361,6 +3695,7 @@
             "yearLabel": "1599年",
             "region": "WORLD",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Globe Theatre"
         },
@@ -3371,6 +3706,7 @@
             "yearLabel": "1636年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hong Taiji",
             "artFile": "Hong Taiji (closeup).jpg"
@@ -3382,6 +3718,7 @@
             "yearLabel": "1642年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "English Civil War",
             "artFile": "Prince Rupert at Edgehill.jpg"
@@ -3393,6 +3730,7 @@
             "yearLabel": "1642年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Abel Tasman",
             "artFile": "Tasman, Abel Janszoon.jpg"
@@ -3404,6 +3742,7 @@
             "yearLabel": "1651年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Oliver Cromwell"
         },
@@ -3414,6 +3753,7 @@
             "yearLabel": "1652年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jan van Riebeeck"
         },
@@ -3424,6 +3764,7 @@
             "yearLabel": "1660年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Charles II of England"
         },
@@ -3434,6 +3775,7 @@
             "yearLabel": "1664年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "New Amsterdam",
             "artFile": "The Dutch Surrender New Amsterdam (Peter Stuyvesant) 1664 by Ogden.jpg"
@@ -3445,6 +3787,7 @@
             "yearLabel": "1673年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kangxi Emperor"
         },
@@ -3455,6 +3798,7 @@
             "yearLabel": "1683年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Zheng Keshuang"
         },
@@ -3465,6 +3809,7 @@
             "yearLabel": "1685年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Louis XIV"
         },
@@ -3475,6 +3820,7 @@
             "yearLabel": "1689年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bill of Rights 1689"
         },
@@ -3485,6 +3831,7 @@
             "yearLabel": "1694年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Bank of England"
         },
@@ -3495,6 +3842,7 @@
             "yearLabel": "1701年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Frederick I of Prussia",
             "artFile": "Frederick I of Prussia (cropped).jpg"
@@ -3506,6 +3854,7 @@
             "yearLabel": "1701年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "War of the Spanish Succession"
         },
@@ -3516,6 +3865,7 @@
             "yearLabel": "1707年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Acts of Union 1707"
         },
@@ -3526,6 +3876,7 @@
             "yearLabel": "1709年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Poltava"
         },
@@ -3536,6 +3887,7 @@
             "yearLabel": "1713年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Peace of Utrecht"
         },
@@ -3546,6 +3898,7 @@
             "yearLabel": "1720年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "South Sea Bubble"
         },
@@ -3556,6 +3909,7 @@
             "yearLabel": "1727年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyakhta"
         },
@@ -3566,6 +3920,7 @@
             "yearLabel": "1740年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Maria Theresa"
         },
@@ -3576,6 +3931,7 @@
             "yearLabel": "1751年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Encyclopedie Diderot"
         },
@@ -3586,6 +3942,7 @@
             "yearLabel": "1756年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kaunitz"
         },
@@ -3596,6 +3953,7 @@
             "yearLabel": "1757年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Canton thirteen factories"
         },
@@ -3606,6 +3964,7 @@
             "yearLabel": "1759年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Death of General Wolfe"
         },
@@ -3616,6 +3975,7 @@
             "yearLabel": "1763年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Treaty of Paris 1763"
         },
@@ -3626,6 +3986,7 @@
             "yearLabel": "1762年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Jean-Jacques Rousseau"
         },
@@ -3636,6 +3997,7 @@
             "yearLabel": "1762年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Catherine the Great"
         },
@@ -3646,6 +4008,7 @@
             "yearLabel": "1765年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Stamp Act 1765"
         },
@@ -3656,6 +4019,7 @@
             "yearLabel": "1772年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "First Partition of Poland"
         },
@@ -3666,6 +4030,7 @@
             "yearLabel": "1773年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yemelyan Pugachev"
         },
@@ -3676,6 +4041,7 @@
             "yearLabel": "1775年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battles of Lexington and Concord"
         },
@@ -3686,6 +4052,7 @@
             "yearLabel": "1776年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Adam Smith",
             "artFile": "Smith - Inquiry into the nature and causes of the wealth of nations, 1922 - 5231847.tif"
@@ -3697,6 +4064,7 @@
             "yearLabel": "1781年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Surrender of Lord Cornwallis"
         },
@@ -3707,6 +4075,7 @@
             "yearLabel": "1783年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Paris 1783"
         },
@@ -3717,6 +4086,7 @@
             "yearLabel": "1789年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "George Washington Gilbert Stuart"
         },
@@ -3727,6 +4097,7 @@
             "yearLabel": "1789年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Declaration of the Rights of Man"
         },
@@ -3737,6 +4108,7 @@
             "yearLabel": "1791年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Flight to Varennes",
             "artFile": "Retour Varennes 1791.jpg"
@@ -3748,6 +4120,7 @@
             "yearLabel": "1792年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Valmy"
         },
@@ -3758,6 +4131,7 @@
             "yearLabel": "1794年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Robespierre"
         },
@@ -3768,6 +4142,7 @@
             "yearLabel": "1799年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Coup of 18 Brumaire"
         },
@@ -3778,6 +4153,7 @@
             "yearLabel": "1804年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Napoleonic Code"
         },
@@ -3788,6 +4164,7 @@
             "yearLabel": "1804年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Jean-Jacques Dessalines"
         },
@@ -3798,6 +4175,7 @@
             "yearLabel": "1805年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Austerlitz"
         },
@@ -3808,6 +4186,7 @@
             "yearLabel": "1806年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Confederation of the Rhine"
         },
@@ -3818,6 +4197,7 @@
             "yearLabel": "1806年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Napoleon Berlin 1806"
         },
@@ -3828,6 +4208,7 @@
             "yearLabel": "1807年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "William Wilberforce"
         },
@@ -3838,6 +4219,7 @@
             "yearLabel": "1807年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Clermont steamboat"
         },
@@ -3848,6 +4230,7 @@
             "yearLabel": "1813年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Leipzig"
         },
@@ -3858,6 +4241,7 @@
             "yearLabel": "1823年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "James Monroe"
         },
@@ -3868,6 +4252,7 @@
             "yearLabel": "1825年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Decembrist revolt"
         },
@@ -3878,6 +4263,7 @@
             "yearLabel": "1830年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Belgian Revolution"
         },
@@ -3888,6 +4274,7 @@
             "yearLabel": "1832年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Reform Act 1832"
         },
@@ -3898,6 +4285,7 @@
             "yearLabel": "1834年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Zollverein",
             "artFile": "Zoll-auch Eizenbahn. Karte der deutschen Zollvereins. Staaten... - von Joh. Val. Kutscheit - btv1b8469035q.jpg"
@@ -3909,6 +4297,7 @@
             "yearLabel": "1844年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Samuel Morse telegraph"
         },
@@ -3919,6 +4308,7 @@
             "yearLabel": "1845年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Great Famine Ireland"
         },
@@ -3929,6 +4319,7 @@
             "yearLabel": "1848年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "February Revolution 1848"
         },
@@ -3939,6 +4330,7 @@
             "yearLabel": "1851年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Taiping Rebellion"
         },
@@ -3949,6 +4341,7 @@
             "yearLabel": "1856年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Second Opium War"
         },
@@ -3959,6 +4352,7 @@
             "yearLabel": "1861年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Victor Emmanuel II"
         },
@@ -3969,6 +4363,7 @@
             "yearLabel": "1863年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Henry Dunant"
         },
@@ -3979,6 +4374,7 @@
             "yearLabel": "1863年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Metropolitan Railway 1863"
         },
@@ -3989,6 +4385,7 @@
             "yearLabel": "1867年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Karl Marx"
         },
@@ -3999,6 +4396,7 @@
             "yearLabel": "1869年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Dmitri Mendeleev"
         },
@@ -4009,6 +4407,7 @@
             "yearLabel": "1871年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Paris Commune"
         },
@@ -4019,6 +4418,7 @@
             "yearLabel": "1878年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Congress of Berlin"
         },
@@ -4029,6 +4429,7 @@
             "yearLabel": "1882年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Robert Koch"
         },
@@ -4039,6 +4440,7 @@
             "yearLabel": "1883年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Krakatoa 1883"
         },
@@ -4049,6 +4451,7 @@
             "yearLabel": "1884年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Berlin Conference 1884"
         },
@@ -4059,6 +4462,7 @@
             "yearLabel": "1886年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Benz Patent-Motorwagen"
         },
@@ -4069,6 +4473,7 @@
             "yearLabel": "1894年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Alfred Dreyfus"
         },
@@ -4079,6 +4484,7 @@
             "yearLabel": "1895年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Lumiere brothers"
         },
@@ -4089,6 +4495,7 @@
             "yearLabel": "1898年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Marie Curie"
         },
@@ -4099,6 +4506,7 @@
             "yearLabel": "1899年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hague Peace Conference 1899"
         },
@@ -4109,6 +4517,7 @@
             "yearLabel": "1899年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Second Boer War"
         },
@@ -4119,6 +4528,7 @@
             "yearLabel": "1901年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Queen Victoria"
         },
@@ -4129,6 +4539,7 @@
             "yearLabel": "1901年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Guglielmo Marconi",
             "artFile": "Guglielmo Marconi.jpg"
@@ -4140,6 +4551,7 @@
             "yearLabel": "1905年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bloody Sunday 1905"
         },
@@ -4150,6 +4562,7 @@
             "yearLabel": "1907年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Triple Entente"
         },
@@ -4160,6 +4573,7 @@
             "yearLabel": "1914年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Archduke Franz Ferdinand"
         },
@@ -4170,6 +4584,7 @@
             "yearLabel": "1915年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "RMS Lusitania"
         },
@@ -4180,6 +4595,7 @@
             "yearLabel": "1916年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Verdun"
         },
@@ -4190,6 +4606,7 @@
             "yearLabel": "1916年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of the Somme"
         },
@@ -4200,6 +4617,7 @@
             "yearLabel": "1917年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Woodrow Wilson 1917"
         },
@@ -4210,6 +4628,7 @@
             "yearLabel": "1918年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "1918 influenza pandemic"
         },
@@ -4220,6 +4639,7 @@
             "yearLabel": "1919年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "March 1st Movement"
         },
@@ -4230,6 +4650,7 @@
             "yearLabel": "1919年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "May Fourth Movement"
         },
@@ -4240,6 +4661,7 @@
             "yearLabel": "1919年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Weimar Constitution"
         },
@@ -4250,6 +4672,7 @@
             "yearLabel": "1921年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Washington Naval Conference"
         },
@@ -4260,6 +4683,7 @@
             "yearLabel": "1922年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Soviet Union 1922"
         },
@@ -4270,6 +4694,7 @@
             "yearLabel": "1922年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "March on Rome"
         },
@@ -4280,6 +4705,7 @@
             "yearLabel": "1923年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mustafa Kemal Ataturk"
         },
@@ -4290,6 +4716,7 @@
             "yearLabel": "1928年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kellogg-Briand Pact"
         },
@@ -4300,6 +4727,7 @@
             "yearLabel": "1930年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Salt March Gandhi"
         },
@@ -4310,6 +4738,7 @@
             "yearLabel": "1931年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Empire State Building 1931"
         },
@@ -4320,6 +4749,7 @@
             "yearLabel": "1933年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Reichstag 1933",
             "artFile": "3 1 0 17 11954 5 1 32785 Opening of the Reichstag Session Eröffnung der Reichstagssitzung Berlin 1932-08-30 Assembly hall. In the Presidium, senior member of parliament Klara Zetkin (x) is opening the session. NAC, Poland PD.jpg"
@@ -4331,6 +4761,7 @@
             "yearLabel": "1933年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Franklin D. Roosevelt"
         },
@@ -4341,6 +4772,7 @@
             "yearLabel": "1934年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Long March"
         },
@@ -4351,6 +4783,7 @@
             "yearLabel": "1936年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Spanish Civil War",
             "artFile": "Spanish Civil War Blank August 1936.png"
@@ -4362,6 +4795,7 @@
             "yearLabel": "1937年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Guernica bombing"
         },
@@ -4372,6 +4806,7 @@
             "yearLabel": "1938年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Munich Agreement"
         },
@@ -4382,6 +4817,7 @@
             "yearLabel": "1939年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Molotov-Ribbentrop Pact"
         },
@@ -4392,6 +4828,7 @@
             "yearLabel": "1940年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Dunkirk evacuation"
         },
@@ -4402,6 +4839,7 @@
             "yearLabel": "1941年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Operation Barbarossa"
         },
@@ -4412,6 +4850,7 @@
             "yearLabel": "1941年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Atlantic Charter"
         },
@@ -4422,6 +4861,7 @@
             "yearLabel": "1943年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Stalingrad"
         },
@@ -4432,6 +4872,7 @@
             "yearLabel": "1944年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Bretton Woods Conference",
             "artFile": "Image-Mount Washington Hotel.jpg"
@@ -4443,6 +4884,7 @@
             "yearLabel": "1945年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Potsdam Conference"
         },
@@ -4453,6 +4895,7 @@
             "yearLabel": "1947年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Harry S. Truman"
         },
@@ -4463,6 +4906,7 @@
             "yearLabel": "1947年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "George C. Marshall"
         },
@@ -4473,6 +4917,7 @@
             "yearLabel": "1948年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "David Ben-Gurion 1948"
         },
@@ -4483,6 +4928,7 @@
             "yearLabel": "1948年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Berlin Airlift"
         },
@@ -4493,6 +4939,7 @@
             "yearLabel": "1948年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Mahatma Gandhi"
         },
@@ -4503,6 +4950,7 @@
             "yearLabel": "1953年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tenzing Norgay Everest"
         },
@@ -4513,6 +4961,7 @@
             "yearLabel": "1953年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Korean Armistice Agreement"
         },
@@ -4523,6 +4972,7 @@
             "yearLabel": "1954年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Dien Bien Phu"
         },
@@ -4533,6 +4983,7 @@
             "yearLabel": "1955年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Warsaw Pact"
         },
@@ -4543,6 +4994,7 @@
             "yearLabel": "1956年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Suez Crisis"
         },
@@ -4553,6 +5005,7 @@
             "yearLabel": "1956年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hungarian Revolution of 1956"
         },
@@ -4563,6 +5016,7 @@
             "yearLabel": "1957年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Rome 1957"
         },
@@ -4573,6 +5027,7 @@
             "yearLabel": "1960年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Africa 1960 independence"
         },
@@ -4583,6 +5038,7 @@
             "yearLabel": "1963年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "John F. Kennedy"
         },
@@ -4593,6 +5049,7 @@
             "yearLabel": "1964年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Civil Rights Act of 1964"
         },
@@ -4603,6 +5060,7 @@
             "yearLabel": "1966年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Cultural Revolution"
         },
@@ -4613,6 +5071,7 @@
             "yearLabel": "1967年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "ASEAN"
         },
@@ -4623,6 +5082,7 @@
             "yearLabel": "1967年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Six-Day War"
         },
@@ -4633,6 +5093,7 @@
             "yearLabel": "1968年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Martin Luther King Jr."
         },
@@ -4643,6 +5104,7 @@
             "yearLabel": "1971年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Richard Nixon 1971"
         },
@@ -4653,6 +5115,7 @@
             "yearLabel": "1972年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nixon Mao 1972"
         },
@@ -4663,6 +5126,7 @@
             "yearLabel": "1974年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nixon resignation"
         },
@@ -4673,6 +5137,7 @@
             "yearLabel": "1975年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Rambouillet 1975"
         },
@@ -4683,6 +5148,7 @@
             "yearLabel": "1978年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Deng Xiaoping"
         },
@@ -4693,6 +5159,7 @@
             "yearLabel": "1979年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Soviet-Afghan War"
         },
@@ -4703,6 +5170,7 @@
             "yearLabel": "1980年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Iran-Iraq War"
         },
@@ -4713,6 +5181,7 @@
             "yearLabel": "1980年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Solidarity Lech Walesa"
         },
@@ -4723,6 +5192,7 @@
             "yearLabel": "1982年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Falklands War"
         },
@@ -4733,6 +5203,7 @@
             "yearLabel": "1985年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mikhail Gorbachev",
             "artFile": "Mikhail Gorbachev in 1987 (cropped).jpg"
@@ -4744,6 +5215,7 @@
             "yearLabel": "1987年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "INF Treaty Reagan Gorbachev"
         },
@@ -4754,6 +5226,7 @@
             "yearLabel": "1989年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tiananmen Square",
             "artFile": "Goddess of Democracy HK 20100604.jpg"
@@ -4765,6 +5238,7 @@
             "yearLabel": "1989年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Malta Summit"
         },
@@ -4775,6 +5249,7 @@
             "yearLabel": "1991年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Gulf War"
         },
@@ -4785,6 +5260,7 @@
             "yearLabel": "1991年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tim Berners-Lee"
         },
@@ -4795,6 +5271,7 @@
             "yearLabel": "1994年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Nelson Mandela"
         },
@@ -4805,6 +5282,7 @@
             "yearLabel": "1995年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "World Trade Organization"
         },
@@ -4815,6 +5293,7 @@
             "yearLabel": "1996年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Dolly the sheep"
         },
@@ -4825,6 +5304,7 @@
             "yearLabel": "1999年",
             "region": "WORLD",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Euro coins",
             "artFile": "Euro coins (07).jpg"
@@ -4836,6 +5316,7 @@
             "yearLabel": "1999年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Macau"
         },
@@ -4846,6 +5327,7 @@
             "yearLabel": "2001年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "World Trade Center"
         },
@@ -4856,6 +5338,7 @@
             "yearLabel": "2003年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Iraq War 2003"
         },
@@ -4866,6 +5349,7 @@
             "yearLabel": "2003年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Human Genome Project"
         },
@@ -4876,6 +5360,7 @@
             "yearLabel": "2004年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "2004 Indian Ocean tsunami"
         },
@@ -4886,6 +5371,7 @@
             "yearLabel": "2009年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Barack Obama"
         },
@@ -4896,6 +5382,7 @@
             "yearLabel": "2015年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Paris Agreement"
         },
@@ -4906,6 +5393,7 @@
             "yearLabel": "2020年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Brexit",
             "artFile": "BREXIT (46797366864).jpg"
@@ -4917,6 +5405,7 @@
             "yearLabel": "2020年",
             "region": "WORLD",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "COVID-19 pandemic",
             "artFile": "SARS-CoV-2 without background.png"
@@ -4928,6 +5417,7 @@
             "yearLabel": "紀元前334年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of the Granicus"
         },
@@ -4938,6 +5428,7 @@
             "yearLabel": "紀元前58年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Julius Caesar Gallic Wars"
         },
@@ -4948,6 +5439,7 @@
             "yearLabel": "紀元前53年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Marcus Licinius Crassus"
         },
@@ -4958,6 +5450,7 @@
             "yearLabel": "68年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nero bust"
         },
@@ -4968,6 +5461,7 @@
             "yearLabel": "337年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Constantine the Great colossus"
         },
@@ -4978,6 +5472,7 @@
             "yearLabel": "451年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Council of Chalcedon"
         },
@@ -4988,6 +5483,7 @@
             "yearLabel": "527年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Justinian mosaic Ravenna"
         },
@@ -4998,6 +5494,7 @@
             "yearLabel": "532年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hippodrome of Constantinople"
         },
@@ -5008,6 +5505,7 @@
             "yearLabel": "712年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Xuanzong of Tang"
         },
@@ -5018,6 +5516,7 @@
             "yearLabel": "786年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Harun al-Rashid"
         },
@@ -5028,6 +5527,7 @@
             "yearLabel": "870年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Treaty of Meerssen"
         },
@@ -5038,6 +5538,7 @@
             "yearLabel": "1085年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Alfonso VI of Castile"
         },
@@ -5048,6 +5549,7 @@
             "yearLabel": "1169年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Saladin"
         },
@@ -5058,6 +5560,7 @@
             "yearLabel": "1248年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Louis IX crusade"
         },
@@ -5068,6 +5571,7 @@
             "yearLabel": "1250年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mamluk Cairo"
         },
@@ -5078,6 +5582,7 @@
             "yearLabel": "1389年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Kosovo"
         },
@@ -5088,6 +5593,7 @@
             "yearLabel": "1396年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Nicopolis"
         },
@@ -5098,6 +5604,7 @@
             "yearLabel": "1398年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Timur"
         },
@@ -5108,6 +5615,7 @@
             "yearLabel": "1478年",
             "region": "WORLD",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Spanish Inquisition"
         },
@@ -5118,6 +5626,7 @@
             "yearLabel": "1479年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ferdinand and Isabella"
         },
@@ -5128,6 +5637,7 @@
             "yearLabel": "1628年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Petition of Right"
         },
@@ -5138,6 +5648,7 @@
             "yearLabel": "1628年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "William Harvey",
             "artFile": "Portrait of William Harvey, M.D (4672896).jpg"
@@ -5149,6 +5660,7 @@
             "yearLabel": "1633年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Galileo before the Holy Office"
         },
@@ -5159,6 +5671,7 @@
             "yearLabel": "1637年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Rene Descartes"
         },
@@ -5169,6 +5682,7 @@
             "yearLabel": "1651年",
             "region": "WORLD",
             "category": "思想",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Leviathan frontispiece"
         },
@@ -5179,6 +5693,7 @@
             "yearLabel": "1697年",
             "region": "WORLD",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Peter the Great",
             "artFile": "Peter I in 1697-98.jpg"
@@ -5190,6 +5705,7 @@
             "yearLabel": "1740年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Frederick the Great"
         },
@@ -5200,6 +5716,7 @@
             "yearLabel": "1770年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Boston Massacre Revere"
         },
@@ -5210,6 +5727,7 @@
             "yearLabel": "1804年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Lewis and Clark Expedition"
         },
@@ -5220,6 +5738,7 @@
             "yearLabel": "1810年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Miguel Hidalgo"
         },
@@ -5230,6 +5749,7 @@
             "yearLabel": "1822年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Independence of Brazil painting"
         },
@@ -5240,6 +5760,7 @@
             "yearLabel": "1831年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Michael Faraday"
         },
@@ -5250,6 +5771,7 @@
             "yearLabel": "1831年",
             "region": "WORLD",
             "category": "探検",
+            "difficulty": 3,
             "art": "",
             "artQuery": "HMS Beagle",
             "artFile": "HMS Beagle by Conrad Martens.jpg"
@@ -5261,6 +5783,7 @@
             "yearLabel": "1846年",
             "region": "WORLD",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mexican-American War"
         },
@@ -5271,6 +5794,7 @@
             "yearLabel": "1877年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Empress of India Victoria",
             "artFile": "The Imperial Assemblage at Delhi, 1877.jpg"
@@ -5282,6 +5806,7 @@
             "yearLabel": "1877年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Edison phonograph"
         },
@@ -5292,6 +5817,7 @@
             "yearLabel": "1885年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Louis Pasteur"
         },
@@ -5302,6 +5828,7 @@
             "yearLabel": "1916年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Easter Rising"
         },
@@ -5312,6 +5839,7 @@
             "yearLabel": "1921年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Frederick Banting Charles Best"
         },
@@ -5322,6 +5850,7 @@
             "yearLabel": "1926年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "John Logie Baird"
         },
@@ -5332,6 +5861,7 @@
             "yearLabel": "1938年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Anschluss 1938",
             "artFile": "Stimmzettel Anschluss 1938 (Bundesheer).jpg"
@@ -5343,6 +5873,7 @@
             "yearLabel": "1945年",
             "region": "WORLD",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nuremberg trials",
             "artFile": "Defendants in the dock at nuremberg trials.jpg"
@@ -5354,6 +5885,7 @@
             "yearLabel": "1990年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hubble Space Telescope"
         },
@@ -5364,6 +5896,7 @@
             "yearLabel": "1994年",
             "region": "WORLD",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Channel Tunnel"
         },
@@ -5374,6 +5907,7 @@
             "yearLabel": "1998年",
             "region": "WORLD",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "International Space Station"
         }

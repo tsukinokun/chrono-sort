@@ -8,6 +8,7 @@
             "yearLabel": "604年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Prince Shotoku portrait"
         },
@@ -18,6 +19,7 @@
             "yearLabel": "607年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Horyu-ji"
         },
@@ -28,6 +30,7 @@
             "yearLabel": "645年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tonomine engi emaki"
         },
@@ -38,6 +41,7 @@
             "yearLabel": "663年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Tenji portrait"
         },
@@ -48,6 +52,7 @@
             "yearLabel": "672年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Tenmu"
         },
@@ -58,6 +63,7 @@
             "yearLabel": "701年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Fujiwara-kyo"
         },
@@ -68,6 +74,7 @@
             "yearLabel": "710年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Heijo Palace Suzakumon"
         },
@@ -78,6 +85,7 @@
             "yearLabel": "712年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kojiki Shinpukuji manuscript"
         },
@@ -88,6 +96,7 @@
             "yearLabel": "720年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Nihon Shoki"
         },
@@ -98,6 +107,7 @@
             "yearLabel": "743年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Shomu"
         },
@@ -108,6 +118,7 @@
             "yearLabel": "752年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Todai-ji Daibutsu"
         },
@@ -118,6 +129,7 @@
             "yearLabel": "794年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Heian-kyo model"
         },
@@ -128,6 +140,7 @@
             "yearLabel": "894年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Sugawara no Michizane"
         },
@@ -138,6 +151,7 @@
             "yearLabel": "905年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kokin Wakashu manuscript"
         },
@@ -148,6 +162,7 @@
             "yearLabel": "1016年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Fujiwara no Michinaga"
         },
@@ -158,6 +173,7 @@
             "yearLabel": "1053年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Byodo-in Phoenix Hall"
         },
@@ -168,6 +184,7 @@
             "yearLabel": "1086年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Shirakawa"
         },
@@ -178,6 +195,7 @@
             "yearLabel": "1156年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hogen rebellion screen"
         },
@@ -188,6 +206,7 @@
             "yearLabel": "1159年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Heiji Monogatari Emaki"
         },
@@ -198,6 +217,7 @@
             "yearLabel": "1167年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Taira no Kiyomori"
         },
@@ -208,6 +228,7 @@
             "yearLabel": "1185年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Dan-no-ura"
         },
@@ -218,6 +239,7 @@
             "yearLabel": "1192年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Minamoto no Yoritomo portrait"
         },
@@ -228,6 +250,7 @@
             "yearLabel": "1221年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Go-Toba"
         },
@@ -238,6 +261,7 @@
             "yearLabel": "1232年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hojo Yasutoki"
         },
@@ -248,6 +272,7 @@
             "yearLabel": "1274年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Moko Shurai Ekotoba"
         },
@@ -258,6 +283,7 @@
             "yearLabel": "1281年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Mongol invasion of Japan 1281 scroll"
         },
@@ -268,6 +294,7 @@
             "yearLabel": "1333年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Siege of Kamakura 1333"
         },
@@ -278,6 +305,7 @@
             "yearLabel": "1334年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Go-Daigo"
         },
@@ -288,6 +316,7 @@
             "yearLabel": "1338年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ashikaga Takauji"
         },
@@ -298,6 +327,7 @@
             "yearLabel": "1392年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ashikaga Yoshimitsu"
         },
@@ -308,6 +338,7 @@
             "yearLabel": "1397年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kinkaku-ji"
         },
@@ -318,6 +349,7 @@
             "yearLabel": "1467年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Onin war"
         },
@@ -328,6 +360,7 @@
             "yearLabel": "1543年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tanegashima matchlock"
         },
@@ -338,6 +371,7 @@
             "yearLabel": "1549年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Francis Xavier Kobe City Museum"
         },
@@ -348,6 +382,7 @@
             "yearLabel": "1560年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Okehazama ukiyo-e"
         },
@@ -358,6 +393,7 @@
             "yearLabel": "1573年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ashikaga Yoshiaki"
         },
@@ -368,6 +404,7 @@
             "yearLabel": "1575年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Nagashino screen"
         },
@@ -378,6 +415,7 @@
             "yearLabel": "1582年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Honno-ji incident ukiyo-e"
         },
@@ -388,6 +426,7 @@
             "yearLabel": "1588年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Toyotomi Hideyoshi portrait"
         },
@@ -398,6 +437,7 @@
             "yearLabel": "1590年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Siege of Odawara 1590"
         },
@@ -408,6 +448,7 @@
             "yearLabel": "1592年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Siege of Busanjin 1592"
         },
@@ -418,6 +459,7 @@
             "yearLabel": "1600年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Sekigahara folding screen"
         },
@@ -428,6 +470,7 @@
             "yearLabel": "1603年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokugawa Ieyasu portrait"
         },
@@ -438,6 +481,7 @@
             "yearLabel": "1615年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Siege of Osaka screen"
         },
@@ -448,6 +492,7 @@
             "yearLabel": "1637年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Shimabara Rebellion"
         },
@@ -458,6 +503,7 @@
             "yearLabel": "1639年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Nanban ship screen"
         },
@@ -468,6 +514,7 @@
             "yearLabel": "1716年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokugawa Yoshimune"
         },
@@ -478,6 +525,7 @@
             "yearLabel": "1774年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kaitai Shinsho"
         },
@@ -488,6 +536,7 @@
             "yearLabel": "1787年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Matsudaira Sadanobu"
         },
@@ -498,6 +547,7 @@
             "yearLabel": "1800年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ino Tadataka map"
         },
@@ -508,6 +558,7 @@
             "yearLabel": "1837年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Oshio Heihachiro"
         },
@@ -518,6 +569,7 @@
             "yearLabel": "1853年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Black Ships Perry Japanese woodblock"
         },
@@ -528,6 +580,7 @@
             "yearLabel": "1854年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Perry landing Yokohama 1854 Heine"
         },
@@ -538,6 +591,7 @@
             "yearLabel": "1858年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ii Naosuke"
         },
@@ -548,6 +602,7 @@
             "yearLabel": "1860年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Sakuradamon Incident"
         },
@@ -558,6 +613,7 @@
             "yearLabel": "1867年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Taisei Hokan painting"
         },
@@ -568,6 +624,7 @@
             "yearLabel": "1868年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Boshin War"
         },
@@ -578,6 +635,7 @@
             "yearLabel": "1871年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Emperor Meiji 1872 Uchida"
         },
@@ -588,6 +646,7 @@
             "yearLabel": "1877年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Satsuma Rebellion woodblock"
         },
@@ -598,6 +657,7 @@
             "yearLabel": "1889年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Promulgation of the Meiji Constitution"
         },
@@ -608,6 +668,7 @@
             "yearLabel": "1894年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "First Sino-Japanese War woodblock"
         },
@@ -618,6 +679,7 @@
             "yearLabel": "1904年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Battle of Tsushima Mikasa Tojo painting"
         },
@@ -628,6 +690,7 @@
             "yearLabel": "1923年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "1923 Great Kanto earthquake"
         },
@@ -638,6 +701,7 @@
             "yearLabel": "1925年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kato Takaaki"
         },
@@ -648,6 +712,7 @@
             "yearLabel": "1936年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "February 26 Incident"
         },
@@ -658,6 +723,7 @@
             "yearLabel": "1941年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Attack on Pearl Harbor"
         },
@@ -668,6 +734,7 @@
             "yearLabel": "1945年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Japanese Instrument of Surrender"
         },
@@ -678,6 +745,7 @@
             "yearLabel": "1947年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Constitution of Japan 1947 original"
         },
@@ -688,6 +756,7 @@
             "yearLabel": "1951年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Treaty of San Francisco signing Yoshida"
         },
@@ -698,6 +767,7 @@
             "yearLabel": "1964年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "0 series Shinkansen 1964"
         },
@@ -708,6 +778,7 @@
             "yearLabel": "1964年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "1964 Summer Olympics opening ceremony"
         },
@@ -718,6 +789,7 @@
             "yearLabel": "1970年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tower of the Sun Taro Okamoto"
         },
@@ -728,6 +800,7 @@
             "yearLabel": "1972年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Okinawa Reversion Ceremony 1972"
         },
@@ -738,6 +811,7 @@
             "yearLabel": "1995年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Great Hanshin earthquake"
         },
@@ -748,6 +822,7 @@
             "yearLabel": "1998年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "1998 Winter Olympics Nagano"
         },
@@ -758,6 +833,7 @@
             "yearLabel": "2011年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "2011 Tohoku earthquake tsunami"
         },
@@ -768,6 +844,7 @@
             "yearLabel": "57年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Gold Seal of the King of Na"
         },
@@ -778,6 +855,7 @@
             "yearLabel": "630年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kentoshi ship"
         },
@@ -788,6 +866,7 @@
             "yearLabel": "1180年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Fujigawa"
         },
@@ -798,6 +877,7 @@
             "yearLabel": "1297年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hojo Sadatoki"
         },
@@ -808,6 +888,7 @@
             "yearLabel": "1404年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kango tally trade Ming"
         },
@@ -818,6 +899,7 @@
             "yearLabel": "1488年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ikko-ikki"
         },
@@ -828,6 +910,7 @@
             "yearLabel": "1635年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokugawa Iemitsu portrait"
         },
@@ -838,6 +921,7 @@
             "yearLabel": "1641年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Dejima Nagasaki"
         },
@@ -848,6 +932,7 @@
             "yearLabel": "1657年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Great Fire of Meireki"
         },
@@ -858,6 +943,7 @@
             "yearLabel": "1707年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hoei eruption Mount Fuji"
         },
@@ -868,6 +954,7 @@
             "yearLabel": "1841年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Mizuno Tadakuni"
         },
@@ -878,6 +965,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Takanawa railway ukiyo-e"
         },
@@ -888,6 +976,7 @@
             "yearLabel": "1885年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ito Hirobumi"
         },
@@ -898,6 +987,7 @@
             "yearLabel": "1902年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hayashi Tadasu"
         },
@@ -908,6 +998,7 @@
             "yearLabel": "1956年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "United Nations Headquarters 1950s"
         },
@@ -918,6 +1009,7 @@
             "yearLabel": "708年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Wadokaichin"
         },
@@ -928,6 +1020,7 @@
             "yearLabel": "723年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Prince Nagaya"
         },
@@ -938,6 +1031,7 @@
             "yearLabel": "741年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kokubunji temple pagoda"
         },
@@ -948,6 +1042,7 @@
             "yearLabel": "866年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ban Dainagon Ekotoba"
         },
@@ -958,6 +1053,7 @@
             "yearLabel": "1124年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Konjikido Chusonji Hiraizumi"
         },
@@ -968,6 +1064,7 @@
             "yearLabel": "1175年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Honen portrait"
         },
@@ -978,6 +1075,7 @@
             "yearLabel": "1203年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Unkei"
         },
@@ -988,6 +1086,7 @@
             "yearLabel": "1227年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Dogen portrait"
         },
@@ -998,6 +1097,7 @@
             "yearLabel": "1253年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nichiren portrait"
         },
@@ -1008,6 +1108,7 @@
             "yearLabel": "1336年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Komyo"
         },
@@ -1018,6 +1119,7 @@
             "yearLabel": "1429年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ryukyu Kingdom Shuri"
         },
@@ -1028,6 +1130,7 @@
             "yearLabel": "1568年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Oda Nobunaga portrait"
         },
@@ -1038,6 +1141,7 @@
             "yearLabel": "1571年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Enryaku-ji"
         },
@@ -1048,6 +1152,7 @@
             "yearLabel": "1576年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Azuchi Castle model"
         },
@@ -1058,6 +1163,7 @@
             "yearLabel": "1582年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tensho embassy Augsburg print"
         },
@@ -1068,6 +1174,7 @@
             "yearLabel": "1587年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nanban screen Jesuits"
         },
@@ -1078,6 +1185,7 @@
             "yearLabel": "1597年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Myeongnyang"
         },
@@ -1088,6 +1196,7 @@
             "yearLabel": "1609年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Shimazu Iehisa"
         },
@@ -1098,6 +1207,7 @@
             "yearLabel": "1613年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hasekura Tsunenaga"
         },
@@ -1108,6 +1218,7 @@
             "yearLabel": "1615年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokugawa Hidetada portrait"
         },
@@ -1118,6 +1229,7 @@
             "yearLabel": "1703年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Chikamatsu Monzaemon"
         },
@@ -1128,6 +1240,7 @@
             "yearLabel": "1772年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tanuma Okitsugu"
         },
@@ -1138,6 +1251,7 @@
             "yearLabel": "1783年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Asama eruption 1783"
         },
@@ -1148,6 +1262,7 @@
             "yearLabel": "1792年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Adam Laxman"
         },
@@ -1158,6 +1273,7 @@
             "yearLabel": "1804年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nikolai Rezanov"
         },
@@ -1168,6 +1284,7 @@
             "yearLabel": "1808年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "HMS Phaeton Nagasaki"
         },
@@ -1178,6 +1295,7 @@
             "yearLabel": "1823年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Philipp Franz von Siebold"
         },
@@ -1188,6 +1306,7 @@
             "yearLabel": "1839年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Watanabe Kazan"
         },
@@ -1198,6 +1317,7 @@
             "yearLabel": "1863年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bombardment of Kagoshima"
         },
@@ -1208,6 +1328,7 @@
             "yearLabel": "1864年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kinmon incident"
         },
@@ -1218,6 +1339,7 @@
             "yearLabel": "1866年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Sakamoto Ryoma"
         },
@@ -1228,6 +1350,7 @@
             "yearLabel": "1868年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Charter Oath"
         },
@@ -1238,6 +1361,7 @@
             "yearLabel": "1869年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kido Takayoshi"
         },
@@ -1248,6 +1372,7 @@
             "yearLabel": "1873年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Chiken land certificate"
         },
@@ -1258,6 +1383,7 @@
             "yearLabel": "1874年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Itagaki Taisuke"
         },
@@ -1268,6 +1394,7 @@
             "yearLabel": "1876年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ganghwa Treaty"
         },
@@ -1278,6 +1405,7 @@
             "yearLabel": "1881年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Okuma Shigenobu"
         },
@@ -1288,6 +1416,7 @@
             "yearLabel": "1895年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Treaty of Shimonoseki"
         },
@@ -1298,6 +1427,7 @@
             "yearLabel": "1901年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Yawata Steel Works"
         },
@@ -1308,6 +1438,7 @@
             "yearLabel": "1905年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Treaty of Portsmouth 1905"
         },
@@ -1318,6 +1449,7 @@
             "yearLabel": "1911年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Komura Jutaro"
         },
@@ -1328,6 +1460,7 @@
             "yearLabel": "1918年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Rice riots 1918 Japan"
         },
@@ -1338,6 +1471,7 @@
             "yearLabel": "1918年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hara Takashi"
         },
@@ -1348,6 +1482,7 @@
             "yearLabel": "1925年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "JOAK radio 1925"
         },
@@ -1358,6 +1493,7 @@
             "yearLabel": "1931年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Mukden Incident"
         },
@@ -1368,6 +1504,7 @@
             "yearLabel": "1933年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Yosuke Matsuoka League of Nations"
         },
@@ -1378,6 +1515,7 @@
             "yearLabel": "1937年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Marco Polo Bridge"
         },
@@ -1388,6 +1526,7 @@
             "yearLabel": "1949年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hideki Yukawa"
         },
@@ -1398,6 +1537,7 @@
             "yearLabel": "1972年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kakuei Tanaka Zhou Enlai 1972"
         },
@@ -1408,6 +1548,7 @@
             "yearLabel": "2012年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokyo Skytree"
         },
@@ -1418,6 +1559,7 @@
             "yearLabel": "694年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fujiwara Palace site"
         },
@@ -1428,6 +1570,7 @@
             "yearLabel": "764年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara no Nakamaro"
         },
@@ -1438,6 +1581,7 @@
             "yearLabel": "769年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Wake no Kiyomaro"
         },
@@ -1448,6 +1592,7 @@
             "yearLabel": "784年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nagaoka Palace site"
         },
@@ -1458,6 +1603,7 @@
             "yearLabel": "797年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sakanoue no Tamuramaro"
         },
@@ -1468,6 +1614,7 @@
             "yearLabel": "804年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kukai portrait"
         },
@@ -1478,6 +1625,7 @@
             "yearLabel": "887年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara no Mototsune"
         },
@@ -1488,6 +1636,7 @@
             "yearLabel": "901年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kitano Tenjin Engi Emaki"
         },
@@ -1498,6 +1647,7 @@
             "yearLabel": "1019年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara no Takaie"
         },
@@ -1508,6 +1658,7 @@
             "yearLabel": "1205年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fujiwara no Teika"
         },
@@ -1518,6 +1669,7 @@
             "yearLabel": "1212年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kamo no Chomei"
         },
@@ -1528,6 +1680,7 @@
             "yearLabel": "1219年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Minamoto no Sanetomo"
         },
@@ -1538,6 +1691,7 @@
             "yearLabel": "1331年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kusunoki Masashige"
         },
@@ -1548,6 +1702,7 @@
             "yearLabel": "1378年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hana no Gosho Rakuchu rakugai"
         },
@@ -1558,6 +1713,7 @@
             "yearLabel": "1399年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ōuchi Yoshihiro"
         },
@@ -1568,6 +1724,7 @@
             "yearLabel": "1457年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujimi-yagura Edo Castle"
         },
@@ -1578,6 +1735,7 @@
             "yearLabel": "1555年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mori Motonari"
         },
@@ -1588,6 +1746,7 @@
             "yearLabel": "1561年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Kawanakajima"
         },
@@ -1598,6 +1757,7 @@
             "yearLabel": "1570年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Anegawa"
         },
@@ -1608,6 +1768,7 @@
             "yearLabel": "1580年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ishiyama Hongan-ji"
         },
@@ -1618,6 +1779,7 @@
             "yearLabel": "1583年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Shizugatake"
         },
@@ -1628,6 +1790,7 @@
             "yearLabel": "1584年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Komaki and Nagakute"
         },
@@ -1638,6 +1801,7 @@
             "yearLabel": "1597年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Twenty-six Martyrs of Japan"
         },
@@ -1648,6 +1812,7 @@
             "yearLabel": "1607年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Joseon Tongsinsa procession"
         },
@@ -1658,6 +1823,7 @@
             "yearLabel": "1651年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yui Shosetsu"
         },
@@ -1668,6 +1834,7 @@
             "yearLabel": "1669年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ainu chief 19th century"
         },
@@ -1678,6 +1845,7 @@
             "yearLabel": "1689年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Matsuo Basho"
         },
@@ -1688,6 +1856,7 @@
             "yearLabel": "1798年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Motoori Norinaga"
         },
@@ -1698,6 +1867,7 @@
             "yearLabel": "1821年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Dai Nihon Enkai Yochi Zenzu"
         },
@@ -1708,6 +1878,7 @@
             "yearLabel": "1855年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ansei Edo earthquake namazu-e"
         },
@@ -1718,6 +1889,7 @@
             "yearLabel": "1858年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yoshida Shoin"
         },
@@ -1728,6 +1900,7 @@
             "yearLabel": "1860年",
             "region": "JP",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kanrin Maru"
         },
@@ -1738,6 +1911,7 @@
             "yearLabel": "1862年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Namamugi incident"
         },
@@ -1748,6 +1922,7 @@
             "yearLabel": "1871年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Iwakura Mission"
         },
@@ -1758,6 +1933,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tomioka Silk Mill"
         },
@@ -1768,6 +1944,7 @@
             "yearLabel": "1879年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sho Tai"
         },
@@ -1778,6 +1955,7 @@
             "yearLabel": "1883年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Rokumeikan"
         },
@@ -1788,6 +1966,7 @@
             "yearLabel": "1890年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Imperial Diet 1890"
         },
@@ -1798,6 +1977,7 @@
             "yearLabel": "1891年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Otsu incident"
         },
@@ -1808,6 +1988,7 @@
             "yearLabel": "1915年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Twenty-One Demands"
         },
@@ -1818,6 +1999,7 @@
             "yearLabel": "1920年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nitobe Inazo"
         },
@@ -1828,6 +2010,7 @@
             "yearLabel": "1932年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Inukai Tsuyoshi"
         },
@@ -1838,6 +2021,7 @@
             "yearLabel": "1940年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tripartite Pact signing"
         },
@@ -1848,6 +2032,7 @@
             "yearLabel": "1946年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Promulgation of the Constitution of Japan 1946"
         },
@@ -1858,6 +2043,7 @@
             "yearLabel": "1953年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "NHK television 1953"
         },
@@ -1868,6 +2054,7 @@
             "yearLabel": "1960年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "1960 Anpo protests"
         },
@@ -1878,6 +2065,7 @@
             "yearLabel": "1968年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yasunari Kawabata"
         },
@@ -1888,6 +2076,7 @@
             "yearLabel": "1978年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Narita Airport"
         },
@@ -1898,6 +2087,7 @@
             "yearLabel": "1988年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Seikan Tunnel"
         },
@@ -1908,6 +2098,7 @@
             "yearLabel": "2005年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Linimo 100 series"
         },
@@ -1918,6 +2109,7 @@
             "yearLabel": "527年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Iwatoyama Kofun"
         },
@@ -1928,6 +2120,7 @@
             "yearLabel": "587年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mononobe no Moriya"
         },
@@ -1938,6 +2131,7 @@
             "yearLabel": "588年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Asuka-dera"
         },
@@ -1948,6 +2142,7 @@
             "yearLabel": "729年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Prince Nagaya residence"
         },
@@ -1958,6 +2153,7 @@
             "yearLabel": "740年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara no Hirotsugu"
         },
@@ -1968,6 +2164,7 @@
             "yearLabel": "802年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Isawa Castle"
         },
@@ -1978,6 +2175,7 @@
             "yearLabel": "810年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Saga"
         },
@@ -1988,6 +2186,7 @@
             "yearLabel": "1164年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Heike Nokyo"
         },
@@ -1998,6 +2197,7 @@
             "yearLabel": "1177年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Shishigatani"
         },
@@ -2008,6 +2208,7 @@
             "yearLabel": "1180年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Taira no Kiyomori statue"
         },
@@ -2018,6 +2219,7 @@
             "yearLabel": "1183年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Minamoto no Yoshinaka"
         },
@@ -2028,6 +2230,7 @@
             "yearLabel": "1184年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Ichi-no-Tani"
         },
@@ -2038,6 +2241,7 @@
             "yearLabel": "1185年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nasu no Yoichi"
         },
@@ -2048,6 +2252,7 @@
             "yearLabel": "1189年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fujiwara no Hidehira"
         },
@@ -2058,6 +2263,7 @@
             "yearLabel": "1252年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kamakura Daibutsu"
         },
@@ -2068,6 +2274,7 @@
             "yearLabel": "1324年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hino Suketomo"
         },
@@ -2078,6 +2285,7 @@
             "yearLabel": "1336年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Minatogawa"
         },
@@ -2088,6 +2296,7 @@
             "yearLabel": "1428年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yagyu tokusei stone"
         },
@@ -2098,6 +2307,7 @@
             "yearLabel": "1441年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ashikaga Yoshinori"
         },
@@ -2108,6 +2318,7 @@
             "yearLabel": "1489年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ginkaku-ji Kannon-den"
         },
@@ -2118,6 +2329,7 @@
             "yearLabel": "1567年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Saito Dosan"
         },
@@ -2128,6 +2340,7 @@
             "yearLabel": "1591年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Sen no Rikyu"
         },
@@ -2138,6 +2351,7 @@
             "yearLabel": "1600年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "William Adams"
         },
@@ -2148,6 +2362,7 @@
             "yearLabel": "1614年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Siege of Osaka winter campaign"
         },
@@ -2158,6 +2373,7 @@
             "yearLabel": "1617年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Nikko Toshogu"
         },
@@ -2168,6 +2384,7 @@
             "yearLabel": "1682年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ihara Saikaku"
         },
@@ -2178,6 +2395,7 @@
             "yearLabel": "1765年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Suzuki Harunobu Heron Maiden"
         },
@@ -2188,6 +2406,7 @@
             "yearLabel": "1802年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jippensha Ikku"
         },
@@ -2198,6 +2417,7 @@
             "yearLabel": "1814年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyokutei Bakin"
         },
@@ -2208,6 +2428,7 @@
             "yearLabel": "1828年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Siebold Japan map"
         },
@@ -2218,6 +2439,7 @@
             "yearLabel": "1838年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ogata Koan"
         },
@@ -2228,6 +2450,7 @@
             "yearLabel": "1859年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yokohama port 1860s"
         },
@@ -2238,6 +2461,7 @@
             "yearLabel": "1864年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Bombardment of Shimonoseki"
         },
@@ -2248,6 +2472,7 @@
             "yearLabel": "1868年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Katsu Kaishu"
         },
@@ -2258,6 +2483,7 @@
             "yearLabel": "1869年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Goryokaku"
         },
@@ -2268,6 +2494,7 @@
             "yearLabel": "1873年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Yamagata Aritomo"
         },
@@ -2278,6 +2505,7 @@
             "yearLabel": "1877年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Akamon University of Tokyo"
         },
@@ -2288,6 +2516,7 @@
             "yearLabel": "1882年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Matsukata Masayoshi"
         },
@@ -2298,6 +2527,7 @@
             "yearLabel": "1886年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Normanton incident Bigot"
         },
@@ -2308,6 +2538,7 @@
             "yearLabel": "1890年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Imperial Rescript on Education"
         },
@@ -2318,6 +2549,7 @@
             "yearLabel": "1891年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mino-Owari earthquake 1891"
         },
@@ -2328,6 +2560,7 @@
             "yearLabel": "1914年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokyo Station 1914"
         },
@@ -2338,6 +2571,7 @@
             "yearLabel": "1922年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Suiheisha"
         },
@@ -2348,6 +2582,7 @@
             "yearLabel": "1956年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ichiro Hatoyama"
         },
@@ -2358,6 +2593,7 @@
             "yearLabel": "1959年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Isewan Typhoon"
         },
@@ -2368,6 +2604,7 @@
             "yearLabel": "1968年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ogasawara Islands Chichijima"
         },
@@ -2378,6 +2615,7 @@
             "yearLabel": "1987年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Japanese National Railways"
         },
@@ -2388,6 +2626,7 @@
             "yearLabel": "1993年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Himeji Castle"
         },
@@ -2398,6 +2637,7 @@
             "yearLabel": "1997年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kyoto International Conference Center"
         },
@@ -2408,6 +2648,7 @@
             "yearLabel": "2002年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "2002 FIFA World Cup"
         },
@@ -2418,6 +2659,7 @@
             "yearLabel": "239年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Himiko",
             "artFile": "Yoshinogari-iseki zenkei.JPG"
@@ -2429,6 +2671,7 @@
             "yearLabel": "478年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Daisen Kofun"
         },
@@ -2439,6 +2682,7 @@
             "yearLabel": "603年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Prince Shotoku"
         },
@@ -2449,6 +2693,7 @@
             "yearLabel": "607年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Horyu-ji pagoda"
         },
@@ -2459,6 +2704,7 @@
             "yearLabel": "667年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Omi Otsu-kyo site",
             "artFile": "Ōmi Ōtsu Palace Nishigori Site.jpg"
@@ -2470,6 +2716,7 @@
             "yearLabel": "670年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Tenji"
         },
@@ -2480,6 +2727,7 @@
             "yearLabel": "673年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Tenmu"
         },
@@ -2490,6 +2738,7 @@
             "yearLabel": "713年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Izumo Fudoki",
             "artFile": "Empress Gemmei.jpg"
@@ -2501,6 +2750,7 @@
             "yearLabel": "718年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara no Fuhito",
             "artFile": "Fujiwara no Fuhito (Nara National Museum) detail.jpg"
@@ -2512,6 +2762,7 @@
             "yearLabel": "751年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nara period poetry manuscript",
             "artFile": "Prince Otsu.jpg"
@@ -2523,6 +2774,7 @@
             "yearLabel": "753年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Ganjin statue Toshodai-ji"
         },
@@ -2533,6 +2785,7 @@
             "yearLabel": "757年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nara Heijo palace"
         },
@@ -2543,6 +2796,7 @@
             "yearLabel": "759年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Toshodai-ji Kondo"
         },
@@ -2553,6 +2807,7 @@
             "yearLabel": "781年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Kanmu"
         },
@@ -2563,6 +2818,7 @@
             "yearLabel": "802年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sakanoue no Tamuramaro"
         },
@@ -2573,6 +2829,7 @@
             "yearLabel": "806年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Saicho portrait"
         },
@@ -2583,6 +2840,7 @@
             "yearLabel": "816年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mount Koya Danjo Garan",
             "artFile": "Konpon Daito, Koyasan (3811155264).jpg"
@@ -2594,6 +2852,7 @@
             "yearLabel": "842年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Ninmyo"
         },
@@ -2604,6 +2863,7 @@
             "yearLabel": "930年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kitano Tenjin Engi Emaki"
         },
@@ -2614,6 +2874,7 @@
             "yearLabel": "939年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Taira no Masakado"
         },
@@ -2624,6 +2885,7 @@
             "yearLabel": "969年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Fujiwara clan Heian court"
         },
@@ -2634,6 +2896,7 @@
             "yearLabel": "985年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Genshin monk"
         },
@@ -2644,6 +2907,7 @@
             "yearLabel": "1028年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Heian period samurai"
         },
@@ -2654,6 +2918,7 @@
             "yearLabel": "1051年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Zenkunen kassen emaki",
             "artFile": "源頼義像.jpg"
@@ -2665,6 +2930,7 @@
             "yearLabel": "1069年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Emperor Go-Sanjo"
         },
@@ -2675,6 +2941,7 @@
             "yearLabel": "1083年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Gosannen kassen emaki"
         },
@@ -2685,6 +2952,7 @@
             "yearLabel": "1164年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sanjusangen-do"
         },
@@ -2695,6 +2963,7 @@
             "yearLabel": "1180年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kamakura period samurai"
         },
@@ -2705,6 +2974,7 @@
             "yearLabel": "1184年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Oe no Hiromoto"
         },
@@ -2715,6 +2985,7 @@
             "yearLabel": "1185年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Minamoto no Yoritomo"
         },
@@ -2725,6 +2996,7 @@
             "yearLabel": "1191年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Eisai portrait"
         },
@@ -2735,6 +3007,7 @@
             "yearLabel": "1203年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hojo Tokimasa"
         },
@@ -2745,6 +3018,7 @@
             "yearLabel": "1221年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hojo Yoshitoki"
         },
@@ -2755,6 +3029,7 @@
             "yearLabel": "1225年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hojo Yasutoki"
         },
@@ -2765,6 +3040,7 @@
             "yearLabel": "1249年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hojo Tokiyori"
         },
@@ -2775,6 +3051,7 @@
             "yearLabel": "1268年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kublai Khan portrait"
         },
@@ -2785,6 +3062,7 @@
             "yearLabel": "1276年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Genko Borui Fukuoka"
         },
@@ -2795,6 +3073,7 @@
             "yearLabel": "1368年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ashikaga Yoshimitsu"
         },
@@ -2805,6 +3084,7 @@
             "yearLabel": "1391年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yamana clan"
         },
@@ -2815,6 +3095,7 @@
             "yearLabel": "1394年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kinkaku-ji Yoshimitsu"
         },
@@ -2825,6 +3106,7 @@
             "yearLabel": "1416年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kamakura kubo"
         },
@@ -2835,6 +3117,7 @@
             "yearLabel": "1438年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ashikaga Mochiuji"
         },
@@ -2845,6 +3128,7 @@
             "yearLabel": "1441年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Muromachi period peasants",
             "artFile": "Ashikaga Yoshinori.jpg"
@@ -2856,6 +3140,7 @@
             "yearLabel": "1485年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Byodo-in Uji"
         },
@@ -2866,6 +3151,7 @@
             "yearLabel": "1510年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Joseon Busan"
         },
@@ -2876,6 +3162,7 @@
             "yearLabel": "1523年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ningbo",
             "artFile": "Ōuchi Yoshioki.jpg"
@@ -2887,6 +3174,7 @@
             "yearLabel": "1536年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nichiren Buddhism temple Kyoto",
             "artFile": "Enryakuji Konponchudo04n4272.jpg"
@@ -2898,6 +3186,7 @@
             "yearLabel": "1546年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kawagoe Castle"
         },
@@ -2908,6 +3197,7 @@
             "yearLabel": "1572年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Mikatagahara"
         },
@@ -2918,6 +3208,7 @@
             "yearLabel": "1577年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Azuchi Castle"
         },
@@ -2928,6 +3219,7 @@
             "yearLabel": "1582年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Takeda Katsuyori"
         },
@@ -2938,6 +3230,7 @@
             "yearLabel": "1582年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battle of Yamazaki"
         },
@@ -2948,6 +3241,7 @@
             "yearLabel": "1583年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Osaka Castle folding screen"
         },
@@ -2958,6 +3252,7 @@
             "yearLabel": "1585年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Toyotomi Hideyoshi"
         },
@@ -2968,6 +3263,7 @@
             "yearLabel": "1587年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kitano Tenmangu"
         },
@@ -2978,6 +3274,7 @@
             "yearLabel": "1587年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Jurakudai screen"
         },
@@ -2988,6 +3285,7 @@
             "yearLabel": "1587年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Shimazu Yoshihisa"
         },
@@ -2998,6 +3296,7 @@
             "yearLabel": "1596年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Spanish galleon"
         },
@@ -3008,6 +3307,7 @@
             "yearLabel": "1598年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hokoku Shrine Kyoto"
         },
@@ -3018,6 +3318,7 @@
             "yearLabel": "1601年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokaido post station ukiyo-e"
         },
@@ -3028,6 +3329,7 @@
             "yearLabel": "1605年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokugawa Hidetada"
         },
@@ -3038,6 +3340,7 @@
             "yearLabel": "1609年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hirado Dutch trading post"
         },
@@ -3048,6 +3351,7 @@
             "yearLabel": "1610年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nagoya Castle"
         },
@@ -3058,6 +3362,7 @@
             "yearLabel": "1612年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Christianity in Japan fumie"
         },
@@ -3068,6 +3373,7 @@
             "yearLabel": "1613年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "William Adams"
         },
@@ -3078,6 +3384,7 @@
             "yearLabel": "1615年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japanese castle Edo period"
         },
@@ -3088,6 +3395,7 @@
             "yearLabel": "1615年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyoto Imperial Palace"
         },
@@ -3098,6 +3406,7 @@
             "yearLabel": "1622年",
             "region": "JP",
             "category": "宗教",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Great Genna Martyrdom"
         },
@@ -3108,6 +3417,7 @@
             "yearLabel": "1623年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tokugawa Iemitsu"
         },
@@ -3118,6 +3428,7 @@
             "yearLabel": "1624年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Spanish galleon 17th century",
             "artFile": "Scale model of a Spanish galleon.jpg"
@@ -3129,6 +3440,7 @@
             "yearLabel": "1635年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Red seal ship"
         },
@@ -3139,6 +3451,7 @@
             "yearLabel": "1636年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kan'ei Tsuho coin",
             "artFile": "Kaneitsuho.jpg"
@@ -3150,6 +3463,7 @@
             "yearLabel": "1651年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokugawa Ietsuna"
         },
@@ -3160,6 +3474,7 @@
             "yearLabel": "1672年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kitamaebune"
         },
@@ -3170,6 +3485,7 @@
             "yearLabel": "1673年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mitsui Echigoya ukiyo-e"
         },
@@ -3180,6 +3496,7 @@
             "yearLabel": "1680年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokugawa Tsunayoshi"
         },
@@ -3190,6 +3507,7 @@
             "yearLabel": "1690年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yushima Seido"
         },
@@ -3200,6 +3518,7 @@
             "yearLabel": "1695年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Genroku koban"
         },
@@ -3210,6 +3529,7 @@
             "yearLabel": "1702年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Forty-seven ronin ukiyo-e"
         },
@@ -3220,6 +3540,7 @@
             "yearLabel": "1715年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kokusenya Kassen"
         },
@@ -3230,6 +3551,7 @@
             "yearLabel": "1715年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Arai Hakuseki",
             "artFile": "Arai Hakuseki - Japanischer Gelehrter.jpg"
@@ -3241,6 +3563,7 @@
             "yearLabel": "1721年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tokugawa Yoshimune"
         },
@@ -3251,6 +3574,7 @@
             "yearLabel": "1722年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Edo period rice"
         },
@@ -3261,6 +3585,7 @@
             "yearLabel": "1722年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Koishikawa Botanical Garden"
         },
@@ -3271,6 +3596,7 @@
             "yearLabel": "1732年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Edo period famine"
         },
@@ -3281,6 +3607,7 @@
             "yearLabel": "1742年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ooka Tadasuke"
         },
@@ -3291,6 +3618,7 @@
             "yearLabel": "1748年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kanadehon Chushingura ukiyo-e"
         },
@@ -3301,6 +3629,7 @@
             "yearLabel": "1790年",
             "region": "JP",
             "category": "思想",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Matsudaira Sadanobu"
         },
@@ -3311,6 +3640,7 @@
             "yearLabel": "1799年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ezo Ainu Edo period"
         },
@@ -3321,6 +3651,7 @@
             "yearLabel": "1808年",
             "region": "JP",
             "category": "探検",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mamiya Rinzo"
         },
@@ -3331,6 +3662,7 @@
             "yearLabel": "1811年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Vasily Golovnin"
         },
@@ -3341,6 +3673,7 @@
             "yearLabel": "1815年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sugita Genpaku"
         },
@@ -3351,6 +3684,7 @@
             "yearLabel": "1825年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Western ship Edo period scroll",
             "artFile": "Map of Coastal Defense WDL9934.png"
@@ -3362,6 +3696,7 @@
             "yearLabel": "1837年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Morrison incident ship",
             "artFile": "MorrisonShip.jpg"
@@ -3373,6 +3708,7 @@
             "yearLabel": "1842年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mizuno Tadakuni"
         },
@@ -3383,6 +3719,7 @@
             "yearLabel": "1846年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "James Biddle"
         },
@@ -3393,6 +3730,7 @@
             "yearLabel": "1853年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yevfimy Putyatin"
         },
@@ -3403,6 +3741,7 @@
             "yearLabel": "1854年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty of Shimoda"
         },
@@ -3413,6 +3752,7 @@
             "yearLabel": "1856年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Bansho Shirabesho"
         },
@@ -3423,6 +3763,7 @@
             "yearLabel": "1862年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokugawa Yoshinobu",
             "artFile": "Matsudaira Yoshinaga.jpg"
@@ -3434,6 +3775,7 @@
             "yearLabel": "1863年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyoto Imperial Palace bakumatsu"
         },
@@ -3444,6 +3786,7 @@
             "yearLabel": "1864年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ikedaya incident"
         },
@@ -3454,6 +3797,7 @@
             "yearLabel": "1864年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Choshu domain samurai"
         },
@@ -3464,6 +3808,7 @@
             "yearLabel": "1866年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Second Choshu expedition"
         },
@@ -3474,6 +3819,7 @@
             "yearLabel": "1867年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Emperor Meiji young"
         },
@@ -3484,6 +3830,7 @@
             "yearLabel": "1868年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokyo Meiji era map"
         },
@@ -3494,6 +3841,7 @@
             "yearLabel": "1869年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kaitakushi Sapporo",
             "artFile": "KaitakushiSapporoHonchosha1873-restoration.jpg"
@@ -3505,6 +3853,7 @@
             "yearLabel": "1869年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji telegraph"
         },
@@ -3515,6 +3864,7 @@
             "yearLabel": "1870年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yokohama Mainichi Shimbun",
             "artFile": "Yokohama Kaigan-dōri no zu.jpg"
@@ -3526,6 +3876,7 @@
             "yearLabel": "1871年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Maejima Hisoka"
         },
@@ -3536,6 +3887,7 @@
             "yearLabel": "1871年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji yen coin"
         },
@@ -3546,6 +3898,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Meiji school"
         },
@@ -3556,6 +3909,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "思想",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Fukuzawa Yukichi"
         },
@@ -3566,6 +3920,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "First National Bank Tokyo Meiji",
             "artFile": "Dai-ichi Kokuritsu Ginko.JPG"
@@ -3577,6 +3932,7 @@
             "yearLabel": "1872年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Gas lamp Yokohama Meiji",
             "artFile": "Kaemon Takashima.png"
@@ -3588,6 +3944,7 @@
             "yearLabel": "1873年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Saigo Takamori"
         },
@@ -3598,6 +3955,7 @@
             "yearLabel": "1873年",
             "region": "JP",
             "category": "思想",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mori Arinori"
         },
@@ -3608,6 +3966,7 @@
             "yearLabel": "1873年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Shibusawa Eiichi"
         },
@@ -3618,6 +3977,7 @@
             "yearLabel": "1874年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Taiwan expedition 1874"
         },
@@ -3628,6 +3988,7 @@
             "yearLabel": "1874年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tondenhei Hokkaido"
         },
@@ -3638,6 +3999,7 @@
             "yearLabel": "1875年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Enomoto Takeaki"
         },
@@ -3648,6 +4010,7 @@
             "yearLabel": "1875年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ganghwa Island incident"
         },
@@ -3658,6 +4021,7 @@
             "yearLabel": "1875年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Niijima Jo"
         },
@@ -3668,6 +4032,7 @@
             "yearLabel": "1876年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji era samurai"
         },
@@ -3678,6 +4043,7 @@
             "yearLabel": "1876年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "William S. Clark"
         },
@@ -3688,6 +4054,7 @@
             "yearLabel": "1878年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokyo Stock Exchange Meiji"
         },
@@ -3698,6 +4065,7 @@
             "yearLabel": "1880年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kataoka Kenkichi",
             "artFile": "Kataoka Kenkichi 1902.jpg"
@@ -3709,6 +4077,7 @@
             "yearLabel": "1881年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Itagaki Taisuke"
         },
@@ -3719,6 +4088,7 @@
             "yearLabel": "1882年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Okuma Shigenobu"
         },
@@ -3729,6 +4099,7 @@
             "yearLabel": "1882年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Waseda University old"
         },
@@ -3739,6 +4110,7 @@
             "yearLabel": "1884年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Chichibu incident"
         },
@@ -3749,6 +4121,7 @@
             "yearLabel": "1885年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Li Hongzhang Ito Hirobumi"
         },
@@ -3759,6 +4132,7 @@
             "yearLabel": "1885年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "NYK Line Meiji ship",
             "artFile": "Nippon Yusen Kaisha = Japan Mail Steamship Co. (Three ukiyo-e women) (rbm-coll3020-01-07).jpg"
@@ -3770,6 +4144,7 @@
             "yearLabel": "1887年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji police"
         },
@@ -3780,6 +4155,7 @@
             "yearLabel": "1888年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yamagata Aritomo"
         },
@@ -3790,6 +4166,7 @@
             "yearLabel": "1889年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji steam locomotive Japan"
         },
@@ -3800,6 +4177,7 @@
             "yearLabel": "1889年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kitasato Shibasaburo"
         },
@@ -3810,6 +4188,7 @@
             "yearLabel": "1894年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mutsu Munemitsu"
         },
@@ -3820,6 +4199,7 @@
             "yearLabel": "1895年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Triple Intervention",
             "artFile": "Mutsu Munemitsu.jpg"
@@ -3831,6 +4211,7 @@
             "yearLabel": "1895年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Taiwan Governor-General office"
         },
@@ -3841,6 +4222,7 @@
             "yearLabel": "1896年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "1896 Sanriku tsunami"
         },
@@ -3851,6 +4233,7 @@
             "yearLabel": "1897年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji gold coin"
         },
@@ -3861,6 +4244,7 @@
             "yearLabel": "1897年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kiyoshi Shiga"
         },
@@ -3871,6 +4255,7 @@
             "yearLabel": "1900年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ito Hirobumi"
         },
@@ -3881,6 +4266,7 @@
             "yearLabel": "1900年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Meiji government 1900"
         },
@@ -3891,6 +4277,7 @@
             "yearLabel": "1900年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tsuda Umeko"
         },
@@ -3901,6 +4288,7 @@
             "yearLabel": "1901年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tanaka Shozo"
         },
@@ -3911,6 +4299,7 @@
             "yearLabel": "1901年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yosano Akiko"
         },
@@ -3921,6 +4310,7 @@
             "yearLabel": "1905年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hibiya incendiary incident"
         },
@@ -3931,6 +4321,7 @@
             "yearLabel": "1906年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "South Manchuria Railway"
         },
@@ -3941,6 +4332,7 @@
             "yearLabel": "1906年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Natsume Soseki"
         },
@@ -3951,6 +4343,7 @@
             "yearLabel": "1908年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kikunae Ikeda"
         },
@@ -3961,6 +4354,7 @@
             "yearLabel": "1910年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Japan Korea annexation 1910"
         },
@@ -3971,6 +4365,7 @@
             "yearLabel": "1910年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kotoku Shusui"
         },
@@ -3981,6 +4376,7 @@
             "yearLabel": "1910年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Umetaro Suzuki"
         },
@@ -3991,6 +4387,7 @@
             "yearLabel": "1910年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokugawa Yoshitoshi aviator",
             "artFile": "Tokugawa Yoshitoshi.jpg"
@@ -4002,6 +4399,7 @@
             "yearLabel": "1911年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hiratsuka Raicho"
         },
@@ -4012,6 +4410,7 @@
             "yearLabel": "1913年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Katsura Taro"
         },
@@ -4022,6 +4421,7 @@
             "yearLabel": "1914年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Takarazuka Revue"
         },
@@ -4032,6 +4432,7 @@
             "yearLabel": "1915年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japanese high school baseball"
         },
@@ -4042,6 +4443,7 @@
             "yearLabel": "1918年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Japanese Siberian intervention"
         },
@@ -4052,6 +4454,7 @@
             "yearLabel": "1920年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ichikawa Fusae"
         },
@@ -4062,6 +4465,7 @@
             "yearLabel": "1921年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hara Takashi",
             "artFile": "Takashi Hara formal.jpg"
@@ -4073,6 +4477,7 @@
             "yearLabel": "1922年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Taisho period Tokyo",
             "artFile": "SAKAI TOSHIHIKO PORTRAIT.jpg"
@@ -4084,6 +4489,7 @@
             "yearLabel": "1924年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Koshien Stadium"
         },
@@ -4094,6 +4500,7 @@
             "yearLabel": "1924年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Toyoda automatic loom"
         },
@@ -4104,6 +4511,7 @@
             "yearLabel": "1925年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Kato Takaaki"
         },
@@ -4114,6 +4522,7 @@
             "yearLabel": "1927年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Showa financial crisis"
         },
@@ -4124,6 +4533,7 @@
             "yearLabel": "1927年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tokyo Metro Ginza Line 1927"
         },
@@ -4134,6 +4544,7 @@
             "yearLabel": "1928年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Showa police 1928",
             "artFile": "Giichi Tanaka Cabinet 19270420.jpg"
@@ -4145,6 +4556,7 @@
             "yearLabel": "1928年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Zhang Zuolin"
         },
@@ -4155,6 +4567,7 @@
             "yearLabel": "1930年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Inoue Junnosuke",
             "artFile": "Junnosuke Inoue 3.jpg"
@@ -4166,6 +4579,7 @@
             "yearLabel": "1930年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "London Naval Treaty 1930"
         },
@@ -4176,6 +4590,7 @@
             "yearLabel": "1932年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Manchukuo"
         },
@@ -4186,6 +4601,7 @@
             "yearLabel": "1933年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyoto University Showa",
             "artFile": "M. Ichiro Hatoyama, ministre de l'Instruction Publique du Japon, visitant la première école de jeunes filles à Tokyo au cours de sa tournée d'inspection - btv1b9050436p.jpg"
@@ -4197,6 +4613,7 @@
             "yearLabel": "1935年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Minobe Tatsukichi"
         },
@@ -4207,6 +4624,7 @@
             "yearLabel": "1936年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Anti-Comintern Pact"
         },
@@ -4217,6 +4635,7 @@
             "yearLabel": "1938年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Konoe Fumimaro"
         },
@@ -4227,6 +4646,7 @@
             "yearLabel": "1939年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Battles of Khalkhin Gol"
         },
@@ -4237,6 +4657,7 @@
             "yearLabel": "1940年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Imperial Rule Assistance Association"
         },
@@ -4247,6 +4668,7 @@
             "yearLabel": "1941年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Soviet-Japanese Neutrality Pact"
         },
@@ -4257,6 +4679,7 @@
             "yearLabel": "1941年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japanese battleship Yamato"
         },
@@ -4267,6 +4690,7 @@
             "yearLabel": "1942年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Battle of Midway"
         },
@@ -4277,6 +4701,7 @@
             "yearLabel": "1943年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Gakuto shutsujin 1943"
         },
@@ -4287,6 +4712,7 @@
             "yearLabel": "1945年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Bombing of Tokyo 1945"
         },
@@ -4297,6 +4723,7 @@
             "yearLabel": "1945年",
             "region": "JP",
             "category": "戦争",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Hiroshima Peace Memorial"
         },
@@ -4307,6 +4734,7 @@
             "yearLabel": "1946年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "International Military Tribunal for the Far East"
         },
@@ -4317,6 +4745,7 @@
             "yearLabel": "1947年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Japanese school 1947"
         },
@@ -4327,6 +4756,7 @@
             "yearLabel": "1949年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Joseph Dodge"
         },
@@ -4337,6 +4767,7 @@
             "yearLabel": "1950年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "National Police Reserve Japan"
         },
@@ -4347,6 +4778,7 @@
             "yearLabel": "1954年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Japan Self-Defense Forces 1954",
             "artFile": "Flags of JGSDF and JMSDF with Tokutaro Kimura Defense Agency 1954.png"
@@ -4358,6 +4790,7 @@
             "yearLabel": "1954年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Godzilla 1954 poster"
         },
@@ -4368,6 +4801,7 @@
             "yearLabel": "1955年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hatoyama Ichiro"
         },
@@ -4378,6 +4812,7 @@
             "yearLabel": "1956年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Minamata"
         },
@@ -4388,6 +4823,7 @@
             "yearLabel": "1958年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Tokyo Tower 1958"
         },
@@ -4398,6 +4834,7 @@
             "yearLabel": "1958年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Chicken Ramen"
         },
@@ -4408,6 +4845,7 @@
             "yearLabel": "1960年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Ikeda Hayato"
         },
@@ -4418,6 +4856,7 @@
             "yearLabel": "1963年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Osamu Tezuka"
         },
@@ -4428,6 +4867,7 @@
             "yearLabel": "1965年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Treaty on Basic Relations Japan Korea"
         },
@@ -4438,6 +4878,7 @@
             "yearLabel": "1965年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sin-Itiro Tomonaga"
         },
@@ -4448,6 +4889,7 @@
             "yearLabel": "1967年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yokkaichi pollution"
         },
@@ -4458,6 +4900,7 @@
             "yearLabel": "1970年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Ohsumi satellite"
         },
@@ -4468,6 +4911,7 @@
             "yearLabel": "1971年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japan environment 1971"
         },
@@ -4478,6 +4922,7 @@
             "yearLabel": "1972年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "1972 Winter Olympics Sapporo"
         },
@@ -4488,6 +4933,7 @@
             "yearLabel": "1972年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Asama-Sanso incident"
         },
@@ -4498,6 +4944,7 @@
             "yearLabel": "1975年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Shinkansen 0 series"
         },
@@ -4508,6 +4955,7 @@
             "yearLabel": "1975年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Okinawa Expo 1975"
         },
@@ -4518,6 +4966,7 @@
             "yearLabel": "1976年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tanaka Kakuei"
         },
@@ -4528,6 +4977,7 @@
             "yearLabel": "1978年",
             "region": "JP",
             "category": "外交",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Deng Xiaoping Japan 1978"
         },
@@ -4538,6 +4988,7 @@
             "yearLabel": "1979年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Sony Walkman TPS-L2"
         },
@@ -4548,6 +4999,7 @@
             "yearLabel": "1982年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Tohoku Shinkansen 200 series"
         },
@@ -4558,6 +5010,7 @@
             "yearLabel": "1983年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Nintendo Famicom"
         },
@@ -4568,6 +5021,7 @@
             "yearLabel": "1983年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tokyo Disneyland",
             "artFile": "Tokyo Disneyland Opening Year.jpg"
@@ -4579,6 +5033,7 @@
             "yearLabel": "1985年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Plaza Accord"
         },
@@ -4589,6 +5044,7 @@
             "yearLabel": "1985年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japan Airlines Flight 123"
         },
@@ -4599,6 +5055,7 @@
             "yearLabel": "1988年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Great Seto Bridge"
         },
@@ -4609,6 +5066,7 @@
             "yearLabel": "1989年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Heisei announcement"
         },
@@ -4619,6 +5077,7 @@
             "yearLabel": "1989年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Japanese consumption tax 1989",
             "artFile": "Noboru Takeshita full.jpg"
@@ -4630,6 +5089,7 @@
             "yearLabel": "1991年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mount Unzen pyroclastic flow"
         },
@@ -4640,6 +5100,7 @@
             "yearLabel": "1992年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Japan peacekeeping Cambodia",
             "artFile": "Kiichi Miyazawa.jpg"
@@ -4651,6 +5112,7 @@
             "yearLabel": "1994年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kansai International Airport"
         },
@@ -4661,6 +5123,7 @@
             "yearLabel": "1994年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kenzaburo Oe"
         },
@@ -4671,6 +5134,7 @@
             "yearLabel": "1995年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Tokyo subway 1995"
         },
@@ -4681,6 +5145,7 @@
             "yearLabel": "1995年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Shirakawa-go"
         },
@@ -4691,6 +5156,7 @@
             "yearLabel": "1996年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hiroshima Peace Memorial Genbaku Dome"
         },
@@ -4701,6 +5167,7 @@
             "yearLabel": "1996年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Itsukushima Shrine torii"
         },
@@ -4711,6 +5178,7 @@
             "yearLabel": "1997年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Yamaichi Securities"
         },
@@ -4721,6 +5189,7 @@
             "yearLabel": "1998年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Akashi Kaikyo Bridge",
             "artFile": "Akashi Bridge.JPG"
@@ -4732,6 +5201,7 @@
             "yearLabel": "2004年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "2004 Chuetsu earthquake"
         },
@@ -4742,6 +5212,7 @@
             "yearLabel": "2007年",
             "region": "JP",
             "category": "経済",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Japan Post",
             "artFile": "Japan Post box in Kamakura City, Tokyo area, Japan.jpg"
@@ -4753,6 +5224,7 @@
             "yearLabel": "2009年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Yukio Hatoyama"
         },
@@ -4763,6 +5235,7 @@
             "yearLabel": "2010年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Hayabusa spacecraft"
         },
@@ -4773,6 +5246,7 @@
             "yearLabel": "2011年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Kyushu Shinkansen 800 series"
         },
@@ -4783,6 +5257,7 @@
             "yearLabel": "2012年",
             "region": "JP",
             "category": "科学",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Shinya Yamanaka"
         },
@@ -4793,6 +5268,7 @@
             "yearLabel": "2013年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Mount Fuji",
             "artFile": "Lake Kawaguchiko Sakura Mount Fuji 4.JPG"
@@ -4804,6 +5280,7 @@
             "yearLabel": "2014年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Mount Ontake"
         },
@@ -4814,6 +5291,7 @@
             "yearLabel": "2016年",
             "region": "JP",
             "category": "技術",
+            "difficulty": 3,
             "art": "",
             "artQuery": "Hokkaido Shinkansen H5"
         },
@@ -4824,6 +5302,7 @@
             "yearLabel": "2016年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Kumamoto Castle 2016 earthquake"
         },
@@ -4834,6 +5313,7 @@
             "yearLabel": "2019年",
             "region": "JP",
             "category": "政治",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Reiwa"
         },
@@ -4844,6 +5324,7 @@
             "yearLabel": "2020年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "COVID-19 Tokyo 2020"
         },
@@ -4854,6 +5335,7 @@
             "yearLabel": "2021年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 1,
             "art": "",
             "artQuery": "Japan National Stadium"
         },
@@ -4864,6 +5346,7 @@
             "yearLabel": "2024年",
             "region": "JP",
             "category": "災害",
+            "difficulty": 2,
             "art": "",
             "artQuery": "2024 Noto earthquake"
         },
@@ -4874,6 +5357,7 @@
             "yearLabel": "2025年",
             "region": "JP",
             "category": "文化",
+            "difficulty": 2,
             "art": "",
             "artQuery": "Expo 2025 Osaka"
         }

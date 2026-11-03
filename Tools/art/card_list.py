@@ -5,10 +5,13 @@
 年号は確実なものだけを入れる（諸説ある出来事・年が2年にまたがる出来事は入れない）。
 query は Wikimedia Commons での画像の検索語（英語のほうが当たりやすい）。
 file を指定すると、検索せずにその Commons のファイルを使う（検索で外れたときの差し替え用）。
+難易度（difficulty）は card_tiers.py の区分から書き出す。
 """
 
 import json
 from pathlib import Path
+
+import card_tiers
 
 ROOT = Path(__file__).resolve().parents[2]
 DECK_DIR = ROOT / "ChronoSort" / "Assets" / "Data" / "Decks"
@@ -1063,6 +1066,7 @@ def write_deck(name, rows, region):
             "yearLabel": year_label(year),
             "region": region,
             "category": category,
+            "difficulty": card_tiers.difficulty(card_id),
             "art": "",
             "artQuery": query,
         }
@@ -1076,6 +1080,10 @@ def write_deck(name, rows, region):
 
 
 def main():
+    # 区分の一覧に、デッキに無い id（打ち間違いや消したカード）が残っていないか
+    known = {row[0] for row in JAPAN + WORLD}
+    stray = [card_id for card_id in card_tiers.EASY + card_tiers.NORMAL if card_id not in known]
+    assert not stray, stray
     n = write_deck("japan", JAPAN, "JP")
     m = write_deck("world", WORLD, "WORLD")
     print(f"japan {n} cards, world {m} cards, total {n + m}")
