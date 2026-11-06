@@ -9,6 +9,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 1,
+            "caption": "ギリシャのオリンピアで、ゼウスに捧げる競技祭が記録に残る形で始まった。以後4年ごとに開かれ、千年余り続いた。",
+            "wiki": "古代オリンピック",
             "art": "",
             "artQuery": "Olympia stadium ancient"
         },
@@ -20,6 +22,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "アテネの重装歩兵がペルシア軍を破った戦い。勝利を伝えて走った伝令の話が、マラソンの由来となった。",
+            "wiki": "マラトンの戦い",
             "art": "",
             "artQuery": "Battle of Marathon painting"
         },
@@ -31,6 +35,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "スパルタ王レオニダスの率いる少数の兵が、狭い山道でペルシアの大軍を食い止め、全滅するまで戦った。",
+            "wiki": "テルモピュライの戦い",
             "art": "",
             "artQuery": "Leonidas at Thermopylae David"
         },
@@ -42,6 +48,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "テミストクレスの率いるギリシャ艦隊が、狭い海峡でペルシア艦隊を破った。ペルシア戦争の流れが変わった。",
+            "wiki": "サラミスの海戦",
             "art": "",
             "artQuery": "Battle of Salamis Kaulbach"
         },
@@ -53,6 +61,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 1,
+            "caption": "哲学者ソクラテスが、若者を惑わせた罪でアテネの裁判にかけられ、毒杯をあおって亡くなった。",
+            "wiki": "ソクラテス",
             "art": "",
             "artQuery": "The Death of Socrates David"
         },
@@ -64,6 +74,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "マケドニアの若き王が東方遠征を始めた。ペルシア帝国を滅ぼし、インダス川の近くまで進んだ。",
+            "wiki": "アレクサンドロス3世",
             "art": "",
             "artQuery": "Alexander Mosaic"
         },
@@ -75,6 +87,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "秦王の政が戦国の六国を滅ぼし、中国を初めて統一して始皇帝と称した。文字や貨幣、度量衡を統一した。",
+            "wiki": "秦",
             "art": "",
             "artQuery": "Qin Shi Huang portrait"
         },
@@ -86,6 +100,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "カルタゴのハンニバルが、ローマの大軍を包囲して殲滅した。包囲戦の手本として今も語られる。",
+            "wiki": "カンナエの戦い",
             "art": "",
             "artQuery": "Hannibal Barca bust"
         },
@@ -97,6 +113,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ローマが3度目の戦いでカルタゴの町を徹底的に破壊した。地中海の覇権はローマのものとなった。",
+            "wiki": "第三次ポエニ戦争",
             "art": "",
             "artQuery": "Scipio Aemilianus ruins of Carthage"
         },
@@ -108,6 +126,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "終身独裁官のカエサルが、元老院でブルートゥスらに暗殺された。「ブルータス、お前もか」の場面である。",
+            "wiki": "ガイウス・ユリウス・カエサル",
             "art": "",
             "artQuery": "Death of Caesar Camuccini"
         },
@@ -119,6 +139,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "オクタウィアヌスがアントニウスとクレオパトラの連合軍を破った。ローマの内乱に終止符が打たれた。",
+            "wiki": "アクティウムの海戦",
             "art": "",
             "artQuery": "Battle of Actium painting"
         },
@@ -130,6 +152,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 1,
+            "caption": "ヴェスヴィオ山の噴火で、ポンペイの町が火山灰に埋もれた。発掘された町は、古代ローマの暮らしを今に伝える。",
+            "wiki": "ポンペイ",
             "art": "",
             "artQuery": "Last Day of Pompeii Bryullov"
         },
@@ -141,6 +165,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "孫権と劉備の連合軍が、火攻めで曹操の大軍を破った。天下は三分へ向かい、『三国志』の見せ場となった。",
+            "wiki": "赤壁の戦い",
             "art": "",
             "artQuery": "Battle of Red Cliffs"
         },
@@ -152,6 +178,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "コンスタンティヌス帝とリキニウス帝がキリスト教を公認した。長く続いた迫害が終わった。",
+            "wiki": "ミラノ勅令",
             "art": "",
             "artQuery": "Constantine the Great"
         },
@@ -163,6 +191,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "コンスタンティヌス帝が開いた最初の公会議。アタナシウス派の教えを正統とし、アリウス派を異端とした。",
+            "wiki": "第1ニカイア公会議",
             "art": "",
             "artQuery": "First Council of Nicaea icon"
         },
@@ -174,6 +204,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "テオドシウス帝の死で、帝国は2人の子に分けられた。東西の分裂は固定され、再び一つに戻らなかった。",
+            "wiki": "テオドシウス1世",
             "art": "",
             "artQuery": "Theodosius I"
         },
@@ -185,6 +217,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ゲルマン人の傭兵隊長オドアケルが、少年皇帝を退位させた。西ローマ帝国はここで滅びた。",
+            "wiki": "西ローマ帝国",
             "art": "",
             "artQuery": "Romulus Augustulus"
         },
@@ -196,6 +230,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "ムハンマドが迫害を逃れてメッカからメディナへ移った。この年がイスラーム暦の元年である。",
+            "wiki": "ヒジュラ",
             "art": "",
             "artQuery": "Jabal Thawr"
         },
@@ -207,6 +243,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "フランク王国のカール・マルテルが、イスラーム軍の北上を食い止めた。",
+            "wiki": "トゥール・ポワティエ間の戦い",
             "art": "",
             "artQuery": "Battle of Poitiers Steuben"
         },
@@ -218,6 +256,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "フランク王のカールが、ローマで教皇から皇帝の冠を受けた。西ヨーロッパの統一を象徴する出来事である。",
+            "wiki": "カール大帝",
             "art": "",
             "artQuery": "Coronation of Charlemagne"
         },
@@ -229,6 +269,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "フランク王国がカール大帝の孫たちの間で3つに分けられた。のちのドイツ、フランス、イタリアのもととなった。",
+            "wiki": "ヴェルダン条約",
             "art": "",
             "artQuery": "Treaty of Verdun map"
         },
@@ -240,6 +282,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ドイツ王のオットーが教皇から皇帝の冠を受けた。のちの神聖ローマ帝国の始まりとされる。",
+            "wiki": "オットー1世 (神聖ローマ皇帝)",
             "art": "",
             "artQuery": "Otto I Holy Roman Emperor"
         },
@@ -251,6 +295,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ノルマンディー公ウィリアムがイングランド王ハロルドを破った。ノルマン朝が開かれ、英語にも影響を与えた。",
+            "wiki": "ヘイスティングズの戦い",
             "art": "",
             "artQuery": "Bayeux Tapestry"
         },
@@ -262,6 +308,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "教皇ウルバヌス2世の呼びかけで始まった。西欧の諸侯の軍がエルサレムを奪い、十字軍国家を建てた。",
+            "wiki": "第1回十字軍",
             "art": "",
             "artQuery": "First Crusade Siege of Jerusalem"
         },
@@ -273,6 +321,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "テムジンがモンゴルの部族を統一し、クリルタイで大ハンに推された。史上最大の帝国が動き始めた。",
+            "wiki": "チンギス・カン",
             "art": "",
             "artQuery": "Genghis Khan portrait"
         },
@@ -284,6 +334,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "イングランドの貴族がジョン王に認めさせた文書。王も法に従うという考えは、のちの立憲政治の土台となった。",
+            "wiki": "マグナ・カルタ",
             "art": "",
             "artQuery": "Magna Carta"
         },
@@ -295,6 +347,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "フランスの王位継承とフランドルの権益をめぐって、英仏の長い戦いが始まった。1453年まで続いた。",
+            "wiki": "百年戦争",
             "art": "",
             "artQuery": "Battle of Crecy"
         },
@@ -306,6 +360,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "紅巾の乱から身を起こした朱元璋が南京で即位し、モンゴル人の元を北へ追いやった。",
+            "wiki": "明",
             "art": "",
             "artQuery": "Hongwu Emperor portrait"
         },
@@ -317,6 +373,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "オスマン帝国のメフメト2世が大砲で城壁を破り、東ローマ帝国を滅ぼした。",
+            "wiki": "コンスタンティノープルの陥落",
             "art": "",
             "artQuery": "Fall of Constantinople painting"
         },
@@ -328,6 +386,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "カトリック両王がイベリア半島の最後のイスラーム王朝を降した。レコンキスタが完了した。",
+            "wiki": "レコンキスタ",
             "art": "",
             "artQuery": "Capitulation of Granada Pradilla"
         },
@@ -339,6 +399,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 1,
+            "caption": "スペインの支援で大西洋を渡った。到達した島をインドと信じたまま、ヨーロッパとアメリカを結んだ。",
+            "wiki": "クリストファー・コロンブス",
             "art": "",
             "artQuery": "Landing of Columbus"
         },
@@ -350,6 +412,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 1,
+            "caption": "ポルトガルの航海者が喜望峰を回り、インドのカリカットに着いた。ヨーロッパとアジアを結ぶ航路が開かれた。",
+            "wiki": "ヴァスコ・ダ・ガマ",
             "art": "",
             "artQuery": "Vasco da Gama portrait"
         },
@@ -361,6 +425,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "ルターが贖宥状の販売を批判した文書。ヴィッテンベルクから宗教改革の波が広がった。",
+            "wiki": "95か条の論題",
             "art": "",
             "artQuery": "Luther 95 theses"
         },
@@ -372,6 +438,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 1,
+            "caption": "スペインの船団を率いて西へ向かった。本人はフィリピンで戦死したが、部下が世界一周を果たした。",
+            "wiki": "フェルディナンド・マゼラン",
             "art": "",
             "artQuery": "Ferdinand Magellan"
         },
@@ -383,6 +451,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "スペイン人のコルテスが、首都テノチティトランを攻略した。銃と馬と天然痘が帝国を滅ぼした。",
+            "wiki": "アステカ",
             "art": "",
             "artQuery": "Fall of Tenochtitlan"
         },
@@ -394,6 +464,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "イギリス艦隊がスペインの「無敵艦隊」を破った。エリザベス1世のもと、イギリスの海洋進出が進む。",
+            "wiki": "アルマダの海戦",
             "art": "",
             "artQuery": "Spanish Armada painting"
         },
@@ -405,6 +477,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "エリザベス1世の特許状で生まれた貿易会社。のちにインドの支配そのものを担うようになった。",
+            "wiki": "イギリス東インド会社",
             "art": "",
             "artQuery": "East India House"
         },
@@ -416,6 +490,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ボヘミアの新教徒の反乱から始まった宗教戦争。ヨーロッパの大国を巻き込み、ドイツは荒廃した。",
+            "wiki": "三十年戦争",
             "art": "",
             "artQuery": "Defenestration of Prague"
         },
@@ -427,6 +503,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 1,
+            "caption": "ピルグリム・ファーザーズを乗せてイギリスからアメリカへ渡った船。感謝祭の話のもとになった。",
+            "wiki": "メイフラワー号",
             "art": "",
             "artQuery": "Mayflower Plymouth Harbor"
         },
@@ -438,6 +516,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "三十年戦争を終わらせた講和条約。主権国家が並び立つヨーロッパの秩序の始まりとされる。",
+            "wiki": "ヴェストファーレン条約",
             "art": "",
             "artQuery": "Ratification of the Treaty of Munster"
         },
@@ -449,6 +529,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "万有引力と運動の法則を数学で説いたニュートンの著書。近代科学の金字塔である。",
+            "wiki": "自然哲学の数学的諸原理",
             "art": "",
             "artQuery": "Newton Principia title page"
         },
@@ -460,6 +542,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "イギリス議会がジェームズ2世を追放し、オランダからウィリアム3世を迎えた。権利の章典で議会の優位が定まった。",
+            "wiki": "名誉革命",
             "art": "",
             "artQuery": "William III landing at Brixham"
         },
@@ -471,6 +555,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ジェファソンらが起草し、7月4日に採択された宣言。13の植民地がイギリスからの独立を掲げた。",
+            "wiki": "アメリカ独立宣言",
             "art": "",
             "artQuery": "Declaration of Independence Trumbull"
         },
@@ -482,6 +568,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "7月14日、パリの民衆が牢獄を襲った。フランス革命の始まりで、この日は今も革命記念日である。",
+            "wiki": "バスティーユ襲撃",
             "art": "",
             "artQuery": "Storming of the Bastille"
         },
@@ -493,6 +581,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "国民投票を経て、ナポレオンが皇帝となった。ノートルダム大聖堂で自ら冠をかぶったと伝わる。",
+            "wiki": "ナポレオン・ボナパルト",
             "art": "",
             "artQuery": "Coronation of Napoleon David"
         },
@@ -504,6 +594,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "ネルソン提督のイギリス艦隊が、フランス・スペインの連合艦隊を破った。ネルソンは戦死した。",
+            "wiki": "トラファルガーの海戦",
             "art": "",
             "artQuery": "Battle of Trafalgar Turner"
         },
@@ -515,6 +607,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "約60万の大軍でロシアへ攻め入ったナポレオンが、焦土作戦と厳寒に敗れた。帝国の没落が始まった。",
+            "wiki": "1812年ロシア戦役",
             "art": "",
             "artQuery": "Napoleon retreat from Moscow"
         },
@@ -526,6 +620,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "復帰したナポレオンが、ウェリントンとプロイセンの連合軍に敗れた。セントヘレナ島へ流された。",
+            "wiki": "ワーテルローの戦い",
             "art": "",
             "artQuery": "Battle of Waterloo painting"
         },
@@ -537,6 +633,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "清がアヘンを取り締まったことにイギリスが反発して起きた戦争。清は敗れ、香港を手放した。",
+            "wiki": "アヘン戦争",
             "art": "",
             "artQuery": "First Opium War Nemesis"
         },
@@ -548,6 +646,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "ダーウィンが自然選択による進化の説を世に問うた。生物学ばかりか、世界の見方を大きく変えた。",
+            "wiki": "種の起源",
             "art": "",
             "artQuery": "On the Origin of Species title page"
         },
@@ -559,6 +659,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "奴隷制をめぐってアメリカの南部が連邦を離れ、北部と戦った。リンカーンの北部が勝ち、奴隷制は廃止された。",
+            "wiki": "南北戦争",
             "art": "",
             "artQuery": "Bombardment of Fort Sumter"
         },
@@ -570,6 +672,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "リンカーンが戦没者の追悼の場で語った短い演説。「人民の、人民による、人民のための政治」で知られる。",
+            "wiki": "ゲティスバーグ演説",
             "art": "",
             "artQuery": "Abraham Lincoln 1863"
         },
@@ -581,6 +685,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "フランス人のレセップスらが地中海と紅海を結んだ。アジアとヨーロッパの距離は大きく縮まった。",
+            "wiki": "スエズ運河",
             "art": "",
             "artQuery": "Suez Canal inauguration 1869"
         },
@@ -592,6 +698,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "普仏戦争の勝利のさなか、ヴェルサイユ宮殿でヴィルヘルム1世が皇帝となった。ビスマルクの統一が完成した。",
+            "wiki": "ドイツ帝国",
             "art": "",
             "artQuery": "Proclamation of the German Empire Werner"
         },
@@ -603,6 +711,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "ベルが電話の特許を取った。ほぼ同時に出願したグレイとの争いは、長い訴訟となった。",
+            "wiki": "アレクサンダー・グラハム・ベル",
             "art": "",
             "artQuery": "Alexander Graham Bell telephone"
         },
@@ -614,6 +724,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "パリ万博のために建てられた鉄の塔。当初は景観を損なうと批判されたが、パリの象徴となった。",
+            "wiki": "エッフェル塔",
             "art": "",
             "artQuery": "Eiffel Tower 1889"
         },
@@ -625,6 +737,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "兄弟がノースカロライナ州の海岸で、世界で初めて動力飛行機を飛ばした。最初の飛行はわずか12秒である。",
+            "wiki": "ライト兄弟",
             "art": "",
             "artQuery": "Wright Flyer first flight 1903"
         },
@@ -636,6 +750,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 1,
+            "caption": "豪華客船が初航海で氷山にぶつかり、大西洋に沈んだ。救命ボートが足りず、1500人以上が亡くなった。",
+            "wiki": "タイタニック号沈没事故",
             "art": "",
             "artQuery": "RMS Titanic"
         },
@@ -647,6 +763,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "サラエボ事件をきっかけに、ヨーロッパの大国が同盟関係で次々と参戦した。戦車や毒ガスも登場した。",
+            "wiki": "第一次世界大戦",
             "art": "",
             "artQuery": "World War I trenches"
         },
@@ -658,6 +776,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "戦争と飢えに苦しむ民衆が蜂起し、ニコライ2世が退位した。同じ年に、レーニンらが権力を握った。",
+            "wiki": "ロシア革命",
             "art": "",
             "artQuery": "October Revolution 1917"
         },
@@ -669,6 +789,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "フレミングが、青カビが細菌を殺すことを偶然発見した。のちの抗生物質の時代を開いた。",
+            "wiki": "ペニシリン",
             "art": "",
             "artQuery": "Alexander Fleming"
         },
@@ -680,6 +802,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "ニューヨークの株式市場の暴落から始まった。世界中で失業者があふれ、のちの戦争の遠因となった。",
+            "wiki": "世界恐慌",
             "art": "",
             "artQuery": "Wall Street crowd 1929 crash"
         },
@@ -691,6 +815,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "ドイツがポーランドへ侵攻し、イギリスとフランスが宣戦した。戦いは世界に広がり、史上最大の戦争となった。",
+            "wiki": "第二次世界大戦",
             "art": "",
             "artQuery": "Schleswig-Holstein Westerplatte 1939"
         },
@@ -702,6 +828,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "サンフランシスコ会議を経て、51か国で発足した。国際連盟の反省から、安全保障理事会に強い権限を与えた。",
+            "wiki": "国際連合",
             "art": "",
             "artQuery": "United Nations Charter signing 1945"
         },
@@ -713,6 +841,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "国共内戦に勝った毛沢東が、北京の天安門で建国を宣言した。敗れた国民党は台湾へ移った。",
+            "wiki": "中華人民共和国",
             "art": "",
             "artQuery": "Founding ceremony of the People's Republic of China 1949"
         },
@@ -724,6 +854,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "ソ連が打ち上げた世界初の人工衛星。アメリカに衝撃を与え、宇宙開発の競争が始まった。",
+            "wiki": "スプートニク1号",
             "art": "",
             "artQuery": "Sputnik 1"
         },
@@ -735,6 +867,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ソ連がキューバにミサイルを持ち込み、米ソが核戦争の瀬戸際に立った。13日の緊張の末、ソ連が撤去に応じた。",
+            "wiki": "キューバ危機",
             "art": "",
             "artQuery": "Cuban Missile Crisis"
         },
@@ -746,6 +880,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "アームストロングが人類で初めて月面に降り立った。「人類にとっては偉大な飛躍だ」の言葉が残る。",
+            "wiki": "アポロ11号",
             "art": "",
             "artQuery": "Aldrin Apollo 11"
         },
@@ -757,6 +893,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "東ドイツの旅行の自由化の発表で、市民が壁に押し寄せた。冷戦の終わりを象徴する出来事である。",
+            "wiki": "ベルリンの壁崩壊",
             "art": "",
             "artQuery": "Berlin Wall 1989"
         },
@@ -768,6 +906,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ゴルバチョフ大統領が辞任し、ソ連はばらばらの独立国となった。70年近い社会主義の大国が消えた。",
+            "wiki": "ソビエト連邦の崩壊",
             "art": "",
             "artQuery": "Boris Yeltsin 1991"
         },
@@ -779,6 +919,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "農民の少女ジャンヌが神の声を聞いたと語り、イングランド軍の包囲を破った。のちに異端として処刑された。",
+            "wiki": "ジャンヌ・ダルク",
             "art": "",
             "artQuery": "Joan of Arc at the Siege of Orleans Lenepveu"
         },
@@ -790,6 +932,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "コペルニクスが、地球が太陽の周りを回ると説いた書。亡くなる直前に出版された。",
+            "wiki": "天球の回転について",
             "art": "",
             "artQuery": "Copernicus heliocentric diagram De revolutionibus"
         },
@@ -801,6 +945,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ガリレオが手製の望遠鏡で木星の4つの衛星を見つけた。天の全てが地球を回るのではないことを示した。",
+            "wiki": "ガリレオ衛星",
             "art": "",
             "artQuery": "Galileo Sidereus Nuncius"
         },
@@ -812,6 +958,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "第一次世界大戦の講和条約。ドイツは巨額の賠償金を課せられ、その不満はナチスの台頭につながった。",
+            "wiki": "ヴェルサイユ条約",
             "art": "",
             "artQuery": "Signing of Peace in the Hall of Mirrors Orpen"
         },
@@ -823,6 +971,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "西ドイツが東ドイツを編入する形で統一した。ベルリンの壁の崩壊から1年足らずの出来事である。",
+            "wiki": "ドイツ再統一",
             "art": "",
             "artQuery": "Helmut Kohl 1990"
         },
@@ -834,6 +984,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "大王はバビロンで32歳の若さで亡くなった。残された大帝国は、部将たちの争いで分かれていった。",
+            "wiki": "アレクサンドロス3世",
             "art": "",
             "artQuery": "Death of Alexander the Great"
         },
@@ -845,6 +997,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ローマの大スキピオが、北アフリカでハンニバルを破った。第二次ポエニ戦争はローマの勝利で終わった。",
+            "wiki": "ザマの戦い",
             "art": "",
             "artQuery": "Battle of Zama"
         },
@@ -856,6 +1010,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "元老院がオクタウィアヌスに「尊厳者」の称号を贈った。ローマの帝政がここから始まる。",
+            "wiki": "アウグストゥス",
             "art": "",
             "artQuery": "Augustus of Prima Porta"
         },
@@ -867,6 +1023,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "後漢の宦官の蔡倫が、樹皮やぼろ布から作る紙を和帝に献上した。製紙法の改良者として知られる。",
+            "wiki": "蔡倫",
             "art": "",
             "artQuery": "Cai Lun papermaking"
         },
@@ -878,6 +1036,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "ローマ教皇とコンスタンティノープル総主教が互いに破門し合った。カトリックと東方正教会の分裂である。",
+            "wiki": "東西教会の分裂",
             "art": "",
             "artQuery": "Michael I Cerularius"
         },
@@ -889,6 +1049,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "ヴェネツィアの商人の子が、父とともに東方へ旅立った。元のフビライに仕え、『東方見聞録』を残した。",
+            "wiki": "マルコ・ポーロ",
             "art": "",
             "artQuery": "Marco Polo leaving Venice"
         },
@@ -900,6 +1062,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "神聖ローマ帝国の諸侯に、ルター派とカトリックの選択を認めた。だが、個人の信仰の自由はまだない。",
+            "wiki": "アウクスブルクの和議",
             "art": "",
             "artQuery": "Peace of Augsburg"
         },
@@ -911,6 +1075,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "スペインなどの神聖同盟の艦隊がオスマン帝国の艦隊を破った。『ドン・キホーテ』のセルバンテスも負傷した。",
+            "wiki": "レパントの海戦",
             "art": "",
             "artQuery": "Battle of Lepanto painting"
         },
@@ -922,6 +1088,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "オスマン帝国の軍がウィーンを囲んだが、ポーランド王の援軍に敗れた。帝国の後退はここから始まる。",
+            "wiki": "第二次ウィーン包囲",
             "art": "",
             "artQuery": "Battle of Vienna 1683"
         },
@@ -933,6 +1101,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "ワットが改良した蒸気機関の特許を取った。工場の動力となり、産業革命を大きく進めた。",
+            "wiki": "ジェームズ・ワット",
             "art": "",
             "artQuery": "James Watt steam engine"
         },
@@ -944,6 +1114,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 1,
+            "caption": "マルクスとエンゲルスが書いた文書。「万国の労働者よ、団結せよ」で結ばれる。",
+            "wiki": "共産党宣言",
             "art": "",
             "artQuery": "Communist Manifesto first edition"
         },
@@ -955,6 +1127,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "南北戦争の終結の直後に、ワシントンの劇場で俳優のブースに撃たれた。",
+            "wiki": "リンカーン大統領暗殺事件",
             "art": "",
             "artQuery": "Assassination of Abraham Lincoln"
         },
@@ -966,6 +1140,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 1,
+            "caption": "クーベルタンの提唱により、古代の祭典の地のギリシャで開かれた。男子のみ、14か国が参加した。",
+            "wiki": "1896年アテネオリンピック",
             "art": "",
             "artQuery": "1896 Summer Olympics Athens"
         },
@@ -977,6 +1153,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "武昌の蜂起から革命が各地へ広がった。翌年に清が倒れ、2千年以上続いた皇帝の政治が終わった。",
+            "wiki": "辛亥革命",
             "art": "",
             "artQuery": "Xinhai Revolution Wuchang"
         },
@@ -988,6 +1166,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ワトソンとクリックが遺伝子の本体の二重らせん構造を発表した。分子生物学の時代の幕開けとなった。",
+            "wiki": "デオキシリボ核酸",
             "art": "",
             "artQuery": "DNA double helix Watson Crick model"
         },
@@ -999,6 +1179,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "アテネの執政官が借金の帳消しと市民の分類を定めた。のちの民主政への一歩となった。",
+            "wiki": "ソロン",
             "art": "",
             "artQuery": "Solon"
         },
@@ -1010,6 +1192,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "アテネのデロス同盟とスパルタのペロポネソス同盟が争い始めた。ギリシャ世界全体を巻き込んだ。",
+            "wiki": "ペロポネソス戦争",
             "art": "",
             "artQuery": "Pericles Funeral Oration Foltz"
         },
@@ -1021,6 +1205,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ローマとカルタゴがシチリア島をめぐって争い始めた。ローマは海軍を整え、23年の戦いに勝った。",
+            "wiki": "ポエニ戦争",
             "art": "",
             "artQuery": "First Punic War"
         },
@@ -1032,6 +1218,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "剣闘士のスパルタクスが養成所を脱走し、数万の奴隷を率いて立ち上がった。クラッススに鎮圧された。",
+            "wiki": "第三次奴隷戦争",
             "art": "",
             "artQuery": "Spartacus statue"
         },
@@ -1043,6 +1231,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ガリアから戻ったカエサルが、軍を率いて川を渡りローマに進軍した。「賽は投げられた」と語ったと伝わる。",
+            "wiki": "ルビコン川",
             "art": "",
             "artQuery": "Caesar crossing the Rubicon"
         },
@@ -1054,6 +1244,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ゲルマン人のアルミニウスがローマの3個軍団を全滅させた。ローマはライン川以東の征服をあきらめた。",
+            "wiki": "トイトブルク森の戦い",
             "art": "",
             "artQuery": "Varusschlacht"
         },
@@ -1065,6 +1257,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 2,
+            "caption": "ローマの大半が焼けた大火。ネロ帝はキリスト教徒に罪を着せて迫害したと、タキトゥスは伝える。",
+            "wiki": "ローマ大火",
             "art": "",
             "artQuery": "Fire of Rome Hubert Robert"
         },
@@ -1076,6 +1270,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 1,
+            "caption": "ティトゥス帝のときに完成した円形闘技場。5万人の観客が剣闘士の試合に熱狂した。",
+            "wiki": "コロッセオ",
             "art": "",
             "artQuery": "Colosseum exterior Rome"
         },
@@ -1087,6 +1283,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "太平道の張角が率いた農民反乱。後漢を大きく揺るがし、『三国志』の時代の幕開けとなった。",
+            "wiki": "黄巾の乱",
             "art": "",
             "artQuery": "Yellow Turban Rebellion"
         },
@@ -1098,6 +1296,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "コンスタンティヌス帝がローマ帝国の都をビザンティウムに移した。以後千年以上、東の帝都であり続けた。",
+            "wiki": "コンスタンティノープル",
             "art": "",
             "artQuery": "Constantine I Hagia Sophia southwestern entrance mosaic"
         },
@@ -1109,6 +1309,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "西ローマの将軍アエティウスとゲルマンの連合軍が、ガリアでアッティラのフン族を退けた。",
+            "wiki": "カタラウヌムの戦い",
             "art": "",
             "artQuery": "Battle of the Catalaunian Plains"
         },
@@ -1120,6 +1322,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "ユスティニアヌス帝が再建した大聖堂。巨大な丸屋根を持つビザンツ建築の傑作である。のちにモスクとなった。",
+            "wiki": "アヤソフィア",
             "art": "",
             "artQuery": "Hagia Sophia"
         },
@@ -1131,6 +1335,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "隋の文帝が南朝の陳を滅ぼし、約300年ぶりに中国を統一した。科挙を始めた王朝でもある。",
+            "wiki": "隋",
             "art": "",
             "artQuery": "Emperor Wen of Sui"
         },
@@ -1142,6 +1348,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "隋の末の混乱の中、李淵が長安で即位した。律令と国際色豊かな文化で、東アジアの中心となった。",
+            "wiki": "唐",
             "art": "",
             "artQuery": "Emperor Gaozu of Tang"
         },
@@ -1153,6 +1361,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 3,
+            "caption": "アッバース朝のマンスールが、ティグリス川のほとりに築いた円形の都。「千夜一夜物語」の舞台となった。",
+            "wiki": "バグダード",
             "art": "",
             "artQuery": "Round city of Baghdad"
         },
@@ -1164,6 +1374,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "軍人の趙匡胤が皇帝となって宋を開いた。文官を重んじ、経済と文化が大きく発展した。",
+            "wiki": "宋 (王朝)",
             "art": "",
             "artQuery": "Emperor Taizu of Song"
         },
@@ -1175,6 +1387,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "皇帝ハインリヒ4世が教皇グレゴリウス7世に破門を解いてもらうため、雪の中で3日間許しを乞うた。",
+            "wiki": "カノッサの屈辱",
             "art": "",
             "artQuery": "Canossa Henry IV"
         },
@@ -1186,6 +1400,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "アイユーブ朝の創始者のサラディンが、十字軍からエルサレムを取り戻した。寛大な処置は敵にも称えられた。",
+            "wiki": "サラーフッディーン",
             "art": "",
             "artQuery": "Saladin"
         },
@@ -1197,6 +1413,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "フレグのモンゴル軍が都を破壊し、アッバース朝は滅びた。イスラーム世界に大きな衝撃が走った。",
+            "wiki": "バグダードの戦い",
             "art": "",
             "artQuery": "Siege of Baghdad 1258"
         },
@@ -1208,6 +1426,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "明の永楽帝の命で、大艦隊を率いて南海へ出発した。のちにアフリカの東岸まで達した。",
+            "wiki": "鄭和",
             "art": "",
             "artQuery": "Zheng He treasure ship"
         },
@@ -1219,6 +1439,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "イングランド王ヘンリー5世が、長弓で数に勝るフランス軍を破った。シェイクスピアの戯曲でも名高い。",
+            "wiki": "アジャンクールの戦い",
             "art": "",
             "artQuery": "Battle of Agincourt"
         },
@@ -1230,6 +1452,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "ポルトガルの航海者がアフリカの南端を回った。この岬は「喜望峰」と呼ばれ、インド航路の道が開けた。",
+            "wiki": "バルトロメウ・ディアス",
             "art": "",
             "artQuery": "Bartolomeu Dias Cape of Good Hope"
         },
@@ -1241,6 +1465,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ローマ教皇の仲介のもとで、スペインとポルトガルが世界を分ける線を引いた。ブラジルがポルトガル語の国なのはこのためである。",
+            "wiki": "トルデシリャス条約",
             "art": "",
             "artQuery": "Treaty of Tordesillas"
         },
@@ -1252,6 +1478,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "スペイン人のバルボアがパナマ地峡を横断し、ヨーロッパ人として初めて太平洋を見た。",
+            "wiki": "バスコ・ヌーニェス・デ・バルボア",
             "art": "",
             "artQuery": "Vasco Nunez de Balboa"
         },
@@ -1263,6 +1491,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "バーブルがパーニーパットの戦いでロディー朝を破り、インドに帝国を開いた。",
+            "wiki": "ムガル帝国",
             "art": "",
             "artQuery": "Babur"
         },
@@ -1274,6 +1504,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "オスマン帝国のスレイマン1世がウィーンを包囲したが、冬が近づき撤退した。ヨーロッパに衝撃を与えた。",
+            "wiki": "第一次ウィーン包囲",
             "art": "",
             "artQuery": "Siege of Vienna 1529"
         },
@@ -1285,6 +1517,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "スペイン人のピサロが皇帝を捕らえて処刑した。インカ帝国は滅亡へ向かった。",
+            "wiki": "アタワルパ",
             "art": "",
             "artQuery": "Atahualpa"
         },
@@ -1296,6 +1530,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "宗教改革に対抗して、カトリック教会が教義を確認した会議。約18年にわたり開かれた。",
+            "wiki": "トリエント公会議",
             "art": "",
             "artQuery": "Council of Trent"
         },
@@ -1307,6 +1543,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "フランス王アンリ4世が、ユグノーに信仰の自由を認めた。ユグノー戦争はこれで終わった。",
+            "wiki": "ナントの勅令",
             "art": "",
             "artQuery": "Henry IV of France"
         },
@@ -1318,6 +1556,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ピューリタン革命でクロムウェルらが王を処刑した。イングランドは王のいない共和政となった。",
+            "wiki": "チャールズ1世 (イングランド王)",
             "art": "",
             "artQuery": "Execution of Charles I"
         },
@@ -1329,6 +1569,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "宰相マザランの死の後、ルイ14世が自ら政治を行い始めた。「太陽王」のもとでフランスの絶対王政が絶頂に達した。",
+            "wiki": "ルイ14世 (フランス王)",
             "art": "",
             "artQuery": "Louis XIV Rigaud"
         },
@@ -1340,6 +1582,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "清とロシアが結んだ、清にとって初の対等な国境条約。アムール川の流域の国境を定めた。",
+            "wiki": "ネルチンスク条約",
             "art": "",
             "artQuery": "Treaty of Nerchinsk"
         },
@@ -1351,6 +1595,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ピョートル大帝がバルト海の入口の湿地に建設を始めた都。「西欧への窓」と呼ばれる。",
+            "wiki": "サンクトペテルブルク",
             "art": "",
             "artQuery": "Peter the Great founding Saint Petersburg"
         },
@@ -1362,6 +1608,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "イギリス東インド会社のクライブが、ベンガル太守とフランスの連合軍を破った。インド支配の足がかりである。",
+            "wiki": "プラッシーの戦い",
             "art": "",
             "artQuery": "Battle of Plassey"
         },
@@ -1373,6 +1621,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "茶法に怒った入植者らが、停泊中の船から茶箱を海に投げ捨てた。独立戦争の前触れとなった。",
+            "wiki": "ボストン茶会事件",
             "art": "",
             "artQuery": "Boston Tea Party"
         },
@@ -1384,6 +1634,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "兄弟が作った熱気球により、人類が初めて空を飛んだ。パリの上空を約25分飛行した。",
+            "wiki": "モンゴルフィエ兄弟",
             "art": "",
             "artQuery": "Montgolfier balloon 1783"
         },
@@ -1395,6 +1647,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "革命の中で国王が裁判にかけられ、ギロチンで処刑された。王妃のマリー・アントワネットも同じ年に処刑された。",
+            "wiki": "ルイ16世 (フランス王)",
             "art": "",
             "artQuery": "Execution of Louis XVI"
         },
@@ -1406,6 +1660,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "イギリスの医師が牛痘を使った種痘を試し、天然痘の予防に成功した。ワクチンの始まりである。",
+            "wiki": "エドワード・ジェンナー",
             "art": "",
             "artQuery": "Edward Jenner vaccination"
         },
@@ -1417,6 +1673,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ナポレオン戦争の後の秩序を話し合った。メッテルニヒが主導し、「会議は踊る」と皮肉られた。",
+            "wiki": "ウィーン会議",
             "art": "",
             "artQuery": "Congress of Vienna Isabey"
         },
@@ -1428,6 +1686,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "スチーブンソンの蒸気機関車が走った、世界初の公共鉄道。鉄道の時代が開かれた。",
+            "wiki": "ストックトン・アンド・ダーリントン鉄道",
             "art": "",
             "artQuery": "Locomotion No 1"
         },
@@ -1439,6 +1699,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "パリの市民がシャルル10世を倒した。ドラクロワの「民衆を導く自由の女神」はこの革命を描く。",
+            "wiki": "フランス7月革命",
             "art": "",
             "artQuery": "Liberty Leading the People"
         },
@@ -1450,6 +1712,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "ヴィクトリア女王の時代、水晶宮で開かれた世界初の万博。イギリスの工業力を世界に見せつけた。",
+            "wiki": "ロンドン万国博覧会 (1851年)",
             "art": "",
             "artQuery": "Crystal Palace 1851"
         },
@@ -1461,6 +1725,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "アメリカがロシアから720万ドルで買い取った。当時は「セワードの愚行」と笑われたが、のちに金や石油が見つかった。",
+            "wiki": "アラスカ購入",
             "art": "",
             "artQuery": "Alaska purchase check"
         },
@@ -1472,6 +1738,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "東西から延びた線路がユタ州で結ばれた。金の犬釘が打たれ、アメリカは鉄道で一つになった。",
+            "wiki": "大陸横断鉄道",
             "art": "",
             "artQuery": "Golden spike 1869"
         },
@@ -1483,6 +1751,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "エジソンが長持ちする実用的な白熱電球を完成させた。のちに京都の竹も、フィラメントに使われた。",
+            "wiki": "トーマス・エジソン",
             "art": "",
             "artQuery": "Edison light bulb"
         },
@@ -1494,6 +1764,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "ドイツのレントゲンが、物質を通り抜ける未知の光線を発見した。第1回ノーベル物理学賞に選ばれた。",
+            "wiki": "X線",
             "art": "",
             "artQuery": "Rontgen hand X-ray"
         },
@@ -1505,6 +1777,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "特許局の職員のアインシュタインが、時間と空間の常識を覆した。「奇跡の年」の論文の一つである。",
+            "wiki": "特殊相対性理論",
             "art": "",
             "artQuery": "Albert Einstein 1905"
         },
@@ -1516,6 +1790,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "スピリット・オブ・セントルイス号でニューヨークからパリまで約33時間半で飛んだ。",
+            "wiki": "チャールズ・リンドバーグ",
             "art": "",
             "artQuery": "Spirit of St. Louis Lindbergh"
         },
@@ -1527,6 +1803,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "インドネシアのバンドンに29か国が集まった。植民地から独立した国々が平和十原則を採択した。",
+            "wiki": "アジア・アフリカ会議",
             "art": "",
             "artQuery": "Bandung Conference 1955"
         },
@@ -1538,6 +1816,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "ソ連の宇宙飛行士がボストーク1号で地球を1周した。人類で初めて宇宙へ行った人である。",
+            "wiki": "ユーリイ・ガガーリン",
             "art": "",
             "artQuery": "Yuri Gagarin"
         },
@@ -1549,6 +1829,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "アケメネス朝の王がバビロンを無血で占領した。捕囚のユダヤ人を解放したことでも知られる。",
+            "wiki": "キュロス2世",
             "art": "",
             "artQuery": "Cyrus the Great"
         },
@@ -1560,6 +1842,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 3,
+            "caption": "ペリクレスの時代に、アクロポリスの丘に建て始めた女神アテナの神殿。古代ギリシャ建築の傑作である。",
+            "wiki": "パルテノン神殿",
             "art": "",
             "artQuery": "Parthenon"
         },
@@ -1571,6 +1855,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "マケドニアのフィリッポス2世がアテネとテーバイの連合軍を破った。王子のアレクサンドロスも活躍した。",
+            "wiki": "カイロネイアの戦い",
             "art": "",
             "artQuery": "Philip II of Macedon"
         },
@@ -1582,6 +1868,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アレクサンドロス大王がペルシア王ダレイオス3世を破った。アケメネス朝の滅亡を決定づけた。",
+            "wiki": "ガウガメラの戦い",
             "art": "",
             "artQuery": "Battle of Gaugamela"
         },
@@ -1593,6 +1881,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "項羽を破った劉邦が皇帝となり漢を開いた。農民の出から皇帝にのぼった人物である。",
+            "wiki": "劉邦",
             "art": "",
             "artQuery": "Emperor Gaozu of Han"
         },
@@ -1604,6 +1894,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "護民官の兄弟が大土地所有を制限し、農民を救おうとした。ともに殺され、ローマは内乱の世紀へ入った。",
+            "wiki": "グラックス兄弟",
             "art": "",
             "artQuery": "Gracchi brothers"
         },
@@ -1615,6 +1907,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "光武帝の劉秀が王莽の新の後に漢を再興した。都を長安から洛陽に移した。",
+            "wiki": "後漢",
             "art": "",
             "artQuery": "Emperor Guangwu of Han"
         },
@@ -1626,6 +1920,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "曹丕が献帝に帝位を譲らせ、魏を建てた。約400年続いた漢王朝は滅び、三国時代に入った。",
+            "wiki": "後漢",
             "art": "",
             "artQuery": "Cao Pi"
         },
@@ -1637,6 +1933,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "アラリックの率いる西ゴート族が永遠の都ローマに入り、略奪した。ローマ世界に衝撃が走った。",
+            "wiki": "ローマ略奪 (410年)",
             "art": "",
             "artQuery": "Sack of Rome 410 Sylvestre"
         },
@@ -1648,6 +1946,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ユスティニアヌス帝がトリボニアヌスらに命じて、ローマ法を編纂させた。ヨーロッパの法の土台である。",
+            "wiki": "ローマ法大全",
             "art": "",
             "artQuery": "Justinian mosaic Ravenna"
         },
@@ -1659,6 +1959,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ムアーウィヤがダマスカスを都に開いた王朝。カリフの世襲が始まり、スンニ派とシーア派の分裂につながった。",
+            "wiki": "ウマイヤ朝",
             "art": "",
             "artQuery": "Umayyad Mosque Damascus"
         },
@@ -1670,6 +1972,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "節度使の安禄山が楊貴妃の一族と対立して反乱を起こした。唐の繁栄は終わり、玄宗は都を逃れた。",
+            "wiki": "安史の乱",
             "art": "",
             "artQuery": "Emperor Xuanzong's journey into Shu"
         },
@@ -1681,6 +1985,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "キエフ大公がキリスト教を受け入れ、国の宗教とした。東方正教がロシアの文化の土台となった。",
+            "wiki": "ウラジーミル1世",
             "art": "",
             "artQuery": "Baptism of Vladimir Vasnetsov"
         },
@@ -1692,6 +1998,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 3,
+            "caption": "パリのシテ島に建て始めたゴシック建築の聖堂。約200年かけて完成した。2019年の火災の後に再建された。",
+            "wiki": "ノートルダム大聖堂 (パリ)",
             "art": "",
             "artQuery": "Notre-Dame de Paris west facade"
         },
@@ -1703,6 +2011,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "バトゥのモンゴル軍が、ポーランド・ドイツの連合軍を破った。ヨーロッパを恐怖に陥れた。",
+            "wiki": "ワールシュタットの戦い",
             "art": "",
             "artQuery": "Battle of Legnica"
         },
@@ -1714,6 +2024,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "オスマン1世がアナトリアの北西で興したと伝わる国。のちに3大陸にまたがる大帝国へ成長した。",
+            "wiki": "オスマン帝国",
             "art": "",
             "artQuery": "Osman I"
         },
@@ -1725,6 +2037,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ティムールがオスマン帝国のバヤズィト1世を破って捕虜にした。オスマン帝国は一時滅亡の危機に陥った。",
+            "wiki": "アンカラの戦い",
             "art": "",
             "artQuery": "Timur Bayezid captivity"
         },
@@ -1736,6 +2050,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ポーランドとリトアニアの連合軍が、ドイツ騎士団を破った。中世ヨーロッパの最大の会戦の一つである。",
+            "wiki": "タンネンベルクの戦い (1410年)",
             "art": "",
             "artQuery": "Battle of Grunwald Matejko"
         },
@@ -1747,6 +2063,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "イグナティウス・デ・ロヨラやザビエルらがパリで誓いを立てた。のちに世界へ宣教師を送り出した。",
+            "wiki": "イエズス会",
             "art": "",
             "artQuery": "Ignatius of Loyola portrait"
         },
@@ -1758,6 +2076,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "姉のメアリー1世の死後に即位した。「私は国家と結婚した」と語り、生涯独身でイギリスの黄金時代を築いた。",
+            "wiki": "エリザベス1世 (イングランド女王)",
             "art": "",
             "artQuery": "Elizabeth I Armada portrait"
         },
@@ -1769,6 +2089,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "世界初の株式会社とされる。アジアの香辛料貿易を握り、長崎の出島にも商館を置いた。",
+            "wiki": "オランダ東インド会社",
             "art": "",
             "artQuery": "VOC ship"
         },
@@ -1780,6 +2102,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "イギリスが北アメリカに築いた最初の恒久的な植民地。先住民のポカホンタスの話でも知られる。",
+            "wiki": "ジェームズタウン (バージニア州)",
             "art": "",
             "artQuery": "Jamestown 1607"
         },
@@ -1791,6 +2115,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "女真族のヌルハチが満州で興した国。のちに清と国号を改め、中国を支配した。",
+            "wiki": "後金",
             "art": "",
             "artQuery": "Nurhaci"
         },
@@ -1802,6 +2128,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 1,
+            "caption": "ムガル皇帝のシャー・ジャハーンが、亡き妃のために建て始めた白大理石の霊廟である。",
+            "wiki": "タージ・マハル",
             "art": "",
             "artQuery": "Taj Mahal 19th century photograph"
         },
@@ -1813,6 +2141,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 3,
+            "caption": "パン屋から出た火が4日間燃え続け、街の大半が焼けた。この後、街はレンガ造りで再建された。",
+            "wiki": "ロンドン大火",
             "art": "",
             "artQuery": "Great Fire of London"
         },
@@ -1824,6 +2154,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "オーストリアとプロイセンがシュレジエンをめぐって争い、英仏は海外でも戦った。",
+            "wiki": "七年戦争",
             "art": "",
             "artQuery": "Frederick the Great"
         },
@@ -1835,6 +2167,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "キャプテン・クックがオーストラリアの東岸に達し、イギリス領を宣言した。のちに流刑地が置かれた。",
+            "wiki": "ジェームズ・クック",
             "art": "",
             "artQuery": "James Cook"
         },
@@ -1846,6 +2180,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "フランスの植民地で黒人奴隷が蜂起した。トゥーサン・ルーヴェルチュールが率い、世界初の黒人の共和国が生まれた。",
+            "wiki": "ハイチ革命",
             "art": "",
             "artQuery": "Toussaint Louverture"
         },
@@ -1857,6 +2193,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ナポレオンのエジプト遠征で見つかった石碑。のちにシャンポリオンがヒエログリフを読み解いた。",
+            "wiki": "ロゼッタ・ストーン",
             "art": "",
             "artQuery": "Rosetta Stone British Museum"
         },
@@ -1868,6 +2206,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ジェファソン大統領がナポレオンから広大な土地を買った。アメリカの領土は一気に2倍になった。",
+            "wiki": "ルイジアナ買収",
             "art": "",
             "artQuery": "Louisiana Purchase"
         },
@@ -1879,6 +2219,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "18歳で即位し、63年余り在位した。「日の沈まぬ帝国」の最盛期を象徴する女王である。",
+            "wiki": "ヴィクトリア (イギリス女王)",
             "art": "",
             "artQuery": "Queen Victoria coronation Hayter"
         },
@@ -1890,6 +2232,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "サッターの製材所の近くで金が見つかり、世界中から一攫千金を夢見る人々が押し寄せた。",
+            "wiki": "カリフォルニア・ゴールドラッシュ",
             "art": "",
             "artQuery": "California Gold Rush"
         },
@@ -1901,6 +2245,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ロシアがオスマン帝国と争い、英仏が参戦した。ナイチンゲールの看護で知られる戦争である。",
+            "wiki": "クリミア戦争",
             "art": "",
             "artQuery": "Crimean War"
         },
@@ -1912,6 +2258,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 1,
+            "caption": "アメリカの独立100周年を記念してフランスから贈られた像。ニューヨーク港の入口に立つ。",
+            "wiki": "自由の女神像",
             "art": "",
             "artQuery": "Statue of Liberty 1886"
         },
@@ -1923,6 +2271,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "キューバの独立を巡ってアメリカがスペインと戦った。アメリカはフィリピンなどを得て大国へ進んだ。",
+            "wiki": "米西戦争",
             "art": "",
             "artQuery": "USS Maine wreck Havana"
         },
@@ -1934,6 +2284,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "「扶清滅洋」を掲げる義和団が北京の公使館を包囲した。日本を含む8か国の連合軍が鎮圧した。",
+            "wiki": "義和団の乱",
             "art": "",
             "artQuery": "Boxer Rebellion"
         },
@@ -1945,6 +2297,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 3,
+            "caption": "4月18日の早朝に起きた大地震。火災で街の大半が焼けた。",
+            "wiki": "サンフランシスコ地震",
             "art": "",
             "artQuery": "1906 San Francisco earthquake"
         },
@@ -1956,6 +2310,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "南京で孫文が臨時大総統に就き、アジア初の共和国が生まれた。翌月に清の宣統帝が退位した。",
+            "wiki": "中華民国",
             "art": "",
             "artQuery": "Sun Yat-sen 1912"
         },
@@ -1967,6 +2323,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "11月11日の午前11時に、コンピエーニュの森の列車の中で結んだ休戦協定が発効した。4年余りの戦争が終わった。",
+            "wiki": "ドイツと連合国の休戦協定 (第一次世界大戦)",
             "art": "",
             "artQuery": "Armistice of 11 November 1918"
         },
@@ -1978,6 +2336,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "イギリスのカーターが王家の谷で未盗掘の王墓を見つけた。黄金のマスクなど多くの宝が残っていた。",
+            "wiki": "ツタンカーメン",
             "art": "",
             "artQuery": "Harry Burton Tutankhamun"
         },
@@ -1989,6 +2349,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "6月6日、連合軍がフランス北部の海岸に上陸した。史上最大の上陸作戦で、ドイツの敗北を早めた。",
+            "wiki": "ノルマンディー上陸作戦",
             "art": "",
             "artQuery": "Normandy landings"
         },
@@ -2000,6 +2362,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "イギリスの支配が終わり、ネルーが首相となった。同時にパキスタンが分離し、大量の難民が生まれた。",
+            "wiki": "インド・パキスタン分離独立",
             "art": "",
             "artQuery": "Jawaharlal Nehru 1947"
         },
@@ -2011,6 +2375,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "国連総会で採択された宣言。すべての人が生まれながらに持つ権利を初めて世界共通の言葉で示した。",
+            "wiki": "世界人権宣言",
             "art": "",
             "artQuery": "Eleanor Roosevelt Universal Declaration of Human Rights"
         },
@@ -2022,6 +2388,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "北朝鮮の軍が北緯38度線を越えて韓国へ攻め込んだ。アメリカと中国も加わり、3年余り続いた。",
+            "wiki": "朝鮮戦争",
             "art": "",
             "artQuery": "Korean War 1950"
         },
@@ -2033,6 +2401,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "東ドイツが市民の西への流出を止めるため、一夜で西ベルリンを囲み始めた。冷戦の象徴である。",
+            "wiki": "ベルリンの壁",
             "art": "",
             "artQuery": "Berlin Wall construction 1961"
         },
@@ -2044,6 +2414,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ワシントン大行進で、キング牧師が約25万人に語った。翌年に公民権法が成立した。",
+            "wiki": "I Have a Dream",
             "art": "",
             "artQuery": "Martin Luther King March on Washington"
         },
@@ -2055,6 +2427,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "第四次中東戦争で産油国が原油の価格を引き上げた。日本ではトイレットペーパーの買いだめ騒ぎが起きた。",
+            "wiki": "オイルショック",
             "art": "",
             "artQuery": "1973 oil crisis"
         },
@@ -2066,6 +2440,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "北ベトナムの軍がサイゴンを占領し、ベトナム戦争が終わった。翌年、南北が統一された。",
+            "wiki": "サイゴン陥落",
             "art": "",
             "artQuery": "Saigon evacuation 1975"
         },
@@ -2077,6 +2453,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 1,
+            "caption": "ソ連の原発で4号炉が爆発し、放射性物質が欧州に広がった。周辺の町は今も無人である。",
+            "wiki": "チェルノブイリ原子力発電所事故",
             "art": "",
             "artQuery": "Chernobyl Nuclear Power Plant"
         },
@@ -2088,6 +2466,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "約150年続いたイギリス領が中国へ返された。一国二制度の始まりである。",
+            "wiki": "香港返還",
             "art": "",
             "artQuery": "Hong Kong handover ceremony"
         },
@@ -2099,6 +2479,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "スパルタがアテネを降伏させた。アテネの繁栄は終わったが、スパルタの覇権も長くは続かなかった。",
+            "wiki": "ペロポネソス戦争",
             "art": "",
             "artQuery": "Battle of Aegospotami"
         },
@@ -2110,6 +2492,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "テーバイのエパメイノンダスが斜線陣でスパルタを破った。スパルタの覇権の終わりである。",
+            "wiki": "レウクトラの戦い",
             "art": "",
             "artQuery": "Epaminondas"
         },
@@ -2121,6 +2505,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "秦の白起が趙を破った戦い。捕虜40万人を生き埋めにしたと伝わる。",
+            "wiki": "長平の戦い",
             "art": "",
             "artQuery": "Bai Qi"
         },
@@ -2132,6 +2518,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "カルタゴの将軍が象と大軍を連れてアルプスを越え、ローマ軍の裏をかいてイタリアへ入った。",
+            "wiki": "ハンニバル",
             "art": "",
             "artQuery": "Snow Storm Hannibal and his Army Crossing the Alps"
         },
@@ -2143,6 +2531,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "巡幸中に始皇帝が亡くなった。巨大な陵墓の兵馬俑が守っている。秦はまもなく滅んだ。",
+            "wiki": "始皇帝",
             "art": "",
             "artQuery": "Terracotta Army"
         },
@@ -2154,6 +2544,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "カエサル、ポンペイウス、クラッススが元老院に対抗して手を結んだ。私的な盟約である。",
+            "wiki": "三頭政治",
             "art": "",
             "artQuery": "Pompey the Great"
         },
@@ -2165,6 +2557,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "アクティウムの敗北の後に自害し、プトレマイオス朝が滅びた。毒蛇に噛ませたと伝わる。",
+            "wiki": "クレオパトラ7世",
             "art": "",
             "artQuery": "Death of Cleopatra"
         },
@@ -2176,6 +2570,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "クラウディウス帝がブリテン島へ軍を送った。のちのロンドンにあたるロンディニウムが築かれた。",
+            "wiki": "ブリタンニア",
             "art": "",
             "artQuery": "Claudius bust"
         },
@@ -2187,6 +2583,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "ハドリアヌス帝がブリテン島の北に築いた石の防壁。全長約118キロで、ローマの北の境である。",
+            "wiki": "ハドリアヌスの長城",
             "art": "",
             "artQuery": "Hadrian's Wall"
         },
@@ -2198,6 +2596,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "テオドシウス帝がアタナシウス派の信仰を帝国の正統と定めた。キリスト教は国の宗教になっていった。",
+            "wiki": "テオドシウス1世",
             "art": "",
             "artQuery": "Missorium of Theodosius"
         },
@@ -2209,6 +2609,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "唐の僧の玄奘が仏典を求めインドへ旅し、長安へ帰った。『西遊記』の三蔵法師のモデルである。",
+            "wiki": "玄奘",
             "art": "",
             "artQuery": "Xuanzang"
         },
@@ -2220,6 +2622,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "唐と組んで百済と高句麗を倒した新羅が、唐の軍も追い出して半島を統一した。",
+            "wiki": "新羅",
             "art": "",
             "artQuery": "Cheomseongdae"
         },
@@ -2231,6 +2635,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "中国史上で唯一の女帝。唐の皇后から帝位につき、国号を周と改めた。",
+            "wiki": "武則天",
             "art": "",
             "artQuery": "Empress Wu Zetian portrait"
         },
@@ -2242,6 +2648,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "アブー・アルアッバースがウマイヤ朝を倒して開いた。のちのバグダードでイスラームの文化が花開いた。",
+            "wiki": "アッバース朝",
             "art": "",
             "artQuery": "Abbasid Caliphate"
         },
@@ -2253,6 +2661,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "唐とアッバース朝の軍が中央アジアで戦った。このとき捕虜から紙の製法が西へ伝わったとの説がある。",
+            "wiki": "タラス河畔の戦い",
             "art": "",
             "artQuery": "Battle of Talas"
         },
@@ -2264,6 +2674,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "北海から来たヴァイキングがイングランドの修道院を襲った。ヴァイキング時代の幕開けとされる。",
+            "wiki": "リンディスファーン修道院",
             "art": "",
             "artQuery": "Lindisfarne"
         },
@@ -2275,6 +2687,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "王建が開いた朝鮮の王朝。半島を再統一し、「コリア」の語源にもなった。",
+            "wiki": "高麗",
             "art": "",
             "artQuery": "Manwoldae"
         },
@@ -2286,6 +2700,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "セルジューク朝が東ローマ軍を破り皇帝を捕らえた。これがのちの十字軍の呼びかけにつながった。",
+            "wiki": "マラズギルトの戦い",
             "art": "",
             "artQuery": "Battle of Manzikert"
         },
@@ -2297,6 +2713,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ウィリアム1世がイングランドの土地と財産を調べさせた台帳である。",
+            "wiki": "ドゥームズデイ・ブック",
             "art": "",
             "artQuery": "Domesday Book"
         },
@@ -2308,6 +2726,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ヴェネツィアの思惑により、十字軍がキリスト教国の東ローマの都を攻め、略奪してラテン帝国を建てた。",
+            "wiki": "第4回十字軍",
             "art": "",
             "artQuery": "Entry of the Crusaders into Constantinople Delacroix"
         },
@@ -2319,6 +2739,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "元の軍が崖山で南宋を滅ぼした。幼い皇帝は家臣に背負われて海へ身を投げた。",
+            "wiki": "崖山の戦い",
             "art": "",
             "artQuery": "Lu Xiufu"
         },
@@ -2330,6 +2752,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "人頭税に反発したイングランドの農民がロンドンを占拠した。「アダムが耕しイヴが紡いだとき」の説教で知られる。",
+            "wiki": "ワット・タイラーの乱",
             "art": "",
             "artQuery": "Death of Wat Tyler"
         },
@@ -2341,6 +2765,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "高麗の将軍の李成桂が建てた王朝。約500年続き、都は漢城（今のソウル）である。",
+            "wiki": "李氏朝鮮",
             "art": "",
             "artQuery": "Taejo of Joseon"
         },
@@ -2352,6 +2778,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "朝鮮の世宗が民のために作った文字を公布した。韓国では今もハングルの日として祝う。",
+            "wiki": "訓民正音",
             "art": "",
             "artQuery": "Hunminjeongeum"
         },
@@ -2363,6 +2791,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ヘンリー・テューダーがリチャード3世を破り、ばら戦争を終わらせた。テューダー朝の始まりである。",
+            "wiki": "ボズワースの戦い",
             "art": "",
             "artQuery": "Battle of Bosworth Field"
         },
@@ -2374,6 +2804,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "ミケランジェロが教皇の命で描き始めた。4年かけて「アダムの創造」などを描いた。",
+            "wiki": "システィーナ礼拝堂天井画",
             "art": "",
             "artQuery": "Sistine Chapel ceiling"
         },
@@ -2385,6 +2817,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "教皇グレゴリウス13世がユリウス暦を改めて定めた。今の世界で広く使われる暦である。",
+            "wiki": "グレゴリオ暦",
             "art": "",
             "artQuery": "Pope Gregory XIII"
         },
@@ -2396,6 +2830,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 2,
+            "caption": "セルバンテスの小説。騎士物語に憧れる老人の旅を描き、近代小説の始まりとされる。",
+            "wiki": "ドン・キホーテ",
             "art": "",
             "artQuery": "Don Quixote 1605 title page"
         },
@@ -2407,6 +2843,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "李自成の反乱軍が北京を落とし、崇禎帝は自ら命を絶った。清の軍はその後に長城を越えて中国を支配した。",
+            "wiki": "明",
             "art": "",
             "artQuery": "Jingshan Park Beijing"
         },
@@ -2418,6 +2856,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 3,
+            "caption": "11月1日に起き、大津波と火災でポルトガルの都を壊滅させた。ヴォルテールなどの思想家に衝撃を与えた。",
+            "wiki": "リスボン地震 (1755年)",
             "art": "",
             "artQuery": "1755 Lisbon earthquake"
         },
@@ -2429,6 +2869,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "フィラデルフィアの憲法制定会議で作られた、現存する世界最古の成文憲法の一つ。三権分立を定めた。",
+            "wiki": "アメリカ合衆国憲法",
             "art": "",
             "artQuery": "Scene at the Signing of the Constitution"
         },
@@ -2440,6 +2882,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ナポレオンがイギリスとインドの連絡を断とうとした。ピラミッドの戦いで勝ち、学者も同行した。",
+            "wiki": "エジプト・シリア戦役",
             "art": "",
             "artQuery": "Battle of the Pyramids"
         },
@@ -2451,6 +2895,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "オスマン帝国の支配に対して蜂起した。詩人のバイロンも義勇兵として加わり、1829年に独立を得た。",
+            "wiki": "ギリシャ独立戦争",
             "art": "",
             "artQuery": "Greece on the Ruins of Missolonghi"
         },
@@ -2462,6 +2908,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "アヘン戦争の講和条約。香港の割譲と5港の開港を認めた、清の初めての不平等条約である。",
+            "wiki": "南京条約",
             "art": "",
             "artQuery": "Treaty of Nanking"
         },
@@ -2473,6 +2921,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "東インド会社のインド人傭兵の蜂起が広がった。翌年にムガル帝国が滅び、イギリスが直接統治を始めた。",
+            "wiki": "インド大反乱",
             "art": "",
             "artQuery": "Indian Rebellion of 1857"
         },
@@ -2484,6 +2934,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ロシアのアレクサンドル2世が、クリミア戦争の敗北を受けて農奴を解放した。だが農民の負担は重かった。",
+            "wiki": "農奴解放令",
             "art": "",
             "artQuery": "Emancipation reform of 1861"
         },
@@ -2495,6 +2947,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "南北戦争の最中にリンカーンが発した宣言。南部の奴隷の解放を掲げ、戦争の大義を明らかにした。",
+            "wiki": "奴隷解放宣言",
             "art": "",
             "artQuery": "Emancipation Proclamation"
         },
@@ -2506,6 +2960,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ビスマルクのエムス電報で開戦した。ナポレオン3世が捕虜となり、ドイツの統一が完成した。",
+            "wiki": "普仏戦争",
             "art": "",
             "artQuery": "Franco-Prussian War"
         },
@@ -2517,6 +2973,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "ダイナマイトの発明者の遺言により始まった賞。レントゲンらが第1回の受賞者となった。",
+            "wiki": "ノーベル賞",
             "art": "",
             "artQuery": "Alfred Nobel"
         },
@@ -2528,6 +2986,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "ヘンリー・フォードが売り出した大衆車。ベルトコンベアによる量産で値段が下がり、自動車の時代が始まった。",
+            "wiki": "フォード・モデルT",
             "art": "",
             "artQuery": "Ford Model T"
         },
@@ -2539,6 +2999,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "ノルウェーの探検家が、イギリスのスコットより約1か月早く南極点に到達した。犬ぞりの作戦が成功した。",
+            "wiki": "ロアール・アムンセン",
             "art": "",
             "artQuery": "Roald Amundsen South Pole"
         },
@@ -2550,6 +3012,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "アメリカが太平洋と大西洋を結ぶ運河を開いた。閘門で船を持ち上げて山を越える工法である。",
+            "wiki": "パナマ運河",
             "art": "",
             "artQuery": "Panama Canal 1914"
         },
@@ -2561,6 +3025,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ウィルソンの提唱によって発足した。ただ、提唱国のアメリカは議会の反対で加わらなかった。",
+            "wiki": "国際連盟",
             "art": "",
             "artQuery": "League of Nations"
         },
@@ -2572,6 +3038,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ルーズベルト、チャーチル、スターリンがクリミアで話し合い、戦後の処理とソ連の対日参戦を決めた。",
+            "wiki": "ヤルタ会談",
             "art": "",
             "artQuery": "Yalta Conference"
         },
@@ -2583,6 +3051,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ソ連に対抗してアメリカと西欧諸国が作った軍事同盟。本部はのちにブリュッセルへ移った。",
+            "wiki": "北大西洋条約機構",
             "art": "",
             "artQuery": "North Atlantic Treaty signing 1949"
         },
@@ -2594,6 +3064,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "カストロとゲバラらがバティスタ政権を倒した。のちに社会主義国となり、アメリカと対立した。",
+            "wiki": "キューバ革命",
             "art": "",
             "artQuery": "Fidel Castro 1959"
         },
@@ -2605,6 +3077,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "チェコスロバキアのドゥプチェクが自由化を進めたが、ソ連の軍の侵攻によって潰された。",
+            "wiki": "プラハの春",
             "art": "",
             "artQuery": "Prague Spring 1968"
         },
@@ -2616,6 +3090,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ホメイニが主導してパフレヴィー朝を倒し、イスラーム共和国を建てた。第二次石油危機の原因となった。",
+            "wiki": "イラン革命",
             "art": "",
             "artQuery": "Iranian Revolution 1979 demonstration"
         },
@@ -2627,6 +3103,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "マーストリヒト条約の発効で生まれた。共通通貨のユーロはのちに導入された。",
+            "wiki": "欧州連合",
             "art": "",
             "artQuery": "Maastricht Treaty"
         },
@@ -2638,6 +3116,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "アメリカの投資銀行のリーマン・ブラザーズが破綻し、世界の金融市場が大混乱に陥った。",
+            "wiki": "リーマン・ショック",
             "art": "",
             "artQuery": "Lehman Brothers headquarters"
         },
@@ -2649,6 +3129,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "新バビロニアとメディアの軍がアッシリアの都を落とした。オリエントを統一した帝国が崩れた。",
+            "wiki": "ニネヴェの戦い (紀元前612年)",
             "art": "",
             "artQuery": "Nineveh relief"
         },
@@ -2660,6 +3142,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ペルシアの再来に備えて、アテネを盟主に結ばれた。のちにアテネの支配の道具となった。",
+            "wiki": "デロス同盟",
             "art": "",
             "artQuery": "Delos",
             "artFile": "Athenian Tribute List 25 (23369484092).jpg"
@@ -2672,6 +3156,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "アテネの全盛期を築いた指導者が、ペロポネソス戦争中の疫病で亡くなった。",
+            "wiki": "ペリクレス",
             "art": "",
             "artQuery": "Pericles bust"
         },
@@ -2683,6 +3169,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "マケドニア王が娘の結婚式で暗殺された。子のアレクサンドロスが20歳で王位を継いだ。",
+            "wiki": "ピリッポス2世 (マケドニア王)",
             "art": "",
             "artQuery": "Philip II of Macedon"
         },
@@ -2694,6 +3182,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アレクサンドロス大王がダレイオス3世を破った。ポンペイのモザイク画に描かれた戦いである。",
+            "wiki": "イッソスの戦い",
             "art": "",
             "artQuery": "Alexander Mosaic"
         },
@@ -2705,6 +3195,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "大王の後継者たちが争った戦いでアンティゴノスが敗死した。帝国の分裂が決定的となった。",
+            "wiki": "イプソスの戦い",
             "art": "",
             "artQuery": "Diadochi coin",
             "artFile": "Seleukos I Nikator Bronze Roman 100BCE-100CE Museo Archeologico Nazionale Naples AN 5590 1.jpg"
@@ -2717,6 +3209,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ハンニバルがイタリアへ攻め入った戦争。ローマは苦しんだが、のちに勝利し地中海の大国となった。",
+            "wiki": "第二次ポエニ戦争",
             "art": "",
             "artQuery": "Hannibal bust"
         },
@@ -2728,6 +3222,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ローマ軍がマケドニアの軍を破った。ファランクスに対するレギオンの強さが示された。",
+            "wiki": "ピュドナの戦い (紀元前168年)",
             "art": "",
             "artQuery": "Battle of Pydna"
         },
@@ -2739,6 +3235,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ローマがアカイア同盟を破ってギリシャの町を破壊した。カルタゴの滅亡と同じ年の出来事である。",
+            "wiki": "コリントスの戦い",
             "art": "",
             "artQuery": "Ancient Corinth ruins"
         },
@@ -2750,6 +3248,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "内乱に勝ったスラが任期の無い独裁官となった。政敵を粛清して元老院の力を戻そうとした。",
+            "wiki": "ルキウス・コルネリウス・スッラ",
             "art": "",
             "artQuery": "Sulla bust",
             "artFile": "Sulla Glyptothek Munich 309.jpg"
@@ -2762,6 +3262,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "カエサルがガリアの指導者ウェルキンゲトリクスを包囲して降した。ガリア征服を決定づけた戦いである。",
+            "wiki": "アレシアの戦い",
             "art": "",
             "artQuery": "Vercingetorix throws down his arms"
         },
@@ -2773,6 +3275,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "カエサルがポンペイウスを破った。逃れたポンペイウスはエジプトで殺された。",
+            "wiki": "ファルサルスの戦い",
             "art": "",
             "artQuery": "Battle of Pharsalus",
             "artFile": "(Venice) Pompey the Great, Museo Archeologico Nazionale.jpg"
@@ -2785,6 +3289,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "カエサルがエジプトの太陽暦を取り入れて定めた暦。4年に1度の閏年を置いた。",
+            "wiki": "ユリウス暦",
             "art": "",
             "artQuery": "Julius Caesar bust"
         },
@@ -2796,6 +3302,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アントニウスとオクタウィアヌスが、カエサルの暗殺者のブルートゥスらを破った。",
+            "wiki": "フィリッピの戦い",
             "art": "",
             "artQuery": "Battle of Philippi"
         },
@@ -2807,6 +3315,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "前漢の外戚の王莽が帝位を奪い、新を建てた。周の制度を理想としたが、赤眉の乱で滅んだ。",
+            "wiki": "新",
             "art": "",
             "artQuery": "Wang Mang"
         },
@@ -2818,6 +3328,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "初代のローマ皇帝が亡くなった。「レンガの街を大理石の街に変えた」と語ったと伝わる。8月の語源の人物である。",
+            "wiki": "アウグストゥス",
             "art": "",
             "artQuery": "Augustus of Prima Porta"
         },
@@ -2829,6 +3341,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ユダヤ戦争でティトゥスが都と神殿を破壊した。嘆きの壁はその神殿の名残である。",
+            "wiki": "エルサレム攻囲戦 (70年)",
             "art": "",
             "artQuery": "Siege of Jerusalem 70 painting"
         },
@@ -2840,6 +3354,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "西域都護の班超が甘英をローマへ送った。ペルシア湾の近くまで達したが、海を渡らず引き返した。",
+            "wiki": "甘英",
             "art": "",
             "artQuery": "Han dynasty envoy",
             "artFile": "汉班超立像.png"
@@ -2852,6 +3368,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "トラヤヌス帝が今のルーマニアにあたる地を征服した。ローマ帝国の領土はこの頃に最大に近づいた。",
+            "wiki": "ダキア戦争",
             "art": "",
             "artQuery": "Trajan's Column"
         },
@@ -2863,6 +3381,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "五賢帝の最後の皇帝である。陣中で『自省録』を書いた哲人皇帝として知られる。",
+            "wiki": "マルクス・アウレリウス・アントニヌス",
             "art": "",
             "artQuery": "Marcus Aurelius equestrian statue"
         },
@@ -2874,6 +3394,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "カラカラ帝が帝国の全自由民にローマ市民権を与えた。税収を増やす狙いがあったとされる。",
+            "wiki": "アントニヌス勅令",
             "art": "",
             "artQuery": "Caracalla bust"
         },
@@ -2885,6 +3407,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "軍人皇帝の時代を終わらせ、帝国を4人で治める制度を始めた。キリスト教の大迫害も行った。",
+            "wiki": "ディオクレティアヌス",
             "art": "",
             "artQuery": "Diocletian"
         },
@@ -2896,6 +3420,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "コンスタンティヌスがマクセンティウスを破った。戦いの前に十字の幻を見たと伝わる。",
+            "wiki": "ミルウィウス橋の戦い",
             "art": "",
             "artQuery": "Battle of the Milvian Bridge Raphael"
         },
@@ -2907,6 +3433,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "西ゴート族がローマ軍を破り、皇帝ウァレンスが戦死した。ゲルマン人の力が帝国を揺さぶった。",
+            "wiki": "ハドリアノポリスの戦い",
             "art": "",
             "artQuery": "Valens emperor"
         },
@@ -2918,6 +3446,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "「神の鞭」と恐れられたフン族の王が、結婚の夜に急死した。帝国はすぐに崩れていった。",
+            "wiki": "アッティラ",
             "art": "",
             "artQuery": "Attila the Hun"
         },
@@ -2929,6 +3459,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "聖ベネディクトゥスがイタリアに開いた修道院。「祈り、働け」の戒律が西欧の修道の手本となった。",
+            "wiki": "モンテ・カッシーノ",
             "art": "",
             "artQuery": "Monte Cassino Abbey"
         },
@@ -2940,6 +3472,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "中世の教皇権の基礎を築いた教皇である。イングランドへの布教を進め、グレゴリオ聖歌の名の由来となった。",
+            "wiki": "グレゴリウス1世 (ローマ教皇)",
             "art": "",
             "artQuery": "Pope Gregory I"
         },
@@ -2951,6 +3485,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "隋の煬帝が華北と江南を結ぶ運河を開いた。過酷な労役は隋の滅亡を早めたが、物流の大動脈となった。",
+            "wiki": "京杭大運河",
             "art": "",
             "artQuery": "Grand Canal China",
             "artFile": "Entering Suzhou and the Grand Canal8.jpg"
@@ -2963,6 +3499,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "玄武門の変で兄を倒した李世民が即位した。その治世は「貞観の治」と呼ばれ、理想の政治とされる。",
+            "wiki": "太宗 (唐)",
             "art": "",
             "artQuery": "Emperor Taizong of Tang"
         },
@@ -2974,6 +3512,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ムハンマドが1万の軍でメッカを無血で占領した。カーバ神殿の偶像は破壊された。",
+            "wiki": "ムハンマド・イブン＝アブドゥッラーフ",
             "art": "",
             "artQuery": "Kaaba Mecca",
             "artFile": "Kaaba (1910)-2.jpg"
@@ -2986,6 +3526,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "イスラームの預言者がメディナで亡くなった。アブー・バクルが初代カリフとなり、教団の大征服が始まった。",
+            "wiki": "ムハンマド・イブン＝アブドゥッラーフ",
             "art": "",
             "artQuery": "Medina Prophet's Mosque"
         },
@@ -2997,6 +3539,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アラブのイスラーム軍がササン朝ペルシアの軍を破った。ササン朝は事実上の滅亡へ向かった。",
+            "wiki": "ニハーヴァンドの戦い",
             "art": "",
             "artQuery": "Sassanid Persia"
         },
@@ -3008,6 +3552,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "唐の皇族の娘が吐蕃の王ソンツェン・ガンポに嫁いだ。仏教など唐の文化がチベットへ伝わったとされる。",
+            "wiki": "文成公主",
             "art": "",
             "artQuery": "Princess Wencheng"
         },
@@ -3019,6 +3565,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ムハンマドの孫のフサインがウマイヤ朝の軍に殺された。シーア派は今もこの日を悼む。",
+            "wiki": "カルバラーの戦い",
             "art": "",
             "artQuery": "Battle of Karbala painting"
         },
@@ -3030,6 +3578,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ターリクの率いるイスラーム軍が海峡を渡り、西ゴート王国を滅ぼした。ジブラルタルの名は彼に由来する。",
+            "wiki": "アンダルス",
             "art": "",
             "artQuery": "Tariq ibn Ziyad"
         },
@@ -3041,6 +3591,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "カール・マルテルの子のピピンが教皇の支持で王となり、カロリング朝を開いた。",
+            "wiki": "ピピン3世 (フランク王)",
             "art": "",
             "artQuery": "Pepin the Short"
         },
@@ -3052,6 +3604,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ピピンがランゴバルド王国から奪った土地を教皇に贈った。ローマ教皇領の始まりである。",
+            "wiki": "ピピンの寄進",
             "art": "",
             "artQuery": "Donation of Pepin"
         },
@@ -3063,6 +3617,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "後ウマイヤ朝の都コルドバに建て始めた大モスク。赤白の馬蹄形アーチの森で名高い。",
+            "wiki": "メスキータ",
             "art": "",
             "artQuery": "Mezquita Cordoba"
         },
@@ -3074,6 +3630,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ウェセックスの王が、デーン人の侵攻を食い止めた。イングランドの王で唯一「大王」と呼ばれる。",
+            "wiki": "アルフレッド大王",
             "art": "",
             "artQuery": "Alfred the Great statue"
         },
@@ -3085,6 +3643,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "節度使の朱全忠が唐の皇帝から帝位を奪って後梁を建てた。約300年の唐は滅び、五代十国の時代に入った。",
+            "wiki": "唐",
             "art": "",
             "artQuery": "Tang dynasty"
         },
@@ -3096,6 +3656,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "フランスのブルゴーニュに開かれた修道院。教会の改革運動の中心となった。",
+            "wiki": "クリュニー修道院",
             "art": "",
             "artQuery": "Cluny Abbey"
         },
@@ -3107,6 +3669,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ドイツ王のオットー1世がマジャール人を破った。彼らの西欧への侵入はこれで止まった。",
+            "wiki": "レヒフェルトの戦い",
             "art": "",
             "artQuery": "Battle of Lechfeld"
         },
@@ -3118,6 +3682,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ユーグ・カペーがフランス王に選ばれた。カペー家の直系は14世紀まで続いた。",
+            "wiki": "カペー朝",
             "art": "",
             "artQuery": "Hugh Capet"
         },
@@ -3129,6 +3695,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "トゥグリル・ベクがバグダードに入り、アッバース朝のカリフからスルタンの称号を受けた。",
+            "wiki": "セルジューク朝",
             "art": "",
             "artQuery": "Tughril Beg"
         },
@@ -3140,6 +3708,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "北宋の神宗のもとで、王安石が財政と軍の立て直しを図った。保守派の司馬光らは反対した。",
+            "wiki": "王安石",
             "art": "",
             "artQuery": "Wang Anshi"
         },
@@ -3151,6 +3721,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "第1回十字軍がエルサレムを奪い、住民の多くを虐殺した。エルサレム王国が建てられた。",
+            "wiki": "エルサレム攻囲戦 (1099年)",
             "art": "",
             "artQuery": "Capture of Jerusalem 1099",
             "artFile": "Siege of Jerusalem 1099 (2).jpg"
@@ -3163,6 +3735,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "皇帝と教皇の間の、司教の叙任権をめぐる争いが決着した。ドイツの諸侯の力が伸びる背景ともなった。",
+            "wiki": "ヴォルムス協約",
             "art": "",
             "artQuery": "Concordat of Worms"
         },
@@ -3174,6 +3748,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "フランス王ルイ7世とドイツ王コンラート3世が率いた十字軍。ダマスカスの攻略に失敗して終わった。",
+            "wiki": "第2回十字軍",
             "art": "",
             "artQuery": "Second Crusade"
         },
@@ -3185,6 +3761,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "サラディンが十字軍の主力を破った。これでエルサレムの奪回への道が開かれた。",
+            "wiki": "ヒッティーンの戦い",
             "art": "",
             "artQuery": "Battle of Hattin"
         },
@@ -3196,6 +3774,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "獅子心王リチャード1世らが参加し、サラディンと戦った。聖地の奪回はならず、和約が結ばれた。",
+            "wiki": "第3回十字軍",
             "art": "",
             "artQuery": "Richard the Lionheart"
         },
@@ -3207,6 +3787,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ゴール朝の奴隷出身の将軍のアイバクが、デリーに開いた王朝。インドのイスラーム王朝の始まりである。",
+            "wiki": "奴隷王朝",
             "art": "",
             "artQuery": "Qutb Minar",
             "artFile": "Qutub Minar img.jpg"
@@ -3219,6 +3801,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "南フランスの異端カタリ派を討つため、教皇が呼びかけた。結果として王権が南仏に広がった。",
+            "wiki": "アルビジョア十字軍",
             "art": "",
             "artQuery": "Albigensian Crusade"
         },
@@ -3230,6 +3814,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "フランス王フィリップ2世が、皇帝オットー4世とイングランドの連合軍を破った。大陸の領地を失ったジョン王は弱まった。",
+            "wiki": "ブーヴィーヌの戦い",
             "art": "",
             "artQuery": "Battle of Bouvines"
         },
@@ -3241,6 +3827,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "隊商の虐殺を理由にチンギス・カンが中央アジアへ攻め込んだ。諸都市は徹底的に破壊された。",
+            "wiki": "モンゴルのホラズム・シャー朝征服",
             "art": "",
             "artQuery": "Genghis Khan"
         },
@@ -3252,6 +3840,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "女真族の金がモンゴルと南宋の攻撃で滅びた。オゴデイ・カンの時代である。",
+            "wiki": "金 (王朝)",
             "art": "",
             "artQuery": "Jin dynasty"
         },
@@ -3263,6 +3853,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "バトゥの軍がキエフを攻め落とした。ロシアの諸公国はキプチャク・ハン国の支配を受けることになった。",
+            "wiki": "モンゴルのルーシ侵攻",
             "art": "",
             "artQuery": "Siege of Kiev 1240"
         },
@@ -3274,6 +3866,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "エジプトのマムルーク朝の軍がモンゴル軍を破った。モンゴルの西への進撃はここで止まった。",
+            "wiki": "アイン・ジャールートの戦い",
             "art": "",
             "artQuery": "Mamluk"
         },
@@ -3285,6 +3879,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "フビライが中国風の国号を「大元」と定めた。都の大都は今の北京のもとである。",
+            "wiki": "元 (王朝)",
             "art": "",
             "artQuery": "Yuan dynasty",
             "artFile": "Liu-Kuan-Tao-Jagd.JPG"
@@ -3297,6 +3893,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イングランド王エドワード1世が聖職者や貴族、都市の代表を集めた。のちの議会の手本となった。",
+            "wiki": "模範議会",
             "art": "",
             "artQuery": "Edward I of England"
         },
@@ -3308,6 +3906,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "フィリップ4世が教皇との争いの中で、聖職者・貴族・平民の代表を集めた。身分制議会の始まりである。",
+            "wiki": "三部会",
             "art": "",
             "artQuery": "Philip IV of France",
             "artFile": "Philip iv and family.jpg"
@@ -3320,6 +3920,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "フランス王の影響で、教皇庁が南仏のアヴィニョンに移った。約70年続き、教皇の権威が揺らいだ。",
+            "wiki": "アヴィニョン捕囚",
             "art": "",
             "artQuery": "Palais des Papes Avignon"
         },
@@ -3331,6 +3933,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "スコットランド王ロバート・ブルースがイングランド軍を破った。独立の維持を決定づけた。",
+            "wiki": "バノックバーンの戦い",
             "art": "",
             "artQuery": "Battle of Bannockburn"
         },
@@ -3342,6 +3946,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "百年戦争で、イングランドの長弓兵がフランスの騎士の軍を打ち破った。騎士の時代の終わりを告げた。",
+            "wiki": "クレシーの戦い",
             "art": "",
             "artQuery": "Battle of Crecy"
         },
@@ -3353,6 +3959,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 1,
+            "caption": "黒海から来た船でイタリアへ入り、ヨーロッパの人口の3分の1ほどが亡くなった。社会に大きな変化をもたらした。",
+            "wiki": "ペスト",
             "art": "",
             "artQuery": "Triumph of Death Bruegel"
         },
@@ -3364,6 +3972,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "百年戦争に苦しむ北フランスの農民が蜂起した。「ジャック」は農民の蔑称である。",
+            "wiki": "ジャックリーの乱",
             "art": "",
             "artQuery": "Jacquerie"
         },
@@ -3375,6 +3985,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "皇帝カール4世が定めた神聖ローマ帝国の皇帝選挙の法。7人の選帝侯の権利を認めた。",
+            "wiki": "金印勅書",
             "art": "",
             "artQuery": "Golden Bull of 1356"
         },
@@ -3386,6 +3998,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ローマとアヴィニョンに教皇が並び立った。のちにコンスタンツ公会議で解消された。",
+            "wiki": "教会大分裂",
             "art": "",
             "artQuery": "Western Schism"
         },
@@ -3397,6 +4011,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "デンマークのマルグレーテ1世のもとで、北欧3国が同君連合となった。",
+            "wiki": "カルマル同盟",
             "art": "",
             "artQuery": "Margaret I of Denmark"
         },
@@ -3408,6 +4024,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "永楽帝が南京から北京へ都を移した。紫禁城が完成し、今も残る。",
+            "wiki": "永楽帝",
             "art": "",
             "artQuery": "Forbidden City",
             "artFile": "Portrait of Emperor Yongle (9863884305).jpg"
@@ -3420,6 +4038,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "教会大分裂を解消した公会議。フスを異端として処刑した。",
+            "wiki": "コンスタンツ公会議",
             "art": "",
             "artQuery": "Council of Constance"
         },
@@ -3431,6 +4051,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ボヘミアの宗教改革者が、公会議で異端とされて焼かれた。フス戦争の引き金となった。",
+            "wiki": "ヤン・フス",
             "art": "",
             "artQuery": "Jan Hus"
         },
@@ -3442,6 +4064,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "イングランド軍に捕らえられたジャンヌが、ルーアンで異端として火刑にされた。19歳だった。のちに聖人となった。",
+            "wiki": "ジャンヌ・ダルク",
             "art": "",
             "artQuery": "Joan of Arc death at the stake"
         },
@@ -3453,6 +4077,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "明の皇帝の正統帝が、オイラトのエセンに捕らえられた。明の勢いは衰えた。",
+            "wiki": "土木の変",
             "art": "",
             "artQuery": "Zhengtong Emperor"
         },
@@ -3464,6 +4090,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ボルドーの陥落などで、イングランドは大陸の領地のほとんどを失い、長い戦争が終わった。",
+            "wiki": "百年戦争",
             "art": "",
             "artQuery": "Battle of Castillon"
         },
@@ -3475,6 +4103,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ランカスター家とヨーク家が王位を争った。30年続き、テューダー朝で終わった。",
+            "wiki": "薔薇戦争",
             "art": "",
             "artQuery": "Wars of the Roses"
         },
@@ -3486,6 +4116,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "モスクワ大公が、ウグラ河畔の対陣でモンゴルの軍を退かせ、「タタールのくびき」から脱した。",
+            "wiki": "イヴァン3世",
             "art": "",
             "artQuery": "Ivan III"
         },
@@ -3497,6 +4129,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "イングランド王の命で、北アメリカの東岸に到達した。ヴァイキング以降でヨーロッパ人初の到達とされる。",
+            "wiki": "ジョン・カボット",
             "art": "",
             "artQuery": "John Cabot"
         },
@@ -3508,6 +4142,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "インドへ向かうポルトガル艦隊が西へ流され、ブラジルに着いた。ブラジルはポルトガル領とされた。",
+            "wiki": "ペドロ・アルヴァレス・カブラル",
             "art": "",
             "artQuery": "Pedro Alvares Cabral"
         },
@@ -3519,6 +4155,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イスマーイール1世がイランに開いた王朝。シーア派を国教とし、今のイランの基礎を築いた。",
+            "wiki": "サファヴィー朝",
             "art": "",
             "artQuery": "Ismail I"
         },
@@ -3530,6 +4168,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 3,
+            "caption": "ミケランジェロが大理石の巨大な塊から彫り上げた。フィレンツェの共和政の象徴として置かれた。",
+            "wiki": "ダビデ像 (ミケランジェロ)",
             "art": "",
             "artQuery": "David Michelangelo",
             "artFile": "Michelangelo David crop.jpg"
@@ -3542,6 +4182,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "教皇ユリウス2世が建て替えを始めた。資金の調達のための贖宥状が、ルターの批判を招いた。",
+            "wiki": "サン・ピエトロ大聖堂",
             "art": "",
             "artQuery": "St. Peter's Basilica"
         },
@@ -3553,6 +4195,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 3,
+            "caption": "イギリスの思想家が架空の島の社会を描いた本。今も理想郷を指す語である。",
+            "wiki": "ユートピア",
             "art": "",
             "artQuery": "Thomas More Utopia"
         },
@@ -3564,6 +4208,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "スペイン王カルロス1世が神聖ローマ皇帝に選ばれた。ハプスブルク家の領土は世界に広がった。",
+            "wiki": "カール5世 (神聖ローマ皇帝)",
             "art": "",
             "artQuery": "Charles V Titian"
         },
@@ -3575,6 +4221,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ルターがカール5世の前で自説の撤回を拒み、帝国追放となった。ザクセン選帝侯にかくまわれた。",
+            "wiki": "ヴォルムス帝国議会 (1521年)",
             "art": "",
             "artQuery": "Diet of Worms"
         },
@@ -3586,6 +4234,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "エルカーノが生き残った18人を率いてスペインへ帰り、史上初の世界一周を果たした。",
+            "wiki": "ビクトリア号",
             "art": "",
             "artQuery": "Victoria ship Magellan"
         },
@@ -3597,6 +4247,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "バーブルが火器を使ってロディー朝の大軍を破り、ムガル帝国の基礎を築いた。",
+            "wiki": "第一次パーニーパットの戦い",
             "art": "",
             "artQuery": "Babur"
         },
@@ -3608,6 +4260,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "オスマン帝国のスレイマン1世がハンガリー軍を破り、国王は戦死した。ハンガリーの大半が帝国領となった。",
+            "wiki": "モハーチの戦い",
             "art": "",
             "artQuery": "Battle of Mohacs"
         },
@@ -3619,6 +4273,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "カール5世の傭兵がローマを略奪した。ルネサンスの中心のローマは荒れ、盛期は終わった。",
+            "wiki": "ローマ劫掠",
             "art": "",
             "artQuery": "Sack of Rome 1527"
         },
@@ -3630,6 +4286,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "ヘンリー8世が離婚問題で教皇と対立し、自らをイギリス教会の首長と定めた。",
+            "wiki": "国王至上法",
             "art": "",
             "artQuery": "Henry VIII Holbein"
         },
@@ -3641,6 +4299,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "フランスの宗教改革者が予定説を示した主著である。のちにジュネーヴで改革を進めた。",
+            "wiki": "ジャン・カルヴァン",
             "art": "",
             "artQuery": "John Calvin"
         },
@@ -3652,6 +4312,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ムガル帝国の3代皇帝が13歳で即位した。ヒンドゥー教徒への課税を廃止し、帝国の全盛期を開いた。",
+            "wiki": "アクバル",
             "art": "",
             "artQuery": "Akbar"
         },
@@ -3663,6 +4325,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "パリでカトリック教徒がユグノーを虐殺した。ユグノー戦争の激化のきっかけである。",
+            "wiki": "サン・バルテルミの虐殺",
             "art": "",
             "artQuery": "St. Bartholomew's Day massacre"
         },
@@ -3674,6 +4338,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ネーデルラントの北部7州がスペインに対抗して結んだ同盟。オランダの独立の土台となった。",
+            "wiki": "ユトレヒト同盟",
             "art": "",
             "artQuery": "Union of Utrecht"
         },
@@ -3685,6 +4351,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ネーデルラント北部がスペイン王フェリペ2世の統治を拒むと宣言した。独立の承認は1648年である。",
+            "wiki": "ネーデルラント連邦共和国",
             "art": "",
             "artQuery": "William the Silent"
         },
@@ -3696,6 +4364,8 @@
             "region": "WORLD",
             "category": "文化",
             "difficulty": 3,
+            "caption": "ロンドンのテムズ川の南岸に開いた劇場。シェイクスピアの作品が数多く演じられた。",
+            "wiki": "グローブ座",
             "art": "",
             "artQuery": "Globe Theatre"
         },
@@ -3707,6 +4377,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ホンタイジが国号を後金から清に改めて皇帝に即いた。満州、モンゴル、漢の君主となった。",
+            "wiki": "清",
             "art": "",
             "artQuery": "Hong Taiji",
             "artFile": "Hong Taiji (closeup).jpg"
@@ -3719,6 +4391,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "国王チャールズ1世と議会の対立から内戦が始まった。クロムウェルの鉄騎隊が活躍した。",
+            "wiki": "清教徒革命",
             "art": "",
             "artQuery": "English Civil War",
             "artFile": "Prince Rupert at Edgehill.jpg"
@@ -3731,6 +4405,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "オランダの航海者がニュージーランドに達した。名はオランダのゼーラント州に由来する。",
+            "wiki": "アベル・タスマン",
             "art": "",
             "artQuery": "Abel Tasman",
             "artFile": "Tasman, Abel Janszoon.jpg"
@@ -3743,6 +4419,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "クロムウェルのイングランドがオランダの中継貿易に対抗して定めた法律。英蘭戦争の原因となった。",
+            "wiki": "航海条例",
             "art": "",
             "artQuery": "Oliver Cromwell"
         },
@@ -3754,6 +4432,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "オランダ東インド会社のファン・リーベックがアフリカの南端に補給地を築いた。のちのイギリス領である。",
+            "wiki": "ケープ植民地",
             "art": "",
             "artQuery": "Jan van Riebeeck"
         },
@@ -3765,6 +4445,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "クロムウェルの死後、チャールズ2世がイギリスの王となり、王政が復活した。",
+            "wiki": "清教徒革命",
             "art": "",
             "artQuery": "Charles II of England"
         },
@@ -3776,6 +4458,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イギリスがオランダの植民地を奪った。ヨーク公の名をとってニューヨークと改められた。",
+            "wiki": "ニューアムステルダム",
             "art": "",
             "artQuery": "New Amsterdam",
             "artFile": "The Dutch Surrender New Amsterdam (Peter Stuyvesant) 1664 by Ogden.jpg"
@@ -3788,6 +4472,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "呉三桂ら漢人の藩王が清に背いた。康熙帝が鎮圧し、清の支配が固まった。",
+            "wiki": "三藩の乱",
             "art": "",
             "artQuery": "Kangxi Emperor"
         },
@@ -3799,6 +4485,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "鄭氏政権が降り、台湾は清の領土となった。福建省の下に置かれた。",
+            "wiki": "清朝統治時代の台湾",
             "art": "",
             "artQuery": "Zheng Keshuang"
         },
@@ -3810,6 +4498,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "ルイ14世がナントの勅令を廃止し、多くのユグノーが国外へ逃れた。フランスの産業は打撃を受けた。",
+            "wiki": "フォンテーヌブローの勅令",
             "art": "",
             "artQuery": "Louis XIV"
         },
@@ -3821,6 +4511,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "名誉革命の際に議会が定めた法。議会の同意なしの課税を禁じ、イギリス立憲君主制の土台となった。",
+            "wiki": "権利の章典",
             "art": "",
             "artQuery": "Bill of Rights 1689"
         },
@@ -3832,6 +4524,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "対仏戦争の資金のために作られた銀行。のちに世界の中央銀行の手本となった。",
+            "wiki": "イングランド銀行",
             "art": "",
             "artQuery": "Bank of England"
         },
@@ -3843,6 +4537,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "スペイン継承戦争で皇帝を支援したブランデンブルク選帝侯が王の称号を得た。のちのドイツ統一の中心である。",
+            "wiki": "プロイセン王国",
             "art": "",
             "artQuery": "Frederick I of Prussia",
             "artFile": "Frederick I of Prussia (cropped).jpg"
@@ -3855,6 +4551,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ルイ14世の孫のスペイン王位の継承に、オーストリアやイギリスが反対して起きた。",
+            "wiki": "スペイン継承戦争",
             "art": "",
             "artQuery": "War of the Spanish Succession"
         },
@@ -3866,6 +4564,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イングランドとスコットランドの議会が1つになり、グレートブリテン王国が誕生した。",
+            "wiki": "合同法 (1707年)",
             "art": "",
             "artQuery": "Acts of Union 1707"
         },
@@ -3877,6 +4577,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ロシアのピョートル大帝がスウェーデンのカール12世を破った。ロシアがバルト海の大国となった。",
+            "wiki": "ポルタヴァの戦い",
             "art": "",
             "artQuery": "Battle of Poltava"
         },
@@ -3888,6 +4590,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "スペイン継承戦争の講和条約。イギリスはジブラルタルを得て海洋の覇権に近づいた。",
+            "wiki": "ユトレヒト条約",
             "art": "",
             "artQuery": "Peace of Utrecht"
         },
@@ -3899,6 +4603,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "イギリスの南海会社の株が暴騰して暴落した。「バブル」の語の由来の一つとされ、ニュートンも大損した。",
+            "wiki": "南海泡沫事件",
             "art": "",
             "artQuery": "South Sea Bubble"
         },
@@ -3910,6 +4616,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "清とロシアがモンゴルの国境を定めた条約。キャフタでの交易も認められた。",
+            "wiki": "キャフタ条約 (1727年)",
             "art": "",
             "artQuery": "Kyakhta"
         },
@@ -3921,6 +4629,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "マリア・テレジアの相続に各国が異議を唱えた。プロイセンがシュレジエンを奪った。",
+            "wiki": "オーストリア継承戦争",
             "art": "",
             "artQuery": "Maria Theresa"
         },
@@ -3932,6 +4642,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 3,
+            "caption": "ディドロとダランベールが編集した事典。当時の知を集め、啓蒙思想を広めた。",
+            "wiki": "百科全書",
             "art": "",
             "artQuery": "Encyclopedie Diderot"
         },
@@ -3943,6 +4655,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "長年の敵のオーストリアとフランスが手を結んだ。マリー・アントワネットの結婚にもつながった。",
+            "wiki": "外交革命",
             "art": "",
             "artQuery": "Kaunitz"
         },
@@ -3954,6 +4668,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "乾隆帝が西洋との貿易を広州に絞った。貿易の不満はのちのアヘン戦争の遠因となった。",
+            "wiki": "広東システム",
             "art": "",
             "artQuery": "Canton thirteen factories"
         },
@@ -3965,6 +4681,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "イギリス軍がケベックの城下でフランス軍を破った。両軍の将軍が戦死した。カナダはイギリス領となった。",
+            "wiki": "エイブラハム平原の戦い",
             "art": "",
             "artQuery": "Death of General Wolfe"
         },
@@ -3976,6 +4694,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "七年戦争の講和条約。フランスは北米の大半を失い、イギリスの海外の覇権が確定した。",
+            "wiki": "パリ条約 (1763年)",
             "art": "",
             "artQuery": "Treaty of Paris 1763"
         },
@@ -3987,6 +4707,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 2,
+            "caption": "ルソーが人民主権を説いた著書。フランス革命の思想的な支柱となった。",
+            "wiki": "社会契約論",
             "art": "",
             "artQuery": "Jean-Jacques Rousseau"
         },
@@ -3998,6 +4720,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ドイツ出身の妃が夫のピョートル3世を退けて即位した。啓蒙専制君主として領土を広げた。",
+            "wiki": "エカチェリーナ2世 (ロシア皇帝)",
             "art": "",
             "artQuery": "Catherine the Great"
         },
@@ -4009,6 +4733,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イギリスが植民地の文書に課税した法。「代表なくして課税なし」の抗議で、翌年廃止された。",
+            "wiki": "1765年印紙法",
             "art": "",
             "artQuery": "Stamp Act 1765"
         },
@@ -4020,6 +4746,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ロシア・プロイセン・オーストリアがポーランドの領土を奪った。3度の分割で国は消えた。",
+            "wiki": "ポーランド分割",
             "art": "",
             "artQuery": "First Partition of Poland"
         },
@@ -4031,6 +4759,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "コサックのプガチョフがピョートル3世を名乗って農民らと蜂起した。エカチェリーナ2世が鎮圧した。",
+            "wiki": "プガチョフの乱",
             "art": "",
             "artQuery": "Yemelyan Pugachev"
         },
@@ -4042,6 +4772,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "イギリス軍と植民地の民兵が衝突した。アメリカ独立戦争の最初の戦いである。",
+            "wiki": "レキシントン・コンコードの戦い",
             "art": "",
             "artQuery": "Battles of Lexington and Concord"
         },
@@ -4053,6 +4785,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "アダム・スミスの著書。分業と「見えざる手」を説き、経済学の基礎を築いた。",
+            "wiki": "国富論",
             "art": "",
             "artQuery": "Adam Smith",
             "artFile": "Smith - Inquiry into the nature and causes of the wealth of nations, 1922 - 5231847.tif"
@@ -4065,6 +4799,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ワシントンとフランスの連合軍がイギリス軍を降伏させた。アメリカの独立を事実上決めた。",
+            "wiki": "ヨークタウンの戦い",
             "art": "",
             "artQuery": "Surrender of Lord Cornwallis"
         },
@@ -4076,6 +4812,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "イギリスがアメリカの独立を認めた講和条約。ミシシッピ川の以東が合衆国の領土となった。",
+            "wiki": "パリ条約 (1783年)",
             "art": "",
             "artQuery": "Treaty of Paris 1783"
         },
@@ -4087,6 +4825,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "独立戦争の総司令官が初代大統領に就いた。任期は2期で退き、後世の手本となった。",
+            "wiki": "ジョージ・ワシントン",
             "art": "",
             "artQuery": "George Washington Gilbert Stuart"
         },
@@ -4098,6 +4838,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "フランス革命の中で、国民議会が自由・平等・国民主権を掲げた宣言。",
+            "wiki": "人間と市民の権利の宣言",
             "art": "",
             "artQuery": "Declaration of the Rights of Man"
         },
@@ -4109,6 +4851,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "国王一家がパリから国外へ逃げようとして捕まった。王への信頼は失われ、共和政の声が高まった。",
+            "wiki": "ヴァレンヌ事件",
             "art": "",
             "artQuery": "Flight to Varennes",
             "artFile": "Retour Varennes 1791.jpg"
@@ -4121,6 +4865,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "国民公会が王政の廃止を宣言した。ヴァルミーの戦いでの勝利の翌日である。",
+            "wiki": "フランス第一共和政",
             "art": "",
             "artQuery": "Valmy"
         },
@@ -4132,6 +4878,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "恐怖政治を行ったロベスピエールが倒され、処刑された。革命の急進化はここで止まった。",
+            "wiki": "テルミドール9日のクーデター",
             "art": "",
             "artQuery": "Robespierre"
         },
@@ -4143,6 +4891,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "エジプトから戻ったナポレオンが総裁政府を倒し、統領政府を開いた。フランス革命の終わりとされる。",
+            "wiki": "ブリュメール18日のクーデター",
             "art": "",
             "artQuery": "Coup of 18 Brumaire"
         },
@@ -4154,6 +4904,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "フランスの民法典で、法の前の平等や所有権の不可侵を定めた。各国の民法の手本となった。",
+            "wiki": "フランス民法典",
             "art": "",
             "artQuery": "Napoleonic Code"
         },
@@ -4165,6 +4917,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "デサリーヌが独立を宣言した。ラテンアメリカ初の独立国で、世界初の黒人共和国である。",
+            "wiki": "ハイチ",
             "art": "",
             "artQuery": "Jean-Jacques Dessalines"
         },
@@ -4176,6 +4930,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ナポレオンがオーストリア・ロシアの連合軍を破った。「三帝会戦」とも呼ばれる。",
+            "wiki": "アウステルリッツの戦い",
             "art": "",
             "artQuery": "Battle of Austerlitz"
         },
@@ -4187,6 +4943,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ナポレオンの保護のもとで西南ドイツの諸邦が結んだ同盟。神聖ローマ帝国はこれで消滅した。",
+            "wiki": "ライン同盟",
             "art": "",
             "artQuery": "Confederation of the Rhine"
         },
@@ -4198,6 +4956,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "ナポレオンがベルリンで出した命令。イギリスとの貿易を欧州の国に禁じたが、ロシアは従わなかった。",
+            "wiki": "大陸封鎖令",
             "art": "",
             "artQuery": "Napoleon Berlin 1806"
         },
@@ -4209,6 +4969,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ウィルバーフォースらの運動の末に、イギリス議会が奴隷貿易の禁止を決めた。",
+            "wiki": "奴隷貿易",
             "art": "",
             "artQuery": "William Wilberforce"
         },
@@ -4220,6 +4982,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "アメリカの技術者が蒸気船クラーモント号をハドソン川で運航し、実用化に成功した。",
+            "wiki": "ロバート・フルトン",
             "art": "",
             "artQuery": "Clermont steamboat"
         },
@@ -4231,6 +4995,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "諸国の連合軍がナポレオンを破った「諸国民の戦い」。ナポレオンは翌年退位した。",
+            "wiki": "ライプツィヒの戦い",
             "art": "",
             "artQuery": "Battle of Leipzig"
         },
@@ -4242,6 +5008,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "アメリカのモンロー大統領が、欧米の相互不干渉を唱えた。長く外交の基本となった。",
+            "wiki": "モンロー主義",
             "art": "",
             "artQuery": "James Monroe"
         },
@@ -4253,6 +5021,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "自由主義の将校たちが、ニコライ1世の即位の時に蜂起して鎮圧された。ロシアの革命運動の先駆である。",
+            "wiki": "デカブリストの乱",
             "art": "",
             "artQuery": "Decembrist revolt"
         },
@@ -4264,6 +5034,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "フランス七月革命に刺激され、オランダから独立した。のちに永世中立国となった。",
+            "wiki": "ベルギー独立革命",
             "art": "",
             "artQuery": "Belgian Revolution"
         },
@@ -4275,6 +5047,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イギリスで腐敗選挙区を廃止し、産業資本家に選挙権を与えた。労働者はチャーティスト運動へ進んだ。",
+            "wiki": "1832年改革法",
             "art": "",
             "artQuery": "Reform Act 1832"
         },
@@ -4286,6 +5060,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "プロイセンを中心に関税が撤廃された。ドイツの経済統一は政治の統一に先立って進んだ。",
+            "wiki": "ドイツ関税同盟",
             "art": "",
             "artQuery": "Zollverein",
             "artFile": "Zoll-auch Eizenbahn. Karte der deutschen Zollvereins. Staaten... - von Joh. Val. Kutscheit - btv1b8469035q.jpg"
@@ -4298,6 +5074,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "アメリカの画家がワシントンとボルティモアの間を電信で結んだ。「神は何を造りたもうたか」が最初の通信である。",
+            "wiki": "サミュエル・モールス",
             "art": "",
             "artQuery": "Samuel Morse telegraph"
         },
@@ -4309,6 +5087,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 3,
+            "caption": "アイルランドの主食のジャガイモが病気で全滅した。100万人が亡くなり、多くがアメリカに渡った。",
+            "wiki": "ジャガイモ飢饉",
             "art": "",
             "artQuery": "Great Famine Ireland"
         },
@@ -4320,6 +5100,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "選挙権の拡大を求めるパリの市民がルイ・フィリップを倒した。革命は欧州へ広がった。",
+            "wiki": "1848年のフランス革命",
             "art": "",
             "artQuery": "February Revolution 1848"
         },
@@ -4331,6 +5113,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "キリスト教の影響を受けた洪秀全が起こした反乱。南京を都とし、清を大いに揺さぶった。",
+            "wiki": "太平天国の乱",
             "art": "",
             "artQuery": "Taiping Rebellion"
         },
@@ -4342,6 +5126,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "イギリスの船の臨検を口実に英仏が清を攻めた。北京の円明園は焼かれ、清は多くの権益を失った。",
+            "wiki": "アロー戦争",
             "art": "",
             "artQuery": "Second Opium War"
         },
@@ -4353,6 +5139,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "カヴールとガリバルディの活躍で、サルデーニャ王を王とするイタリアが統一された。",
+            "wiki": "イタリア王国",
             "art": "",
             "artQuery": "Victor Emmanuel II"
         },
@@ -4364,6 +5152,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ジュネーヴのデュナンがソルフェリーノの戦場の体験から呼びかけて作った。",
+            "wiki": "赤十字国際委員会",
             "art": "",
             "artQuery": "Henry Dunant"
         },
@@ -4375,6 +5165,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "世界初の地下鉄が開業した。当時は蒸気機関車が走っていた。",
+            "wiki": "ロンドン地下鉄",
             "art": "",
             "artQuery": "Metropolitan Railway 1863"
         },
@@ -4386,6 +5178,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 2,
+            "caption": "マルクスが資本主義のしくみを分析した。第2巻以降はエンゲルスが遺稿をまとめた。",
+            "wiki": "資本論",
             "art": "",
             "artQuery": "Karl Marx"
         },
@@ -4397,6 +5191,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ロシアの化学者が元素を原子量の順に並べ、未発見の元素まで予言した。",
+            "wiki": "ドミトリ・メンデレーエフ",
             "art": "",
             "artQuery": "Dmitri Mendeleev"
         },
@@ -4408,6 +5204,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "普仏戦争の敗北の後、パリの民衆が自治政府を作った。72日で鎮圧された。",
+            "wiki": "パリ・コミューン",
             "art": "",
             "artQuery": "Paris Commune"
         },
@@ -4419,6 +5217,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ビスマルクが「誠実な仲買人」として露土戦争の後の処理を仲介した。ロシアの南下は止められた。",
+            "wiki": "ベルリン会議 (1878年)",
             "art": "",
             "artQuery": "Congress of Berlin"
         },
@@ -4430,6 +5230,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ドイツの医師が結核の病原体を発見した。のちにノーベル賞を受け、北里柴三郎も弟子である。",
+            "wiki": "ロベルト・コッホ",
             "art": "",
             "artQuery": "Robert Koch"
         },
@@ -4441,6 +5243,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 3,
+            "caption": "インドネシアの火山が大爆発し、津波で3万人以上が亡くなった。音は数千キロ先まで届いた。",
+            "wiki": "クラカタウ",
             "art": "",
             "artQuery": "Krakatoa 1883"
         },
@@ -4452,6 +5256,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "欧州列強がアフリカの分割の原則を話し合った。コンゴはベルギー王の私有地とされた。",
+            "wiki": "ベルリン会議 (アフリカ分割)",
             "art": "",
             "artQuery": "Berlin Conference 1884"
         },
@@ -4463,6 +5269,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "ドイツの技術者が三輪のガソリン自動車の特許を取った。世界初の実用的な自動車とされる。",
+            "wiki": "カール・ベンツ",
             "art": "",
             "artQuery": "Benz Patent-Motorwagen"
         },
@@ -4474,6 +5282,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ユダヤ系の軍人がスパイの冤罪で流刑になった。作家ゾラの「私は弾劾する」で世論が割れた。",
+            "wiki": "ドレフュス事件",
             "art": "",
             "artQuery": "Alfred Dreyfus"
         },
@@ -4485,6 +5295,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 2,
+            "caption": "パリのカフェで有料の映画の上映を行った。映画の歴史の幕開けとされる。",
+            "wiki": "リュミエール兄弟",
             "art": "",
             "artQuery": "Lumiere brothers"
         },
@@ -4496,6 +5308,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 1,
+            "caption": "夫妻がポロニウムと放射性元素ラジウムを発見した。マリは2度ノーベル賞を受けた。",
+            "wiki": "マリ・キュリー",
             "art": "",
             "artQuery": "Marie Curie"
         },
@@ -4507,6 +5321,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ロシアの提唱で開かれた国際会議。軍備の縮小はならなかったが、国際紛争の平和的処理条約を結んだ。",
+            "wiki": "万国平和会議",
             "art": "",
             "artQuery": "Hague Peace Conference 1899"
         },
@@ -4518,6 +5334,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "トランスヴァールの金を狙うイギリスがボーア人と戦った。予想外に苦戦し、イギリスの威信が揺らいだ。",
+            "wiki": "ボーア戦争",
             "art": "",
             "artQuery": "Second Boer War"
         },
@@ -4529,6 +5347,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "63年余り在位した女王がワイト島で亡くなった。一つの時代の終わりである。",
+            "wiki": "ヴィクトリア (イギリス女王)",
             "art": "",
             "artQuery": "Queen Victoria"
         },
@@ -4540,6 +5360,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "イタリアの発明家が無線の信号で大西洋を越えた。のちにノーベル物理学賞を受けた。",
+            "wiki": "グリエルモ・マルコーニ",
             "art": "",
             "artQuery": "Guglielmo Marconi",
             "artFile": "Guglielmo Marconi.jpg"
@@ -4552,6 +5374,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "サンクトペテルブルクで請願に来た民衆に軍が発砲した。第一次ロシア革命の引き金である。",
+            "wiki": "血の日曜日事件 (1905年)",
             "art": "",
             "artQuery": "Bloody Sunday 1905"
         },
@@ -4563,6 +5387,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "イギリスとロシアがアジアの勢力圏を定めた。英仏露が組み、ドイツと対立を深めた。",
+            "wiki": "三国協商",
             "art": "",
             "artQuery": "Triple Entente"
         },
@@ -4574,6 +5400,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "オーストリアの皇太子夫妻がセルビア人の青年に撃たれた。第一次世界大戦の引き金となった。",
+            "wiki": "サラエボ事件",
             "art": "",
             "artQuery": "Archduke Franz Ferdinand"
         },
@@ -4585,6 +5413,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "イギリスの客船がドイツの潜水艦に撃沈された。アメリカ人の犠牲者も多く、対独世論が硬化した。",
+            "wiki": "ルシタニア (客船)",
             "art": "",
             "artQuery": "RMS Lusitania"
         },
@@ -4596,6 +5426,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "独仏が要塞を巡って約10か月戦い、70万の死傷者を出した。ペタンの指揮で知られる。",
+            "wiki": "ヴェルダンの戦い",
             "art": "",
             "artQuery": "Battle of Verdun"
         },
@@ -4607,6 +5439,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "英仏の大攻勢で、初日だけでイギリス軍は約6万の死傷者を出した。戦車が初めて実戦に使われた。",
+            "wiki": "ソンムの戦い",
             "art": "",
             "artQuery": "Battle of the Somme"
         },
@@ -4618,6 +5452,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ドイツの無制限潜水艦作戦とツィンメルマン電報を受けて、アメリカが参戦した。",
+            "wiki": "第一次世界大戦中のアメリカ合衆国",
             "art": "",
             "artQuery": "Woodrow Wilson 1917"
         },
@@ -4629,6 +5465,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 2,
+            "caption": "第一次世界大戦の末に世界に広がったインフルエンザ。死者は数千万人に上るとされる。",
+            "wiki": "スペインかぜ",
             "art": "",
             "artQuery": "1918 influenza pandemic"
         },
@@ -4640,6 +5478,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ソウルで独立宣言が読み上げられ、朝鮮全土に独立運動が広がった。日本は武力で鎮圧した。",
+            "wiki": "三・一運動",
             "art": "",
             "artQuery": "March 1st Movement"
         },
@@ -4651,6 +5491,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "パリ講和会議に怒った北京の学生が起こした運動。全国へ広がり、中国の民族運動の出発点となった。",
+            "wiki": "五四運動",
             "art": "",
             "artQuery": "May Fourth Movement"
         },
@@ -4662,6 +5504,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "敗戦後のドイツで定められた憲法。男女普通選挙や社会権を定め、当時最も民主的といわれた。",
+            "wiki": "ヴァイマル憲法",
             "art": "",
             "artQuery": "Weimar Constitution"
         },
@@ -4673,6 +5517,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "アメリカの主催で海軍の軍縮と中国問題を話し合った。日英同盟はこれで解消された。",
+            "wiki": "ワシントン会議 (1922年)",
             "art": "",
             "artQuery": "Washington Naval Conference"
         },
@@ -4684,6 +5530,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ロシアなど4つの共和国が連邦を結成した。世界で初めての社会主義の連邦国家である。",
+            "wiki": "ソビエト連邦",
             "art": "",
             "artQuery": "Soviet Union 1922"
         },
@@ -4695,6 +5543,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ファシスト党のムッソリーニがローマへ進み、国王から首相に任じられた。",
+            "wiki": "ローマ進軍",
             "art": "",
             "artQuery": "March on Rome"
         },
@@ -4706,6 +5556,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ムスタファ・ケマルがスルタン制を廃止して共和国を建て、初代大統領となった。",
+            "wiki": "トルコ革命",
             "art": "",
             "artQuery": "Mustafa Kemal Ataturk"
         },
@@ -4717,6 +5569,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "パリで結ばれた、戦争の放棄をうたった条約。ケロッグとブリアンが主導した。",
+            "wiki": "不戦条約",
             "art": "",
             "artQuery": "Kellogg-Briand Pact"
         },
@@ -4728,6 +5582,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ガンディーがイギリスの塩の専売に抗議して海まで歩いた。非暴力の運動の象徴である。",
+            "wiki": "塩の行進",
             "art": "",
             "artQuery": "Salt March Gandhi"
         },
@@ -4739,6 +5595,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "ニューヨークに建てられた102階の摩天楼。映画『キング・コング』でも名高い。",
+            "wiki": "エンパイア・ステート・ビルディング",
             "art": "",
             "artQuery": "Empire State Building 1931"
         },
@@ -4750,6 +5608,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ヒンデンブルク大統領がヒトラーを首相に任じた。同じ年に全権委任法で独裁体制を固めた。",
+            "wiki": "アドルフ・ヒトラー",
             "art": "",
             "artQuery": "Reichstag 1933",
             "artFile": "3 1 0 17 11954 5 1 32785 Opening of the Reichstag Session Eröffnung der Reichstagssitzung Berlin 1932-08-30 Assembly hall. In the Presidium, senior member of parliament Klara Zetkin (x) is opening the session. NAC, Poland PD.jpg"
@@ -4762,6 +5622,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "フランクリン・ルーズベルトが世界恐慌に対して打ち出した政策。TVAの公共事業で知られる。",
+            "wiki": "ニューディール政策",
             "art": "",
             "artQuery": "Franklin D. Roosevelt"
         },
@@ -4773,6 +5635,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "中国共産党軍が国民党に追われ、1万キロ以上を歩いて陝西へ移った。毛沢東の地位が固まった。",
+            "wiki": "長征",
             "art": "",
             "artQuery": "Long March"
         },
@@ -4784,6 +5648,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "フランコの反乱軍と共和国政府が戦った。ドイツやイタリアが介入し、ヘミングウェイも参加した。",
+            "wiki": "スペイン内戦",
             "art": "",
             "artQuery": "Spanish Civil War",
             "artFile": "Spanish Civil War Blank August 1936.png"
@@ -4796,6 +5662,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ドイツ空軍がバスクの町を爆撃した。ピカソの大作『ゲルニカ』はこの惨状を描いた。",
+            "wiki": "ゲルニカ爆撃",
             "art": "",
             "artQuery": "Guernica bombing"
         },
@@ -4807,6 +5675,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "英仏がズデーテン地方の割譲を認め、ヒトラーに譲歩した。宥和政策の失敗の象徴である。",
+            "wiki": "ミュンヘン会談",
             "art": "",
             "artQuery": "Munich Agreement"
         },
@@ -4818,6 +5688,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "敵同士の独ソが手を結び、世界を驚かせた。秘密協定でポーランドの分割を決めていた。",
+            "wiki": "独ソ不可侵条約",
             "art": "",
             "artQuery": "Molotov-Ribbentrop Pact"
         },
@@ -4829,6 +5701,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ドイツ軍に追い詰められた約34万の英仏の兵が、民間の小舟も使って海を渡って逃げた。",
+            "wiki": "ダンケルクの戦い",
             "art": "",
             "artQuery": "Dunkirk evacuation"
         },
@@ -4840,6 +5714,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ドイツがソ連へ奇襲をかけた。史上最大の陸上の戦争となり、死者は数千万に上った。",
+            "wiki": "バルバロッサ作戦",
             "art": "",
             "artQuery": "Operation Barbarossa"
         },
@@ -4851,6 +5727,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ルーズベルトとチャーチルが大西洋の艦上で示した戦後の構想。国際連合のもとになった。",
+            "wiki": "大西洋憲章",
             "art": "",
             "artQuery": "Atlantic Charter"
         },
@@ -4862,6 +5740,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ソ連軍がドイツの第6軍を包囲し降伏させた。独ソ戦の転換点である。",
+            "wiki": "スターリングラード攻防戦",
             "art": "",
             "artQuery": "Battle of Stalingrad"
         },
@@ -4873,6 +5753,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "戦後の通貨の体制を定めた会議。IMFと世界銀行が生まれ、ドルが基軸通貨となった。",
+            "wiki": "ブレトン・ウッズ協定",
             "art": "",
             "artQuery": "Bretton Woods Conference",
             "artFile": "Image-Mount Washington Hotel.jpg"
@@ -4885,6 +5767,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "トルーマン、チャーチル、スターリンが戦後のドイツを話し合った。日本に降伏を求める宣言も出された。",
+            "wiki": "ポツダム会談",
             "art": "",
             "artQuery": "Potsdam Conference"
         },
@@ -4896,6 +5780,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "アメリカがギリシャとトルコへの援助を表明し、共産主義の封じ込めを打ち出した。冷戦の幕開けである。",
+            "wiki": "トルーマン・ドクトリン",
             "art": "",
             "artQuery": "Harry S. Truman"
         },
@@ -4907,6 +5793,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "アメリカの国務長官が発表した欧州の復興援助計画。西欧の経済は立ち直った。",
+            "wiki": "マーシャル・プラン",
             "art": "",
             "artQuery": "George C. Marshall"
         },
@@ -4918,6 +5806,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "英委任統治の終了に合わせて、ベングリオンが建国を宣言した。翌日に第一次中東戦争が始まった。",
+            "wiki": "イスラエル",
             "art": "",
             "artQuery": "David Ben-Gurion 1948"
         },
@@ -4929,6 +5819,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ソ連が西ベルリンへの陸路を封鎖し、米英は空輸で物資を送り続けた。",
+            "wiki": "ベルリン封鎖",
             "art": "",
             "artQuery": "Berlin Airlift"
         },
@@ -4940,6 +5832,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "インドの独立の父が、ヒンドゥー至上主義の青年に撃たれて亡くなった。",
+            "wiki": "マハトマ・ガンディー",
             "art": "",
             "artQuery": "Mahatma Gandhi"
         },
@@ -4951,6 +5845,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 2,
+            "caption": "ヒラリーとテンジンが世界最高峰に初めて登頂した。エリザベス2世の戴冠の時に伝わった。",
+            "wiki": "エベレスト",
             "art": "",
             "artQuery": "Tenzing Norgay Everest"
         },
@@ -4962,6 +5858,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "板門店で結ばれた休戦協定。今も平和条約は結ばれず、軍事境界線が南北を分けている。",
+            "wiki": "朝鮮戦争休戦協定",
             "art": "",
             "artQuery": "Korean Armistice Agreement"
         },
@@ -4973,6 +5871,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ベトナム軍がフランス軍の基地を落とした。インドシナ戦争は終わり、ジュネーヴ協定が結ばれた。",
+            "wiki": "ディエンビエンフーの戦い",
             "art": "",
             "artQuery": "Battle of Dien Bien Phu"
         },
@@ -4984,6 +5884,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "西ドイツのNATO加盟に対抗して、ソ連と東欧の国々が結んだ軍事同盟である。",
+            "wiki": "ワルシャワ条約機構",
             "art": "",
             "artQuery": "Warsaw Pact"
         },
@@ -4995,6 +5897,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "エジプトのナセルがスエズ運河を国有化し、英仏とイスラエルが攻めた。米ソの圧力で撤退した。",
+            "wiki": "第二次中東戦争",
             "art": "",
             "artQuery": "Suez Crisis"
         },
@@ -5006,6 +5910,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "民主化を求めるブダペストの市民の蜂起を、ソ連軍が鎮圧した。指導者のナジは処刑された。",
+            "wiki": "ハンガリー動乱",
             "art": "",
             "artQuery": "Hungarian Revolution of 1956"
         },
@@ -5017,6 +5923,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "西欧の6か国が結び、欧州経済共同体を生んだ。のちのEUのもとである。",
+            "wiki": "ローマ条約",
             "art": "",
             "artQuery": "Treaty of Rome 1957"
         },
@@ -5028,6 +5936,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "アフリカで17か国が一度に独立した。国連での影響力も大きくなった。",
+            "wiki": "アフリカの年",
             "art": "",
             "artQuery": "Africa 1960 independence"
         },
@@ -5039,6 +5949,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ダラスでパレードの最中に狙撃された。オズワルドが逮捕されたが、その後すぐ射殺された。",
+            "wiki": "ケネディ大統領暗殺事件",
             "art": "",
             "artQuery": "John F. Kennedy"
         },
@@ -5050,6 +5962,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ジョンソン大統領が署名した、人種差別を禁じる法律である。キング牧師らの運動が実を結んだ。",
+            "wiki": "アフリカ系アメリカ人公民権運動",
             "art": "",
             "artQuery": "Civil Rights Act of 1964"
         },
@@ -5061,6 +5975,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "毛沢東が権力の回復を狙って紅衛兵を動かした。社会は大きく混乱し、10年続いた。",
+            "wiki": "文化大革命",
             "art": "",
             "artQuery": "Cultural Revolution"
         },
@@ -5072,6 +5988,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "バンコク宣言で5か国が結成した。のちに10か国に増え、地域の協力を進めた。",
+            "wiki": "東南アジア諸国連合",
             "art": "",
             "artQuery": "ASEAN"
         },
@@ -5083,6 +6001,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "イスラエルが6日間でシナイ半島やヨルダン川西岸を占領した。パレスチナ問題の深刻化につながった。",
+            "wiki": "第三次中東戦争",
             "art": "",
             "artQuery": "Six-Day War"
         },
@@ -5094,6 +6014,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "公民権運動の指導者がメンフィスで撃たれ、各地で暴動が起きた。",
+            "wiki": "マーティン・ルーサー・キング・ジュニア",
             "art": "",
             "artQuery": "Martin Luther King Jr."
         },
@@ -5105,6 +6027,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "ニクソン大統領がドルと金の交換を停止した。ブレトン・ウッズ体制が終わり、変動相場制へ進んだ。",
+            "wiki": "ニクソン・ショック",
             "art": "",
             "artQuery": "Richard Nixon 1971"
         },
@@ -5116,6 +6040,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "キッシンジャーの根回しの末に、米国の大統領が初めて中国を訪れ、毛沢東と会談した。",
+            "wiki": "ニクソン大統領の中国訪問",
             "art": "",
             "artQuery": "Nixon Mao 1972"
         },
@@ -5127,6 +6053,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "民主党本部の盗聴事件のもみ消しが発覚し、ニクソンが任期中に辞任した。米史上唯一である。",
+            "wiki": "ウォーターゲート事件",
             "art": "",
             "artQuery": "Nixon resignation"
         },
@@ -5138,6 +6066,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "フランスのランブイエで、石油危機の後に6か国の首脳が集まった。今のG7サミットの原型である。",
+            "wiki": "主要国首脳会議",
             "art": "",
             "artQuery": "Rambouillet 1975"
         },
@@ -5149,6 +6079,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 2,
+            "caption": "鄧小平が市場経済を取り入れ始めた。中国はやがて世界第2位の経済大国となった。",
+            "wiki": "改革開放",
             "art": "",
             "artQuery": "Deng Xiaoping"
         },
@@ -5160,6 +6092,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ソ連の軍が親ソ政権を支えようと侵攻した。西側はモスクワ五輪をボイコットし、ソ連は泥沼に陥った。",
+            "wiki": "アフガニスタン紛争 (1978年-1989年)",
             "art": "",
             "artQuery": "Soviet-Afghan War"
         },
@@ -5171,6 +6105,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "サダム・フセインのイラクがイランへ攻め込んだ。8年続いて100万人近くが犠牲になったとされる。",
+            "wiki": "イラン・イラク戦争",
             "art": "",
             "artQuery": "Iran-Iraq War"
         },
@@ -5182,6 +6118,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ポーランドのグダニスクの造船所でワレサらが作った労組。のちに東欧の民主化を導いた。",
+            "wiki": "独立自主管理労働組合「連帯」",
             "art": "",
             "artQuery": "Solidarity Lech Walesa"
         },
@@ -5193,6 +6131,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アルゼンチンが南大西洋のイギリス領の島々を占領した。サッチャー首相が派兵して奪回した。",
+            "wiki": "フォークランド紛争",
             "art": "",
             "artQuery": "Falklands War"
         },
@@ -5204,6 +6144,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ゴルバチョフが書記長となり、改革と情報公開を進めた。冷戦の終結へ導いた。",
+            "wiki": "ペレストロイカ",
             "art": "",
             "artQuery": "Mikhail Gorbachev",
             "artFile": "Mikhail Gorbachev in 1987 (cropped).jpg"
@@ -5216,6 +6158,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "レーガンとゴルバチョフが調印した条約。核兵器の一分類を全廃する初の合意である。",
+            "wiki": "中距離核戦力全廃条約",
             "art": "",
             "artQuery": "INF Treaty Reagan Gorbachev"
         },
@@ -5227,6 +6171,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "民主化を求める学生らを人民解放軍が武力で鎮圧した。多数の死者が出たとされる。",
+            "wiki": "六四天安門事件",
             "art": "",
             "artQuery": "Tiananmen Square",
             "artFile": "Goddess of Democracy HK 20100604.jpg"
@@ -5239,6 +6185,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ブッシュとゴルバチョフが地中海のマルタ島で、冷戦の終わりを宣言した。",
+            "wiki": "マルタ会談",
             "art": "",
             "artQuery": "Malta Summit"
         },
@@ -5250,6 +6198,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "イラクのクウェート侵攻に対し、アメリカ主導の多国籍軍が攻撃した。ハイテク兵器がテレビに映った。",
+            "wiki": "湾岸戦争",
             "art": "",
             "artQuery": "Gulf War"
         },
@@ -5261,6 +6211,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 1,
+            "caption": "イギリスのティム・バーナーズ＝リーが考えた情報の仕組みが公開された。世界中の情報がつながり始めた。",
+            "wiki": "World Wide Web",
             "art": "",
             "artQuery": "Tim Berners-Lee"
         },
@@ -5272,6 +6224,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "アパルトヘイト撤廃の後の総選挙で、27年獄中にいたマンデラが南アフリカの大統領となった。",
+            "wiki": "ネルソン・マンデラ",
             "art": "",
             "artQuery": "Nelson Mandela"
         },
@@ -5283,6 +6237,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 3,
+            "caption": "GATTを発展させた国際機関。ジュネーヴに本部を置き、貿易の紛争を解決する仕組みを持つ。",
+            "wiki": "世界貿易機関",
             "art": "",
             "artQuery": "World Trade Organization"
         },
@@ -5294,6 +6250,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "スコットランドで、体細胞から作られた世界初の哺乳類のクローン。生命倫理の議論が広がった。",
+            "wiki": "ドリー (羊)",
             "art": "",
             "artQuery": "Dolly the sheep"
         },
@@ -5305,6 +6263,8 @@
             "region": "WORLD",
             "category": "経済",
             "difficulty": 1,
+            "caption": "EUの11か国で単一通貨が決済用に導入された。紙幣と硬貨は2002年に流通が始まった。",
+            "wiki": "ユーロ",
             "art": "",
             "artQuery": "Euro coins",
             "artFile": "Euro coins (07).jpg"
@@ -5317,6 +6277,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ポルトガルから中国へ返還された。約440年続いた欧州のアジア植民地の最後の一つである。",
+            "wiki": "マカオ返還",
             "art": "",
             "artQuery": "Macau"
         },
@@ -5328,6 +6290,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "ハイジャックされた旅客機が世界貿易センターやペンタゴンに突入した。約3千人が犠牲となった。",
+            "wiki": "アメリカ同時多発テロ事件",
             "art": "",
             "artQuery": "World Trade Center"
         },
@@ -5339,6 +6303,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "アメリカとイギリスが大量破壊兵器を理由に侵攻し、サダム・フセイン政権を倒した。兵器は見つからなかった。",
+            "wiki": "イラク戦争",
             "art": "",
             "artQuery": "Iraq War 2003"
         },
@@ -5350,6 +6316,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "国際協力で人の遺伝情報の全体を読み解いた。医学の進歩を大きく後押しした。",
+            "wiki": "ヒトゲノム計画",
             "art": "",
             "artQuery": "Human Genome Project"
         },
@@ -5361,6 +6329,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 2,
+            "caption": "12月26日の巨大地震がインド洋の大津波を起こした。各国で22万人以上が犠牲になった。",
+            "wiki": "スマトラ島沖地震 (2004年)",
             "art": "",
             "artQuery": "2004 Indian Ocean tsunami"
         },
@@ -5372,6 +6342,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 1,
+            "caption": "アメリカ史上初のアフリカ系の大統領が就任した。のちにノーベル平和賞を受けた。",
+            "wiki": "バラク・オバマ",
             "art": "",
             "artQuery": "Barack Obama"
         },
@@ -5383,6 +6355,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "世界のほぼ全ての国が温室効果ガスの削減に取り組むことを決めた。気温の上昇を2度未満に抑えることを目標とした。",
+            "wiki": "パリ協定 (気候変動)",
             "art": "",
             "artQuery": "Paris Agreement"
         },
@@ -5394,6 +6368,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "2016年の国民投票を経て、イギリスがEUを離脱した。加盟国の離脱は初めてである。",
+            "wiki": "イギリスの欧州連合離脱",
             "art": "",
             "artQuery": "Brexit",
             "artFile": "BREXIT (46797366864).jpg"
@@ -5406,6 +6382,8 @@
             "region": "WORLD",
             "category": "災害",
             "difficulty": 1,
+            "caption": "WHOのテドロス事務局長が新型コロナの世界的流行を宣言した。社会のあり方が世界中で変わった。",
+            "wiki": "新型コロナウイルス感染症の世界的流行 (2019年-)",
             "art": "",
             "artQuery": "COVID-19 pandemic",
             "artFile": "SARS-CoV-2 without background.png"
@@ -5418,6 +6396,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "アレクサンドロス大王がペルシアの地で初めて挙げた大きな勝利である。",
+            "wiki": "グラニコス川の戦い",
             "art": "",
             "artQuery": "Battle of the Granicus"
         },
@@ -5429,6 +6409,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "カエサルが今のフランスの地へ軍を進めた。自らの記録は『ガリア戦記』として名文で知られる。",
+            "wiki": "ガリア戦争",
             "art": "",
             "artQuery": "Julius Caesar Gallic Wars"
         },
@@ -5440,6 +6422,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "ローマのクラッススがパルティアの騎馬弓兵に大敗し戦死した。第1回三頭政治の崩壊につながった。",
+            "wiki": "カルラエの戦い",
             "art": "",
             "artQuery": "Marcus Licinius Crassus"
         },
@@ -5451,6 +6435,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "元老院に「国家の敵」とされた皇帝が自害した。ユリウス・クラウディウス朝が絶えた。",
+            "wiki": "ネロ",
             "art": "",
             "artQuery": "Nero bust"
         },
@@ -5462,6 +6448,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "大帝が死の床でキリスト教の洗礼を受けたと伝わる。",
+            "wiki": "コンスタンティヌス1世",
             "art": "",
             "artQuery": "Constantine the Great colossus"
         },
@@ -5473,6 +6461,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "キリストの神性と人性を認める教義を定めた。単性説は異端とされた。",
+            "wiki": "カルケドン公会議",
             "art": "",
             "artQuery": "Council of Chalcedon"
         },
@@ -5484,6 +6474,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "農民の家系から出た皇帝が即位した。ローマ帝国の再興を目指し、地中海を再び囲んだ。",
+            "wiki": "ユスティニアヌス1世",
             "art": "",
             "artQuery": "Justinian mosaic Ravenna"
         },
@@ -5495,6 +6487,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "競馬場の暴動で都が炎上した。皇后テオドラの一喝で踏みとどまった皇帝が鎮圧した。",
+            "wiki": "ニカの乱",
             "art": "",
             "artQuery": "Hippodrome of Constantinople"
         },
@@ -5506,6 +6500,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "唐の玄宗が即位した。前半は「開元の治」と呼ばれる全盛期で、晩年に楊貴妃を愛した。",
+            "wiki": "玄宗 (唐)",
             "art": "",
             "artQuery": "Emperor Xuanzong of Tang"
         },
@@ -5517,6 +6513,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "アッバース朝の全盛期のカリフが即位した。『千夜一夜物語』にも登場する。",
+            "wiki": "ハールーン・アッ＝ラシード",
             "art": "",
             "artQuery": "Harun al-Rashid"
         },
@@ -5528,6 +6526,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ヴェルダン条約の後、中部フランク王国の北部が分割された。今の独仏伊の国境の原型である。",
+            "wiki": "メルセン条約",
             "art": "",
             "artQuery": "Treaty of Meerssen"
         },
@@ -5539,6 +6539,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "カスティーリャ王アルフォンソ6世がトレドを奪回した。アラビア語の学問がここから西欧へ翻訳された。",
+            "wiki": "レコンキスタ",
             "art": "",
             "artQuery": "Alfonso VI of Castile"
         },
@@ -5550,6 +6552,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "サラディンがエジプトで開いた王朝。のちにファーティマ朝を廃した。",
+            "wiki": "アイユーブ朝",
             "art": "",
             "artQuery": "Saladin"
         },
@@ -5561,6 +6565,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "フランス王ルイ9世がエジプトを攻めたが、敗れて捕虜となった。のちに聖王と呼ばれた。",
+            "wiki": "第7回十字軍",
             "art": "",
             "artQuery": "Louis IX crusade"
         },
@@ -5572,6 +6578,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "アイユーブ朝の奴隷軍人がエジプトで建てた王朝。モンゴルの撃退で名をあげた。",
+            "wiki": "マムルーク朝",
             "art": "",
             "artQuery": "Mamluk Cairo"
         },
@@ -5583,6 +6591,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "オスマン帝国の軍がセルビアの軍を破った。セルビアの民族の記憶に深く刻まれた戦いである。",
+            "wiki": "コソボの戦い",
             "art": "",
             "artQuery": "Battle of Kosovo"
         },
@@ -5594,6 +6604,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "オスマン帝国のバヤズィト1世が、ハンガリー王らの十字軍を破った。",
+            "wiki": "ニコポリスの戦い",
             "art": "",
             "artQuery": "Battle of Nicopolis"
         },
@@ -5605,6 +6617,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "中央アジアの覇者ティムールがインドに攻め入り、デリーを略奪した。トゥグルク朝は大打撃を受けた。",
+            "wiki": "ティムール",
             "art": "",
             "artQuery": "Timur"
         },
@@ -5616,6 +6630,8 @@
             "region": "WORLD",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "フェルナンド2世とイサベル1世が教皇の許しを得て設置した。改宗者らが厳しく調べられた。",
+            "wiki": "スペイン異端審問",
             "art": "",
             "artQuery": "Spanish Inquisition"
         },
@@ -5627,6 +6643,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イサベルとフェルナンドの夫婦の王のもとで、両王国が1つになった。スペイン王国の始まりである。",
+            "wiki": "カトリック両王",
             "art": "",
             "artQuery": "Ferdinand and Isabella"
         },
@@ -5638,6 +6656,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イギリス議会がチャールズ1世に認めさせた文書。議会の同意なき課税や不当な逮捕を禁じた。",
+            "wiki": "権利の請願",
             "art": "",
             "artQuery": "Petition of Right"
         },
@@ -5649,6 +6669,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "イギリスの医師が、血液が心臓から全身を巡ると実験で示した。古代からの説を覆した。",
+            "wiki": "ウイリアム・ハーベー",
             "art": "",
             "artQuery": "William Harvey",
             "artFile": "Portrait of William Harvey, M.D (4672896).jpg"
@@ -5661,6 +6683,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ローマの宗教裁判で地動説の放棄を命じられた。「それでも地球は回る」と呟いたとの伝説がある。",
+            "wiki": "ガリレオ裁判",
             "art": "",
             "artQuery": "Galileo before the Holy Office"
         },
@@ -5672,6 +6696,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 2,
+            "caption": "フランスの哲学者が「我思う、ゆえに我あり」を示した書である。近代哲学の出発点である。",
+            "wiki": "方法序説",
             "art": "",
             "artQuery": "Rene Descartes"
         },
@@ -5683,6 +6709,8 @@
             "region": "WORLD",
             "category": "思想",
             "difficulty": 3,
+            "caption": "人間の自然状態を「万人の万人に対する闘争」と考えたイギリスの政治思想書である。",
+            "wiki": "リヴァイアサン (ホッブズ)",
             "art": "",
             "artQuery": "Leviathan frontispiece"
         },
@@ -5694,6 +6722,8 @@
             "region": "WORLD",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ピョートル大帝が身分を隠して西欧を回り、オランダで船大工として働いた。ロシアの西欧化の出発点である。",
+            "wiki": "ピョートル1世 (ロシア皇帝)",
             "art": "",
             "artQuery": "Peter the Great",
             "artFile": "Peter I in 1697-98.jpg"
@@ -5706,6 +6736,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "「大王」と呼ばれる啓蒙専制君主が即位した。「君主は国家第一の僕」と語った。",
+            "wiki": "フリードリヒ2世 (プロイセン王)",
             "art": "",
             "artQuery": "Frederick the Great"
         },
@@ -5717,6 +6749,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "イギリス兵が市民の群衆に発砲し5人が亡くなった。植民地の反英感情を一気に高めた。",
+            "wiki": "ボストン虐殺事件",
             "art": "",
             "artQuery": "Boston Massacre Revere"
         },
@@ -5728,6 +6762,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "ジェファソン大統領の命で太平洋まで大陸を横断した。先住民のサカガウィアが案内を助けた。",
+            "wiki": "ルイス・クラーク探検隊",
             "art": "",
             "artQuery": "Lewis and Clark Expedition"
         },
@@ -5739,6 +6775,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "司祭のイダルゴが「ドロレスの叫び」で民衆に呼びかけた。メキシコ独立戦争の始まりである。",
+            "wiki": "ミゲル・イダルゴ",
             "art": "",
             "artQuery": "Miguel Hidalgo"
         },
@@ -5750,6 +6788,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ポルトガルの王子のペドロが皇帝となり、独立を宣言した。",
+            "wiki": "ブラジル独立",
             "art": "",
             "artQuery": "Independence of Brazil painting"
         },
@@ -5761,6 +6801,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "磁石の動きで電流が生まれることを発見した。発電機や変圧器のもとになった。",
+            "wiki": "マイケル・ファラデー",
             "art": "",
             "artQuery": "Michael Faraday"
         },
@@ -5772,6 +6814,8 @@
             "region": "WORLD",
             "category": "探検",
             "difficulty": 3,
+            "caption": "若きダーウィンを乗せてイギリスを発った船。ガラパゴス諸島での観察が進化論を育てた。",
+            "wiki": "ビーグル (帆船)",
             "art": "",
             "artQuery": "HMS Beagle",
             "artFile": "HMS Beagle by Conrad Martens.jpg"
@@ -5784,6 +6828,8 @@
             "region": "WORLD",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "テキサスの併合をめぐる戦争。勝ったアメリカはカリフォルニアなどの広大な土地を得た。",
+            "wiki": "米墨戦争",
             "art": "",
             "artQuery": "Mexican-American War"
         },
@@ -5795,6 +6841,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ヴィクトリア女王がインド皇帝となった。ディズレーリ首相の政策である。",
+            "wiki": "イギリス領インド帝国",
             "art": "",
             "artQuery": "Empress of India Victoria",
             "artFile": "The Imperial Assemblage at Delhi, 1877.jpg"
@@ -5807,6 +6855,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "エジソンが音を記録して再生する機械を発明した。最初の録音は「メリーさんの羊」と伝わる。",
+            "wiki": "蓄音機",
             "art": "",
             "artQuery": "Edison phonograph"
         },
@@ -5818,6 +6868,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "フランスの科学者が狂犬病のワクチンを少年に接種し成功した。のちにパスツール研究所を開いた。",
+            "wiki": "ルイ・パスツール",
             "art": "",
             "artQuery": "Louis Pasteur"
         },
@@ -5829,6 +6881,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ダブリンでアイルランドの共和主義者が蜂起した。鎮圧後の処刑で世論は独立へ傾いた。",
+            "wiki": "イースター蜂起",
             "art": "",
             "artQuery": "Easter Rising"
         },
@@ -5840,6 +6894,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "カナダのバンティングとベストが糖尿病の治療に道を開いた。のちにノーベル賞を受けた。",
+            "wiki": "インスリン",
             "art": "",
             "artQuery": "Frederick Banting Charles Best"
         },
@@ -5851,6 +6907,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "スコットランドの発明家がロンドンで機械式テレビの公開実験を行った。",
+            "wiki": "ジョン・ロジー・ベアード",
             "art": "",
             "artQuery": "John Logie Baird"
         },
@@ -5862,6 +6920,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ヒトラーがドイツ軍を進めてオーストリアを併合した。故郷の地を自らの帝国に組み込んだ。",
+            "wiki": "アンシュルス",
             "art": "",
             "artQuery": "Anschluss 1938",
             "artFile": "Stimmzettel Anschluss 1938 (Bundesheer).jpg"
@@ -5874,6 +6934,8 @@
             "region": "WORLD",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ナチス・ドイツの指導者を連合国が裁いた。「人道に対する罪」が問われた初の裁判である。",
+            "wiki": "ニュルンベルク裁判",
             "art": "",
             "artQuery": "Nuremberg trials",
             "artFile": "Defendants in the dock at nuremberg trials.jpg"
@@ -5886,6 +6948,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "スペースシャトルで打ち上げられた望遠鏡。大気の影響のない宇宙から数々の天体の写真を届けた。",
+            "wiki": "ハッブル宇宙望遠鏡",
             "art": "",
             "artQuery": "Hubble Space Telescope"
         },
@@ -5897,6 +6961,8 @@
             "region": "WORLD",
             "category": "技術",
             "difficulty": 3,
+            "caption": "イギリスとフランスを鉄道で結ぶ海底トンネル。ユーロスターが走り、ナポレオンの時代からの夢が叶った。",
+            "wiki": "英仏海峡トンネル",
             "art": "",
             "artQuery": "Channel Tunnel"
         },
@@ -5908,6 +6974,8 @@
             "region": "WORLD",
             "category": "科学",
             "difficulty": 3,
+            "caption": "米露を中心に各国が協力して建設を始めた。日本の実験棟「きぼう」も取り付けられた。",
+            "wiki": "国際宇宙ステーション",
             "art": "",
             "artQuery": "International Space Station"
         }

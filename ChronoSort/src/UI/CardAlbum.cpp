@@ -8,6 +8,7 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/ExternalLink.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
@@ -34,6 +35,9 @@ namespace ChronoSort::UI {
         const hlslpp::float2 kZoomCardCenter = hlslpp::float2(-245.0f, 0.0f);     // 拡大したカードの位置（拡大の紙の中心から）
         const hlslpp::float2 kZoomCardSize   = hlslpp::float2(300.0f, 450.0f);    // 拡大したカードの大きさ
         constexpr float kZoomTextX    = -60.0f;                              // 拡大の紙の、文字の書き出し
+        constexpr float kZoomCaptionY = -19.0f;                              // 説明文の1行目の高さ
+        constexpr float kZoomCaptionStep = 34.0f;                            // 説明文の行の間隔
+        constexpr float kZoomCreditY  = 92.0f;                               // 絵の出典の1行目の高さ（説明文の行数によらず揃える）
 
         //! 行方の短い言い方です。
         const wchar_t* FateLabel(Rules::CardFate fate) {
@@ -133,6 +137,11 @@ namespace ChronoSort::UI {
 
         // 拡大中は、拡大の紙の札か紙の外を押すと一覧に戻る
         if(m_zoom != entt::null) {
+            if(m_zoomWiki != entt::null && m_ui.Clicked(m_zoomWiki)) {
+                sounds.Play("ui.open");
+                Util::OpenInBrowser(m_zoomUrl);
+                return;
+            }
             if(m_ui.Clicked(m_zoomBack) || m_ui.Clicked(m_catcher)) {
                 sounds.Play("ui.close");
                 CloseZoom();
@@ -257,26 +266,39 @@ namespace ChronoSort::UI {
         picture.parent       = m_zoom;
         m_ui.Picture(Util::AssetPaths::CardRevealedTexture(card.id), picture);
 
-        // 右側に、カードの中身と絵の出典を書く
+        // 右側に、カードの中身と説明と絵の出典を書く
         float y    = -205.0f;
         auto  line = [&](const std::wstring& text, float scale, const hlslpp::float4& color, float advance) {
             m_ui.Text(text, hlslpp::float2(kZoomTextX, y), scale, color, layer, m_zoom, false);
             y += advance;
         };
-        line(Util::Utf8ToWide(card.title), 0.85f, kInkColor, 62.0f);
-        line(Util::Utf8ToWide(card.yearLabel), 0.8f, kInkColor, 60.0f);
-        line(std::wstring(card.region == "JP" ? L"日本" : L"世界") + L"の出来事  ・  " + Util::Utf8ToWide(card.category), 0.55f, kFadedInkColor, 46.0f);
-        line(std::wstring(L"この対局では  ") + FateLabel(fate), 0.55f, FateColor(fate), 70.0f);
+        line(Util::Utf8ToWide(card.title), 0.85f, kInkColor, 56.0f);
+        line(Util::Utf8ToWide(card.yearLabel), 0.8f, kInkColor, 50.0f);
+        line(std::wstring(card.region == "JP" ? L"日本" : L"世界") + L"の出来事  ・  " + Util::Utf8ToWide(card.category), 0.5f, kFadedInkColor, 34.0f);
+        line(std::wstring(L"この対局では  ") + FateLabel(fate), 0.5f, FateColor(fate), 46.0f);
+
+        y = kZoomCaptionY;
+        for(const std::wstring& text : Util::WrapText(Util::Utf8ToWide(card.caption), Rules::kCaptionCharsPerLine)) {
+            line(text, 0.5f, kInkColor, kZoomCaptionStep);
+        }
+
+        y = kZoomCreditY;
         if(const Util::CreditEntry* credit = m_credits.FindImage(card.id)) {
-            line(L"絵の出典", 0.5f, kSealRedColor, 38.0f);
-            line(Util::Utf8ToWide(credit->artist), 0.44f, kInkColor, 32.0f);
-            line(Util::Utf8ToWide(credit->license), 0.44f, kFadedInkColor, 32.0f);
-            line(Util::Utf8ToWide(credit->file), 0.38f, kFadedInkColor, 32.0f);
+            line(L"絵の出典  " + Util::Utf8ToWide(credit->artist), 0.4f, kFadedInkColor, 28.0f);
+            line(Util::Utf8ToWide(credit->license), 0.36f, kFadedInkColor, 26.0f);
+            line(Util::Utf8ToWide(credit->file), 0.34f, kFadedInkColor, 26.0f);
         }
 
         PaperSpec back = m_layout.Spec("zoomBack");
         back.parent    = m_zoom;
         m_zoomBack     = NoteButton(m_ui, back, L"一覧に戻る", 0.62f);
+
+        if(!card.wiki.empty()) {
+            PaperSpec wiki = m_layout.Spec("zoomWiki");
+            wiki.parent    = m_zoom;
+            m_zoomWiki     = NoteButton(m_ui, wiki, L"Wikipediaで読む", 0.56f);
+            m_zoomUrl      = Util::WikipediaUrl(card.wiki);
+        }
     }
 
     //----------------------------------------------------------------------------
@@ -289,7 +311,7 @@ namespace ChronoSort::UI {
         m_ui.SlideOut(m_zoom, hlslpp::float2(0.0f, 40.0f), 0.0f, 0.2f);
         m_ui.DestroyAfter(m_zoom, 0.25f);
         m_ui.Destroy(m_catcher);
-        m_zoom = m_zoomBack = m_catcher = entt::null;
+        m_zoom = m_zoomBack = m_zoomWiki = m_catcher = entt::null;
     }
 
 }    // namespace ChronoSort::UI

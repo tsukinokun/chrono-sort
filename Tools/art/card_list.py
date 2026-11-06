@@ -5,12 +5,13 @@
 年号は確実なものだけを入れる（諸説ある出来事・年が2年にまたがる出来事は入れない）。
 query は Wikimedia Commons での画像の検索語（英語のほうが当たりやすい）。
 file を指定すると、検索せずにその Commons のファイルを使う（検索で外れたときの差し替え用）。
-難易度（difficulty）は card_tiers.py の区分から書き出す。
+難易度（difficulty）は card_tiers.py の区分から、説明文（caption）と記事名（wiki）は card_notes.py から書き出す。
 """
 
 import json
 from pathlib import Path
 
+import card_notes
 import card_tiers
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -1059,6 +1060,7 @@ def write_deck(name, rows, region):
     for card_id, title, year, category, query, file in rows:
         assert card_id not in seen, card_id
         seen.add(card_id)
+        wiki, caption = card_notes.NOTES[card_id]
         card = {
             "id": card_id,
             "title": title,
@@ -1067,6 +1069,8 @@ def write_deck(name, rows, region):
             "region": region,
             "category": category,
             "difficulty": card_tiers.difficulty(card_id),
+            "caption": caption,
+            "wiki": wiki,
             "art": "",
             "artQuery": query,
         }

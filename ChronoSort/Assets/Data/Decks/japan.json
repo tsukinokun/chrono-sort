@@ -9,6 +9,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "聖徳太子が定めたと伝わる、役人の心構えを示した決まり。「和を以て貴しと為す」で始まり、仏教を敬うことも説いた。",
+            "wiki": "十七条憲法",
             "art": "",
             "artQuery": "Prince Shotoku portrait"
         },
@@ -20,6 +22,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "小野妹子らを隋に送り、進んだ制度や文化を学ぼうとした。「日出づる処の天子」の国書は、隋の皇帝を怒らせたと伝わる。",
+            "wiki": "遣隋使",
             "art": "",
             "artQuery": "Horyu-ji"
         },
@@ -31,6 +35,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "中大兄皇子と中臣鎌足が蘇我氏を倒して始めた政治改革。天皇を中心に、土地と人民を国が治める国づくりを目指した。",
+            "wiki": "大化の改新",
             "art": "",
             "artQuery": "Tonomine engi emaki"
         },
@@ -42,6 +48,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "百済の再興を助けるため朝鮮半島へ渡った倭の水軍が、唐と新羅の連合軍に大敗した。以後、国内の守りを固めていく。",
+            "wiki": "白村江の戦い",
             "art": "",
             "artQuery": "Emperor Tenji portrait"
         },
@@ -53,6 +61,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "天智天皇の死後に起きた皇位争い。弟の大海人皇子が、子の大友皇子を破って即位し、天武天皇となった。",
+            "wiki": "壬申の乱",
             "art": "",
             "artQuery": "Emperor Tenmu"
         },
@@ -64,6 +74,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "刑部親王や藤原不比等らがまとめた、日本で初めて律と令がそろった法典。律令国家のしくみがここで整った。",
+            "wiki": "大宝律令",
             "art": "",
             "artQuery": "Fujiwara-kyo"
         },
@@ -75,6 +87,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "元明天皇が藤原京から奈良の平城京へ都を移した。唐の長安にならった碁盤の目の都で、奈良時代の舞台となった。",
+            "wiki": "平城京",
             "art": "",
             "artQuery": "Heijo Palace Suzakumon"
         },
@@ -86,6 +100,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "稗田阿礼が語り覚えた内容を、太安万侶が書き記した現存最古の歴史書。神話から推古天皇までの物語を収める。",
+            "wiki": "古事記",
             "art": "",
             "artQuery": "Kojiki Shinpukuji manuscript"
         },
@@ -97,6 +113,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "舎人親王らが編んだ、最初の正史。漢文で書かれ、神代から持統天皇までを年代を追って記している。",
+            "wiki": "日本書紀",
             "art": "",
             "artQuery": "Nihon Shoki"
         },
@@ -108,6 +126,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "新しく開墾した土地は永久に自分のものにしてよいとした法。公地公民が崩れ、のちの荘園が生まれるもとになった。",
+            "wiki": "墾田永年私財法",
             "art": "",
             "artQuery": "Emperor Shomu"
         },
@@ -119,6 +139,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "聖武天皇の願いで造られた奈良の大仏の完成を祝う儀式。インド出身の僧が筆をとって目を入れ、一万人の僧が集まった。",
+            "wiki": "東大寺盧舎那仏像",
             "art": "",
             "artQuery": "Todai-ji Daibutsu"
         },
@@ -130,6 +152,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "桓武天皇が長岡京から京都へ都を移した。寺院の勢力から離れて政治を立て直すためで、以後千年の都となった。",
+            "wiki": "平安京",
             "art": "",
             "artQuery": "Heian-kyo model"
         },
@@ -141,6 +165,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "菅原道真が唐の衰えと航海の危険を理由に、派遣の停止を進言した。以後は日本独自の国風文化が育っていく。",
+            "wiki": "遣唐使",
             "art": "",
             "artQuery": "Sugawara no Michizane"
         },
@@ -152,6 +178,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "醍醐天皇の命で紀貫之らが編んだ、最初の勅撰和歌集。仮名で書かれた序文は、和歌の心を語る名文として知られる。",
+            "wiki": "古今和歌集",
             "art": "",
             "artQuery": "Kokin Wakashu manuscript"
         },
@@ -163,6 +191,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "娘を次々と天皇の后にした道長が、孫の後一条天皇の摂政となった。藤原氏の摂関政治はここで絶頂を迎える。",
+            "wiki": "藤原道長",
             "art": "",
             "artQuery": "Fujiwara no Michinaga"
         },
@@ -174,6 +204,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "藤原頼通が宇治の別荘を寺に改めて建てた阿弥陀堂。極楽浄土をこの世に表そうとした建物で、十円硬貨の図柄でもある。",
+            "wiki": "平等院",
             "art": "",
             "artQuery": "Byodo-in Phoenix Hall"
         },
@@ -185,6 +217,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "白河天皇が位を譲った後も、上皇として政治を動かし始めた。摂関家を抑え、院が実権を握る時代が開かれた。",
+            "wiki": "院政",
             "art": "",
             "artQuery": "Emperor Shirakawa"
         },
@@ -196,6 +230,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "崇徳上皇と後白河天皇の対立に、摂関家や源氏・平氏の争いが絡んだ内乱。武士の力が政治を決める時代の幕開けとなった。",
+            "wiki": "保元の乱",
             "art": "",
             "artQuery": "Hogen rebellion screen"
         },
@@ -207,6 +243,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "後白河上皇の近臣の争いから、平清盛が源義朝を破った内乱。敗れた義朝の子の頼朝は、伊豆へ流された。",
+            "wiki": "平治の乱",
             "art": "",
             "artQuery": "Heiji Monogatari Emaki"
         },
@@ -218,6 +256,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "武士として初めて太政大臣の位に上った。一族も高位を占め、「平氏にあらずんば人にあらず」と言われるほど栄えた。",
+            "wiki": "平清盛",
             "art": "",
             "artQuery": "Taira no Kiyomori"
         },
@@ -229,6 +269,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "関門海峡で源義経の軍が平氏を滅ぼした最後の海戦。幼い安徳天皇は三種の神器とともに海に沈んだ。",
+            "wiki": "壇ノ浦の戦い",
             "art": "",
             "artQuery": "Battle of Dan-no-ura"
         },
@@ -240,6 +282,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "後白河法皇の死後、頼朝は朝廷から征夷大将軍に任じられた。鎌倉を拠点とする武家政権の形が、これで整った。",
+            "wiki": "源頼朝",
             "art": "",
             "artQuery": "Minamoto no Yoritomo portrait"
         },
@@ -251,6 +295,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "後鳥羽上皇が鎌倉幕府を倒そうと兵を挙げたが、幕府軍に敗れて隠岐へ流された。京都には六波羅探題が置かれた。",
+            "wiki": "承久の乱",
             "art": "",
             "artQuery": "Emperor Go-Toba"
         },
@@ -262,6 +308,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "執権の北条泰時が定めた、武士のための最初の法律。裁判の基準を51か条で示し、のちの武家法の手本となった。",
+            "wiki": "御成敗式目",
             "art": "",
             "artQuery": "Hojo Yasutoki"
         },
@@ -273,6 +321,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "元と高麗の大軍が対馬・壱岐を襲い、博多湾に上陸した1度目の襲来。集団戦法と「てつはう」が武士を苦しめた。",
+            "wiki": "元寇",
             "art": "",
             "artQuery": "Moko Shurai Ekotoba"
         },
@@ -284,6 +334,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "元が2度目に大軍で攻め寄せた戦い。武士の防戦と防塁に阻まれて上陸できず、暴風雨で大きな損害を受けて敗れた。",
+            "wiki": "元寇",
             "art": "",
             "artQuery": "Mongol invasion of Japan 1281 scroll"
         },
@@ -295,6 +347,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "新田義貞が鎌倉を攻め、北条高時ら一族は自害して幕府が滅んだ。同じ頃、足利尊氏は京都の六波羅探題を落としていた。",
+            "wiki": "鎌倉幕府",
             "art": "",
             "artQuery": "Siege of Kamakura 1333"
         },
@@ -306,6 +360,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "後醍醐天皇が始めた天皇中心の政治。公家を重んじる恩賞に武士の不満が高まり、3年ほどで崩れた。",
+            "wiki": "建武の新政",
             "art": "",
             "artQuery": "Emperor Go-Daigo"
         },
@@ -317,6 +373,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "後醍醐天皇に背いた尊氏が、北朝の天皇から征夷大将軍に任じられた。京都に室町幕府を開いた武将である。",
+            "wiki": "足利尊氏",
             "art": "",
             "artQuery": "Ashikaga Takauji"
         },
@@ -328,6 +386,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "足利義満の仲介で、南朝の後亀山天皇が京都へ戻り、北朝に神器を渡した。約60年続いた朝廷の分裂が終わった。",
+            "wiki": "明徳の和約",
             "art": "",
             "artQuery": "Ashikaga Yoshimitsu"
         },
@@ -339,6 +399,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "足利義満が京都の北山に建てた金箔張りの楼閣。のちに禅寺となった。公家と武家の文化が溶け合う北山文化を代表する。",
+            "wiki": "鹿苑寺",
             "art": "",
             "artQuery": "Kinkaku-ji"
         },
@@ -350,6 +412,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "将軍のあとつぎ争いに有力守護の対立が絡み、京都で11年も続いた大乱。都は荒れ、戦国時代の幕開けとなった。",
+            "wiki": "応仁の乱",
             "art": "",
             "artQuery": "Onin war"
         },
@@ -361,6 +425,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "種子島に流れ着いた船のポルトガル人から、領主が鉄砲を買い求めた。やがて国内で量産され、戦の形を一変させた。",
+            "wiki": "鉄砲伝来",
             "art": "",
             "artQuery": "Tanegashima matchlock"
         },
@@ -372,6 +438,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "イエズス会の宣教師ザビエルが鹿児島に上陸し、日本にキリスト教を伝えた。約2年滞在して各地で布教した。",
+            "wiki": "フランシスコ・ザビエル",
             "art": "",
             "artQuery": "Francis Xavier Kobe City Museum"
         },
@@ -383,6 +451,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "尾張の織田信長が、大軍を率いる今川義元を奇襲で討ち取った。無名に近かった信長の名が一気に知れ渡った。",
+            "wiki": "桶狭間の戦い",
             "art": "",
             "artQuery": "Battle of Okehazama ukiyo-e"
         },
@@ -394,6 +464,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "織田信長が将軍の足利義昭を京都から追放した。15代続いた室町幕府は、これで事実上の終わりを迎えた。",
+            "wiki": "室町幕府",
             "art": "",
             "artQuery": "Ashikaga Yoshiaki"
         },
@@ -405,6 +477,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "織田信長と徳川家康の連合軍が、武田勝頼の騎馬隊を破った戦い。馬防柵と大量の鉄砲を使ったことで名高い。",
+            "wiki": "長篠の戦い",
             "art": "",
             "artQuery": "Battle of Nagashino screen"
         },
@@ -416,6 +490,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "天下統一を目前にした織田信長が、家臣の明智光秀に京都の本能寺で襲われ自害した。光秀はまもなく羽柴秀吉に敗れた。",
+            "wiki": "本能寺の変",
             "art": "",
             "artQuery": "Honno-ji incident ukiyo-e"
         },
@@ -427,6 +503,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "豊臣秀吉が農民から刀や鉄砲を取り上げた命令。一揆を防ぎ、武士と農民の身分を分ける兵農分離が進んだ。",
+            "wiki": "刀狩",
             "art": "",
             "artQuery": "Toyotomi Hideyoshi portrait"
         },
@@ -438,6 +516,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "豊臣秀吉が小田原の北条氏を滅ぼし、東北の大名も従えて全国を統一した。長く続いた戦国の争いがひとまず終わった。",
+            "wiki": "小田原征伐",
             "art": "",
             "artQuery": "Siege of Odawara 1590"
         },
@@ -449,6 +529,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "豊臣秀吉が明の征服を掲げて朝鮮へ大軍を送った。はじめは漢城まで進んだが、李舜臣の水軍や明の援軍に苦しんだ。",
+            "wiki": "文禄・慶長の役",
             "art": "",
             "artQuery": "Siege of Busanjin 1592"
         },
@@ -460,6 +542,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "徳川家康の東軍と石田三成の西軍が美濃で激突した「天下分け目」の戦い。小早川秀秋の寝返りもあり、東軍が1日で勝った。",
+            "wiki": "関ヶ原の戦い",
             "art": "",
             "artQuery": "Battle of Sekigahara folding screen"
         },
@@ -471,6 +555,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "徳川家康が征夷大将軍に任じられ、江戸に幕府を開いた。以後260年余り、徳川家が全国を治める時代が続く。",
+            "wiki": "江戸幕府",
             "art": "",
             "artQuery": "Tokugawa Ieyasu portrait"
         },
@@ -482,6 +568,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "徳川軍が再び大坂城を攻め、豊臣秀頼と淀殿は自害して豊臣氏が滅んだ。真田信繁の奮戦でも知られる戦いである。",
+            "wiki": "大坂の陣",
             "art": "",
             "artQuery": "Siege of Osaka screen"
         },
@@ -493,6 +581,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "重い年貢とキリシタン弾圧に苦しむ島原・天草の人々が、天草四郎を押し立てて原城に立てこもった。翌年に鎮圧された。",
+            "wiki": "島原の乱",
             "art": "",
             "artQuery": "Shimabara Rebellion"
         },
@@ -504,6 +594,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "江戸幕府がポルトガル船の来航を禁じた。キリスト教の広がりを恐れたためで、いわゆる鎖国の体制がこれで固まった。",
+            "wiki": "鎖国",
             "art": "",
             "artQuery": "Nanban ship screen"
         },
@@ -515,6 +607,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "8代将軍の徳川吉宗が始めた幕政改革。倹約、新田開発、目安箱の設置などで、苦しい幕府の財政を立て直そうとした。",
+            "wiki": "享保の改革",
             "art": "",
             "artQuery": "Tokugawa Yoshimune"
         },
@@ -526,6 +620,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 1,
+            "caption": "杉田玄白・前野良沢らがオランダ語の解剖書を苦心して訳した。西洋の学問を学ぶ蘭学が広がるきっかけとなった。",
+            "wiki": "解体新書",
             "art": "",
             "artQuery": "Kaitai Shinsho"
         },
@@ -537,6 +633,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "老中の松平定信が始めた幕政改革。倹約と農村の立て直しを進め、朱子学以外の講義を禁じたが、厳しさが嫌われた。",
+            "wiki": "寛政の改革",
             "art": "",
             "artQuery": "Matsudaira Sadanobu"
         },
@@ -548,6 +646,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 1,
+            "caption": "50歳を過ぎて天文学を学んだ忠敬が、蝦夷地へ向けて測量の旅に出た。歩測を重ね、やがて全国を測り尽くす。",
+            "wiki": "伊能忠敬",
             "art": "",
             "artQuery": "Ino Tadataka map"
         },
@@ -559,6 +659,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "大坂町奉行所の元与力の大塩が、天保の飢饉に苦しむ人々を救おうと兵を挙げた。半日で鎮圧されたが幕府に衝撃を与えた。",
+            "wiki": "大塩平八郎の乱",
             "art": "",
             "artQuery": "Oshio Heihachiro"
         },
@@ -570,6 +672,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "アメリカのペリーが4隻の軍艦で浦賀に現れ、開国を求めた。「黒船」の衝撃が、幕末の動乱の始まりとなった。",
+            "wiki": "黒船来航",
             "art": "",
             "artQuery": "Black Ships Perry Japanese woodblock"
         },
@@ -581,6 +685,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ペリーの再来で結ばれた条約。下田と箱館を開き、アメリカ船に水や食料を与えることを認め、鎖国が終わった。",
+            "wiki": "日米和親条約",
             "art": "",
             "artQuery": "Perry landing Yokohama 1854 Heine"
         },
@@ -592,6 +698,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "大老の井伊直弼が勅許なしに結んだ通商条約。領事裁判権を認め、関税自主権が無いという不平等な内容だった。",
+            "wiki": "日米修好通商条約",
             "art": "",
             "artQuery": "Ii Naosuke"
         },
@@ -603,6 +711,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "大老の井伊直弼が、江戸城の桜田門の外で水戸浪士らに暗殺された。幕府の権威は大きく揺らいだ。",
+            "wiki": "桜田門外の変",
             "art": "",
             "artQuery": "Sakuradamon Incident"
         },
@@ -614,6 +724,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "15代将軍の徳川慶喜が、政権を朝廷に返すと申し出た。260年余り続いた江戸幕府の支配はここで幕を閉じた。",
+            "wiki": "大政奉還",
             "art": "",
             "artQuery": "Taisei Hokan painting"
         },
@@ -625,6 +737,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "鳥羽・伏見の戦いに始まる、新政府軍と旧幕府軍の内戦。会津などを経て翌年の箱館で終わり、新政府の支配が固まった。",
+            "wiki": "戊辰戦争",
             "art": "",
             "artQuery": "Boshin War"
         },
@@ -636,6 +750,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "明治政府が全国の藩を廃止し、府と県を置いて中央から役人を送った。大名の支配が終わり、中央集権が確立した。",
+            "wiki": "廃藩置県",
             "art": "",
             "artQuery": "Emperor Meiji 1872 Uchida"
         },
@@ -647,6 +763,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "西郷隆盛を担いだ鹿児島の士族が起こした、最大にして最後の士族反乱。徴兵で集めた政府軍に敗れ、西郷は自害した。",
+            "wiki": "西南戦争",
             "art": "",
             "artQuery": "Satsuma Rebellion woodblock"
         },
@@ -658,6 +776,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "伊藤博文らがドイツの憲法を手本に作り、天皇が国民に与える形で発布された。東アジアで初の近代憲法である。",
+            "wiki": "大日本帝国憲法",
             "art": "",
             "artQuery": "Promulgation of the Meiji Constitution"
         },
@@ -669,6 +789,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "朝鮮の支配をめぐって日本と清が戦った。日本が勝ち、翌年の下関条約で賠償金と台湾などを得た。",
+            "wiki": "日清戦争",
             "art": "",
             "artQuery": "First Sino-Japanese War woodblock"
         },
@@ -680,6 +802,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "満州と朝鮮をめぐって日本とロシアが戦った。旅順攻略や日本海海戦で勝ったが、双方とも戦い続ける余力を失った。",
+            "wiki": "日露戦争",
             "art": "",
             "artQuery": "Battle of Tsushima Mikasa Tojo painting"
         },
@@ -691,6 +815,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 1,
+            "caption": "9月1日の昼前に関東南部を襲った大地震。火災で東京・横浜が焼け、死者・行方不明者は10万人を超えた。",
+            "wiki": "関東大震災",
             "art": "",
             "artQuery": "1923 Great Kanto earthquake"
         },
@@ -702,6 +828,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "納税額の制限をなくし、25歳以上の男子すべてに選挙権を与えた法律。同時に治安維持法も作られた。女性の参政権はまだない。",
+            "wiki": "普通選挙法",
             "art": "",
             "artQuery": "Kato Takaaki"
         },
@@ -713,6 +841,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "陸軍の青年将校らが約1400人の兵を率いて首相官邸などを襲い、高橋是清らを殺害した。以後、軍部の発言力が強まった。",
+            "wiki": "二・二六事件",
             "art": "",
             "artQuery": "February 26 Incident"
         },
@@ -724,6 +854,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "12月8日、日本軍がハワイの真珠湾とマレー半島を攻撃し、アメリカ・イギリスとの戦争が始まった。",
+            "wiki": "太平洋戦争",
             "art": "",
             "artQuery": "Attack on Pearl Harbor"
         },
@@ -735,6 +867,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "ポツダム宣言を受け入れ、8月15日に昭和天皇の玉音放送で国民に敗戦が伝えられた。広島・長崎への原爆投下の直後だった。",
+            "wiki": "日本の降伏",
             "art": "",
             "artQuery": "Japanese Instrument of Surrender"
         },
@@ -746,6 +880,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "5月3日に施行された憲法。国民主権、基本的人権の尊重、平和主義を柱とする。この日は今も憲法記念日である。",
+            "wiki": "日本国憲法",
             "art": "",
             "artQuery": "Constitution of Japan 1947 original"
         },
@@ -757,6 +893,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "吉田茂首相が調印し、翌年の発効で日本は独立を回復した。同じ日に日米安全保障条約も結ばれた。",
+            "wiki": "日本国との平和条約",
             "art": "",
             "artQuery": "Treaty of San Francisco signing Yoshida"
         },
@@ -768,6 +906,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "東京と新大阪を結ぶ世界初の高速鉄道。東京オリンピックの開幕直前に開業し、高度経済成長の象徴となった。",
+            "wiki": "東海道新幹線",
             "art": "",
             "artQuery": "0 series Shinkansen 1964"
         },
@@ -779,6 +919,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "アジアで初めて開かれたオリンピック。戦後の復興を世界に示し、「東洋の魔女」の女子バレーが金メダルを取った。",
+            "wiki": "1964年東京オリンピック",
             "art": "",
             "artQuery": "1964 Summer Olympics opening ceremony"
         },
@@ -790,6 +932,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "大阪の千里丘陵で開かれた、アジア初の万博。岡本太郎の太陽の塔が立ち、入場者は6400万人を超えた。",
+            "wiki": "日本万国博覧会",
             "art": "",
             "artQuery": "Tower of the Sun Taro Okamoto"
         },
@@ -801,6 +945,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "アメリカの施政下にあった沖縄が日本に戻った。佐藤栄作内閣のもとでの実現だが、広大な米軍基地は残された。",
+            "wiki": "沖縄返還",
             "art": "",
             "artQuery": "Okinawa Reversion Ceremony 1972"
         },
@@ -812,6 +958,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 1,
+            "caption": "1月17日の早朝に兵庫県南部を襲った大地震。神戸を中心に6千人を超える人が亡くなり、ボランティア元年とも呼ばれる。",
+            "wiki": "阪神・淡路大震災",
             "art": "",
             "artQuery": "Great Hanshin earthquake"
         },
@@ -823,6 +971,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "長野県で開かれた冬のオリンピック。スキージャンプ団体の金メダルなどで日本中が沸いた。",
+            "wiki": "1998年長野オリンピック",
             "art": "",
             "artQuery": "1998 Winter Olympics Nagano"
         },
@@ -834,6 +984,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 1,
+            "caption": "3月11日に三陸沖で起きた巨大地震と大津波。東北の沿岸に甚大な被害が出て、福島第一原発の事故も起きた。",
+            "wiki": "東日本大震災",
             "art": "",
             "artQuery": "2011 Tohoku earthquake tsunami"
         },
@@ -845,6 +997,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "九州の奴国の王が後漢に使いを送り、光武帝から印を授かった。江戸時代に志賀島で見つかった金印がそれとされる。",
+            "wiki": "漢委奴国王印",
             "art": "",
             "artQuery": "Gold Seal of the King of Na"
         },
@@ -856,6 +1010,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "犬上御田鍬らが唐へ渡った最初の遣唐使。以後およそ200年にわたり、留学生や僧が大陸の文化を持ち帰った。",
+            "wiki": "遣唐使",
             "art": "",
             "artQuery": "Kentoshi ship"
         },
@@ -867,6 +1023,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "以仁王の呼びかけに応じ、伊豆に流されていた頼朝が兵を挙げた。石橋山で敗れたが、関東の武士を集めて再起した。",
+            "wiki": "治承・寿永の乱",
             "art": "",
             "artQuery": "Battle of Fujigawa"
         },
@@ -878,6 +1036,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "鎌倉幕府が、生活に苦しむ御家人を救うため、手放した土地を無償で取り戻せるとした法令。かえって経済は混乱した。",
+            "wiki": "永仁の徳政令",
             "art": "",
             "artQuery": "Hojo Sadatoki"
         },
@@ -889,6 +1049,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 1,
+            "caption": "足利義満が明と始めた貿易。倭寇と区別するため勘合という割符を使い、銅銭や生糸が日本へ入った。",
+            "wiki": "日明貿易",
             "art": "",
             "artQuery": "Kango tally trade Ming"
         },
@@ -900,6 +1062,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "浄土真宗の門徒が守護の富樫政親を倒し、加賀国を約100年にわたり自分たちで治めた。「百姓の持ちたる国」と呼ばれる。",
+            "wiki": "加賀一向一揆",
             "art": "",
             "artQuery": "Ikko-ikki"
         },
@@ -911,6 +1075,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "3代将軍の徳川家光が武家諸法度に定めた制度。大名は1年おきに江戸へ通い、妻子は江戸に住むことが義務付けられた。",
+            "wiki": "参勤交代",
             "art": "",
             "artQuery": "Tokugawa Iemitsu portrait"
         },
@@ -922,6 +1088,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "平戸にあったオランダ商館が、長崎の人工島の出島へ移された。ここが西洋に開かれた日本の窓口であり続けた。",
+            "wiki": "出島",
             "art": "",
             "artQuery": "Dejima Nagasaki"
         },
@@ -933,6 +1101,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 2,
+            "caption": "江戸の大半を焼いた大火事で、江戸城の天守も失われた。死者は10万人を超えたともいう。火除け地を設ける都市改造が進んだ。",
+            "wiki": "明暦の大火",
             "art": "",
             "artQuery": "Great Fire of Meireki"
         },
@@ -944,6 +1114,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "富士山の最後の大噴火。宝永地震の49日後に起き、江戸の町にも火山灰が降り積もった。",
+            "wiki": "宝永大噴火",
             "art": "",
             "artQuery": "Hoei eruption Mount Fuji"
         },
@@ -955,6 +1127,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "老中の水野忠邦が始めた幕政改革。株仲間の解散や倹約を進めたが、上知令で反発を受けて失敗に終わった。",
+            "wiki": "天保の改革",
             "art": "",
             "artQuery": "Mizuno Tadakuni"
         },
@@ -966,6 +1140,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "日本で初めての鉄道が開業した。イギリスの技術を入れ、新橋と横浜を蒸気機関車が約1時間で結んだ。",
+            "wiki": "新橋駅",
             "art": "",
             "artQuery": "Takanawa railway ukiyo-e"
         },
@@ -977,6 +1153,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "太政官制を廃止し、近代的な内閣制度を始めた。初代内閣総理大臣に伊藤博文が就いた。",
+            "wiki": "内閣",
             "art": "",
             "artQuery": "Ito Hirobumi"
         },
@@ -988,6 +1166,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ロシアの南下を警戒する日本とイギリスが結んだ同盟。日本はこれを後ろ盾にして、のちの日露戦争に臨んだ。",
+            "wiki": "日英同盟",
             "art": "",
             "artQuery": "Hayashi Tadasu"
         },
@@ -999,6 +1179,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "日ソ共同宣言でソ連の反対が消え、日本の国連加盟が認められた。これで日本は国際社会への復帰を果たした。",
+            "wiki": "国際連合",
             "art": "",
             "artQuery": "United Nations Headquarters 1950s"
         },
@@ -1010,6 +1192,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "武蔵国から銅が献上されたのを機に造られた銭。唐の開元通宝にならい、平城京の造営の費用にも使われた。",
+            "wiki": "和同開珎",
             "art": "",
             "artQuery": "Wadokaichin"
         },
@@ -1021,6 +1205,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "新しく灌漑施設を造って開墾すれば3代の間、土地の所有を認めた法。農地を増やす狙いだったが、効果は薄かった。",
+            "wiki": "三世一身法",
             "art": "",
             "artQuery": "Prince Nagaya"
         },
@@ -1032,6 +1218,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "聖武天皇が国ごとに寺を建てるよう命じた。疫病や反乱が続く世を、仏教の力で鎮めようとする鎮護国家の考えによる。",
+            "wiki": "国分寺",
             "art": "",
             "artQuery": "Kokubunji temple pagoda"
         },
@@ -1043,6 +1231,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "平安宮の応天門が放火され、大納言の伴善男が犯人として流された。藤原良房が権力を固め、古代の名族が没落した。",
+            "wiki": "応天門の変",
             "art": "",
             "artQuery": "Ban Dainagon Ekotoba"
         },
@@ -1054,6 +1244,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "奥州藤原氏の初代の清衡が平泉に建てた、金箔で覆われた阿弥陀堂。東北に花開いた浄土信仰の文化を今に伝える。",
+            "wiki": "中尊寺金色堂",
             "art": "",
             "artQuery": "Konjikido Chusonji Hiraizumi"
         },
@@ -1065,6 +1257,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "法然が、念仏を唱えれば誰でも極楽に行けると説いた。比叡山を下りて広めた教えは、貴族から庶民まで広がった。",
+            "wiki": "法然",
             "art": "",
             "artQuery": "Honen portrait"
         },
@@ -1076,6 +1270,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "運慶・快慶らが約70日で造り上げた高さ8メートルを超える木像。力強い写実は鎌倉時代の彫刻を代表する。",
+            "wiki": "金剛力士",
             "art": "",
             "artQuery": "Unkei"
         },
@@ -1087,6 +1283,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "宋で学んだ道元が帰国し、ひたすら座禅に打ち込む曹洞宗の教えを伝えた。のちに越前に永平寺を開いた。",
+            "wiki": "道元",
             "art": "",
             "artQuery": "Dogen portrait"
         },
@@ -1098,6 +1296,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "日蓮が「南無妙法蓮華経」の題目を唱えることを説いた。他宗を激しく批判し、幕府から流罪を受けながら布教を続けた。",
+            "wiki": "日蓮",
             "art": "",
             "artQuery": "Nichiren portrait"
         },
@@ -1109,6 +1309,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "足利尊氏が示した、新しい武家政権の方針。これをもって室町幕府の成立とする見方もある。",
+            "wiki": "建武式目",
             "art": "",
             "artQuery": "Emperor Komyo"
         },
@@ -1120,6 +1322,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "尚巴志が三山に分かれていた沖縄本島を統一した。中継貿易で栄え、首里を都とする王国が400年以上続いた。",
+            "wiki": "琉球王国",
             "art": "",
             "artQuery": "Ryukyu Kingdom Shuri"
         },
@@ -1131,6 +1335,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "足利義昭を立てて信長が京都に入り、義昭を15代将軍に就けた。信長の天下統一への道が本格的に動き出す。",
+            "wiki": "織田信長",
             "art": "",
             "artQuery": "Oda Nobunaga portrait"
         },
@@ -1142,6 +1348,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "信長に敵対する勢力を助けた延暦寺を、信長の軍が攻めて焼き払った。僧や住民が殺され、仏教界に衝撃が走った。",
+            "wiki": "比叡山焼き討ち (1571年)",
             "art": "",
             "artQuery": "Enryaku-ji"
         },
@@ -1153,6 +1361,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "信長が琵琶湖の東岸に築き始めた城。高層の天主をそびえさせ、城下町では楽市楽座で商工業を盛んにした。",
+            "wiki": "安土城",
             "art": "",
             "artQuery": "Azuchi Castle model"
         },
@@ -1164,6 +1374,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "九州のキリシタン大名が4人の少年をローマへ送った。ヴァリニャーノが計画し、一行はローマ教皇に謁見した。",
+            "wiki": "天正遣欧少年使節",
             "art": "",
             "artQuery": "Tensho embassy Augsburg print"
         },
@@ -1175,6 +1387,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "九州平定の直後に、豊臣秀吉が宣教師の国外退去を命じた。ただ南蛮貿易は続けたため、徹底はされなかった。",
+            "wiki": "バテレン追放令",
             "art": "",
             "artQuery": "Nanban screen Jesuits"
         },
@@ -1186,6 +1400,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "秀吉が再び朝鮮へ出兵した戦い。苦戦の中で翌年に秀吉が亡くなり、日本軍は撤退した。",
+            "wiki": "文禄・慶長の役",
             "art": "",
             "artQuery": "Battle of Myeongnyang"
         },
@@ -1197,6 +1413,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "薩摩の島津氏が琉球へ攻め込み、首里城を落として支配下に置いた。琉球は明との関係も保つ両属の形となった。",
+            "wiki": "琉球侵攻",
             "art": "",
             "artQuery": "Shimazu Iehisa"
         },
@@ -1208,6 +1426,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "仙台藩主の伊達政宗が支倉常長らをスペインとローマへ送った。太平洋を渡ったが、貿易の交渉は実らなかった。",
+            "wiki": "慶長遣欧使節",
             "art": "",
             "artQuery": "Hasekura Tsunenaga"
         },
@@ -1219,6 +1439,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "大坂の陣の直後に、江戸幕府が大名を統制するために定めた法。無断で城を修理したり婚姻を結んだりすることを禁じた。",
+            "wiki": "武家諸法度",
             "art": "",
             "artQuery": "Tokugawa Hidetada portrait"
         },
@@ -1230,6 +1452,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "近松門左衛門が書いた人形浄瑠璃。実際の心中事件を題材に、町人の恋を描いて大当たりとなった。",
+            "wiki": "曽根崎心中",
             "art": "",
             "artQuery": "Chikamatsu Monzaemon"
         },
@@ -1241,6 +1465,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "商業を重んじた老中。株仲間を認めて税を取り、印旛沼の干拓も試みたが、賄賂が横行し天明の飢饉で失脚した。",
+            "wiki": "田沼意次",
             "art": "",
             "artQuery": "Tanuma Okitsugu"
         },
@@ -1252,6 +1478,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "天明の大噴火では火砕流が村を埋め、吾妻川の洪水も起きて多くの人が亡くなった。天明の飢饉をさらに悪化させた。",
+            "wiki": "浅間山",
             "art": "",
             "artQuery": "Asama eruption 1783"
         },
@@ -1263,6 +1491,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ロシアの使節ラクスマンが、漂流民の大黒屋光太夫を連れて根室に来航し、通商を求めた。幕府は長崎への入港証を渡した。",
+            "wiki": "アダム・ラクスマン",
             "art": "",
             "artQuery": "Adam Laxman"
         },
@@ -1274,6 +1504,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "ロシア使節のレザノフが入港証を持って長崎に来たが、幕府は半年待たせて通商を拒んだ。のちに樺太などで報復が起きた。",
+            "wiki": "ニコライ・レザノフ",
             "art": "",
             "artQuery": "Nikolai Rezanov"
         },
@@ -1285,6 +1517,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "イギリス軍艦がオランダ船を追って長崎に侵入し、薪水や食料を奪って去った。長崎奉行は責任を取って自害した。",
+            "wiki": "フェートン号事件",
             "art": "",
             "artQuery": "HMS Phaeton Nagasaki"
         },
@@ -1296,6 +1530,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 2,
+            "caption": "ドイツ人の医師シーボルトがオランダ商館医として来日した。長崎の鳴滝塾で高野長英らに西洋医学を教えた。",
+            "wiki": "フィリップ・フランツ・フォン・シーボルト",
             "art": "",
             "artQuery": "Philipp Franz von Siebold"
         },
@@ -1307,6 +1543,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "幕府の鎖国政策を批判した渡辺崋山や高野長英らが処罰された、蘭学者への弾圧事件。",
+            "wiki": "蛮社の獄",
             "art": "",
             "artQuery": "Watanabe Kazan"
         },
@@ -1318,6 +1556,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "生麦事件の報復でイギリス艦隊が鹿児島を砲撃した。薩摩は攘夷の難しさを知り、かえってイギリスに近づいた。",
+            "wiki": "薩英戦争",
             "art": "",
             "artQuery": "Bombardment of Kagoshima"
         },
@@ -1329,6 +1569,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "京都を追われた長州藩が兵を率いて御所に迫り、薩摩・会津の軍に敗れた。「蛤御門の変」とも呼ばれる。",
+            "wiki": "禁門の変",
             "art": "",
             "artQuery": "Kinmon incident"
         },
@@ -1340,6 +1582,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "坂本龍馬らの仲立ちで、対立していた薩摩と長州が手を結んだ。倒幕への大きな流れがここで生まれた。",
+            "wiki": "薩長同盟",
             "art": "",
             "artQuery": "Sakamoto Ryoma"
         },
@@ -1351,6 +1595,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "明治天皇が神々に誓う形で示した新政府の方針。「広く会議を興し」と、世論を重んじることを掲げた。",
+            "wiki": "五箇条の御誓文",
             "art": "",
             "artQuery": "Charter Oath"
         },
@@ -1362,6 +1608,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "大名が土地と人民を天皇に返した。大名は知藩事となって残り、廃藩置県への一歩となった。",
+            "wiki": "版籍奉還",
             "art": "",
             "artQuery": "Kido Takayoshi"
         },
@@ -1373,6 +1621,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 1,
+            "caption": "米で納めていた年貢を、地価の3%を現金で納める形に改めた。政府の財政は安定したが、農民の一揆も招いた。",
+            "wiki": "地租改正",
             "art": "",
             "artQuery": "Chiken land certificate"
         },
@@ -1384,6 +1634,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "板垣退助らが、国民の選んだ議会を開くよう政府に求めた。自由民権運動はここから始まった。",
+            "wiki": "民撰議院設立建白書",
             "art": "",
             "artQuery": "Itagaki Taisuke"
         },
@@ -1395,6 +1647,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "江華島事件をきっかけに、日本が朝鮮に結ばせた条約。朝鮮を開国させた、朝鮮にとって不平等な内容だった。",
+            "wiki": "日朝修好条規",
             "art": "",
             "artQuery": "Ganghwa Treaty"
         },
@@ -1406,6 +1660,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "明治天皇が、10年後に国会を開くと約束した。開拓使の官有物払い下げ事件で高まった政府批判を受けたものである。",
+            "wiki": "国会開設の詔",
             "art": "",
             "artQuery": "Okuma Shigenobu"
         },
@@ -1417,6 +1673,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "日清戦争の講和条約。清は朝鮮の独立を認め、遼東半島や台湾と賠償金を日本に渡すことになった。のちに三国干渉が起きる。",
+            "wiki": "下関条約",
             "art": "",
             "artQuery": "Treaty of Shimonoseki"
         },
@@ -1428,6 +1686,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "日清戦争の賠償金も使い、福岡県に造られた官営の製鉄所。日本の重工業はここから歩み始めた。",
+            "wiki": "官営八幡製鐵所",
             "art": "",
             "artQuery": "Yawata Steel Works"
         },
@@ -1439,6 +1699,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "アメリカの仲介で結ばれた日露戦争の講和条約。賠償金が取れなかったことで、東京では日比谷焼打事件が起きた。",
+            "wiki": "ポーツマス条約",
             "art": "",
             "artQuery": "Treaty of Portsmouth 1905"
         },
@@ -1450,6 +1712,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "外務大臣の小村寿太郎がアメリカなどと交渉し、関税自主権を完全に回復した。幕末以来の不平等条約の改正が達成された。",
+            "wiki": "関税自主権",
             "art": "",
             "artQuery": "Komura Jutaro"
         },
@@ -1461,6 +1725,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 1,
+            "caption": "シベリア出兵を見込んだ買い占めで米の値段が急騰し、富山の漁村の主婦らの動きが全国に広がった。寺内内閣は倒れた。",
+            "wiki": "米騒動",
             "art": "",
             "artQuery": "Rice riots 1918 Japan"
         },
@@ -1472,6 +1738,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "米騒動の後に、政党の総裁の原敬が初の本格的な政党内閣を組織した。爵位を持たず「平民宰相」と呼ばれた。",
+            "wiki": "原敬",
             "art": "",
             "artQuery": "Hara Takashi"
         },
@@ -1483,6 +1751,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 2,
+            "caption": "東京放送局が愛宕山などからラジオ放送を始めた。翌年に各局が統合され、日本放送協会が生まれた。",
+            "wiki": "ラジオ放送",
             "art": "",
             "artQuery": "JOAK radio 1925"
         },
@@ -1494,6 +1764,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "柳条湖で関東軍が南満州鉄道を爆破し、中国の仕業として軍事行動を始めた。翌年には満州国が建てられた。",
+            "wiki": "満洲事変",
             "art": "",
             "artQuery": "Mukden Incident"
         },
@@ -1505,6 +1777,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "満州国を認めない報告書が可決され、松岡洋右全権が退場した。日本は国際連盟から脱退し、孤立を深めていった。",
+            "wiki": "国際連盟",
             "art": "",
             "artQuery": "Yosuke Matsuoka League of Nations"
         },
@@ -1516,6 +1790,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "北京郊外の盧溝橋での衝突をきっかけに、日本と中国の全面戦争が始まった。戦いは長引き、太平洋戦争へつながった。",
+            "wiki": "日中戦争",
             "art": "",
             "artQuery": "Marco Polo Bridge"
         },
@@ -1527,6 +1803,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 2,
+            "caption": "中間子の存在を理論で予言した湯川が、日本人で初めてノーベル賞を受けた。敗戦後の日本に大きな希望を与えた。",
+            "wiki": "湯川秀樹",
             "art": "",
             "artQuery": "Hideki Yukawa"
         },
@@ -1538,6 +1816,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "田中角栄首相が北京を訪れ、中華人民共和国との国交を開いた。パンダのカンカン・ランランが日本に贈られた。",
+            "wiki": "日本国政府と中華人民共和国政府の共同声明",
             "art": "",
             "artQuery": "Kakuei Tanaka Zhou Enlai 1972"
         },
@@ -1549,6 +1829,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "東京の墨田区に開業した高さ634メートルの電波塔。自立式の電波塔としては世界一の高さである。",
+            "wiki": "東京スカイツリー",
             "art": "",
             "artQuery": "Tokyo Skytree"
         },
@@ -1560,6 +1842,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "持統天皇が飛鳥の北に移した、日本で初めて碁盤の目の街路を持つ本格的な都城。710年に平城京へ移るまで使われた。",
+            "wiki": "藤原京",
             "art": "",
             "artQuery": "Fujiwara Palace site"
         },
@@ -1571,6 +1855,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "孝謙上皇と道鏡に対抗して、権力者の恵美押勝（藤原仲麻呂）が兵を挙げたが、近江で敗れて殺された。",
+            "wiki": "藤原仲麻呂の乱",
             "art": "",
             "artQuery": "Fujiwara no Nakamaro"
         },
@@ -1582,6 +1868,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "僧の道鏡を皇位につけよという神託が届いたが、和気清麻呂が偽りと報告した。道鏡の野望は称徳天皇の死とともについえた。",
+            "wiki": "宇佐八幡宮神託事件",
             "art": "",
             "artQuery": "Wake no Kiyomaro"
         },
@@ -1593,6 +1881,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "桓武天皇が平城京を離れて山背国に移した都。造営責任者の藤原種継の暗殺などが続き、わずか10年で平安京へ移った。",
+            "wiki": "長岡京",
             "art": "",
             "artQuery": "Nagaoka Palace site"
         },
@@ -1604,6 +1894,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "桓武天皇に任じられ、蝦夷の平定に向かった。胆沢の地を治め、族長のアテルイを降伏させた。",
+            "wiki": "坂上田村麻呂",
             "art": "",
             "artQuery": "Sakanoue no Tamuramaro"
         },
@@ -1615,6 +1907,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "遣唐使の船で最澄と空海が唐に渡った。帰国した2人は、それぞれ天台宗と真言宗を開き、平安仏教の礎を築いた。",
+            "wiki": "最澄",
             "art": "",
             "artQuery": "Kukai portrait"
         },
@@ -1626,6 +1920,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "宇多天皇の詔により、基経が初めて正式に関白となった。その後の阿衡事件で、藤原氏は天皇にも力を示した。",
+            "wiki": "藤原基経",
             "art": "",
             "artQuery": "Fujiwara no Mototsune"
         },
@@ -1637,6 +1933,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "右大臣の道真が、藤原時平の讒言で大宰府に左遷された。2年後に亡くなり、のちに学問の神として祀られた。",
+            "wiki": "菅原道真",
             "art": "",
             "artQuery": "Kitano Tenjin Engi Emaki"
         },
@@ -1648,6 +1946,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "女真族とされる海賊が対馬・壱岐と九州の北部を襲った。大宰権帥の藤原隆家が地元の武士を率いて撃退した。",
+            "wiki": "刀伊の入寇",
             "art": "",
             "artQuery": "Fujiwara no Takaie"
         },
@@ -1659,6 +1959,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "後鳥羽上皇の命で藤原定家らが編んだ勅撰和歌集。余情を重んじる繊細な歌風で知られる。",
+            "wiki": "新古今和歌集",
             "art": "",
             "artQuery": "Fujiwara no Teika"
         },
@@ -1670,6 +1972,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "鴨長明が記した随筆。「ゆく河の流れは絶えずして」で始まり、災害の記憶と世の無常を語る。",
+            "wiki": "方丈記",
             "art": "",
             "artQuery": "Kamo no Chomei"
         },
@@ -1681,6 +1985,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "3代将軍の実朝が鶴岡八幡宮で甥の公暁に討たれた。源氏の将軍は途絶え、執権の北条氏が幕府の実権を固めた。",
+            "wiki": "源実朝",
             "art": "",
             "artQuery": "Minamoto no Sanetomo"
         },
@@ -1692,6 +1998,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "後醍醐天皇が倒幕の計画を再び起こして挙兵し、敗れて隠岐へ流された。だが楠木正成らの抵抗が続き、幕府の滅亡へ進む。",
+            "wiki": "元弘の乱",
             "art": "",
             "artQuery": "Kusunoki Masashige"
         },
@@ -1703,6 +2011,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "3代将軍の足利義満が京都の室町に建てた邸宅。幕府の名の由来となり、ここが政治の中心となった。",
+            "wiki": "花の御所",
             "art": "",
             "artQuery": "Hana no Gosho Rakuchu rakugai"
         },
@@ -1714,6 +2024,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "有力守護の大内義弘が堺で足利義満に背いたが、敗れて討死した。将軍の権力はいっそう強まった。",
+            "wiki": "応永の乱",
             "art": "",
             "artQuery": "Ōuchi Yoshihiro"
         },
@@ -1725,6 +2037,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "扇谷上杉氏の家臣の太田道灌が江戸に城を築いた。のちに徳川家康が入り、幕府の本拠となる城の始まりである。",
+            "wiki": "江戸城",
             "art": "",
             "artQuery": "Fujimi-yagura Edo Castle"
         },
@@ -1736,6 +2050,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "毛利元就が陶晴賢の大軍を狭い厳島に誘い込み、奇襲で破った。毛利氏が中国地方を制する足がかりとなった。",
+            "wiki": "厳島の戦い",
             "art": "",
             "artQuery": "Mori Motonari"
         },
@@ -1747,6 +2063,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "武田信玄と上杉謙信が信濃で繰り返した戦いのうち、最大の激戦。両軍の死者は多く、信玄の弟の信繁も討死した。",
+            "wiki": "川中島の戦い",
             "art": "",
             "artQuery": "Battle of Kawanakajima"
         },
@@ -1758,6 +2076,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "織田・徳川の連合軍が、近江の姉川で浅井・朝倉の連合軍を破った。のちの浅井・朝倉の滅亡につながる。",
+            "wiki": "姉川の戦い",
             "art": "",
             "artQuery": "Battle of Anegawa"
         },
@@ -1769,6 +2089,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "信長と本願寺が11年にわたり争った戦いが、朝廷の仲介で終わった。顕如は大坂の石山を退いた。",
+            "wiki": "石山合戦",
             "art": "",
             "artQuery": "Ishiyama Hongan-ji"
         },
@@ -1780,6 +2102,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "羽柴秀吉が柴田勝家を近江で破り、信長の後継者の座を固めた。活躍した武将は「七本槍」と称えられた。",
+            "wiki": "賤ヶ岳の戦い",
             "art": "",
             "artQuery": "Battle of Shizugatake"
         },
@@ -1791,6 +2115,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "秀吉と、徳川家康・織田信雄の連合軍が戦った。局地戦では家康が勝ったが、秀吉は信雄と和睦して戦いを収めた。",
+            "wiki": "小牧・長久手の戦い",
             "art": "",
             "artQuery": "Battle of Komaki and Nagakute"
         },
@@ -1802,6 +2128,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "豊臣秀吉の命で、宣教師や日本人信徒ら26人が長崎の西坂で処刑された。のちに教皇に聖人とされた。",
+            "wiki": "日本二十六聖人",
             "art": "",
             "artQuery": "Twenty-six Martyrs of Japan"
         },
@@ -1813,6 +2141,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "文禄・慶長の役の後に国交を回復するため、朝鮮の使節が江戸に来た。以後江戸時代を通じて計12回来日した。",
+            "wiki": "朝鮮通信使",
             "art": "",
             "artQuery": "Joseon Tongsinsa procession"
         },
@@ -1824,6 +2154,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "軍学者の由井正雪が、浪人を率いて幕府を倒そうとしたが、密告で失敗した。浪人の増加が社会問題であることを示した。",
+            "wiki": "慶安の変",
             "art": "",
             "artQuery": "Yui Shosetsu"
         },
@@ -1835,6 +2167,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "アイヌの首長シャクシャインが松前藩の不当な交易に対して立ち上がったが、和睦の席で殺された。",
+            "wiki": "シャクシャインの戦い",
             "art": "",
             "artQuery": "Ainu chief 19th century"
         },
@@ -1846,6 +2180,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "松尾芭蕉が弟子の曾良と江戸を発ち、東北・北陸を巡った。「閑さや岩にしみ入る蝉の声」もこの旅で生まれた。",
+            "wiki": "おくのほそ道",
             "art": "",
             "artQuery": "Matsuo Basho"
         },
@@ -1857,6 +2193,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "本居宣長が35年かけて完成させた『古事記』の注釈書。日本古来の心を探る国学を大成した。",
+            "wiki": "古事記伝",
             "art": "",
             "artQuery": "Motoori Norinaga"
         },
@@ -1868,6 +2206,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "伊能忠敬の死後、弟子たちが完成させた日本地図。実測による精密さは、幕末に西洋人も驚かせた。",
+            "wiki": "大日本沿海輿地全図",
             "art": "",
             "artQuery": "Dai Nihon Enkai Yochi Zenzu"
         },
@@ -1879,6 +2219,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "江戸の直下を襲った大地震。町は火災で焼け、水戸藩の藤田東湖らが亡くなった。地震を鎮める鯰絵が流行した。",
+            "wiki": "安政江戸地震",
             "art": "",
             "artQuery": "Ansei Edo earthquake namazu-e"
         },
@@ -1890,6 +2232,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "大老の井伊直弼が、条約調印や将軍継嗣に反対した人々を弾圧した。吉田松陰や橋本左内らが処刑された。",
+            "wiki": "安政の大獄",
             "art": "",
             "artQuery": "Yoshida Shoin"
         },
@@ -1901,6 +2245,8 @@
             "region": "JP",
             "category": "探検",
             "difficulty": 2,
+            "caption": "勝海舟らを乗せた幕府の軍艦がサンフランシスコへ渡った。日本人が操る船として太平洋を初めて横断したとされる。福沢諭吉も同乗した。",
+            "wiki": "咸臨丸",
             "art": "",
             "artQuery": "Kanrin Maru"
         },
@@ -1912,6 +2258,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "薩摩藩の大名行列を横切ったイギリス人が、藩士に斬られた。翌年の薩英戦争の原因となった。",
+            "wiki": "生麦事件",
             "art": "",
             "artQuery": "Namamugi incident"
         },
@@ -1923,6 +2271,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "岩倉具視を全権に、大久保利通・木戸孝允らが欧米へ渡った。条約改正の交渉は実らなかったが、近代国家の姿を学んだ。",
+            "wiki": "岩倉使節団",
             "art": "",
             "artQuery": "Iwakura Mission"
         },
@@ -1934,6 +2284,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "フランスの技術を入れた群馬県の官営模範工場。全国から集まった工女が製糸の技術を学んだ。世界遺産である。",
+            "wiki": "富岡製糸場",
             "art": "",
             "artQuery": "Tomioka Silk Mill"
         },
@@ -1945,6 +2297,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "明治政府が琉球藩を廃止し、軍隊を送って沖縄県を置いた。琉球王国はここで終わりを告げた。",
+            "wiki": "琉球処分",
             "art": "",
             "artQuery": "Sho Tai"
         },
@@ -1956,6 +2310,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "井上馨が条約改正のために建てた洋館。欧化政策の象徴で、外国人を招いて舞踏会が開かれた。",
+            "wiki": "鹿鳴館",
             "art": "",
             "artQuery": "Rokumeikan"
         },
@@ -1967,6 +2323,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "大日本帝国憲法のもとで初めて開かれた議会。衆議院の議員は直接国税15円以上を納める男子だけが選んだ。",
+            "wiki": "第1回帝国議会",
             "art": "",
             "artQuery": "Imperial Diet 1890"
         },
@@ -1978,6 +2336,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "来日中のロシア皇太子が、滋賀県で警備の巡査に斬りつけられた。大審院長の児島惟謙は司法の独立を守った。",
+            "wiki": "大津事件",
             "art": "",
             "artQuery": "Otsu incident"
         },
@@ -1989,6 +2349,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "第一次世界大戦のさなか、日本が中国へ権益の拡大を迫った。中国では受諾の日が国恥記念日とされ、反日運動を招いた。",
+            "wiki": "対華21カ条要求",
             "art": "",
             "artQuery": "Twenty-One Demands"
         },
@@ -2000,6 +2362,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "第一次世界大戦の後に発足した国際連盟に、日本は常任理事国として加わった。新渡戸稲造が事務次長を務めた。",
+            "wiki": "国際連盟",
             "art": "",
             "artQuery": "Nitobe Inazo"
         },
@@ -2011,6 +2375,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "海軍の青年将校らが首相官邸を襲い、犬養毅首相を射殺した。政党内閣の時代はこれで終わった。",
+            "wiki": "五・一五事件",
             "art": "",
             "artQuery": "Inukai Tsuyoshi"
         },
@@ -2022,6 +2388,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ベルリンで日本・ドイツ・イタリアが結んだ軍事同盟。アメリカとの対立はこれで決定的に深まった。",
+            "wiki": "日独伊三国同盟",
             "art": "",
             "artQuery": "Tripartite Pact signing"
         },
@@ -2033,6 +2401,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "11月3日に公布された憲法。GHQの草案をもとに議会で審議された。この日は現在の文化の日である。",
+            "wiki": "日本国憲法",
             "art": "",
             "artQuery": "Promulgation of the Constitution of Japan 1946"
         },
@@ -2044,6 +2414,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 2,
+            "caption": "NHKと日本テレビが本放送を始めた。街頭テレビのプロレス中継に人だかりができ、やがて家庭へ広がった。",
+            "wiki": "テレビジョン放送",
             "art": "",
             "artQuery": "NHK television 1953"
         },
@@ -2055,6 +2427,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "岸信介内閣が新しい日米安保条約を結んだ。国会を取り巻く激しい反対運動が起こり、内閣は総辞職した。",
+            "wiki": "安保闘争",
             "art": "",
             "artQuery": "1960 Anpo protests"
         },
@@ -2066,6 +2440,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "『雪国』などの作者が、日本人で初めてノーベル文学賞を受けた。受賞講演の題は「美しい日本の私」である。",
+            "wiki": "川端康成",
             "art": "",
             "artQuery": "Yasunari Kawabata"
         },
@@ -2077,6 +2453,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "地元の激しい反対運動を経て、千葉県に新東京国際空港が開港した。計画から12年もかかった。",
+            "wiki": "成田国際空港",
             "art": "",
             "artQuery": "Narita Airport"
         },
@@ -2088,6 +2466,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 2,
+            "caption": "本州と北海道を結ぶ海底トンネル。全長約54キロで、洞爺丸事故をきっかけに建設が進められた。",
+            "wiki": "青函トンネル",
             "art": "",
             "artQuery": "Seikan Tunnel"
         },
@@ -2099,6 +2479,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "「自然の叡智」をテーマに、愛知県で開かれた万博。「愛・地球博」の愛称で親しまれ、モリゾーとキッコロが人気を集めた。",
+            "wiki": "2005年日本国際博覧会",
             "art": "",
             "artQuery": "Linimo 100 series"
         },
@@ -2110,6 +2492,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "筑紫の豪族の磐井が、ヤマト王権の軍の朝鮮半島への派遣を阻んで反乱を起こした。翌年に物部麁鹿火に討たれた。",
+            "wiki": "磐井の乱",
             "art": "",
             "artQuery": "Iwatoyama Kofun"
         },
@@ -2121,6 +2505,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "仏教をめぐって蘇我馬子と物部守屋が争い、蘇我氏が物部氏を滅ぼした。厩戸皇子も蘇我方に加わったと伝わる。",
+            "wiki": "丁未の乱",
             "art": "",
             "artQuery": "Mononobe no Moriya"
         },
@@ -2132,6 +2518,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "蘇我馬子が建て始めた、日本で最初の本格的な寺院。百済から工人が来て、釈迦如来の飛鳥大仏が置かれた。",
+            "wiki": "飛鳥寺",
             "art": "",
             "artQuery": "Asuka-dera"
         },
@@ -2143,6 +2531,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "左大臣の長屋王が謀反の疑いをかけられて自害した。藤原四兄弟が権力を握るための陰謀とみられている。",
+            "wiki": "長屋王の変",
             "art": "",
             "artQuery": "Prince Nagaya residence"
         },
@@ -2154,6 +2544,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "大宰府に左遷された広嗣が、吉備真備らの排除を求めて九州で挙兵した。敗れた後、聖武天皇は都を転々とした。",
+            "wiki": "藤原広嗣の乱",
             "art": "",
             "artQuery": "Fujiwara no Hirotsugu"
         },
@@ -2165,6 +2557,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "坂上田村麻呂が蝦夷の地に築いた城。鎮守府が多賀城から移され、東北の支配の拠点となった。",
+            "wiki": "胆沢城",
             "art": "",
             "artQuery": "Isawa Castle"
         },
@@ -2176,6 +2570,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "平城上皇と嵯峨天皇の対立の中で、藤原薬子らが敗れた事件。嵯峨天皇は蔵人頭を置いて機密を守った。",
+            "wiki": "薬子の変",
             "art": "",
             "artQuery": "Emperor Saga"
         },
@@ -2187,6 +2583,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "平清盛が一門の繁栄を願い、厳島神社に納めた豪華な経典。金銀で飾られ、平安時代の工芸の頂点とされる。",
+            "wiki": "平家納経",
             "art": "",
             "artQuery": "Heike Nokyo"
         },
@@ -2198,6 +2596,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "後白河法皇の近臣が京都東山の鹿ケ谷で平氏打倒を企てたが、密告で露見した。俊寛らが島に流された。",
+            "wiki": "鹿ケ谷の陰謀",
             "art": "",
             "artQuery": "Shishigatani"
         },
@@ -2209,6 +2609,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "平清盛が摂津の福原へ都を移そうとした。日宋貿易の拠点に近い地だったが、反対が強く半年で京都に戻った。",
+            "wiki": "福原京",
             "art": "",
             "artQuery": "Taira no Kiyomori statue"
         },
@@ -2220,6 +2622,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "源義仲が加賀と越中の境で平氏の大軍を破った。牛の角に松明をつけて夜襲したとの逸話がある。義仲は京へ進んだ。",
+            "wiki": "倶利伽羅峠の戦い",
             "art": "",
             "artQuery": "Minamoto no Yoshinaka"
         },
@@ -2231,6 +2635,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "源義経が崖を駆け下りる「鵯越の逆落とし」で平氏の陣を破ったと伝わる。平敦盛の最期もこの戦いで語られる。",
+            "wiki": "一ノ谷の戦い",
             "art": "",
             "artQuery": "Battle of Ichi-no-Tani"
         },
@@ -2242,6 +2648,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "義経が嵐の中を四国に渡り、背後から平氏を奇襲した。那須与一が扇の的を射た話で名高い。",
+            "wiki": "屋島の戦い",
             "art": "",
             "artQuery": "Nasu no Yoichi"
         },
@@ -2253,6 +2661,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "頼朝が大軍を送り、義経をかくまった罪を理由に平泉の藤原氏を滅ぼした。4代泰衡が討たれ、頼朝の全国支配が固まった。",
+            "wiki": "奥州藤原氏",
             "art": "",
             "artQuery": "Fujiwara no Hidehira"
         },
@@ -2264,6 +2674,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "高徳院の銅造の阿弥陀如来坐像。もとは大仏殿の中にあったが、建物は失われ、今は露座の大仏となっている。",
+            "wiki": "鎌倉大仏",
             "art": "",
             "artQuery": "Kamakura Daibutsu"
         },
@@ -2275,6 +2687,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "後醍醐天皇の最初の倒幕計画が事前に漏れ、側近の日野資朝が佐渡へ流された。天皇の倒幕の志は続いた。",
+            "wiki": "正中の変",
             "art": "",
             "artQuery": "Hino Suketomo"
         },
@@ -2286,6 +2700,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "九州から東上する足利尊氏の軍を、楠木正成らが摂津で迎え撃った。敗れた正成は自害し、のちに忠臣として語られた。",
+            "wiki": "湊川の戦い",
             "art": "",
             "artQuery": "Battle of Minatogawa"
         },
@@ -2297,6 +2713,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "近江の馬借の蜂起から、畿内の農民らが借金の帳消しを求めて土倉や酒屋を襲った。日本初の本格的な土一揆とされる。",
+            "wiki": "正長の土一揆",
             "art": "",
             "artQuery": "Yagyu tokusei stone"
         },
@@ -2308,6 +2726,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "播磨の守護の赤松満祐が、6代将軍の足利義教を自邸の宴で殺した。将軍の権威は大きく揺らいだ。",
+            "wiki": "嘉吉の乱",
             "art": "",
             "artQuery": "Ashikaga Yoshinori"
         },
@@ -2319,6 +2739,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "8代将軍の足利義政が東山に建てた山荘の観音殿。書院造の部屋やわび・さびを重んじる東山文化を代表する。",
+            "wiki": "慈照寺",
             "art": "",
             "artQuery": "Ginkaku-ji Kannon-den"
         },
@@ -2330,6 +2752,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "信長が美濃の斎藤龍興を破って稲葉山城を手に入れた。地名を「岐阜」と改め、「天下布武」の印を使い始めた。",
+            "wiki": "稲葉山城の戦い",
             "art": "",
             "artQuery": "Saito Dosan"
         },
@@ -2341,6 +2765,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "わび茶を大成した利休が、豊臣秀吉の怒りを買い切腹を命じられた。理由にはいくつもの説があるが、よく分かっていない。",
+            "wiki": "千利休",
             "art": "",
             "artQuery": "Sen no Rikyu"
         },
@@ -2352,6 +2778,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "オランダ船が豊後に漂着した。航海士のウィリアム・アダムスは徳川家康に重用され、三浦按針と名乗った。",
+            "wiki": "リーフデ号",
             "art": "",
             "artQuery": "William Adams"
         },
@@ -2363,6 +2791,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "方広寺の鐘の銘文を口実に、徳川家康が大坂城を攻めた。真田丸の攻防の後、和議で堀が埋められた。",
+            "wiki": "大坂の陣",
             "art": "",
             "artQuery": "Siege of Osaka winter campaign"
         },
@@ -2374,6 +2804,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "徳川家康の霊を祀る神社。3代将軍の家光が豪華に建て替え、陽明門や「見ざる聞かざる言わざる」の彫刻が名高い。",
+            "wiki": "日光東照宮",
             "art": "",
             "artQuery": "Nikko Toshogu"
         },
@@ -2385,6 +2817,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "井原西鶴が大坂で出した浮世草子の第1作。町人の欲と暮らしを生き生きと描き、元禄文化の一角を担った。",
+            "wiki": "好色一代男",
             "art": "",
             "artQuery": "Ihara Saikaku"
         },
@@ -2396,6 +2830,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "鈴木春信らが、多くの色を摺り重ねた浮世絵を始めた。庶民も楽しめる華やかな版画として広まった。",
+            "wiki": "錦絵",
             "art": "",
             "artQuery": "Suzuki Harunobu Heron Maiden"
         },
@@ -2407,6 +2843,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "十返舎一九の滑稽本。弥次さん喜多さんの珍道中が大人気となり、江戸の庶民の間に旅への憧れを広げた。",
+            "wiki": "東海道中膝栗毛",
             "art": "",
             "artQuery": "Jippensha Ikku"
         },
@@ -2418,6 +2856,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "曲亭馬琴が28年かけて書いた長編読本。8つの玉を持つ犬士たちの物語で、途中で失明した馬琴は口述で完成させた。",
+            "wiki": "南総里見八犬伝",
             "art": "",
             "artQuery": "Kyokutei Bakin"
         },
@@ -2429,6 +2869,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "帰国するシーボルトの荷物から、持ち出し禁止の日本地図が見つかった。本人は国外追放、高橋景保は獄死した。",
+            "wiki": "シーボルト事件",
             "art": "",
             "artQuery": "Siebold Japan map"
         },
@@ -2440,6 +2882,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "緒方洪庵が大坂に開いた蘭学の塾。福沢諭吉や大村益次郎など、のちに活躍する人材を多く出した。",
+            "wiki": "適塾",
             "art": "",
             "artQuery": "Ogata Koan"
         },
@@ -2451,6 +2895,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "日米修好通商条約にもとづいて横浜が開港した。小さな漁村は、生糸の輸出で栄える国際的な貿易港へ変わった。",
+            "wiki": "横浜港",
             "art": "",
             "artQuery": "Yokohama port 1860s"
         },
@@ -2462,6 +2908,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "前年に外国船を砲撃した長州へ、英仏蘭米の4か国の艦隊が報復した。砲台を占領され、長州は攘夷をあきらめた。",
+            "wiki": "下関戦争",
             "art": "",
             "artQuery": "Bombardment of Shimonoseki"
         },
@@ -2473,6 +2921,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "新政府軍の西郷隆盛と幕府の勝海舟の会談によって、江戸城は戦わずに明け渡された。江戸の町は戦火を免れた。",
+            "wiki": "江戸開城",
             "art": "",
             "artQuery": "Katsu Kaishu"
         },
@@ -2484,6 +2934,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "榎本武揚らの旧幕府軍が五稜郭に立てこもったが降伏した。土方歳三も戦死し、戊辰戦争はここで終わった。",
+            "wiki": "箱館戦争",
             "art": "",
             "artQuery": "Goryokaku"
         },
@@ -2495,6 +2947,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "満20歳の男子に兵役を課した法令。武士に代わる国民の軍隊を作るもので、血税一揆と呼ばれる反対も起こった。",
+            "wiki": "徴兵令",
             "art": "",
             "artQuery": "Yamagata Aritomo"
         },
@@ -2506,6 +2960,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "東京開成学校と東京医学校をまとめて生まれた、日本で最初の近代的な大学。のちに帝国大学となった。",
+            "wiki": "東京大学",
             "art": "",
             "artQuery": "Akamon University of Tokyo"
         },
@@ -2517,6 +2973,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "松方正義の主導で、中央銀行として設立された。紙幣の発行を一手に担い、通貨の安定を図った。",
+            "wiki": "日本銀行",
             "art": "",
             "artQuery": "Matsukata Masayoshi"
         },
@@ -2528,6 +2986,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "紀州沖でイギリス船が沈み、日本人乗客が全員亡くなった。船長の軽い判決に、条約改正を求める声が高まった。",
+            "wiki": "ノルマントン号事件",
             "art": "",
             "artQuery": "Normanton incident Bigot"
         },
@@ -2539,6 +2999,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "忠君愛国を説いた教育の方針を天皇の言葉として示した。戦前の学校で読み上げられ、戦後に失効した。",
+            "wiki": "教育ニ関スル勅語",
             "art": "",
             "artQuery": "Imperial Rescript on Education"
         },
@@ -2550,6 +3012,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "岐阜・愛知を襲った日本の内陸で最大級の地震。根尾谷断層が大きく動き、7千人以上が亡くなった。",
+            "wiki": "濃尾地震",
             "art": "",
             "artQuery": "Mino-Owari earthquake 1891"
         },
@@ -2561,6 +3025,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "辰野金吾が設計した赤レンガの駅舎が丸の内に開業した。2012年に、ドームを持つ創建時の姿へ復原された。",
+            "wiki": "東京駅",
             "art": "",
             "artQuery": "Tokyo Station 1914"
         },
@@ -2572,6 +3038,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "差別に苦しむ人々が、自らの手で解放を目指して京都で結成した。「人の世に熱あれ、人間に光あれ」の宣言で知られる。",
+            "wiki": "全国水平社",
             "art": "",
             "artQuery": "Suiheisha"
         },
@@ -2583,6 +3051,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "鳩山一郎首相がモスクワで調印し、ソ連との国交を回復した。平和条約は結ばれず、北方領土問題は残された。",
+            "wiki": "日本国とソヴィエト社会主義共和国連邦との共同宣言",
             "art": "",
             "artQuery": "Ichiro Hatoyama"
         },
@@ -2594,6 +3064,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "紀伊半島に上陸した台風が高潮を起こし、名古屋周辺で5千人を超える人が亡くなった。災害対策基本法のきっかけとなった。",
+            "wiki": "伊勢湾台風",
             "art": "",
             "artQuery": "Isewan Typhoon"
         },
@@ -2605,6 +3077,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "アメリカの施政下にあった小笠原諸島が、日本に返還された。東京都に属する島々である。",
+            "wiki": "小笠原諸島",
             "art": "",
             "artQuery": "Ogasawara Islands Chichijima"
         },
@@ -2616,6 +3090,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "赤字の続いた日本国有鉄道が、JR各社に分けて民営化された。中曽根康弘内閣の行政改革の大きな柱だった。",
+            "wiki": "国鉄分割民営化",
             "art": "",
             "artQuery": "Japanese National Railways"
         },
@@ -2627,6 +3103,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "法隆寺・姫路城と屋久島・白神山地が、日本で最初の世界遺産に登録された。",
+            "wiki": "法隆寺地域の仏教建造物",
             "art": "",
             "artQuery": "Himeji Castle"
         },
@@ -2638,6 +3116,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "京都の会議で、先進国の温室効果ガスの削減目標が定められた。地球温暖化対策の大きな節目である。",
+            "wiki": "京都議定書",
             "art": "",
             "artQuery": "Kyoto International Conference Center"
         },
@@ -2649,6 +3129,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "日本と韓国が共同で開いた、アジア初のサッカーのワールドカップ。日本代表は初めて決勝トーナメントに進んだ。",
+            "wiki": "2002 FIFAワールドカップ",
             "art": "",
             "artQuery": "2002 FIFA World Cup"
         },
@@ -2660,6 +3142,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "邪馬台国の女王が魏に使いを送り、「親魏倭王」の称号と銅鏡を授かった。『魏志倭人伝』が伝える出来事である。",
+            "wiki": "卑弥呼",
             "art": "",
             "artQuery": "Himiko",
             "artFile": "Yoshinogari-iseki zenkei.JPG"
@@ -2672,6 +3156,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "倭王の武（雄略天皇とされる）が中国の宋に手紙を送り、国土を広げた功績を語って高い称号を求めた。",
+            "wiki": "倭の五王",
             "art": "",
             "artQuery": "Daisen Kofun"
         },
@@ -2683,6 +3169,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "聖徳太子らが、家柄ではなく才能で役人を取り立てようと定めた制度。冠の色で位を分けた。",
+            "wiki": "冠位十二階",
             "art": "",
             "artQuery": "Prince Shotoku"
         },
@@ -2694,6 +3182,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "聖徳太子が斑鳩に建てたと伝わる寺。のちに火災にあったが、再建された西院伽藍は世界最古の木造建築群である。",
+            "wiki": "法隆寺",
             "art": "",
             "artQuery": "Horyu-ji pagoda"
         },
@@ -2705,6 +3195,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "白村江の敗戦の後、中大兄皇子が琵琶湖のほとりに都を移した。翌年に即位して天智天皇となった。",
+            "wiki": "近江大津宮",
             "art": "",
             "artQuery": "Omi Otsu-kyo site",
             "artFile": "Ōmi Ōtsu Palace Nishigori Site.jpg"
@@ -2717,6 +3209,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "天智天皇のもとで作られた、全国規模で初めての戸籍。人々を把握して、律令制のもとを築いた。",
+            "wiki": "古代日本の戸籍制度",
             "art": "",
             "artQuery": "Emperor Tenji"
         },
@@ -2728,6 +3222,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "壬申の乱に勝った大海人皇子が、飛鳥で即位した。律令や歴史書の編纂を命じ、「天皇」の称号を定着させたとされる。",
+            "wiki": "天武天皇",
             "art": "",
             "artQuery": "Emperor Tenmu"
         },
@@ -2739,6 +3235,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "元明天皇が諸国に、地名の由来や産物、伝承を記して出すよう命じた。出雲の風土記がほぼ完全な形で伝わる。",
+            "wiki": "風土記",
             "art": "",
             "artQuery": "Izumo Fudoki",
             "artFile": "Empress Gemmei.jpg"
@@ -2751,6 +3249,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "藤原不比等らが編んだ律令で、大宝律令を改めたもの。実際の施行は757年で、後世まで長く法の基礎となった。",
+            "wiki": "養老律令",
             "art": "",
             "artQuery": "Fujiwara no Fuhito",
             "artFile": "Fujiwara no Fuhito (Nara National Museum) detail.jpg"
@@ -2763,6 +3263,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "現存する日本で最古の漢詩集。大友皇子や大津皇子らの詩を収め、奈良時代の貴族の教養を今に伝える。",
+            "wiki": "懐風藻",
             "art": "",
             "artQuery": "Nara period poetry manuscript",
             "artFile": "Prince Otsu.jpg"
@@ -2775,6 +3277,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 1,
+            "caption": "唐の高僧の鑑真が、5度の渡航失敗と失明を乗り越えて日本に着いた。正式な戒律を伝え、東大寺に戒壇を設けた。",
+            "wiki": "鑑真",
             "art": "",
             "artQuery": "Ganjin statue Toshodai-ji"
         },
@@ -2786,6 +3290,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "橘諸兄の子の奈良麻呂が、権力を握る藤原仲麻呂を倒そうと企てたが、密告で失敗し一味は処罰された。",
+            "wiki": "橘奈良麻呂の乱",
             "art": "",
             "artQuery": "Nara Heijo palace"
         },
@@ -2797,6 +3303,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "鑑真が奈良に開いた律宗の寺。金堂には奈良時代の姿が残り、鑑真和上の像が今も伝えられている。",
+            "wiki": "唐招提寺",
             "art": "",
             "artQuery": "Toshodai-ji Kondo"
         },
@@ -2808,6 +3316,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "光仁天皇の子が即位した。都を移し、蝦夷の平定と政治の立て直しに取り組み、平安時代の礎を築いた。",
+            "wiki": "桓武天皇",
             "art": "",
             "artQuery": "Emperor Kanmu"
         },
@@ -2819,6 +3329,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "朝廷軍を長く苦しめた蝦夷の族長アテルイが、坂上田村麻呂に降伏した。田村麻呂の助命の願いは通らず、河内で処刑された。",
+            "wiki": "アテルイ",
             "art": "",
             "artQuery": "Sakanoue no Tamuramaro"
         },
@@ -2830,6 +3342,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "唐から帰った最澄の願いが認められ、天台宗に年分度者が与えられた。比叡山延暦寺はのちの仏教の学びの中心となる。",
+            "wiki": "天台宗",
             "art": "",
             "artQuery": "Saicho portrait"
         },
@@ -2841,6 +3355,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "空海が嵯峨天皇から紀伊の高野山を賜り、真言密教の修行の場とした。今も奥之院に空海が眠ると信じられている。",
+            "wiki": "高野山",
             "art": "",
             "artQuery": "Mount Koya Danjo Garan",
             "artFile": "Konpon Daito, Koyasan (3811155264).jpg"
@@ -2853,6 +3369,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "伴健岑と橘逸勢が謀反の罪で流された事件。藤原良房はこれを機に、他の氏族を退けて力を伸ばした。",
+            "wiki": "承和の変",
             "art": "",
             "artQuery": "Emperor Ninmyo"
         },
@@ -2864,6 +3382,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "内裏の清涼殿に雷が落ち、公卿らが死亡した。菅原道真の怨霊のしわざと恐れられ、天神信仰を強めた。",
+            "wiki": "清涼殿落雷事件",
             "art": "",
             "artQuery": "Kitano Tenjin Engi Emaki"
         },
@@ -2875,6 +3395,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "関東で国府を襲った将門が、新皇を名乗って朝廷に背いた。翌年に平貞盛と藤原秀郷に討たれた。",
+            "wiki": "承平天慶の乱",
             "art": "",
             "artQuery": "Taira no Masakado"
         },
@@ -2886,6 +3408,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "左大臣の源高明が謀反の疑いで大宰府に左遷された。藤原氏の他氏排斥はこれで完成し、摂関が常に置かれるようになった。",
+            "wiki": "安和の変",
             "art": "",
             "artQuery": "Fujiwara clan Heian court"
         },
@@ -2897,6 +3421,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "僧の源信がまとめた書。地獄と極楽の姿を描き、念仏による極楽往生を説いて、浄土信仰を広めた。",
+            "wiki": "往生要集",
             "art": "",
             "artQuery": "Genshin monk"
         },
@@ -2908,6 +3434,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "房総半島で平忠常が起こした反乱。源頼信が鎮め、源氏が東国に勢力を伸ばすきっかけとなった。",
+            "wiki": "平忠常の乱",
             "art": "",
             "artQuery": "Heian period samurai"
         },
@@ -2919,6 +3447,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "陸奥の安倍氏と国司が争い始めた戦い。源頼義・義家の父子が、清原氏の助けを得て安倍氏を滅ぼした。",
+            "wiki": "前九年の役",
             "art": "",
             "artQuery": "Zenkunen kassen emaki",
             "artFile": "源頼義像.jpg"
@@ -2931,6 +3461,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "後三条天皇が記録荘園券契所を置き、証拠の無い荘園を整理した。摂関家の荘園も対象とする厳しい改革だった。",
+            "wiki": "荘園整理令",
             "art": "",
             "artQuery": "Emperor Go-Sanjo"
         },
@@ -2942,6 +3474,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "奥州の清原氏の内紛に、源義家が介入した戦い。勝ち残った藤原清衡が、のちの奥州藤原氏の祖となった。",
+            "wiki": "後三年の役",
             "art": "",
             "artQuery": "Gosannen kassen emaki"
         },
@@ -2953,6 +3487,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "後白河上皇が平清盛の協力で建てた蓮華王院の本堂。1001体の千手観音像が並ぶ長いお堂である。",
+            "wiki": "三十三間堂",
             "art": "",
             "artQuery": "Sanjusangen-do"
         },
@@ -2964,6 +3500,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "鎌倉に入った源頼朝が、御家人を統率する役所を置いた。初代の長官は和田義盛である。",
+            "wiki": "侍所",
             "art": "",
             "artQuery": "Kamakura period samurai"
         },
@@ -2975,6 +3513,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "頼朝が一般の政務を担う役所を置き、京都から招いた大江広元を長官とした。のちに政所へ発展した。",
+            "wiki": "公文所",
             "art": "",
             "artQuery": "Oe no Hiromoto"
         },
@@ -2986,6 +3526,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "頼朝が国ごとに守護を、荘園や公領に地頭を置くことを朝廷に認めさせた。武家の支配が全国に及び始めた。",
+            "wiki": "守護",
             "art": "",
             "artQuery": "Minamoto no Yoritomo"
         },
@@ -2997,6 +3539,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 2,
+            "caption": "宋から帰国した栄西が臨済宗を伝えた。禅とともに茶の習慣も広め、『喫茶養生記』を著した。",
+            "wiki": "明菴栄西",
             "art": "",
             "artQuery": "Eisai portrait"
         },
@@ -3008,6 +3552,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "頼朝の妻である北条政子の父の時政が、幕府の実権を握り初代の執権となった。のちに失脚して伊豆へ退いた。",
+            "wiki": "北条時政",
             "art": "",
             "artQuery": "Hojo Tokimasa"
         },
@@ -3019,6 +3565,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "承久の乱の後、幕府が京都に置いた機関。朝廷の監視と西国の御家人の統括を担い、幕府の力を西国へ広げた。",
+            "wiki": "六波羅探題",
             "art": "",
             "artQuery": "Hojo Yoshitoki"
         },
@@ -3030,6 +3578,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "執権の北条泰時が置いた、有力な御家人らの合議の機関。幕府の政治は話し合いで決める形が整った。",
+            "wiki": "評定衆",
             "art": "",
             "artQuery": "Hojo Yasutoki"
         },
@@ -3041,6 +3591,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "5代執権の北条時頼が、御家人の土地の裁判を早く公平に進めるために置いた。評定衆の下で審理を担った。",
+            "wiki": "引付衆",
             "art": "",
             "artQuery": "Hojo Tokiyori"
         },
@@ -3052,6 +3604,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "フビライの国書が高麗を通じて日本に届き、服属を求めた。若い執権の北条時宗は返書を出さず、対決の道を選んだ。",
+            "wiki": "元寇",
             "art": "",
             "artQuery": "Kublai Khan portrait"
         },
@@ -3063,6 +3617,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "文永の役の後、幕府が九州の御家人に命じて博多湾沿いに築かせた石の防壁。弘安の役で元軍の上陸を阻んだ。",
+            "wiki": "元寇防塁",
             "art": "",
             "artQuery": "Genko Borui Fukuoka"
         },
@@ -3074,6 +3630,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "父の義詮の跡を継ぎ、わずか11歳で3代将軍となった。のちに南北朝を合一し、室町幕府の最盛期を築いた。",
+            "wiki": "足利義満",
             "art": "",
             "artQuery": "Ashikaga Yoshimitsu"
         },
@@ -3085,6 +3643,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "「六分の一殿」と呼ばれた山名氏の勢力を、足利義満が討って削いだ戦い。山名氏清が京都で敗死した。",
+            "wiki": "明徳の乱",
             "art": "",
             "artQuery": "Yamana clan"
         },
@@ -3096,6 +3656,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "将軍職を子の義持に譲った義満が、太政大臣に上った。武家と公家の双方の頂点に立ち、翌年に出家した。",
+            "wiki": "足利義満",
             "art": "",
             "artQuery": "Kinkaku-ji Yoshimitsu"
         },
@@ -3107,6 +3669,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "前関東管領の上杉氏憲（禅秀）が鎌倉公方の足利持氏に背いた。幕府の援軍により鎮められた。",
+            "wiki": "上杉禅秀の乱",
             "art": "",
             "artQuery": "Kamakura kubo"
         },
@@ -3118,6 +3682,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "鎌倉公方の足利持氏が、将軍の足利義教に背いて敗れ、翌年に自害した。関東の争乱はここから長く続く。",
+            "wiki": "永享の乱",
             "art": "",
             "artQuery": "Ashikaga Mochiuji"
         },
@@ -3129,6 +3695,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "嘉吉の乱の直後に、農民らが「代替わりの徳政」を求めて京都を包囲した。幕府は初めて徳政令を出した。",
+            "wiki": "嘉吉の徳政一揆",
             "art": "",
             "artQuery": "Muromachi period peasants",
             "artFile": "Ashikaga Yoshinori.jpg"
@@ -3141,6 +3709,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "南山城の国人と農民が、争う畠山氏の軍を国外へ追い出した。以後8年にわたり、自治を行った。",
+            "wiki": "山城国一揆",
             "art": "",
             "artQuery": "Byodo-in Uji"
         },
@@ -3152,6 +3722,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "朝鮮の貿易港の三浦で、日本人の居留民が朝鮮の統制に反発して暴動を起こした。日朝の貿易は大きく縮んだ。",
+            "wiki": "三浦の乱",
             "art": "",
             "artQuery": "Joseon Busan"
         },
@@ -3163,6 +3735,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "明の寧波で、大内氏と細川氏の遣明船が争った事件。これを機に、大内氏が勘合貿易を独占していった。",
+            "wiki": "寧波の乱",
             "art": "",
             "artQuery": "Ningbo",
             "artFile": "Ōuchi Yoshioki.jpg"
@@ -3175,6 +3749,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "比叡山の延暦寺の僧兵が、京都の日蓮宗の寺を焼き払った。町衆の法華一揆の自治はここで崩れた。",
+            "wiki": "法華一揆",
             "art": "",
             "artQuery": "Nichiren Buddhism temple Kyoto",
             "artFile": "Enryakuji Konponchudo04n4272.jpg"
@@ -3187,6 +3763,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "北条氏康が、上杉・足利の大軍に囲まれた河越城を夜襲で救った。北条氏は関東の覇者となっていく。",
+            "wiki": "河越城の戦い",
             "art": "",
             "artQuery": "Kawagoe Castle"
         },
@@ -3198,6 +3776,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "徳川家康が、西へ進む武田信玄に挑んで大敗した。命からがら浜松城へ逃げ帰った、家康の生涯最大の敗北である。",
+            "wiki": "三方ヶ原の戦い",
             "art": "",
             "artQuery": "Battle of Mikatagahara"
         },
@@ -3209,6 +3789,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "織田信長が安土の城下に法令を出し、税や座の特権を無くした。商人を自由に集め、町を栄えさせた。",
+            "wiki": "楽市・楽座",
             "art": "",
             "artQuery": "Azuchi Castle"
         },
@@ -3220,6 +3802,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "織田・徳川の軍が甲斐へ攻め込み、武田勝頼は天目山の麓で自害した。名門の武田氏はここに滅びた。",
+            "wiki": "甲州征伐",
             "art": "",
             "artQuery": "Takeda Katsuyori"
         },
@@ -3231,6 +3815,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "本能寺の変から間もなく、中国から引き返した羽柴秀吉が明智光秀を破った。「三日天下」の語のもととなる。",
+            "wiki": "山崎の戦い",
             "art": "",
             "artQuery": "Battle of Yamazaki"
         },
@@ -3242,6 +3828,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "秀吉が石山本願寺の跡に築き始めた巨城。金箔瓦の天守を持ち、政治の中心となった。今の城は徳川期のものが土台である。",
+            "wiki": "大坂城",
             "art": "",
             "artQuery": "Osaka Castle folding screen"
         },
@@ -3253,6 +3841,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "秀吉が武家として初めて関白に就いた。翌年には太政大臣にもなり、豊臣の姓を賜った。",
+            "wiki": "豊臣秀吉",
             "art": "",
             "artQuery": "Toyotomi Hideyoshi"
         },
@@ -3264,6 +3854,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "秀吉が京都の北野天満宮で開いた大規模な茶会。身分を問わず参加を呼びかけ、千利休らも茶を立てた。",
+            "wiki": "北野大茶湯",
             "art": "",
             "artQuery": "Kitano Tenmangu"
         },
@@ -3275,6 +3867,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "秀吉が京都に築いた豪華な邸宅。翌年には後陽成天皇を迎え、大名に忠誠を誓わせた。のちに破却された。",
+            "wiki": "聚楽第",
             "art": "",
             "artQuery": "Jurakudai screen"
         },
@@ -3286,6 +3880,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "秀吉が大軍を率いて九州へ渡り、島津義久を降伏させた。西日本はこれで秀吉の支配下に入った。",
+            "wiki": "九州平定",
             "art": "",
             "artQuery": "Shimazu Yoshihisa"
         },
@@ -3297,6 +3893,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "土佐に漂着したスペイン船の積み荷を、秀吉が没収した事件。翌年の26聖人の殉教につながった。",
+            "wiki": "サン＝フェリペ号事件",
             "art": "",
             "artQuery": "Spanish galleon"
         },
@@ -3308,6 +3906,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "伏見城で秀吉が亡くなった。幼い秀頼を五大老に託したが、朝鮮の日本軍は撤退し、家康の台頭が始まった。",
+            "wiki": "豊臣秀吉",
             "art": "",
             "artQuery": "Hokoku Shrine Kyoto"
         },
@@ -3319,6 +3919,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "徳川家康が東海道に宿場を定め、人馬を置いて公用の荷を運ばせた。のちの東海道五十三次のもとである。",
+            "wiki": "東海道",
             "art": "",
             "artQuery": "Tokaido post station ukiyo-e"
         },
@@ -3330,6 +3932,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "家康が将軍職を子の秀忠に譲り、将軍は徳川家が継ぐものと世に示した。家康は駿府で大御所として力を持ち続けた。",
+            "wiki": "徳川秀忠",
             "art": "",
             "artQuery": "Tokugawa Hidetada"
         },
@@ -3341,6 +3945,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "徳川家康の許しを得て、オランダが長崎の平戸に商館を開いた。のちに出島へ移ることになる。",
+            "wiki": "オランダ商館",
             "art": "",
             "artQuery": "Hirado Dutch trading post"
         },
@@ -3352,6 +3958,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "徳川家康が諸大名に命じて築かせた城。大坂の豊臣氏への備えとなり、金の鯱が名高い。",
+            "wiki": "名古屋城",
             "art": "",
             "artQuery": "Nagoya Castle"
         },
@@ -3363,6 +3971,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "江戸幕府が直轄領にキリスト教の禁止を命じた。翌年には全国に広げ、信徒の弾圧が本格化した。",
+            "wiki": "禁教令",
             "art": "",
             "artQuery": "Christianity in Japan fumie"
         },
@@ -3374,6 +3984,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ジョン・セーリスが来航して平戸に開いた商館。オランダとの競争に敗れ、10年で閉鎖した。",
+            "wiki": "イギリス東インド会社",
             "art": "",
             "artQuery": "William Adams"
         },
@@ -3385,6 +3997,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "大坂の陣の直後に、大名の居城以外の城を壊させた法令。大名の軍事力を削ぐのが狙いである。",
+            "wiki": "一国一城令",
             "art": "",
             "artQuery": "Japanese castle Edo period"
         },
@@ -3396,6 +4010,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "江戸幕府が天皇と公家の行いを定めた法。朝廷を幕府の統制のもとに置いた。",
+            "wiki": "禁中並公家諸法度",
             "art": "",
             "artQuery": "Kyoto Imperial Palace"
         },
@@ -3407,6 +4023,8 @@
             "region": "JP",
             "category": "宗教",
             "difficulty": 3,
+            "caption": "長崎の西坂で、宣教師や信徒ら55人が処刑された。幕府のキリシタン弾圧の激しさを物語る事件である。",
+            "wiki": "元和の大殉教",
             "art": "",
             "artQuery": "Great Genna Martyrdom"
         },
@@ -3418,6 +4036,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "徳川家光が3代将軍となった。「生まれながらの将軍」と語ったと伝わり、幕府の諸制度を固めた。",
+            "wiki": "徳川家光",
             "art": "",
             "artQuery": "Tokugawa Iemitsu"
         },
@@ -3429,6 +4049,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "江戸幕府がスペイン船の来航を禁じた。キリスト教の布教を警戒したためで、鎖国の体制への一歩である。",
+            "wiki": "鎖国",
             "art": "",
             "artQuery": "Spanish galleon 17th century",
             "artFile": "Scale model of a Spanish galleon.jpg"
@@ -3441,6 +4063,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "江戸幕府が日本人の海外渡航と帰国を全面的に禁じた。東南アジアの日本町は、やがて衰えていった。",
+            "wiki": "鎖国",
             "art": "",
             "artQuery": "Red seal ship"
         },
@@ -3452,6 +4076,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "江戸幕府が定めた銭。全国に広く流通し、これで中国の銭に頼らない貨幣のしくみが整った。",
+            "wiki": "寛永通宝",
             "art": "",
             "artQuery": "Kan'ei Tsuho coin",
             "artFile": "Kaneitsuho.jpg"
@@ -3464,6 +4090,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "幼い家綱が4代将軍となった。この頃から、武力より法と礼儀を重んじる文治政治へ移っていった。",
+            "wiki": "徳川家綱",
             "art": "",
             "artQuery": "Tokugawa Ietsuna"
         },
@@ -3475,6 +4103,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "商人の河村瑞賢が、出羽から日本海を回って大坂・江戸へ米を運ぶ航路を整えた。のちの北前船の道である。",
+            "wiki": "河村瑞賢",
             "art": "",
             "artQuery": "Kitamaebune"
         },
@@ -3486,6 +4116,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "三井高利が江戸に呉服店を開き、「現金掛け値なし」の商法で繁盛した。のちの三越のもとである。",
+            "wiki": "三越",
             "art": "",
             "artQuery": "Mitsui Echigoya ukiyo-e"
         },
@@ -3497,6 +4129,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "徳川綱吉が5代将軍となった。儒学を重んじる一方、生類憐れみの令で「犬公方」とも呼ばれた。",
+            "wiki": "徳川綱吉",
             "art": "",
             "artQuery": "Tokugawa Tsunayoshi"
         },
@@ -3508,6 +4142,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "徳川綱吉が江戸の湯島に建てた孔子廟。林家の学問所も移され、のちに昌平坂学問所となった。",
+            "wiki": "湯島聖堂",
             "art": "",
             "artQuery": "Yushima Seido"
         },
@@ -3519,6 +4155,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "勘定吟味役の荻原重秀が、金の含有量を減らした小判を作った。幕府は差益を得たが、物価が上がった。",
+            "wiki": "元禄小判",
             "art": "",
             "artQuery": "Genroku koban"
         },
@@ -3530,6 +4168,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "大石内蔵助ら47人が吉良上野介の屋敷に討ち入り、主君の仇を討った。のちに『忠臣蔵』として語り継がれた。",
+            "wiki": "赤穂事件",
             "art": "",
             "artQuery": "Forty-seven ronin ukiyo-e"
         },
@@ -3541,6 +4181,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "近松門左衛門の人形浄瑠璃。鄭成功を主人公に明の再興を描き、17か月の異例のロングランとなった。",
+            "wiki": "国性爺合戦",
             "art": "",
             "artQuery": "Kokusenya Kassen"
         },
@@ -3552,6 +4194,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "新井白石が長崎貿易の船と額を制限した法令。金銀の海外への流出を止めるのが狙いである。",
+            "wiki": "海舶互市新例",
             "art": "",
             "artQuery": "Arai Hakuseki",
             "artFile": "Arai Hakuseki - Japanischer Gelehrter.jpg"
@@ -3564,6 +4208,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "徳川吉宗が江戸の評定所の前に置いた投書箱。庶民の意見を集め、小石川養生所の設立にもつながった。",
+            "wiki": "目安箱",
             "art": "",
             "artQuery": "Tokugawa Yoshimune"
         },
@@ -3575,6 +4221,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "大名に石高1万石につき100石の米を納めさせ、代わりに参勤交代の江戸在府を半年にした。吉宗の財政策である。",
+            "wiki": "上米の制",
             "art": "",
             "artQuery": "Edo period rice"
         },
@@ -3586,6 +4234,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "目安箱への投書を受け、徳川吉宗が貧しい病人のために開いた無料の施療所。小説やドラマの舞台にもなった。",
+            "wiki": "小石川養生所",
             "art": "",
             "artQuery": "Koishikawa Botanical Garden"
         },
@@ -3597,6 +4247,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "西日本でイナゴなどの虫害が広がり、大飢饉となった。翌年の江戸では初の打ちこわしが起きた。",
+            "wiki": "享保の大飢饉",
             "art": "",
             "artQuery": "Edo period famine"
         },
@@ -3608,6 +4260,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "徳川吉宗のもとで定められた、裁判と刑罰の基準。下巻は「御定書百箇条」と呼ばれる。",
+            "wiki": "公事方御定書",
             "art": "",
             "artQuery": "Ooka Tadasuke"
         },
@@ -3619,6 +4273,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "赤穂事件を題材にした人形浄瑠璃。幕府の目を避けて室町時代の話とし、すぐに歌舞伎でも演じられた。",
+            "wiki": "仮名手本忠臣蔵",
             "art": "",
             "artQuery": "Kanadehon Chushingura ukiyo-e"
         },
@@ -3630,6 +4286,8 @@
             "region": "JP",
             "category": "思想",
             "difficulty": 2,
+            "caption": "松平定信が、聖堂の学問所で朱子学以外を教えることを禁じた。幕府の学問の統制を強めた。",
+            "wiki": "寛政異学の禁",
             "art": "",
             "artQuery": "Matsudaira Sadanobu"
         },
@@ -3641,6 +4299,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "ロシアの南下に備えて、幕府が東蝦夷地を松前藩から取り上げて直轄とした。のちに西蝦夷地も直轄となった。",
+            "wiki": "蝦夷地",
             "art": "",
             "artQuery": "Ezo Ainu Edo period"
         },
@@ -3652,6 +4312,8 @@
             "region": "JP",
             "category": "探検",
             "difficulty": 2,
+            "caption": "幕府の命で樺太を探検し、島であることを確かめた。大陸との間の海峡は「間宮海峡」と呼ばれる。",
+            "wiki": "間宮林蔵",
             "art": "",
             "artQuery": "Mamiya Rinzo"
         },
@@ -3663,6 +4325,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "国後島でロシア軍艦の艦長が捕らえられた。商人の高田屋嘉兵衛が逆にロシアに捕らえられたが、交渉で解決した。",
+            "wiki": "ゴローニン事件",
             "art": "",
             "artQuery": "Vasily Golovnin"
         },
@@ -3674,6 +4338,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "杉田玄白が晩年に書いた回想記。『解体新書』を訳した苦労を語り、のちに福沢諭吉らが世に広めた。",
+            "wiki": "蘭学事始",
             "art": "",
             "artQuery": "Sugita Genpaku"
         },
@@ -3685,6 +4351,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "江戸幕府が、近づく外国船を砲撃で追い払うよう命じた。イギリスの捕鯨船の上陸事件などを受けて出された。",
+            "wiki": "異国船打払令",
             "art": "",
             "artQuery": "Western ship Edo period scroll",
             "artFile": "Map of Coastal Defense WDL9934.png"
@@ -3697,6 +4365,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "漂流民を送り届けに来たアメリカ商船を、異国船打払令に従って砲撃した。のちに蛮社の獄につながった。",
+            "wiki": "モリソン号事件",
             "art": "",
             "artQuery": "Morrison incident ship",
             "artFile": "MorrisonShip.jpg"
@@ -3709,6 +4379,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "アヘン戦争の清の敗北を知った幕府が、打ち払いをやめ、外国船に薪と水を与えることにした。",
+            "wiki": "薪水給与令",
             "art": "",
             "artQuery": "Mizuno Tadakuni"
         },
@@ -3720,6 +4392,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "アメリカの東インド艦隊の司令官が浦賀に来航し、通商を求めたが拒まれた。ペリーの7年前の出来事である。",
+            "wiki": "ジェームズ・ビドル",
             "art": "",
             "artQuery": "James Biddle"
         },
@@ -3731,6 +4405,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ペリーの1か月余り後に、ロシアの使節が長崎に来航し、国境の画定と通商を求めた。",
+            "wiki": "エフィム・プチャーチン",
             "art": "",
             "artQuery": "Yevfimy Putyatin"
         },
@@ -3742,6 +4418,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "下田で結ばれた条約。択捉島と得撫島の間を国境とし、樺太は両国の雑居の地と定めた。",
+            "wiki": "日露和親条約",
             "art": "",
             "artQuery": "Treaty of Shimoda"
         },
@@ -3753,6 +4431,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "幕府が江戸に開いた洋学の研究・教育機関。外交文書の翻訳も担い、東京大学の源流の一つとなった。",
+            "wiki": "蕃書調所",
             "art": "",
             "artQuery": "Bansho Shirabesho"
         },
@@ -3764,6 +4444,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "島津久光の働きかけで、幕府が政治を改めた。徳川慶喜を将軍後見職とし、参勤交代を緩めた。",
+            "wiki": "文久の改革",
             "art": "",
             "artQuery": "Tokugawa Yoshinobu",
             "artFile": "Matsudaira Yoshinaga.jpg"
@@ -3776,6 +4458,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "会津と薩摩が手を組み、攘夷を唱える長州藩と三条実美らの公家を京都から追い出した。",
+            "wiki": "八月十八日の政変",
             "art": "",
             "artQuery": "Kyoto Imperial Palace bakumatsu"
         },
@@ -3787,6 +4471,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "新選組が京都の旅館の池田屋を襲い、尊王攘夷派の志士たちを討った。新選組の名は一躍知れ渡った。",
+            "wiki": "池田屋事件",
             "art": "",
             "artQuery": "Ikedaya incident"
         },
@@ -3798,6 +4484,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "禁門の変の後、幕府が諸藩の軍で長州を攻めた。長州は家老を処罰して恭順し、戦わずに終わった。",
+            "wiki": "長州征討",
             "art": "",
             "artQuery": "Choshu domain samurai"
         },
@@ -3809,6 +4497,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "幕府が再び長州を攻めたが、薩長同盟を結んだ長州の軍に各地で敗れた。将軍の家茂の死で停戦した。",
+            "wiki": "長州征討",
             "art": "",
             "artQuery": "Second Choshu expedition"
         },
@@ -3820,6 +4510,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "岩倉具視らが主導し、幕府や摂関を廃して天皇中心の新政府を作ると宣言した。慶喜の辞官納地も決まった。",
+            "wiki": "王政復古 (日本)",
             "art": "",
             "artQuery": "Emperor Meiji young"
         },
@@ -3831,6 +4523,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "明治天皇の詔によって、江戸は東京と改められた。翌年に天皇が東京へ移り、東京は日本の首都になっていく。",
+            "wiki": "東京奠都",
             "art": "",
             "artQuery": "Tokyo Meiji era map"
         },
@@ -3842,6 +4536,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "明治政府が蝦夷地を北海道と改め、開発のための役所を置いた。のちに札幌に本庁が移された。",
+            "wiki": "開拓使",
             "art": "",
             "artQuery": "Kaitakushi Sapporo",
             "artFile": "KaitakushiSapporoHonchosha1873-restoration.jpg"
@@ -3854,6 +4550,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "東京と横浜の間で公衆電報の取り扱いが始まった。幕末にペリーが持ち込んだ電信機が、国の通信網へと育った。",
+            "wiki": "電信",
             "art": "",
             "artQuery": "Meiji telegraph"
         },
@@ -3865,6 +4563,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "横浜で創刊された、日本で最初の日本語の日刊新聞。活版印刷の洋紙を使い、新しい情報の時代を開いた。",
+            "wiki": "横浜毎日新聞",
             "art": "",
             "artQuery": "Yokohama Mainichi Shimbun",
             "artFile": "Yokohama Kaigan-dōri no zu.jpg"
@@ -3877,6 +4577,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 2,
+            "caption": "前島密の提案で、東京・京都・大阪の間で官営の郵便が始まった。「切手」「はがき」といった言葉もこの頃に定まった。",
+            "wiki": "郵便",
             "art": "",
             "artQuery": "Maejima Hisoka"
         },
@@ -3888,6 +4590,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "明治政府が、円・銭・厘の単位を定めた法令。十進法の新しい貨幣のしくみがここから始まった。",
+            "wiki": "新貨条例",
             "art": "",
             "artQuery": "Meiji yen coin"
         },
@@ -3899,6 +4603,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "明治政府が定めた、全国に小学校を設ける教育の制度。「邑に不学の戸なく」を掲げ、国民皆学を目指した。",
+            "wiki": "学制",
             "art": "",
             "artQuery": "Meiji school"
         },
@@ -3910,6 +4616,8 @@
             "region": "JP",
             "category": "思想",
             "difficulty": 2,
+            "caption": "福沢諭吉の著書。「天は人の上に人を造らず」で始まり、学ぶことの大切さを説いて大ベストセラーになった。",
+            "wiki": "学問のすゝめ",
             "art": "",
             "artQuery": "Fukuzawa Yukichi"
         },
@@ -3921,6 +4629,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "渋沢栄一らが作った法令で、アメリカの制度にならった民間の銀行を認めた。「国立」でも国の経営ではない。",
+            "wiki": "国立銀行 (明治)",
             "art": "",
             "artQuery": "First National Bank Tokyo Meiji",
             "artFile": "Dai-ichi Kokuritsu Ginko.JPG"
@@ -3933,6 +4643,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "フランス人の技師の指導により、横浜の馬車道などにガス灯がともった。文明開化の象徴の一つである。",
+            "wiki": "ガス灯",
             "art": "",
             "artQuery": "Gas lamp Yokohama Meiji",
             "artFile": "Kaemon Takashima.png"
@@ -3945,6 +4657,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "征韓論をめぐる争いに敗れ、西郷隆盛・板垣退助らが政府を去った。大久保利通の政権がここから始まる。",
+            "wiki": "明治六年政変",
             "art": "",
             "artQuery": "Saigo Takamori"
         },
@@ -3956,6 +4670,8 @@
             "region": "JP",
             "category": "思想",
             "difficulty": 3,
+            "caption": "森有礼の呼びかけで生まれた啓蒙思想の団体。福沢諭吉や西周らが加わり、『明六雑誌』を出した。",
+            "wiki": "明六社",
             "art": "",
             "artQuery": "Mori Arinori"
         },
@@ -3967,6 +4683,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "渋沢栄一が東京に開いた日本で最初の銀行。三井組と小野組の出資による民間の銀行である。",
+            "wiki": "第一銀行",
             "art": "",
             "artQuery": "Shibusawa Eiichi"
         },
@@ -3978,6 +4696,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "琉球の漂流民の殺害事件を理由に、明治政府が初めて海外に兵を送った。西郷従道が率いた。",
+            "wiki": "台湾出兵",
             "art": "",
             "artQuery": "Taiwan expedition 1874"
         },
@@ -3989,6 +4709,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "北海道の開拓と北方の守りのため、ふだんは農業を営む兵を置いた。職を失った士族が多く応募した。",
+            "wiki": "屯田兵",
             "art": "",
             "artQuery": "Tondenhei Hokkaido"
         },
@@ -4000,6 +4722,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "榎本武揚がロシアで結んだ条約。樺太をロシア領とし、千島列島の全部を日本の領土と定めた。",
+            "wiki": "樺太・千島交換条約",
             "art": "",
             "artQuery": "Enomoto Takeaki"
         },
@@ -4011,6 +4735,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "日本の軍艦が朝鮮の江華島で砲撃を受けて応戦した。翌年、日本はこれを口実に朝鮮を開国させた。",
+            "wiki": "江華島事件",
             "art": "",
             "artQuery": "Ganghwa Island incident"
         },
@@ -4022,6 +4748,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "アメリカから帰国した新島襄が、京都に開いたキリスト教主義の学校。のちに同志社大学となった。",
+            "wiki": "同志社大学",
             "art": "",
             "artQuery": "Niijima Jo"
         },
@@ -4033,6 +4761,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "軍人や警察官などを除いて、刀を身に着けることを禁じた。特権を失った士族の不満は高まり、各地で反乱が起きた。",
+            "wiki": "廃刀令",
             "art": "",
             "artQuery": "Meiji era samurai"
         },
@@ -4044,6 +4774,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "クラーク博士を教頭に招いて開校した。「少年よ大志を抱け」の言葉を残した。のちの北海道大学である。",
+            "wiki": "札幌農学校",
             "art": "",
             "artQuery": "William S. Clark"
         },
@@ -4055,6 +4787,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "渋沢栄一らの尽力で開設された。現在の東京証券取引所のもとで、日本の資本主義の土台となった。",
+            "wiki": "東京株式取引所",
             "art": "",
             "artQuery": "Tokyo Stock Exchange Meiji"
         },
@@ -4066,6 +4800,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "全国の自由民権の結社の代表が大阪に集まり、国会開設を政府に求める署名を集めて請願した。",
+            "wiki": "国会期成同盟",
             "art": "",
             "artQuery": "Kataoka Kenkichi",
             "artFile": "Kataoka Kenkichi 1902.jpg"
@@ -4078,6 +4814,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "国会開設の勅諭を受けて板垣退助らが作った、日本で最初の全国的な政党。フランス流の急進的な主張を掲げた。",
+            "wiki": "自由党 (日本 1881-1884)",
             "art": "",
             "artQuery": "Itagaki Taisuke"
         },
@@ -4089,6 +4827,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "明治十四年の政変で政府を追われた大隈重信が作った政党。イギリス流の穏やかな議会政治を目指した。",
+            "wiki": "立憲改進党",
             "art": "",
             "artQuery": "Okuma Shigenobu"
         },
@@ -4100,6 +4840,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "大隈重信が開いた学校。学問の独立を掲げ、のちに早稲田大学となった。",
+            "wiki": "早稲田大学",
             "art": "",
             "artQuery": "Waseda University old"
         },
@@ -4111,6 +4853,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "松方デフレで苦しむ埼玉県の農民らが困民党を組織して蜂起した。自由民権運動の激化事件の代表である。",
+            "wiki": "秩父事件",
             "art": "",
             "artQuery": "Chichibu incident"
         },
@@ -4122,6 +4866,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "甲申事変の後に、伊藤博文と李鴻章が結んだ条約。朝鮮からの両軍の撤兵と、出兵の際の事前通告を定めた。",
+            "wiki": "天津条約 (1885年4月)",
             "art": "",
             "artQuery": "Li Hongzhang Ito Hirobumi"
         },
@@ -4133,6 +4879,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "三菱と共同運輸が合併してできた海運会社。日本の海運の中心となり、世界の航路へと進出した。",
+            "wiki": "日本郵船",
             "art": "",
             "artQuery": "NYK Line Meiji ship",
             "artFile": "Nippon Yusen Kaisha = Japan Mail Steamship Co. (Three ukiyo-e women) (rbm-coll3020-01-07).jpg"
@@ -4145,6 +4893,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "明治政府が、自由民権派の人々を皇居から3里以上離れた所へ追放できるとした法令。尾崎行雄らが東京を追われた。",
+            "wiki": "保安条例",
             "art": "",
             "artQuery": "Meiji police"
         },
@@ -4156,6 +4906,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "山県有朋の主導で、ドイツにならった地方自治の制度を定めた。翌年、31の市が誕生した。",
+            "wiki": "市町村の歴史",
             "art": "",
             "artQuery": "Yamagata Aritomo"
         },
@@ -4167,6 +4919,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "新橋と神戸の間がつながり、東京と関西が1本の鉄道で結ばれた。全線の所要時間は約20時間である。",
+            "wiki": "東海道本線",
             "art": "",
             "artQuery": "Meiji steam locomotive Japan"
         },
@@ -4178,6 +4932,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "ドイツのコッホの下で学び、破傷風菌だけを育てることに世界で初めて成功した。血清療法の研究へ進んだ。",
+            "wiki": "北里柴三郎",
             "art": "",
             "artQuery": "Kitasato Shibasaburo"
         },
@@ -4189,6 +4945,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "外務大臣の陸奥宗光が、領事裁判権の撤廃をイギリスに認めさせた。日清戦争の直前の成果である。",
+            "wiki": "日英通商航海条約",
             "art": "",
             "artQuery": "Mutsu Munemitsu"
         },
@@ -4200,6 +4958,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 1,
+            "caption": "ロシア・フランス・ドイツが、下関条約の遼東半島を清へ返すよう日本に迫った。国内には「臥薪嘗胆」の声が広がった。",
+            "wiki": "三国干渉",
             "art": "",
             "artQuery": "Triple Intervention",
             "artFile": "Mutsu Munemitsu.jpg"
@@ -4212,6 +4972,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "下関条約で得た台湾を治めるため、日本が置いた機関。初代の総督は樺山資紀である。",
+            "wiki": "台湾総督府",
             "art": "",
             "artQuery": "Taiwan Governor-General office"
         },
@@ -4223,6 +4985,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "揺れは小さかったが、大津波が三陸の沿岸を襲い、2万人を超える人が亡くなった。",
+            "wiki": "明治三陸地震",
             "art": "",
             "artQuery": "1896 Sanriku tsunami"
         },
@@ -4234,6 +4998,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "日清戦争の賠償金をもとに、金本位制を定めた法律。欧米と同じ通貨のしくみとなり、貿易が安定した。",
+            "wiki": "貨幣法",
             "art": "",
             "artQuery": "Meiji gold coin"
         },
@@ -4245,6 +5011,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "北里柴三郎の伝染病研究所で、赤痢の病原菌を発見した。赤痢菌の学名の「シゲラ」は志賀の名に由来する。",
+            "wiki": "志賀潔",
             "art": "",
             "artQuery": "Kiyoshi Shiga"
         },
@@ -4256,6 +5024,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "伊藤博文が憲政党の旧自由党系と組んで作った政党。戦前の二大政党の一つとして長く続いた。",
+            "wiki": "立憲政友会",
             "art": "",
             "artQuery": "Ito Hirobumi"
         },
@@ -4267,6 +5037,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "第2次山県有朋内閣が、労働運動や社会運動を取り締まるために定めた法律。女性の政治活動も禁じた。",
+            "wiki": "治安警察法",
             "art": "",
             "artQuery": "Meiji government 1900"
         },
@@ -4278,6 +5050,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "津田梅子が東京に開いた、女性のための英語の学校。のちの津田塾大学で、女性の高等教育を切り開いた。",
+            "wiki": "津田塾大学",
             "art": "",
             "artQuery": "Tsuda Umeko"
         },
@@ -4289,6 +5063,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "衆議院議員を辞めた田中正造が、足尾銅山の鉱毒の被害を訴え、明治天皇の馬車に駆け寄って直訴を試みた。",
+            "wiki": "足尾鉱毒事件",
             "art": "",
             "artQuery": "Tanaka Shozo"
         },
@@ -4300,6 +5076,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "与謝野晶子の第一歌集。「やは肌のあつき血潮に」など、情熱的な歌で世の注目を集めた。",
+            "wiki": "みだれ髪",
             "art": "",
             "artQuery": "Yosano Akiko"
         },
@@ -4311,6 +5089,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "ポーツマス条約に賠償金が無いことに怒った民衆が、東京で交番や新聞社を襲った。戒厳令が敷かれた。",
+            "wiki": "日比谷焼打事件",
             "art": "",
             "artQuery": "Hibiya incendiary incident"
         },
@@ -4322,6 +5102,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "ポーツマス条約で得た鉄道を経営する国策会社。初代総裁は後藤新平で、満州の経営の中心となった。",
+            "wiki": "南満洲鉄道",
             "art": "",
             "artQuery": "South Manchuria Railway"
         },
@@ -4333,6 +5115,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "夏目漱石が雑誌『ホトトギス』に発表した小説。松山の中学校に赴任した江戸っ子の教師の痛快な物語である。",
+            "wiki": "坊つちやん",
             "art": "",
             "artQuery": "Natsume Soseki"
         },
@@ -4344,6 +5128,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "昆布のだしからグルタミン酸を取り出し、「うま味」と名付けた。これがうま味調味料の事業につながった。",
+            "wiki": "池田菊苗",
             "art": "",
             "artQuery": "Kikunae Ikeda"
         },
@@ -4355,6 +5141,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "日本が韓国併合条約を結び、朝鮮半島を植民地にした。朝鮮総督府が置かれ、支配は1945年まで続いた。",
+            "wiki": "韓国併合",
             "art": "",
             "artQuery": "Japan Korea annexation 1910"
         },
@@ -4366,6 +5154,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "天皇の暗殺を計画したとして、幸徳秋水ら社会主義者が処刑された。多くの冤罪を含むとされる。",
+            "wiki": "大逆事件",
             "art": "",
             "artQuery": "Kotoku Shusui"
         },
@@ -4377,6 +5167,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "米ぬかから脚気に効く成分を取り出した。のちのビタミンB1で、ビタミン研究の先駆けとなった。",
+            "wiki": "鈴木梅太郎",
             "art": "",
             "artQuery": "Umetaro Suzuki"
         },
@@ -4388,6 +5180,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "徳川好敏が代々木練兵場で、日本で初めての動力飛行に成功した。フランス製の機を使い、日野熊蔵も同じ日に飛んだ。",
+            "wiki": "徳川好敏",
             "art": "",
             "artQuery": "Tokugawa Yoshitoshi aviator",
             "artFile": "Tokugawa Yoshitoshi.jpg"
@@ -4400,6 +5194,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "平塚らいてうらが創刊した女性の文芸誌。「元始、女性は太陽であった」の宣言で、女性解放の声を上げた。",
+            "wiki": "青鞜",
             "art": "",
             "artQuery": "Hiratsuka Raicho"
         },
@@ -4411,6 +5207,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "尾崎行雄らの憲政擁護運動で、第3次桂太郎内閣が倒れた。民衆の力で内閣が倒れた初めての例である。",
+            "wiki": "大正政変",
             "art": "",
             "artQuery": "Katsura Taro"
         },
@@ -4422,6 +5220,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "阪急の小林一三が温泉の客を呼ぶために作った少女歌劇が初公演を開いた。今も続く宝塚歌劇の始まりである。",
+            "wiki": "宝塚歌劇団",
             "art": "",
             "artQuery": "Takarazuka Revue"
         },
@@ -4433,6 +5233,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "大阪の豊中球場で開かれた、夏の甲子園の第1回大会。京都二中が優勝した。",
+            "wiki": "全国高等学校野球選手権大会",
             "art": "",
             "artQuery": "Japanese high school baseball"
         },
@@ -4444,6 +5246,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "ロシア革命に干渉するため、日本はアメリカなどとシベリアに軍を送った。日本は長く駐留を続け、批判を浴びた。",
+            "wiki": "シベリア出兵",
             "art": "",
             "artQuery": "Japanese Siberian intervention"
         },
@@ -4455,6 +5259,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "平塚らいてうと市川房枝らが作った団体。女性の政治活動を禁じた法律の改正運動を進めた。",
+            "wiki": "新婦人協会",
             "art": "",
             "artQuery": "Ichikawa Fusae"
         },
@@ -4466,6 +5272,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "東京駅で首相の原敬が青年に刺殺された。初の本格的な政党内閣は3年余りで途絶えた。",
+            "wiki": "原敬暗殺事件",
             "art": "",
             "artQuery": "Hara Takashi",
             "artFile": "Takashi Hara formal.jpg"
@@ -4478,6 +5286,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "堺利彦らが秘密のうちに結成した政党。当時は非合法で、戦後に合法の政党となった。",
+            "wiki": "日本共産党",
             "art": "",
             "artQuery": "Taisho period Tokyo",
             "artFile": "SAKAI TOSHIHIKO PORTRAIT.jpg"
@@ -4490,6 +5300,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "甲子の年に完成した大きな球場。兵庫県の西宮にあり、高校野球の聖地として親しまれる。",
+            "wiki": "阪神甲子園球場",
             "art": "",
             "artQuery": "Koshien Stadium"
         },
@@ -4501,6 +5313,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "豊田佐吉らが完成させた、止まらずに糸を換える自動織機。特許を売った資金がトヨタの自動車事業のもとになった。",
+            "wiki": "豊田佐吉",
             "art": "",
             "artQuery": "Toyoda automatic loom"
         },
@@ -4512,6 +5326,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "普通選挙法と同じ年に作られた、共産主義などを取り締まる法律。のちに思想の弾圧に広く使われた。",
+            "wiki": "治安維持法",
             "art": "",
             "artQuery": "Kato Takaaki"
         },
@@ -4523,6 +5339,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "大蔵大臣の失言をきっかけに取り付け騒ぎが広がった。田中義一内閣はモラトリアムを出して鎮めた。",
+            "wiki": "昭和金融恐慌",
             "art": "",
             "artQuery": "Showa financial crisis"
         },
@@ -4534,6 +5352,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "早川徳次が上野と浅草の間に開業した、東洋で初めての地下鉄。今の銀座線の一部である。",
+            "wiki": "東京地下鉄道",
             "art": "",
             "artQuery": "Tokyo Metro Ginza Line 1927"
         },
@@ -4545,6 +5365,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "初の普通選挙の後、田中義一内閣が共産党の関係者を一斉に検挙した。治安維持法の最初の大規模な適用である。",
+            "wiki": "三・一五事件",
             "art": "",
             "artQuery": "Showa police 1928",
             "artFile": "Giichi Tanaka Cabinet 19270420.jpg"
@@ -4557,6 +5379,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "関東軍が奉天の郊外で満州の軍閥の張作霖の列車を爆破した。田中義一内閣はこれで倒れた。",
+            "wiki": "張作霖爆殺事件",
             "art": "",
             "artQuery": "Zhang Zuolin"
         },
@@ -4568,6 +5392,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "浜口雄幸内閣が金本位制へ戻したが、世界恐慌と重なって昭和恐慌を招いた。",
+            "wiki": "金解禁",
             "art": "",
             "artQuery": "Inoue Junnosuke",
             "artFile": "Junnosuke Inoue 3.jpg"
@@ -4580,6 +5406,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "補助艦の保有量を制限した条約。浜口雄幸内閣が調印し、軍部は統帥権干犯と非難した。",
+            "wiki": "ロンドン海軍軍縮会議",
             "art": "",
             "artQuery": "London Naval Treaty 1930"
         },
@@ -4591,6 +5419,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "満州事変の後に、関東軍が清の最後の皇帝の溥儀を立てて建てた国。実権は日本が握っていた。",
+            "wiki": "満洲国",
             "art": "",
             "artQuery": "Manchukuo"
         },
@@ -4602,6 +5432,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "京都帝国大学の滝川幸辰の刑法の学説が、危険思想とされて休職処分になった。学問の自由への圧迫である。",
+            "wiki": "滝川事件",
             "art": "",
             "artQuery": "Kyoto University Showa",
             "artFile": "M. Ichiro Hatoyama, ministre de l'Instruction Publique du Japon, visitant la première école de jeunes filles à Tokyo au cours de sa tournée d'inspection - btv1b9050436p.jpg"
@@ -4614,6 +5446,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "憲法学者の美濃部達吉の説が議会で攻撃され、著書が発禁となった。政府は国体明徴声明で否定した。",
+            "wiki": "天皇機関説事件",
             "art": "",
             "artQuery": "Minobe Tatsukichi"
         },
@@ -4625,6 +5459,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 3,
+            "caption": "ソ連の共産主義に対抗して、日本とドイツが結んだ協定。のちの日独伊三国同盟のもとになった。",
+            "wiki": "防共協定",
             "art": "",
             "artQuery": "Anti-Comintern Pact"
         },
@@ -4636,6 +5472,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "第1次近衛内閣が日中戦争の長期化に備え、人や物を政府が統制できるとした法律である。",
+            "wiki": "国家総動員法",
             "art": "",
             "artQuery": "Konoe Fumimaro"
         },
@@ -4647,6 +5485,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 3,
+            "caption": "満州とモンゴルの国境で、日本軍がソ連軍と戦って大きな損害を受けた。北進の考えは弱まった。",
+            "wiki": "ノモンハン事件",
             "art": "",
             "artQuery": "Battles of Khalkhin Gol"
         },
@@ -4658,6 +5498,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "近衛文麿の新体制運動により作られた組織。すべての政党が解散して加わり、戦争に国民を動員した。",
+            "wiki": "大政翼賛会",
             "art": "",
             "artQuery": "Imperial Rule Assistance Association"
         },
@@ -4669,6 +5511,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "松岡洋右外相がモスクワで結んだ条約。1945年、ソ連はこれを破って満州へ攻め込んだ。",
+            "wiki": "日ソ中立条約",
             "art": "",
             "artQuery": "Soviet-Japanese Neutrality Pact"
         },
@@ -4680,6 +5524,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "呉で完成した世界最大の戦艦。46センチ主砲を持っていたが、1945年に沖縄へ向かう途中で撃沈された。",
+            "wiki": "大和 (戦艦)",
             "art": "",
             "artQuery": "Japanese battleship Yamato"
         },
@@ -4691,6 +5537,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "日本海軍が主力空母4隻を失った戦い。太平洋の戦局を変える転機となった。",
+            "wiki": "ミッドウェー海戦",
             "art": "",
             "artQuery": "Battle of Midway"
         },
@@ -4702,6 +5550,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 2,
+            "caption": "文系の大学生などの徴兵猶予が停止され、学生が戦場へ送られた。明治神宮外苑で壮行会が開かれた。",
+            "wiki": "学徒出陣",
             "art": "",
             "artQuery": "Gakuto shutsujin 1943"
         },
@@ -4713,6 +5563,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "3月10日の未明、アメリカのB29が東京の下町を焼夷弾で焼いた。一夜で約10万人が亡くなった。",
+            "wiki": "東京大空襲",
             "art": "",
             "artQuery": "Bombing of Tokyo 1945"
         },
@@ -4724,6 +5576,8 @@
             "region": "JP",
             "category": "戦争",
             "difficulty": 1,
+            "caption": "8月6日の朝、アメリカが人類で初めて原子爆弾を実戦で使った。その年だけで約14万人が亡くなったとされる。",
+            "wiki": "広島市への原子爆弾投下",
             "art": "",
             "artQuery": "Hiroshima Peace Memorial"
         },
@@ -4735,6 +5589,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "連合国が戦争犯罪を裁いた東京裁判。東条英機らA級戦犯7人が死刑となった。",
+            "wiki": "極東国際軍事裁判",
             "art": "",
             "artQuery": "International Military Tribunal for the Far East"
         },
@@ -4746,6 +5602,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "民主主義の教育の理念を定めた法律。義務教育の9年や男女共学が定められ、教育勅語に代わる土台となった。",
+            "wiki": "教育基本法",
             "art": "",
             "artQuery": "Japanese school 1947"
         },
@@ -4757,6 +5615,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "GHQの顧問のドッジが示した経済の立て直し策。1ドル360円の単一為替を定め、インフレを収めた。",
+            "wiki": "ドッジ・ライン",
             "art": "",
             "artQuery": "Joseph Dodge"
         },
@@ -4768,6 +5628,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "朝鮮戦争で在日米軍が出動した後、マッカーサーの指令で作られた組織。のちの自衛隊のもとである。",
+            "wiki": "警察予備隊",
             "art": "",
             "artQuery": "National Police Reserve Japan"
         },
@@ -4779,6 +5641,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "保安隊を改編して陸・海・空の3隊が発足した。防衛庁も同時に置かれ、日本の防衛を担うこととなった。",
+            "wiki": "自衛隊",
             "art": "",
             "artQuery": "Japan Self-Defense Forces 1954",
             "artFile": "Flags of JGSDF and JMSDF with Tokutaro Kimura Defense Agency 1954.png"
@@ -4791,6 +5655,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "本多猪四郎の監督と円谷英二の特撮による怪獣映画。水爆実験を背景に、世界的な人気シリーズとなった。",
+            "wiki": "ゴジラ (1954年の映画)",
             "art": "",
             "artQuery": "Godzilla 1954 poster"
         },
@@ -4802,6 +5668,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "日本社会党の統一と保守合同で、自由民主党が誕生した。自民党が政権を、社会党が野党を担う形が38年続いた。",
+            "wiki": "55年体制",
             "art": "",
             "artQuery": "Hatoyama Ichiro"
         },
@@ -4813,6 +5681,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 1,
+            "caption": "熊本県の水俣湾で、工場廃水の有機水銀による公害病が公式に確認された。四大公害病の一つである。",
+            "wiki": "水俣病",
             "art": "",
             "artQuery": "Minamata"
         },
@@ -4824,6 +5694,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 1,
+            "caption": "高さ333メートルの電波塔。テレビ放送の電波を送り、高度経済成長の東京の象徴となった。",
+            "wiki": "東京タワー",
             "art": "",
             "artQuery": "Tokyo Tower 1958"
         },
@@ -4835,6 +5707,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "安藤百福が大阪の池田の小屋で開発した世界初のインスタントラーメン。お湯をかけるだけで食べられる。",
+            "wiki": "チキンラーメン",
             "art": "",
             "artQuery": "Chicken Ramen"
         },
@@ -4846,6 +5720,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "池田勇人内閣が掲げた、10年で国民の所得を2倍にする計画。実際には7年ほどで達成された。",
+            "wiki": "所得倍増計画",
             "art": "",
             "artQuery": "Ikeda Hayato"
         },
@@ -4857,6 +5733,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "手塚治虫の漫画を原作に、日本初の本格的なテレビアニメの連続シリーズとして放送された。",
+            "wiki": "鉄腕アトム",
             "art": "",
             "artQuery": "Osamu Tezuka"
         },
@@ -4868,6 +5746,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "佐藤栄作内閣が韓国と結んだ条約。国交が開かれ、経済協力も約束された。",
+            "wiki": "日本国と大韓民国との間の基本関係に関する条約",
             "art": "",
             "artQuery": "Treaty on Basic Relations Japan Korea"
         },
@@ -4879,6 +5759,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "くりこみ理論で量子電磁力学に貢献し、湯川秀樹に続いて日本人で2人目のノーベル物理学賞を受けた。",
+            "wiki": "朝永振一郎",
             "art": "",
             "artQuery": "Sin-Itiro Tomonaga"
         },
@@ -4890,6 +5772,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "四大公害の被害を受けて定められた法律。事業者と国の責任を定め、公害対策の土台となった。",
+            "wiki": "公害対策基本法",
             "art": "",
             "artQuery": "Yokkaichi pollution"
         },
@@ -4901,6 +5785,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 3,
+            "caption": "東京大学が鹿児島県の内之浦で打ち上げた日本初の人工衛星。ソ連・アメリカ・フランスに次ぐ世界で4番目の国となった。",
+            "wiki": "おおすみ",
             "art": "",
             "artQuery": "Ohsumi satellite"
         },
@@ -4912,6 +5798,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "公害問題の高まりを受けて、政府が発足させた役所。のちの環境省である。",
+            "wiki": "環境省",
             "art": "",
             "artQuery": "Japan environment 1971"
         },
@@ -4923,6 +5811,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "アジアで初めて開かれた冬のオリンピック。ジャンプ70メートル級で日本勢が表彰台を独占した。",
+            "wiki": "1972年札幌オリンピック",
             "art": "",
             "artQuery": "1972 Winter Olympics Sapporo"
         },
@@ -4934,6 +5824,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "連合赤軍のメンバーが長野県の山荘に人質を取って立てこもった。鉄球の突入はテレビで生中継された。",
+            "wiki": "あさま山荘事件",
             "art": "",
             "artQuery": "Asama-Sanso incident"
         },
@@ -4945,6 +5837,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "博多まで開業し、東京と福岡が新幹線で結ばれた。関門海峡はトンネルで渡る。",
+            "wiki": "山陽新幹線",
             "art": "",
             "artQuery": "Shinkansen 0 series"
         },
@@ -4956,6 +5850,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "本土復帰の記念に沖縄県本部町で開かれた博覧会。「海―その望ましい未来」がテーマである。",
+            "wiki": "沖縄国際海洋博覧会",
             "art": "",
             "artQuery": "Okinawa Expo 1975"
         },
@@ -4967,6 +5863,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 3,
+            "caption": "アメリカの上院の公聴会で発覚した航空機の売り込みの汚職事件。前首相の田中角栄が逮捕された。",
+            "wiki": "ロッキード事件",
             "art": "",
             "artQuery": "Tanaka Kakuei"
         },
@@ -4978,6 +5876,8 @@
             "region": "JP",
             "category": "外交",
             "difficulty": 2,
+            "caption": "福田赳夫内閣が北京で結んだ条約。日中共同声明の精神を受け継ぎ、平和と友好を定めた。",
+            "wiki": "日本国と中華人民共和国との間の平和友好条約",
             "art": "",
             "artQuery": "Deng Xiaoping Japan 1978"
         },
@@ -4989,6 +5889,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "ソニーが発売した小型のカセットプレーヤー。音楽を外へ持ち出す文化を世界に広げた。",
+            "wiki": "ウォークマン",
             "art": "",
             "artQuery": "Sony Walkman TPS-L2"
         },
@@ -5000,6 +5902,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "大宮と盛岡の間で開業した。同じ年の秋に、上越新幹線も開業した。",
+            "wiki": "東北新幹線",
             "art": "",
             "artQuery": "Tohoku Shinkansen 200 series"
         },
@@ -5011,6 +5915,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "任天堂が発売した家庭用ゲーム機。家庭のテレビでゲームを遊ぶ文化を世に広めた。",
+            "wiki": "ファミリーコンピュータ",
             "art": "",
             "artQuery": "Nintendo Famicom"
         },
@@ -5022,6 +5928,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "千葉県の浦安に開園した、アメリカ以外で初のディズニーのテーマパーク。",
+            "wiki": "東京ディズニーランド",
             "art": "",
             "artQuery": "Tokyo Disneyland",
             "artFile": "Tokyo Disneyland Opening Year.jpg"
@@ -5034,6 +5942,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "ニューヨークのプラザホテルで、先進5か国がドル高の修正に合意した。円高が進み、バブル経済の原因の一つとなった。",
+            "wiki": "プラザ合意",
             "art": "",
             "artQuery": "Plaza Accord"
         },
@@ -5045,6 +5955,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "群馬県の御巣鷹の尾根に旅客機が墜落し、520人が亡くなった。単独機の事故では世界最悪である。",
+            "wiki": "日本航空123便墜落事故",
             "art": "",
             "artQuery": "Japan Airlines Flight 123"
         },
@@ -5056,6 +5968,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 2,
+            "caption": "本州と四国を初めて結んだ橋。鉄道と道路を併用する2層の構造で、岡山と香川をつなぐ。",
+            "wiki": "瀬戸大橋",
             "art": "",
             "artQuery": "Great Seto Bridge"
         },
@@ -5067,6 +5981,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "昭和天皇の崩御を受けて元号が改められた。小渕恵三官房長官が「平成」の文字を掲げた。",
+            "wiki": "平成",
             "art": "",
             "artQuery": "Heisei announcement"
         },
@@ -5078,6 +5994,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 2,
+            "caption": "竹下登内閣が導入した、3%の間接税。買い物のたびに税を払う時代が始まった。",
+            "wiki": "消費税",
             "art": "",
             "artQuery": "Japanese consumption tax 1989",
             "artFile": "Noboru Takeshita full.jpg"
@@ -5090,6 +6008,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "長崎県の普賢岳で発生した火砕流により、報道関係者や火山学者など43人が亡くなった。",
+            "wiki": "雲仙岳",
             "art": "",
             "artQuery": "Mount Unzen pyroclastic flow"
         },
@@ -5101,6 +6021,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "国連の平和維持活動への参加を定めた法律。自衛隊がカンボジアへ派遣された。",
+            "wiki": "国際連合平和維持活動等に対する協力に関する法律",
             "art": "",
             "artQuery": "Japan peacekeeping Cambodia",
             "artFile": "Kiichi Miyazawa.jpg"
@@ -5113,6 +6035,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "大阪湾の人工島に造られた、日本で初の24時間運用の国際空港である。",
+            "wiki": "関西国際空港",
             "art": "",
             "artQuery": "Kansai International Airport"
         },
@@ -5124,6 +6048,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "『万延元年のフットボール』などで知られる作家が、日本人で2人目のノーベル文学賞を受けた。",
+            "wiki": "大江健三郎",
             "art": "",
             "artQuery": "Kenzaburo Oe"
         },
@@ -5135,6 +6061,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 2,
+            "caption": "オウム真理教の信者が、東京の地下鉄の車内で猛毒のサリンをまいた。14人が亡くなり、6千人以上が被害を受けた。",
+            "wiki": "地下鉄サリン事件",
             "art": "",
             "artQuery": "Tokyo subway 1995"
         },
@@ -5146,6 +6074,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "急な茅葺き屋根の家が並ぶ集落が、世界文化遺産に登録された。岐阜県と富山県にまたがる。",
+            "wiki": "白川郷・五箇山の合掌造り集落",
             "art": "",
             "artQuery": "Shirakawa-go"
         },
@@ -5157,6 +6087,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "被爆の惨禍を伝える建物が世界文化遺産に登録された。「負の遺産」の代表とされる。",
+            "wiki": "原爆ドーム",
             "art": "",
             "artQuery": "Hiroshima Peace Memorial Genbaku Dome"
         },
@@ -5168,6 +6100,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 3,
+            "caption": "海に浮かぶ大鳥居と社殿で知られる神社が、世界文化遺産に登録された。平清盛の崇敬を受けて栄えた。",
+            "wiki": "厳島神社",
             "art": "",
             "artQuery": "Itsukushima Shrine torii"
         },
@@ -5179,6 +6113,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "四大証券の一角の山一證券が巨額の簿外債務で破綻した。社長の涙の会見が平成不況の象徴となった。",
+            "wiki": "山一證券",
             "art": "",
             "artQuery": "Yamaichi Securities"
         },
@@ -5190,6 +6126,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "神戸と淡路島を結ぶ、当時の世界最長のつり橋。全長は3911メートルである。",
+            "wiki": "明石海峡大橋",
             "art": "",
             "artQuery": "Akashi Kaikyo Bridge",
             "artFile": "Akashi Bridge.JPG"
@@ -5202,6 +6140,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "新潟県の中越地方を襲った地震。上越新幹線が営業運転で初の脱線を起こし、山古志村は全村避難となった。",
+            "wiki": "新潟県中越地震",
             "art": "",
             "artQuery": "2004 Chuetsu earthquake"
         },
@@ -5213,6 +6153,8 @@
             "region": "JP",
             "category": "経済",
             "difficulty": 3,
+            "caption": "小泉純一郎内閣が推し進めた改革が実施された。日本郵政グループが発足した。",
+            "wiki": "郵政民営化",
             "art": "",
             "artQuery": "Japan Post",
             "artFile": "Japan Post box in Kamakura City, Tokyo area, Japan.jpg"
@@ -5225,6 +6167,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 2,
+            "caption": "総選挙で民主党が大勝し、鳩山由紀夫内閣が発足した。自民党は結党以来初めて第一党の座を失った。",
+            "wiki": "第45回衆議院議員総選挙",
             "art": "",
             "artQuery": "Yukio Hatoyama"
         },
@@ -5236,6 +6180,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 2,
+            "caption": "小惑星イトカワから微粒子を持ち帰った探査機。数々の故障を乗り越えて、7年ぶりに地球へ帰還した。",
+            "wiki": "はやぶさ (探査機)",
             "art": "",
             "artQuery": "Hayabusa spacecraft"
         },
@@ -5247,6 +6193,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "博多と鹿児島中央が新幹線で結ばれた。東日本大震災の翌日の開業で、記念行事は取りやめられた。",
+            "wiki": "九州新幹線",
             "art": "",
             "artQuery": "Kyushu Shinkansen 800 series"
         },
@@ -5258,6 +6206,8 @@
             "region": "JP",
             "category": "科学",
             "difficulty": 2,
+            "caption": "あらゆる細胞に育つiPS細胞を作った京都大学の教授が、ノーベル生理学・医学賞を受けた。",
+            "wiki": "山中伸弥",
             "art": "",
             "artQuery": "Shinya Yamanaka"
         },
@@ -5269,6 +6219,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "「信仰の対象と芸術の源泉」として世界文化遺産に登録された。三保松原も構成資産に含まれている。",
+            "wiki": "富士山",
             "art": "",
             "artQuery": "Mount Fuji",
             "artFile": "Lake Kawaguchiko Sakura Mount Fuji 4.JPG"
@@ -5281,6 +6233,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 3,
+            "caption": "紅葉の時期の週末に突然噴火し、63人が死亡・行方不明となった。戦後最悪の火山災害である。",
+            "wiki": "御嶽山",
             "art": "",
             "artQuery": "Mount Ontake"
         },
@@ -5292,6 +6246,8 @@
             "region": "JP",
             "category": "技術",
             "difficulty": 3,
+            "caption": "新青森と新函館北斗の間で開業した。青函トンネルを通って本州と北海道が新幹線で結ばれた。",
+            "wiki": "北海道新幹線",
             "art": "",
             "artQuery": "Hokkaido Shinkansen H5"
         },
@@ -5303,6 +6259,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 2,
+            "caption": "震度7が2度も続いた地震。熊本城の石垣や天守も大きな被害を受けた。",
+            "wiki": "熊本地震 (2016年)",
             "art": "",
             "artQuery": "Kumamoto Castle 2016 earthquake"
         },
@@ -5314,6 +6272,8 @@
             "region": "JP",
             "category": "政治",
             "difficulty": 1,
+            "caption": "天皇の退位に伴い、元号が改められた。典拠は『万葉集』で、初めて国書からとられた元号である。",
+            "wiki": "令和",
             "art": "",
             "artQuery": "Reiwa"
         },
@@ -5325,6 +6285,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 2,
+            "caption": "安倍晋三首相が7都府県に宣言を出し、のちに全国へ広げた。学校や店の休業が広がった。",
+            "wiki": "緊急事態宣言及びまん延防止等重点措置",
             "art": "",
             "artQuery": "COVID-19 Tokyo 2020"
         },
@@ -5336,6 +6298,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 1,
+            "caption": "新型コロナの流行で1年延期され、ほとんどの会場が無観客で開かれた。日本は27個の金メダルを取った。",
+            "wiki": "2020年東京オリンピック",
             "art": "",
             "artQuery": "Japan National Stadium"
         },
@@ -5347,6 +6311,8 @@
             "region": "JP",
             "category": "災害",
             "difficulty": 2,
+            "caption": "1月1日の夕方に石川県の能登半島を襲った大地震。最大震度7を記録し、輪島の朝市通りも焼けた。",
+            "wiki": "能登半島地震 (2024年)",
             "art": "",
             "artQuery": "2024 Noto earthquake"
         },
@@ -5358,6 +6324,8 @@
             "region": "JP",
             "category": "文化",
             "difficulty": 2,
+            "caption": "大阪の夢洲で開かれた万博。「いのち輝く未来社会のデザイン」をテーマに、大屋根リングが名物となった。",
+            "wiki": "2025年日本国際博覧会",
             "art": "",
             "artQuery": "Expo 2025 Osaka"
         }

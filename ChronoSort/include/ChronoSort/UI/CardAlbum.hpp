@@ -3,7 +3,8 @@
 //! @brief  対局の後に、出たカードを見る紙
 //! @detail 結果の羊皮紙の上に大きな紙を重ね、この対局で山札から出たカード（場・外れ・手札に残ったもの）を年代順に並べます。
 //!         頁は「次の頁」「前の頁」の札・左右キー・ホイールでめくります。外したカードには朱印、手札のカードには札を添えます。
-//!         カードを押すと、その1枚を大きく出し、題名・年代・分野・絵の出典を書きます。
+//!         カードを押すと、その1枚を大きく出し、題名・年代・分野・出来事の説明・絵の出典を書きます。
+//!         拡大の紙の「Wikipediaで読む」の札を押すと、その出来事の記事をブラウザで開きます。
 //!         紙と札の置き方は Data/UI/CardAlbum.json にあります。
 //----------------------------------------------------------------------------
 #pragma once
@@ -14,6 +15,7 @@
 
 #include <Tsukino/Core/ECS/Entity/Entity.hpp>
 
+#include <string>
 #include <vector>
 
 namespace Tsukino::Input {
@@ -76,6 +78,8 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity m_catcher   = entt::null;    // 拡大中、紙の外のクリックを受ける透明な板
         Tsukino::ECS::Entity m_zoom      = entt::null;    // 拡大の紙
         Tsukino::ECS::Entity m_zoomBack  = entt::null;    // 一覧に戻る
+        Tsukino::ECS::Entity m_zoomWiki  = entt::null;    // Wikipedia で読む（記事の無いカードには出さない）
+        std::string          m_zoomUrl;                   // 拡大しているカードの記事の URL
         int                  m_current   = 0;             // 今の頁
         int                  m_pageCount = 1;             // 頁の数
         bool                 m_loaded    = false;         // 出典を読んだか

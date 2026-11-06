@@ -10,6 +10,8 @@
 #include <ChronoSort/Rules/RulesTuning.hpp>
 #include <ChronoSort/Rules/Timeline.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/ExternalLink.hpp>
+#include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/Core/Log.hpp>
 
@@ -308,6 +310,13 @@ namespace ChronoSort::Rules {
                                      ", hard " + std::to_string(hard));
             Check(100 <= easy && easy < normal && normal < hard, "difficulty widens the deck", passed);
         }
+        Check(std::all_of(allCards.begin(), allCards.end(), [](const CardData& c) { return !c.caption.empty() && !c.wiki.empty(); }), "every card has a caption and an article", passed);
+        Check(std::all_of(allCards.begin(), allCards.end(), [](const CardData& c) { return Util::WrapText(Util::Utf8ToWide(c.caption), kCaptionCharsPerLine).size() <= kCaptionMaxLines; }),
+              "every caption fits the zoom sheet", passed);
+        Check(Util::WrapText(L"あいう。えお", 3) == std::vector<std::wstring>{L"あいう。", L"えお"}, "wrap hangs punctuation", passed);
+        Check(Util::WrapText(L"あい「うえ", 3) == std::vector<std::wstring>{L"あい", L"「うえ"}, "wrap keeps an opening bracket with its text", passed);
+        Check(Util::WrapText(L"あい1234", 3) == std::vector<std::wstring>{L"あい", L"1234"}, "wrap keeps a number whole", passed);
+        Check(Util::WikipediaUrl("大和 (戦艦)") == "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%92%8C_%28%E6%88%A6%E8%89%A6%29", "article url is percent encoded", passed);
         Check(DifficultyFromKey(DifficultyKey(CardDifficulty::Easy)) == CardDifficulty::Easy && DifficultyFromKey("unknown") == CardDifficulty::Hard,
               "difficulty key round trip", passed);
 
