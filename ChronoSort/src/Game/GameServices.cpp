@@ -23,7 +23,8 @@ namespace ChronoSort::Game {
         , m_tunings()
         , m_sounds(*context.assetManager, *context.audioManager)
         , m_options(LoadOptions())
-        , m_save(LoadSaveData()) {
+        , m_save(LoadSaveData())
+        , m_graphics(context) {
         assert(s_current == nullptr && "GameServices: only one instance may exist");
         s_current = this;
         // 最初の音が鳴る前に、前回の音量にしておく

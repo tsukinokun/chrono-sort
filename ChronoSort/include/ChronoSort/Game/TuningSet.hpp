@@ -9,6 +9,7 @@
 #pragma once
 #include <ChronoSort/Board/BoardTuning.hpp>
 #include <ChronoSort/Effects/ParticleTuning.hpp>
+#include <ChronoSort/Game/GraphicsQuality.hpp>
 #include <ChronoSort/Game/SoundTuning.hpp>
 #include <ChronoSort/Match/MatchTuning.hpp>
 #include <ChronoSort/Rules/RulesTuning.hpp>
@@ -61,6 +62,9 @@ namespace ChronoSort::Game {
         //! @return 紙片の画像の縁の欠け（PaperInsets.json）。
         const UI::PaperInsetTuning& PaperInsets() const { return m_paperInsets.Get(); }
 
+        //! @return 画質の自動の引き下げ（Graphics.json）。
+        const GraphicsTuning& Graphics() const { return m_graphics.Get(); }
+
     private:
         Tsukino::IO::HotReloadable<Rules::RulesTuning>      m_rules;
         Tsukino::IO::HotReloadable<Board::BoardTuning>      m_board;
@@ -73,6 +77,7 @@ namespace ChronoSort::Game {
         Tsukino::IO::HotReloadable<Effects::ParticleTuning> m_particles;
         Tsukino::IO::HotReloadable<SoundTuning>             m_sounds;
         Tsukino::IO::HotReloadable<UI::PaperInsetTuning>    m_paperInsets;
+        Tsukino::IO::HotReloadable<GraphicsTuning>          m_graphics;
     };
 
     //! 今の調整値を返します（GameServices を作ってから壊すまでの間だけ呼べる）。

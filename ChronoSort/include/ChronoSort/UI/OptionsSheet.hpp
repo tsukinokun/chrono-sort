@@ -70,6 +70,18 @@ namespace ChronoSort::UI {
             Tsukino::ECS::Entity group = entt::null;    // 札の組
         };
 
+        //! 画質の札の組です。
+        struct QualityChoice {
+            int*                 value = nullptr;       // 書き換える設定の値（GraphicsQualityChoice）
+            Tsukino::ECS::Entity group = entt::null;    // 札の組
+        };
+
+        //! 画質の選択を作ります。
+        //! @param  [in] label 名前。
+        //! @param  [in] row   置き方の名前（Options.json。center.y が行の高さ）。
+        //! @param  [in] value 書き換える設定の値。
+        void AddQualityChoice(const std::wstring& label, const std::string& row, int* value);
+
         //! スライダーを1本作ります。
         //! @param  [in] label   名前。
         //! @param  [in] row     置き方の名前（Options.json。center.y が行の高さ）。
@@ -95,6 +107,7 @@ namespace ChronoSort::UI {
         Tsukino::ECS::Entity                       m_close = entt::null;    // 閉じる
         std::vector<Slider>                        m_sliders;         // 音量（全体・BGM・効果音）
         std::vector<Toggle>                        m_toggles;         // 演出の速さ・画面の揺れ
+        std::vector<QualityChoice>                 m_qualities;       // 画質
         float                                      m_previewTimer = 0.0f;    // 試し鳴りの間隔
     };
 

@@ -31,7 +31,8 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `UI/` | `PaperUI`（紙片の部品。ボタンには重なったときの音が付く）、`Widgets`（`NoteButton`・`ChoiceTag`・`InkLine`）、`TweenTags`（トゥイーンの目印の一覧）、`PaperLayout`（`Data/UI/*.json`）、`DeskHud`・`PlayPopups`・`ResultSheet`・`PauseSheet`（対局の画面 UI。出来事を受けて動く）、`CardAlbum`（結果の紙から開く、出たカードの一覧と拡大。拡大の紙に説明文と Wikipedia へのリンクを出す）、`TutorialGuide`（慣れるまでの対局で、最初の手番に遊び方の紙を出して止め、閉じた後は手札から隙間へ運ぶ手本を見せる）、`OptionsSheet` |
 | `Scene/` | `SceneRouter`（画面の切り替えはすべてここ。タイトルとクレジットはエンジンの名前付きシーン）、`TitleScene`、`GameScene`（組み立てと画面の切り替えだけ）、`CreditsScene`、`LoadingScene`、`DeskStage`、`StageTuning` |
 | `Util/` | `AssetPaths`（アセットのフォルダとパスはここだけで決める）、`TextUtil`、`Credits`（`Data/Credits.json` の出典。クレジット画面と `CardAlbum` が使う）、`ExternalLink`（Wikipedia の URL を作り、既定のブラウザで開く） |
-| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
+| `Game/GraphicsQuality` | 画質。起動時に GPU から段階を選び、「自動」のあいだは重ければ1段ずつ下げる（`Data/Tuning/Graphics.json`）。カード面の BC7 圧縮の規則もここで登録する |
+| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ・画質）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
 | `Game/SaveData` | 記録を `Saves/ChronoSort.json` に保存（あとから足した項目は `LoadOptional` で読み、古い記録も読めるようにする。`tutorialMatches` は遊び方の説明つきで正しく置けた対局の数）。`GameServices::Save()` の1つをタイトルと対局の終わりが書き換え、`StoreSave()` で保存する（それぞれが読み書きしない） |
 
 ### 起動と読み込み
@@ -89,6 +90,8 @@ bin\Debug\ChronoSort.exe          タイトルから
 bin\Debug\ChronoSort.exe solo     ソロの対局画面から直接（確認用）
 bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用）
 bin\Debug\ChronoSort.exe solo japan   出題を日本史に絞る（world で世界史。versus にも付けられる）
+bin\Release\ChronoSort.exe solo warp  GPU を使わず WARP（ソフトウェア描画）で動かす（GPU が無い環境の確認用）
+bin\Release\ChronoSort.exe solo warp quality=high  「自動」の画質を指定の段階（high / medium / low / minimum）から始める
 ```
 
 - 作業ディレクトリはワークスペースルート（Debug）。ログは `Logs/ChronoSort.log`。
@@ -129,6 +132,8 @@ python Tools/audio/fetch_bgm.py       BGM（PD/CC0 の演奏）を取得して m
 （キャッシュはソースの更新日時でしか作り直されない）。
 
 - カード面は 512x768 で描き、384x576・256 色に減色して保存する（容量対策。見た目はほぼ変わらない）。
+  実行時はエンジンの TextureImporter が BC7 とミップマップにして `Cache/` へ置く。CPU エンコードなので全枚数で時間がかかる
+  （28 スレッドで約 5.6 分）。`Cache/ChronoSort/` を消すと次の起動でやり直しになる。
   表（`<id>_front`）は年号を伏せ、裏（`<id>_back`）に年号を焼き込む。
 - 絵の元画像は `Tools/art/raw/<id>.*`（gitignore）。無いカードは地域色の仮の絵柄になる。
 - エンジンは 3D 空間に文字を描けないため、カード上の文字はすべて焼き込み。

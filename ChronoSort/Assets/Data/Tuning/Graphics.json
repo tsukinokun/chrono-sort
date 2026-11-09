@@ -1,0 +1,7 @@
+{
+    "tuning": {
+        "targetFps": 30.0,
+        "sustainSeconds": 3.0,
+        "cooldownSeconds": 6.0
+    }
+}

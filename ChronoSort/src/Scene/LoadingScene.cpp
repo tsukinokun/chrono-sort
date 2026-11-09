@@ -7,6 +7,7 @@
 #include <ChronoSort/ECS/SystemSetup.hpp>
 #include <ChronoSort/Game/AssetManifest.hpp>
 #include <ChronoSort/Game/FrameMonitor.hpp>
+#include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/Game/Prefabs.hpp>
 #include <ChronoSort/UI/PaperLayout.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
@@ -78,6 +79,8 @@ namespace ChronoSort::Scene {
         }
         m_queue->Start();
         Game::FrameMonitor::Mark("loading");
+        // 読み込み中のフレームの長さは描画の重さではないので、画質の判断には使わない
+        Game::Services().Graphics().SetPaused(true);
     }
 
     //----------------------------------------------------------------------------
@@ -164,6 +167,7 @@ namespace ChronoSort::Scene {
     void LoadingScene::OnExit() {
         // 途中で抜けた場合も、キューのデストラクタが裏スレッドを止めて待つ
         m_queue.reset();
+        Game::Services().Graphics().SetPaused(false);
     }
 
 }    // namespace ChronoSort::Scene

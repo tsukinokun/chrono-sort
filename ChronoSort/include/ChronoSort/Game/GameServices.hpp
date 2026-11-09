@@ -7,6 +7,7 @@
 //!         以前は関数の中の static で持っていたため、作られる時と壊される時（エンジンより後）が見えませんでした。
 //----------------------------------------------------------------------------
 #pragma once
+#include <ChronoSort/Game/GraphicsQuality.hpp>
 #include <ChronoSort/Game/Options.hpp>
 #include <ChronoSort/Game/SaveData.hpp>
 #include <ChronoSort/Game/SoundBank.hpp>
@@ -40,6 +41,10 @@ namespace ChronoSort::Game {
         //! @return 再生窓口。
         SoundBank& Sounds() { return m_sounds; }
 
+        //! 画質の決定と自動の引き下げを返します。
+        //! @return 画質。
+        GraphicsQuality& Graphics() { return m_graphics; }
+
         //! 設定を返します（書き換えたら ApplyOptions で音量に反映し、StoreOptions で保存する）。
         //! @return 設定。
         Options& Settings() { return m_options; }
@@ -65,6 +70,7 @@ namespace ChronoSort::Game {
         SoundBank                                  m_sounds;     // 効果音と BGM
         Options                                    m_options;    // 設定
         SaveData                                   m_save;       // 記録
+        GraphicsQuality                            m_graphics;   // 画質
     };
 
     //! 今あるシーンをまたいで共有するものを返します（WinMain が作ってから壊すまでの間だけ呼べる）。

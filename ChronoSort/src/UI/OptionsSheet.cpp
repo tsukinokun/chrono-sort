@@ -65,6 +65,7 @@ namespace ChronoSort::UI {
         AddSlider(L"効果音", "rowSfx", &options.sfx, true);
         AddToggle(L"演出の速さ", "rowFast", {L"普通", false}, {L"速い", true}, &options.fastEffects);
         AddToggle(L"画面の揺れ", "rowShake", {L"あり", true}, {L"なし", false}, &options.cameraShake);
+        AddQualityChoice(L"画質", "rowQuality", &options.graphicsQuality);
 
         PaperSpec close = m_layout.Spec("close");
         close.sortOrder = layer + 1;
@@ -147,6 +148,43 @@ namespace ChronoSort::UI {
     }
 
     //----------------------------------------------------------------------------
+    //! 画質の選択を作ります。
+    //----------------------------------------------------------------------------
+    void OptionsSheet::AddQualityChoice(const std::wstring& label, const std::string& row, int* value) {
+        const int   layer = m_sortOrder + 1;
+        const float y     = float(m_layout.Spec(row).center.y);
+        m_ui.Text(label, hlslpp::float2(kLabelX, y), 0.62f, kFadedInkColor, layer, m_sheet, false);
+
+        QualityChoice quality;
+        quality.value = value;
+        quality.group = ChoiceGroup(m_ui);
+
+        const PaperSpec tag      = m_layout.Spec("qualityTag");
+        const float     interval = float(tag.size.x) + 10.0f;
+        const std::pair<std::wstring, Game::GraphicsQualityChoice> choices[] = {
+            {L"自動", Game::GraphicsQualityChoice::Auto},
+            {L"高", Game::GraphicsQualityChoice::High},
+            {L"中", Game::GraphicsQualityChoice::Medium},
+            {L"低", Game::GraphicsQualityChoice::Low},
+        };
+        for(int i = 0; i < 4; ++i) {
+            ChoiceSpec spec;
+            spec.paper              = tag;
+            spec.paper.center       = hlslpp::float2(float(tag.center.x) + interval * static_cast<float>(i), y + m_ui.Jitter() * 5.0f);
+            spec.paper.angleDegrees = m_ui.Jitter() * 4.0f;
+            spec.paper.sortOrder    = layer + 1;
+            spec.paper.parent       = m_sheet;
+            spec.label              = choices[i].first;
+            spec.value              = static_cast<int>(choices[i].second);
+            ChoiceTag(m_ui, quality.group, spec, spec.value == *value);
+        }
+        m_qualities.push_back(quality);
+
+        // カード面の細かさだけは読み込みのときに決まるので、次の起動から変わる
+        m_ui.Text(L"カードの細かさは次の起動から反映", hlslpp::float2(kLabelX, float(m_layout.Spec("noteQuality").center.y)), 0.42f, kFadedInkColor, layer, m_sheet, false);
+    }
+
+    //----------------------------------------------------------------------------
     //! 紙を閉じ、設定を保存します。
     //----------------------------------------------------------------------------
     void OptionsSheet::Close() {
@@ -161,6 +199,7 @@ namespace ChronoSort::UI {
         m_close = entt::null;
         m_sliders.clear();
         m_toggles.clear();
+        m_qualities.clear();
     }
 
     //----------------------------------------------------------------------------
@@ -206,6 +245,14 @@ namespace ChronoSort::UI {
         for(Toggle& toggle : m_toggles) {
             if(ChoiceChanged(registry, toggle.group)) {
                 *toggle.value = SelectedChoice(registry, toggle.group, *toggle.value ? 1 : 0) != 0;
+            }
+        }
+
+        // 画質の札（選んだらすぐ描画へ反映する）
+        for(QualityChoice& quality : m_qualities) {
+            if(ChoiceChanged(registry, quality.group)) {
+                *quality.value = SelectedChoice(registry, quality.group, *quality.value);
+                Game::Services().Graphics().SetChoice(static_cast<Game::GraphicsQualityChoice>(*quality.value));
             }
         }
 
