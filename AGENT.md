@@ -132,8 +132,8 @@ python Tools/audio/fetch_bgm.py       BGM（PD/CC0 の演奏）を取得して m
 （キャッシュはソースの更新日時でしか作り直されない）。
 
 - カード面は 512x768 で描き、384x576・256 色に減色して保存する（容量対策。見た目はほぼ変わらない）。
-  実行時はエンジンの TextureImporter が BC7 とミップマップにして `Cache/` へ置く。CPU エンコードなので全枚数で時間がかかる
-  （28 スレッドで約 5.6 分）。`Cache/ChronoSort/` を消すと次の起動でやり直しになる。
+  実行時はエンジンの TextureImporter が BC1 とミップマップにして `Cache/` へ置く（形式は `GraphicsQuality.cpp` のゲーム側の規則で決める）。
+  全 2036 枚で約 300MB、Debug の実行で約 36 秒（BC7 だと約 600MB・約 5.6 分だった）。`Cache/ChronoSort/` を消すと次の起動でやり直しになる。
   表（`<id>_front`）は年号を伏せ、裏（`<id>_back`）に年号を焼き込む。
 - 絵の元画像は `Tools/art/raw/<id>.*`（gitignore）。無いカードは地域色の仮の絵柄になる。
 - エンジンは 3D 空間に文字を描けないため、カード上の文字はすべて焼き込み。
