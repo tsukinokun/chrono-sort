@@ -131,7 +131,6 @@ namespace ChronoSort::ECS {
                 const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(index));
                 board.SetHeld(entt::null);
                 CardMotion::SetSharpness(registry, entity, tuning.returnSharpness);
-                board.ApplyLayoutNow();
                 CardMotion::Fly(registry, entity, tuning.returnFlight);
                 sounds.Play("hand.return");
             };

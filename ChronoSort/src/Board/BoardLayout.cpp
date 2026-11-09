@@ -37,11 +37,11 @@ namespace ChronoSort::Board {
     //! エンティティごとに決まった -0.5〜0.5 の値を返します。
     //----------------------------------------------------------------------------
     float StableJitter(Tsukino::ECS::Entity entity, std::uint32_t salt) {
-        std::uint32_t h = static_cast<std::uint32_t>(entity) * 2654435761u + salt * 40503u;
-        h ^= h >> 13;
-        h *= 0x5bd1e995u;
-        h ^= h >> 15;
-        return static_cast<float>(h % 10000u) / 10000.0f - 0.5f;
+        std::uint32_t hash = static_cast<std::uint32_t>(entity) * 2654435761u + salt * 40503u;
+        hash ^= hash >> 13;
+        hash *= 0x5bd1e995u;
+        hash ^= hash >> 15;
+        return static_cast<float>(hash % 10000u) / 10000.0f - 0.5f;
     }
 
     //----------------------------------------------------------------------------
@@ -77,22 +77,22 @@ namespace ChronoSort::Board {
         // 注目点に近いほど 1 に近い重み（釣り鐘形）
         float weightSum = 0.0f;
         for(size_t i = 0; i < count; ++i) {
-            const float d    = (static_cast<float>(i) + 0.5f - focus) / tuning.focusRadius;
-            layout.weight[i] = strength * std::exp(-d * d);
-            weightSum       += layout.weight[i];
+            const float distance = (static_cast<float>(i) + 0.5f - focus) / tuning.focusRadius;
+            layout.weight[i]     = strength * std::exp(-distance * distance);
+            weightSum           += layout.weight[i];
         }
 
         // 注目点の周りは重ならない広さにし、残りの幅を遠いカードで分ける。
         // 全部を広く並べても収まる枚数なら、遠いカードも同じ広さになる（少ないうちは今まで通り全部が大きい）
-        const float span   = tuning.rowHalfSpan * 2.0f;
-        const float wide   = tuning.rowSpacingMax * tuning.rowScaleMax;
-        const float rest   = std::max(static_cast<float>(count) - weightSum, 1.0e-3f);
-        const float narrow = std::clamp((span - state.gapWidth - wide * weightSum) / rest, tuning.narrowMin, wide);
-        layout.farScale    = std::clamp(narrow / tuning.rowSpacingMax, tuning.rowScaleFar, tuning.rowScaleMax);
+        const float rowWidth    = tuning.rowHalfSpan * 2.0f;
+        const float wideWidth   = tuning.rowSpacingMax * tuning.rowScaleMax;
+        const float narrowCount = std::max(static_cast<float>(count) - weightSum, 1.0e-3f);
+        const float narrowWidth = std::clamp((rowWidth - state.gapWidth - wideWidth * weightSum) / narrowCount, tuning.narrowMin, wideWidth);
+        layout.farScale         = std::clamp(narrowWidth / tuning.rowSpacingMax, tuning.rowScaleFar, tuning.rowScaleMax);
 
         layout.total = state.gapWidth;
         for(size_t i = 0; i < count; ++i) {
-            layout.width[i] = narrow + (wide - narrow) * layout.weight[i];
+            layout.width[i] = narrowWidth + (wideWidth - narrowWidth) * layout.weight[i];
             layout.total   += layout.width[i];
         }
     }
@@ -134,19 +134,19 @@ namespace ChronoSort::Board {
     //----------------------------------------------------------------------------
     float FocusUnderX(const BoardState& state, size_t count, float x) {
         // 注目点を右へ動かすほど、その注目点の位置も右へ動く（単調）ので、二分探索で解ける
-        float     lo = 0.0f;
-        float     hi = static_cast<float>(count);
+        float     low  = 0.0f;
+        float     high = static_cast<float>(count);
         RowLayout layout;
         for(int i = 0; i < 20; ++i) {
-            const float mid = (lo + hi) * 0.5f;
-            BuildLayout(state, count, mid, 1.0f, layout);
-            if(BoundaryX(state, layout, mid) < x) {
-                lo = mid;
+            const float middle = (low + high) * 0.5f;
+            BuildLayout(state, count, middle, 1.0f, layout);
+            if(BoundaryX(state, layout, middle) < x) {
+                low = middle;
             } else {
-                hi = mid;
+                high = middle;
             }
         }
-        return (lo + hi) * 0.5f;
+        return (low + high) * 0.5f;
     }
 
     //----------------------------------------------------------------------------
@@ -172,8 +172,8 @@ namespace ChronoSort::Board {
     float SlotScale(BoardState& state, size_t count, size_t slot) {
         const BoardTuning& tuning = Tuning();
         const RowLayout& layout = CurrentLayout(state, count);
-        const float      d      = (static_cast<float>(slot) - layout.focus) / tuning.focusRadius;
-        const float      weight = layout.strength * std::exp(-d * d);
+        const float      distance = (static_cast<float>(slot) - layout.focus) / tuning.focusRadius;
+        const float      weight   = layout.strength * std::exp(-distance * distance);
         return layout.farScale + (tuning.rowScaleMax - layout.farScale) * weight;
     }
 

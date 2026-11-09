@@ -63,19 +63,19 @@ namespace ChronoSort::ECS {
             sounds().Play("play.land");
         }));
         m_connections.push_back(events.Subscribe<Match::PlayJudgedEvent>([reg, sounds, tuning](const Match::PlayJudgedEvent& e) {
-            const Match::FeedbackTuning& t = tuning();
+            const Match::FeedbackTuning& feedback = tuning();
             Game::FrameMonitor::Mark(e.result.correct ? "judge correct" : "judge wrong");
             sounds().Play("play.stamp");
             if(e.result.correct) {
-                Glow(*reg, e.card, t.correctGlow);
-                Effects::Particles(*reg).Emit("gold", e.at + kUp * t.correctBurstHeight);
+                Glow(*reg, e.card, feedback.correctGlow);
+                Effects::Particles(*reg).Emit("gold", e.at + kUp * feedback.correctBurstHeight);
                 sounds().Play("play.correct");
             } else {
                 // 不正解：赤く光って震える
-                Glow(*reg, e.card, t.wrongGlow);
-                CardMotion::Shake(*reg, e.card, t.wrongTremor);
-                Effects::Particles(*reg).Emit("ink", e.at + kUp * t.wrongBurstHeight);
-                ShakeCamera(*reg, t.wrongShake);
+                Glow(*reg, e.card, feedback.wrongGlow);
+                CardMotion::Shake(*reg, e.card, feedback.wrongTremor);
+                Effects::Particles(*reg).Emit("ink", e.at + kUp * feedback.wrongBurstHeight);
+                ShakeCamera(*reg, feedback.wrongShake);
                 sounds().Play("play.wrong");
             }
         }));
@@ -83,13 +83,13 @@ namespace ChronoSort::ECS {
         m_connections.push_back(events.Subscribe<Match::CardDiscardedEvent>([sounds](const Match::CardDiscardedEvent&) { sounds().Play("play.discard"); }));
         m_connections.push_back(events.Subscribe<Match::MatchEndedEvent>([reg, sounds, session, tuning](const Match::MatchEndedEvent& e) {
             Match::MatchSession&         s = session();
-            const Match::FeedbackTuning& t = tuning();
+            const Match::FeedbackTuning& feedback = tuning();
             sounds().Play(e.won ? "match.won" : "match.lost");
             if(e.won) {
                 // 場の列のカードを左から順に光らせる
                 const std::vector<Tsukino::ECS::Entity> row = Board::View(*reg).Row();
                 for(size_t i = 0; i < row.size(); ++i) {
-                    s.sequencer.Schedule(t.winWaveStep * static_cast<float>(i), [reg, tuning, entity = row[i]] {
+                    s.sequencer.Schedule(feedback.winWaveStep * static_cast<float>(i), [reg, tuning, entity = row[i]] {
                         Glow(*reg, entity, tuning().winGlow);
                         CardMotion::Punch(*reg, entity, tuning().winBump);
                     });
