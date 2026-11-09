@@ -126,6 +126,28 @@ namespace ChronoSort::ECS {
                 }
             };
 
+            // 置けない所で離したときの戻し方：手札へ放物線で戻す
+            auto returnToHand = [&](int index) {
+                const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(index));
+                board.SetHeld(entt::null);
+                CardMotion::SetSharpness(registry, entity, tuning.returnSharpness);
+                board.ApplyLayoutNow();
+                CardMotion::Fly(registry, entity, tuning.returnFlight);
+                sounds.Play("hand.return");
+            };
+
+            // 掴んでいるのにボタンの押下を見失った：離した通知は来ないので、ここで手札へ戻す
+            // （フォーカスを失うとエンジンが押下状態を消す。その後の押下を掴み直しと取り違えないよう、押した瞬間も見る）
+            if(input.grabbed >= 0 && (keys.IsKeyPressed(KeyCode::LButton) || (!keys.IsKeyDown(KeyCode::LButton) && !keys.IsKeyReleased(KeyCode::LButton)))) {
+                const int index = input.grabbed;
+                input.grabbed   = -1;
+                setPreview(std::nullopt);
+                if(input.dragging) {
+                    input.dragging = false;
+                    returnToHand(index);
+                }
+            }
+
             // 押した
             if(keys.IsKeyPressed(KeyCode::LButton)) {
                 if(input.selected >= 0) {
@@ -206,13 +228,7 @@ namespace ChronoSort::ECS {
                         Match::CommitPlay(registry, 0, static_cast<size_t>(index), *input.preview);
                         return;
                     }
-                    // 置けない所で離した：手札へ放物線で戻す
-                    const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(index));
-                    board.SetHeld(entt::null);
-                    CardMotion::SetSharpness(registry, entity, tuning.returnSharpness);
-                    board.ApplyLayoutNow();
-                    CardMotion::Fly(registry, entity, tuning.returnFlight);
-                    sounds.Play("hand.return");
+                    returnToHand(index);
                 } else {
                     // クリック：選択して掲げる（ドラッグが苦手でも置けるように）
                     input.selected = index;
