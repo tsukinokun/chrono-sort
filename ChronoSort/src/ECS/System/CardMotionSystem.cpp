@@ -17,6 +17,7 @@
 namespace ChronoSort::ECS {
 
     namespace {
+        constexpr float kShakeAngularSpeed = 55.0f;    // 震えの角速度（ラジアン毎秒）
 
         //----------------------------------------------------------------------------
         //! 近い側から回るように符号を揃えて slerp します。
@@ -53,16 +54,16 @@ namespace ChronoSort::ECS {
 
                 if(motion.flying) {
                     motion.flightTime += deltaTime;
-                    const float raw = std::clamp(motion.flightTime / std::max(motion.flightLength, 0.001f), 0.0f, 1.0f);
+                    const float progress = std::clamp(motion.flightTime / std::max(motion.flightLength, 0.001f), 0.0f, 1.0f);
                     if(motion.flightTime >= 0.0f) {
                         // 出だしは素早く、着地の直前で減速する
-                        const float t   = Easing::Evaluate(Easing::EaseType::InOutCubic, raw);
-                        motion.position = hlslpp::lerp(motion.flightFrom, motion.targetPosition, hlslpp::float3(t));
-                        motion.position.y += motion.flightArc * 4.0f * raw * (1.0f - raw);
-                        motion.rotation = SlerpShortest(motion.flightFromRot, motion.targetRotation, t);
-                        motion.scale    = motion.flightFromScale + (motion.targetScale - motion.flightFromScale) * t;
+                        const float eased   = Easing::Evaluate(Easing::EaseType::InOutCubic, progress);
+                        motion.position     = hlslpp::lerp(motion.flightFrom, motion.targetPosition, hlslpp::float3(eased));
+                        motion.position.y += motion.flightArc * 4.0f * progress * (1.0f - progress);
+                        motion.rotation     = SlerpShortest(motion.flightFromRot, motion.targetRotation, eased);
+                        motion.scale        = motion.flightFromScale + (motion.targetScale - motion.flightFromScale) * eased;
                     }
-                    if(raw >= 1.0f) {
+                    if(progress >= 1.0f) {
                         motion.flying = false;
                     }
                 } else {
@@ -80,13 +81,13 @@ namespace ChronoSort::ECS {
                 if(motion.shakeTime > 0.0f) {
                     motion.shakeTime     = std::max(0.0f, motion.shakeTime - deltaTime);
                     const float fade     = motion.shakeTime / std::max(motion.shakeLength, 0.001f);
-                    const float phase    = (motion.shakeLength - motion.shakeTime) * 55.0f;
+                    const float phase    = (motion.shakeLength - motion.shakeTime) * kShakeAngularSpeed;
                     position.x += std::sin(phase) * motion.shakeAmplitude * fade;
                 }
                 if(motion.punchTime > 0.0f) {
                     motion.punchTime = std::max(0.0f, motion.punchTime - deltaTime);
-                    const float t    = 1.0f - motion.punchTime / std::max(motion.punchLength, 0.001f);
-                    scale += motion.punchAmount * Easing::Evaluate(Easing::EaseType::Punch, t);
+                    const float progress = 1.0f - motion.punchTime / std::max(motion.punchLength, 0.001f);
+                    scale += motion.punchAmount * Easing::Evaluate(Easing::EaseType::Punch, progress);
                 }
 
                 transform.position = position;

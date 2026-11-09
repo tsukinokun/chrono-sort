@@ -67,8 +67,8 @@ namespace ChronoSort::Board {
 
         // ホバー：手前に浮かせて拡大し、カーソルの位置へ少し傾ける
         hlslpp::float3 handHoverOffset = hlslpp::float3(0.0f, 30.0f, -28.0f);
-        float          handHoverLean   = 0.35f;    // カーソルの位置へ傾ける量
-        float          handHoverTilt   = -0.2f;    // さらにカメラへ向ける傾き
+        float          handHoverLeanAngle = 0.35f;    // カーソルの位置へ傾ける最大の角度（ラジアン）
+        float          handHoverExtraTilt = -0.2f;    // ホバー中にさらにカメラへ向ける傾き（ラジアン）
         float          handHoverScale  = 1.22f;
 
         // 選択中：手札の上に掲げて、ゆっくり上下させる
@@ -167,8 +167,8 @@ namespace ChronoSort::Board {
         CHRONOSORT_LOAD(handStackStep);
         CHRONOSORT_LOAD(hoverAvoid);
         CHRONOSORT_LOAD(handHoverOffset);
-        CHRONOSORT_LOAD(handHoverLean);
-        CHRONOSORT_LOAD(handHoverTilt);
+        CHRONOSORT_LOAD(handHoverLeanAngle);
+        CHRONOSORT_LOAD(handHoverExtraTilt);
         CHRONOSORT_LOAD(handHoverScale);
         CHRONOSORT_LOAD(liftedSpread);
         CHRONOSORT_LOAD(liftedHeight);

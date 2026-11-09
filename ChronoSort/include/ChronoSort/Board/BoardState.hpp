@@ -27,7 +27,7 @@ namespace ChronoSort::Board {
         hlslpp::float3 seat      = hlslpp::float3(0.0f, 0.0f, 0.0f);     // 席の中心（Seat のとき）
         int            hovered   = -1;                                   // カーソルが重なっている手札
         int            lifted    = -1;                                   // 持ち上げている手札（選択中・CPU の思考中）
-        hlslpp::float2 hoverTilt = hlslpp::float2(0.0f, 0.0f);           // カーソルの位置へ傾ける量
+        hlslpp::float2 hoverCursor = hlslpp::float2(0.0f, 0.0f);         // カード上のカーソルの位置（中心が 0、端が ±1）
     };
 
     //! 場の列の並び（流す前の座標）です。注目点の周りは広く、遠いほど狭く詰めます。

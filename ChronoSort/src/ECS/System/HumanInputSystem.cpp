@@ -20,6 +20,7 @@
 #include <Tsukino/EngineIntegration/EngineContext.hpp>
 
 #include <algorithm>
+#include <cmath>
 #include <optional>
 
 namespace ChronoSort::ECS {
@@ -86,7 +87,7 @@ namespace ChronoSort::ECS {
                     sounds.Play("hand.hover");
                 }
                 hand.hovered   = hovered;
-                hand.hoverTilt = hovered >= 0 ? hlslpp::float2((float(uv.x) - 0.5f) * 2.0f, (float(uv.y) - 0.5f) * 2.0f) : hlslpp::float2(0.0f, 0.0f);
+                hand.hoverCursor = hovered >= 0 ? hlslpp::float2((float(uv.x) - 0.5f) * 2.0f, (float(uv.y) - 0.5f) * 2.0f) : hlslpp::float2(0.0f, 0.0f);
             }
 
             // 手札を持っていないときは、指した場のカードを起こして年号を読めるようにする
@@ -153,8 +154,10 @@ namespace ChronoSort::ECS {
             // 押したまま動かした：ドラッグ開始・継続
             if(input.grabbed >= 0 && keys.IsKeyDown(KeyCode::LButton)) {
                 const Tsukino::ECS::Entity entity = board.HandCard(0, static_cast<size_t>(input.grabbed));
+                bool dragStarted = false;
                 if(!input.dragging && float(hlslpp::length(mouse - input.pressPoint)) > tuning.clickThreshold) {
                     input.dragging = true;
+                    dragStarted    = true;
                     hand.hovered   = -1;
                     board.SetHeld(entity);
                     CardMotion::SetSharpness(registry, entity, tuning.dragSharpness);
@@ -164,9 +167,14 @@ namespace ChronoSort::ECS {
                     float distance = 0.0f;
                     if(CameraUtility::IntersectPlane(ray, hlslpp::float3(0.0f, Board::Tuning().dragHeight, 0.0f), hlslpp::float3(0.0f, 1.0f, 0.0f), distance)) {
                         const hlslpp::float3 point = ray.GetPoint(distance);
+                        // 掴んだフレームには前回のドラッグの位置が残っているので、ここを起点にして速度 0 から始める
+                        if(dragStarted) {
+                            input.dragPoint    = point;
+                            input.dragVelocity = hlslpp::float3(0.0f, 0.0f, 0.0f);
+                        }
                         // 速度は少しなまらせてから傾きに使う（手ぶれで暴れないように）
                         const hlslpp::float3 velocity = (point - input.dragPoint) / std::max(deltaTime, 0.001f);
-                        input.dragVelocity += (velocity - input.dragVelocity) * std::min(1.0f, deltaTime * tuning.dragVelocitySmoothing);
+                        input.dragVelocity += (velocity - input.dragVelocity) * (1.0f - std::exp(-tuning.dragVelocitySmoothing * deltaTime));
                         input.dragPoint = point;
 
                         const float              roll  = std::clamp(-float(input.dragVelocity.x) * tuning.dragLeanPerSpeed, -tuning.dragLeanMax, tuning.dragLeanMax);

@@ -39,8 +39,8 @@
             "y": 30.0,
             "z": -28.0
         },
-        "handHoverLean": 0.35,
-        "handHoverTilt": -0.2,
+        "handHoverLeanAngle": 0.35,
+        "handHoverExtraTilt": -0.2,
         "handHoverScale": 1.22,
         "liftedSpread": 0.4,
         "liftedHeight": 70.0,

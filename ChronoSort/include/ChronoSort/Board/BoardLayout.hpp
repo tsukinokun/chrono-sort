@@ -66,7 +66,7 @@ namespace ChronoSort::Board {
     //! @param  [in] layout 並び。
     //! @param  [in] t      位置。
     //! @return X 座標。
-    float BoundaryX(const BoardState& state, const RowLayout& layout, float t);
+    float BoundaryX(const BoardState& state, const RowLayout& layout, float boundary);
 
     //! 流す前の X 座標が、注目点の真下に来るような注目点を求めます。
     //! @param  [in] state 卓の状態。

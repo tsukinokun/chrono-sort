@@ -15,6 +15,8 @@
 namespace ChronoSort::ECS {
 
     namespace {
+        constexpr float kPulseCenter = 0.55f;    // 脈打つ明るさの中心（intensity に対する割合）
+        constexpr float kPulseSwing  = 0.45f;    // 脈打つ明るさの振れ幅（intensity に対する割合）
 
         //----------------------------------------------------------------------------
         //! 発光を付けるか、付いていれば置き換えます。
@@ -41,7 +43,7 @@ namespace ChronoSort::ECS {
             float strength = 0.0f;
             if(glow.pulseSpeed > 0.0f) {
                 glow.time += deltaTime;
-                strength = glow.intensity * (0.55f + 0.45f * std::sin(glow.time * glow.pulseSpeed));
+                strength = glow.intensity * (kPulseCenter + kPulseSwing * std::sin(glow.time * glow.pulseSpeed));
             } else {
                 glow.intensity = std::max(0.0f, glow.intensity - glow.decay * deltaTime);
                 strength       = glow.intensity;
