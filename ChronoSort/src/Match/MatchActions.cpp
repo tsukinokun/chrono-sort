@@ -129,7 +129,7 @@ namespace ChronoSort::Match {
         reveal.player = player;
         reveal.result = *result;
         Events(registry).Publish(CardCommittedEvent{player, entity});
-        Events(registry).Publish(MatchStateChangedEvent{});
+        // 得点・ライフなどの表示は、判定の演出（RevealSystem）で正誤を見せるときに合わせて更新する
     }
 
     //----------------------------------------------------------------------------

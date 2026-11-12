@@ -98,6 +98,8 @@ namespace ChronoSort::ECS {
                     board.SetHeld(entt::null);
                 }
                 Match::Events(registry).Publish(Match::PlayJudgedEvent{reveal.player, entity, result, at});
+                // 得点・インク壺・山札などの表示は、正誤を見せるこの瞬間に合わせて更新する（置いた瞬間に更新すると先に正誤がわかってしまう）
+                Match::Events(registry).Publish(Match::MatchStateChangedEvent{});
                 reveal.stage = result.correct ? RevealStage::Finish : RevealStage::ShowCorrect;
                 return true;
             }
