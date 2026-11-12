@@ -9,6 +9,7 @@
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/ExternalLink.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
@@ -40,14 +41,14 @@ namespace ChronoSort::UI {
         constexpr float kZoomCreditY  = 92.0f;                               // 絵の出典の1行目の高さ（説明文の行数によらず揃える）
 
         //! 行方の短い言い方です。
-        const wchar_t* FateLabel(Rules::CardFate fate) {
+        const std::wstring& FateLabel(Rules::CardFate fate) {
             switch(fate) {
             case Rules::CardFate::Placed:
-                return L"正解";
+                return Util::Text("album.fatePlaced");
             case Rules::CardFate::Missed:
-                return L"外れ";
+                return Util::Text("album.fateMissed");
             case Rules::CardFate::InHand:
-                return L"手札に残った";
+                return Util::Text("album.fateInHand");
             }
             return L"";
         }
@@ -93,7 +94,7 @@ namespace ChronoSort::UI {
         const PaperSpec sheet = m_layout.Spec("albumSheet");
         m_sheet               = m_ui.Paper(sheet);
         m_ui.SlideIn(m_sheet, hlslpp::float2(0.0f, -kReferenceHeight), 0.0f, 0.55f);
-        m_ui.Text(L"この対局に出たカード（" + std::to_wstring(m_cards.size()) + L" 枚）", hlslpp::float2(0.0f, -338.0f), 0.85f, kInkColor,
+        m_ui.Text(Util::Format("album.title", {std::to_wstring(m_cards.size())}), hlslpp::float2(0.0f, -338.0f), 0.85f, kInkColor,
                   sheet.sortOrder + 1, m_sheet);
         m_pageNo = m_ui.Text(L"", hlslpp::float2(0.0f, 334.0f), 0.5f, kFadedInkColor, sheet.sortOrder + 1, m_sheet);
 
@@ -102,9 +103,9 @@ namespace ChronoSort::UI {
             spec.parent    = m_sheet;
             return NoteButton(m_ui, spec, label, 0.62f);
         };
-        m_prev  = button("albumPrev", L"前の頁");
-        m_next  = button("albumNext", L"次の頁");
-        m_close = button("albumClose", L"閉じる");
+        m_prev  = button("albumPrev", Util::Text("common.prevPage"));
+        m_next  = button("albumNext", Util::Text("common.nextPage"));
+        m_close = button("albumClose", Util::Text("common.close"));
         ShowPage(0, 0);
     }
 
@@ -274,8 +275,8 @@ namespace ChronoSort::UI {
         };
         line(Util::Utf8ToWide(card.title), 0.85f, kInkColor, 56.0f);
         line(Util::Utf8ToWide(card.yearLabel), 0.8f, kInkColor, 50.0f);
-        line(std::wstring(card.region == "JP" ? L"日本" : L"世界") + L"の出来事  ・  " + Util::Utf8ToWide(card.category), 0.5f, kFadedInkColor, 34.0f);
-        line(std::wstring(L"この対局では  ") + FateLabel(fate), 0.5f, FateColor(fate), 46.0f);
+        line(Util::Format("album.regionCategory", {Util::Text(card.region == "JP" ? "region.JP" : "region.WORLD"), Util::Utf8ToWide(card.category)}), 0.5f, kFadedInkColor, 34.0f);
+        line(Util::Format("album.fate", {FateLabel(fate)}), 0.5f, FateColor(fate), 46.0f);
 
         y = kZoomCaptionY;
         for(const std::wstring& text : Util::WrapText(Util::Utf8ToWide(card.caption), Rules::kCaptionCharsPerLine)) {
@@ -284,20 +285,20 @@ namespace ChronoSort::UI {
 
         y = kZoomCreditY;
         if(const Util::CreditEntry* credit = m_credits.FindImage(card.id)) {
-            line(L"絵の出典  " + Util::Utf8ToWide(credit->artist), 0.4f, kFadedInkColor, 28.0f);
+            line(Util::Format("album.artist", {Util::Utf8ToWide(credit->artist)}), 0.4f, kFadedInkColor, 28.0f);
             line(Util::Utf8ToWide(credit->license), 0.36f, kFadedInkColor, 26.0f);
             line(Util::Utf8ToWide(credit->file), 0.34f, kFadedInkColor, 26.0f);
         }
 
         PaperSpec back = m_layout.Spec("zoomBack");
         back.parent    = m_zoom;
-        m_zoomBack     = NoteButton(m_ui, back, L"一覧に戻る", 0.62f);
+        m_zoomBack     = NoteButton(m_ui, back, Util::Text("album.back"), 0.62f);
 
         if(!card.wiki.empty()) {
             PaperSpec wiki = m_layout.Spec("zoomWiki");
             wiki.parent    = m_zoom;
-            m_zoomWiki     = NoteButton(m_ui, wiki, L"Wikipediaで読む", 0.56f);
-            m_zoomUrl      = Util::WikipediaUrl(card.wiki);
+            m_zoomWiki     = NoteButton(m_ui, wiki, Util::Text("album.wiki"), 0.56f);
+            m_zoomUrl      = Util::CurrentLanguage() == Util::Language::Japanese ? Util::WikipediaUrl(card.wiki) : Util::WikipediaSearchUrl(card.title, Util::LanguageCode(Util::CurrentLanguage()));
         }
     }
 

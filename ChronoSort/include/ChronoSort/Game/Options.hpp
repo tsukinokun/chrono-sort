@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 //! @file   Options.hpp
-//! @brief  設定（音量・演出の速さ・画面の揺れ）
+//! @brief  設定（音量・演出の速さ・画面の揺れ・画質・表示言語）
 //! @detail Saves/Options.json に保存します。記録（SaveData）とは別のファイルなので、
 //!         設定の項目を増やしても記録の読み込みに影響しません。
 //!         値は起動時に GameServices が1回だけ読み、Services().Settings() で全シーンが共有します。
@@ -9,6 +9,9 @@
 #include <Tsukino/Core/IO/CerealOptional.hpp>
 
 #include <cereal/cereal.hpp>
+#include <cereal/types/string.hpp>
+
+#include <string>
 
 namespace ChronoSort::Game {
 
@@ -28,6 +31,7 @@ namespace ChronoSort::Game {
         bool  fastEffects = false;    // 演出を速くするか（自分の手番以外の時間を早回しする）
         bool  cameraShake = true;     // 判定などでカメラを揺らすか
         int   graphicsQuality = static_cast<int>(GraphicsQualityChoice::Auto);    // 画質（GraphicsQualityChoice の値）
+        std::string language = "ja";    // 表示言語（Util::LanguageCode の値。変えたらタイトルで読み直す）
 
         template <class Archive>
         void save(Archive& archive) const {
@@ -36,7 +40,8 @@ namespace ChronoSort::Game {
                     cereal::make_nvp("sfx", sfx),
                     cereal::make_nvp("fastEffects", fastEffects),
                     cereal::make_nvp("cameraShake", cameraShake),
-                    cereal::make_nvp("graphicsQuality", graphicsQuality));
+                    cereal::make_nvp("graphicsQuality", graphicsQuality),
+                    cereal::make_nvp("language", language));
         }
 
         template <class Archive>
@@ -48,6 +53,7 @@ namespace ChronoSort::Game {
                     cereal::make_nvp("fastEffects", fastEffects),
                     cereal::make_nvp("cameraShake", cameraShake));
             Tsukino::IO::LoadOptional(archive, "graphicsQuality", graphicsQuality);
+            Tsukino::IO::LoadOptional(archive, "language", language);
         }
     };
 

@@ -30,10 +30,18 @@ TsukinoEngine（C++20 / DX11 / EnTT）上で、3D の卓にカードを置いて
 | `Game/` | `GameServices`（シーンをまたぐ調整値・音・設定・記録）、`TuningSet`（`Data/Tuning/*.json` を読み、Debug では保存し直すと読み直す。`Game::Tuning()`）、`TuningTypes`（追従・飛び方・弾み・光り方の組）、`SoundBank`（合図の名前で鳴らす。BGM と効果音はエンジンの別のバス）、`SoundTuning`、`Prefabs`、`Options`、`SaveData`、`AssetManifest`、`FrameMonitor` |
 | `UI/` | `PaperUI`（紙片の部品。ボタンには重なったときの音が付く）、`Widgets`（`NoteButton`・`ChoiceTag`・`InkLine`）、`TweenTags`（トゥイーンの目印の一覧）、`PaperLayout`（`Data/UI/*.json`）、`DeskHud`・`PlayPopups`・`ResultSheet`・`PauseSheet`（対局の画面 UI。出来事を受けて動く）、`CardAlbum`（結果の紙から開く、出たカードの一覧と拡大。拡大の紙に説明文と Wikipedia へのリンクを出す）、`TutorialGuide`（慣れるまでの対局で、最初の手番に遊び方の紙を出して止め、閉じた後は手札から隙間へ運ぶ手本を見せる）、`OptionsSheet` |
 | `Scene/` | `SceneRouter`（画面の切り替えはすべてここ。タイトルとクレジットはエンジンの名前付きシーン）、`TitleScene`、`GameScene`（組み立てと画面の切り替えだけ）、`CreditsScene`、`LoadingScene`、`DeskStage`、`StageTuning` |
-| `Util/` | `AssetPaths`（アセットのフォルダとパスはここだけで決める）、`TextUtil`、`Credits`（`Data/Credits.json` の出典。クレジット画面と `CardAlbum` が使う）、`ExternalLink`（Wikipedia の URL を作り、既定のブラウザで開く） |
+| `Util/` | `AssetPaths`（アセットのフォルダとパスはここだけで決める）、`TextUtil`、`Localization`（表示言語。`Util::Text("キー")` と `Util::Format` で `Data/Text/<言語>.json` の文字列を引く）、`Credits`（`Data/Credits.json` の出典。クレジット画面と `CardAlbum` が使う）、`ExternalLink`（Wikipedia の URL を作り、既定のブラウザで開く） |
 | `Game/GraphicsQuality` | 画質。起動時に GPU から段階を選び、「自動」のあいだは重ければ1段ずつ下げる（`Data/Tuning/Graphics.json`）。カード面の BC7 圧縮の規則もここで登録する |
-| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ・画質）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
+| `Game/Options` | 設定（音量3本・演出の速さ・画面の揺れ・画質・表示言語）の読み書き。`Saves/Options.json`。スライダーの位置は2乗して音量にする（`VolumeGain`） |
 | `Game/SaveData` | 記録を `Saves/ChronoSort.json` に保存（あとから足した項目は `LoadOptional` で読み、古い記録も読めるようにする。`tutorialMatches` は遊び方の説明つきで正しく置けた対局の数）。`GameServices::Save()` の1つをタイトルと対局の終わりが書き換え、`StoreSave()` で保存する（それぞれが読み書きしない） |
+
+### 表示言語（日本語・英語）
+
+- 画面の文字列はコードに直書きせず、`Data/Text/ja.json` と `en.json` にキーで置いて `Util::Text("キー")` で引く。数を埋める文は `Util::Format("キー", {…})` を使う（`{0}` `{1}` を置き換える。語順が言語で変わるため）。キーを足したら両方の表に入れる（自己テストがキーの揃いを確かめる）。
+- プレイヤー名（`player.you`・`cpu.*`）はキーのまま `Rules::Player::name` に入り、画面で `Util::Text` を通す。
+- カードの訳は `Data/Text/Cards/en.json`（id ごとの題名と説明文）。分類は `category.<日本語の分類>` で引き、年号は西暦の値から作る。`Rules::LoadAllCards()` が読むときに今の言語へ差し替える。英文は ASCII と Latin-1 の字だけで書く（フォントにフォールバックが無いため。自己テストで確かめる）。
+- カード面は言語ごとに焼く。英語は `Textures/Cards/en/` に置く（`bake_cards.py --lang en` が日本語の面の文字の欄だけを描き直す）。読込画面は今の言語の面だけを読む（`AssetPaths::CardFaceDir()`）。
+- 言語はタイトルの設定でだけ変えられる（対局中の一時停止の設定では注記だけを出す）。変えると表を読み直し、読込画面を通ってタイトルを作り直す（`Router::ReloadTitle`）。初めて英語にしたときだけ、英語の面の取り込みに時間がかかる。
 
 ### 起動と読み込み
 
@@ -90,6 +98,7 @@ bin\Debug\ChronoSort.exe          タイトルから
 bin\Debug\ChronoSort.exe solo     ソロの対局画面から直接（確認用）
 bin\Debug\ChronoSort.exe versus   CPU 2人との対戦から直接（確認用）
 bin\Debug\ChronoSort.exe solo japan   出題を日本史に絞る（world で世界史。versus にも付けられる）
+bin\Debug\ChronoSort.exe solo lang=en  英語で起動する（lang=ja で日本語。保存した設定より優先する）
 bin\Release\ChronoSort.exe solo warp  GPU を使わず WARP（ソフトウェア描画）で動かす（GPU が無い環境の確認用）
 bin\Release\ChronoSort.exe solo warp quality=high  「自動」の画質を指定の段階（high / medium / low / minimum）から始める
 ```
@@ -120,6 +129,7 @@ python Tools/art/card_list.py         デッキ JSON（年号・検索語）を�
 python Tools/art/fetch_art.py         Commons から絵を取得し Credits.json に出典を記録（--only id1,id2 で取り直し）
 python Tools/art/contact_sheet.py X   取得した絵の一覧を X に出して目で確かめる。外れは card_list.py の file で差し替え
 python Tools/art/bake_cards.py        カード面を焼き直す
+python Tools/art/bake_cards.py --lang en  英語のカード面を Cards/en/ に作る（日本語の面の文字の欄を描き直す）
 python Tools/art/fetch_portraits.py   CPU の名札の肖像
 python Tools/audio/synth_sfx.py       効果音を合成
 python Tools/audio/fetch_bgm.py       BGM（PD/CC0 の演奏）を取得して mp3 に（ffmpeg が要る）

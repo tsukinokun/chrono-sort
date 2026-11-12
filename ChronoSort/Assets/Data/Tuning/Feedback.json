@@ -50,11 +50,6 @@
         "correctBurstHeight": 8.0,
         "wrongBurstHeight": 6.0,
         "landShake": 4.0,
-        "wrongShake": 7.0,
-        "bannerYourTurn": "あなたの番",
-        "bannerTiebreak": "延長戦！",
-        "bannerWon": "見事！",
-        "bannerInkOut": "インクが尽きた…",
-        "bannerLost": "惜しい…"
+        "wrongShake": 7.0
     }
 }

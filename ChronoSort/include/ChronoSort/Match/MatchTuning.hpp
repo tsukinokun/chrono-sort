@@ -109,13 +109,6 @@ namespace ChronoSort::Match {
         float wrongBurstHeight   = 6.0f;    // 不正解の墨を出す高さ
         float landShake          = 4.0f;    // 着地のカメラの揺れ
         float wrongShake         = 7.0f;    // 不正解のカメラの揺れ
-
-        // 帯の文言（UTF-8）
-        std::string bannerYourTurn = "あなたの番";
-        std::string bannerTiebreak = "延長戦！";
-        std::string bannerWon      = "見事！";
-        std::string bannerInkOut   = "インクが尽きた…";
-        std::string bannerLost     = "惜しい…";
     };
 
 #define CHRONOSORT_LOAD(name) Tsukino::IO::LoadOptional(archive, #name, t.name)
@@ -214,11 +207,6 @@ namespace ChronoSort::Match {
         CHRONOSORT_LOAD(wrongBurstHeight);
         CHRONOSORT_LOAD(landShake);
         CHRONOSORT_LOAD(wrongShake);
-        CHRONOSORT_LOAD(bannerYourTurn);
-        CHRONOSORT_LOAD(bannerTiebreak);
-        CHRONOSORT_LOAD(bannerWon);
-        CHRONOSORT_LOAD(bannerInkOut);
-        CHRONOSORT_LOAD(bannerLost);
     }
 
 #undef CHRONOSORT_LOAD

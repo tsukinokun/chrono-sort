@@ -11,6 +11,7 @@
 #include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -33,7 +34,7 @@ namespace ChronoSort::Scene {
         constexpr int kLayerMenu  = 20;
         constexpr int kLayerSheet = 70;
 
-        const wchar_t* const kLevelNames[] = {L"やさしい", L"ふつう", L"てごわい"};
+        const char* const kLevelKeys[] = {"cpuLevel.easy", "cpuLevel.normal", "cpuLevel.hard"};    // CPU の強さの表示名のキー
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -61,12 +62,12 @@ namespace ChronoSort::Scene {
         CreateProblemTabs(title);
 
         // メニュー（あえて高さも傾きも揃えない）
-        m_solo     = CreateMenuNote(L"ひとりで挑む", L"インク三つで、何枚並べられるか", "solo", 0.7f, "pin.png");
-        m_versus   = CreateMenuNote(L"CPUと対戦", L"先に手札を出し切った者の勝ち", "versus", 0.85f, "tape.png");
-        m_credits  = CreateMenuNote(L"出典・クレジット", L"", "credits", 1.0f, "pin.png");
-        m_quit     = CreateMenuNote(L"机を離れる", L"", "quit", 1.1f, "tape.png");
-        m_settings = CreateMenuNote(L"設定", L"", "settings", 1.05f, "pin.png");
-        m_options  = std::make_unique<UI::OptionsSheet>(m_scene, *context, kLayerSheet + 20);
+        m_solo     = CreateMenuNote(Util::Text("title.solo"), Util::Text("title.soloNote"), "solo", 0.7f, "pin.png");
+        m_versus   = CreateMenuNote(Util::Text("title.versus"), Util::Text("title.versusNote"), "versus", 0.85f, "tape.png");
+        m_credits  = CreateMenuNote(Util::Text("title.credits"), L"", "credits", 1.0f, "pin.png");
+        m_quit     = CreateMenuNote(Util::Text("title.quit"), L"", "quit", 1.1f, "tape.png");
+        m_settings = CreateMenuNote(Util::Text("title.options"), L"", "settings", 1.05f, "pin.png");
+        m_options  = std::make_unique<UI::OptionsSheet>(m_scene, *context, kLayerSheet + 20, true);
 
         // 最高記録のメモ（選んでいる範囲に記録があるときだけ出す）
         {
@@ -127,7 +128,15 @@ namespace ChronoSort::Scene {
         // 設定の紙が開いている間（閉じたフレームも含む）は、下のメニューを受け付けない
         // （閉じた Esc で、続けて「机を離れる」まで動かないように）
         const bool optionsWereOpen = m_options->IsOpen();
-        if(m_options->Update(deltaTime) || optionsWereOpen) {
+        const bool optionsClosed   = m_options->Update(deltaTime);
+        // 言語を選び直したら、文字列の表を読み直し、その言語のカードの面を読込画面で読んでから、タイトルを作り直す
+        if(optionsClosed && m_options->LanguageChanged()) {
+            Util::LoadLanguage(Util::LanguageFromCode(Game::Services().Settings().language));
+            Router::ReloadTitle(api);
+            m_scene.Update(deltaTime);
+            return;
+        }
+        if(optionsClosed || optionsWereOpen) {
             m_scene.Update(deltaTime);
             return;
         }
@@ -203,11 +212,11 @@ namespace ChronoSort::Scene {
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 600.0f), 0.0f, 0.5f);
 
         const int layer = kLayerSheet + 1;
-        m_ui->Text(L"対戦の支度", hlslpp::float2(0.0f, -175.0f), 1.15f, UI::kInkColor, layer, m_sheet);
+        m_ui->Text(Util::Text("versus.title"), hlslpp::float2(0.0f, -175.0f), 1.15f, UI::kInkColor, layer, m_sheet);
         // 何で遊ぶかを始める前に確かめられるよう、選んでいる範囲を添える
-        m_ui->Text(L"出題：" + Util::Utf8ToWide(Rules::ProblemSetName(m_range, m_difficulty)),hlslpp::float2(0.0f, -136.0f), 0.5f, UI::kFadedInkColor, layer, m_sheet);
-        m_ui->Text(L"相手の人数", hlslpp::float2(-200.0f, -105.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
-        m_ui->Text(L"相手の強さ", hlslpp::float2(-200.0f, 10.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
+        m_ui->Text(Util::Format("versus.problemSet", {Rules::ProblemSetName(m_range, m_difficulty)}),hlslpp::float2(0.0f, -136.0f), 0.5f, UI::kFadedInkColor, layer, m_sheet);
+        m_ui->Text(Util::Text("versus.count"), hlslpp::float2(-200.0f, -105.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
+        m_ui->Text(Util::Text("versus.level"), hlslpp::float2(-200.0f, 10.0f), 0.62f, UI::kFadedInkColor, layer, m_sheet, false);
 
         // 札は少しずつ傾けて、手で置いたように並べる（開いたときは今の選択を弾ませて見せる）
         auto tag = [&](Tsukino::ECS::Entity group, const std::wstring& text, float x, float y, int value, bool selected) {
@@ -225,10 +234,10 @@ namespace ChronoSort::Scene {
         m_countGroup = UI::ChoiceGroup(*m_ui);
         m_levelGroup = UI::ChoiceGroup(*m_ui);
         for(int i = 0; i < 3; ++i) {
-            tag(m_countGroup, std::to_wstring(i + 1) + L" 人", -150.0f + 150.0f * static_cast<float>(i), -55.0f, i + 1, i + 1 == m_cpuCount);
+            tag(m_countGroup, Util::Format("versus.people", {std::to_wstring(i + 1)}), -150.0f + 150.0f * static_cast<float>(i), -55.0f, i + 1, i + 1 == m_cpuCount);
         }
         for(int i = 0; i < 3; ++i) {
-            tag(m_levelGroup, kLevelNames[i], -150.0f + 150.0f * static_cast<float>(i), 60.0f, i, i == static_cast<int>(m_cpuLevel));
+            tag(m_levelGroup, Util::Text(kLevelKeys[i]), -150.0f + 150.0f * static_cast<float>(i), 60.0f, i, i == static_cast<int>(m_cpuLevel));
         }
 
         auto button = [&](const char* name, const std::wstring& text) {
@@ -237,8 +246,8 @@ namespace ChronoSort::Scene {
             spec.parent        = m_sheet;
             return UI::NoteButton(*m_ui, spec, text, 0.75f);
         };
-        m_start  = button("versusStart", L"始める");
-        m_cancel = button("versusCancel", L"やめる");
+        m_start  = button("versusStart", Util::Text("versus.start"));
+        m_cancel = button("versusCancel", Util::Text("versus.cancel"));
     }
 
     //----------------------------------------------------------------------------
@@ -261,19 +270,19 @@ namespace ChronoSort::Scene {
     //----------------------------------------------------------------------------
     void TitleScene::CreateProblemTabs(Tsukino::ECS::Entity title) {
         // 題字の左下に小さな見出し（題字と一緒に揺れる）
-        m_ui->Text(L"出題", hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
-        m_ui->Text(L"難易度", hlslpp::float2(-400.0f, 266.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
+        m_ui->Text(Util::Text("title.rangeHeading"), hlslpp::float2(-392.0f, 150.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
+        m_ui->Text(Util::Text("title.difficultyHeading"), hlslpp::float2(-400.0f, 266.0f), 0.5f, UI::kParchmentColor, kLayerMenu + 1, title, true, false);
 
         // 置き場所・傾きは Data/UI/Title.json（高さも傾きもわざと揃えない）
         using Rules::CardDifficulty;
         using Rules::CardRange;
-        auto range = [](CardRange r, const char* layout, const wchar_t* note) {
-            return TabSpec{static_cast<int>(r), layout, Util::Utf8ToWide(Rules::RangeName(r)), note};
+        auto range = [](CardRange r, const char* layout, const std::wstring& note) {
+            return TabSpec{static_cast<int>(r), layout, Rules::RangeName(r), note};
         };
         auto difficulty = [](CardDifficulty d, const char* layout) {
-            return TabSpec{static_cast<int>(d), layout, Util::Utf8ToWide(Rules::DifficultyName(d)), L""};
+            return TabSpec{static_cast<int>(d), layout, Rules::DifficultyName(d), L""};
         };
-        CreateTabRow(m_rangeRow, {range(CardRange::Japan, "rangeJapan", L""), range(CardRange::World, "rangeWorld", L""), range(CardRange::All, "rangeAll", L"日本と世界")},
+        CreateTabRow(m_rangeRow, {range(CardRange::Japan, "rangeJapan", L""), range(CardRange::World, "rangeWorld", L""), range(CardRange::All, "rangeAll", Util::Text("title.rangeAllNote"))},
                      static_cast<int>(m_range), 0.78f, "rangeRibbon", 0.45f);
         CreateTabRow(m_difficultyRow,
                      {difficulty(CardDifficulty::Easy, "difficultyEasy"), difficulty(CardDifficulty::Normal, "difficultyNormal"),
@@ -364,11 +373,11 @@ namespace ChronoSort::Scene {
         const Game::SoloRecord& record = save.Record(m_range, m_difficulty);
         const bool              show   = record.HasAny() || save.versusWins > 0;
 
-        m_ui->SetText(m_recordTitle, Util::Utf8ToWide(Rules::ProblemSetName(m_range, m_difficulty)) + L"の記録");
-        m_ui->SetText(m_recordLines[0], L"最高得点  " + std::to_wstring(record.bestScore));
-        m_ui->SetText(m_recordLines[1], L"最多枚数  " + std::to_wstring(record.bestPlaced));
-        m_ui->SetText(m_recordLines[2], L"最長連続  " + std::to_wstring(record.bestStreak));
-        m_ui->SetText(m_recordLines[3], L"対戦の勝利  " + std::to_wstring(save.versusWins));
+        m_ui->SetText(m_recordTitle, Util::Format("title.record", {Rules::ProblemSetName(m_range, m_difficulty)}));
+        m_ui->SetText(m_recordLines[0], Util::Format("title.bestScore", {std::to_wstring(record.bestScore)}));
+        m_ui->SetText(m_recordLines[1], Util::Format("title.bestPlaced", {std::to_wstring(record.bestPlaced)}));
+        m_ui->SetText(m_recordLines[2], Util::Format("title.bestStreak", {std::to_wstring(record.bestStreak)}));
+        m_ui->SetText(m_recordLines[3], Util::Format("title.versusWins", {std::to_wstring(save.versusWins)}));
 
         if(show && !m_recordShown) {
             m_ui->SlideIn(m_record, hlslpp::float2(320.0f, 0.0f), slideDelay);

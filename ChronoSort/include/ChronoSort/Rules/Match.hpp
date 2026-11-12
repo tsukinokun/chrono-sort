@@ -37,7 +37,7 @@ namespace ChronoSort::Rules {
 
     //! 対局の参加者です。
     struct Player {
-        std::string           name;                         // 表示名（UTF-8）
+        std::string           name;                         // 名前（文字列の表のキー。画面では Util::Text で引く）
         std::string           portrait;                     // CPU の肖像の画像（ルールは使わず、画面に渡すだけ）
         bool                  isCpu      = false;           // CPU が操作するか
         CpuLevel              cpuLevel   = CpuLevel::Normal;    // CPU の強さ
@@ -50,7 +50,7 @@ namespace ChronoSort::Rules {
     struct MatchConfig {
         MatchMode             mode = MatchMode::Solo;    // 対局の種類
         std::vector<CpuLevel> cpus;                      // 対戦の CPU（1〜3人）
-        std::string           playerName = "あなた";     // 人間のプレイヤー名
+        std::string           playerName = "player.you";    // 人間のプレイヤー名（文字列の表のキー）
         CardRange             range = CardRange::All;    // 出題の範囲
         CardDifficulty        difficulty = CardDifficulty::Hard;    // 出題の難易度
         RulesTuning           rules;                     // ルールの調整値（ゲームは Rules.json の値を入れる。自己テストは初期値）

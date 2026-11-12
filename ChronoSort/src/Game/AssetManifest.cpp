@@ -47,11 +47,15 @@ namespace ChronoSort::Game {
         AddFiles(Util::AssetPaths::kSfxDir, ".wav", paths);
         AddFiles(Util::AssetPaths::kBgmDir, ".mp3", paths);
         AddFiles(Util::AssetPaths::kUITextureDir, ".png", paths);
+        // 字を焼き込んだ画像は、今の言語のものも読んでおく（日本語は上の一覧に入っている）
+        if(const std::string localized = Util::AssetPaths::LocalizedUITextureDir(); !localized.empty()) {
+            AddFiles(localized, ".png", paths);
+        }
         AddFiles(Util::AssetPaths::kFxTextureDir, ".png", paths);
 
         // カード面（.tmat を読むと、参照しているテクスチャも一緒に読まれる）
         for(const Rules::CardData& card : Rules::LoadAllCards()) {
-            const std::string prefix = std::string(Util::AssetPaths::kCardTextureDir) + "/" + card.id;
+            const std::string prefix = Util::AssetPaths::CardFaceDir() + "/" + card.id;    // 今の言語の面だけを読む
             paths.push_back(prefix + "_front.tmat");
             paths.push_back(prefix + "_back.tmat");
         }

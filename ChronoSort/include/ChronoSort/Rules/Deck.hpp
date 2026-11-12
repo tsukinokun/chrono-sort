@@ -48,10 +48,10 @@ namespace ChronoSort::Rules {
     //! @return キー。
     const char* RangeKey(CardRange range);
 
-    //! 範囲の表示名（UTF-8。「日本史」「世界史」「通史」）を返します。
+    //! 範囲の表示名（今の言語。「日本史」「世界史」「通史」）を返します。
     //! @param  [in] range 出題の範囲。
     //! @return 表示名。
-    const char* RangeName(CardRange range);
+    std::wstring RangeName(CardRange range);
 
     //! 保存用のキーから範囲を返します。知らないキーは通史として扱います。
     //! @param  [in] key キー。
@@ -63,10 +63,10 @@ namespace ChronoSort::Rules {
     //! @return キー。
     const char* DifficultyKey(CardDifficulty difficulty);
 
-    //! 難易度の表示名（UTF-8。「やさしい」「ふつう」「むずかしい」）を返します。
+    //! 難易度の表示名（今の言語。「やさしい」「ふつう」「むずかしい」）を返します。
     //! @param  [in] difficulty 出題の難易度。
     //! @return 表示名。
-    const char* DifficultyName(CardDifficulty difficulty);
+    std::wstring DifficultyName(CardDifficulty difficulty);
 
     //! 保存用のキーから難易度を返します。知らないキーはむずかしい（全部）として扱います。
     //! @param  [in] key キー。
@@ -76,8 +76,8 @@ namespace ChronoSort::Rules {
     //! 出題の範囲と難易度の表示名を返します（「日本史・やさしい」。むずかしいは範囲の名前だけ）。
     //! @param  [in] range      出題の範囲。
     //! @param  [in] difficulty 出題の難易度。
-    //! @return 表示名（UTF-8）。
-    std::string ProblemSetName(CardRange range, CardDifficulty difficulty);
+    //! @return 表示名。
+    std::wstring ProblemSetName(CardRange range, CardDifficulty difficulty);
 
     //! 山札です。末尾を山の一番上として扱います。
     class Deck {

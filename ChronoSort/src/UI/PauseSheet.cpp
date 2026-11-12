@@ -6,6 +6,7 @@
 
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 
 #include <string>
 
@@ -29,7 +30,7 @@ namespace ChronoSort::UI {
         const PaperSpec sheet = m_layout.Spec("pauseSheet");
         m_sheet               = m_ui.Paper(sheet);
         m_ui.SlideIn(m_sheet, hlslpp::float2(0.0f, -560.0f), 0.0f, 0.45f);
-        m_ui.Text(L"一時停止", hlslpp::float2(0.0f, -118.0f), 0.95f, kInkColor, sheet.sortOrder + 1, m_sheet);
+        m_ui.Text(Util::Text("pause.title"), hlslpp::float2(0.0f, -118.0f), 0.95f, kInkColor, sheet.sortOrder + 1, m_sheet);
 
         // 札は高さも傾きも少しずつずらす（Data/UI/GameHud.json）
         auto button = [&](const char* name, const std::wstring& text) {
@@ -37,9 +38,9 @@ namespace ChronoSort::UI {
             spec.parent    = m_sheet;
             return NoteButton(m_ui, spec, text, 0.72f);
         };
-        m_resume  = button("pauseResume", L"続ける");
-        m_options = button("pauseOptions", L"設定");
-        m_title   = button("pauseTitle", L"タイトルへ");
+        m_resume  = button("pauseResume", Util::Text("pause.resume"));
+        m_options = button("pauseOptions", Util::Text("pause.options"));
+        m_title   = button("pauseTitle", Util::Text("common.toTitle"));
     }
 
     //----------------------------------------------------------------------------

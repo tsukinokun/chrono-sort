@@ -7,6 +7,7 @@
 #include <ChronoSort/Match/MatchEvents.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/WorldAnchorComponent.hpp>
@@ -120,11 +121,11 @@ namespace ChronoSort::UI {
             line += 36.0f;
         }
         if(closeCall) {
-            m_ui.Text(L"僅差！", hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.95f, 0.8f, 1.0f)), kLayerAnchored + 6, anchor);
+            m_ui.Text(Util::Text("popup.closeCall"), hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.95f, 0.8f, 1.0f)), kLayerAnchored + 6, anchor);
             line += 28.0f;
         }
         if(streak >= 2) {
-            m_ui.Text(std::to_wstring(streak) + L"連続", hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.7f, 0.5f, 1.0f)),
+            m_ui.Text(Util::Format("popup.streak", {std::to_wstring(streak)}), hlslpp::float2(70.0f, line), 0.7f, Color::SrgbToLinear(hlslpp::float4(1.0f, 0.7f, 0.5f, 1.0f)),
                       kLayerAnchored + 6, anchor);
         }
 

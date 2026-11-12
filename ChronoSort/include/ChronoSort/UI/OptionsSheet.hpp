@@ -34,7 +34,8 @@ namespace ChronoSort::UI {
         //! @param  [in] scene     UI を作るシーン。
         //! @param  [in] context   エンジンのコンテキスト（入力・アセット）。
         //! @param  [in] sortOrder 紙の描画順（その画面の他の UI より手前にする）。
-        OptionsSheet(Tsukino::ECS::Scene& scene, Tsukino::EngineIntegration::EngineContext& context, int sortOrder);
+        //! @param  [in] allowLanguage 言語を選べるようにするか（対局中は選べず、タイトルで変えるよう注記だけ出す）。
+        OptionsSheet(Tsukino::ECS::Scene& scene, Tsukino::EngineIntegration::EngineContext& context, int sortOrder, bool allowLanguage);
 
         //! 紙を開きます（開いていれば何もしません）。
         void Open();
@@ -50,6 +51,10 @@ namespace ChronoSort::UI {
         //! @param  [in] deltaTime 経過時間（秒）。
         //! @return このフレームに閉じたら true。
         bool Update(float deltaTime);
+
+        //! 開いている間に言語の札を選び直し、開いたときと違う言語になったかを返します（閉じた後に確かめる）。
+        //! @return 違う言語になっていれば true。
+        bool LanguageChanged() const;
 
     private:
 
@@ -82,6 +87,11 @@ namespace ChronoSort::UI {
         //! @param  [in] value 書き換える設定の値。
         void AddQualityChoice(const std::wstring& label, const std::string& row, int* value);
 
+        //! 言語の選択を作ります。選べないときは、タイトルで変えるよう注記だけ出します。
+        //! @param  [in] label 名前。
+        //! @param  [in] row   置き方の名前（Options.json。center.y が行の高さ）。
+        void AddLanguageChoice(const std::wstring& label, const std::string& row);
+
         //! スライダーを1本作ります。
         //! @param  [in] label   名前。
         //! @param  [in] row     置き方の名前（Options.json。center.y が行の高さ）。
@@ -103,6 +113,9 @@ namespace ChronoSort::UI {
         PaperUI                                    m_ui;              // 紙片の部品
         PaperLayout                                m_layout;          // 置き方（Data/UI/Options.json）
         int                                        m_sortOrder;       // 紙の描画順
+        bool                                       m_allowLanguage;   // 言語を選べるか
+        std::string                                m_openedLanguage;  // 開いたときの言語（Options::language の値）
+        Tsukino::ECS::Entity                       m_languageGroup = entt::null;    // 言語の札の組（選べないときは null）
         Tsukino::ECS::Entity                       m_sheet = entt::null;    // 紙
         Tsukino::ECS::Entity                       m_close = entt::null;    // 閉じる
         std::vector<Slider>                        m_sliders;         // 音量（全体・BGM・効果音）

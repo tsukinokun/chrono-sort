@@ -25,8 +25,6 @@ namespace ChronoSort::Board {
         // そのため .mtl に書いた順（Front, Back）は 1 番から始まる（Prefab の materials も同じ並び）
         constexpr size_t kFirstObjMaterialSlot = 1;
 
-        const std::string kCardTextureDir = std::string(Util::AssetPaths::kCardTextureDir) + "/";
-
         constexpr const char* kMarkerMaterial        = Util::AssetPaths::kMarkerMaterial;
         constexpr const char* kMarkerWarningMaterial = Util::AssetPaths::kMarkerWarnMaterial;
     }    // namespace
@@ -55,7 +53,7 @@ namespace ChronoSort::Board {
         PlaceAt(entity, position, rotation);
 
         // カード固有の面を差し替える。AssetManager は同じパスを一度しか読まないので、毎回 Load してよい
-        const std::string facePrefix = std::string(kCardTextureDir) + card.id;
+        const std::string facePrefix = Util::AssetPaths::CardFaceDir() + "/" + card.id;    // 今の言語の面
         auto&             model      = registry.GetComponent<Tsukino::BuiltIn::ECS::ModelComponent>(entity);
         model.materials[kFirstObjMaterialSlot]     = m_assetManager.Load(Tsukino::Core::Path(facePrefix + "_front.tmat"));
         model.materials[kFirstObjMaterialSlot + 1] = m_assetManager.Load(Tsukino::Core::Path(facePrefix + "_back.tmat"));

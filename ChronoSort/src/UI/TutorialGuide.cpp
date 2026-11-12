@@ -13,6 +13,7 @@
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -89,7 +90,7 @@ namespace ChronoSort::UI {
         m_ui.SlideIn(m_sheet, hlslpp::float2(0.0f, -kReferenceHeight), 0.05f, 0.55f);
         const int layer = sheet.sortOrder + 1;
 
-        m_ui.Text(L"遊び方", hlslpp::float2(0.0f, -222.0f), 1.15f, kInkColor, layer, m_sheet);
+        m_ui.Text(Util::Text("tutorial.title"), hlslpp::float2(0.0f, -222.0f), 1.15f, kInkColor, layer, m_sheet);
         const float x    = -380.0f;
         auto        item = [&](const std::wstring& mark, const std::wstring& text, float y) {
             m_ui.Text(mark, hlslpp::float2(x, y), 0.66f, kSealRedColor, layer, m_sheet, false);
@@ -97,20 +98,20 @@ namespace ChronoSort::UI {
         };
         auto note = [&](const std::wstring& text, float y) { m_ui.Text(text, hlslpp::float2(x + 44.0f, y), 0.48f, kFadedInkColor, layer, m_sheet, false); };
 
-        item(L"一", L"手札のカードを掴んで、場の列の、年代が合う隙間で離す", -142.0f);
-        note(L"クリックで選んでから、隙間をクリックしても置けます", -104.0f);
-        item(L"二", L"年代は置いた後に明かされる", -48.0f);
+        item(Util::Text("tutorial.mark1"), Util::Text("tutorial.item1"), -142.0f);
+        note(Util::Text("tutorial.note1"), -104.0f);
+        item(Util::Text("tutorial.mark2"), Util::Text("tutorial.item2"), -48.0f);
         if(solo) {
-            note(L"外れるとインクが1つ減ります。インクが尽きると終わり", -10.0f);
+            note(Util::Text("tutorial.note2Solo"), -10.0f);
         } else {
-            note(L"外れたカードは捨て札になり、1枚引きます。先に出し切った人の勝ち", -10.0f);
+            note(Util::Text("tutorial.note2Versus"), -10.0f);
         }
-        item(L"三", L"ホイールで場の列を左右に見渡せる", 46.0f);
-        note(L"Esc で一時停止", 84.0f);
+        item(Util::Text("tutorial.mark3"), Util::Text("tutorial.item3"), 46.0f);
+        note(Util::Text("tutorial.note3"), 84.0f);
 
         PaperSpec ok = m_layout.Spec("ok");
         ok.parent    = m_sheet;
-        m_ok         = NoteButton(m_ui, ok, L"わかった", 0.8f);
+        m_ok         = NoteButton(m_ui, ok, Util::Text("tutorial.ok"), 0.8f);
         PaperSpec pin = m_layout.Spec("okPin");
         pin.parent    = m_ok;
         m_ui.Paper(pin);
@@ -259,7 +260,7 @@ namespace ChronoSort::UI {
         label.parent    = m_card;
         m_label         = m_ui.Paper(label);
         registry.GetComponent<BuiltIn::SpriteComponent>(m_label).raycastTarget = false;
-        m_ui.Text(L"掴んで、年代の合う隙間へ", hlslpp::float2(4.0f, 1.0f), 0.5f, kInkColor, label.sortOrder + 1, m_label);
+        m_ui.Text(Util::Text("tutorial.ghost"), hlslpp::float2(4.0f, 1.0f), 0.5f, kInkColor, label.sortOrder + 1, m_label);
 
         if(!PrepareDemoCycle()) {
             StopDemo();

@@ -11,6 +11,7 @@
 #include <ChronoSort/Match/MatchSession.hpp>
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/SpriteComponent.hpp>
@@ -68,21 +69,19 @@ namespace ChronoSort::UI {
         , m_match(match)
         , m_layout(Util::AssetPaths::UILayout("GameHud")) {
         Tsukino::ECS::EventBus& events = scene.GetEventBus();
-        auto                    banner = [](const std::string& text) { return Util::Utf8ToWide(text); };
 
         m_connections.push_back(events.Subscribe<Match::MatchStateChangedEvent>([this](const Match::MatchStateChangedEvent&) { Refresh(); }));
-        m_connections.push_back(events.Subscribe<Match::TurnStartedEvent>([this, banner](const Match::TurnStartedEvent& e) {
+        m_connections.push_back(events.Subscribe<Match::TurnStartedEvent>([this](const Match::TurnStartedEvent& e) {
             SetTurn(e.player);
             if(e.human && m_match.Config().mode == Rules::MatchMode::Versus) {
-                ShowBanner(banner(Game::Tuning().Feedback().bannerYourTurn), false);
+                ShowBanner(Util::Text("banner.yourTurn"), false);
             }
         }));
         m_connections.push_back(events.Subscribe<Match::TiebreakStartedEvent>(
-            [this, banner](const Match::TiebreakStartedEvent&) { ShowBanner(banner(Game::Tuning().Feedback().bannerTiebreak), true); }));
+            [this](const Match::TiebreakStartedEvent&) { ShowBanner(Util::Text("banner.tiebreak"), true); }));
         m_connections.push_back(events.Subscribe<Match::PlayJudgedEvent>([this](const Match::PlayJudgedEvent& e) { OnPlayResolved(e.player, e.result); }));
-        m_connections.push_back(events.Subscribe<Match::MatchEndedEvent>([this, banner](const Match::MatchEndedEvent& e) {
-            const Match::FeedbackTuning& t = Game::Tuning().Feedback();
-            ShowBanner(banner(e.won ? t.bannerWon : (e.outcome == Rules::MatchOutcome::SoloFailed ? t.bannerInkOut : t.bannerLost)), true);
+        m_connections.push_back(events.Subscribe<Match::MatchEndedEvent>([this](const Match::MatchEndedEvent& e) {
+            ShowBanner(Util::Text(e.won ? "banner.won" : (e.outcome == Rules::MatchOutcome::SoloFailed ? "banner.inkOut" : "banner.lost")), true);
         }));
         m_connections.push_back(events.Subscribe<Match::IdleNudgeEvent>([this](const Match::IdleNudgeEvent& e) { SetNudge(e.active); }));
         // 遊び方の大きな説明が左下へ飛んでいったら、そこに小さな説明を残す
@@ -104,7 +103,7 @@ namespace ChronoSort::UI {
         // 封蝋（ソロは得点を数え上げる、対戦は巡目）と、その札
         {
             const auto tag = m_ui.Paper(m_layout.Spec("sealLabel"));
-            m_ui.Text(solo ? L"得点" : L"巡目", hlslpp::float2(8.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, tag);
+            m_ui.Text(Util::Text(solo ? "hud.score" : "hud.round"), hlslpp::float2(8.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, tag);
             m_ui.SlideIn(tag, hlslpp::float2(-260.0f, 0.0f), 0.2f);
 
             m_seal     = m_ui.Paper(m_layout.Spec("seal"));
@@ -119,7 +118,7 @@ namespace ChronoSort::UI {
         const Rules::MatchConfig& config = m_match.Config();
         if(config.range != Rules::CardRange::All || config.difficulty != Rules::CardDifficulty::Hard) {
             const auto tag = m_ui.Paper(m_layout.Spec("rangeTag"));
-            m_ui.Text(Util::Utf8ToWide(Rules::ProblemSetName(config.range, config.difficulty)), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
+            m_ui.Text(Rules::ProblemSetName(config.range, config.difficulty), hlslpp::float2(4.0f, 1.0f), 0.5f, kSealRedColor, kLayerDesk + 1, tag);
             m_ui.SlideIn(tag, hlslpp::float2(-200.0f, -60.0f), 0.3f);
         }
 
@@ -135,7 +134,7 @@ namespace ChronoSort::UI {
         // 山札の札（山札の 3D の近くにピンで留める）
         {
             m_deckTag  = m_ui.Paper(m_layout.Spec("deckTag"));
-            m_deckText = m_ui.Text(L"山札 0", hlslpp::float2(10.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, m_deckTag);
+            m_deckText = m_ui.Text(Util::Format("hud.deck", {L"0"}), hlslpp::float2(10.0f, 2.0f), 0.62f, kInkColor, kLayerDesk + 1, m_deckTag);
 
             PaperSpec pin = m_layout.Spec("deckPin");
             pin.parent    = m_deckTag;
@@ -154,7 +153,7 @@ namespace ChronoSort::UI {
             Tsukino::ECS::Entity tag;
             if(!players[i].isCpu) {
                 tag = m_ui.Paper(m_layout.Spec("playerTag"));
-                m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(4.0f, 0.0f), 0.6f, kInkColor, kLayerDesk + 1, tag);
+                m_ui.Text(Util::Text(players[i].name), hlslpp::float2(4.0f, 0.0f), 0.6f, kInkColor, kLayerDesk + 1, tag);
                 m_handCounts.push_back(entt::null);
             } else {
                 // 額の傾きは人ごとにばらす
@@ -182,7 +181,7 @@ namespace ChronoSort::UI {
                 face.texture   = hasFace ? portrait : "silhouette.png";
                 face.parent    = tag;
                 m_ui.Paper(face);
-                m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(0.0f, 33.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
+                m_ui.Text(Util::Text(players[i].name), hlslpp::float2(0.0f, 33.0f), 0.42f, kInkColor, kLayerAnchored + 2, tag);
                 // 手札の枚数は、席のカードと反対の側に出す（3人のときは、横に出すと隣の席にかかるので額の上）
                 const hlslpp::float2 countAt = crowded ? hlslpp::float2(0.0f, seat.seatCountAbove) : hlslpp::float2(side * seat.seatCountSide, 0.0f);
                 m_handCounts.push_back(m_ui.Text(L"", countAt, 0.46f, kParchmentColor, kLayerAnchored + 2, tag, true, false));
@@ -216,7 +215,7 @@ namespace ChronoSort::UI {
 
         if(m_match.DeckRemaining() != m_shownDeck) {
             m_shownDeck = m_match.DeckRemaining();
-            m_ui.SetText(m_deckText, L"山札 " + Number(static_cast<long long>(m_shownDeck)));
+            m_ui.SetText(m_deckText, Util::Format("hud.deck", {Number(static_cast<long long>(m_shownDeck))}));
         }
 
         // 残りわずかの警告：最後のインク壺は震え、山札の札は弾む（変わった瞬間だけ付け外しする）
@@ -250,7 +249,7 @@ namespace ChronoSort::UI {
                 continue;
             }
             m_shownHandCounts[i] = count;
-            m_ui.SetText(m_handCounts[i], count < 0 ? L"脱落" : (L"手札 " + Number(count)));
+            m_ui.SetText(m_handCounts[i], count < 0 ? Util::Text("hud.out") : Util::Format("hud.hand", {Number(count)}));
         }
     }
 
@@ -350,8 +349,8 @@ namespace ChronoSort::UI {
             return;
         }
         m_hint = m_ui.Paper(m_layout.Spec("hint"));
-        m_ui.Text(L"カードを掴んで、年代の合う隙間へ", hlslpp::float2(0.0f, -14.0f), 0.62f, kInkColor, kLayerDesk + 1, m_hint);
-        m_ui.Text(L"クリックで選んでから置くこともできます", hlslpp::float2(0.0f, 20.0f), 0.46f, kFadedInkColor, kLayerDesk + 1, m_hint);
+        m_ui.Text(Util::Text("hud.hint"), hlslpp::float2(0.0f, -14.0f), 0.62f, kInkColor, kLayerDesk + 1, m_hint);
+        m_ui.Text(Util::Text("hud.hintClick"), hlslpp::float2(0.0f, 20.0f), 0.46f, kFadedInkColor, kLayerDesk + 1, m_hint);
 
         PaperSpec tape = m_layout.Spec("hintTape");
         tape.parent    = m_hint;
@@ -401,7 +400,7 @@ namespace ChronoSort::UI {
                 m_streakText         = m_ui.Text(L"", hlslpp::float2(6.0f, 2.0f), 0.6f, kSealRedColor, spec.sortOrder + 1, m_streakTag);
                 m_ui.SlideIn(m_streakTag, hlslpp::float2(-200.0f, 0.0f));
             }
-            m_ui.SetText(m_streakText, Number(result.streak) + L" 連続");
+            m_ui.SetText(m_streakText, Util::Format("hud.streak", {Number(result.streak)}));
             m_ui.Punch(m_streakTag, 0.25f);
         } else if(!result.correct && m_streakTag != entt::null) {
             m_ui.SlideOut(m_streakTag, hlslpp::float2(0.0f, 160.0f), 0.2f, 0.5f);

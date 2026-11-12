@@ -1,6 +1,7 @@
 """画面 UI の素材（古地図・研究者の机）を生成する。
 
     python Tools/art/make_ui.py
+    python Tools/art/make_ui.py --lang en    字を焼き込んだ素材（題字・判定の印）の英語版だけを Textures/UI/en/ に作る
 
 破れた紙片・封蝋・インク壺・しおり・朱印・ピン・テープなど。
 どれも「机の上に置かれた物」に見えるよう、薄い影と紙の質感を焼き込む。
@@ -9,6 +10,7 @@
 
 import math
 import random
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
@@ -168,7 +170,8 @@ def make_ribbon():
     with_shadow(img, mask, offset=(5, 4), blur=6).save(OUT_DIR / "ribbon.png")
 
 
-def make_stamp(name, text, color):
+def make_stamp(name, text, color, out_dir=None, face=None):
+    out_dir = out_dir or OUT_DIR
     s = 256
     rng = random.Random(hash(name) & 0xFFFF)
     alpha = Image.new("L", (s, s), 0)
@@ -176,14 +179,14 @@ def make_stamp(name, text, color):
     c = s / 2
     d.ellipse((14, 14, s - 14, s - 14), outline=255, width=14)
     d.ellipse((34, 34, s - 34, s - 34), outline=255, width=4)
-    d.text((c, c + 4), text, font=serif(140, "Black"), fill=255, anchor="mm")
+    d.text((c, c + 4), text, font=face or serif(140, "Black"), fill=255, anchor="mm")
     # かすれ：ところどころインクが乗っていない
     grit = noise((s, s), 2, 120, 5).point(lambda v: 255 if v > 70 else 0)
     alpha = ImageChops.multiply(alpha, grit.filter(ImageFilter.GaussianBlur(0.6)))
     img = Image.new("RGBA", (s, s), color + (0,))
     img.putalpha(alpha)
     img = img.rotate(rng.uniform(-8, 8), resample=Image.BICUBIC)
-    img.save(OUT_DIR / f"{name}.png")
+    img.save(out_dir / f"{name}.png")
 
 
 def make_pin():
@@ -246,15 +249,32 @@ def make_vignette():
     img.save(OUT_DIR / "vignette.png")
 
 
-def make_title_logo():
+def make_title_logo(subtitle="歴 史 を 並 べ る 卓", out_dir=None):
     """タイトルの題字（羊皮紙の帯に墨の字）。"""
+    out_dir = out_dir or OUT_DIR
     w, h = 900, 260
     img = paper_fill((w, h), 41, stains=4)
     d = ImageDraw.Draw(img)
     d.text((w / 2, h / 2 - 18), "ChronoSort", font=serif(130, "Bold"), fill=INK, anchor="mm")
-    d.text((w / 2, h - 46), "歴 史 を 並 べ る 卓", font=serif(34, "Medium"), fill=(110, 70, 40), anchor="mm")
+    d.text((w / 2, h - 46), subtitle, font=serif(34, "Medium"), fill=(110, 70, 40), anchor="mm")
     mask = torn_mask((w, h), 8, 6, 41)
-    with_shadow(darken_edges(img, mask, 80), mask, offset=(8, 12), blur=12).save(OUT_DIR / "title_logo.png")
+    with_shadow(darken_edges(img, mask, 80), mask, offset=(8, 12), blur=12).save(out_dir / "title_logo.png")
+
+
+# 字を焼き込んだ素材の、日本語以外の言語の版（Textures/UI/<言語>/ に置く。無い素材は日本語の版を使う）
+SYMBOL = Path("C:/Windows/Fonts/seguisym.ttf")
+
+
+def make_language(lang):
+    out_dir = OUT_DIR / lang
+    out_dir.mkdir(parents=True, exist_ok=True)
+    if lang == "en":
+        make_title_logo("P U T T I N G   H I S T O R Y   I N   O R D E R", out_dir)
+        # 判定の印は文字ではなく記号にする（Noto Serif JP には印に向く太い記号が無いので、OS 同梱の記号のフォントで描く）
+        mark = ImageFont.truetype(str(SYMBOL), 150) if SYMBOL.exists() else serif(140, "Black")
+        make_stamp("stamp_correct", "\u2714", (196, 30, 32), out_dir, mark)
+        make_stamp("stamp_wrong", "\u2716", (58, 34, 72), out_dir, mark)
+    print(f"wrote {lang} ui textures to {out_dir}")
 
 
 def make_ink_line():
@@ -275,6 +295,9 @@ def make_ink_line():
 
 
 def main():
+    if len(sys.argv) >= 3 and sys.argv[1] == "--lang":
+        make_language(sys.argv[2])
+        return
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     make_ink_line()
     make_scrap("scrap_wide", (520, 150), 1)

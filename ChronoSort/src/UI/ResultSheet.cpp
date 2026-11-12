@@ -10,6 +10,7 @@
 #include <ChronoSort/UI/TweenTags.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/UI/UITweenUtility.hpp>
@@ -61,24 +62,24 @@ namespace ChronoSort::UI {
         m_ui.SlideIn(m_sheet, hlslpp::float2(0.0f, -kReferenceHeight), 0.0f, 0.7f);
 
         const int layer = sheet.sortOrder + 1;
-        m_ui.Text(L"記 録", hlslpp::float2(0.0f, -205.0f), 1.5f, kInkColor, layer, m_sheet);
+        m_ui.Text(Util::Text("result.title"), hlslpp::float2(0.0f, -205.0f), 1.5f, kInkColor, layer, m_sheet);
 
         std::wstring rank;
         if(solo) {
             const int placed = players[0].correctCount;
-            m_ui.Text(L"得点", hlslpp::float2(-240.0f, -110.0f), 0.8f, kFadedInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Text("result.score"), hlslpp::float2(-240.0f, -110.0f), 0.8f, kFadedInkColor, layer, m_sheet, false);
             const auto score = m_ui.Text(L"0", hlslpp::float2(-60.0f, -110.0f), 1.3f, kInkColor, layer, m_sheet, false);
             auto&      count = registry.AddComponent<ECS::CountUpTextComponent>(score);
             count.target     = static_cast<float>(m_match.Score());
             count.delay      = kCountUpDelay;
             count.duration   = kCountUpSeconds;
 
-            m_ui.Text(L"並べた枚数", hlslpp::float2(-240.0f, -40.0f), 0.7f, kFadedInkColor, layer, m_sheet, false);
-            m_ui.Text(std::to_wstring(placed) + L" 枚", hlslpp::float2(-20.0f, -40.0f), 0.9f, kInkColor, layer, m_sheet, false);
-            m_ui.Text(L"最長の連続", hlslpp::float2(-240.0f, 20.0f), 0.7f, kFadedInkColor, layer, m_sheet, false);
-            m_ui.Text(std::to_wstring(m_match.BestStreak()) + L" 連続", hlslpp::float2(-20.0f, 20.0f), 0.9f, kInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Text("result.placed"), hlslpp::float2(-240.0f, -40.0f), 0.7f, kFadedInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Format("result.cards", {std::to_wstring(placed)}), hlslpp::float2(-20.0f, -40.0f), 0.9f, kInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Text("result.bestStreak"), hlslpp::float2(-240.0f, 20.0f), 0.7f, kFadedInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Format("result.streak", {std::to_wstring(m_match.BestStreak())}), hlslpp::float2(-20.0f, 20.0f), 0.9f, kInkColor, layer, m_sheet, false);
             if(m_newRecord) {
-                const auto       badge = m_ui.Text(L"新記録", hlslpp::float2(-150.0f, -152.0f), 0.8f, kSealRedColor, layer + 1, m_sheet);
+                const auto       badge = m_ui.Text(Util::Text("result.newRecord"), hlslpp::float2(-150.0f, -152.0f), 0.8f, kSealRedColor, layer + 1, m_sheet);
                 BuiltIn::UITween blink;
                 blink.property = BuiltIn::UITweenProperty::Scale;
                 blink.from     = 0.92f;
@@ -92,14 +93,14 @@ namespace ChronoSort::UI {
             rank = Util::Utf8ToWide(Rules::SoloRank(m_match));
         } else {
             const size_t winner = m_match.Winner();
-            m_ui.Text(L"勝者", hlslpp::float2(-240.0f, -110.0f), 0.8f, kFadedInkColor, layer, m_sheet, false);
-            m_ui.Text(Util::Utf8ToWide(players[winner].name), hlslpp::float2(-100.0f, -110.0f), 1.2f, kInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Text("result.winner"), hlslpp::float2(-240.0f, -110.0f), 0.8f, kFadedInkColor, layer, m_sheet, false);
+            m_ui.Text(Util::Text(players[winner].name), hlslpp::float2(-100.0f, -110.0f), 1.2f, kInkColor, layer, m_sheet, false);
             for(size_t i = 0; i < players.size(); ++i) {
                 const float y = -40.0f + static_cast<float>(i) * 40.0f;
-                m_ui.Text(Util::Utf8ToWide(players[i].name), hlslpp::float2(-240.0f, y), 0.62f, kFadedInkColor, layer, m_sheet, false);
-                m_ui.Text(std::to_wstring(players[i].correctCount) + L" 枚正解", hlslpp::float2(-20.0f, y), 0.62f, kInkColor, layer, m_sheet, false);
+                m_ui.Text(Util::Text(players[i].name), hlslpp::float2(-240.0f, y), 0.62f, kFadedInkColor, layer, m_sheet, false);
+                m_ui.Text(Util::Format("result.correct", {std::to_wstring(players[i].correctCount)}), hlslpp::float2(-20.0f, y), 0.62f, kInkColor, layer, m_sheet, false);
             }
-            rank = winner == 0 ? L"勝" : L"敗";
+            rank = Util::Text(winner == 0 ? "result.win" : "result.lose");
         }
 
         // 印は少し遅れて押す
@@ -140,9 +141,9 @@ namespace ChronoSort::UI {
             m_ui.Paper(pin);
             return button;
         };
-        m_retryButton = makeButton("resultRetry", L"もう一度");
-        m_cardsButton = makeButton("resultCards", L"出たカード");
-        m_titleButton = makeButton("resultTitle", L"タイトルへ");
+        m_retryButton = makeButton("resultRetry", Util::Text("result.retry"));
+        m_cardsButton = makeButton("resultCards", Util::Text("result.cards.button"));
+        m_titleButton = makeButton("resultTitle", Util::Text("common.toTitle"));
 
         // 羊皮紙が落ちてくる途中の誤クリックは受け付けない（対局の時間で数えるので、一時停止中は進まない）
         Match::Session(registry).sequencer.Schedule(kClickGuard, [this] { m_ready = true; });

@@ -24,6 +24,10 @@ namespace ChronoSort::Scene::Router {
     //! @param  [in,out] api エンジン API。
     void ToTitle(Tsukino::EngineIntegration::EngineAPI& api);
 
+    //! 読込画面を通ってタイトル画面へ移ります（言語を変えたとき、その言語のカードの面を読み直すため）。
+    //! @param  [in,out] api エンジン API。
+    void ReloadTitle(Tsukino::EngineIntegration::EngineAPI& api);
+
     //! 出典・クレジットの画面へ移ります。
     //! @param  [in,out] api エンジン API。
     void ToCredits(Tsukino::EngineIntegration::EngineAPI& api);

@@ -5,6 +5,8 @@
 #include <ChronoSort/Rules/Deck.hpp>
 
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
+#include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/Core/Log.hpp>
 #include <Tsukino/Core/Path.hpp>
@@ -16,6 +18,30 @@
 #include <fstream>
 
 namespace ChronoSort::Rules {
+
+    namespace {
+        //----------------------------------------------------------------------------
+        //! カードの文言を今の言語に差し替えます（日本語はデッキ JSON が原文なのでそのまま）。
+        //! @param  [in,out] card カード。
+        //----------------------------------------------------------------------------
+        void LocalizeCard(CardData& card) {
+            if(Util::CurrentLanguage() == Util::Language::Japanese) {
+                return;
+            }
+            if(const Util::CardText* text = Util::FindCardText(card.id)) {
+                if(!text->title.empty()) {
+                    card.title = text->title;
+                }
+                if(!text->caption.empty()) {
+                    card.caption = text->caption;
+                }
+            }
+            // 分類は11種しかないので、文字列の表で引く。年号は西暦の値から作る
+            card.category  = Util::WideToUtf8(Util::Text("category." + card.category));
+            card.yearLabel = Util::WideToUtf8(card.year < 0 ? Util::Format("card.yearBC", {std::to_wstring(-card.year)})
+                                                            : Util::Format("card.year", {std::to_wstring(card.year)}));
+        }
+    }    // namespace
 
     //----------------------------------------------------------------------------
     //! 同梱のデッキ（日本史・世界史）をすべて読み込みます。
@@ -59,15 +85,8 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     //! 範囲の表示名を返します。
     //----------------------------------------------------------------------------
-    const char* RangeName(CardRange range) {
-        switch(range) {
-        case CardRange::Japan:
-            return "日本史";
-        case CardRange::World:
-            return "世界史";
-        default:
-            return "通史";
-        }
+    std::wstring RangeName(CardRange range) {
+        return Util::Text(std::string("range.") + RangeKey(range));
     }
 
     //----------------------------------------------------------------------------
@@ -100,15 +119,8 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     //! 難易度の表示名を返します。
     //----------------------------------------------------------------------------
-    const char* DifficultyName(CardDifficulty difficulty) {
-        switch(difficulty) {
-        case CardDifficulty::Easy:
-            return "やさしい";
-        case CardDifficulty::Normal:
-            return "ふつう";
-        default:
-            return "むずかしい";
-        }
+    std::wstring DifficultyName(CardDifficulty difficulty) {
+        return Util::Text(std::string("difficulty.") + DifficultyKey(difficulty));
     }
 
     //----------------------------------------------------------------------------
@@ -127,12 +139,12 @@ namespace ChronoSort::Rules {
     //----------------------------------------------------------------------------
     //! 出題の範囲と難易度の表示名を返します。
     //----------------------------------------------------------------------------
-    std::string ProblemSetName(CardRange range, CardDifficulty difficulty) {
+    std::wstring ProblemSetName(CardRange range, CardDifficulty difficulty) {
         // むずかしいは全部のカードなので、難易度を分ける前と同じく範囲の名前だけにする
         if(difficulty == CardDifficulty::Hard) {
             return RangeName(range);
         }
-        return std::string(RangeName(range)) + "・" + DifficultyName(difficulty);
+        return Util::Format("problemSet", {RangeName(range), DifficultyName(difficulty)});
     }
 
     //----------------------------------------------------------------------------
@@ -165,6 +177,9 @@ namespace ChronoSort::Rules {
             return false;
         }
 
+        for(CardData& card : cards) {
+            LocalizeCard(card);
+        }
         out.insert(out.end(), cards.begin(), cards.end());
         Tsukino::Core::Log::Info("Loaded deck '" + deckName + "' (" + std::to_string(cards.size()) + " cards)");
         return true;

@@ -6,6 +6,7 @@
 
 #include <ChronoSort/Scene/CreditsScene.hpp>
 #include <ChronoSort/Scene/GameScene.hpp>
+#include <ChronoSort/Scene/LoadingScene.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 
 #include <Tsukino/EngineIntegration/EngineAPI.hpp>
@@ -33,6 +34,13 @@ namespace ChronoSort::Scene::Router {
     //----------------------------------------------------------------------------
     void ToTitle(Tsukino::EngineIntegration::EngineAPI& api) {
         api.ChangeScene(kTitle);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 読込画面を通ってタイトル画面へ移ります。
+    //----------------------------------------------------------------------------
+    void ReloadTitle(Tsukino::EngineIntegration::EngineAPI& api) {
+        api.ChangeScene(std::make_unique<LoadingScene>([] { return std::make_unique<TitleScene>(); }));
     }
 
     //----------------------------------------------------------------------------

@@ -7,6 +7,9 @@
     python Tools/art/bake_cards.py --retitle [--only a,b]
                                                   焼いた面の出来事名の欄だけを描き直す
                                                   （raw/ の絵が手元に無くても、今の絵を残したまま題名を直せる）
+    python Tools/art/bake_cards.py --lang en [--only a,b]
+                                                  日本語の面の文字の欄を英語で描き直し、Cards/en/ に置く
+                                                  （訳は Data/Text/en.json と Data/Text/Cards/en.json）
 
 入力:
     ChronoSort/Assets/Data/Decks/*.json
@@ -330,6 +333,152 @@ def retitle_face(card, path):
     save_face(face, path)
 
 
+# ---------------------------------------------------------------------------
+# 日本語以外の言語の面（--lang）
+#
+# 元の絵（raw/）が手元に無くても作れるよう、焼いてある日本語の面をもとに、
+# 文字の欄（出来事名・年号の札・地域の札・分類）だけをその言語で描き直す。
+# 欄は原寸の透明な層に描いてから 3/4 に縮め、日本語の面に重ねる。
+# ---------------------------------------------------------------------------
+
+TEXT_DIR = ROOT / "ChronoSort" / "Assets" / "Data" / "Text"
+
+# 地域の札の多角形（bake_face と同じ形）
+def region_tab(box=ART_BOX):
+    return [(box[0] + 14, box[1]), (box[0] + 78, box[1]), (box[0] + 78, box[1] + 70), (box[0] + 46, box[1] + 56), (box[0] + 14, box[1] + 70)]
+
+
+def split_lines_at_spaces(draw, text, f, width, count):
+    """空白の所でだけ count 行に分け、width に収まる分け方のうち行の長さが最も揃うものを返す（無ければ None）。"""
+    words = text.split(" ")
+    if len(words) < count:
+        return None
+    best = None
+
+    def walk(start, left, lines):
+        nonlocal best
+        if left == 1:
+            line = " ".join(words[start:])
+            if text_width(draw, line, f) > width:
+                return
+            candidate = lines + [line]
+            widths = [text_width(draw, l, f) for l in candidate]
+            score = max(widths) - min(widths)
+            if best is None or score < best[0]:
+                best = (score, candidate)
+            return
+        for end in range(start + 1, len(words) - left + 2):
+            line = " ".join(words[start:end])
+            if text_width(draw, line, f) > width:
+                break
+            walk(end, left - 1, lines + [line])
+
+    walk(0, count, [])
+    return best[1] if best else None
+
+
+def fit_latin(draw, text, box, max_size, min_size=16, face=None):
+    """英文を box に収める。いちばん大きく描ける文字の大きさで、1〜3行（空白の所でだけ折り返す）に分ける。"""
+    face = face or serif
+    width = box[2] - box[0]
+    height = box[3] - box[1]
+    for size in range(max_size, min_size - 1, -2):
+        f = face(size)
+        for count in (1, 2, 3):
+            if size * LINE_HEIGHT * count > height - (TWO_LINE_MARGIN if count > 1 else 0):
+                break
+            if count == 1:
+                if text_width(draw, text, f) <= width:
+                    return [text], f
+                continue
+            lines = split_lines_at_spaces(draw, text, f, width, count)
+            if lines:
+                return lines, f
+    return [text], face(min_size)
+
+
+def load_language(lang):
+    """言語の文字列の表とカードの訳を読む。"""
+    table = json.loads((TEXT_DIR / f"{lang}.json").read_text(encoding="utf-8"))
+    cards = json.loads((TEXT_DIR / "Cards" / f"{lang}.json").read_text(encoding="utf-8"))
+    return table, cards
+
+
+def year_label(table, year):
+    key = "card.yearBC" if year < 0 else "card.year"
+    return table[key].replace("{0}", str(abs(year)))
+
+
+def relabel_face(card, text, table, reveal, source, dest):
+    """日本語の面 source の文字の欄を、訳 text で描き直して dest に保存する。"""
+    face = Image.open(source).convert("RGBA")
+    # 減色した面の羊皮紙の色は PARCHMENT から少しずれるので、題名の欄でいちばん多い色を地の色として使う
+    scale = SAVE_SIZE[0] / W
+    title_area = face.crop(tuple(round(v * scale) for v in TITLE_BOX))
+    paper = max(title_area.getcolors(title_area.width * title_area.height))[1]
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+
+    # 出来事名の欄（羊皮紙の無地なので、無地で塗ってから描く）
+    draw.rectangle(TITLE_BOX, fill=paper)
+    lines, f = fit_latin(draw, text["title"], TITLE_BOX, 52)
+    draw_centered(draw, lines, f, TITLE_BOX, INK + (255,))
+
+    # 年号の札（下の羊皮紙ごと塗り直して、同じ形の札を描く）
+    # 塗る四角の端は 4 の倍数にそろえる（3/4 に縮めたとき画素の境目に乗り、縁がにじまない）
+    draw.rectangle((92, 640, 420, 728), fill=paper)
+    draw.rounded_rectangle(YEAR_BOX, 14, fill=(FRAME if reveal else (205, 190, 160)) + (255,), outline=GOLD + (255,), width=3)
+    label = year_label(table, card["year"]) if reveal else "????"
+    lines, f = fit_latin(draw, label, (YEAR_BOX[0] + 12, YEAR_BOX[1], YEAR_BOX[2] - 12, YEAR_BOX[3]), 50, face=lambda n: serif(n, "Bold"))
+    draw_centered(draw, lines, f, YEAR_BOX, ((250, 226, 160) if reveal else FRAME) + (255,))
+
+    # 地域の札（同じ多角形で覆い、札の幅に入る大きさで書く）
+    tab_color = (168, 40, 36) if card["region"] == "JP" else (36, 70, 120)
+    draw.polygon(region_tab(), fill=tab_color + (255,))
+    region = table[f"region.{card['region']}"].upper()
+    tab_width = 64 - 8
+    size = 22
+    while size > 10 and text_width(draw, region, serif(size, "Bold")) > tab_width:
+        size -= 1
+    draw.text((ART_BOX[0] + 46, ART_BOX[1] + 26), region, font=serif(size, "Bold"), fill=(250, 236, 210, 255), anchor="mm")
+
+    # 分類（下端の羊皮紙の帯。日本語の字は金の内枠の線に少しかかるので、線ごと塗ってから線を引き直す）
+    draw.rectangle((144, 728, 368, 752), fill=paper)
+    draw.rectangle((144, H - 23, 368, H - 21), fill=GOLD + (255,))
+    category = table.get(f"category.{card['category']}", card["category"])
+    draw.text((W / 2, H - 20), category, font=font(18), fill=GOLD + (255,), anchor="md")
+
+    # 縮めるのは BOX で（LANCZOS は四角の縁に明暗の筋を出す）
+    face.alpha_composite(layer.resize(face.size, Image.BOX))
+    save_face(face, dest)
+
+
+def bake_language(lang, only):
+    table, cards = load_language(lang)
+    out_dir = OUT_DIR / lang
+    out_dir.mkdir(parents=True, exist_ok=True)
+    count = 0
+    missing = []
+    for deck_path in sorted(DECK_DIR.glob("*.json")):
+        deck = json.loads(deck_path.read_text(encoding="utf-8"))
+        for card in deck["cards"]:
+            if only and card["id"] not in only:
+                continue
+            text = cards.get(card["id"])
+            if text is None:
+                missing.append(card["id"])
+                continue
+            for face, reveal in (("front", False), ("back", True)):
+                name = f"{card['id']}_{face}"
+                relabel_face(card, text, table, reveal, OUT_DIR / f"{name}.png", out_dir / f"{name}.png")
+                write_tmat(out_dir / f"{name}.tmat", f"{ASSET_PREFIX}/Cards/{lang}/{name}.png")
+            count += 1
+    if missing:
+        print(f"no {lang} text for: {', '.join(missing)}")
+    print(f"baked {count} {lang} cards to {out_dir}")
+
+
 def write_tmat(path, texture, roughness=0.6):
     path.write_text(
         "# generated by Tools/art/bake_cards.py\n"
@@ -408,9 +557,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", default="")
     parser.add_argument("--retitle", action="store_true")
+    parser.add_argument("--lang", default="")
     args = parser.parse_args()
     # 指定したカードの面だけを焼く（卓・山札の素材と、他のカードの面には触れない）
     only = {s for s in args.only.split(",") if s}
+
+    if args.lang:
+        bake_language(args.lang, only)
+        return
 
     if args.retitle:
         count = 0

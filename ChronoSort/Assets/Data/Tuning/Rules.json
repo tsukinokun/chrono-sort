@@ -44,15 +44,15 @@
         ],
         "cpus": [
             {
-                "name": "ヘロドトス",
+                "name": "cpu.herodotus",
                 "portrait": "portrait_herodotus.png"
             },
             {
-                "name": "司馬遷",
+                "name": "cpu.simaQian",
                 "portrait": "portrait_sima_qian.png"
             },
             {
-                "name": "ギボン",
+                "name": "cpu.gibbon",
                 "portrait": "portrait_gibbon.png"
             }
         ]

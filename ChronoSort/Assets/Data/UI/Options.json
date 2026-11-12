@@ -1,16 +1,19 @@
 {
     "papers": [
-        { "key": "sheet",     "value": { "texture": "scrap_result.png", "center": { "x": 820.0, "y": 450.0 }, "size": { "x": 620.0, "y": 650.0 }, "angle": 1.5,  "sway": 0.3 } },
-        { "key": "close",     "value": { "texture": "scrap_note.png",   "center": { "x": 150.0, "y": 258.0 }, "size": { "x": 170.0, "y": 62.0 },  "angle": -3.0 } },
+        { "key": "sheet",     "value": { "texture": "scrap_result.png", "center": { "x": 820.0, "y": 450.0 }, "size": { "x": 620.0, "y": 740.0 }, "angle": 1.5,  "sway": 0.3 } },
+        { "key": "heading",   "value": { "center": { "x": 0.0, "y": -248.0 } } },
+        { "key": "close",     "value": { "texture": "scrap_note.png",   "center": { "x": 150.0, "y": 308.0 }, "size": { "x": 170.0, "y": 62.0 },  "angle": -3.0 } },
         { "key": "toggleTag", "value": { "texture": "scrap_note.png",   "center": { "x": -10.0, "y": 0.0 },   "size": { "x": 130.0, "y": 54.0 },  "sway": 0.6 } },
         { "key": "knob",      "value": { "texture": "wax_seal.png",                                            "size": { "x": 34.0,  "y": 34.0 },  "sway": 4.0, "bob": 0.0 } },
-        { "key": "rowMaster", "value": { "center": { "x": 0.0, "y": -118.0 } } },
-        { "key": "rowBgm",    "value": { "center": { "x": 0.0, "y": -58.0 } } },
-        { "key": "rowSfx",    "value": { "center": { "x": 0.0, "y": 2.0 } } },
-        { "key": "rowFast",   "value": { "center": { "x": 0.0, "y": 78.0 } } },
-        { "key": "rowShake",  "value": { "center": { "x": 0.0, "y": 140.0 } } },
-        { "key": "rowQuality", "value": { "center": { "x": 0.0, "y": 202.0 } } },
-        { "key": "noteQuality", "value": { "center": { "x": 0.0, "y": 246.0 } } },
-        { "key": "qualityTag", "value": { "texture": "scrap_note.png",   "center": { "x": -90.0, "y": 0.0 },   "size": { "x": 92.0, "y": 54.0 },  "sway": 0.6 } }
+        { "key": "rowMaster", "value": { "center": { "x": 0.0, "y": -166.0 } } },
+        { "key": "rowBgm",    "value": { "center": { "x": 0.0, "y": -106.0 } } },
+        { "key": "rowSfx",    "value": { "center": { "x": 0.0, "y": -46.0 } } },
+        { "key": "rowFast",   "value": { "center": { "x": 0.0, "y": 30.0 } } },
+        { "key": "rowShake",  "value": { "center": { "x": 0.0, "y": 92.0 } } },
+        { "key": "rowQuality", "value": { "center": { "x": 0.0, "y": 154.0 } } },
+        { "key": "noteQuality", "value": { "center": { "x": 0.0, "y": 194.0 } } },
+        { "key": "qualityTag", "value": { "texture": "scrap_note.png",   "center": { "x": -90.0, "y": 0.0 },   "size": { "x": 92.0, "y": 54.0 },  "sway": 0.6 } },
+        { "key": "rowLanguage", "value": { "center": { "x": 0.0, "y": 240.0 } } },
+        { "key": "languageTag", "value": { "texture": "scrap_note.png",   "center": { "x": -30.0, "y": 0.0 },   "size": { "x": 130.0, "y": 54.0 },  "sway": 0.6 } }
     ]
 }

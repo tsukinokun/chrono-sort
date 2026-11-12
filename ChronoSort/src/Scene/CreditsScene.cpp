@@ -12,6 +12,7 @@
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/Credits.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/FontComponent.hpp>
@@ -48,7 +49,7 @@ namespace ChronoSort::Scene {
         const UI::PaperLayout layout(Util::AssetPaths::UILayout("Credits"));
         m_sheet = m_ui->Paper(layout.Spec("sheet"));
         m_ui->SlideIn(m_sheet, hlslpp::float2(0.0f, 900.0f), 0.1f, 0.6f);
-        m_ui->Text(L"出典・クレジット", hlslpp::float2(0.0f, -325.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
+        m_ui->Text(Util::Text("credits.title"), hlslpp::float2(0.0f, -325.0f), 1.05f, UI::kInkColor, kLayerSheet + 1, m_sheet);
         m_pageNo = m_ui->Text(L"", hlslpp::float2(0.0f, 335.0f), 0.5f, UI::kFadedInkColor, kLayerSheet + 1, m_sheet);
 
         auto button = [&](const char* name, const std::wstring& text) {
@@ -56,9 +57,9 @@ namespace ChronoSort::Scene {
             m_ui->SlideIn(paper, hlslpp::float2(260.0f, 0.0f), 0.5f);
             return paper;
         };
-        m_next = button("next", L"次の頁");
-        m_prev = button("prev", L"前の頁");
-        m_back = button("back", L"机に戻る");
+        m_next = button("next", Util::Text("common.nextPage"));
+        m_prev = button("prev", Util::Text("common.prevPage"));
+        m_back = button("back", Util::Text("credits.back"));
         ShowPage(0, 0);
     }
 
@@ -68,26 +69,29 @@ namespace ChronoSort::Scene {
     void CreditsScene::LoadLines() {
         const Util::Credits credits = Util::LoadCredits();
 
-        m_lines.push_back({L"制作", true});
-        m_lines.push_back({L"ゲームエンジン  TsukinoEngine"});
-        m_lines.push_back({L"ルール  出来事を年代順に並べる定番の遊び方をもとに構成"});
-        m_lines.push_back({L"文字  Noto Sans CJK JP / Noto Serif JP（SIL Open Font License 1.1）"});
-        m_lines.push_back({L"効果音  このゲームのためにコードで合成"});
-        m_lines.push_back({L"年号は一般的な教科書の表記に従っています", false, true});
+        m_lines.push_back({Util::Text("credits.made"), true});
+        m_lines.push_back({Util::Text("credits.engine")});
+        m_lines.push_back({Util::Text("credits.rules")});
+        m_lines.push_back({Util::Text("credits.fonts")});
+        m_lines.push_back({Util::Text("credits.sfx")});
+        m_lines.push_back({Util::Text("credits.yearsNote"), false, true});
 
         if(!credits.audio.empty()) {
             m_lines.push_back({L"", false});
-            m_lines.push_back({L"音楽", true});
+            m_lines.push_back({Util::Text("credits.music"), true});
             for(const Util::CreditEntry& entry : credits.audio) {
                 m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
-                m_lines.push_back({Util::Utf8ToWide("演奏 " + entry.artist + " / " + entry.file), false, true});
+                m_lines.push_back({Util::Format("credits.performer", {Util::Utf8ToWide(entry.artist), Util::Utf8ToWide(entry.file)}), false, true});
             }
         }
 
         m_lines.push_back({L"", false});
-        m_lines.push_back({L"カードの絵（Wikimedia Commons）", true});
+        m_lines.push_back({Util::Text("credits.cardArt"), true});
         for(const Util::CreditEntry& entry : credits.images) {
-            m_lines.push_back({Util::Utf8ToWide(entry.title + "  ― " + entry.license)});
+            // 絵の題名はカードの題名と同じなので、日本語以外ではカードの訳を使う
+            const Util::CardText* text  = Util::FindCardText(entry.id);
+            const std::string&    title = (text != nullptr && !text->title.empty()) ? text->title : entry.title;
+            m_lines.push_back({Util::Utf8ToWide(title + "  ― " + entry.license)});
             m_lines.push_back({Util::Utf8ToWide(entry.artist + " / " + entry.file), false, true});
         }
     }

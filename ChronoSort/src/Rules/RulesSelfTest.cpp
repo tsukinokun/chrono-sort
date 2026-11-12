@@ -11,6 +11,7 @@
 #include <ChronoSort/Rules/Timeline.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
 #include <ChronoSort/Util/ExternalLink.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 #include <ChronoSort/Util/TextUtil.hpp>
 
 #include <Tsukino/Core/Log.hpp>
@@ -230,6 +231,74 @@ namespace ChronoSort::Rules {
             Check(correct > 60 && correct < 200, "easy cpu is fallible but not random", passed);
         }
 
+        //----------------------------------------------------------------------------
+        //! 文字列が、日本語以外の言語で使ってよい字（ASCII と Latin-1）だけでできているかを返します。
+        //! フォント（Noto Sans CJK JP）にはフォールバックが無く、全角で描かれる記号（— “ ” など）は英文の中で浮くため。
+        //! @param  [in] text 文字列（UTF-8）。
+        //! @return 使ってよい字だけなら true。
+        //----------------------------------------------------------------------------
+        bool IsLatinText(const std::string& text) {
+            const std::wstring wide = Util::Utf8ToWide(text);
+            return std::all_of(wide.begin(), wide.end(), [](wchar_t c) { return c >= 0x20 && c < 0x100; });
+        }
+
+        //----------------------------------------------------------------------------
+        //! 文字列の表とカードの訳を確かめます。
+        //! @param  [in]     allCards 全部のカード（日本語の原文）。
+        //! @param  [in,out] passed   すべて通ったか。
+        //----------------------------------------------------------------------------
+        void TestLocalization(const std::vector<CardData>& allCards, bool& passed) {
+            const auto japanese = Util::ReadTextTable(Util::Language::Japanese);
+            const auto english  = Util::ReadTextTable(Util::Language::English);
+            const auto cards    = Util::ReadCardTable(Util::Language::English);
+
+            // 表のキーが揃っていること（足りないキーはログに出す）
+            bool sameKeys = !japanese.empty() && japanese.size() == english.size();
+            for(const auto& [key, value] : japanese) {
+                if(english.find(key) == english.end()) {
+                    Tsukino::Core::Log::Warn("[RulesSelfTest] en.json lacks key: " + key);
+                    sameKeys = false;
+                }
+            }
+            for(const auto& [key, value] : english) {
+                if(japanese.find(key) == japanese.end()) {
+                    Tsukino::Core::Log::Warn("[RulesSelfTest] ja.json lacks key: " + key);
+                    sameKeys = false;
+                }
+            }
+            Check(sameKeys, "text tables have the same keys", passed);
+            Check(std::all_of(english.begin(), english.end(), [](const auto& entry) { return IsLatinText(entry.second); }), "english text uses latin characters only", passed);
+            Check(std::all_of(allCards.begin(), allCards.end(), [&](const CardData& c) { return japanese.count("category." + c.category) > 0; }),
+                  "every category has a name", passed);
+
+            // すべてのカードに英語の題名と説明文があり、拡大した紙に収まること
+            size_t missing = 0;
+            size_t tooLong = 0;
+            size_t badChar = 0;
+            for(const CardData& card : allCards) {
+                auto it = cards.find(card.id);
+                if(it == cards.end() || it->second.title.empty() || it->second.caption.empty()) {
+                    if(++missing <= 5) {
+                        Tsukino::Core::Log::Warn("[RulesSelfTest] no english text for card: " + card.id);
+                    }
+                    continue;
+                }
+                if(Util::WrapText(Util::Utf8ToWide(it->second.caption), kCaptionCharsPerLine).size() > kCaptionMaxLines) {
+                    if(++tooLong <= 5) {
+                        Tsukino::Core::Log::Warn("[RulesSelfTest] english caption too long: " + card.id);
+                    }
+                }
+                if(!IsLatinText(it->second.title) || !IsLatinText(it->second.caption)) {
+                    if(++badChar <= 5) {
+                        Tsukino::Core::Log::Warn("[RulesSelfTest] english card text has a non-latin character: " + card.id);
+                    }
+                }
+            }
+            Check(missing == 0, "every card has an english title and caption", passed);
+            Check(tooLong == 0, "every english caption fits the zoom sheet", passed);
+            Check(badChar == 0, "english card text uses latin characters only", passed);
+        }
+
     }    // namespace
 
     //----------------------------------------------------------------------------
@@ -319,6 +388,10 @@ namespace ChronoSort::Rules {
         Check(Util::WikipediaUrl("大和 (戦艦)") == "https://ja.wikipedia.org/wiki/%E5%A4%A7%E5%92%8C_%28%E6%88%A6%E8%89%A6%29", "article url is percent encoded", passed);
         Check(DifficultyFromKey(DifficultyKey(CardDifficulty::Easy)) == CardDifficulty::Easy && DifficultyFromKey("unknown") == CardDifficulty::Hard,
               "difficulty key round trip", passed);
+        Check(Util::WrapText(L"the quick brown fox", 5) == std::vector<std::wstring>{L"the quick", L"brown fox"}, "wrap breaks english at spaces", passed);
+        Check(Util::WrapText(L"abcdefghijkl", 3) == std::vector<std::wstring>{L"abcdef", L"ghijkl"}, "wrap cuts a word longer than a line", passed);
+
+        TestLocalization(allCards, passed);
 
         TestMatch(passed);
         TestCpu(passed);

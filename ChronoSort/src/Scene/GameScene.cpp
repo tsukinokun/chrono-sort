@@ -68,7 +68,7 @@ namespace ChronoSort::Scene {
         m_result  = std::make_unique<UI::ResultSheet>(m_scene, *context->assetManager, session.match);
         m_album   = std::make_unique<UI::CardAlbum>(m_scene, *context->assetManager, session.match);
         m_pause   = std::make_unique<UI::PauseSheet>(m_scene, *context->assetManager);
-        m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120);
+        m_options = std::make_unique<UI::OptionsSheet>(m_scene, *context, 120, false);
         m_tutorial = std::make_unique<UI::TutorialGuide>(m_scene, *context->assetManager);
         m_desk->Build();
 

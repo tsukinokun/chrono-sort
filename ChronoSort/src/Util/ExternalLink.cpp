@@ -34,6 +34,20 @@ namespace ChronoSort::Util {
     }
 
     //----------------------------------------------------------------------------
+    //! Wikipedia の検索の URL を作ります。
+    //----------------------------------------------------------------------------
+    std::string WikipediaSearchUrl(const std::string& words, const std::string& language) {
+        // 記事の URL の作り方（パーセント符号化）を借り、記事名の部分だけを検索語に付け替える
+        const std::string article = WikipediaUrl(words);
+        std::string       encoded;
+        // 記事の URL では空白が下線になるので、検索語では空白（%20）に戻す（出来事名に下線は使わない）
+        for(const char c : article.substr(std::string("https://ja.wikipedia.org/wiki/").size())) {
+            encoded += c == '_' ? std::string("%20") : std::string(1, c);
+        }
+        return "https://" + language + ".wikipedia.org/w/index.php?search=" + encoded;
+    }
+
+    //----------------------------------------------------------------------------
     //! URL を既定のブラウザで開きます。
     //----------------------------------------------------------------------------
     void OpenInBrowser(const std::string& url) {

@@ -13,6 +13,7 @@
 #include <ChronoSort/Scene/SceneRouter.hpp>
 #include <ChronoSort/Scene/TitleScene.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 
 #include <Tsukino/Core/IO/JsonFile.hpp>
 #include <Tsukino/Core/Log.hpp>
@@ -53,6 +54,16 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
 
     const std::string argument = (lpCmdLine != nullptr) ? lpCmdLine : "";
 
+    // 表示言語を、窓より前に決める（描画の初期化に失敗したときの知らせも、その言語で出す）。
+    // 「lang=en」「lang=ja」を付けると、保存した設定より優先する（確認用。設定を閉じると保存される）
+    std::string languageCode = ChronoSort::Game::LoadOptions().language;
+    if(argument.find("lang=en") != std::string::npos) {
+        languageCode = "en";
+    } else if(argument.find("lang=ja") != std::string::npos) {
+        languageCode = "ja";
+    }
+    ChronoSort::Util::LoadLanguage(ChronoSort::Util::LanguageFromCode(languageCode));
+
     // 「ChronoSort.exe warp」なら GPU を使わず WARP（ソフトウェア描画）で動かす（GPU が無い環境の確認用）
     Tsukino::Renderer::GraphicsDeviceOptions deviceOptions;
     if(argument.find("warp") != std::string::npos) {
@@ -62,7 +73,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     Tsukino::EngineIntegration::EngineIntegration engineIntegration;
     if(!engineIntegration.Initialize(1600, 900, "ChronoSort", Tsukino::Core::Window::WindowStyle::Default, deviceOptions)) {
         Tsukino::Core::Log::Error("Failed to initialize EngineIntegration.");
-        MessageBoxW(nullptr, L"描画の初期化に失敗しました。グラフィックスドライバーを更新してから、もう一度起動してください。", L"ChronoSort", MB_OK | MB_ICONERROR);
+        MessageBoxW(nullptr, ChronoSort::Util::Text("error.graphicsInit").c_str(), L"ChronoSort", MB_OK | MB_ICONERROR);
         return EXIT_FAILURE;
     }
 
@@ -72,6 +83,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR lpCmdLine, _In
     // シーンをまたいで共有する音と設定。前回の設定（音量など）は、最初の音が鳴る前にここで反映される。
     // エンジンより後に作るので、エンジンより先に壊れる（音の後片付けがエンジンの片付けより前に済む）
     ChronoSort::Game::GameServices services(engineIntegration.GetContext());
+    services.Settings().language = ChronoSort::Util::LanguageCode(ChronoSort::Util::CurrentLanguage());
 
     // 画質を決める（カード面の読み込みの規則も含むので、読込画面より先に）。
     // 「quality=high」などを付けると、「自動」で始める段階を指定できる（自動の引き下げの確認用）

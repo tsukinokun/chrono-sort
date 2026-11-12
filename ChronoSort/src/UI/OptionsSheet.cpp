@@ -7,6 +7,7 @@
 #include <ChronoSort/Game/GameServices.hpp>
 #include <ChronoSort/UI/Widgets.hpp>
 #include <ChronoSort/Util/AssetPaths.hpp>
+#include <ChronoSort/Util/Localization.hpp>
 
 #include <Tsukino/BuiltIn/ECS/Component/PointerTargetComponent.hpp>
 #include <Tsukino/BuiltIn/ECS/Component/TransformComponent.hpp>
@@ -36,12 +37,13 @@ namespace ChronoSort::UI {
     //----------------------------------------------------------------------------
     //! 作り先のシーンと描画順を受け取ります。
     //----------------------------------------------------------------------------
-    OptionsSheet::OptionsSheet(Tsukino::ECS::Scene& scene, Tsukino::EngineIntegration::EngineContext& context, int sortOrder)
+    OptionsSheet::OptionsSheet(Tsukino::ECS::Scene& scene, Tsukino::EngineIntegration::EngineContext& context, int sortOrder, bool allowLanguage)
         : m_scene(scene)
         , m_context(context)
         , m_ui(scene, *context.assetManager)
         , m_layout(Util::AssetPaths::UILayout("Options"))
-        , m_sortOrder(sortOrder) {
+        , m_sortOrder(sortOrder)
+        , m_allowLanguage(allowLanguage) {
     }
 
     //----------------------------------------------------------------------------
@@ -57,20 +59,22 @@ namespace ChronoSort::UI {
         m_ui.SlideIn(m_sheet, hlslpp::float2(0.0f, 620.0f), 0.0f, 0.5f);
 
         const int layer = m_sortOrder + 1;
-        m_ui.Text(L"設定", hlslpp::float2(0.0f, -200.0f), 1.15f, kInkColor, layer, m_sheet);
+        m_ui.Text(Util::Text("options.title"), hlslpp::float2(0.0f, float(m_layout.Spec("heading").center.y)), 1.15f, kInkColor, layer, m_sheet);
 
         Game::Options& options = Game::Services().Settings();
-        AddSlider(L"全体", "rowMaster", &options.master, true);
-        AddSlider(L"BGM", "rowBgm", &options.bgm, false);
-        AddSlider(L"効果音", "rowSfx", &options.sfx, true);
-        AddToggle(L"演出の速さ", "rowFast", {L"普通", false}, {L"速い", true}, &options.fastEffects);
-        AddToggle(L"画面の揺れ", "rowShake", {L"あり", true}, {L"なし", false}, &options.cameraShake);
-        AddQualityChoice(L"画質", "rowQuality", &options.graphicsQuality);
+        AddSlider(Util::Text("options.master"), "rowMaster", &options.master, true);
+        AddSlider(Util::Text("options.bgm"), "rowBgm", &options.bgm, false);
+        AddSlider(Util::Text("options.sfx"), "rowSfx", &options.sfx, true);
+        AddToggle(Util::Text("options.speed"), "rowFast", {Util::Text("options.speedNormal"), false}, {Util::Text("options.speedFast"), true}, &options.fastEffects);
+        AddToggle(Util::Text("options.shake"), "rowShake", {Util::Text("options.shakeOn"), true}, {Util::Text("options.shakeOff"), false}, &options.cameraShake);
+        AddQualityChoice(Util::Text("options.quality"), "rowQuality", &options.graphicsQuality);
+        m_openedLanguage = options.language;
+        AddLanguageChoice(Util::Text("options.language"), "rowLanguage");
 
         PaperSpec close = m_layout.Spec("close");
         close.sortOrder = layer + 1;
         close.parent    = m_sheet;
-        m_close         = NoteButton(m_ui, close, L"閉じる", 0.72f);
+        m_close         = NoteButton(m_ui, close, Util::Text("common.close"), 0.72f);
         m_previewTimer  = 0.0f;
     }
 
@@ -162,10 +166,10 @@ namespace ChronoSort::UI {
         const PaperSpec tag      = m_layout.Spec("qualityTag");
         const float     interval = float(tag.size.x) + 10.0f;
         const std::pair<std::wstring, Game::GraphicsQualityChoice> choices[] = {
-            {L"自動", Game::GraphicsQualityChoice::Auto},
-            {L"高", Game::GraphicsQualityChoice::High},
-            {L"中", Game::GraphicsQualityChoice::Medium},
-            {L"低", Game::GraphicsQualityChoice::Low},
+            {Util::Text("options.qualityAuto"), Game::GraphicsQualityChoice::Auto},
+            {Util::Text("options.qualityHigh"), Game::GraphicsQualityChoice::High},
+            {Util::Text("options.qualityMedium"), Game::GraphicsQualityChoice::Medium},
+            {Util::Text("options.qualityLow"), Game::GraphicsQualityChoice::Low},
         };
         for(int i = 0; i < 4; ++i) {
             ChoiceSpec spec;
@@ -181,7 +185,50 @@ namespace ChronoSort::UI {
         m_qualities.push_back(quality);
 
         // カード面の細かさだけは読み込みのときに決まるので、次の起動から変わる
-        m_ui.Text(L"カードの細かさは次の起動から反映", hlslpp::float2(kLabelX, float(m_layout.Spec("noteQuality").center.y)), 0.42f, kFadedInkColor, layer, m_sheet, false);
+        m_ui.Text(Util::Text("options.qualityNote"), hlslpp::float2(kLabelX, float(m_layout.Spec("noteQuality").center.y)), 0.42f, kFadedInkColor, layer, m_sheet, false);
+    }
+
+    //----------------------------------------------------------------------------
+    //! 言語の選択を作ります。
+    //----------------------------------------------------------------------------
+    void OptionsSheet::AddLanguageChoice(const std::wstring& label, const std::string& row) {
+        const int   layer = m_sortOrder + 1;
+        const float y     = float(m_layout.Spec(row).center.y);
+        m_ui.Text(label, hlslpp::float2(kLabelX, y), 0.62f, kFadedInkColor, layer, m_sheet, false);
+
+        // 対局中に言語を変えると、場のカードの面や名前が途中で食い違うので、タイトルで変えてもらう
+        if(!m_allowLanguage) {
+            m_ui.Text(Util::Text("options.languageNote"), hlslpp::float2(float(m_layout.Spec("languageTag").center.x) - 60.0f, y), 0.42f, kFadedInkColor, layer, m_sheet,
+                      false, true);
+            return;
+        }
+
+        m_languageGroup = ChoiceGroup(m_ui);
+        // 札の文字は、読めない言語のときでも自分の言語を見つけられるよう、その言語自身の書き方にする
+        const std::pair<const wchar_t*, Util::Language> choices[] = {
+            {L"日本語", Util::Language::Japanese},
+            {L"English", Util::Language::English},
+        };
+        const PaperSpec tag     = m_layout.Spec("languageTag");
+        const int       current = static_cast<int>(Util::LanguageFromCode(Game::Services().Settings().language));
+        for(int i = 0; i < 2; ++i) {
+            ChoiceSpec spec;
+            spec.paper              = tag;
+            spec.paper.center       = hlslpp::float2(float(tag.center.x) + (float(tag.size.x) + 30.0f) * static_cast<float>(i), y + m_ui.Jitter() * 5.0f);
+            spec.paper.angleDegrees = m_ui.Jitter() * 4.0f;
+            spec.paper.sortOrder    = layer + 1;
+            spec.paper.parent       = m_sheet;
+            spec.label              = choices[i].first;
+            spec.value              = static_cast<int>(choices[i].second);
+            ChoiceTag(m_ui, m_languageGroup, spec, spec.value == current);
+        }
+    }
+
+    //----------------------------------------------------------------------------
+    //! 開いたときと違う言語になったかを返します。
+    //----------------------------------------------------------------------------
+    bool OptionsSheet::LanguageChanged() const {
+        return !m_openedLanguage.empty() && m_openedLanguage != Game::Services().Settings().language;
     }
 
     //----------------------------------------------------------------------------
@@ -200,6 +247,7 @@ namespace ChronoSort::UI {
         m_sliders.clear();
         m_toggles.clear();
         m_qualities.clear();
+        m_languageGroup = entt::null;
     }
 
     //----------------------------------------------------------------------------
@@ -254,6 +302,12 @@ namespace ChronoSort::UI {
                 *quality.value = SelectedChoice(registry, quality.group, *quality.value);
                 Game::Services().Graphics().SetChoice(static_cast<Game::GraphicsQualityChoice>(*quality.value));
             }
+        }
+
+        // 言語の札（表の読み直しと画面の作り直しは、閉じた後にタイトルが行う）
+        if(m_languageGroup != entt::null && ChoiceChanged(registry, m_languageGroup)) {
+            const int current = static_cast<int>(Util::LanguageFromCode(Game::Services().Settings().language));
+            Game::Services().Settings().language = Util::LanguageCode(static_cast<Util::Language>(SelectedChoice(registry, m_languageGroup, current)));
         }
 
         if(m_ui.Clicked(m_close) || m_context.inputSystem->IsKeyPressed(KeyCode::Escape)) {

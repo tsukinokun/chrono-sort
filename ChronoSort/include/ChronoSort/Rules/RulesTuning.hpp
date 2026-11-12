@@ -32,7 +32,7 @@ namespace ChronoSort::Rules {
 
     //! 対戦の CPU 1人の人物です。
     struct CpuProfile {
-        std::string name;        // 名前（UTF-8）
+        std::string name;        // 名前（文字列の表のキー。画面では Util::Text で引く）
         std::string portrait;    // 肖像の画像（ChronoSort/Assets/Textures/UI/ からのパス。ルールは使わず、画面に渡すだけ）
     };
 
@@ -59,9 +59,9 @@ namespace ChronoSort::Rules {
 
         //! 対戦の CPU の人物（席の順）
         std::vector<CpuProfile> cpus = {
-            {"ヘロドトス", "portrait_herodotus.png"},
-            {"司馬遷", "portrait_sima_qian.png"},
-            {"ギボン", "portrait_gibbon.png"},
+            {"cpu.herodotus", "portrait_herodotus.png"},
+            {"cpu.simaQian", "portrait_sima_qian.png"},
+            {"cpu.gibbon", "portrait_gibbon.png"},
         };
 
         //! 人数に応じた初期手札の枚数を返します。
