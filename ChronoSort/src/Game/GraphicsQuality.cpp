@@ -58,7 +58,7 @@ namespace ChronoSort::Game {
         // カード面は枚数が多いので、ブロック圧縮とミップマップを前もって作っておく（読み込みの規則は最初の読み込みより前に）
         Tsukino::Asset::TextureImportRule cardRule;
         // 2036 枚あるので、BC7 だとキャッシュも GPU メモリも 600MB ほどになる。半分で済み、圧縮も速い BC1 にする
-        cardRule.compressedFormat = DXGI_FORMAT_BC1_UNORM;
+        cardRule.compressedFormat = Tsukino::GraphicsCommon::TextureFormat::BC1;
         cardRule.generateMips     = true;
         cardRule.allowMipSkip     = true;
         m_context.assetManager->SetTextureImportRule(std::string(Util::AssetPaths::kCardTextureDir) + "/", cardRule);

@@ -133,7 +133,7 @@ namespace ChronoSort::Scene {
             const auto asset = assets.Get(handle);
             if(asset && asset->GetType() == Tsukino::Asset::AssetType::Texture) {
                 // 初回の取得で GPU に転送され、以降は同じハンドルの描画がキャッシュを引く
-                gpu.GetTextureSRV(*std::static_pointer_cast<Tsukino::Asset::TextureAsset>(asset));
+                gpu.UploadTexture(*std::static_pointer_cast<Tsukino::Asset::TextureAsset>(asset));
             }
         };
 
